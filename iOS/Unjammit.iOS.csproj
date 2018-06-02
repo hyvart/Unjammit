@@ -70,7 +70,6 @@
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
     <Compile Include="Audio\IOSSongPlayer.cs" />
-    <Compile Include="Model\IOSSongPlayerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -130,7 +129,9 @@
       <HintPath>..\packages\Xam.Plugins.Settings.4.0.0.7\lib\xamarinios10\Plugin.Settings.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Portable\Unjammit.Portable.csproj">
       <Project>{33FE7079-B3CF-49B3-89C1-165EF78457B4}</Project>
