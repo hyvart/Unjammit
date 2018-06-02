@@ -23,7 +23,14 @@ namespace Jammit.UWP
     {
       this.InitializeComponent();
 
-      LoadApplication(new Jammit.Portable.App(FileSystem.Current, (s) => { return new Audio.AudioGraphSongPlayer(s); }));
+      // Defer Loading application until VLC MediaElement is rendered.
+      this.Loaded += (sender, e) =>
+      {
+        LoadApplication(new Jammit.Portable.App(FileSystem.Current, (s) =>
+        {
+          return new Audio.VlcSongPlayer(s, this.MediaElement);
+        }));
+      };
     }
   }
 }
