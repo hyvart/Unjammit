@@ -24,7 +24,21 @@ namespace Jammit.Portable
       public override string ToString() => $"{TrackName} - {Type}";
     }
 
-    Jammit.Audio.ISongPlayer Player;
+    public static readonly BindableProperty PlayerProperty =
+      BindableProperty.Create("Player", typeof(Audio.ISongPlayer), typeof(Audio.ISongPlayer), null, BindingMode.TwoWay);
+
+    Audio.ISongPlayer Player
+    {
+      get
+      {
+        return (Audio.ISongPlayer)GetValue(PlayerProperty);
+      }
+
+      set
+      {
+        SetValue(PlayerProperty, value);
+      }
+    }
 
     public SongInfo Song { get; set; }
 
@@ -49,14 +63,14 @@ namespace Jammit.Portable
           ScoresInfo.Add(new ScoreInfo { TrackName = notated.Title, Type = "Tablature", Track = notated });
       }
 
+      Player = App.SongPlayerFactory(SongContents);
+
       InitializeComponent();
 
       ScorePicker.SelectedIndex = 0;//TODO: Set up in markup (XAML)?
       var scoreInfo = (ScoreInfo)ScorePicker.SelectedItem;
       ScoreImage.Source = ImageSource.FromStream(() => { return SongContents.GetNotation(scoreInfo.Track)[0]; });
       AlbumImage.Source = ImageSource.FromStream(() => { return SongContents.GetCover(); });
-
-      Player = App.SongPlayerFactory(SongContents);
     }
 
     private void SongPage_Close(object sender, EventArgs e)

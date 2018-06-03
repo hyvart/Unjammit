@@ -88,13 +88,22 @@ namespace Jammit.Audio
 
     public void Pause()
     {
+      if (PlaybackStatus.Paused == this.State)
+        return;
+
       this.mediaElement.Pause();
       this.State = PlaybackStatus.Paused;
     }
 
     public void Play()
     {
+      if (PlaybackStatus.Playing == this.State)
+        return;
+
+      var player = this.mediaElement.MediaPlayer;
+      var length = player.length();
       this.mediaElement.Play();
+      length = player.length();
       this.State = PlaybackStatus.Playing;
     }
 
@@ -105,6 +114,11 @@ namespace Jammit.Audio
 
     public void Stop()
     {
+      if (PlaybackStatus.Stopped == this.State)
+        return;
+
+      var length = mediaElement.MediaPlayer.length();
+
       this.mediaElement.Stop();
       this.State = PlaybackStatus.Stopped;
     }

@@ -7,7 +7,7 @@
     <ProjectGuid>{17311CD3-DA86-4669-8153-9BD37636EB05}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jammit.UWP</RootNamespace>
+    <RootNamespace>Jammit</RootNamespace>
     <AssemblyName>Unjammit.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
