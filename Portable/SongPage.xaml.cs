@@ -24,8 +24,16 @@ namespace Jammit.Portable
       public override string ToString() => $"{TrackName} - {Type}";
     }
 
+    #region Bindable properteis
+
     public static readonly BindableProperty PlayerProperty =
       BindableProperty.Create("Player", typeof(Audio.ISongPlayer), typeof(Audio.ISongPlayer), null, BindingMode.TwoWay);
+
+    public static readonly BindableProperty LengthProperty =
+      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(600), BindingMode.TwoWay);
+
+    public static readonly BindableProperty PositionProperty =
+      BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);
 
     Audio.ISongPlayer Player
     {
@@ -39,6 +47,23 @@ namespace Jammit.Portable
         SetValue(PlayerProperty, value);
       }
     }
+
+    TimeSpan Length => Player.Length;
+
+    public TimeSpan Position
+    {
+      get
+      {
+        return Player.Position;
+      }
+
+      set
+      {
+        Player.Position = value;
+      }
+    }
+
+    #endregion // Bindable properteis
 
     public SongInfo Song { get; set; }
 

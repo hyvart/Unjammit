@@ -82,7 +82,6 @@
         <Grid.RowDefinitions><RowDefinition Height="*" /></Grid.RowDefinitions>
         <Grid.ColumnDefinitions><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
         <StackLayout Orientation="Vertical">
-          <!--<Slider Minimum="0" Maximum="100" Value="50" />-->
           <Slider BindingContext="{Binding Player}" Minimum="0" Maximum="{Binding Length}" Value="{Binding Position}" />
           <Grid>
             <Grid.RowDefinitions><RowDefinition Height="80*" /></Grid.RowDefinitions>

@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using Jammit.Model;
 using Windows.Storage;
 using Windows.Storage.AccessCache;
+using Xamarin.Forms;
 
 namespace Jammit.Audio
 {
-  public class VlcSongPlayer : ISongPlayer
+  public class VlcSongPlayer : BindableObject, ISongPlayer
   {
     #region private members
 
@@ -43,6 +44,16 @@ namespace Jammit.Audio
       this.mediaElement.Source = $"winrt://{token}";
     }
 
+    #region Bindable properties
+
+    public static readonly BindableProperty LengthProperty =
+      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(600), BindingMode.TwoWay);
+
+    public static readonly BindableProperty PositionProperty =
+      BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);
+
+    #endregion // Bindable properties
+
     #region ISongPlayer members
 
     public long PositionSamples => throw new NotImplementedException();
@@ -51,11 +62,15 @@ namespace Jammit.Audio
     {
       get
       {
-        return this.mediaElement.Position;
+        var result = this.mediaElement.Position;
+        SetValue(PositionProperty, result);
+
+        return result;
       }
 
       set
       {
+        SetValue(PositionProperty, value);
         this.mediaElement.Position = value;
       }
     }
@@ -64,11 +79,12 @@ namespace Jammit.Audio
     {
       get
       {
-        long length = this.mediaElement.MediaPlayer.length();
-        if (length < 0)
-          return TimeSpan.Zero;
+        return (TimeSpan)GetValue(LengthProperty);
+      }
 
-        return TimeSpan.FromMilliseconds(length);
+      private set
+      {
+        SetValue(LengthProperty, value);
       }
     }
 
@@ -100,10 +116,7 @@ namespace Jammit.Audio
       if (PlaybackStatus.Playing == this.State)
         return;
 
-      var player = this.mediaElement.MediaPlayer;
-      var length = player.length();
       this.mediaElement.Play();
-      length = player.length();
       this.State = PlaybackStatus.Playing;
     }
 
@@ -116,8 +129,6 @@ namespace Jammit.Audio
     {
       if (PlaybackStatus.Stopped == this.State)
         return;
-
-      var length = mediaElement.MediaPlayer.length();
 
       this.mediaElement.Stop();
       this.State = PlaybackStatus.Stopped;
