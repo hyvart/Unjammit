@@ -3,10 +3,11 @@
 using AVFoundation;
 using Foundation;
 using Jammit.Model;
+using Xamarin.Forms;
 
 namespace Jammit.Audio.macOS
 {
-  public class MacOSSongPlayer : ISongPlayer
+  public class MacOSSongPlayer : BindableObject, ISongPlayer
   {
     #region private members
 
@@ -54,10 +55,33 @@ namespace Jammit.Audio.macOS
       //AVAudioSession.SharedInstance().SetActive(true);
     }
 
+    #region Bindable properties
+
+    public static readonly BindableProperty LengthProperty =
+      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(600), BindingMode.OneWay);
+
+    public static readonly BindableProperty PositionProperty =
+      BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);
+
+    void OnDurationChanged(NSObservedChange obj)
+    {
+      //Length = TimeSpan.FromSeconds(player.Duration);
+    }
+
+    void OnPositionChanged(NSObservedChange obj)
+    {
+      SetValue(PositionProperty, TimeSpan.FromSeconds(player.CurrentTime));
+    }
+
+    #endregion // Bindable properties
+
     #region ISongPlayer members
 
     public void Play()
     {
+      if (PlaybackStatus.Playing == State)
+        return;
+      
       // Dispose any existing playback.
       if (player != null)
       {
@@ -75,30 +99,72 @@ namespace Jammit.Audio.macOS
         player = null;
       };
       player.NumberOfLoops = 1;
+
+      var options = NSKeyValueObservingOptions.New;
+
+      player.AddObserver("duration", options, OnDurationChanged); //TODO: Ensure this triggers. Else, delete.
+      player.AddObserver("currentTime", options, OnPositionChanged);
+
+      Length = TimeSpan.FromSeconds(player.Duration);
+
       player.Play();
+      State = PlaybackStatus.Playing;
     }
 
     public void Pause()
     {
+      if (PlaybackStatus.Paused == State)
+        return;
+      
       Stop();
     }
 
     public void Stop()
     {
+      if (PlaybackStatus.Stopped == State)
+        return;
+      
       if (player != null)
       {
         player.Stop();
         player.Dispose();
       }
+
+      State = PlaybackStatus.Stopped;
     }
 
-    public PlaybackStatus State { get; }
+    public PlaybackStatus State { get; private set; }
 
-    public TimeSpan Position { get; set; }
+    public TimeSpan Position
+    {
+      get
+      {
+        return (TimeSpan)GetValue(PositionProperty);
+      }
+
+      set
+      {
+        SetValue(PositionProperty, value);
+
+        if (PlaybackStatus.Playing == State)
+          player.CurrentTime = value.TotalSeconds;
+      }
+    }
 
     public long PositionSamples => 0;
 
-    public TimeSpan Length => TimeSpan.Zero;
+    public TimeSpan Length
+    {
+      get
+      {
+        return (TimeSpan)GetValue(LengthProperty);
+      }
+
+      private set
+      {
+        SetValue(LengthProperty, value);
+      }
+    }
 
     public int Channels => 1;
 

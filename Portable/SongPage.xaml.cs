@@ -24,46 +24,7 @@ namespace Jammit.Portable
       public override string ToString() => $"{TrackName} - {Type}";
     }
 
-    #region Bindable properteis
-
-    public static readonly BindableProperty PlayerProperty =
-      BindableProperty.Create("Player", typeof(Audio.ISongPlayer), typeof(Audio.ISongPlayer), null, BindingMode.TwoWay);
-
-    public static readonly BindableProperty LengthProperty =
-      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(600), BindingMode.TwoWay);
-
-    public static readonly BindableProperty PositionProperty =
-      BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);
-
-    Audio.ISongPlayer Player
-    {
-      get
-      {
-        return (Audio.ISongPlayer)GetValue(PlayerProperty);
-      }
-
-      set
-      {
-        SetValue(PlayerProperty, value);
-      }
-    }
-
-    TimeSpan Length => Player.Length;
-
-    public TimeSpan Position
-    {
-      get
-      {
-        return Player.Position;
-      }
-
-      set
-      {
-        Player.Position = value;
-      }
-    }
-
-    #endregion // Bindable properteis
+    Audio.ISongPlayer Player;
 
     public SongInfo Song { get; set; }
 
@@ -111,7 +72,7 @@ namespace Jammit.Portable
       else // Tablature
         ScoreImage.Source = ImageSource.FromStream(() => { return SongContents.GetTablature(scoreInfo.Track)[0]; });
     }
-
+   
     private void PlayButton_Clicked(object sender, EventArgs e)
     {
       if (Player.State == Audio.PlaybackStatus.Playing)
@@ -123,7 +84,14 @@ namespace Jammit.Portable
       {
         Player.Play();
         PlayButton.Text = "Stop";
+
+        PositionSlider.Maximum = Player.Length.TotalSeconds;//TODO: Remove in favor of update from binding property.
       }
+    }
+
+    void PositionSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+      Player.Position = TimeSpan.FromSeconds(e.NewValue);
     }
   }
 }
