@@ -79,11 +79,9 @@ namespace Jammit.Portable.Client
         json.Add("platform", CrossDeviceInfo.Current.Platform.ToString());
         var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
 
-        var responseTask = cliente.PostAsync(cliente.BaseAddress.AbsoluteUri, content);
-        var response = responseTask.Result;
+        var response = await cliente.PostAsync(cliente.BaseAddress.AbsoluteUri, content);
         var responseContent = response.Content;
-        var responseContentStringTask = responseContent.ReadAsStringAsync();
-        var responseContentString = responseContentStringTask.Result;
+        var responseContentString = await responseContent.ReadAsStringAsync();
         var responseJson = JObject.Parse(responseContentString);
         var authorization = responseJson["authorization"].ToString();
 

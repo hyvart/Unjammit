@@ -18,7 +18,6 @@ namespace Jammit.Audio
     #region Private members
 
     private AudioGraph audioGraph;
-    private DeviceInformation selectedDevice;
     private AudioDeviceOutputNode deviceOutputNode;
     private PlaybackStatus status = PlaybackStatus.Stopped;
 
