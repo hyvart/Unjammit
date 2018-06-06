@@ -12,6 +12,7 @@ using Jammit.Model;
 
 namespace Jammit.Audio
 {
+  [Obsolete("Kept for reference only", true)]
   public class AudioGraphSongPlayer : ISongPlayer
   {
     #region Private members
