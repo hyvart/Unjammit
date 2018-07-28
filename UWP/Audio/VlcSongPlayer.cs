@@ -15,7 +15,8 @@ namespace Jammit.Audio
   {
     #region private members
 
-    VLC.MediaElement mediaElement;
+    private VLC.MediaElement mediaElement;
+    private bool lengthLoaded = false;
 
     #endregion // private members
 
@@ -42,12 +43,23 @@ namespace Jammit.Audio
 
       this.mediaElement = mediaElement;
       this.mediaElement.Source = $"winrt://{token}";
+      this.mediaElement.CurrentStateChanged += OnMediaPlayerStateChanged;
+    }
+
+    void OnMediaPlayerStateChanged(object sender, Windows.UI.Xaml.RoutedEventArgs eventArgs)
+    {
+      if (!lengthLoaded && Windows.UI.Xaml.Media.MediaElementState.Playing == mediaElement.CurrentState)
+      {
+        lengthLoaded = true;
+        Length = TimeSpan.FromMilliseconds(mediaElement.MediaPlayer.length());
+        //ApplyBindings();
+      }
     }
 
     #region Bindable properties
 
     public static readonly BindableProperty LengthProperty =
-      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(600), BindingMode.TwoWay);
+      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(600), BindingMode.OneWayToSource);
 
     public static readonly BindableProperty PositionProperty =
       BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);

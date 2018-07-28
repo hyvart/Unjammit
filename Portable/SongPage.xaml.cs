@@ -85,7 +85,9 @@ namespace Jammit.Portable
         Player.Play();
         PlayButton.Text = "Stop";
 
-        PositionSlider.Maximum = Player.Length.TotalSeconds;//TODO: Remove in favor of update from binding property.
+        //TODO: Remove in favor of update from binding property.
+        //TODO: Make Player.Length awaitable? Currently, it only updates on the second call.
+        PositionSlider.Maximum = Player.Length.TotalSeconds;
       }
     }
 

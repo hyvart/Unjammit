@@ -14,7 +14,7 @@
     <vlc:MediaElement Name="MediaElement"
                       AreTransportControlsEnabled="True"
                       HardwareAcceleration="False"
-                      AutoPlay="False" MediaOpened="MediaElement_MediaOpened">
+                      AutoPlay="False">
     </vlc:MediaElement>
   </StackPanel>
 </forms:WindowsPage>

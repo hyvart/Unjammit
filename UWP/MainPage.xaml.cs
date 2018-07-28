@@ -32,10 +32,5 @@ namespace Jammit.UWP
         }));
       };
     }
-
-    private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
-    {
-
-    }
   }
 }
