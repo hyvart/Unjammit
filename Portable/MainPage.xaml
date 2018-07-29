@@ -4,14 +4,13 @@
              xmlns:local="clr-namespace:Jammit.Portable"
              x:Class="Jammit.Portable.MainPage">
 
-  <!--See https://developer.xamarin.com/guides/xamarin-forms/xaml/xaml-basics/data_binding_basics/-->
   <StackLayout>
-    <!--ItemsSource="{x:Static local:MainPage.Songs}"-->
     <ListView
       x:Name="LibraryView"
       HorizontalOptions="Fill"
       VerticalOptions="Start"
-      ItemTapped="LibraryView_ItemTapped">
+      ItemTapped="LibraryView_ItemTapped"
+      BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}">
       <ListView.Header>
         <Grid>
           <Label Grid.Column="0" FontAttributes="Bold" Text="Artist" />

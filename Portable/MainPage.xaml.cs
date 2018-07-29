@@ -17,8 +17,6 @@ namespace Jammit.Portable
       InitializeComponent();
 
       this.FilesPath.Text = App.FileSystem.LocalStorage.Path;
-      this.LibraryView.BindingContext = App.Library;
-      this.LibraryView.SetBinding(ListView.ItemsSourceProperty, "Songs");
     }
 
     [Obsolete]
