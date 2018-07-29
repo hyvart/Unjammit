@@ -22,17 +22,12 @@ namespace Jammit.Portable
     public static string DeviceId => Plugin.DeviceInfo.CrossDeviceInfo.Current.Id;
 
     [Obsolete]
-    public static string DevicePlatform => Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform.ToString();
-
-    private void UpdateListView()
-    {
-      //Songs.Sort((t1, t2) => t1.Artist.CompareTo(t2.Artist) * 10 + t1.Title.CompareTo(t2.Title));
-    }
+    public static string DevicePlatform => Xamarin.Essentials.DeviceInfo.Platform;
 
     private void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
-      Navigation.PushModalAsync(new SongPage(e.Item as SongInfo));
-      //Navigation.PushModalAsync(new SongPage2(e.Item as SongInfo));
+      //Navigation.PushModalAsync(new SongPage(e.Item as SongInfo));
+      Navigation.PushModalAsync(new SongPage2(e.Item as SongInfo));
     }
 
     private void CatalogButton_Clicked(object sender, EventArgs e)
@@ -44,7 +39,6 @@ namespace Jammit.Portable
     {
       var song = (sender as MenuItem).BindingContext as SongInfo;
       App.Library.RemoveSong(song.Id);
-      UpdateListView();
     }
 
     private void SettingsButton_Clicked(object sender, EventArgs e)
@@ -57,9 +51,8 @@ namespace Jammit.Portable
     protected override void OnAppearing()
     {
       base.OnAppearing();
-      UpdateListView();
     }
 
-    #endregion
+    #endregion // Events
   }
 }

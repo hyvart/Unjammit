@@ -7,26 +7,31 @@
     <!--<Label Text="LAYOUT ROOT START" BackgroundColor="Orange" />-->
     <StackLayout Orientation="Horizontal" BackgroundColor="Yellow">
       <!--<Label Text="LAYOUT TRACKS START" />-->
-      <Label Text="TITLE" />
-      <Picker x:Name="TrackPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand">
-        <Picker.Items>
+      <Label Text="{Binding Song.Title}" />
+      <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
+              ItemsSource="{Binding Media.Scores}">
+        <!--<Picker.Items>
           <x:String>TRACK 1</x:String>
           <x:String>TRACK 2</x:String>
-        </Picker.Items>
+        </Picker.Items>-->
       </Picker>
       <!--<Label Text="LAYOUT TRACKS END" HorizontalOptions="FillAndExpand" BackgroundColor="DarkGoldenrod" />-->
     </StackLayout>
-    <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Wheat">
+    <RelativeLayout IsClippedToBounds="False" BackgroundColor="Wheat">
       <!--<Label Text="LAYOUT SCORE START" />-->
-      <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" />
+      <StackLayout Orientation="Vertical" HorizontalOptions="Center"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1}">
+        <Image x:Name="ScoreImage" />
+      </StackLayout>
       <!--<Label Text="LAYOUT SCORE END" />-->
-    </StackLayout>
+    </RelativeLayout>
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="Gray" HeightRequest="200">
       <!--<Label Text="LAYOUT CONTROLS START" />-->
       <Image x:Name="AlbumImage"
              BackgroundColor="Aqua"
              HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}"
-             WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}"/>
+             WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}" />
       <!--Mixer-->
       <StackLayout Orientation="Horizontal" BackgroundColor="Fuchsia" HorizontalOptions="FillAndExpand">
         <!--<Label Text="LAYOUT MIXER START" />-->

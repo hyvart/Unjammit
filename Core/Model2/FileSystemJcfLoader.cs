@@ -24,12 +24,32 @@ namespace Jammit.Model2
       string tracksPath = Path.Combine(dataDirectory, "Tracks");
       string songPath = Path.Combine(dataDirectory, "Tracks", $"{guid}".ToUpper() + ".jcf");
 
-      var result = new JcfMedia();
+      var result = new JcfMedia(songPath);
 
       // Load tracks
       LoadTracks(result, songPath);
 
       return result;
+    }
+    //
+
+    public Stream LoadAlbumCover(JcfMedia media)
+    {
+      return File.OpenRead(Path.Combine(media.Path, "cover.jpg"));
+    }
+
+    public Stream LoadNotation(JcfMedia media, ScoreInfo score, uint index)
+    {
+      var trackId = score.Track.Identifier.ToString().ToUpper();
+      var path = Path.Combine(media.Path, trackId) + "_jcf";
+      if ("Score" == score.Type)
+        path += "n_";
+      else if ("Tablature" == score.Type)
+        path += "t_";
+
+      path += string.Format("{0:D2}", index);
+
+      return File.OpenRead(path);
     }
 
     #endregion // IJcfLoader members
@@ -65,11 +85,26 @@ namespace Jammit.Model2
             var tablaturePages  = Directory.GetFiles(songPath, $"{id}_jcft_??").Length;
             if (notationPages + tablaturePages > 0)
             {
-              media.NotatedTracks.Add(new NotatedTrackInfo(source)
+              var notated = new NotatedTrackInfo(source)
               {
                 NotationPages   = (uint)notationPages,
                 TablaturePages  = (uint)tablaturePages
+              };
+              media.NotatedTracks.Add(notated);
+
+              media.Scores.Add(new ScoreInfo()
+              {
+                Track = notated,
+                Type = "Score"
               });
+              if (tablaturePages > 0)
+              {
+                media.Scores.Add(new ScoreInfo()
+                {
+                  Track = notated,
+                  Type = "Tablature"
+                });
+              }
             }
             else
             {
@@ -97,6 +132,6 @@ namespace Jammit.Model2
             break;
         }
       }
-    }
+    } // LoadTracks(JcfMedia, string)
   }
 }

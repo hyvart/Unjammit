@@ -19,14 +19,17 @@ namespace Jammit.Portable
       BindingContext = this;
 
       Song = song;
-      Jcf = App.MediaLoader.LoadMedia(song.Id);
+      Media = App.MediaLoader.LoadMedia(song.Id);
 
       InitializeComponent();
+
+      AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
+      ScoreImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadNotation(Media, Media.Scores[0], 0); });
     }
 
     public SongInfo Song { get; set; }
 
-    public Model2.JcfMedia Jcf { get; set; }
+    public Model2.JcfMedia Media { get; set; }
 
   }
 }

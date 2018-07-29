@@ -6,11 +6,15 @@ namespace Jammit.Model2
 {
   public class JcfMedia
   {
-    public JcfMedia()
+    public JcfMedia(string path)
     {
+      Path = path;
       NotatedTracks = new List<Model.NotatedTrackInfo>();
       BackingTracks = new List<Model.FileTrackInfo>();
+      Scores = new List<ScoreInfo>();
     }
+
+    public string Path { get; private set; }
 
     public IList<Model.NotatedTrackInfo> NotatedTracks { get; private set; }
 
@@ -26,6 +30,6 @@ namespace Jammit.Model2
 
     //TODO: WaveForm?
 
-    //TODO: NotationData
+    public IList<ScoreInfo> Scores { get; private set; }
   }
 }
