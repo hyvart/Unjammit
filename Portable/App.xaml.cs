@@ -21,7 +21,8 @@ namespace Jammit.Portable
       App.FileSystem = fileSystem;
       App.SongPlayerFactory = songPlayerFactory;
 
-      MainPage = new Jammit.Portable.MainPage();
+      //MainPage = new Jammit.Portable.MainPage();
+      MainPage = new Jammit.Portable.SongPage2();
     }
 
     public App(IFileSystem fileSystem) : this(fileSystem, (s) => { return new MockSongPlayer(s); }) {}
