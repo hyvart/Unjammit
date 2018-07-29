@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// JMClickTrack, JMInputTrack
-/// </summary>
 namespace Jammit.Model
 {
-  public class TrackInfo
+  public abstract class TrackInfo
   {
     #region Properties
 
@@ -32,6 +29,9 @@ namespace Jammit.Model
     #endregion
   }
 
+  /// <summary>
+  /// JMClickTrack, JMInputTrack
+  /// </summary>
   public class ConcreteTrackInfo : TrackInfo
   {
     #region Properties
