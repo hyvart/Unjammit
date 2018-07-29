@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 using Jammit.Model;
-using PCLStorage;
 
 namespace Jammit.Portable
 {
@@ -16,7 +15,7 @@ namespace Jammit.Portable
     {
       InitializeComponent();
 
-      this.FilesPath.Text = App.FileSystem.LocalStorage.Path;
+      this.FilesPath.Text = Xamarin.Essentials.FileSystem.AppDataDirectory;
     }
 
     [Obsolete]
