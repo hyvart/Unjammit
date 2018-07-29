@@ -1,43 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Jammit.Portable.SongPage2">
 
   <StackLayout BackgroundColor="Green">
-    <!--<Label Text="LAYOUT ROOT START" BackgroundColor="Orange" />-->
     <StackLayout Orientation="Horizontal" BackgroundColor="Yellow">
-      <!--<Label Text="LAYOUT TRACKS START" />-->
       <Label Text="{Binding Song.Title}" />
       <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
-              ItemsSource="{Binding Media.Scores}">
-        <!--<Picker.Items>
-          <x:String>TRACK 1</x:String>
-          <x:String>TRACK 2</x:String>
-        </Picker.Items>-->
-      </Picker>
-      <!--<Label Text="LAYOUT TRACKS END" HorizontalOptions="FillAndExpand" BackgroundColor="DarkGoldenrod" />-->
+              ItemsSource="{Binding Media.Scores}" />
     </StackLayout>
     <RelativeLayout IsClippedToBounds="False" BackgroundColor="Wheat">
-      <!--<Label Text="LAYOUT SCORE START" />-->
       <StackLayout Orientation="Vertical" HorizontalOptions="Center"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1}">
         <Image x:Name="ScoreImage" />
       </StackLayout>
-      <!--<Label Text="LAYOUT SCORE END" />-->
     </RelativeLayout>
-    <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="Gray" HeightRequest="200">
-      <!--<Label Text="LAYOUT CONTROLS START" />-->
+      <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="Gray" HeightRequest="200">
       <Image x:Name="AlbumImage"
              BackgroundColor="Aqua"
              HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}"
              WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}" />
-      <!--Mixer-->
       <StackLayout Orientation="Horizontal" BackgroundColor="Fuchsia" HorizontalOptions="FillAndExpand">
-        <!--<Label Text="LAYOUT MIXER START" />-->
-        <!--<Label Text="LAYOUT MIXER END" />-->
       </StackLayout>
-      <!--Progress-->
       <StackLayout HorizontalOptions="FillAndExpand">
         <FlexLayout BackgroundColor="Beige">
           <Label Text="00:00" BackgroundColor="Azure" HorizontalOptions="Start" />
@@ -46,7 +31,8 @@
         </FlexLayout>
         <Slider x:Name="PositionSlider"
                 Minimum="0"
-                Maximum="1" />
+                Maximum="1"
+                WidthRequest="10"/>
         <Image x:Name="TimelineImage" BackgroundColor="Aqua" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
           <Button Text="Loop" HorizontalOptions="Center" IsEnabled="False" />
@@ -55,9 +41,7 @@
           <Button Text="&gt;&gt;" HorizontalOptions="Center" IsEnabled="False" />
         </StackLayout>
       </StackLayout>
-      <!--<Label Text="LAYOUT CONTROLS END" />-->
     </StackLayout>
-    <!--<Label Text="LAYOUT ROOT END" BackgroundColor="Brown" />-->
     <Button x:Name="CloseButton" Text="Close" />
   </StackLayout>
 

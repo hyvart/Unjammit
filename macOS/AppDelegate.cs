@@ -39,7 +39,7 @@ namespace Jammit.macOS
         new Jammit.Portable.App(
           FileSystem.Current,
           (s) => { return new MacOSSongPlayer(s); },
-          new Model2.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
+          new Model2.FileSystemJcfLoader(FileSystem.Current.LocalStorage.Path)
         )
       );
       base.DidFinishLaunching(notification);
