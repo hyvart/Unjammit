@@ -82,6 +82,11 @@
         <Grid.RowDefinitions><RowDefinition Height="*" /></Grid.RowDefinitions>
         <Grid.ColumnDefinitions><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
         <StackLayout Orientation="Vertical">
+          <FlexLayout BackgroundColor="Beige">
+            <Label Text="00:00" BackgroundColor="AliceBlue" />
+            <FlexLayout FlexLayout.Grow="1" BackgroundColor="Green" />
+            <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum}" BackgroundColor="AliceBlue" />
+          </FlexLayout>
           <Slider x:Name="PositionSlider"
                   BindingContext="{Binding Player}"
                   Minimum="0"
@@ -108,10 +113,7 @@
         </StackLayout>
       </Grid>
     </Grid>
-    <Button Grid.Row="4"
-            Text="{Binding Source={x:Reference PositionSlider}, Path=Value}"
-            Clicked="SongPage_Close"
-            BackgroundColor="LightGray" />
+    <Button Grid.Row="4" Text="Close" Clicked="SongPage_Close" BackgroundColor="LightGray" />
   </Grid>
 
 </ContentPage>
