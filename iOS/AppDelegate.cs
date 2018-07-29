@@ -26,7 +26,13 @@ namespace Jammit.iOS
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
       global::Xamarin.Forms.Forms.Init();
-      LoadApplication(new Jammit.Portable.App(FileSystem.Current, (s) => { return new IOSSongPlayer(s); }));
+      LoadApplication(
+        new Jammit.Portable.App(
+          FileSystem.Current,
+          (s) => { return new IOSSongPlayer(s); },
+          new Model2.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
+        )
+      );
 
       return base.FinishedLaunching(app, options);
     }

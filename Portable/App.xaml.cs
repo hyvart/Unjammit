@@ -7,12 +7,13 @@ using Xamarin.Forms;
 using PCLStorage;
 using Jammit.Audio;
 using Jammit.Model;
+using Jammit.Model2;
 
 namespace Jammit.Portable
 {
   public partial class App : Application
   {
-    public App(IFileSystem fileSystem, Func<ISong, ISongPlayer> songPlayerFactory)
+    public App(IFileSystem fileSystem, Func<ISong, ISongPlayer> songPlayerFactory, IJcfLoader loader)
     {
       InitializeComponent();
 
@@ -20,12 +21,21 @@ namespace Jammit.Portable
       App.Library = new FolderLibrary(fileSystem.LocalStorage.Path);
       App.FileSystem = fileSystem;
       App.SongPlayerFactory = songPlayerFactory;
+      App.MediaLoader = loader;
 
       MainPage = new Jammit.Portable.MainPage();
-      //MainPage = new Jammit.Portable.SongPage2();
     }
 
-    public App(IFileSystem fileSystem) : this(fileSystem, (s) => { return new MockSongPlayer(s); }) {}
+    public App(Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
+    {
+      App.Client = new Client.RestClient();
+      App.Library = new FolderLibrary(Xamarin.Essentials.FileSystem.AppDataDirectory);
+
+      App.PlayerFactory = playerFactory;
+      App.MediaLoader = loader;
+    }
+
+    public App(IFileSystem fileSystem) : this(fileSystem, (s) => { return new MockSongPlayer(s); }, null) {}
 
     #region Properties
 
@@ -36,6 +46,10 @@ namespace Jammit.Portable
     public static IFileSystem FileSystem { get; private set; }
 
     public static Func<ISong, ISongPlayer> SongPlayerFactory { get; private set; }
+
+    public static Func<JcfMedia, IJcfPlayer> PlayerFactory { get; private set; }
+
+    public static IJcfLoader MediaLoader { get; private set; }
 
     #endregion
 

@@ -26,10 +26,13 @@ namespace Jammit.UWP
       // Defer Loading application until VLC MediaElement is rendered.
       this.Loaded += (sender, e) =>
       {
-        LoadApplication(new Jammit.Portable.App(FileSystem.Current, (s) =>
-        {
-          return new Audio.VlcSongPlayer(s, this.MediaElement);
-        }));
+        LoadApplication(
+          new Jammit.Portable.App(
+            FileSystem.Current,
+            (s) => { return new Audio.VlcSongPlayer(s, this.MediaElement); },
+            new Jammit.Model2.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
+          )
+        );
       };
     }
   }

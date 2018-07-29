@@ -13,9 +13,20 @@ namespace Jammit.Portable
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class SongPage2 : ContentPage
   {
-    public SongPage2 (/*SongInfo song*/)
+    public SongPage2 (SongInfo song)
     {
+      // Needed to actually bind local properties.
+      BindingContext = this;
+
+      Song = song;
+      Jcf = App.MediaLoader.LoadMedia(song.Id);
+
       InitializeComponent();
     }
+
+    public SongInfo Song { get; set; }
+
+    public Model2.JcfMedia Jcf { get; set; }
+
   }
 }
