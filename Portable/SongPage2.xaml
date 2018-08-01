@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Jammit.Portable.Controls"
              x:Class="Jammit.Portable.SongPage2">
 
   <StackLayout BackgroundColor="Green">
@@ -17,7 +18,7 @@
       </Picker>
       <!--<Label Text="LAYOUT TRACKS END" HorizontalOptions="FillAndExpand" BackgroundColor="DarkGoldenrod" />-->
     </StackLayout>
-    <RelativeLayout IsClippedToBounds="False" BackgroundColor="Wheat">
+    <StackLayout BackgroundColor="Wheat">
       <!--<Label Text="LAYOUT SCORE START" />-->
       <StackLayout Orientation="Vertical" HorizontalOptions="Center"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
@@ -25,7 +26,7 @@
         <Image x:Name="ScoreImage" />
       </StackLayout>
       <!--<Label Text="LAYOUT SCORE END" />-->
-    </RelativeLayout>
+    </StackLayout>
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="Gray">
       <!--<Label Text="LAYOUT CONTROLS START" />-->
       <Image x:Name="AlbumImage"
