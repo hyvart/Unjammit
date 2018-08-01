@@ -1,22 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Jammit.Portable.Controls"
              x:Class="Jammit.Portable.SongPage2">
 
   <StackLayout BackgroundColor="Green">
-    <!--<Label Text="LAYOUT ROOT START" BackgroundColor="Orange" />-->
     <StackLayout Orientation="Horizontal" BackgroundColor="Yellow">
-      <!--<Label Text="LAYOUT TRACKS START" />-->
       <Label Text="{Binding Song.Title}" />
       <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
-              ItemsSource="{Binding Media.Scores}">
-        <!--<Picker.Items>
-          <x:String>TRACK 1</x:String>
-          <x:String>TRACK 2</x:String>
-        </Picker.Items>-->
-      </Picker>
-      <!--<Label Text="LAYOUT TRACKS END" HorizontalOptions="FillAndExpand" BackgroundColor="DarkGoldenrod" />-->
+              ItemsSource="{Binding Media.Scores}" />
     </StackLayout>
     <StackLayout BackgroundColor="Wheat">
       <!--<Label Text="LAYOUT SCORE START" />-->
@@ -39,7 +31,6 @@
         <controls:Mixer HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Media="{Binding Media}" />
         <!--<Label Text="LAYOUT MIXER END" />-->
       </StackLayout>
-      <!--Progress-->
       <StackLayout HorizontalOptions="FillAndExpand">
         <FlexLayout BackgroundColor="Beige">
           <Label Text="00:00" BackgroundColor="Azure" HorizontalOptions="Start" />
@@ -48,7 +39,8 @@
         </FlexLayout>
         <Slider x:Name="PositionSlider"
                 Minimum="0"
-                Maximum="1" />
+                Maximum="1"
+                WidthRequest="10"/>
         <Image x:Name="TimelineImage" BackgroundColor="Aqua" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
           <Button Text="Loop" HorizontalOptions="Center" IsEnabled="False" />
@@ -57,9 +49,7 @@
           <Button Text="&gt;&gt;" HorizontalOptions="Center" IsEnabled="False" />
         </StackLayout>
       </StackLayout>
-      <!--<Label Text="LAYOUT CONTROLS END" />-->
     </StackLayout>
-    <!--<Label Text="LAYOUT ROOT END" BackgroundColor="Brown" />-->
     <Button x:Name="CloseButton" Text="Close" />
   </StackLayout>
 
