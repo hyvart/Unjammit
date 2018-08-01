@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Jammit.Model2
+namespace Jammit.Audio
 {
   public interface IJcfPlayer
   {

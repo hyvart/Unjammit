@@ -27,9 +27,21 @@ namespace Jammit.Portable
       ScoreImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadNotation(Media, Media.Scores[0], 0); });
     }
 
+    #region Properties
+
     public SongInfo Song { get; set; }
 
     public Model2.JcfMedia Media { get; set; }
 
+    #endregion
+
+    #region Handlers
+
+    private void PlayButton_Clicked(object sender, EventArgs e)
+    {
+
+    } 
+
+    #endregion
   }
 }
