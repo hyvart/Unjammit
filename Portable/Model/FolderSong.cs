@@ -76,7 +76,7 @@ namespace Jammit.Model
 
           default:
             if (dict.Count == 3)
-              result.Add(new ConcreteTrackInfo()
+              result.Add(new PlayableTrackInfo()
               {
                 Class = classs,
                 Identifier = id,

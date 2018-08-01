@@ -32,7 +32,7 @@ namespace Jammit.Model
   /// <summary>
   /// JMClickTrack, JMInputTrack
   /// </summary>
-  public class ConcreteTrackInfo : TrackInfo
+  public class PlayableTrackInfo : TrackInfo
   {
     #region Properties
 
@@ -49,7 +49,7 @@ namespace Jammit.Model
   /// <summary>
   /// JMFileTrack 
   /// </summary>
-  public class FileTrackInfo : ConcreteTrackInfo
+  public class FileTrackInfo : PlayableTrackInfo
   {
     public override string Class => "JMFileTrack";
 

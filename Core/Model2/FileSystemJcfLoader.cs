@@ -90,7 +90,7 @@ namespace Jammit.Model2
                 NotationPages   = (uint)notationPages,
                 TablaturePages  = (uint)tablaturePages
               };
-              media.NotatedTracks.Add(notated);
+              media.InstrumentTracks.Add(notated);
 
               media.Scores.Add(new ScoreInfo()
               {
@@ -108,7 +108,7 @@ namespace Jammit.Model2
             }
             else
             {
-              media.BackingTracks.Add(source);
+              media.BackingTrack = source;
             }
             break;
 
@@ -118,12 +118,13 @@ namespace Jammit.Model2
               case 2:
                 break;//TODO
               case 3:
-                media.ClickTrack = new ConcreteTrackInfo()
-                {
-                  Class       = type,
-                  Identifier  = guid,
-                  Title       = dict.String("title")
-                };
+                if ("JMClickTrack" == type)
+                  media.ClickTrack = new PlayableTrackInfo()
+                  {
+                    Class       = type,
+                    Identifier  = guid,
+                    Title       = dict.String("title")
+                  };
                 break;
 
               default:

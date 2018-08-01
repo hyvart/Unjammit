@@ -9,16 +9,15 @@ namespace Jammit.Model2
     public JcfMedia(string path)
     {
       Path = path;
-      NotatedTracks = new List<Model.NotatedTrackInfo>();
-      BackingTracks = new List<Model.FileTrackInfo>();
+      InstrumentTracks = new List<Model.NotatedTrackInfo>();
       Scores = new List<ScoreInfo>();
     }
 
     public string Path { get; private set; }
 
-    public IList<Model.NotatedTrackInfo> NotatedTracks { get; private set; }
+    public IList<Model.NotatedTrackInfo> InstrumentTracks { get; }
 
-    public IList<Model.FileTrackInfo> BackingTracks { get; private set; }
+    public Model.FileTrackInfo BackingTrack { get; set; }
 
     public Model.TrackInfo ClickTrack { get; set; }
 

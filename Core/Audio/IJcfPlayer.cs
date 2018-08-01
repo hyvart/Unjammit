@@ -6,5 +6,14 @@ namespace Jammit.Audio
 {
   public interface IJcfPlayer
   {
+    void Play();
+
+    void Pause();
+
+    void Stop();
+
+    TimeSpan Position { get; set; }
+
+    TimeSpan Length { get; }
   }
 }
