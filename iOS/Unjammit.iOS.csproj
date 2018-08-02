@@ -70,6 +70,7 @@
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
     <Compile Include="Audio\IOSSongPlayer.cs" />
+    <Compile Include="Audio\IOSJcfPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
