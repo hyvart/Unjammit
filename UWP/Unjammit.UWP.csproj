@@ -55,6 +55,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Audio\AudioGraphSongPlayer.cs" />
+    <Compile Include="Audio\VlcJcfPlayer.cs" />
     <Compile Include="Audio\VlcSongPlayer.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
