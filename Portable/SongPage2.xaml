@@ -26,9 +26,9 @@
              HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}"
              WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}" />
       <!--Mixer-->
-      <StackLayout BackgroundColor="Fuchsia" HorizontalOptions="FillAndExpand">
+      <StackLayout BackgroundColor="Fuchsia" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <!--<Label Text="LAYOUT MIXER START" />-->
-        <controls:Mixer HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Media="{Binding Media}" />
+        <controls:Mixer Media="{Binding Media}" />
         <!--<Label Text="LAYOUT MIXER END" />-->
       </StackLayout>
       <StackLayout HorizontalOptions="FillAndExpand">

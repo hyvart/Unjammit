@@ -15,7 +15,7 @@ namespace Jammit.Portable.Controls
   {
     public Mixer ()
     {
-      InitializeComponent ();
+      InitializeComponent();
     }
 
     #region Bindable Properties
@@ -40,7 +40,7 @@ namespace Jammit.Portable.Controls
       }
     }
 
-    #endregion
+    #endregion // Properties
 
     #region Events
 
@@ -50,10 +50,14 @@ namespace Jammit.Portable.Controls
 
       if (MediaProperty.PropertyName == propertyName)
       {
-        //TODO: Notify
+        foreach (var track in Media.InstrumentTracks)
+        {
+          ControlsLayout.Children.Add(new Label { Text = track.Title });
+          ControlsLayout.Children.Add(new Slider(0, 100, 50));
+        }
       }
     }
 
-    #endregion
+    #endregion // Events
   }
 }
