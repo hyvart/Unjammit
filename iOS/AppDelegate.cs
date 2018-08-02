@@ -29,7 +29,7 @@ namespace Jammit.iOS
       LoadApplication(
         new Jammit.Portable.App(
           FileSystem.Current,
-          (s) => { return new IOSSongPlayer(s); },
+          (media) => { return new Audio.IOSJcfPlayer(media); },
           new Model2.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
         )
       );
