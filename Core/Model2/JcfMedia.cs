@@ -6,12 +6,15 @@ namespace Jammit.Model2
 {
   public class JcfMedia
   {
-    public JcfMedia(string path)
+    public JcfMedia(Model.SongInfo song, string path)
     {
+      Song = song;
       Path = path;
       InstrumentTracks = new List<Model.NotatedTrackInfo>();
       Scores = new List<ScoreInfo>();
     }
+
+    public Model.SongInfo Song { get; private set; }
 
     public string Path { get; private set; }
 

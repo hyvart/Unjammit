@@ -29,7 +29,7 @@ namespace Jammit.UWP
         LoadApplication(
           new Jammit.Portable.App(
             FileSystem.Current,
-            (s) => { return new Audio.VlcSongPlayer(s, this.MediaElement); },
+            (m) => { return new Audio.VlcJcfPlayer(m, MediaElement); },
             new Jammit.Model2.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
           )
         );

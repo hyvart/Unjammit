@@ -26,13 +26,15 @@ namespace Jammit.Portable
       MainPage = new Jammit.Portable.MainPage();
     }
 
-    public App(Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
+    public App(IFileSystem fileSystem, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
     {
       App.Client = new Client.RestClient();
       App.Library = new FolderLibrary(Xamarin.Essentials.FileSystem.AppDataDirectory);
-
+      App.FileSystem = fileSystem;
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;
+
+      MainPage = new Jammit.Portable.MainPage();
     }
 
     public App(IFileSystem fileSystem) : this(fileSystem, (s) => { return new MockSongPlayer(s); }, null) {}

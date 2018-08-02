@@ -13,13 +13,16 @@ namespace Jammit.Portable
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class SongPage2 : ContentPage
   {
+    Audio.IJcfPlayer Player;
+
     public SongPage2 (SongInfo song)
     {
       // Needed to actually bind local properties.
       BindingContext = this;
 
       Song = song;
-      Media = App.MediaLoader.LoadMedia(song.Id);
+      Media = App.MediaLoader.LoadMedia(song);
+      Player = App.PlayerFactory(Media);
 
       InitializeComponent();
 
@@ -39,7 +42,16 @@ namespace Jammit.Portable
 
     private void PlayButton_Clicked(object sender, EventArgs e)
     {
-
+      if (Audio.PlaybackStatus.Playing == Player.State)
+      {
+        Player.Stop();
+        PlayButton.Text = "Play";
+      }
+      else
+      {
+        Player.Play();
+        PlayButton.Text = "Stop";
+      }
     }
 
     private void CloseButton_Clicked(object sender, EventArgs e)

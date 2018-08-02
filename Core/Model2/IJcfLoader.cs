@@ -6,7 +6,7 @@ namespace Jammit.Model2
 {
   public interface IJcfLoader
   {
-    JcfMedia LoadMedia(Guid guid);
+    JcfMedia LoadMedia(Model.SongInfo song);
 
     System.IO.Stream LoadNotation(JcfMedia media, ScoreInfo track, uint index);
 

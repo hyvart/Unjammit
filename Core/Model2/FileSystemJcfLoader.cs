@@ -19,19 +19,18 @@ namespace Jammit.Model2
 
     #region IJcfLoader members
 
-    public JcfMedia LoadMedia(Guid guid)
+    public JcfMedia LoadMedia(Model.SongInfo song)
     {
       string tracksPath = Path.Combine(dataDirectory, "Tracks");
-      string songPath = Path.Combine(dataDirectory, "Tracks", $"{guid}".ToUpper() + ".jcf");
+      string songPath = Path.Combine(dataDirectory, "Tracks", $"{song.Id}".ToUpper() + ".jcf");
 
-      var result = new JcfMedia(songPath);
+      var result = new JcfMedia(song, songPath);
 
       // Load tracks
       LoadTracks(result, songPath);
 
       return result;
     }
-    //
 
     public Stream LoadAlbumCover(JcfMedia media)
     {
