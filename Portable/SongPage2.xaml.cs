@@ -40,8 +40,13 @@ namespace Jammit.Portable
     private void PlayButton_Clicked(object sender, EventArgs e)
     {
 
-    } 
+    }
 
-    #endregion
+    private void CloseButton_Clicked(object sender, EventArgs e)
+    {
+      Navigation.PopModalAsync();
+    }
+
+    #endregion //Handlers
   }
 }
