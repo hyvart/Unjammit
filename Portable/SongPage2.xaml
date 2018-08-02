@@ -10,7 +10,7 @@
       <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
               ItemsSource="{Binding Media.Scores}" />
     </StackLayout>
-    <StackLayout BackgroundColor="Wheat">
+    <StackLayout BackgroundColor="Wheat" WidthRequest="200">
       <!--<Label Text="LAYOUT SCORE START" />-->
       <StackLayout Orientation="Vertical" HorizontalOptions="Center"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
