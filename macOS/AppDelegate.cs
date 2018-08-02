@@ -38,7 +38,7 @@ namespace Jammit.macOS
       LoadApplication(
         new Jammit.Portable.App(
           FileSystem.Current,
-          (s) => { return new MacOSSongPlayer(s); },
+          (media) => { return new Audio.MacOSJcfPlayer(media); },
           new Model2.FileSystemJcfLoader(FileSystem.Current.LocalStorage.Path)
         )
       );

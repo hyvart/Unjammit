@@ -29,7 +29,7 @@ namespace Jammit.Portable
     public App(IFileSystem fileSystem, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
     {
       App.Client = new Client.RestClient();
-      App.Library = new FolderLibrary(Xamarin.Essentials.FileSystem.AppDataDirectory);
+      App.Library = new FolderLibrary(fileSystem.LocalStorage.Path);
       App.FileSystem = fileSystem;
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;

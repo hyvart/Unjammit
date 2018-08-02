@@ -139,6 +139,7 @@
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Audio\MacOSSongPlayer.cs" />
+    <Compile Include="Audio\MacOSJcfPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">
