@@ -7,9 +7,8 @@ using Xamarin.Forms;
 using PCLStorage;
 using Jammit.Audio;
 using Jammit.Model;
-using Jammit.Model;
 
-namespace Jammit.Portable
+namespace Jammit.Forms
 {
   public partial class App : Application
   {
@@ -23,7 +22,7 @@ namespace Jammit.Portable
       App.SongPlayerFactory = songPlayerFactory;
       App.MediaLoader = loader;
 
-      MainPage = new Jammit.Portable.MainPage();
+      MainPage = new Jammit.Forms.MainPage();
     }
 
     public App(IFileSystem fileSystem, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
@@ -34,7 +33,7 @@ namespace Jammit.Portable
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;
 
-      MainPage = new Jammit.Portable.MainPage();
+      MainPage = new Jammit.Forms.MainPage();
     }
 
     public App(IFileSystem fileSystem) : this(fileSystem, (s) => { return new MockSongPlayer(s); }, null) {}

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 using Jammit.Model;
 
-namespace Jammit.Portable
+namespace Jammit.Forms
 {
   public partial class MainPage : ContentPage
   {

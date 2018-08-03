@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:Jammit.Portable.Controls"
-             x:Class="Jammit.Portable.SongPage2">
+             xmlns:controls="clr-namespace:Jammit.Forms.Controls"
+             x:Class="Jammit.Forms.SongPage2">
 
   <StackLayout BackgroundColor="Green">
     <StackLayout Orientation="Horizontal" BackgroundColor="Yellow">

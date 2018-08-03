@@ -146,9 +146,9 @@
       <Project>{C99DB4A0-9987-45E2-9F9E-D27D09F743CF}</Project>
       <Name>Unjammit.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Portable\Unjammit.Portable.csproj">
+    <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
       <Project>{33FE7079-B3CF-49B3-89C1-165EF78457B4}</Project>
-      <Name>Unjammit.Portable</Name>
+      <Name>Unjammit.Forms</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />

@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 using Jammit.Model;
 
-namespace Jammit.Portable
+namespace Jammit.Forms
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class CatalogPage : ContentPage

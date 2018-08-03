@@ -139,9 +139,9 @@
       <Project>{c99db4a0-9987-45e2-9f9e-d27d09f743cf}</Project>
       <Name>Unjammit.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Portable\Unjammit.Portable.csproj">
+    <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
       <Project>{33fe7079-b3cf-49b3-89c1-165ef78457b4}</Project>
-      <Name>Unjammit.Portable</Name>
+      <Name>Unjammit.Forms</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0' ">

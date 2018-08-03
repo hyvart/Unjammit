@@ -27,7 +27,7 @@ namespace Jammit.iOS
     {
       global::Xamarin.Forms.Forms.Init();
       LoadApplication(
-        new Jammit.Portable.App(
+        new Jammit.Forms.App(
           FileSystem.Current,
           (media) => { return new Audio.IOSJcfPlayer(media); },
           new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)

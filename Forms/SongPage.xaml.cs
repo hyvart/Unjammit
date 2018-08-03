@@ -8,7 +8,7 @@ using Jammit.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Jammit.Portable
+namespace Jammit.Forms
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class SongPage : ContentPage

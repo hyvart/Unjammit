@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Jammit.Portable.Controls
+namespace Jammit.Forms.Controls
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class Mixer : ContentView

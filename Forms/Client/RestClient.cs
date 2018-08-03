@@ -11,7 +11,7 @@ using Plugin.DeviceInfo;
 
 using Xamarin.Forms;
 
-namespace Jammit.Portable.Client
+namespace Jammit.Forms.Client
 {
   class RestClient : BindableObject, IClient
   {

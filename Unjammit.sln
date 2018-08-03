@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unjammit.macOS", "macOS\Unj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unjammit.Core", "Core\Unjammit.Core.csproj", "{C99DB4A0-9987-45E2-9F9E-D27D09F743CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unjammit.Portable", "Portable\Unjammit.Portable.csproj", "{33FE7079-B3CF-49B3-89C1-165EF78457B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unjammit.Forms", "Forms\Unjammit.Forms.csproj", "{33FE7079-B3CF-49B3-89C1-165EF78457B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{06B7F99B-9550-4171-A5EE-A57BE61CA130}"
 	ProjectSection(SolutionItems) = preProject
