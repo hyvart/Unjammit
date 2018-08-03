@@ -71,13 +71,13 @@ namespace Jammit.Forms.Controls
           ControlsLayout.Children.Add(new TrackSlider
           {
             Track = track,
+            Player = this.Player,//KEEP?
             BackgroundColor = Color.DarkCyan
           });
         }
       }
       else if (PlayerProperty.PropertyName == propertyName)
       {
-
       }
     }
 

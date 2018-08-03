@@ -28,7 +28,7 @@
       <!--Mixer-->
       <StackLayout BackgroundColor="Fuchsia" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <!--<Label Text="LAYOUT MIXER START" />-->
-        <controls:Mixer Media="{Binding Media}" Player="{Binding Player}" />
+        <controls:Mixer Player="{Binding Player}" Media="{Binding Media}" />
         <!--<Label Text="LAYOUT MIXER END" />-->
       </StackLayout>
       <StackLayout HorizontalOptions="FillAndExpand">

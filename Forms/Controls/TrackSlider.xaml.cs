@@ -20,8 +20,15 @@ namespace Jammit.Forms.Controls
 
     #region Bindable properties
 
+    //TODO: Analize keeping here.
+    public static readonly BindableProperty PlayerProperty =
+      BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
+
     public static readonly BindableProperty TrackProperty =
       BindableProperty.Create("Track", typeof(Model.PlayableTrackInfo), typeof(Model.PlayableTrackInfo));
+
+    public static readonly BindableProperty VolumeProperty =
+      BindableProperty.Create("Volume", typeof(uint), typeof(uint), (uint)66);
 
     #endregion // Bindable properties
 
@@ -40,6 +47,33 @@ namespace Jammit.Forms.Controls
       }
     }
 
+    public uint Volume
+    {
+      get
+      {
+        return (uint)GetValue(VolumeProperty);
+      }
+
+      set
+      {
+        SetValue(VolumeProperty, value);
+      }
+    }
+
+    //TODO: Keep here?
+    public Audio.IJcfPlayer Player
+    {
+      get
+      {
+        return (Audio.IJcfPlayer)GetValue(PlayerProperty);
+      }
+
+      set
+      {
+        SetValue(PlayerProperty, value);
+      }
+    }
+
     #endregion // Properties
 
     #region Events
@@ -53,6 +87,16 @@ namespace Jammit.Forms.Controls
         //TODO: Bind!
         TitleLabel.Text = Track.Title;
       }
+      else if (VolumeProperty.PropertyName == propertyName)
+      {
+        Player.SetVolume(Track, Volume);
+      }
+    }
+
+    private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+      //TODO: How about setting the track volume right here and drop the Volume property?
+      Volume = (uint)e.NewValue;
     }
 
     #endregion // Events

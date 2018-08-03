@@ -4,8 +4,13 @@
              x:Class="Jammit.Forms.Controls.TrackSlider">
 
   <StackLayout>
-    <Label x:Name="TitleLabel" Text="{Binding Track.Title}" />
-    <Slider Minimum="0" Maximum="100" Value="50" BackgroundColor="LightCyan" />
+    <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" />
+    <Slider x:Name="VolumeSlider"
+            Minimum="0"
+            Maximum="100"
+            Value="{Binding Volume, Mode=OneWayToSource}"
+            ValueChanged="VolumeSlider_ValueChanged"
+            BackgroundColor="LightCyan" />
   </StackLayout>
 
 </ContentView>
