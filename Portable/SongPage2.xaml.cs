@@ -13,8 +13,6 @@ namespace Jammit.Portable
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class SongPage2 : ContentPage
   {
-    Audio.IJcfPlayer Player;
-
     public SongPage2 (SongInfo song)
     {
       // Needed to actually bind local properties.
@@ -35,6 +33,8 @@ namespace Jammit.Portable
     public SongInfo Song { get; set; }
 
     public Model2.JcfMedia Media { get; set; }
+
+    public Audio.IJcfPlayer Player { get; private set; }
 
     #endregion
 

@@ -100,12 +100,12 @@ namespace Jammit.Audio
 
     public uint GetVolume(PlayableTrackInfo track)
     {
-      throw new NotImplementedException();
+      return (uint)mediaElements[track].Volume;
     }
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      throw new NotImplementedException();
+      mediaElements[track].Volume = (int)volume;
     }
 
     public TimeSpan Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

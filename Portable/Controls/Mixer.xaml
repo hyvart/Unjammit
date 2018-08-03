@@ -4,11 +4,11 @@
              x:Class="Jammit.Portable.Controls.Mixer">
 
   <StackLayout x:Name="ControlsLayout" BackgroundColor="Orange">
-    <Label Text="{Binding Media.BackingTrack.Class}" />
-    <Slider Minimum="0" Maximum="100" BackgroundColor="DarkCyan" />
+    <Label Text="{Binding Media.BackingTrack.Title}" />
+    <Slider Minimum="0" Maximum="100" Value="50" BackgroundColor="DarkCyan" />
 
-    <Label Text="{Binding Media.ClickTrack.Class}" />
-    <Slider Minimum="0" Maximum="100" BackgroundColor="LightCyan" />
+    <Label Text="{Binding Media.ClickTrack.Title}" />
+    <Slider Minimum="0" Maximum="100" Value="50" BackgroundColor="LightCyan" />
   </StackLayout>
 
 </ContentView>

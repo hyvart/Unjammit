@@ -13,7 +13,7 @@ namespace Jammit.Portable.Controls
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class Mixer : ContentView
   {
-    public Mixer ()
+    public Mixer()
     {
       InitializeComponent();
     }
@@ -22,6 +22,9 @@ namespace Jammit.Portable.Controls
 
     public static readonly BindableProperty MediaProperty =
       BindableProperty.Create("Media", typeof(Model2.JcfMedia), typeof(Model2.JcfMedia));
+
+    public static readonly BindableProperty PlayerProperty =
+      BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
 
     #endregion // Bindable Properties
 
@@ -37,6 +40,19 @@ namespace Jammit.Portable.Controls
       set
       {
         SetValue(MediaProperty, value);
+      }
+    }
+
+    public Audio.IJcfPlayer Player
+    {
+      get
+      {
+        return (Audio.IJcfPlayer)GetValue(PlayerProperty);
+      }
+
+      set
+      {
+        SetValue(PlayerProperty, value);
       }
     }
 
@@ -56,6 +72,14 @@ namespace Jammit.Portable.Controls
           ControlsLayout.Children.Add(new Slider(0, 100, 50));
         }
       }
+      else if (PlayerProperty.PropertyName == propertyName)
+      {
+
+      }
+    }
+
+    private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
     }
 
     #endregion // Events
