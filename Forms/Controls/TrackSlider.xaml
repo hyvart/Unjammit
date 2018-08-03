@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Jammit.Forms.Controls.TrackSlider">
+
+  <StackLayout>
+    <Label x:Name="TitleLabel" Text="{Binding Track.Title}" />
+    <Slider Minimum="0" Maximum="100" Value="50" BackgroundColor="LightCyan" />
+  </StackLayout>
+
+</ContentView>

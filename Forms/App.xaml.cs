@@ -12,6 +12,7 @@ namespace Jammit.Forms
 {
   public partial class App : Application
   {
+    [Obsolete]
     public App(IFileSystem fileSystem, Func<ISong, ISongPlayer> songPlayerFactory, IJcfLoader loader)
     {
       InitializeComponent();
@@ -36,6 +37,7 @@ namespace Jammit.Forms
       MainPage = new Jammit.Forms.MainPage();
     }
 
+    [Obsolete]
     public App(IFileSystem fileSystem) : this(fileSystem, (s) => { return new MockSongPlayer(s); }, null) {}
 
     #region Properties

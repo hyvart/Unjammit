@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Jammit.Forms.Controls"
              x:Class="Jammit.Forms.Controls.Mixer">
 
   <StackLayout x:Name="ControlsLayout" BackgroundColor="Orange">
-    <Label Text="{Binding Media.BackingTrack.Title}" />
-    <Slider Minimum="0" Maximum="100" Value="50" BackgroundColor="DarkCyan" />
-
-    <Label Text="{Binding Media.ClickTrack.Title}" />
-    <Slider Minimum="0" Maximum="100" Value="50" BackgroundColor="LightCyan" />
+    <controls:TrackSlider Track="{Binding Media.BackingTrack}" BackgroundColor="DarkOliveGreen" />
+    <controls:TrackSlider Track="{Binding Media.ClickTrack}" BackgroundColor="DarkOliveGreen" />
   </StackLayout>
 
 </ContentView>

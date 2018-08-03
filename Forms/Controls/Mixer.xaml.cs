@@ -68,8 +68,11 @@ namespace Jammit.Forms.Controls
       {
         foreach (var track in Media.InstrumentTracks)
         {
-          ControlsLayout.Children.Add(new Label { Text = track.Title });
-          ControlsLayout.Children.Add(new Slider(0, 100, 50));
+          ControlsLayout.Children.Add(new TrackSlider
+          {
+            Track = track,
+            BackgroundColor = Color.DarkCyan
+          });
         }
       }
       else if (PlayerProperty.PropertyName == propertyName)
