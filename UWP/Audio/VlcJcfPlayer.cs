@@ -13,23 +13,34 @@ namespace Jammit.Audio
 {
   public class VlcJcfPlayer : BindableObject, IJcfPlayer
   {
-    private VLC.MediaElement mediaElement;
+    Dictionary<PlayableTrackInfo, VLC.MediaElement> mediaElements;
 
-    public VlcJcfPlayer(Model2.JcfMedia media, VLC.MediaElement mediaElement)
+    public VlcJcfPlayer(Model2.JcfMedia media, VLC.MediaElement backingMediaElement, VLC.MediaElement[] instrumentMediaElements)
     {
-      // Load default track
-      //TODO: Load all tracks.
-      var track = media.InstrumentTracks[0];
+      // Capacity: backing + instruments
+      mediaElements = new Dictionary<PlayableTrackInfo, VLC.MediaElement>(instrumentMediaElements.Length + 1);
+
+      var mediaPath = System.IO.Path.Combine("Tracks", $"{media.Song.Id}.jcf");
+      for(int i=0; i<media.InstrumentTracks.Count; i++)
+      {
+        InitMediaElement(instrumentMediaElements[i], media.InstrumentTracks[i], mediaPath);
+      }
+
+      InitMediaElement(backingMediaElement, media.BackingTrack, mediaPath);
+    }
+
+    private void InitMediaElement(VLC.MediaElement mediaElement, PlayableTrackInfo track, string basePath)
+    {
       var token = "{" + track.Identifier.ToString().ToUpper() + "}";
-      var trackPath = $"Tracks\\{media.Song.Id}.jcf\\{track.Identifier}_jcfx";
+      var trackPath = System.IO.Path.Combine(basePath, $"{track.Identifier}_jcfx");
       var fileTask = Task.Run(async () => await ApplicationData.Current.LocalFolder.GetFileAsync(trackPath));
       fileTask.Wait();
       StorageApplicationPermissions.FutureAccessList.AddOrReplace(token, fileTask.Result);
 
-      // Configure media element
-      this.mediaElement = mediaElement;
-      this.mediaElement.Source = $"winrt://{token}";
-      this.mediaElement.CurrentStateChanged += OnMediaPlayerStateChanged;
+      mediaElement.Source = $"winrt://{token}";
+      mediaElement.CurrentStateChanged += OnMediaPlayerStateChanged;
+
+      mediaElements[track] = mediaElement;
     }
 
     void OnMediaPlayerStateChanged(object sender, Windows.UI.Xaml.RoutedEventArgs eventArgs)
@@ -48,12 +59,16 @@ namespace Jammit.Audio
 
     #region IJcfPlayer members
 
-    public async void Play()
+    public void Play()
     {
       if (PlaybackStatus.Playing == State)
         return;
 
-      mediaElement.Play();
+      foreach (var element in mediaElements.Values)
+      {
+        element.Play();
+      }
+
       State = PlaybackStatus.Playing;
     }
 
@@ -62,7 +77,11 @@ namespace Jammit.Audio
       if (PlaybackStatus.Paused == State)
         return;
 
-      mediaElement.Pause();
+      foreach (var element in mediaElements.Values)
+      {
+        element.Pause();
+      }
+
       State = PlaybackStatus.Paused;
     }
 
@@ -71,7 +90,11 @@ namespace Jammit.Audio
       if (PlaybackStatus.Stopped == State)
         return;
 
-      mediaElement.Stop();
+      foreach (var element in mediaElements.Values)
+      {
+        element.Stop();
+      }
+
       State = PlaybackStatus.Stopped;
     }
 
