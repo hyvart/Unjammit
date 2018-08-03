@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Jammit.Model2
 {
-  public class JcfMedia
+  public class JcfMedia : IComparable<JcfMedia>
   {
     public JcfMedia(Model.SongInfo song, string path)
     {
@@ -33,5 +33,14 @@ namespace Jammit.Model2
     //TODO: WaveForm?
 
     public IList<ScoreInfo> Scores { get; private set; }
+
+    #region IComparable members
+
+    public int CompareTo(JcfMedia other)
+    {
+      return Song.Id.CompareTo(other.Song.Id);
+    }
+
+    #endregion
   }
 }
