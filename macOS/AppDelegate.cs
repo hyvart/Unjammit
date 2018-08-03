@@ -39,7 +39,7 @@ namespace Jammit.macOS
         new Jammit.Portable.App(
           FileSystem.Current,
           (media) => { return new Audio.MacOSJcfPlayer(media); },
-          new Model2.FileSystemJcfLoader(FileSystem.Current.LocalStorage.Path)
+          new Model.FileSystemJcfLoader(FileSystem.Current.LocalStorage.Path)
         )
       );
       base.DidFinishLaunching(notification);

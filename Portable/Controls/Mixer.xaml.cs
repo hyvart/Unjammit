@@ -21,7 +21,7 @@ namespace Jammit.Portable.Controls
     #region Bindable Properties
 
     public static readonly BindableProperty MediaProperty =
-      BindableProperty.Create("Media", typeof(Model2.JcfMedia), typeof(Model2.JcfMedia));
+      BindableProperty.Create("Media", typeof(Model.JcfMedia), typeof(Model.JcfMedia));
 
     public static readonly BindableProperty PlayerProperty =
       BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
@@ -30,11 +30,11 @@ namespace Jammit.Portable.Controls
 
     #region Properties
 
-    public Model2.JcfMedia Media
+    public Model.JcfMedia Media
     {
       get
       {
-        return (Model2.JcfMedia)GetValue(MediaProperty);
+        return (Model.JcfMedia)GetValue(MediaProperty);
       }
 
       set

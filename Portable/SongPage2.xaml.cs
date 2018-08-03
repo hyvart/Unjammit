@@ -32,7 +32,7 @@ namespace Jammit.Portable
 
     public SongInfo Song { get; set; }
 
-    public Model2.JcfMedia Media { get; set; }
+    public Model.JcfMedia Media { get; set; }
 
     public Audio.IJcfPlayer Player { get; private set; }
 

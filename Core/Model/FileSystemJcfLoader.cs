@@ -6,7 +6,7 @@ using System.Linq;
 using Claunia.PropertyList;
 using Jammit.Model;
 
-namespace Jammit.Model2
+namespace Jammit.Model
 {
   public class FileSystemJcfLoader : IJcfLoader
   {

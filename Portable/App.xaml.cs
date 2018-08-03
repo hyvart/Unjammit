@@ -7,7 +7,7 @@ using Xamarin.Forms;
 using PCLStorage;
 using Jammit.Audio;
 using Jammit.Model;
-using Jammit.Model2;
+using Jammit.Model;
 
 namespace Jammit.Portable
 {

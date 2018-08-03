@@ -11,7 +11,7 @@ namespace Jammit.Audio
   {
     #region private members
 
-    private Model2.JcfMedia media;
+    private Model.JcfMedia media;
     private AVAudioPlayer player;
 
     private void ActivateAudioSession()
@@ -33,7 +33,7 @@ namespace Jammit.Audio
 
     #endregion // private members
 
-    public IOSJcfPlayer(Model2.JcfMedia media)
+    public IOSJcfPlayer(Model.JcfMedia media)
     {
       this.media = media;
     }

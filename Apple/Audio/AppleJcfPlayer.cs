@@ -4,8 +4,14 @@ using System.Text;
 
 namespace Jammit.Audio
 {
-  public class AVFoundationJcfPlayer : IJcfPlayer
+  public class AppleJcfPlayer : IJcfPlayer
   {
+    #region private members
+
+
+
+    #endregion // private members
+
     #region IJcfPlayer members
 
     public void Play()

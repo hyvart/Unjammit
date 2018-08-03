@@ -15,7 +15,7 @@ namespace Jammit.Audio
   {
     Dictionary<PlayableTrackInfo, VLC.MediaElement> mediaElements;
 
-    public VlcJcfPlayer(Model2.JcfMedia media, VLC.MediaElement backingMediaElement, VLC.MediaElement[] instrumentMediaElements)
+    public VlcJcfPlayer(Model.JcfMedia media, VLC.MediaElement backingMediaElement, VLC.MediaElement[] instrumentMediaElements)
     {
       // Capacity: backing + instruments
       mediaElements = new Dictionary<PlayableTrackInfo, VLC.MediaElement>(instrumentMediaElements.Length + 1);

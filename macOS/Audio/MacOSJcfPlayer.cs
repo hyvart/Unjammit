@@ -12,11 +12,11 @@ namespace Jammit.Audio
     #region private members
 
     private AVAudioPlayer player;
-    private Model2.JcfMedia media;
+    private Model.JcfMedia media;
 
     #endregion
 
-    public MacOSJcfPlayer(Model2.JcfMedia media)
+    public MacOSJcfPlayer(Model.JcfMedia media)
     {
       this.media = media;
     }
