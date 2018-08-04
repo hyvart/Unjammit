@@ -18,7 +18,6 @@ namespace Jammit.Audio
       NSError err;
       player = AVAudioPlayer.FromData(NSData.FromStream(stream), out err);
 
-      player.Volume = 0.66f;//TODO: Remove.
       player.FinishedPlaying += delegate {
         player.Dispose();
         player = null;
@@ -56,12 +55,12 @@ namespace Jammit.Audio
     {
       get
       {
-        return (int)player.Volume;
+        return player.Volume;
       }
 
       set
       {
-        player.NumberOfLoops = (nint)value;
+        player.Volume = value;
       }
     }
 

@@ -79,7 +79,7 @@ namespace Jammit.Audio
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      players[track].Volume = volume;
+      players[track].Volume = volume / 100.0f;
     }
 
     public TimeSpan Position { get; set; }
