@@ -6,6 +6,7 @@ using Jammit.Model;
 
 namespace Jammit.Audio.iOS
 {
+  [Obsolete]
   public class IOSSongPlayer : ISongPlayer
   {
     #region Private members

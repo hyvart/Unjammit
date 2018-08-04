@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 using Jammit.Model;
 
@@ -11,15 +12,22 @@ namespace Jammit.Audio
   {
     #region private members
 
-    private JcfMedia media;
-    private IAVAudioPlayer player;
+    JcfMedia media;
+    Dictionary<PlayableTrackInfo, IAVAudioPlayer> players;
 
     #endregion // private members
 
-    public AppleJcfPlayer(JcfMedia media, IAVAudioPlayer player)
+    public AppleJcfPlayer(JcfMedia media, Func<PlayableTrackInfo, Stream, IAVAudioPlayer> playerFactory)
     {
+      this.players = new Dictionary<PlayableTrackInfo, IAVAudioPlayer>(media.InstrumentTracks.Count + 1);
       this.media = media;
-      this.player = player;
+
+      foreach (var track in media.InstrumentTracks)
+      {
+        players[track] = playerFactory(track, File.OpenRead(Path.Combine(media.Path, $"{track.Identifier}_jcfx")));
+      }
+
+      players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier}_jcfx")));
     }
 
     #region IJcfPlayer members
@@ -29,25 +37,10 @@ namespace Jammit.Audio
       if (PlaybackStatus.Playing == State)
         return;
 
-      // Dispose any existing playback.
-      if (player != null)
+      foreach (var player in players.Values)
       {
-        player.Stop();
-        player.Dispose();
+        player.Play();
       }
-
-      var track = media.InstrumentTracks[0];
-      var path = Path.Combine(media.Path, $"{track.Identifier}_jcfx");
-      var stream = File.OpenRead(path);
-
-      //TODO: Load stream into player.
-      //player = AVAudioPlayer.FromData(NSData.FromStream(stream), out err);
-      player.Volume = 0.50f;
-      //TODO: //player.FinishedPlaying += delegate
-      player.NumberOfLoops = 1;
-
-      Length = TimeSpan.FromSeconds(player.Duration);
-      player.Play();
 
       State = PlaybackStatus.Playing;
     }
@@ -65,23 +58,28 @@ namespace Jammit.Audio
       if (PlaybackStatus.Stopped == State)
         return;
 
-      if (player == null)
+      foreach (var player in players.Values)
       {
+        if (player == null)
+        {
+          player.Stop();
+          player.Dispose();
+        }
+
         player.Stop();
-        player.Dispose();
       }
 
       State = PlaybackStatus.Stopped;
     }
 
-    public uint GetVolume(Model.PlayableTrackInfo track)
+    public uint GetVolume(PlayableTrackInfo track)
     {
-      throw new NotImplementedException();
+      return (uint)players[track].Volume;
     }
 
-    public void SetVolume(Model.PlayableTrackInfo track, uint volume)
+    public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      throw new NotImplementedException();
+      players[track].Volume = volume;
     }
 
     public TimeSpan Position { get; set; }

@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 namespace Jammit.Audio
 {
+  [Obsolete]
   public class IOSJcfPlayer : BindableObject, IJcfPlayer
   {
     #region private members

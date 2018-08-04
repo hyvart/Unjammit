@@ -8,7 +8,7 @@ namespace Jammit.Model
   {
     JcfMedia LoadMedia(Model.SongInfo song);
 
-    System.IO.Stream LoadNotation(JcfMedia media, ScoreInfo track, uint index);
+    System.IO.Stream LoadNotation(JcfMedia media, ScoreInfo score, uint index);
 
     System.IO.Stream LoadAlbumCover(JcfMedia media);
   }

@@ -6,8 +6,6 @@ using Foundation;
 using PCLStorage;
 using UIKit;
 
-using Jammit.Audio.iOS;
-
 namespace Jammit.iOS
 {
   // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -29,7 +27,13 @@ namespace Jammit.iOS
       LoadApplication(
         new Jammit.Forms.App(
           FileSystem.Current,
-          (media) => { return new Audio.IOSJcfPlayer(media); },
+          (media) =>
+          {
+            return new Audio.AppleJcfPlayer(media, (track, stream) =>
+            {
+              return new Audio.IOSAVAudioPlayer(track, stream);
+            });
+          },
           new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
         )
       );
