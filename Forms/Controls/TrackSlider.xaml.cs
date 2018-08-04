@@ -16,6 +16,9 @@ namespace Jammit.Forms.Controls
     public TrackSlider()
     {
       InitializeComponent();
+
+      //TODO: Inject by property only
+      VolumeSlider.Value = VolumeSlider.Maximum;
     }
 
     #region Bindable properties
@@ -28,7 +31,7 @@ namespace Jammit.Forms.Controls
       BindableProperty.Create("Track", typeof(Model.PlayableTrackInfo), typeof(Model.PlayableTrackInfo));
 
     public static readonly BindableProperty VolumeProperty =
-      BindableProperty.Create("Volume", typeof(uint), typeof(uint), (uint)66);
+      BindableProperty.Create("Volume", typeof(uint), typeof(uint), (uint)100);
 
     #endregion // Bindable properties
 

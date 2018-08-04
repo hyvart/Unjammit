@@ -24,6 +24,10 @@ namespace Jammit.iOS
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
       global::Xamarin.Forms.Forms.Init();
+
+      // Audio options
+      NSError error = AVFoundation.AVAudioSession.SharedInstance().SetCategory(AVFoundation.AVAudioSessionCategory.Playback);
+
       LoadApplication(
         new Jammit.Forms.App(
           FileSystem.Current,
