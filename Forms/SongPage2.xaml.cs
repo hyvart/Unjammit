@@ -25,7 +25,7 @@ namespace Jammit.Forms
       InitializeComponent();
 
       AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
-      ScoreImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadNotation(Media, Media.Scores[0], 0); });
+      //ScoreImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadNotation(Media, Media.Scores[0], 0); });
     }
 
     #region Properties
@@ -56,6 +56,8 @@ namespace Jammit.Forms
 
     private void CloseButton_Clicked(object sender, EventArgs e)
     {
+      Player.Stop();
+
       Navigation.PopModalAsync();
     }
 

@@ -24,6 +24,8 @@ namespace Jammit.Audio
         player = null;
       };
       player.NumberOfLoops = 1;
+
+      player.PrepareToPlay();
     }
 
     #region IAvAudioPlayer members

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Jammit.Forms.Controls"
@@ -6,7 +6,7 @@
 
   <StackLayout x:Name="ControlsLayout" BackgroundColor="Orange">
     <controls:TrackSlider Player="{Binding Player}" Track="{Binding Media.BackingTrack}" BackgroundColor="DarkOliveGreen" />
-    <controls:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}" BackgroundColor="DarkOliveGreen" />
+    <controls:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}" BackgroundColor="DarkOliveGreen" IsEnabled="false" />
   </StackLayout>
 
 </ContentView>

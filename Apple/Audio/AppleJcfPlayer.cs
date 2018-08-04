@@ -24,10 +24,10 @@ namespace Jammit.Audio
 
       foreach (var track in media.InstrumentTracks)
       {
-        players[track] = playerFactory(track, File.OpenRead(Path.Combine(media.Path, $"{track.Identifier}_jcfx")));
+        players[track] = playerFactory(track, File.OpenRead(Path.Combine(media.Path, $"{track.Identifier.ToString().ToUpper()}_jcfx")));
       }
 
-      players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier}_jcfx")));
+      players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx")));
     }
 
     #region IJcfPlayer members

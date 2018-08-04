@@ -72,17 +72,14 @@ namespace Jammit.Forms.Controls
           {
             Track = track,
             Player = this.Player,//KEEP?
-            BackgroundColor = Color.DarkCyan
+            BackgroundColor = Color.DarkCyan,
+            Volume = 50
           });
         }
       }
       else if (PlayerProperty.PropertyName == propertyName)
       {
       }
-    }
-
-    private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
-    {
     }
 
     #endregion // Events

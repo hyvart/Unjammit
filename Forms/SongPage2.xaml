@@ -15,7 +15,7 @@
       <StackLayout Orientation="Vertical" HorizontalOptions="Center"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1}">
-        <Image x:Name="ScoreImage" />
+        <!--<Image x:Name="ScoreImage" />-->
       </StackLayout>
       <!--<Label Text="LAYOUT SCORE END" />-->
     </StackLayout>
