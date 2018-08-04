@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:Jammit.Forms.Controls"
              x:Class="Jammit.Forms.SongPage2">
 
-  <StackLayout BackgroundColor="Green">
+  <StackLayout BackgroundColor="Silver">
     <StackLayout Orientation="Horizontal" BackgroundColor="Yellow">
       <Label Text="{Binding Song.Title}" />
       <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
