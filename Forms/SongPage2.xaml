@@ -19,7 +19,7 @@
       </StackLayout>
       <!--<Label Text="LAYOUT SCORE END" />-->
     </StackLayout>
-    <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="Gray">
+    <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray">
       <!--<Label Text="LAYOUT CONTROLS START" />-->
       <Image x:Name="AlbumImage"
              BackgroundColor="Aqua"
@@ -45,12 +45,12 @@
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
           <Button Text="Loop" HorizontalOptions="Center" IsEnabled="False" />
           <Button Text="&lt;&lt;" HorizontalOptions="Center" IsEnabled="False" />
-          <Button x:Name="PlayButton" Text="Play" HorizontalOptions="Center" Clicked="PlayButton_Clicked" />
+          <Button x:Name="PlayButton" Text="Play" HorizontalOptions="Center" Clicked="PlayButton_Clicked" BackgroundColor="LightGray" />
           <Button Text="&gt;&gt;" HorizontalOptions="Center" IsEnabled="False" />
         </StackLayout>
       </StackLayout>
     </StackLayout>
-    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
+    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" BackgroundColor="LightGray" />
   </StackLayout>
 
 </ContentPage>
