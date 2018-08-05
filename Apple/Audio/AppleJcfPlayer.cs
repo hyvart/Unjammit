@@ -92,7 +92,21 @@ namespace Jammit.Audio
       players[track].Volume = volume / 100.0f;
     }
 
-    public TimeSpan Position { get; set; }
+    public TimeSpan Position
+    {
+      get
+      {
+        return TimeSpan.FromSeconds(players[media.BackingTrack].CurrentTime);
+      }
+
+      set
+      {
+        foreach (var player in players.Values)
+        {
+          player.CurrentTime = value.TotalSeconds;
+        }
+      }
+    }
 
     public TimeSpan Length
     {

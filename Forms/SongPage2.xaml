@@ -39,6 +39,7 @@
         </FlexLayout>
         <Slider x:Name="PositionSlider"
                 Minimum="0"
+                ValueChanged="PositionSlider_ValueChanged"
                 WidthRequest="10"/>
         <Image x:Name="TimelineImage" BackgroundColor="Aqua" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">

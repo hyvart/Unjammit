@@ -81,6 +81,11 @@ namespace Jammit.Forms
       Navigation.PopModalAsync();
     }
 
+    void PositionSlider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
+    {
+      Player.Position = TimeSpan.FromSeconds(e.NewValue);
+    }
+
     #endregion //Handlers
   }
 }
