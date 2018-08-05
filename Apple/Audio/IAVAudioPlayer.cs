@@ -16,6 +16,8 @@ namespace Jammit.Audio
 
     double Duration { get; }
 
+    double CurrentTime { get; set; }
+
     float Volume { get; set; }
 
     int NumberOfLoops { get; set; }

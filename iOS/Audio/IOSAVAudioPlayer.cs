@@ -51,6 +51,19 @@ namespace Jammit.Audio
 
     public double Duration => player.Duration;
 
+    public double CurrentTime
+    {
+      get
+      {
+        return player.CurrentTime;
+      }
+
+      set
+      {
+        player.CurrentTime = value;
+      }
+    }
+
     public float Volume
     {
       get
