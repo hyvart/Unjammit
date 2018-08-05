@@ -33,13 +33,12 @@
       </StackLayout>
       <StackLayout HorizontalOptions="FillAndExpand">
         <FlexLayout BackgroundColor="Beige">
-          <Label Text="00:00" BackgroundColor="Azure" HorizontalOptions="Start" />
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, StringFormat='{0:000}'}" BackgroundColor="Azure" HorizontalOptions="Start" />
           <FlexLayout FlexLayout.Grow="1" />
-          <Label Text="99:99" BackgroundColor="Azure" HorizontalOptions="End" />
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, StringFormat='{0:000}'}" BackgroundColor="LightBlue" HorizontalOptions="End" />
         </FlexLayout>
         <Slider x:Name="PositionSlider"
                 Minimum="0"
-                Maximum="1"
                 WidthRequest="10"/>
         <Image x:Name="TimelineImage" BackgroundColor="Aqua" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">

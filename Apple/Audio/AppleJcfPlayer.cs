@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Jammit.Model;
+using Xamarin.Forms;
 
 namespace Jammit.Audio
 {
-  public class AppleJcfPlayer : IJcfPlayer
+  public class AppleJcfPlayer : Xamarin.Forms.BindableObject, IJcfPlayer
   {
     #region private members
 
@@ -28,7 +29,16 @@ namespace Jammit.Audio
       }
 
       players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx")));
+
+      Length = TimeSpan.FromSeconds(players[media.BackingTrack].Duration);
     }
+
+    #region Bindable properties
+
+    public static readonly BindableProperty LengthProperty =
+      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(10), BindingMode.OneWayToSource);
+
+    #endregion
 
     #region IJcfPlayer members
 
@@ -84,7 +94,18 @@ namespace Jammit.Audio
 
     public TimeSpan Position { get; set; }
 
-    public TimeSpan Length { get; private set; }
+    public TimeSpan Length
+    {
+      get
+      {
+        return (TimeSpan)GetValue(LengthProperty);
+      }
+
+      private set
+      {
+        SetValue(LengthProperty, value);
+      }
+    }
 
     public PlaybackStatus State { get; private set; }
 

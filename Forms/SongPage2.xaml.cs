@@ -24,9 +24,17 @@ namespace Jammit.Forms
 
       InitializeComponent();
 
+      PositionSlider.Maximum = Player.Length.TotalSeconds;//TODO: Bind!!!
+
       AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
-      //ScoreImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadNotation(Media, Media.Scores[0], 0); });
     }
+
+    // #region Binding properties
+
+    // public static readonly BindableProperty PlayerProperty =
+    //   BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
+
+    // #endregion // Binding properties
 
     #region Properties
 
@@ -35,6 +43,18 @@ namespace Jammit.Forms
     public Model.JcfMedia Media { get; set; }
 
     public Audio.IJcfPlayer Player { get; private set; }
+    // public Audio.IJcfPlayer Player
+    // {
+    //   get
+    //   {
+    //     return (Audio.IJcfPlayer)GetValue(PlayerProperty);
+    //   }
+
+    //   private set
+    //   {
+    //     SetValue(PlayerProperty, value);
+    //   }
+    // }
 
     #endregion
 
