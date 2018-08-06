@@ -24,9 +24,9 @@
 	<key>CFBundleDisplayName</key>
 	<string>Unjammit!</string>
 	<key>CFBundleIdentifier</key>
-	<string>rip.jammit.mobile</string>
+	<string>com.unjammit.player</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>0.0.0.1</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
