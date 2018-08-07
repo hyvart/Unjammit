@@ -20,7 +20,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>11.4</string>
+	<string>9.3</string>
 	<key>CFBundleDisplayName</key>
 	<string>Unjammit!</string>
 	<key>CFBundleIdentifier</key>
