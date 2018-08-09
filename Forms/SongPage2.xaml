@@ -17,11 +17,11 @@
         <!--<Image x:Name="ScoreImage" />-->
       </StackLayout>
     </StackLayout>
-    <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" HeightRequest="200">
+    <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
       <Image x:Name="AlbumImage"
              BackgroundColor="Aqua"
-             HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}"
-             WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=HeightRequest}" />
+             HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
+             WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
       <controls:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
       <StackLayout HorizontalOptions="FillAndExpand">
         <FlexLayout BackgroundColor="Beige">
