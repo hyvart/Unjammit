@@ -4,7 +4,7 @@
              x:Class="Jammit.Forms.Controls.TrackSlider">
 
   <StackLayout Orientation="Horizontal">
-    <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" WidthRequest="66" />
+    <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" />
     <Slider x:Name="VolumeSlider"
             Minimum="0"
             Maximum="100"

@@ -17,6 +17,9 @@ namespace Jammit.Forms.Controls
     {
       InitializeComponent();
 
+      TitleLabel.WidthRequest = 66;
+      VolumeSlider.WidthRequest = 300;
+
       //TODO: Inject by property only
       VolumeSlider.Value = VolumeSlider.Maximum;
     }
