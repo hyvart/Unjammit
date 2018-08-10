@@ -55,6 +55,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Audio\AudioGraphSongPlayer.cs" />
+    <Compile Include="Audio\FFmpegJcfPlayer.cs" />
     <Compile Include="Audio\VlcJcfPlayer.cs" />
     <Compile Include="Audio\VlcSongPlayer.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -112,6 +113,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FFmpegInterop.UWP">
+      <Version>1.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.1.7</Version>
     </PackageReference>

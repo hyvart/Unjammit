@@ -11,7 +11,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
   <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-    <vlc:MediaElement Name="MediaElement1"
+    <!--<vlc:MediaElement Name="MediaElement1"
                       AreTransportControlsEnabled="True"
                       HardwareAcceleration="False"
                       AutoPlay="False">
@@ -23,6 +23,6 @@
     <vlc:MediaElement Name="MediaElement3"
                       AreTransportControlsEnabled="True"
                       HardwareAcceleration="False"
-                      AutoPlay="False" />
+                      AutoPlay="False" />-->
   </StackPanel>
 </forms:WindowsPage>
