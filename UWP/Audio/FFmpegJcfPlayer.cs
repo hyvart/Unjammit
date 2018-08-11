@@ -54,16 +54,10 @@ namespace Jammit.Audio
       }
       InitPlayer(media.BackingTrack, mediaPath);
 
-      if (_mediaTimelineController.Duration.HasValue)
-        Length = _mediaTimelineController.Duration.Value;
-      else
-        Length = _players[media.BackingTrack].PlaybackSession.NaturalDuration;
+      Length = media.Length;
     }
 
     #region Bindable Properties
-
-    public static readonly BindableProperty LengthProperty =
-      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(100), BindingMode.OneWayToSource);
 
     public static readonly BindableProperty PositionProperty =
       BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);
@@ -125,18 +119,7 @@ namespace Jammit.Audio
       }
     }
 
-    public TimeSpan Length
-    {
-      get
-      {
-        return (TimeSpan)GetValue(LengthProperty);
-      }
-
-      set
-      {
-        SetValue(LengthProperty, value);
-      }
-    }
+    public TimeSpan Length { get; private set; }
 
     public PlaybackStatus State { get; private set; }
 

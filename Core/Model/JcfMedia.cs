@@ -24,6 +24,8 @@ namespace Jammit.Model
 
     public Model.TrackInfo ClickTrack { get; set; }
 
+    public TimeSpan Length { get; set; }
+
     //TODO: EmptyTrack, InputTrack
 
     //TODO: Beat

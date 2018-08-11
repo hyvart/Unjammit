@@ -26,6 +26,12 @@ namespace Jammit.Model
 
       var result = new JcfMedia(song, songPath);
 
+      // Load length
+      var beatArray = PropertyListParser.Parse(Path.Combine(songPath, "beats.plist")) as NSArray;
+      var dictionary = beatArray[beatArray.Count - 1] as NSDictionary;
+      var position = dictionary.Double("position") ?? 0;
+      result.Length = TimeSpan.FromSeconds(position);
+
       // Load tracks
       LoadTracks(result, songPath);
 

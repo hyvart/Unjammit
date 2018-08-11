@@ -29,14 +29,9 @@ namespace Jammit.Audio
       }
 
       players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx")));
-
-      Length = TimeSpan.FromSeconds(players[media.BackingTrack].Duration);
     }
 
     #region Bindable properties
-
-    public static readonly BindableProperty LengthProperty =
-      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(10), BindingMode.OneWayToSource);
 
     #endregion
 
@@ -108,18 +103,7 @@ namespace Jammit.Audio
       }
     }
 
-    public TimeSpan Length
-    {
-      get
-      {
-        return (TimeSpan)GetValue(LengthProperty);
-      }
-
-      private set
-      {
-        SetValue(LengthProperty, value);
-      }
-    }
+    public TimeSpan Length => media.Length;
 
     public PlaybackStatus State { get; private set; }
 
