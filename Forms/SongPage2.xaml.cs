@@ -24,17 +24,23 @@ namespace Jammit.Forms
 
       InitializeComponent();
 
-      PositionSlider.Maximum = Player.Length.TotalSeconds;//TODO: Bind!!!
+      //TODO: Move to XAML?
+      //TODO: Why is it still needed?
+      PositionSlider.SetBinding(
+        Slider.ValueProperty,
+        new Binding(
+          nameof(Player.Position),
+          BindingMode.TwoWay));
+
+      Player.PositionChanged += (player, args) =>
+      {
+        var newPosition = (player as Audio.IJcfPlayer).Position;
+        if (newPosition.TotalSeconds != PositionSlider.Value)
+          PositionSlider.Value = newPosition.TotalSeconds;
+      };
 
       AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
     }
-
-    // #region Binding properties
-
-    // public static readonly BindableProperty PlayerProperty =
-    //   BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
-
-    // #endregion // Binding properties
 
     #region Properties
 
@@ -43,18 +49,6 @@ namespace Jammit.Forms
     public Model.JcfMedia Media { get; set; }
 
     public Audio.IJcfPlayer Player { get; private set; }
-    // public Audio.IJcfPlayer Player
-    // {
-    //   get
-    //   {
-    //     return (Audio.IJcfPlayer)GetValue(PlayerProperty);
-    //   }
-
-    //   private set
-    //   {
-    //     SetValue(PlayerProperty, value);
-    //   }
-    // }
 
     #endregion
 

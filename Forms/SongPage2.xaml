@@ -31,8 +31,9 @@
         </FlexLayout>
         <Slider x:Name="PositionSlider"
                 Minimum="0"
+                Maximum="{Binding Player.Length.TotalSeconds}"
                 ValueChanged="PositionSlider_ValueChanged"
-                WidthRequest="10"/>
+                WidthRequest="10" />
         <Image x:Name="TimelineImage" BackgroundColor="Aqua" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
           <Button Text="Loop" HorizontalOptions="Center" IsEnabled="False" />

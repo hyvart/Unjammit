@@ -37,6 +37,8 @@ namespace Jammit.Audio
 
     #region IJcfPlayer members
 
+    public event EventHandler PositionChanged;
+
     public void Play()
     {
       if (PlaybackStatus.Playing == State)

@@ -21,5 +21,7 @@ namespace Jammit.Audio
     TimeSpan Length { get; }
 
     PlaybackStatus State { get; }
+
+    event EventHandler PositionChanged;
   }
 }

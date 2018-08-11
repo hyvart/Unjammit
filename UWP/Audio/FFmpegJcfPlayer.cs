@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace Jammit.Audio
 {
-  public class FFmpegJcfPlayer : BindableObject, IJcfPlayer
+  public class FFmpegJcfPlayer : IJcfPlayer
   {
     #region private members
 
@@ -44,7 +44,11 @@ namespace Jammit.Audio
       _mediaTimelineController = new MediaTimelineController();
       _mediaTimelineController.PositionChanged += (sender, args) =>
       {
-        SetValue(PositionProperty, sender.Position);
+
+        Device.BeginInvokeOnMainThread(() =>
+        {
+          PositionChanged?.Invoke(this, new EventArgs());
+        });
       };
       var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
 
@@ -59,12 +63,11 @@ namespace Jammit.Audio
 
     #region Bindable Properties
 
-    public static readonly BindableProperty PositionProperty =
-      BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);
-
     #endregion // Bindable Properties
 
     #region IJcfPlayer members
+
+    public event EventHandler PositionChanged;
 
     public void Play()
     {
@@ -110,7 +113,7 @@ namespace Jammit.Audio
     {
       get
       {
-        return (TimeSpan)GetValue(PositionProperty);
+        return _mediaTimelineController.Position;
       }
 
       set
