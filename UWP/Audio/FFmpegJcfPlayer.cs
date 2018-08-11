@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Jammit.Model;
+using Windows.Media;
 using Windows.Media.Core;
 using Windows.Media.Playback;
 using Xamarin.Forms;
-
-using Windows.Storage;
 
 namespace Jammit.Audio
 {
@@ -17,16 +16,23 @@ namespace Jammit.Audio
   {
     #region private members
 
-    Dictionary<PlayableTrackInfo, MediaPlayer> _players;
+    private Dictionary<PlayableTrackInfo, MediaPlayer> _players;
+
+    private MediaTimelineController _mediaTimelineController;
 
     private void InitPlayer(PlayableTrackInfo track, string mediaPath)
     {
-      var uri = $"{mediaPath}/{track.Identifier.ToString().ToUpper()}_jcfx";
-      var ffmpegSource = FFmpegInterop.FFmpegInteropMSS.CreateFFmpegInteropMSSFromUri(uri, false, false);
-      _players[track] = new MediaPlayer()
-      {
-        Source = MediaSource.CreateFromMediaStreamSource(ffmpegSource.GetMediaStreamSource())
-      };
+      var uri = new Uri($"{mediaPath}/{track.Identifier.ToString().ToUpper()}_jcfx");
+      var file = Task.Run(async () => await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri)).Result;
+      var stream = Task.Run(async () => await file.OpenReadAsync()).Result;
+      var ffmpegSource = FFmpegInterop.FFmpegInteropMSS.CreateFFmpegInteropMSSFromStream(stream, false, false);
+
+      var player = new MediaPlayer();
+      player.CommandManager.IsEnabled = false;
+      player.TimelineController = _mediaTimelineController;
+      player.Source = MediaSource.CreateFromMediaStreamSource(ffmpegSource.GetMediaStreamSource());
+
+      _players[track] = player;
     }
 
     #endregion
@@ -35,23 +41,29 @@ namespace Jammit.Audio
     {
       // Capacity => instruments + backing (TODO: + click)
       _players = new Dictionary<PlayableTrackInfo, MediaPlayer>(media.InstrumentTracks.Count + 1);
-      //var mediaPath = System.IO.Path.Combine("Tracks", $"{media.Song.Id}.jcf");
-      var mediaPath = $"ms-appdata://local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
-      var miuri = new Uri($"{mediaPath}/{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx");
-      var file = Task.Run(async () => await StorageFile.GetFileFromApplicationUriAsync(miuri)).Result;
+      _mediaTimelineController = new MediaTimelineController();
+      _mediaTimelineController.PositionChanged += (sender, args) =>
+      {
+        SetValue(PositionProperty, sender.Position);
+      };
+      var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
 
       foreach (var track in media.InstrumentTracks)
       {
         InitPlayer(track, mediaPath);
       }
-
       InitPlayer(media.BackingTrack, mediaPath);
+
+      if (_mediaTimelineController.Duration.HasValue)
+        Length = _mediaTimelineController.Duration.Value;
+      else
+        Length = _players[media.BackingTrack].PlaybackSession.NaturalDuration;
     }
 
     #region Bindable Properties
 
     public static readonly BindableProperty LengthProperty =
-      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(600), BindingMode.OneWayToSource);
+      BindableProperty.Create("Length", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.FromSeconds(100), BindingMode.OneWayToSource);
 
     public static readonly BindableProperty PositionProperty =
       BindableProperty.Create("Position", typeof(TimeSpan), typeof(TimeSpan), TimeSpan.Zero, BindingMode.TwoWay);
@@ -65,10 +77,7 @@ namespace Jammit.Audio
       if (PlaybackStatus.Playing == State)
         return;
 
-      foreach (var player in _players.Values)
-      {
-        player.Play();
-      }
+      _mediaTimelineController.Start();
 
       State = PlaybackStatus.Playing;
     }
@@ -78,10 +87,7 @@ namespace Jammit.Audio
       if (PlaybackStatus.Paused == State)
         return;
 
-      foreach (var player in _players.Values)
-      {
-        player.Pause();
-      }
+      _mediaTimelineController.Pause();
 
       State = PlaybackStatus.Paused;
     }
@@ -91,10 +97,7 @@ namespace Jammit.Audio
       if (PlaybackStatus.Stopped == State)
         return;
 
-      foreach (var player in _players.Values)
-      {
-        player.Pause();
-      }
+      _mediaTimelineController.Pause();
 
       State = PlaybackStatus.Stopped;
     }
@@ -109,7 +112,18 @@ namespace Jammit.Audio
       _players[track].Volume = volume;
     }
 
-    public TimeSpan Position { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public TimeSpan Position
+    {
+      get
+      {
+        return (TimeSpan)GetValue(PositionProperty);
+      }
+
+      set
+      {
+        _mediaTimelineController.Position = value;
+      }
+    }
 
     public TimeSpan Length
     {

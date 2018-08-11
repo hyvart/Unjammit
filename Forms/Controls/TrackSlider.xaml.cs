@@ -22,7 +22,8 @@ namespace Jammit.Forms.Controls
 
       //TODO: Drop in favor of Xamarin.Essentials APIs, when released.
       //TODO: Design a decent UI that doesn't crash when certain size requests are missing.
-      if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
+      if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform ||
+          Plugin.DeviceInfo.Abstractions.Platform.Windows == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
         VolumeSlider.WidthRequest = 250;
 
       //TODO: Inject by property only

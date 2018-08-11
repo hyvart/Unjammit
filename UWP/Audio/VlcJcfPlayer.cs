@@ -11,6 +11,7 @@ using Xamarin.Forms;
 
 namespace Jammit.Audio
 {
+  [Obsolete("Use FFmpegJcfPlayer instead.")]
   public class VlcJcfPlayer : BindableObject, IJcfPlayer
   {
     Dictionary<PlayableTrackInfo, VLC.MediaElement> mediaElements;

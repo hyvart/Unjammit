@@ -23,18 +23,14 @@ namespace Jammit.UWP
     {
       this.InitializeComponent();
 
-      // Defer Loading application until VLC MediaElement is rendered.
-      this.Loaded += (sender, e) =>
-      {
-        LoadApplication(
-          new Jammit.Forms.App(
-            FileSystem.Current,
-            (m) => { return new Audio.VlcJcfPlayer(m, null, new VLC.MediaElement[] { }); },
-            //(media) => { return new Audio.FFmpegJcfPlayer(media); },
-            new Jammit.Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
+      LoadApplication(
+        new Jammit.Forms.App(
+          FileSystem.Current,
+          (media) => { return new Audio.FFmpegJcfPlayer(media); },
+          new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory
           )
-        );
-      };
+        )
+      );
     }
   }
 }
