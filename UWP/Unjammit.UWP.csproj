@@ -56,8 +56,6 @@
     </Compile>
     <Compile Include="Audio\AudioGraphSongPlayer.cs" />
     <Compile Include="Audio\FFmpegJcfPlayer.cs" />
-    <Compile Include="Audio\VlcJcfPlayer.cs" />
-    <Compile Include="Audio\VlcSongPlayer.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -118,9 +116,6 @@
     </PackageReference>
     <PackageReference Include="PCLStorage">
       <Version>1.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="VLC.MediaElement.ClassLibrary">
-      <Version>3.1.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.DeviceInfo">
       <Version>4.0.0.13</Version>

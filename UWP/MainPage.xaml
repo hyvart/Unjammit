@@ -6,23 +6,9 @@
     xmlns:local="using:Jammit.UWP"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vlc="using:VLC"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
   <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-    <!--<vlc:MediaElement Name="MediaElement1"
-                      AreTransportControlsEnabled="True"
-                      HardwareAcceleration="False"
-                      AutoPlay="False">
-    </vlc:MediaElement>
-    <vlc:MediaElement Name="MediaElement2"
-                      AreTransportControlsEnabled="True"
-                      HardwareAcceleration="False"
-                      AutoPlay="False" />
-    <vlc:MediaElement Name="MediaElement3"
-                      AreTransportControlsEnabled="True"
-                      HardwareAcceleration="False"
-                      AutoPlay="False" />-->
   </StackPanel>
 </forms:WindowsPage>
