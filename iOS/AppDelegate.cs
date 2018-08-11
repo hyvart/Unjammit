@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
-using PCLStorage;
 using UIKit;
 
 namespace Jammit.iOS
@@ -31,7 +30,6 @@ namespace Jammit.iOS
       LoadApplication(
         new Jammit.Forms.App(
           Xamarin.Essentials.FileSystem.AppDataDirectory,
-          FileSystem.Current,//TODO: Remove
           (media) =>
           {
             return new Audio.AppleJcfPlayer(media, (track, stream) =>
@@ -42,7 +40,6 @@ namespace Jammit.iOS
           new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
         )
       );
-
       return base.FinishedLaunching(app, options);
     }
   }
