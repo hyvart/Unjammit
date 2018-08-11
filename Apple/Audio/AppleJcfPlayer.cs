@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Jammit.Model;
-using Xamarin.Forms;
 
 namespace Jammit.Audio
 {
-  public class AppleJcfPlayer : Xamarin.Forms.BindableObject, IJcfPlayer
+  public class AppleJcfPlayer : IJcfPlayer
   {
     #region private members
 
@@ -30,10 +29,6 @@ namespace Jammit.Audio
 
       players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx")));
     }
-
-    #region Bindable properties
-
-    #endregion
 
     #region IJcfPlayer members
 
