@@ -1,7 +1,6 @@
 ﻿using AppKit;
 using Foundation;
 
-using PCLStorage;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
 
@@ -35,17 +34,19 @@ namespace Jammit.macOS
     public override void DidFinishLaunching(NSNotification notification)
     {
       Xamarin.Forms.Forms.Init();
+
+      //TODO: Replace with Xamarin.Essentials API.
+      string dataDir = NSSearchPath.GetDirectories(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomain.User)[0];
       LoadApplication(
         new Jammit.Forms.App(
-          FileSystem.Current.LocalStorage.Path,
-          FileSystem.Current,
+          dataDir,
           (media) => {
             return new Audio.AppleJcfPlayer(media, (track, stream) =>
             {
               return new Audio.MacOSAVAudioPlayer(track, stream);
             });
           },
-          new Model.FileSystemJcfLoader(FileSystem.Current.LocalStorage.Path)
+          new Model.FileSystemJcfLoader(dataDir)
         )
       );
       base.DidFinishLaunching(notification);
