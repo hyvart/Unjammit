@@ -113,9 +113,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FFmpegInterop.UWP">
-      <Version>1.0.4</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.1.7</Version>
     </PackageReference>
@@ -133,6 +130,9 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>3.1.0.697729</Version>
+    </PackageReference>
+    <PackageReference Include="YunFan.Gallery.FFmpegInterop">
+      <Version>1.0.21</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
