@@ -30,7 +30,8 @@ namespace Jammit.iOS
 
       LoadApplication(
         new Jammit.Forms.App(
-          FileSystem.Current,
+          Xamarin.Essentials.FileSystem.AppDataDirectory,
+          FileSystem.Current,//TODO: Remove
           (media) =>
           {
             return new Audio.AppleJcfPlayer(media, (track, stream) =>

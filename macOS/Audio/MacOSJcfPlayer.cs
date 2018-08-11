@@ -14,6 +14,8 @@ namespace Jammit.Audio
     private AVAudioPlayer player;
     private Model.JcfMedia media;
 
+    public event EventHandler PositionChanged;
+
     #endregion
 
     public MacOSJcfPlayer(Model.JcfMedia media)

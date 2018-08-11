@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-using PCLStorage;
 using Xamarin.Forms;
 
 namespace Jammit.Model
@@ -162,11 +161,8 @@ namespace Jammit.Model
     {
       try
       {
-        //File.Delete(Path.Combine(_storagePath, "Tracks", $"{id}.jcf"));
-        // TODO: Work around System.IO file access issues on delete.
-        //       Then, remove dependency on PCLStorage.
-        var songTask = FileSystem.Current.LocalStorage.GetFolderAsync("Tracks").Result.GetFolderAsync($"{id}.jcf");
-        songTask.Result.DeleteAsync();
+        var songPath = Path.Combine(_storagePath, "Tracks", $"{id.ToString().ToUpper()}.jcf");
+        Directory.Delete(songPath, true);
       }
       catch (Exception)
       {

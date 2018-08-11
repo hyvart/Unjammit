@@ -37,6 +37,7 @@ namespace Jammit.macOS
       Xamarin.Forms.Forms.Init();
       LoadApplication(
         new Jammit.Forms.App(
+          FileSystem.Current.LocalStorage.Path,
           FileSystem.Current,
           (media) => {
             return new Audio.AppleJcfPlayer(media, (track, stream) =>

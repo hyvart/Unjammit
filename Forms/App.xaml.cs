@@ -26,11 +26,22 @@ namespace Jammit.Forms
       MainPage = new Jammit.Forms.MainPage();
     }
 
-    public App(IFileSystem fileSystem, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
+    [Obsolete("Remove usage of PCLStorage.")]
+    public App(string dataDirectory, IFileSystem fileSystem, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
     {
       App.Client = new Client.RestClient();
-      App.Library = new FolderLibrary(fileSystem.LocalStorage.Path);
+      App.Library = new FolderLibrary(dataDirectory);
       App.FileSystem = fileSystem;
+      App.PlayerFactory = playerFactory;
+      App.MediaLoader = loader;
+
+      MainPage = new Jammit.Forms.MainPage();
+    }
+
+    public App(string dataDirectory, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
+    {
+      App.Client = new Client.RestClient();
+      App.Library = new FolderLibrary(dataDirectory);
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;
 
