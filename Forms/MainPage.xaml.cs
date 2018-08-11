@@ -15,8 +15,7 @@ namespace Jammit.Forms
     {
       InitializeComponent();
 
-      this.FilesPath.Text = PCLStorage.FileSystem.Current.LocalStorage.Path;
-      //this.FilesPath.Text = Xamarin.Essentials.FileSystem.AppDataDirectory; // Not Apple-ready
+      this.FilesPath.Text = App.DataDirectory;
     }
 
     [Obsolete]

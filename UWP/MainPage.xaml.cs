@@ -13,8 +13,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-using PCLStorage;
-
 namespace Jammit.UWP
 {
   public sealed partial class MainPage
@@ -26,7 +24,6 @@ namespace Jammit.UWP
       LoadApplication(
         new Jammit.Forms.App(
           Xamarin.Essentials.FileSystem.AppDataDirectory,
-          FileSystem.Current,//TODO;Remove
           (media) => { return new Audio.FFmpegJcfPlayer(media); },
           new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory
           )

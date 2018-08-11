@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 
 using Claunia.PropertyList;
-using Jammit.Model;
 
 namespace Jammit.Model
 {

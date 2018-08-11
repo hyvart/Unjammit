@@ -41,6 +41,7 @@ namespace Jammit.Forms
     public App(string dataDirectory, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
     {
       App.Client = new Client.RestClient();
+      App.DataDirectory = dataDirectory;
       App.Library = new FolderLibrary(dataDirectory);
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;
@@ -56,6 +57,9 @@ namespace Jammit.Forms
     public static Client.IClient Client { get; private set; }
 
     public static ILibrary Library { get; private set; }
+
+    [Obsolete("Remove when Xamarin.Essentials supports all platforms.")]
+    public static string DataDirectory { get; private set; }
 
     public static IFileSystem FileSystem { get; private set; }
 
