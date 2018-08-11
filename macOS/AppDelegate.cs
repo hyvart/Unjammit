@@ -1,10 +1,7 @@
 ﻿using AppKit;
 using Foundation;
 
-using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
-
-using Jammit.Audio.macOS;
 
 namespace Jammit.macOS
 {
