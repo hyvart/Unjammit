@@ -10,5 +10,8 @@
     <PackageReference Include="plist-cil" Version="1.50.0" />
     <PackageReference Include="Xam.Plugins.Settings" Version="4.0.0.7" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Unjammit.Core.csproj" />
+  </ItemGroup>
 
 </Project>

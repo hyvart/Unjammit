@@ -7,11 +7,11 @@ namespace Jam.NET.Audio
 {
   public class ClickTrackStream : WaveStream
   {
-    private readonly IReadOnlyList<Beat> _beats;
+    private readonly IReadOnlyList<Jammit.Model.Beat> _beats;
 
     private readonly short[] _click;
 
-    public ClickTrackStream(IReadOnlyList<Beat> beats)
+    public ClickTrackStream(IReadOnlyList<Jammit.Model.Beat> beats)
     {
       _beats = beats;
       WaveFormat = new WaveFormat(44100, 16, 2);

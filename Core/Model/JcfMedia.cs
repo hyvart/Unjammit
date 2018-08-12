@@ -6,29 +6,29 @@ namespace Jammit.Model
 {
   public class JcfMedia : IComparable<JcfMedia>
   {
-    public JcfMedia(Model.SongInfo song, string path)
+    public JcfMedia(SongInfo song, string path)
     {
       Song = song;
       Path = path;
-      InstrumentTracks = new List<Model.NotatedTrackInfo>();
+      InstrumentTracks = new List<NotatedTrackInfo>();
       Scores = new List<ScoreInfo>();
     }
 
-    public Model.SongInfo Song { get; private set; }
+    public SongInfo Song { get; private set; }
 
     public string Path { get; private set; }
 
-    public IList<Model.NotatedTrackInfo> InstrumentTracks { get; }
+    public IList<NotatedTrackInfo> InstrumentTracks { get; }
 
-    public Model.FileTrackInfo BackingTrack { get; set; }
+    public FileTrackInfo BackingTrack { get; set; }
 
-    public Model.TrackInfo ClickTrack { get; set; }
+    public TrackInfo ClickTrack { get; set; }
 
     public TimeSpan Length { get; set; }
 
     //TODO: EmptyTrack, InputTrack
 
-    //TODO: Beat
+    public IReadOnlyList<Beat> Beats { get; set; }
 
     //TODO: Section
 

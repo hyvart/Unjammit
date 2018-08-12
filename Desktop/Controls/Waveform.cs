@@ -29,7 +29,7 @@ namespace Jam.NET.Controls
 
     public sbyte[] WaveData;
     public IReadOnlyList<Section> Sections;
-    public IReadOnlyList<Beat> Beats;
+    public IReadOnlyList<Jammit.Model.Beat> Beats;
     public readonly Looper Looper;
 
     private readonly Pen _nowPen = new Pen(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF), 2.0f);

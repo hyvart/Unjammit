@@ -20,7 +20,7 @@ namespace Jam.NET.Model
     /// <summary>
     /// A list of the beats in this song, in order.
     /// </summary>
-    IReadOnlyList<Beat> Beats { get; }
+    IReadOnlyList<Jammit.Model.Beat> Beats { get; }
 
     /// <summary>
     /// A list of the sections in this song, in order.

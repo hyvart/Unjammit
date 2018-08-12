@@ -38,8 +38,7 @@ namespace Jammit.Audio
       var backingStream = File.OpenRead(Path.Combine(Jam.NET.Properties.Settings.Default.TrackPath, $"{media.Song.Id}.jcf"));
       _channels[media.BackingTrack] = new WaveChannel32(new Jam.NET.Audio.ImaWaveStream(backingStream));
 
-      //TODO
-      //_channels[media.ClickTrack] = new WaveChannel32(new Jam.NET.Audio.ClickTrackStream(null /*beats list*/));
+      _channels[media.ClickTrack] = new WaveChannel32(new Jam.NET.Audio.ClickTrackStream(media.Beats));
 
       foreach (var channel in _channels.Values)
       {

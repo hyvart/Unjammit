@@ -31,8 +31,9 @@ namespace Jammit.Model
       var position = dictionary.Double("position") ?? 0;
       result.Length = TimeSpan.FromSeconds(position);
 
-      // Load tracks
       LoadTracks(result, songPath);
+
+      LoadBeats(result, songPath);
 
       return result;
     }
@@ -138,5 +139,22 @@ namespace Jammit.Model
         }
       }
     } // LoadTracks(JcfMedia, string)
+
+    private void LoadBeats(JcfMedia media, string songPath)
+    {
+      var beatArray = PropertyListParser.Parse(Path.Combine(songPath, "beats.plist")) as NSArray;
+      var ghostArray = PropertyListParser.Parse(Path.Combine(songPath, "ghost.plist")) as NSArray;
+
+      var beats = new List<Beat>(beatArray.Count);
+      for (var i = 0; i < beatArray.Count; i++)
+      {
+        var beastDict = beatArray[i] as NSDictionary;
+        var isDownbeat = beastDict.Bool("isDownbeat") ?? false;
+        var isGhostBeat = (ghostArray[i] as NSDictionary).Bool("isGhostBeat") ?? false;
+        beats.Add(new Beat(beastDict.Double("position") ?? 0, isDownbeat, isGhostBeat));
+      }
+
+      media.Beats = beats;
+    }
   }
 }

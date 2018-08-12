@@ -17,7 +17,7 @@ namespace Jam.NET.Model
 
     public IReadOnlyList<Track> Tracks { get; }
 
-    public IReadOnlyList<Beat> Beats { get; }
+    public IReadOnlyList<Jammit.Model.Beat> Beats { get; }
 
     public IReadOnlyList<Section> Sections { get; }
 
@@ -99,11 +99,11 @@ namespace Jam.NET.Model
       return Track.FromNSArray(tracksArray, path => File.Exists(Path.Combine(Metadata.SongPath, path)));
     }
 
-    private List<Beat> InitBeats()
+    private List<Jammit.Model.Beat> InitBeats()
     {
       var beatArray = (NSArray)PropertyListParser.Parse(Path.Combine(Metadata.SongPath, "beats.plist"));
       var ghostArray = (NSArray)PropertyListParser.Parse(Path.Combine(Metadata.SongPath, "ghost.plist"));
-      return Beat.FromNSArrays(beatArray, ghostArray);
+      return Jammit.Model.Beat.FromNSArrays(beatArray, ghostArray);
     }
 
     private List<Section> InitSections()

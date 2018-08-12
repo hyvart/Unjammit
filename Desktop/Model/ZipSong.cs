@@ -16,7 +16,7 @@ namespace Jam.NET.Model
     public SongMeta Metadata { get; }
 
     public IReadOnlyList<Track> Tracks { get; }
-    public IReadOnlyList<Beat> Beats { get; }
+    public IReadOnlyList<Jammit.Model.Beat> Beats { get; }
     public IReadOnlyList<Section> Sections { get; }
 
     private List<ScoreNodes> _notationData;
@@ -126,7 +126,7 @@ namespace Jam.NET.Model
       }
     }
 
-    private List<Beat> InitBeats()
+    private List<Jammit.Model.Beat> InitBeats()
     {
       NSArray beatArray, ghostArray;
       using (var arc = OpenZip())
@@ -136,7 +136,7 @@ namespace Jam.NET.Model
         using (var stream = arc.GetEntry($"{_basePath}/ghost.plist").Open())
           ghostArray = (NSArray) PropertyListParser.Parse(stream);
       }
-      return Beat.FromNSArrays(beatArray, ghostArray);
+      return Jammit.Model.Beat.FromNSArrays(beatArray, ghostArray);
     }
 
     private List<Section> InitSections()

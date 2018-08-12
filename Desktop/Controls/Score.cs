@@ -23,7 +23,7 @@ namespace Jam.NET.Controls
     // State data for selected notation
     private List<Image> _imgs;
     private IReadOnlyList<BeatInfo> _nodes;
-    private IReadOnlyList<Beat> _beats;
+    private IReadOnlyList<Jammit.Model.Beat> _beats;
     private int _beatNum;
     private Track _track;
 

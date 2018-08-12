@@ -3,7 +3,7 @@
   public class Section
   {
     public int BeatIdx;
-    public Beat Beat;
+    public Jammit.Model.Beat Beat;
     public int Number;
     public int Type;
     public string Name => TypeToString(Type) + (Number > 0 ? " " + Number : "");
