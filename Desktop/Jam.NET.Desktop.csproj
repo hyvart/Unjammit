@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Audio\ClickTrackStream.cs" />
     <Compile Include="Audio\MockSongPlayer.cs" />
+    <Compile Include="Audio\NAudioJcfPlayer.cs" />
     <Compile Include="Controls\SeekBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
