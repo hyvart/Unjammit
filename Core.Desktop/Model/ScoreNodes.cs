@@ -4,7 +4,7 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   public class ScoreNodes
   {

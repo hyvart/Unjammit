@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
-using Jammit.Model;
+using Jam.NET.Model;
 
-namespace Jammit.Controls
+namespace Jam.NET.Controls
 {
   class Waveform : UserControl, ISynchronizable
   {

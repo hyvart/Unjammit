@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Jammit
+namespace Jam.NET
 {
   public class OnDisposeStream : Stream
   {

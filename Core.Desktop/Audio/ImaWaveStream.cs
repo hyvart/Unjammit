@@ -2,7 +2,7 @@
 using System.IO;
 using NAudio.Wave;
 
-namespace Jammit.Audio
+namespace Jam.NET.Audio
 {
   public class ImaWaveStream : WaveStream
   {

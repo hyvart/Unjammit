@@ -1,4 +1,4 @@
-﻿namespace Jammit.Forms
+﻿namespace Jam.NET.Forms
 {
   partial class DownloadForm
   {

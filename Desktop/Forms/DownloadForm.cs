@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Management;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Jammit.Net;
+using Jam.NET.Net;
 
-namespace Jammit.Forms
+namespace Jam.NET.Forms
 {
   public partial class DownloadForm : Form
   {

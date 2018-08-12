@@ -1,6 +1,6 @@
 ﻿using Claunia.PropertyList;
 
-namespace Jammit
+namespace Jam.NET
 {
   /// <summary>
   /// Convenience extensions for Plist classes.

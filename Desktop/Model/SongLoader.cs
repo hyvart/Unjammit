@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   public static class SongLoader
   {

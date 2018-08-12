@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Jammit.Model;
+using Jam.NET.Model;
 using NAudio.Wave;
 
-namespace Jammit.Audio
+namespace Jam.NET.Audio
 {
   /// <summary>
   /// Handles playing the audio for a track using the NAudio backend.

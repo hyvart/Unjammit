@@ -5,7 +5,7 @@
 using System;
 using System.Text;
 using System.IO;
-namespace Jammit
+namespace Jam.NET
 {
   public static class StreamExtensions
   {

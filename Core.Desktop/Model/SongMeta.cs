@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   /// <summary>
   /// Metadata about a song

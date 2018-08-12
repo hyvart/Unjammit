@@ -1,4 +1,4 @@
-﻿namespace Jammit
+﻿namespace Jam.NET
 {
   partial class LibraryWindow
   {

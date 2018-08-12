@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Jammit.Audio
+namespace Jam.NET.Audio
 {
   public class Ima4Decoder
   {

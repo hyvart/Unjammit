@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Jammit
+namespace Jam.NET
 {
   [StructLayout(LayoutKind.Explicit)]
   public struct UnionArray

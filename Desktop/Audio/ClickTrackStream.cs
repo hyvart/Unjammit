@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Jammit.Model;
+using Jam.NET.Model;
 using NAudio.Wave;
 
-namespace Jammit.Audio
+namespace Jam.NET.Audio
 {
   public class ClickTrackStream : WaveStream
   {

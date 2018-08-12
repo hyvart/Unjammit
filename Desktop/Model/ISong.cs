@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using Jammit.Audio;
+using Jam.NET.Audio;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   public interface ISong
   {

@@ -4,9 +4,9 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using Claunia.PropertyList;
-using Jammit.Audio;
+using Jam.NET.Audio;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   /// <summary>
   /// Represents a song backed with a standard .zip content file.

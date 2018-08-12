@@ -4,9 +4,9 @@ using System.Linq;
 using System.IO;
 
 using Claunia.PropertyList;
-using Jammit.Audio;
+using Jam.NET.Audio;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   /// <summary>
   /// Represents a song in a raw file sistem folder.

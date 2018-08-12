@@ -1,7 +1,7 @@
 ﻿using System;
 using NAudio.Wave;
 
-namespace Jammit.Audio
+namespace Jam.NET.Audio
 {
   /// <summary>
   /// A song player plays a song, which is consists of one or more channels.

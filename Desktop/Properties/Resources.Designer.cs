@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jammit.Properties {
+namespace Jam.NET.Properties {
     using System;
     
     

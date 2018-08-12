@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Jammit.Model;
+using Jam.NET.Model;
 
-namespace Jammit.Controls
+namespace Jam.NET.Controls
 {
   public partial class SeekBar : UserControl, ISynchronizable
   {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Claunia.PropertyList;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   public class Track
   {

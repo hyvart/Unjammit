@@ -1,4 +1,4 @@
-﻿namespace Jammit.Model
+﻿namespace Jam.NET.Model
 {
   public class Looper : ISynchronizable
   {
