@@ -84,7 +84,7 @@ namespace Jammit.Audio
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      _channels[track].Volume = volume;
+      _channels[track].Volume = volume / 100.0f;
     }
 
     public TimeSpan Length => _media.Length;
