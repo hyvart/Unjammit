@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jammit.Forms.Client
+namespace Jammit.Client
 {
   public enum AuthorizationStatus
   {

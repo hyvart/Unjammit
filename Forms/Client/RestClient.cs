@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
+using Jammit.Client;
 using Jammit.Model;
 using Newtonsoft.Json.Linq;
 using Plugin.DeviceInfo;

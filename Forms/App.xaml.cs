@@ -13,9 +13,9 @@ namespace Jammit.Forms
   {
     public App(string dataDirectory, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
     {
-      App.Client = new Client.RestClient();
+      App.Client = new Jammit.Forms.Client.RestClient();
       App.DataDirectory = dataDirectory;
-      App.Library = new FolderLibrary(dataDirectory);
+      App.Library = new XamarinFolderLibrary(dataDirectory, Client);
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;
 
@@ -24,7 +24,7 @@ namespace Jammit.Forms
 
     #region Properties
 
-    public static Client.IClient Client { get; private set; }
+    public static Jammit.Client.IClient Client { get; private set; }
 
     public static ILibrary Library { get; private set; }
 

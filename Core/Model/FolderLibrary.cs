@@ -6,39 +6,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-using Xamarin.Forms;
-
 namespace Jammit.Model
 {
-  class FolderLibrary : BindableObject, ILibrary, System.ComponentModel.INotifyPropertyChanged
+  public class FolderLibrary : ILibrary
   {
-    
-    public static readonly BindableProperty SongsProperty =
-      BindableProperty.Create(
-        "Songs",
-        typeof(List<SongInfo>),
-        typeof(List<SongInfo>),
-        new List<SongInfo>() {
-          new SongInfo() { Album = "Album1", Artist = "Artist1", Instrument = "Instrument1", Title = "Title1" } },
-        BindingMode.TwoWay);
+    #region private members
 
     private const string LibraryFileName = "library.xml";
 
     private string _storagePath;
     private string _libraryPath;
     private IDictionary<Guid, SongInfo> _cache;
-
-    public FolderLibrary(string storagePath)
-    {
-      _storagePath = storagePath;
-      _libraryPath = Path.Combine(_storagePath, LibraryFileName);
-
-      // If library doesn't exist, initialize.
-      if (!File.Exists(_libraryPath))
-        new XDocument(new XElement("songs")).Save(_libraryPath);
-
-      InitCache();
-    }
+    protected Client.IClient _client;
 
     private void InitCache()
     {
@@ -70,17 +49,6 @@ namespace Jammit.Model
       };
     }
 
-    public XElement ToXml(SongInfo song)
-    {
-      return new XElement("song",
-        new XAttribute("id", song.Id.ToString().ToUpper()),
-        new XElement("artist", song.Artist),
-        new XElement("album", song.Album),
-        new XElement("title", song.Title),
-        new XElement("instrument", song.Instrument),
-        new XElement("genre", song.Genre));
-    }
-
     private void Save()
     {
       File.WriteAllText(_libraryPath, string.Empty);
@@ -98,14 +66,40 @@ namespace Jammit.Model
       }
     }
 
-    #region ILibrary methods
+    #endregion // private members
+
+    public FolderLibrary(string storagePath, Client.IClient client)
+    {
+      _storagePath = storagePath;
+      _libraryPath = Path.Combine(_storagePath, "library.xml");
+      _client = client;
+
+      // If library doesn't exist, initialize.
+      if (!File.Exists(_libraryPath))
+        new XDocument(new XElement("songs")).Save(_libraryPath);
+
+      InitCache();
+    }
+
+    public XElement ToXml(SongInfo song)
+    {
+      return new XElement("song",
+        new XAttribute("id", song.Id.ToString().ToUpper()),
+        new XElement("artist", song.Artist),
+        new XElement("album", song.Album),
+        new XElement("title", song.Title),
+        new XElement("instrument", song.Instrument),
+        new XElement("genre", song.Genre));
+    }
+
+    #region ILibrary members
 
     public void AddSong(SongInfo song)
     {
-      if (!Forms.Settings.SkipDownload)
+      if (!/*Forms.Settings.SkipDownload*/ false)
       {
         // Download th efile.
-        var downloadTask = Task.Run(async () => await Forms.App.Client.DownloadSong(song.Id));
+        var downloadTask = Task.Run(async () => await _client.DownloadSong(song.Id));
         downloadTask.Wait();
 
         // Make sure Tracks and Downloads dirs exist.
@@ -126,7 +120,7 @@ namespace Jammit.Model
         Save();
 
         // Cleanup
-        if (!Forms.Settings.SkipDownload)
+        if (!/*Forms.Settings.SkipDownload*/ false)
           File.Delete(zipPath);
       }
       else
@@ -143,19 +137,7 @@ namespace Jammit.Model
       return _cache.Values.ToList();
     }
 
-    public List<SongInfo> Songs
-    {
-      get
-      {
-        return (List<SongInfo>)GetValue(SongsProperty);
-      }
-
-      private set
-      {
-        value.Sort( (s1, s2) => s1.Artist.CompareTo(s2.Artist) * 10 + s1.Title.CompareTo(s2.Title) );
-        SetValue(SongsProperty, value);
-      }
-    }
+    public List<SongInfo> Songs { get; set; }
 
     public void RemoveSong(Guid id)
     {
@@ -175,6 +157,6 @@ namespace Jammit.Model
       Save();
     }
 
-    #endregion
+    #endregion // ILibrary members
   }
 }
