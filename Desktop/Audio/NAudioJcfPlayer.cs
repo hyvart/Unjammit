@@ -46,6 +46,11 @@ namespace Jammit.Audio
         _mixer.AddInputStream(channel);
         channel.Volume = 0.75f;//TODO: bind?
       }
+
+      _waveOut.PlaybackStopped += (sender, args) => { Position = TimeSpan.Zero; };
+      _waveOut.DesiredLatency = 60;//TODO: Why?
+      _waveOut.NumberOfBuffers = 2;
+      _waveOut.Init(_mixer);
     }
 
     ~NAudioJcfPlayer()
