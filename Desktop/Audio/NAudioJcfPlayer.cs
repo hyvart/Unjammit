@@ -23,6 +23,7 @@ namespace Jammit.Audio
 
     public NAudioJcfPlayer(JcfMedia media)
     {
+      _media = media;
       _waveOut = new WaveOutEvent();
       _mixer = new WaveMixerStream32();
       _channels = new Dictionary<TrackInfo, WaveChannel32>(media.InstrumentTracks.Count + 1 + 1);
