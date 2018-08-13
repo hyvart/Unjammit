@@ -16,6 +16,7 @@ namespace Jammit.Forms
       InitializeComponent();
 
       this.FilesPath.Text = App.DataDirectory;
+      this.VersionLabel.Text = "Version " + Xamarin.Essentials.VersionTracking.CurrentVersion;
     }
 
     [Obsolete]
