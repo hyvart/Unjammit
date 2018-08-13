@@ -16,7 +16,11 @@ namespace Jammit.Forms
       InitializeComponent();
 
       this.FilesPath.Text = App.DataDirectory;
-      this.VersionLabel.Text = "Version " + Xamarin.Essentials.VersionTracking.CurrentVersion;
+
+      if (Plugin.DeviceInfo.Abstractions.Platform.macOS != Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
+        this.VersionLabel.Text = "Version " + Xamarin.Essentials.VersionTracking.CurrentVersion;
+      else
+        this.VersionLabel.Text = "Version ?";
     }
 
     [Obsolete]
