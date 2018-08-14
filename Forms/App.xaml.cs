@@ -15,7 +15,7 @@ namespace Jammit.Forms
     {
       App.Client = new Jammit.Forms.Client.RestClient();
       App.DataDirectory = dataDirectory;
-      App.Library = new XamarinFolderLibrary(dataDirectory, Client);
+      App.Library = new FolderLibrary(dataDirectory, Client);
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;
 

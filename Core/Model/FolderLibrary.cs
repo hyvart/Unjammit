@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Xml.Linq;
 
 namespace Jammit.Model
 {
-  public class FolderLibrary : ILibrary
+  public class FolderLibrary : ILibrary, INotifyPropertyChanged
   {
     #region private members
 
@@ -17,7 +18,8 @@ namespace Jammit.Model
     private string _storagePath;
     private string _libraryPath;
     private IDictionary<Guid, SongInfo> _cache;
-    protected Client.IClient _client;
+    private Client.IClient _client;
+    private List<SongInfo> _songs;
 
     private void InitCache()
     {
@@ -71,7 +73,7 @@ namespace Jammit.Model
     public FolderLibrary(string storagePath, Client.IClient client)
     {
       _storagePath = storagePath;
-      _libraryPath = Path.Combine(_storagePath, "library.xml");
+      _libraryPath = Path.Combine(_storagePath, LibraryFileName);
       _client = client;
 
       // If library doesn't exist, initialize.
@@ -91,6 +93,12 @@ namespace Jammit.Model
         new XElement("instrument", song.Instrument),
         new XElement("genre", song.Genre));
     }
+
+    #region INotifyPropertyChanged members
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    #endregion // INotifyPropertyChanged members
 
     #region ILibrary members
 
@@ -137,7 +145,21 @@ namespace Jammit.Model
       return _cache.Values.ToList();
     }
 
-    public List<SongInfo> Songs { get; set; }
+    public List<SongInfo> Songs
+    {
+      get
+      {
+        return _songs;
+      }
+
+      private set
+      {
+        _songs = value;
+        _songs.Sort((s1, s2) => s1.Artist.CompareTo(s2.Artist) * 10 + s1.Title.CompareTo(s2.Title));
+
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
+      }
+    }
 
     public void RemoveSong(Guid id)
     {

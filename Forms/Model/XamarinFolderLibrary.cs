@@ -10,6 +10,7 @@ using Xamarin.Forms;
 
 namespace Jammit.Model
 {
+  [Obsolete]
   class XamarinFolderLibrary : BindableObject, ILibrary
   {
     #region private members
