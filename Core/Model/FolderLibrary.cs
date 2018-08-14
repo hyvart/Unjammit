@@ -140,11 +140,6 @@ namespace Jammit.Model
       }
     }
 
-    public List<SongInfo> GetSongs()
-    {
-      return _cache.Values.ToList();
-    }
-
     public List<SongInfo> Songs
     {
       get
