@@ -12,6 +12,6 @@ namespace Jammit.Model
 
     void AddSong(SongInfo song);
 
-    void RemoveSong(Guid id);
+    void RemoveSong(SongInfo id);
   }
 }

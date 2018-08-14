@@ -17,13 +17,14 @@ namespace Jammit.Model
 
     private string _storagePath;
     private string _libraryPath;
-    private IDictionary<Guid, SongInfo> _cache;
+    private IDictionary<SongInfo, SongInfo> _cache;
     private Client.IClient _client;
-    private List<SongInfo> _songs;
 
     private void InitCache()
     {
-      _cache = new Dictionary<Guid, SongInfo>();
+      _cache = new SortedList<SongInfo, SongInfo>(
+        Comparer<SongInfo>.Create((s1, s2) => s1.Artist.CompareTo(s2.Artist) * 10 + s1.Title.CompareTo(s2.Title))
+      );
 
       using (var stream = File.OpenRead(_libraryPath))
       {
@@ -31,11 +32,11 @@ namespace Jammit.Model
         foreach (var xe in doc.Element("songs").Elements())
         {
           var song = FromXml(xe);
-          _cache[song.Id] = song;
+          _cache[song] = song;
         }
       }
 
-      Songs = _cache.Values.ToList();
+      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
     }
 
     private SongInfo FromXml(XElement xe)
@@ -122,8 +123,8 @@ namespace Jammit.Model
         }
         ZipFile.ExtractToDirectory(zipPath, tracksDir.FullName);
 
-        _cache[song.Id] = song;
-        Songs = _cache.Values.ToList();
+        _cache[song] = song;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
 
         Save();
 
@@ -133,8 +134,8 @@ namespace Jammit.Model
       }
       else
       {
-        _cache[song.Id] = song;
-        Songs = _cache.Values.ToList();
+        _cache[song] = song;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
 
         Save();
       }
@@ -144,23 +145,15 @@ namespace Jammit.Model
     {
       get
       {
-        return _songs;
-      }
-
-      private set
-      {
-        _songs = value;
-        _songs.Sort((s1, s2) => s1.Artist.CompareTo(s2.Artist) * 10 + s1.Title.CompareTo(s2.Title));
-
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
+        return _cache.Values.ToList();
       }
     }
 
-    public void RemoveSong(Guid id)
+    public void RemoveSong(SongInfo song)
     {
       try
       {
-        var songPath = Path.Combine(_storagePath, "Tracks", $"{id.ToString().ToUpper()}.jcf");
+        var songPath = Path.Combine(_storagePath, "Tracks", $"{song.Id.ToString().ToUpper()}.jcf");
         Directory.Delete(songPath, true);
       }
       catch (Exception)
@@ -168,8 +161,8 @@ namespace Jammit.Model
         //TODO: Handle exception.
       }
 
-      _cache.Remove(id);
-      Songs = _cache.Values.ToList();
+      _cache.Remove(song);
+      PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
 
       Save();
     }

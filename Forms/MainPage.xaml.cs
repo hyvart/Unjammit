@@ -43,7 +43,7 @@ namespace Jammit.Forms
     private void LibraryItem_Delete(object sender, EventArgs e)
     {
       var song = (sender as MenuItem).BindingContext as SongInfo;
-      App.Library.RemoveSong(song.Id);
+      App.Library.RemoveSong(song);
     }
 
     private void SettingsButton_Clicked(object sender, EventArgs e)
