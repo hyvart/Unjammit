@@ -10,7 +10,7 @@ namespace Jammit.Client
   {
     Task<List<Model.SongInfo>> LoadCatalog();
 
-    Task<System.IO.Stream> DownloadSong(Guid id);
+    Task<System.IO.Stream> DownloadSong(Model.SongInfo song);
 
     Task RequestAuthorization();
 

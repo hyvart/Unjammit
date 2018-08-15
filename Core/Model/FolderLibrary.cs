@@ -107,21 +107,18 @@ namespace Jammit.Model
     {
       if (!/*Forms.Settings.SkipDownload*/ false)
       {
-        // Download th efile.
-        //var downloadTask = Task.Run(async () => await _client.DownloadSong(song.Id));
-        //downloadTask.Wait();
-        var download = await _client.DownloadSong(song.Id);
+        // Download the file as stream.
+        var downloadStream = await _client.DownloadSong(song);
 
         // Make sure Tracks and Downloads dirs exist.
         var downloadsDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Downloads"));
         var tracksDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Tracks"));
 
         // Extract downloaded ZIP contents.
-        var zipPath = Path.Combine(downloadsDir.FullName, $"{song.Id}.zip");
+        var zipPath = Path.Combine(downloadsDir.FullName, $"{song.Id.ToString().ToUpper()}.zip");
         using (var zipStream = File.Create(zipPath))
         {
-          //downloadTask.Result.CopyTo(zipStream);
-          download.CopyTo(zipStream);
+          downloadStream.CopyTo(zipStream);
         }
         ZipFile.ExtractToDirectory(zipPath, tracksDir.FullName);
 

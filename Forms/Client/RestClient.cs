@@ -63,12 +63,12 @@ namespace Jammit.Forms.Client
       return result;
     }
 
-    public async Task<Stream> DownloadSong(Guid id)
+    public async Task<Stream> DownloadSong(SongInfo song)
     {
       // https://stackoverflow.com/questions/36698677
       using (var client = new HttpClient(new HttpClientHandler(), false))
       {
-        client.BaseAddress = new Uri($"{Settings.ServiceUri}/download?id={id.ToString().ToUpper()}");
+        client.BaseAddress = new Uri($"{Settings.ServiceUri}/download?id={song.Id.ToString().ToUpper()}");
         client.DefaultRequestHeaders.Clear();
 
         var response = await client.GetAsync(client.BaseAddress.AbsoluteUri);
