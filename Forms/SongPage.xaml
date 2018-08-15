@@ -1,119 +1,49 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Jammit.Forms.Controls"
              x:Class="Jammit.Forms.SongPage">
 
-  <ContentPage.Title>Song Title</ContentPage.Title>
-
-  <Grid>
-    <Grid.RowDefinitions>
-      <!--Title-->
-      <RowDefinition Height="5*" />
-      <!--Score selection-->
-      <RowDefinition Height="5*" />
-      <!--Score image-->
-      <RowDefinition Height="55*" />
-      <!--Controls-->
-      <RowDefinition Height="30*" />
-      <!--Page actions-->
-      <RowDefinition Height="5*" />
-    </Grid.RowDefinitions>
-    <Label Grid.Row="0" Text="{Binding Song.Title}" />
-    <!--Score selection-->
-    <Grid Grid.Row="1">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="300" />
-      </Grid.ColumnDefinitions>
-      <Picker x:Name="ScorePicker" Grid.Column="0" ItemsSource="{Binding ScoresInfo}" SelectedIndex="0" SelectedIndexChanged="ScorePicker_SelectedIndexChanged" />
-    </Grid>
-    <RelativeLayout Grid.Row="2" IsClippedToBounds="False">
+  <StackLayout BackgroundColor="Silver">
+    <StackLayout x:Name="HeaderLayout" Orientation="Horizontal" BackgroundColor="Yellow">
+      <Label Text="{Binding Song.Title}" />
+      <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
+              ItemsSource="{Binding Media.Scores}" />
+    </StackLayout>
+    <StackLayout x:Name="ScoreLayout" BackgroundColor="Wheat">
       <StackLayout Orientation="Vertical" HorizontalOptions="Center"
-                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
-                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1}">
-          <Image x:Name="ScoreImage" BackgroundColor="Aqua" />
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1}">
+        <!--<Image x:Name="ScoreImage" />-->
       </StackLayout>
-    </RelativeLayout>
-    <!--Controls-->
-    <Grid Grid.Row="3" BackgroundColor="DarkGray">
-      <Grid.ColumnDefinitions>
-        <!--Album pic-->
-        <ColumnDefinition Width="20*" />
-        <!--Mixer-->
-        <ColumnDefinition Width="40*" />
-        <!--Timeline-->
-        <ColumnDefinition Width="40*" />
-      </Grid.ColumnDefinitions>
-      <Image x:Name="AlbumImage" Grid.Column="0" BackgroundColor="Aqua" Aspect="AspectFill" />
-      <Grid Grid.Column="1">
-        <Grid.RowDefinitions>
-          <!--Instrument labels-->
-          <RowDefinition Height="8*" />
-          <!--Sliders-->
-          <RowDefinition Height="80*" />
-          <!--Mute/Solo buttons-->
-          <RowDefinition Height="12*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="34*" />
-          <ColumnDefinition Width="33*" />
-          <ColumnDefinition Width="33*" />
-        </Grid.ColumnDefinitions>
-        <Label HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" Text="Instrument" />
-        <Label HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Text="Band" />
-        <Label HorizontalOptions="Center" Grid.Row="0" Grid.Column="2" Text="Click" />
-        <!--Slider's VOpts instead of HOpts because of rotation (270°).-->
-        <Slider VerticalOptions="Center" Grid.Row="1" Grid.Column="0" Rotation="270" Minimum="0" Maximum="100" Value="75" />
-        <Slider VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Rotation="270" Minimum="0" Maximum="100" Value="75" />
-        <Slider VerticalOptions="Center" Grid.Row="1" Grid.Column="2" Rotation="270" Minimum="0" Maximum="100" Value="75" />
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2" Grid.Column="0">
-          <Button Text="M" />
-          <Button Text="S" />
+    </StackLayout>
+    <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
+      <Image x:Name="AlbumImage"
+             BackgroundColor="Aqua"
+             HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
+             WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
+      <controls:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
+      <StackLayout HorizontalOptions="FillAndExpand">
+        <FlexLayout BackgroundColor="Beige">
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, StringFormat='{0:000}'}" BackgroundColor="Azure" HorizontalOptions="Start" />
+          <FlexLayout FlexLayout.Grow="1" />
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, StringFormat='{0:000}'}" BackgroundColor="LightBlue" HorizontalOptions="End" />
+        </FlexLayout>
+        <Slider x:Name="PositionSlider"
+                Minimum="0"
+                Maximum="{Binding Player.Length.TotalSeconds}"
+                ValueChanged="PositionSlider_ValueChanged"
+                WidthRequest="10" />
+        <Image x:Name="TimelineImage" BackgroundColor="Aqua" VerticalOptions="FillAndExpand"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+          <Button Text="Loop" HorizontalOptions="Center" IsEnabled="False" />
+          <Button Text="&lt;&lt;" HorizontalOptions="Center" IsEnabled="False" />
+          <Button x:Name="PlayButton" Text="Play" HorizontalOptions="Center" Clicked="PlayButton_Clicked" BackgroundColor="LightGray" />
+          <Button Text="&gt;&gt;" HorizontalOptions="Center" IsEnabled="False" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2" Grid.Column="1">
-          <Button Text="M" />
-          <Button Text="S" />
-        </StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2" Grid.Column="2">
-          <Button Text="M" />
-          <Button Text="S" />
-        </StackLayout>
-      </Grid>
-      <Grid Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill">
-        <Grid.RowDefinitions><RowDefinition Height="*" /></Grid.RowDefinitions>
-        <Grid.ColumnDefinitions><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
-        <StackLayout Orientation="Vertical">
-          <FlexLayout BackgroundColor="Beige">
-            <Label Text="00:00" BackgroundColor="AliceBlue" />
-            <FlexLayout FlexLayout.Grow="1" BackgroundColor="Green" />
-            <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum}" BackgroundColor="AliceBlue" />
-          </FlexLayout>
-          <Slider x:Name="PositionSlider"
-                  BindingContext="{Binding Player}"
-                  Minimum="0"
-                  Maximum="{Binding Length, Mode=OneWay}"
-                  Value="{Binding Position, Mode=OneWayToSource}"
-                  ValueChanged="PositionSlider_ValueChanged" />
-          <Grid>
-            <Grid.RowDefinitions><RowDefinition Height="80*" /></Grid.RowDefinitions>
-            <Grid.ColumnDefinitions><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
-            <Image Grid.Column="0" Grid.Row="0" x:Name="TimelineImage" BackgroundColor="Aqua" />
-          </Grid>
-          <Grid HorizontalOptions="Center">
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="Auto" />
-              <ColumnDefinition Width="Auto" />
-              <ColumnDefinition Width="Auto" />
-              <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Text="Loop" />
-            <Button Grid.Column="1" Text="&lt;&lt;" />
-            <Button Grid.Column="2" Text="Play" x:Name="PlayButton" Clicked="PlayButton_Clicked" />
-            <Button Grid.Column="3" Text="&gt;&gt;" />
-          </Grid>
-        </StackLayout>
-      </Grid>
-    </Grid>
-    <Button Grid.Row="4" Text="Close" Clicked="SongPage_Close" BackgroundColor="LightGray" />
-  </Grid>
+      </StackLayout>
+    </StackLayout>
+    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" BackgroundColor="LightGray" />
+  </StackLayout>
 
 </ContentPage>

@@ -13,69 +13,50 @@ namespace Jammit.Forms
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class SongPage : ContentPage
   {
-    /// <summary>
-    /// Score information (Instrument track name and type).
-    /// </summary>
-    public struct ScoreInfo
-    {
-      public string TrackName;
-      public string Type;
-      public TrackInfo Track;
-      public override string ToString() => $"{TrackName} - {Type}";
-    }
-
-    Audio.ISongPlayer Player;
-
-    public SongInfo Song { get; set; }
-
-    public ISong SongContents { get; set; }
-
-    public List<ScoreInfo> ScoresInfo { get; private set; }
-
     public SongPage(SongInfo song)
     {
-      BindingContext = this; // Needed to actually bind local properties.
+      // Needed to actually bind local properties.
+      BindingContext = this;
+
       Song = song;
-      SongContents = new FolderSong(song);
-
-      ScoresInfo = new List<ScoreInfo>();
-      var tracks = SongContents.Tracks.Where(t => t is NotatedTrackInfo);
-      foreach (var track in tracks)
-      {
-        var notated = track as NotatedTrackInfo;
-        if (notated.NotationPages > 0)
-          ScoresInfo.Add(new ScoreInfo { TrackName = notated.Title, Type = "Score", Track = notated });
-        if (notated.TablaturePages > 0)
-          ScoresInfo.Add(new ScoreInfo { TrackName = notated.Title, Type = "Tablature", Track = notated });
-      }
-
-      Player = App.SongPlayerFactory(SongContents);
+      Media = App.MediaLoader.LoadMedia(song);
+      Player = App.PlayerFactory(Media);
 
       InitializeComponent();
 
-      ScorePicker.SelectedIndex = 0;//TODO: Set up in markup (XAML)?
-      var scoreInfo = (ScoreInfo)ScorePicker.SelectedItem;
-      ScoreImage.Source = ImageSource.FromStream(() => { return SongContents.GetNotation(scoreInfo.Track)[0]; });
-      AlbumImage.Source = ImageSource.FromStream(() => { return SongContents.GetCover(); });
+      //TODO: Move to XAML?
+      //TODO: Why is it still needed?
+      PositionSlider.SetBinding(
+        Slider.ValueProperty,
+        new Binding(
+          nameof(Player.Position),
+          BindingMode.TwoWay));
+
+      Player.PositionChanged += (player, args) =>
+      {
+        var newPosition = (player as Audio.IJcfPlayer).Position;
+        if (newPosition.TotalSeconds != PositionSlider.Value)
+          PositionSlider.Value = newPosition.TotalSeconds;
+      };
+
+      AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
     }
 
-    private void SongPage_Close(object sender, EventArgs e)
-    {
-      Navigation.PopModalAsync();
-    }
+    #region Properties
 
-    private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      var scoreInfo = (ScoreInfo)ScorePicker.SelectedItem;
-      if (scoreInfo.Type == "Score")
-        ScoreImage.Source = ImageSource.FromStream(() => { return SongContents.GetNotation(scoreInfo.Track)[0]; });
-      else // Tablature
-        ScoreImage.Source = ImageSource.FromStream(() => { return SongContents.GetTablature(scoreInfo.Track)[0]; });
-    }
-   
+    public SongInfo Song { get; set; }
+
+    public Model.JcfMedia Media { get; set; }
+
+    public Audio.IJcfPlayer Player { get; private set; }
+
+    #endregion
+
+    #region Handlers
+
     private void PlayButton_Clicked(object sender, EventArgs e)
     {
-      if (Player.State == Audio.PlaybackStatus.Playing)
+      if (Audio.PlaybackStatus.Playing == Player.State)
       {
         Player.Stop();
         PlayButton.Text = "Play";
@@ -84,16 +65,21 @@ namespace Jammit.Forms
       {
         Player.Play();
         PlayButton.Text = "Stop";
-
-        //TODO: Remove in favor of update from binding property.
-        //TODO: Make Player.Length awaitable? Currently, it only updates on the second call.
-        PositionSlider.Maximum = Player.Length.TotalSeconds;
       }
     }
 
-    void PositionSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+    private void CloseButton_Clicked(object sender, EventArgs e)
+    {
+      Player.Stop();
+
+      Navigation.PopModalAsync();
+    }
+
+    void PositionSlider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
     {
       Player.Position = TimeSpan.FromSeconds(e.NewValue);
     }
+
+    #endregion //Handlers
   }
 }

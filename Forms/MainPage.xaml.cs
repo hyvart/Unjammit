@@ -32,7 +32,7 @@ namespace Jammit.Forms
 
     private void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
-      Navigation.PushModalAsync(new SongPage2(e.Item as SongInfo));
+      Navigation.PushModalAsync(new SongPage(e.Item as SongInfo));
     }
 
     private void CatalogButton_Clicked(object sender, EventArgs e)
