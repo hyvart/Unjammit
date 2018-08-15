@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
 using System.Text;
@@ -10,14 +11,21 @@ using Jammit.Model;
 using Newtonsoft.Json.Linq;
 using Plugin.DeviceInfo;
 
-using Xamarin.Forms;
-
 namespace Jammit.Forms.Client
 {
-  class RestClient : BindableObject, IClient
+  class RestClient : IClient, INotifyPropertyChanged
   {
-    public static readonly BindableProperty AuthStatusProperty =
-      BindableProperty.Create("AuthStatus", typeof(AuthorizationStatus), typeof(AuthorizationStatus), AuthorizationStatus.Unknown, BindingMode.OneWay);
+    #region private members
+
+    private AuthorizationStatus _authStatus;
+
+    #endregion // private members
+
+    #region INotifyPropertyChanged members
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    #endregion
 
     #region IClient methods
 
@@ -58,12 +66,15 @@ namespace Jammit.Forms.Client
     public async Task<Stream> DownloadSong(Guid id)
     {
       // https://stackoverflow.com/questions/36698677
-      using (var cliente = new HttpClient(new HttpClientHandler(), false))
+      using (var client = new HttpClient(new HttpClientHandler(), false))
       {
-        cliente.BaseAddress = new Uri($"{Settings.ServiceUri}/download?id={id.ToString().ToUpper()}");
-        cliente.DefaultRequestHeaders.Clear();
+        client.BaseAddress = new Uri($"{Settings.ServiceUri}/download?id={id.ToString().ToUpper()}");
+        client.DefaultRequestHeaders.Clear();
 
-        return await cliente.GetStreamAsync(cliente.BaseAddress.AbsoluteUri);
+        var response = await client.GetAsync(client.BaseAddress.AbsoluteUri);
+        var contentLength = response.Content.Headers.ContentLength;//TODO: bind to property.
+
+        return await response.Content.ReadAsStreamAsync();
       }
     }
 
@@ -110,12 +121,16 @@ namespace Jammit.Forms.Client
     {
       get
       {
-        return (AuthorizationStatus)GetValue(AuthStatusProperty);
+        return _authStatus;
       }
 
       private set
       {
-        SetValue(AuthStatusProperty, value);
+        if (_authStatus != value)
+        {
+          _authStatus = value;
+          PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AuthStatus"));
+        }
       }
     }
 
