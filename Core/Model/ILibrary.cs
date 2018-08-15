@@ -10,7 +10,7 @@ namespace Jammit.Model
   {
     List<SongInfo> Songs { get; }
 
-    void AddSong(SongInfo song);
+    Task AddSong(SongInfo song);
 
     void RemoveSong(SongInfo id);
   }

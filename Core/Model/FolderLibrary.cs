@@ -103,13 +103,14 @@ namespace Jammit.Model
 
     #region ILibrary members
 
-    public void AddSong(SongInfo song)
+    public async Task AddSong(SongInfo song)
     {
       if (!/*Forms.Settings.SkipDownload*/ false)
       {
         // Download th efile.
-        var downloadTask = Task.Run(async () => await _client.DownloadSong(song.Id));
-        downloadTask.Wait();
+        //var downloadTask = Task.Run(async () => await _client.DownloadSong(song.Id));
+        //downloadTask.Wait();
+        var download = await _client.DownloadSong(song.Id);
 
         // Make sure Tracks and Downloads dirs exist.
         var downloadsDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Downloads"));
@@ -119,7 +120,8 @@ namespace Jammit.Model
         var zipPath = Path.Combine(downloadsDir.FullName, $"{song.Id}.zip");
         using (var zipStream = File.Create(zipPath))
         {
-          downloadTask.Result.CopyTo(zipStream);
+          //downloadTask.Result.CopyTo(zipStream);
+          download.CopyTo(zipStream);
         }
         ZipFile.ExtractToDirectory(zipPath, tracksDir.FullName);
 

@@ -51,7 +51,7 @@ namespace Jammit.Forms
       if (null == CatalogView.SelectedItem)
         return;
 
-      App.Library.AddSong(CatalogView.SelectedItem as SongInfo);
+      Task.Run(async() => await App.Library.AddSong(CatalogView.SelectedItem as SongInfo));
     }
   }
 }
