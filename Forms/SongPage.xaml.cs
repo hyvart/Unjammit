@@ -116,10 +116,10 @@ namespace Jammit.Forms
       double targetY = -1;
 
       //TODO: Compute score height. Might change due to resizing.
-      if (PageIndex < score.PageCount - 1 && ScoreLayout.Height + e.ScrollY >= 1024)
+      if (PageIndex < score.PageCount - 1 && ScoreLayout.Height + e.ScrollY >= ScoreImage.Height)
       {
         PageIndex++;
-        targetY = 1024 - ScoreLayout.Height;
+        targetY = ScoreImage.Height - ScoreLayout.Height;
       }
       else if (PageIndex > 0 && e.ScrollY <= 0)
       {
