@@ -10,13 +10,9 @@
       <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
               ItemsSource="{Binding Media.Scores}" />
     </StackLayout>
-    <StackLayout x:Name="ScoreLayout" BackgroundColor="Wheat">
-      <StackLayout Orientation="Vertical" HorizontalOptions="Center"
-                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1}"
-                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1}">
-        <!--<Image x:Name="ScoreImage" />-->
-      </StackLayout>
-    </StackLayout>
+    <ScrollView x:Name="ScoreLayout" BackgroundColor="Wheat">
+      <Image x:Name="ScoreImage" HorizontalOptions="FillAndExpand" />
+    </ScrollView>
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
       <Image x:Name="AlbumImage"
              BackgroundColor="Aqua"
