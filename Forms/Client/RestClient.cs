@@ -60,6 +60,9 @@ namespace Jammit.Forms.Client
         } // if Succeeded response
       }
 
+      result.Sort(Comparer<SongInfo>.Create(
+        (s1, s2) => s1.Artist.CompareTo(s2.Artist) * 10 + s1.Title.CompareTo(s2.Title)
+      ));
       return result;
     }
 
