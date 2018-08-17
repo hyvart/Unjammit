@@ -7,10 +7,15 @@
   <StackLayout BackgroundColor="Silver">
     <StackLayout x:Name="HeaderLayout" Orientation="Horizontal" BackgroundColor="Yellow">
       <Label Text="{Binding Song.Title}" />
-      <Picker x:Name="TrackPicker" HorizontalOptions="FillAndExpand"
-              ItemsSource="{Binding Media.Scores}" />
+      <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=ScrollY, StringFormat='{0:000}'}" />
+      <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=Height}" />
+      <Label Text="{Binding PageIndex}" />
+      <Picker x:Name="ScorePicker"
+              ItemsSource="{Binding Media.Scores}"
+              SelectedIndexChanged="ScorePicker_SelectedIndexChanged"
+              HorizontalOptions="FillAndExpand" />
     </StackLayout>
-    <ScrollView x:Name="ScoreLayout" BackgroundColor="Wheat">
+    <ScrollView x:Name="ScoreLayout" BackgroundColor="Wheat" Scrolled="ScoreLayout_Scrolled">
       <Image x:Name="ScoreImage" HorizontalOptions="FillAndExpand" />
     </ScrollView>
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">

@@ -9,6 +9,9 @@ namespace Jammit.Model
     public Model.NotatedTrackInfo Track;
     public string Type;
 
+    //TODO: Leave in NotatdTrackInfo?
+    public uint PageCount;
+
     public override string ToString() => $"{Track.Title} - {Type}";
   }
 }

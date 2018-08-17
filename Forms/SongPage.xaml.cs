@@ -21,6 +21,7 @@ namespace Jammit.Forms
       Song = song;
       Media = App.MediaLoader.LoadMedia(song);
       Player = App.PlayerFactory(Media);
+      PageIndex = 0;
 
       InitializeComponent();
 
@@ -39,8 +40,10 @@ namespace Jammit.Forms
           PositionSlider.Value = newPosition.TotalSeconds;
       };
 
+      //TODO: Should be set in binding.
+      ScorePicker.SelectedIndex = 0;
+
       AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
-      ScoreImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadNotation(Media, Media.Scores[0], 0); });
     }
 
     #region Properties
@@ -50,6 +53,22 @@ namespace Jammit.Forms
     public Model.JcfMedia Media { get; set; }
 
     public Audio.IJcfPlayer Player { get; private set; }
+
+    public static BindableProperty PageIndexProperty =
+      BindableProperty.Create("PageIndex", typeof(uint), typeof(uint), (uint)0);
+
+    public uint PageIndex
+    {
+      get
+      {
+        return (uint)GetValue(PageIndexProperty);
+      }
+
+      private set
+      {
+        SetValue(PageIndexProperty, value);
+      }
+    }
 
     #endregion
 
@@ -81,6 +100,44 @@ namespace Jammit.Forms
       Player.Position = TimeSpan.FromSeconds(e.NewValue);
     }
 
+    private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      ScoreImage.Source = ImageSource.FromStream(() =>
+      {
+        return App.MediaLoader.LoadNotation(Media, ScorePicker.SelectedItem as ScoreInfo, PageIndex);
+      });
+    }
+
     #endregion //Handlers
+
+    private async void ScoreLayout_Scrolled(object sender, ScrolledEventArgs e)
+    {
+      var score = ScorePicker.SelectedItem as ScoreInfo;
+      double targetY = -1;
+
+      //TODO: Compute score height. Might change due to resizing.
+      if (PageIndex < score.PageCount - 1 && ScoreLayout.Height + e.ScrollY >= 1024)
+      {
+        PageIndex++;
+        targetY = 1024 - ScoreLayout.Height;
+      }
+      else if (PageIndex > 0 && e.ScrollY <= 0)
+      {
+        PageIndex--;
+        targetY = 0;
+      }
+
+      // If PageIndex changed.
+      if (targetY >= 0)
+      {
+        ScoreImage.Source = ImageSource.FromStream(() =>
+        {
+          return App.MediaLoader.LoadNotation(Media, score, PageIndex);
+        });
+
+        //TODO: Meh. Doen't really work (at least on UWP).
+        await ScoreLayout.ScrollToAsync(e.ScrollX, targetY, true);
+      }
+    }
   }
 }

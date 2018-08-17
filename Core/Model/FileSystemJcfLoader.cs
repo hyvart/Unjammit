@@ -100,14 +100,16 @@ namespace Jammit.Model
               media.Scores.Add(new ScoreInfo()
               {
                 Track = notated,
-                Type = "Score"
+                Type = "Score",
+                PageCount = (uint)notationPages
               });
               if (tablaturePages > 0)
               {
                 media.Scores.Add(new ScoreInfo()
                 {
                   Track = notated,
-                  Type = "Tablature"
+                  Type = "Tablature",
+                  PageCount = (uint)tablaturePages
                 });
               }
             }
