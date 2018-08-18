@@ -18,12 +18,8 @@ namespace Jammit.Audio
       NSError error;
       player = AVAudioPlayer.FromData(NSData.FromStream(stream), out error);
 
-      player.FinishedPlaying += delegate
-      {
-        player.Dispose();
-        player = null;
-      };
-      player.NumberOfLoops = 0;
+      //TODO: Do something useful here or remove (beware nullptr after playback done).
+      player.FinishedPlaying += delegate {};
 
       player.PrepareToPlay();
     }

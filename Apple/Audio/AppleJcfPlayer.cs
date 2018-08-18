@@ -25,9 +25,11 @@ namespace Jammit.Audio
       foreach (var track in media.InstrumentTracks)
       {
         players[track] = playerFactory(track, File.OpenRead(Path.Combine(media.Path, $"{track.Identifier.ToString().ToUpper()}_jcfx")));
+        players[track].NumberOfLoops = 0;
       }
 
       players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx")));
+      players[media.BackingTrack].NumberOfLoops = 0;
     }
 
     #region IJcfPlayer members
@@ -62,12 +64,6 @@ namespace Jammit.Audio
 
       foreach (var player in players.Values)
       {
-        if (player == null)
-        {
-          player.Stop();
-          player.Dispose();
-        }
-
         player.Stop();
       }
 
