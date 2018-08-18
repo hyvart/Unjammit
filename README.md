@@ -24,8 +24,13 @@ This software aims to implement the playback functionality of the defunct [Jammi
 
 ## Contributing
 
-While this is a fork from the Jam.NET repository, it is not actively developed anymore.<br/>
-Submit a [Pull Request](https://github.com/maxton/Jam.NET/compare) against this repository's `xplat` branch.
+Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's `xplat` branch.
+
+### Requirements
+- Visual Studio 2017
+  - Add the `Mobile development with .NET` workload.
+- Visual Studio for Mac
+  - Select the `iOS` and `macOS` platforms.
 
 ## Screenshots
 
