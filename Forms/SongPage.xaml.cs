@@ -110,6 +110,7 @@ namespace Jammit.Forms
 
     #endregion //Handlers
 
+    //TODO: Re-enable.
     private async void ScoreLayout_Scrolled(object sender, ScrolledEventArgs e)
     {
       var score = ScorePicker.SelectedItem as ScoreInfo;
@@ -138,6 +139,39 @@ namespace Jammit.Forms
         //TODO: Meh. Doen't really work (at least on UWP).
         await ScoreLayout.ScrollToAsync(e.ScrollX, targetY, true);
       }
+    }
+
+    void SetScorePage(uint index)
+    {
+      var score = ScorePicker.SelectedItem as ScoreInfo;
+      if (index < 0 || index >= score.PageCount)
+        return;
+
+      PageIndex = index;
+      ScoreImage.Source = ImageSource.FromStream(() =>
+      {
+        return App.MediaLoader.LoadNotation(Media, score, index);
+      });
+    }
+
+    private void BackButton_Clicked(object sender, EventArgs e)
+    {
+      SetScorePage(PageIndex - 1);
+    }
+
+    private void ForwardButton_Clicked(object sender, EventArgs e)
+    {
+      SetScorePage(PageIndex + 1);
+    }
+
+    private void StartButton_Clicked(object sender, EventArgs e)
+    {
+      SetScorePage(0);
+    }
+
+    private void EndButton_Clicked(object sender, EventArgs e)
+    {
+      SetScorePage((ScorePicker.SelectedItem as ScoreInfo).PageCount - 1);
     }
   }
 }

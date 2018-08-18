@@ -9,13 +9,14 @@
       <Label Text="{Binding Song.Title}" />
       <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=ScrollY, StringFormat='{0:000}'}" />
       <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=Height}" />
-      <Label Text="{Binding PageIndex}" />
+      <Label Text="{Binding Source={x:Reference ScoreImage}, Path=Height}" />
+      <Label Text="{Binding PageIndex, StringFormat='Page {0}'}" />
       <Picker x:Name="ScorePicker"
               ItemsSource="{Binding Media.Scores}"
               SelectedIndexChanged="ScorePicker_SelectedIndexChanged"
               HorizontalOptions="FillAndExpand" />
     </StackLayout>
-    <ScrollView x:Name="ScoreLayout" BackgroundColor="Wheat" Scrolled="ScoreLayout_Scrolled">
+    <ScrollView x:Name="ScoreLayout" BackgroundColor="Wheat">
       <Image x:Name="ScoreImage" HorizontalOptions="FillAndExpand" />
     </ScrollView>
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
@@ -38,9 +39,11 @@
         <Image x:Name="TimelineImage" BackgroundColor="Aqua" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
           <Button Text="Loop" HorizontalOptions="Center" IsEnabled="False" />
-          <Button Text="&lt;&lt;" HorizontalOptions="Center" IsEnabled="False" />
+          <Button x:Name="StartButton" Text="&lt;&lt;" HorizontalOptions="Center" Clicked="StartButton_Clicked" />
+          <Button x:Name="BackButton" Text="&lt;" HorizontalOptions="Center" Clicked="BackButton_Clicked" />
           <Button x:Name="PlayButton" Text="Play" HorizontalOptions="Center" Clicked="PlayButton_Clicked" BackgroundColor="LightGray" />
-          <Button Text="&gt;&gt;" HorizontalOptions="Center" IsEnabled="False" />
+          <Button x:Name="ForwardButton" Text="&gt;" HorizontalOptions="Center" Clicked="ForwardButton_Clicked" />
+          <Button x:Name="EndButton" Text="&gt;&gt;" HorizontalOptions="Center" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
     </StackLayout>
