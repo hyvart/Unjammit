@@ -5,20 +5,25 @@
              x:Class="Jammit.Forms.SongPage">
 
   <StackLayout BackgroundColor="Silver">
+
     <StackLayout x:Name="HeaderLayout" Orientation="Horizontal" BackgroundColor="Yellow">
       <Label Text="{Binding Song.Title}" />
       <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=ScrollY, StringFormat='{0:000}'}" />
-      <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=Height}" />
-      <Label Text="{Binding Source={x:Reference ScoreImage}, Path=Height}" />
+      <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=Width, StringFormat='SL[{0:000}/'}" />
+      <Label Text="{Binding Source={x:Reference ScoreLayout}, Path=Height, StringFormat='{0:000}]'}" />
+      <Label Text="{Binding Source={x:Reference ScoreImage}, Path=Width, StringFormat='SI[{0:000}/'}" />
+      <Label Text="{Binding Source={x:Reference ScoreImage}, Path=Height, StringFormat='{0:000}]'}" />
       <Label Text="{Binding PageIndex, StringFormat='Page {0}'}" />
       <Picker x:Name="ScorePicker"
               ItemsSource="{Binding Media.Scores}"
               SelectedIndexChanged="ScorePicker_SelectedIndexChanged"
               HorizontalOptions="FillAndExpand" />
     </StackLayout>
-    <ScrollView x:Name="ScoreLayout" BackgroundColor="Wheat">
-      <Image x:Name="ScoreImage" HorizontalOptions="FillAndExpand" />
+
+    <ScrollView x:Name="ScoreLayout" BackgroundColor="Wheat" Padding="5,5,5,5">
+      <Image x:Name="ScoreImage" Aspect="AspectFit" HeightRequest="1024" />
     </ScrollView>
+
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" BackgroundColor="DarkGray" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
       <Image x:Name="AlbumImage"
              BackgroundColor="Aqua"
@@ -27,9 +32,13 @@
       <controls:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
       <StackLayout HorizontalOptions="FillAndExpand">
         <FlexLayout BackgroundColor="Beige">
-          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, StringFormat='{0:000}'}" BackgroundColor="Azure" HorizontalOptions="Start" />
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, StringFormat='{0:000}'}"
+                 BackgroundColor="Azure"
+                 HorizontalOptions="Start" />
           <FlexLayout FlexLayout.Grow="1" />
-          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, StringFormat='{0:000}'}" BackgroundColor="LightBlue" HorizontalOptions="End" />
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, StringFormat='{0:000}'}"
+                 BackgroundColor="LightBlue"
+                 HorizontalOptions="End" />
         </FlexLayout>
         <Slider x:Name="PositionSlider"
                 Minimum="0"
@@ -47,7 +56,9 @@
         </StackLayout>
       </StackLayout>
     </StackLayout>
+
     <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" BackgroundColor="LightGray" />
+
   </StackLayout>
 
 </ContentPage>

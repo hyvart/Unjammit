@@ -102,10 +102,7 @@ namespace Jammit.Forms
 
     private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)
     {
-      ScoreImage.Source = ImageSource.FromStream(() =>
-      {
-        return App.MediaLoader.LoadNotation(Media, ScorePicker.SelectedItem as ScoreInfo, PageIndex);
-      });
+      SetScorePage(PageIndex);
     }
 
     #endregion //Handlers
@@ -131,10 +128,7 @@ namespace Jammit.Forms
       // If PageIndex changed.
       if (targetY >= 0)
       {
-        ScoreImage.Source = ImageSource.FromStream(() =>
-        {
-          return App.MediaLoader.LoadNotation(Media, score, PageIndex);
-        });
+        SetScorePage(PageIndex);
 
         //TODO: Meh. Doen't really work (at least on UWP).
         await ScoreLayout.ScrollToAsync(e.ScrollX, targetY, true);
