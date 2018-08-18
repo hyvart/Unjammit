@@ -1,22 +1,32 @@
-# Jam.NET
+# Unjammit!
 
-Jam.NET is a free software client that reimplements the functionality of the abandoned app "Jammit".
+Multi-platform port of the [Jam.NET](https://github.com/maxton/Jam.NET) JCF media player.
 
-For bleeding-edge testing, you can download builds from [Appveyor](https://ci.appveyor.com/project/maxton/jam-net/build/artifacts).
+This software aims to implement the playback functionality of the defunct [Jammit](https://www.youtube.com/channel/UCTmh3zCCSybVNMye-3lozJQ) app.
 
-More stable builds will be released periodically in [the releases tab](https://github.com/maxton/Jam.NET/releases).
+## Features (current)
+
+* Play isolated tracks for each instrument.
+* Set the volume for the instrument or backing track.
+* Display music score or tablature.
+
+## Supported Platforms
+
+| | Minimum Version | Status |
+|:-:|:-:|:-:|
+| iOS | 9.3 | [![Build status](https://build.appcenter.ms/v0.1/apps/6e96865d-26dc-402c-b234-669ccefcc7d7/branches/xplat/badge)](https://appcenter.ms) |
+| macOS | 10.7 | |
+| Windows Universal | 10 1803 | |
+| Windows Desktop | 7 SP1 | [Download](https://github.com/maxton/Jam.NET/releases/download/v0.2.0/Jam.NET-0.2.0.zip) |
+
+## License
+[3-Clause BSD License](https://github.com/maxton/Jam.NET/blob/master/COPYING)
 
 ## Contributing
 
-Contributions are welcome.
-For code style, please note that this project uses the default C# code style, but with 2 spaces instead of tabs.
-PRs not adhering to the style will not be merged.
+While this is a fork from the Jam.NET repository, it is not actively developed anymore.<br/>
+Submit a [Pull Request](https://github.com/maxton/Jam.NET/compare) against this repository's `xplat` branch.
 
-When VS2017 is released we will use the .editorconfig file to automatically configure code style.
+## Screenshots
 
-Please note that if you contribute to this project, you agree that you are licensing your contribution under the
-[3-Clause "Revised" BSD License](https://github.com/maxton/Jam.NET/blob/master/COPYING).
-
-## Screenshot
-
-![Current state of the application](https://i.imgur.com/02lWV9h.png)
+![Selecting the score in iOS](https://i.imgur.com/7enmSVS.png)
