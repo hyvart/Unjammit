@@ -30,3 +30,4 @@ Submit a [Pull Request](https://github.com/maxton/Jam.NET/compare) against this 
 ## Screenshots
 
 ![Selecting the score in iOS](https://i.imgur.com/7enmSVS.png)
+![Controlling playback in macOS](https://i.imgur.com/FbNGVeR.png)
