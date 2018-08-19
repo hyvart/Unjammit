@@ -48,5 +48,7 @@
 	<string></string>
 	<key>CFBundleName</key>
 	<string>Unjammit!</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 </dict>
 </plist>
