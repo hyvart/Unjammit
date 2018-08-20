@@ -49,7 +49,7 @@ namespace Jam.NET.Model
       using (var ms = new MemoryStream())
       {
         s.CopyTo(ms);
-        return new UnionArray { Bytes = ms.ToArray() }.Sbytes;
+        return new Jammit.UnionArray { Bytes = ms.ToArray() }.Sbytes;
       }
     }
 

@@ -13,5 +13,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\" />
+  </ItemGroup>
 
 </Project>
