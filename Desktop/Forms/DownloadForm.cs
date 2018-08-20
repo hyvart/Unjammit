@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Management;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Jam.NET.Net;
+using Jammit.Client;
 
 namespace Jam.NET.Forms
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Jam.NET.Net
+namespace Jammit.Client
 {
   public class ClassicApiConnector
   {
