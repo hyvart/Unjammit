@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 
+using Jammit; //StreamExtensions
+
 namespace Jam.NET.Audio
 {
   public class Ima4Decoder
