@@ -92,7 +92,15 @@ namespace Jam.NET.Audio
     public TimeSpan Position
     {
       get { return _mixer.CurrentTime; }
-      set { _mixer.CurrentTime = value; }
+
+      set
+      {
+        if (value == _mixer.CurrentTime)
+          return;
+
+        _mixer.CurrentTime = value;
+        PositionChanged?.Invoke(this, new EventArgs());
+      }
     }
 
     public Jammit.Audio.PlaybackStatus State

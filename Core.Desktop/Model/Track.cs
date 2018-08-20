@@ -44,7 +44,7 @@ namespace Jam.NET.Model
     public static List<Track> FromNSArray(NSArray a, Func<string,bool> filePredicate)
     {
       var tracks = new List<Track>();
-      foreach (var track in a.GetArray())
+      foreach (var track in a as NSArray)
       {
         var dict = track as NSDictionary;
         if (dict == null) continue;

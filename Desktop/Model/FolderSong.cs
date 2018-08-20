@@ -110,7 +110,7 @@ namespace Jam.NET.Model
     private List<Section> InitSections()
     {
       var sectionArray = (NSArray)PropertyListParser.Parse(Path.Combine(Metadata.SongPath, "sections.plist"));
-      return sectionArray.GetArray().OfType<NSDictionary>().Select(dict => new Section
+      return sectionArray.OfType<NSDictionary>().Select(dict => new Section
       {
         BeatIdx = dict.Int("beat") ?? 0,
         Beat = Beats[dict.Int("beat") ?? 0],

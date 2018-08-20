@@ -93,6 +93,8 @@ namespace Jammit.Audio
         {
           player.CurrentTime = value.TotalSeconds;
         }
+
+        PositionChanged?.Invoke(this, new EventArgs());
       }
     }
 

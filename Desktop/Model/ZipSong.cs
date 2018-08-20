@@ -146,7 +146,7 @@ namespace Jam.NET.Model
       using (var arc = OpenZip())
       using (var stream = arc.GetEntry($"{_basePath}/sections.plist").Open())
         sectionArray = (NSArray)PropertyListParser.Parse(stream);
-      return sectionArray.GetArray().OfType<NSDictionary>().Select(dict => new Section
+      return sectionArray.OfType<NSDictionary>().Select(dict => new Section
       {
         BeatIdx = dict.Int("beat") ?? 0,
         Beat = Beats[dict.Int("beat") ?? 0],
