@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Claunia.PropertyList;
 
+using Jammit; // PlistExtensions
+
 namespace Jam.NET.Model
 {
   public class Track

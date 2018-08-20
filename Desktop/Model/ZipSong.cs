@@ -5,6 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using Claunia.PropertyList;
 using Jam.NET.Audio;
+using Jammit; // PlistExtensions
 
 namespace Jam.NET.Model
 {
