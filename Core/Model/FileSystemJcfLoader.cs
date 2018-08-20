@@ -97,20 +97,10 @@ namespace Jammit.Model
               };
               media.InstrumentTracks.Add(notated);
 
-              media.Scores.Add(new ScoreInfo()
-              {
-                Track = notated,
-                Type = "Score",
-                PageCount = (uint)notationPages
-              });
+              media.Scores.Add(new ScoreInfo(notated, "Score"));
               if (tablaturePages > 0)
               {
-                media.Scores.Add(new ScoreInfo()
-                {
-                  Track = notated,
-                  Type = "Tablature",
-                  PageCount = (uint)tablaturePages
-                });
+                media.Scores.Add(new ScoreInfo(notated, "Tablature"));
               }
             }
             else
