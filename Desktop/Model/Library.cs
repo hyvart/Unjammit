@@ -13,11 +13,11 @@ namespace Jam.NET.Model
         "Jam.NET", // Must match root  namespace
         "contentCache.xml");
 
-    private static Dictionary<Guid, SongMeta> _cache;
+    private static Dictionary<Guid, Jammit.Model.SongMeta> _cache;
 
-    private static Dictionary<Guid, SongMeta> InitCache()
+    private static Dictionary<Guid, Jammit.Model.SongMeta> InitCache()
     {
-      var cache = new Dictionary<Guid, SongMeta>();
+      var cache = new Dictionary<Guid, Jammit.Model.SongMeta>();
       if (!File.Exists(CacheFileName)) return cache;
 
       try
@@ -27,7 +27,7 @@ namespace Jam.NET.Model
           var doc = XDocument.Load(stream);
           foreach (var t in doc.Element("songs").Elements())
           {
-            var track = SongMeta.FromXml(t);
+            var track = Jammit.Model.SongMeta.FromXml(t);
             cache[track.ContentGuid] = track;
           }
         }
@@ -43,7 +43,7 @@ namespace Jam.NET.Model
 
     public static void ResetCache()
     {
-      _cache = new Dictionary<Guid, SongMeta>();
+      _cache = new Dictionary<Guid, Jammit.Model.SongMeta>();
       UpdateCache();
     }
 
@@ -63,7 +63,7 @@ namespace Jam.NET.Model
         return;
       }
 
-      var foundTracks = new Dictionary<Guid, SongMeta>();
+      var foundTracks = new Dictionary<Guid, Jammit.Model.SongMeta>();
       XDocument cacheDoc = new XDocument(new XElement("songs"));
       var tracksEl = cacheDoc.Element("songs");
 
@@ -88,7 +88,7 @@ namespace Jam.NET.Model
         {
           var guid = Guid.Parse(Path.GetFileName(file).Substring(0, 36));
           if (foundTracks.ContainsKey(guid)) continue;
-          var newTrack = SongMeta.FromZip(file);
+          var newTrack = Jammit.Model.SongMeta.FromZip(file);
           foundTracks[newTrack.ContentGuid] = newTrack;
           tracksEl.Add(newTrack.ToXml());
         }
@@ -112,7 +112,7 @@ namespace Jam.NET.Model
           if (!File.Exists(Path.Combine(dir, "info.plist"))) continue;
           using (var reader = new StreamReader(new FileStream(Path.Combine(dir, "info.plist"), FileMode.Open)))
           {
-            var newTrack = SongMeta.FromPlist(XDocument.Parse(reader.ReadToEnd()), guid, "Folder", dir);
+            var newTrack = Jammit.Model.SongMeta.FromPlist(XDocument.Parse(reader.ReadToEnd()), guid, "Folder", dir);
             foundTracks[newTrack.ContentGuid] = newTrack;
             tracksEl.Add(newTrack.ToXml());
           }
@@ -140,7 +140,7 @@ namespace Jam.NET.Model
     /// Get all thet songs in the cache.
     /// </summary>
     /// <returns></returns>
-    public static List<SongMeta> GetSongs()
+    public static List<Jammit.Model.SongMeta> GetSongs()
     {
       if (_cache == null) _cache = InitCache();
 

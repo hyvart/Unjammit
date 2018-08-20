@@ -10,7 +10,7 @@ namespace Jam.NET.Model
     /// <summary>
     /// The metadata for this song.
     /// </summary>
-    SongMeta Metadata { get; }
+    Jammit.Model.SongMeta Metadata { get; }
 
     /// <summary>
     /// A list of all the tracks in this song.
@@ -25,7 +25,7 @@ namespace Jam.NET.Model
     /// <summary>
     /// A list of the sections in this song, in order.
     /// </summary>
-    IReadOnlyList<Section> Sections { get; }
+    IReadOnlyList<Jammit.Model.Section> Sections { get; }
 
     /// <summary>
     /// Returns the waveform data for this song.
@@ -49,7 +49,7 @@ namespace Jam.NET.Model
     /// <param name="t">Track to get tablature for.</param>
     List<Image> GetTablature(Track t);
 
-    ScoreNodes GetNotationData(string trackName, string notationType);
+    Jammit.Model.ScoreNodes GetNotationData(string trackName, string notationType);
 
     /// <summary>
     /// Returns a stream to the file at the given path in this song's content folder.

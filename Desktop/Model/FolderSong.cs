@@ -14,17 +14,17 @@ namespace Jam.NET.Model
   /// </summary>
   class FolderSong : ISong
   {
-    public SongMeta Metadata { get; }
+    public Jammit.Model.SongMeta Metadata { get; }
 
     public IReadOnlyList<Track> Tracks { get; }
 
     public IReadOnlyList<Jammit.Model.Beat> Beats { get; }
 
-    public IReadOnlyList<Section> Sections { get; }
+    public IReadOnlyList<Jammit.Model.Section> Sections { get; }
 
-    private List<ScoreNodes> _notationData;
+    private List<Jammit.Model.ScoreNodes> _notationData;
 
-    public FolderSong(SongMeta metadata)
+    public FolderSong(Jammit.Model.SongMeta metadata)
     {
       Metadata = metadata;
       Tracks = InitTracks();
@@ -75,7 +75,7 @@ namespace Jam.NET.Model
       return ret;
     }
 
-    public ScoreNodes GetNotationData(string trackName, string notationType)
+    public Jammit.Model.ScoreNodes GetNotationData(string trackName, string notationType)
     {
       return _notationData.FirstOrDefault(score => trackName == score.Title && notationType == score.Type);
     }
@@ -107,10 +107,10 @@ namespace Jam.NET.Model
       return Jammit.Model.Beat.FromNSArrays(beatArray, ghostArray);
     }
 
-    private List<Section> InitSections()
+    private List<Jammit.Model.Section> InitSections()
     {
       var sectionArray = (NSArray)PropertyListParser.Parse(Path.Combine(Metadata.SongPath, "sections.plist"));
-      return sectionArray.OfType<NSDictionary>().Select(dict => new Section
+      return sectionArray.OfType<NSDictionary>().Select(dict => new Jammit.Model.Section
       {
         BeatIdx = dict.Int("beat") ?? 0,
         Beat = Beats[dict.Int("beat") ?? 0],
@@ -119,11 +119,11 @@ namespace Jam.NET.Model
       }).ToList();
     }
 
-    private List<ScoreNodes> InitScoreNodes()
+    private List<Jammit.Model.ScoreNodes> InitScoreNodes()
     {
       using (var nodes = GetContentStream("nowline.nodes"))
       {
-        return ScoreNodes.FromStream(nodes);
+        return Jammit.Model.ScoreNodes.FromStream(nodes);
       }
     }
   }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Jam.NET.Model;
+using Jammit.Model;
 
 namespace Jam.NET.Controls
 {

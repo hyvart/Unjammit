@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
@@ -10,6 +11,7 @@ namespace Jammit.Model
   /// <summary>
   /// Metadata about a song
   /// </summary>
+  [Obsolete]
   public class SongMeta
   {
     //TODO: Made this fields properties for Xaml binding. Reconcile with 'Desktop Core'.
@@ -84,25 +86,24 @@ namespace Jammit.Model
 
     public static SongMeta FromZip(string zipFileName)
     {
-      //using (var a = ZipFile.OpenRead(zipFileName))
-      //{
-      //  Guid id = Guid.Empty;
-      //  string entryPath = null;
-      //  foreach (var e in a.Entries)
-      //  {
-      //    if (e.FullName.EndsWith(".jcf/") || Regex.IsMatch(e.FullName, @".*-.*-.*-.*/"))
-      //    {
-      //      id = Guid.Parse(e.FullName.Substring(0, 36));
-      //      entryPath = e.FullName;
-      //      break;
-      //    }
-      //  }
-      //  using (var reader = new StreamReader(a.GetEntry(entryPath + "info.plist").Open()))
-      //  {
-      //    return FromPlist(XDocument.Parse(reader.ReadToEnd()), id, "Zip", zipFileName);
-      //  }
-      //}
-      return default(SongMeta);
+      using (var a = ZipFile.OpenRead(zipFileName))
+      {
+        Guid id = Guid.Empty;
+        string entryPath = null;
+        foreach (var e in a.Entries)
+        {
+          if (e.FullName.EndsWith(".jcf/") || Regex.IsMatch(e.FullName, @".*-.*-.*-.*/"))
+          {
+            id = Guid.Parse(e.FullName.Substring(0, 36));
+            entryPath = e.FullName.Substring(0, e.FullName.IndexOf('/') + 1);
+            break;
+          }
+        }
+        using (var reader = new StreamReader(a.GetEntry(entryPath + "info.plist").Open()))
+        {
+          return FromPlist(XDocument.Parse(reader.ReadToEnd()), id, "Zip", zipFileName);
+        }
+      }
     }
 
     public static SongMeta FromXml(XElement n)

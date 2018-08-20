@@ -72,6 +72,7 @@
     <Compile Include="Audio\ClickTrackStream.cs" />
     <Compile Include="Audio\Ima4Decoder.cs" />
     <Compile Include="Audio\ImaWaveStream.cs" />
+    <Compile Include="Audio\ISongPlayer.cs" />
     <Compile Include="Audio\MockSongPlayer.cs" />
     <Compile Include="Audio\NAudioJcfPlayer.cs" />
     <Compile Include="Controls\SeekBar.cs">
@@ -114,6 +115,7 @@
     <Compile Include="Model\FolderSong.cs" />
     <Compile Include="Model\ISong.cs" />
     <Compile Include="Model\SongLoader.cs" />
+    <Compile Include="Model\Track.cs" />
     <Compile Include="Model\ZipSong.cs" />
     <Compile Include="Model\Library.cs" />
     <Compile Include="Forms\OptionsWindow.cs">
@@ -185,10 +187,6 @@
     <None Include="Resources\Licenses.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core.Desktop\Jam.NET.csproj">
-      <Project>{D315C08F-658E-4702-BEC1-36F16CC4FC40}</Project>
-      <Name>Jam.NET</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">
       <Project>{c99db4a0-9987-45e2-9f9e-d27d09f743cf}</Project>
       <Name>Unjammit.Core</Name>

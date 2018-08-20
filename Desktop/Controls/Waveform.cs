@@ -8,7 +8,7 @@ using Jam.NET.Model;
 
 namespace Jam.NET.Controls
 {
-  class Waveform : UserControl, ISynchronizable
+  class Waveform : UserControl, Jammit.Model.ISynchronizable
   {
     private long _samplePos;
 
@@ -28,9 +28,9 @@ namespace Jam.NET.Controls
     public long Samples { get; set; }
 
     public sbyte[] WaveData;
-    public IReadOnlyList<Section> Sections;
+    public IReadOnlyList<Jammit.Model.Section> Sections;
     public IReadOnlyList<Jammit.Model.Beat> Beats;
-    public readonly Looper Looper;
+    public readonly Jammit.Model.Looper Looper;
 
     private readonly Pen _nowPen = new Pen(Color.FromArgb(0x80, 0xFF, 0xFF, 0xFF), 2.0f);
     private readonly Pen _sectionPen = Pens.White;
@@ -41,7 +41,7 @@ namespace Jam.NET.Controls
 
     public Waveform()
     {
-      Looper = new Looper();
+      Looper = new Jammit.Model.Looper();
       MouseDown += OnMouseDown;
       DoubleBuffered = true;
     }
