@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Jam.NET.Model;
 using NAudio.Wave;
 
 namespace Jam.NET.Audio

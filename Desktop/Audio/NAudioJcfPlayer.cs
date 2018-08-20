@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using Jammit.Model;
 using NAudio.Wave;
 
-namespace Jammit.Audio
+namespace Jam.NET.Audio
 {
-  public class NAudioJcfPlayer : IJcfPlayer
+  public class NAudioJcfPlayer : Jammit.Audio.IJcfPlayer
   {
     #region private members
 
@@ -32,13 +32,13 @@ namespace Jammit.Audio
       foreach (var track in media.InstrumentTracks)
       {
         var stream = File.OpenRead(Path.Combine(songPath, $"{track.Identifier}_jcfx"));
-        _channels[track] = new WaveChannel32(new Jam.NET.Audio.ImaWaveStream(stream));
+        _channels[track] = new WaveChannel32(new ImaWaveStream(stream));
       }
 
       var backingStream = File.OpenRead(Path.Combine(Jam.NET.Properties.Settings.Default.TrackPath, $"{media.Song.Id}.jcf"));
-      _channels[media.BackingTrack] = new WaveChannel32(new Jam.NET.Audio.ImaWaveStream(backingStream));
+      _channels[media.BackingTrack] = new WaveChannel32(new ImaWaveStream(backingStream));
 
-      _channels[media.ClickTrack] = new WaveChannel32(new Jam.NET.Audio.ClickTrackStream(media.Beats));
+      _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats));
 
       foreach (var channel in _channels.Values)
       {
@@ -95,18 +95,18 @@ namespace Jammit.Audio
       set { _mixer.CurrentTime = value; }
     }
 
-    public PlaybackStatus State
+    public Jammit.Audio.PlaybackStatus State
     {
       get
       {
         switch (_waveOut.PlaybackState)
         {
           case PlaybackState.Stopped:
-            return PlaybackStatus.Stopped;
+            return Jammit.Audio.PlaybackStatus.Stopped;
           case PlaybackState.Playing:
-            return PlaybackStatus.Playing;
+            return Jammit.Audio.PlaybackStatus.Playing;
           case PlaybackState.Paused:
-            return PlaybackStatus.Paused;
+            return Jammit.Audio.PlaybackStatus.Paused;
           default:
             throw new NotImplementedException("Unrecognized PlaybackStatus value.");
         }
