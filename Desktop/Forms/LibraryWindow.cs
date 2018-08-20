@@ -70,7 +70,7 @@ namespace Jam.NET
       {
         try
         {
-          var sw = new SongWindow(listView1.SelectedItems[0].Tag as Jammit.Model.SongMeta);
+          var sw = new SongWindow(listView1.SelectedItems[0].Tag as SongMeta);
           sw.Show();
         }
         catch (Exception ex)

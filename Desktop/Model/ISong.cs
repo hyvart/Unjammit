@@ -10,7 +10,7 @@ namespace Jam.NET.Model
     /// <summary>
     /// The metadata for this song.
     /// </summary>
-    Jammit.Model.SongMeta Metadata { get; }
+    SongMeta Metadata { get; }
 
     /// <summary>
     /// A list of all the tracks in this song.

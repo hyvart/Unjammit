@@ -14,7 +14,7 @@ namespace Jam.NET.Model
   /// </summary>
   class ZipSong : ISong
   {
-    public Jammit.Model.SongMeta Metadata { get; }
+    public SongMeta Metadata { get; }
 
     public IReadOnlyList<Track> Tracks { get; }
     public IReadOnlyList<Jammit.Model.Beat> Beats { get; }
@@ -23,7 +23,7 @@ namespace Jam.NET.Model
     private List<Jammit.Model.ScoreNodes> _notationData;
     private string _basePath;
 
-    public ZipSong(Jammit.Model.SongMeta metadata)
+    public ZipSong(SongMeta metadata)
     {
       Metadata = metadata;
       // Determine internal base path.

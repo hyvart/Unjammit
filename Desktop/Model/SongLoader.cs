@@ -4,7 +4,7 @@ namespace Jam.NET.Model
 {
   public static class SongLoader
   {
-    public static ISong Load(Jammit.Model.SongMeta meta)
+    public static ISong Load(SongMeta meta)
     {
       switch (meta.Type)
       {

@@ -13,7 +13,7 @@ namespace Jam.NET
     private ISongPlayer _player;
     private Timer _timer;
 
-    public SongWindow(Jammit.Model.SongMeta meta)
+    public SongWindow(SongMeta meta)
     {
       _song = SongLoader.Load(meta);
       InitializeComponent();

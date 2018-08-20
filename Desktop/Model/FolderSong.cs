@@ -14,7 +14,7 @@ namespace Jam.NET.Model
   /// </summary>
   class FolderSong : ISong
   {
-    public Jammit.Model.SongMeta Metadata { get; }
+    public SongMeta Metadata { get; }
 
     public IReadOnlyList<Track> Tracks { get; }
 
@@ -24,7 +24,7 @@ namespace Jam.NET.Model
 
     private List<Jammit.Model.ScoreNodes> _notationData;
 
-    public FolderSong(Jammit.Model.SongMeta metadata)
+    public FolderSong(SongMeta metadata)
     {
       Metadata = metadata;
       Tracks = InitTracks();
