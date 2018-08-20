@@ -96,7 +96,7 @@ namespace Jam.NET.Model
     public Stream GetContentStream(string s)
     {
       var zip = OpenZip();
-      var stream = new OnDisposeStream(zip.GetEntry(_basePath + "/" + s).Open());
+      var stream = new Jammit.OnDisposeStream(zip.GetEntry(_basePath + "/" + s).Open());
       stream.OnDispose += () => zip.Dispose();
       return stream;
     }
