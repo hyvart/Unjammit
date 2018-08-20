@@ -21,10 +21,10 @@ namespace Jammit.Model
       var beats = new List<Beat>();
       for (var i = 0; i < beatArray.Count; i++)
       {
-        var dict = beatArray.GetArray()[i] as NSDictionary;
+        var dict = beatArray[i] as NSDictionary;
         beats.Add(new Beat(dict.Double("position") ?? 0,
           dict.Bool("isDownbeat") ?? false,
-          (ghostArray.GetArray()[i] as NSDictionary).Bool("isGhostBeat") ?? false));
+          (ghostArray[i] as NSDictionary).Bool("isGhostBeat") ?? false));
       }
       return beats;
     }
