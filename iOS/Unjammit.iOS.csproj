@@ -68,7 +68,6 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
-    <Compile Include="Audio\IOSSongPlayer.cs" />
     <Compile Include="Audio\IOSJcfPlayer.cs" />
     <Compile Include="Audio\IOSAVAudioPlayer.cs" />
   </ItemGroup>

@@ -151,11 +151,6 @@ namespace Jammit.Model
       return File.OpenRead(Path.Combine(_songPath, s));
     }
 
-    public ISongPlayer GetSongPlayer()
-    {
-      return new MockSongPlayer(this);
-    }
-
     public Stream GetCover()
     {
       return File.OpenRead(Path.Combine(_songPath, "cover.jpg"));

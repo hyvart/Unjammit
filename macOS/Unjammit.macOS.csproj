@@ -132,7 +132,6 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Audio\MacOSSongPlayer.cs" />
     <Compile Include="Audio\MacOSJcfPlayer.cs" />
     <Compile Include="Audio\MacOSAVAudioPlayer.cs" />
   </ItemGroup>

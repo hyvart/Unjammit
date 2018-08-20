@@ -64,10 +64,5 @@ namespace Jammit.Model
     /// </summary>
     /// <param name="path">Path within the content file. i.e.: info.plist</param>
     Stream GetSeekableContentStream(string path);
-
-    /// <summary>
-    /// Returns a Song Player that can play back the audio for this song.
-    /// </summary>
-    ISongPlayer GetSongPlayer();
   }
 }

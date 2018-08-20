@@ -31,9 +31,6 @@ namespace Jammit.Forms
     [Obsolete("Remove when Xamarin.Essentials supports all platforms.")]
     public static string DataDirectory { get; private set; }
 
-    [Obsolete]
-    public static Func<ISong, ISongPlayer> SongPlayerFactory { get; private set; }
-
     public static Func<JcfMedia, IJcfPlayer> PlayerFactory { get; private set; }
 
     public static IJcfLoader MediaLoader { get; private set; }
