@@ -76,6 +76,10 @@ namespace Jammit.Model
       _storagePath = storagePath;
       _libraryPath = Path.Combine(_storagePath, LibraryFileName);
       _client = client;
+      _client.DownloadProgressChanged += (sender, e) =>
+      {
+        //TODO: Notify callers.
+      };
 
       // If library doesn't exist, initialize.
       if (!File.Exists(_libraryPath))
@@ -107,19 +111,14 @@ namespace Jammit.Model
     {
       if (!/*Forms.Settings.SkipDownload*/ false)
       {
-        // Download the file as stream.
-        var downloadStream = await _client.DownloadSong(song);
-
         // Make sure Tracks and Downloads dirs exist.
         var downloadsDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Downloads"));
         var tracksDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Tracks"));
+        var zipPath = Path.Combine(downloadsDir.FullName, $"{song.Id.ToString().ToUpper()}.zip");
+
+        await _client.DownloadSong(song, zipPath);
 
         // Extract downloaded ZIP contents.
-        var zipPath = Path.Combine(downloadsDir.FullName, $"{song.Id.ToString().ToUpper()}.zip");
-        using (var zipStream = File.Create(zipPath))
-        {
-          downloadStream.CopyTo(zipStream);
-        }
         ZipFile.ExtractToDirectory(zipPath, tracksDir.FullName);
 
         _cache[song] = song;

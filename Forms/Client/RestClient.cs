@@ -81,6 +81,17 @@ namespace Jammit.Forms.Client
       }
     }
 
+    public async Task DownloadSong(SongInfo song, string path)
+    {
+      using (var client = new System.Net.WebClient())
+      {
+        client.DownloadProgressChanged += this.DownloadProgressChanged;
+
+        var uri = new Uri($"{Settings.ServiceUri}/download?id={song.Id.ToString().ToUpper()}");
+        await client.DownloadFileTaskAsync(uri, path);
+      }
+    }
+
     public async Task RequestAuthorization()
     {
       using (var cliente = new HttpClient())
@@ -136,6 +147,12 @@ namespace Jammit.Forms.Client
         }
       }
     }
+
+    #endregion
+
+    #region IClient events
+
+    public event System.Net.DownloadProgressChangedEventHandler DownloadProgressChanged;
 
     #endregion
   }

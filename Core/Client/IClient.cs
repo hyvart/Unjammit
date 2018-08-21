@@ -12,11 +12,19 @@ namespace Jammit.Client
 
     Task<System.IO.Stream> DownloadSong(Model.SongInfo song);
 
+    Task DownloadSong(Model.SongInfo song, string path);
+
     Task RequestAuthorization();
 
     #region Properties
 
     AuthorizationStatus AuthStatus { get; }
+
+    #endregion
+
+    #region Events
+
+    event System.Net.DownloadProgressChangedEventHandler DownloadProgressChanged;
 
     #endregion
   }
