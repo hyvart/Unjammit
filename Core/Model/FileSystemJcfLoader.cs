@@ -35,6 +35,8 @@ namespace Jammit.Model
 
       LoadBeats(result, songPath);
 
+      LoadSections(result, songPath);
+
       return result;
     }
 
@@ -147,6 +149,26 @@ namespace Jammit.Model
       }
 
       media.Beats = beats;
+    }
+
+    private void LoadSections(JcfMedia media, string songPath)
+    {
+      var sectionArray = PropertyListParser.Parse(Path.Combine(songPath, "sections.plist")) as NSArray;
+      media.Sections =  sectionArray.OfType<NSDictionary>().Select(dict => new Section
+      {
+        BeatIdx = dict.Int("beat").Value,
+        Beat = media.Beats[dict.Int("beat").Value],
+        Number = dict.Int("number").Value,
+        Type = dict.Int("type").Value
+      }).ToList();
+    }
+
+    private void LoadScoreNodes(JcfMedia media, string songPath)
+    {
+      using (var stream = File.OpenRead(Path.Combine(songPath, "nowline.nodes")))
+      {
+        //TODO: Emulate ScoreNodes.FromStream
+      }
     }
   }
 }
