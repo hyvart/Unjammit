@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Jammit.Client
 {
-  public interface IClient
+  public interface IClient : INotifyPropertyChanged
   {
     Task<List<Model.SongInfo>> LoadCatalog();
 
@@ -20,11 +21,7 @@ namespace Jammit.Client
 
     AuthorizationStatus AuthStatus { get; }
 
-    #endregion
-
-    #region Events
-
-    event System.Net.DownloadProgressChangedEventHandler DownloadProgressChanged;
+    int SongDownloadProgress { get; }
 
     #endregion
   }

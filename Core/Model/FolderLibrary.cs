@@ -76,10 +76,6 @@ namespace Jammit.Model
       _storagePath = storagePath;
       _libraryPath = Path.Combine(_storagePath, LibraryFileName);
       _client = client;
-      _client.DownloadProgressChanged += (sender, e) =>
-      {
-        //TODO: Notify callers.
-      };
 
       // If library doesn't exist, initialize.
       if (!File.Exists(_libraryPath))

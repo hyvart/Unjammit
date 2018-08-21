@@ -13,11 +13,17 @@ using Plugin.DeviceInfo;
 
 namespace Jammit.Forms.Client
 {
-  class RestClient : IClient, INotifyPropertyChanged
+  class RestClient : IClient
   {
     #region private members
 
     private AuthorizationStatus _authStatus;
+    private int _songDownloadProgress;
+
+    private void OnDownloadProgresChanged(object sender, System.Net.DownloadProgressChangedEventArgs e)
+    {
+      SongDownloadProgress = e.ProgressPercentage;
+    }
 
     #endregion // private members
 
@@ -27,7 +33,7 @@ namespace Jammit.Forms.Client
 
     #endregion
 
-    #region IClient methods
+    #region IClient members
 
     public async Task<List<SongInfo>> LoadCatalog()
     {
@@ -83,9 +89,10 @@ namespace Jammit.Forms.Client
 
     public async Task DownloadSong(SongInfo song, string path)
     {
+      // Reset Download progress.
       using (var client = new System.Net.WebClient())
       {
-        client.DownloadProgressChanged += this.DownloadProgressChanged;
+        client.DownloadProgressChanged += OnDownloadProgresChanged;
 
         var uri = new Uri($"{Settings.ServiceUri}/download?id={song.Id.ToString().ToUpper()}");
         await client.DownloadFileTaskAsync(uri, path);
@@ -127,10 +134,6 @@ namespace Jammit.Forms.Client
       } // Using HttpClient
     }
 
-    #endregion
-
-    #region IClient properties
-
     public AuthorizationStatus AuthStatus
     {
       get
@@ -148,12 +151,20 @@ namespace Jammit.Forms.Client
       }
     }
 
-    #endregion
+    public int SongDownloadProgress
+    {
+      get
+      {
+        return _songDownloadProgress;
+      }
 
-    #region IClient events
+      private set
+      {
+        _songDownloadProgress = value;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SongDownloadProgress"));
+      }
+    }
 
-    public event System.Net.DownloadProgressChangedEventHandler DownloadProgressChanged;
-
-    #endregion
+    #endregion // IClient members
   }
 }
