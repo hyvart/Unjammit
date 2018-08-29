@@ -19,7 +19,13 @@ namespace Jammit.Android
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            LoadApplication(
+              new Jammit.Forms.App(
+                Xamarin.Essentials.FileSystem.AppDataDirectory,
+                (media) => { return null; },
+                new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
+              )
+            );
         }
     }
 }
