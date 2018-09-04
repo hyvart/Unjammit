@@ -15,9 +15,9 @@ This software aims to implement the playback functionality of the defunct [Jammi
 | | Minimum Version | Status |
 |:-:|:-:|:-:|
 | iOS | 9.3 | [![Build status](https://build.appcenter.ms/v0.1/apps/6e96865d-26dc-402c-b234-669ccefcc7d7/branches/xplat/badge)](https://appcenter.ms) |
-| macOS | 10.7 | |
+| macOS | 10.7 | [![Build status](https://hyvart.visualstudio.com/Unjammit/_apis/build/status/Unjammit%20CI%20macOS)](https://github.com/JunielKatarn/Unjammit/releases) |
 | Windows Universal | 10 1803 | |
-| Windows Desktop | 7 SP1 | [Download](https://github.com/maxton/Jam.NET/releases/download/v0.2.0/Jam.NET-0.2.0.zip) |
+| Windows Desktop | 7 SP1 | [Download](https://github.com/JunielKatarn/Unjammit/releases) |
 
 ## License
 [3-Clause BSD License](https://github.com/maxton/Jam.NET/blob/master/COPYING)
