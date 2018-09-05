@@ -14,7 +14,7 @@ This software aims to implement the playback functionality of the defunct [Jammi
 
 | | Minimum Version | Status |
 |:-:|:-:|:-:|
-| iOS | 9.3 | [![Build status](https://build.appcenter.ms/v0.1/apps/6e96865d-26dc-402c-b234-669ccefcc7d7/branches/xplat/badge)](https://appcenter.ms) |
+| iOS | 9.3 | [![Build status](https://build.appcenter.ms/v0.1/apps/6e96865d-26dc-402c-b234-669ccefcc7d7/branches/ci/badge)](https://install.appcenter.ms/users/juniel_katarn/apps/Unjammit) |
 | macOS | 10.7 | [![Build status](https://hyvart.visualstudio.com/Unjammit/_apis/build/status/Unjammit%20CI%20macOS)](https://github.com/JunielKatarn/Unjammit/releases) |
 | Windows Universal | 10 1803 | [![Build status](https://hyvart.visualstudio.com/Unjammit/_apis/build/status/Unjammit%20CI%20Windows)](https://github.com/JunielKatarn/Unjammit/releases) |
 | Windows Desktop | 7 SP1 | [Download](https://github.com/JunielKatarn/Unjammit/releases) |
