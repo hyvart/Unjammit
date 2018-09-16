@@ -154,10 +154,10 @@ namespace Jammit.Model
     private void LoadSections(JcfMedia media, string songPath)
     {
       var sectionArray = PropertyListParser.Parse(Path.Combine(songPath, "sections.plist")) as NSArray;
-      media.Sections =  sectionArray.OfType<NSDictionary>().Select(dict => new Section
+      media.Sections = sectionArray.OfType<NSDictionary>().Select(dict => new Section
       {
-        BeatIdx = dict.Int("beat").Value,
-        Beat = media.Beats[dict.Int("beat").Value],
+        BeatIdx = dict.Int("beat") ?? int.Parse(dict.String("beat")), // Key can sometimes be string instead of integer.
+        Beat = media.Beats[dict.Int("beat") ?? int.Parse(dict.String("beat"))],
         Number = dict.Int("number").Value,
         Type = dict.Int("type").Value
       }).ToList();
