@@ -21,7 +21,8 @@ namespace Jammit.Client
 
     AuthorizationStatus AuthStatus { get; }
 
-    int SongDownloadProgress { get; }
+    //TODO: Make int. Use converter.
+    double SongDownloadProgress { get; }
 
     #endregion
   }
