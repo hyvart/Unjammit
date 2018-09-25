@@ -22,6 +22,10 @@
     <PackageCertificateThumbprint>0899B85F76477768B60373668C7F3F463084CC13</PackageCertificateThumbprint>
     <IntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
     <OutputPath>$(SolutionDir)Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+    <AppxPackageDir>$(OutputPath)AppPackages</AppxPackageDir>
+
+    <!-- TODO: Extend supported platforms. -->
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup>
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
