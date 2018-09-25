@@ -18,12 +18,7 @@ namespace Jammit.Forms.Client
     #region private members
 
     private AuthorizationStatus _authStatus;
-    private int _songDownloadProgress;
-
-    private void OnDownloadProgresChanged(object sender, System.Net.DownloadProgressChangedEventArgs e)
-    {
-      SongDownloadProgress = e.ProgressPercentage;
-    }
+    private double _songDownloadProgress;
 
     #endregion // private members
 
@@ -90,9 +85,18 @@ namespace Jammit.Forms.Client
     public async Task DownloadSong(SongInfo song, string path)
     {
       // Reset Download progress.
+      SongDownloadProgress = 0;
+
       using (var client = new System.Net.WebClient())
       {
-        client.DownloadProgressChanged += OnDownloadProgresChanged;
+        client.DownloadProgressChanged += (sender, e) =>
+        {
+          SongDownloadProgress = e.ProgressPercentage;
+        };
+        client.DownloadFileCompleted += (sender, e) =>
+        {
+          //TODO
+        };
 
         var uri = new Uri($"{Settings.ServiceUri}/download?id={song.Id.ToString().ToUpper()}");
         await client.DownloadFileTaskAsync(uri, path);
@@ -151,7 +155,7 @@ namespace Jammit.Forms.Client
       }
     }
 
-    public int SongDownloadProgress
+    public double SongDownloadProgress
     {
       get
       {
