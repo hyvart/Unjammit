@@ -18,27 +18,23 @@ namespace Jammit.Forms
 
     public CatalogPage()
     {
-      if (Catalog == null)
-        LoadCatalog();
-
       InitializeComponent();
+
+      if (Catalog == null)
+        Task.Run(async () => await LoadCatalog()).Wait();
 
       //TODO: Move back into XAML bindings.
       this.CatalogView.ItemsSource = Catalog;
     }
 
-    private void LoadCatalog()
+    private async Task LoadCatalog()
     {
-      // Schedule catalog loading and wait synchronously.
-      var catalogTask = Task.Run(async () => await App.Client.LoadCatalog());
-      catalogTask.Wait();
-
-      Catalog = catalogTask.Result;
+      Catalog = await App.Client.LoadCatalog();
     }
 
-    private void LoadButton_Clicked(object sender, EventArgs e)
+    private async void LoadButton_Clicked(object sender, EventArgs e)
     {
-      LoadCatalog();
+      await LoadCatalog();
     }
 
     private void CloseButton_Clicked(object sender, EventArgs e)
