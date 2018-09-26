@@ -36,6 +36,7 @@
       </ListView.ItemTemplate>
     </ListView>
     <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" />
+    <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" />
     <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" />
     <StackLayout Orientation="Horizontal">
       <Label x:Name="VersionLabel" />
