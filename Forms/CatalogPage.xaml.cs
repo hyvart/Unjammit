@@ -20,8 +20,7 @@ namespace Jammit.Forms
     {
       InitializeComponent();
 
-      if (Catalog == null)
-        Task.Run(async () => await LoadCatalog()).Wait();
+      Task.Run(async () => await LoadCatalog()).Wait();
 
       //TODO: Move back into XAML bindings.
       this.CatalogView.ItemsSource = Catalog;

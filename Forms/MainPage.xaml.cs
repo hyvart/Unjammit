@@ -35,9 +35,24 @@ namespace Jammit.Forms
       Navigation.PushModalAsync(new SongPage(e.Item as SongInfo));
     }
 
-    private void CatalogButton_Clicked(object sender, EventArgs e)
+    private async void CatalogButton_Clicked(object sender, EventArgs e)
     {
-      Navigation.PushModalAsync(new CatalogPage());
+      try
+      {
+        await Navigation.PushModalAsync(new CatalogPage());
+      }
+      catch (Exception ex)
+      {
+        string message;
+        if (ex.InnerException is UriFormatException)
+          message = $"Invalid server address: [ {Settings.ServiceUri} ]";
+        else if (ex.InnerException != null)
+          message = ex.InnerException.Message;
+        else
+          message = ex.Message;
+
+        await DisplayAlert("Error", message, "Cancel");
+      }
     }
 
     private void LibraryItem_Delete(object sender, EventArgs e)

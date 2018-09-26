@@ -34,13 +34,13 @@ namespace Jammit.Forms.Client
     {
       var result = new List<SongInfo>();
 
-      using (var cliente = new HttpClient())
+      using (var client = new HttpClient())
       {
-        cliente.BaseAddress = new Uri($"{Settings.ServiceUri}/track");
-        cliente.DefaultRequestHeaders.Clear();
-        cliente.DefaultRequestHeaders.Add("Accept", "application/json");
+        client.BaseAddress = new Uri($"{Settings.ServiceUri}/track");
+        client.DefaultRequestHeaders.Clear();
+        client.DefaultRequestHeaders.Add("Accept", "application/json");
 
-        var response = await cliente.GetAsync(cliente.BaseAddress.AbsoluteUri);
+        var response = await client.GetAsync(client.BaseAddress.AbsoluteUri);
         if (response.IsSuccessStatusCode)
         {
           var jsonString = await response.Content.ReadAsStringAsync();
@@ -59,6 +59,21 @@ namespace Jammit.Forms.Client
             ));
           }
         } // if Succeeded response
+        else
+        {
+          string suffix = "";
+          switch (response.StatusCode)
+          {
+            case System.Net.HttpStatusCode.NotFound:
+              suffix = $": {client.BaseAddress.AbsoluteUri}";
+              break;
+
+            default:
+              break;
+          }
+
+          throw new HttpRequestException(response.ReasonPhrase + suffix);
+        } // Response failed
       }
 
       result.Sort(Comparer<SongInfo>.Create(
