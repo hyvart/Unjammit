@@ -41,12 +41,33 @@ namespace Jammit.Forms
       Navigation.PopModalAsync();
     }
 
-    private void DownloadButton_Clicked(object sender, EventArgs e)
+    private async void DownloadButton_Clicked(object sender, EventArgs e)
     {
       if (null == CatalogView.SelectedItem)
         return;
 
-      Task.Run(async() => await App.Library.AddSong(CatalogView.SelectedItem as SongInfo));
+      var selectedSong = CatalogView.SelectedItem as SongInfo;
+      // Download song
+      try
+      {
+
+        // Make sure Downloads directory exists.
+        var downloadsDir = System.IO.Directory.CreateDirectory(System.IO.Path.Combine(App.DataDirectory, "Downloads"));
+        var zipPath = System.IO.Path.Combine(downloadsDir.FullName, selectedSong.Id.ToString().ToUpper() + ".zip");
+
+        await App.Client.DownloadSong(selectedSong, zipPath);
+        var downloadedStream = System.IO.File.OpenRead(zipPath);
+        var song = App.Library.AddSong(downloadedStream);
+        System.IO.File.Delete(zipPath); // Delete downloaded file.
+
+        //TODO: Assert selected item and downloaded content metadata are equal.
+
+        await DisplayAlert("Downloaded Song", song.ToString(), "OK");
+      }
+      catch (Exception ex)
+      {
+        await DisplayAlert("Error", $"Could not download or install song with ID [{selectedSong.Id}].", "OK");
+      }
     }
   }
 }

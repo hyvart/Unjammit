@@ -135,6 +135,57 @@ namespace Jammit.Model
       }
     }
 
+    public SongInfo AddSong(Stream conentStream)
+    {
+      using (var archive = new ZipArchive(archiveStream, ZipArchiveMode.Read))
+      {
+        //TODO: Throw explicitly if non-compliant.
+        var jcfEntry = archive.Entries.Where(e => e.FullName.EndsWith(".jcf/")).FirstOrDefault();
+        var infoEntry = archive.Entries.Where(e => e.Name == "info.plist").FirstOrDefault();
+
+        var idString = jcfEntry.FullName.Remove(jcfEntry.FullName.IndexOf(".jcf/"));
+        var dict = Claunia.PropertyList.PropertyListParser.Parse(infoEntry.Open()) as Claunia.PropertyList.NSDictionary;
+
+        var song = new SongInfo()
+        {
+          Id = Guid.Parse(idString),
+          Artist = dict.String("artist"),
+          Album = dict.String("album"),
+          Title = dict.String("title"),
+          Genre = dict.String("genre")
+        };
+        switch (dict.Int("instrument"))
+        {
+          case 0:
+            song.Instrument = "Guitar"; break;
+          case 1:
+            song.Instrument = "Bass"; break;
+          case 2:
+            song.Instrument = "Drums"; break;
+          case 3:
+            song.Instrument = "Keyboard"; break;
+          case 4:
+            song.Instrument = "Vocals"; break;
+        }
+
+        var tracksDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Tracks"));
+
+        // Delete target directory if exists, then add again.
+        if (_cache.ContainsKey(song))
+        {
+          _cache.Remove(song);
+          tracksDir.GetDirectories(idString + "*", SearchOption.TopDirectoryOnly).All(d => { d.Delete(true); return true; });
+        }
+        archive.ExtractToDirectory(tracksDir.FullName);
+
+        _cache[song] = song;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
+        Save();
+
+        return song;
+      }
+    }
+
     public List<SongInfo> Songs
     {
       get

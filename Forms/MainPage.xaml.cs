@@ -74,44 +74,10 @@ namespace Jammit.Forms
         picked = await Plugin.FilePicker.CrossFilePicker.Current.PickFile(new string[] { ".zip" });
         if (picked == null)
           return;
-        //TODO: Create FileSystemClient. Analogous to RestClient.
 
-        // Get song ID.
-        var id = Guid.Parse(System.IO.Path.GetFileNameWithoutExtension(picked.FilePath));
+        var song =  App.Library.AddSong(picked.GetStream());
 
-        // Get song info.
-        using(var archive = new System.IO.Compression.ZipArchive(picked.GetStream(), System.IO.Compression.ZipArchiveMode.Read))
-        {
-          var idUp = id.ToString().ToUpper();
-          var entry = archive.GetEntry($"{idUp}.jcf/info.plist");
-          var dict = Claunia.PropertyList.PropertyListParser.Parse(entry.Open()) as Claunia.PropertyList.NSDictionary;
-
-          var song = new SongInfo()
-          {
-            Id = id,
-            Artist = dict.String("artist"),
-            Album = dict.String("album"),
-            Title = dict.String("title"),
-            Genre = dict.String("genre")
-          };
-          switch(dict.Int("instrument"))
-          {
-            case 0:
-              song.Instrument = "Guitar"; break;
-            case 1:
-              song.Instrument = "Bass"; break;
-            case 2:
-              song.Instrument = "Drums"; break;
-            case 3:
-              song.Instrument = "Keyboard"; break;
-            case 4:
-              song.Instrument = "Vocals"; break;
-          }
-
-          //TODO: Have library read file. For now, just show song data.
-          await DisplayAlert("Opened Song", $"{song.Artist} - {song.Title} [{song.Instrument}]", "OK");
-        }
-
+        await DisplayAlert("Imported Song", song.ToString(), "OK");
       }
       catch (Exception ex)
       {
