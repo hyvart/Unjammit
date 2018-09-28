@@ -135,9 +135,9 @@ namespace Jammit.Model
       }
     }
 
-    public SongInfo AddSong(Stream conentStream)
+    public SongInfo AddSong(Stream contentStream)
     {
-      using (var archive = new ZipArchive(archiveStream, ZipArchiveMode.Read))
+      using (var archive = new ZipArchive(contentStream, ZipArchiveMode.Read))
       {
         //TODO: Throw explicitly if non-compliant.
         var jcfEntry = archive.Entries.Where(e => e.FullName.EndsWith(".jcf/")).FirstOrDefault();
