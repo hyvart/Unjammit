@@ -46,17 +46,19 @@ namespace Jammit.Forms.Client
           var jsonString = await response.Content.ReadAsStringAsync();
           var jsonObject = JObject.Parse(jsonString);
 
-          var tracks = jsonObject["_embedded"]["track"] as JArray;
-          foreach (var track in tracks)
+          var songs = jsonObject["_embedded"]["track"] as JArray;
+          foreach (var song in songs)
           {
-            result.Add(new SongInfo(
-              Guid.Parse(track["id"].ToString()),
-              track["artist"].ToString(),
-              track["album"].ToString(),
-              track["title"].ToString(),
-              track["instrument"].ToString(),
-              track["genre"].ToString()
-            ));
+            result.Add(new SongInfo()
+            {
+              Id = Guid.Parse(song["id"].ToString()),
+              Sku = song["sku"].ToString(),
+              Artist = song["artist"].ToString(),
+              Album = song["album"].ToString(),
+              Title = song["title"].ToString(),
+              Instrument = song["instrument"].ToString(),
+              Genre = song["genre"].ToString()
+            });
           }
         } // if Succeeded response
         else

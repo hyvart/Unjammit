@@ -10,7 +10,7 @@ namespace Jammit.Model
   {
     List<SongInfo> Songs { get; }
 
-    //TODO: Deprecate?
+    [Obsolete("Use AddSong(System.IO.Stream) instead.")]
     Task AddSong(SongInfo song);
 
     SongInfo AddSong(System.IO.Stream conentStream);

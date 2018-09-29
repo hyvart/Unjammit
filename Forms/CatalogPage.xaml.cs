@@ -46,11 +46,10 @@ namespace Jammit.Forms
       if (null == CatalogView.SelectedItem)
         return;
 
-      var selectedSong = CatalogView.SelectedItem as SongInfo;
       // Download song
+      var selectedSong = CatalogView.SelectedItem as SongInfo;
       try
       {
-
         // Make sure Downloads directory exists.
         var downloadsDir = System.IO.Directory.CreateDirectory(System.IO.Path.Combine(App.DataDirectory, "Downloads"));
         var zipPath = System.IO.Path.Combine(downloadsDir.FullName, selectedSong.Id.ToString().ToUpper() + ".zip");
