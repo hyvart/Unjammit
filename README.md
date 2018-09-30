@@ -3,7 +3,8 @@
 Multi-platform port of the [Jam.NET](https://github.com/maxton/Jam.NET) JCF media player.<br/>
 This software aims to implement the playback functionality of the defunct [Jammit](https://www.youtube.com/channel/UCTmh3zCCSybVNMye-3lozJQ) app.
 
-Download here: https://github.com/JunielKatarn/Unjammit/releases
+Download here: https://github.com/JunielKatarn/Unjammit/releases<br/>
+iOS preview here: https://install.appcenter.ms/users/juniel_katarn/apps/Unjammit 
 
 ## Features (current)
 
