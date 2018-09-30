@@ -71,7 +71,7 @@ namespace Jammit.Forms
       Plugin.FilePicker.Abstractions.FileData picked = null;
       try
       {
-        picked = await Plugin.FilePicker.CrossFilePicker.Current.PickFile(new string[] { ".zip" });
+        picked = await Plugin.FilePicker.CrossFilePicker.Current.PickFile( App.AllowedFileTypes );
         if (picked == null)
           return;
 

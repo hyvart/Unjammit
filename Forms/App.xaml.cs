@@ -35,6 +35,8 @@ namespace Jammit.Forms
 
     public static IJcfLoader MediaLoader { get; private set; }
 
+    public static string[] AllowedFileTypes { get; set; } = new string[] { ".zip" };
+
     #endregion
 
     protected override void OnStart()

@@ -26,6 +26,7 @@ namespace Jammit.iOS
 
       // Audio options
       NSError error = AVFoundation.AVAudioSession.SharedInstance().SetCategory(AVFoundation.AVAudioSessionCategory.Playback);
+      Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
 
       LoadApplication(
         new Jammit.Forms.App(
