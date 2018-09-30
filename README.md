@@ -25,7 +25,7 @@ Download here: https://github.com/JunielKatarn/Unjammit/releases
 
 ## Contributing
 
-Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's `xplat` branch.
+Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's [`xplat`](https://github.com/JunielKatarn/Unjammit/tree/xplat) branch.
 
 ### Requirements
 - Visual Studio 2017
