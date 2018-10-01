@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
-             x:Class="Jammit.Forms.MainPage">
+             x:Class="Jammit.Forms.MainPage"
+             BackgroundColor="DarkGray">
 
   <StackLayout>
     <ListView
@@ -10,7 +11,8 @@
       HorizontalOptions="Fill"
       VerticalOptions="Start"
       ItemTapped="LibraryView_ItemTapped"
-      BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}">
+      BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}"
+      BackgroundColor="WhiteSmoke">
       <ListView.Header>
         <Grid>
           <Label Grid.Column="0" FontAttributes="Bold" Text="Artist" />
@@ -41,7 +43,7 @@
     </StackLayout>
     <StackLayout x:Name="SettingsButtonsLayout" Orientation="Horizontal">
       <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" WidthRequest="200" HorizontalOptions="Fill" />
-      <Button x:Name="AboutButton" Text="About" WidthRequest="200" HorizontalOptions="Fill" />
+      <Button x:Name="AboutButton" Text="About" WidthRequest="200" HorizontalOptions="Fill" Clicked="AboutButton_Clicked" />
     </StackLayout>
   </StackLayout>
 

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
-             x:Class="Jammit.Forms.CatalogPage">
+             x:Class="Jammit.Forms.CatalogPage"
+             BackgroundColor="DarkGray">
 
 
   <!--TODO: Put back in CatalogView attributes.-->
@@ -13,7 +14,7 @@
         x:Name="CatalogView"
         HorizontalOptions="Fill"
         VerticalOptions="Start"
-        >
+        BackgroundColor="WhiteSmoke">
         <ListView.Header>
           <Grid>
             <Label Grid.Column="0" FontAttributes="Bold" Text="Artist" />

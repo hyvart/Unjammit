@@ -39,6 +39,15 @@ namespace Jammit.Forms
     //public static string DevicePlatform => Xamarin.Essentials.DeviceInfo.Platform; // Not macOS-ready.
     public static string DevicePlatform => Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform.ToString();
 
+    #region Events
+
+    protected override void OnAppearing()
+    {
+      base.OnAppearing();
+    }
+
+    #endregion // Events
+
     private void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
       Navigation.PushModalAsync(new SongPage(e.Item as SongInfo));
@@ -94,13 +103,9 @@ namespace Jammit.Forms
       }
     }
 
-    #region Events
-
-    protected override void OnAppearing()
+    private async void AboutButton_Clicked(object sender, EventArgs e)
     {
-      base.OnAppearing();
+      await DisplayAlert("Info", $"Unjammit! Version 0.1.x", "OK");
     }
-
-    #endregion // Events
   }
 }

@@ -4,9 +4,9 @@
              xmlns:controls="clr-namespace:Jammit.Forms.Controls"
              x:Class="Jammit.Forms.Controls.Mixer">
 
-  <StackLayout x:Name="ControlsLayout" BackgroundColor="Orange">
-    <controls:TrackSlider Player="{Binding Player}" Track="{Binding Media.BackingTrack}" BackgroundColor="DarkOliveGreen" />
-    <controls:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}" BackgroundColor="DarkOliveGreen" IsEnabled="false" />
+  <StackLayout x:Name="ControlsLayout">
+    <controls:TrackSlider Player="{Binding Player}" Track="{Binding Media.BackingTrack}" />
+    <controls:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}" IsEnabled="false" />
   </StackLayout>
 
 </ContentView>
