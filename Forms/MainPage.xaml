@@ -43,12 +43,6 @@
       <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" WidthRequest="200" HorizontalOptions="FillAndExpand" />
       <Button x:Name="AboutButton" Text="About" WidthRequest="200" HorizontalOptions="FillAndExpand" />
     </StackLayout>
-    <StackLayout Orientation="Horizontal">
-      <Label x:Name="VersionLabel" />
-      <Label Text="{x:Static local:MainPage.DevicePlatform}" />
-      <Label Text="{x:Static local:MainPage.DeviceId}" />
-    </StackLayout>
-    <Label x:Name="FilesPath" />
   </StackLayout>
 
 </ContentPage>

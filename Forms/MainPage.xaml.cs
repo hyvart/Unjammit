@@ -15,21 +15,16 @@ namespace Jammit.Forms
     {
       InitializeComponent();
 
-      this.FilesPath.Text = App.DataDirectory;
-
       double pad;
-      if (Plugin.DeviceInfo.Abstractions.Platform.macOS != Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
+      if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
       {
-        VersionLabel.Text = "Version " + Xamarin.Essentials.VersionTracking.CurrentVersion;
-
-        var screenWidth = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Width;
-        var screenDensity = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Density;
-        pad = screenWidth / (screenDensity * screenDensity) / 4;
+        pad = 200;
       }
       else
       {
-        VersionLabel.Text = "Version ?";
-        pad = 200;
+        var screenWidth = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Width;
+        var screenDensity = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Density;
+        pad = screenWidth / (screenDensity * screenDensity) / 4;
       }
 
       var thickness = new Thickness(pad, 0, pad, 0);
