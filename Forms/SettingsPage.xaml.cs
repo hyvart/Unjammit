@@ -30,11 +30,5 @@ namespace Jammit.Forms
     {
       App.Client.RequestAuthorization().Wait();
     }
-
-    private void SkipDownloadSwitch_Toggled(object sender, ToggledEventArgs e)
-    {
-      //TODO: Fix Two-way binding and remove statement below.
-      Settings.SkipDownload = SkipDownloadSwitch.IsToggled;
-    }
   }
 }
