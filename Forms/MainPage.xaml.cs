@@ -17,17 +17,31 @@ namespace Jammit.Forms
 
       this.FilesPath.Text = App.DataDirectory;
 
+      double pad;
       if (Plugin.DeviceInfo.Abstractions.Platform.macOS != Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
-        this.VersionLabel.Text = "Version " + Xamarin.Essentials.VersionTracking.CurrentVersion;
+      {
+        VersionLabel.Text = "Version " + Xamarin.Essentials.VersionTracking.CurrentVersion;
+
+        var screenWidth = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Width;
+        var screenDensity = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Density;
+        pad = screenWidth / (screenDensity * screenDensity) / 4;
+      }
       else
-        this.VersionLabel.Text = "Version ?";
+      {
+        VersionLabel.Text = "Version ?";
+        pad = 200;
+      }
+
+      var thickness = new Thickness(pad, 0, pad, 0);
+      OpenButtonsLayout.Padding = thickness;
+      SettingsButtonsLayout.Padding = thickness;
     }
 
     [Obsolete]
     public static string DeviceId => Plugin.DeviceInfo.CrossDeviceInfo.Current.Id;
 
     [Obsolete]
-    //public static string DevicePlatform => Xamarin.Essentials.DeviceInfo.Platform; // Not Apple-ready.
+    //public static string DevicePlatform => Xamarin.Essentials.DeviceInfo.Platform; // Not macOS-ready.
     public static string DevicePlatform => Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform.ToString();
 
     private void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)

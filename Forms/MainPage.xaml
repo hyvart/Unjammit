@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
@@ -35,9 +35,14 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" />
-    <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" />
-    <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" />
+    <StackLayout x:Name="OpenButtonsLayout" Orientation="Horizontal">
+      <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" WidthRequest="200" HorizontalOptions="FillAndExpand" />
+      <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" WidthRequest="200" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+    <StackLayout x:Name="SettingsButtonsLayout" Orientation="Horizontal">
+      <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" WidthRequest="200" HorizontalOptions="FillAndExpand" />
+      <Button x:Name="AboutButton" Text="About" WidthRequest="200" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
     <StackLayout Orientation="Horizontal">
       <Label x:Name="VersionLabel" />
       <Label Text="{x:Static local:MainPage.DevicePlatform}" />
