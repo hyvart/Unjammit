@@ -18,13 +18,13 @@ namespace Jammit.Forms
       double pad;
       if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
       {
-        pad = 200;
+        pad = 250;
       }
       else
       {
         var screenWidth = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Width;
         var screenDensity = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Density;
-        pad = screenWidth / (screenDensity * screenDensity) / 4;
+        pad = screenWidth / screenDensity / 4;
       }
 
       var thickness = new Thickness(pad, 0, pad, 0);
