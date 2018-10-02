@@ -36,5 +36,5 @@ Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this r
 
 ## Screenshots
 
-![Selecting the score in iOS](https://i.imgur.com/7enmSVS.png)
-![Controlling playback in macOS](https://i.imgur.com/FbNGVeR.png)
+![Controlling playback in Windows](https://i.imgur.com/JTKk72o.png)
+![Selecting the song in iOS](https://i.imgur.com/7eVtvqX.png)
