@@ -2,7 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Jammit.Forms.Controls"
+             xmlns:converters="clr-namespace:Jammit.Forms.Converters"
              x:Class="Jammit.Forms.SongPage">
+    
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:DigitalTimeConverter x:Key="floatToTimeSpan" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
   <StackLayout BackgroundColor="DimGray">
 
@@ -26,11 +33,11 @@
       <controls:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
       <StackLayout HorizontalOptions="FillAndExpand">
         <FlexLayout>
-          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, StringFormat='{0:000}'}"
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
                  BackgroundColor="LightGray"
                  HorizontalOptions="Start" />
           <FlexLayout FlexLayout.Grow="1" />
-          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, StringFormat='{0:000}'}"
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, Converter={StaticResource floatToTimeSpan}}"
                  BackgroundColor="LightGray"
                  HorizontalOptions="End" />
         </FlexLayout>
