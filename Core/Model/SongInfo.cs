@@ -30,7 +30,7 @@ namespace Jammit.Model
 
     public override string ToString()
     {
-      return $"{Artist} - {Album} [{Instrument}]";
+      return $"{Artist} - {Title} [{Instrument}]";
     }
   }
 }
