@@ -1,46 +1,42 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
-             x:Class="Jammit.Forms.CatalogPage"
-             BackgroundColor="DarkGray">
-
+             x:Class="Jammit.Forms.CatalogPage">
 
   <!--TODO: Put back in CatalogView attributes.-->
   <!--ListView: ItemsSource="{x:Static local:CatalogPage.Catalog}"-->
-  <ContentPage.Content>
-    <StackLayout>
-      <ListView
-        x:Name="CatalogView"
-        HorizontalOptions="Fill"
-        VerticalOptions="Start"
-        BackgroundColor="WhiteSmoke">
-        <ListView.Header>
-          <Grid>
-            <Label Grid.Column="0" FontAttributes="Bold" Text="Artist" />
-            <Label Grid.Column="1" FontAttributes="Bold" Text="Title" />
-            <Label Grid.Column="2" FontAttributes="Bold" Text="Instrument" />
-            <Label Grid.Column="3" FontAttributes="Bold" Text="Album" />
-          </Grid>
-        </ListView.Header>
-        <ListView.ItemTemplate>
-          <DataTemplate>
-            <ViewCell>
-              <Grid>
-                <Label Grid.Column="0" Text="{Binding Artist}" />
-                <Label Grid.Column="1" Text="{Binding Title}" />
-                <Label Grid.Column="2" Text="{Binding Instrument}" />
-                <Label Grid.Column="3" Text="{Binding Album}" />
-              </Grid>
-            </ViewCell>
-          </DataTemplate>
-        </ListView.ItemTemplate>
-      </ListView>
-      <Button x:Name="DownloadButton" Text="Download" Clicked="DownloadButton_Clicked" />
-      <ProgressBar x:Name="DownloadProgressBar" Progress="{Binding Source={x:Static local:App.Client}, Path=SongDownloadProgress}" />
-      <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
-      <Button x:Name="LoadButton" Text="Reload Catalog" Clicked="LoadButton_Clicked" />
-    </StackLayout>
-  </ContentPage.Content>
+  <StackLayout BackgroundColor="DimGray">
+    <ListView
+      x:Name="CatalogView"
+      HorizontalOptions="Fill"
+      VerticalOptions="Start"
+      BackgroundColor="WhiteSmoke">
+      <ListView.Header>
+        <Grid>
+          <Label Grid.Column="0" FontAttributes="Bold" Text="Artist" />
+          <Label Grid.Column="1" FontAttributes="Bold" Text="Title" />
+          <Label Grid.Column="2" FontAttributes="Bold" Text="Instrument" />
+          <Label Grid.Column="3" FontAttributes="Bold" Text="Album" />
+        </Grid>
+      </ListView.Header>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Label Grid.Column="0" Text="{Binding Artist}" />
+              <Label Grid.Column="1" Text="{Binding Title}" />
+              <Label Grid.Column="2" Text="{Binding Instrument}" />
+              <Label Grid.Column="3" Text="{Binding Album}" />
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button x:Name="DownloadButton" Text="Download" Clicked="DownloadButton_Clicked" />
+    <ProgressBar x:Name="DownloadProgressBar" Progress="{Binding Source={x:Static local:App.Client}, Path=SongDownloadProgress}" />
+    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
+    <Button x:Name="LoadButton" Text="Reload Catalog" Clicked="LoadButton_Clicked" />
+  </StackLayout>
 
 </ContentPage>

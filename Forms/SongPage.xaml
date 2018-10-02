@@ -2,10 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:Jammit.Forms.Controls"
-             x:Class="Jammit.Forms.SongPage"
-             BackgroundColor="DarkGray">
+             x:Class="Jammit.Forms.SongPage">
 
-  <StackLayout>
+  <StackLayout BackgroundColor="DimGray">
 
     <StackLayout x:Name="HeaderLayout" Orientation="Horizontal">
       <Label Text="{Binding Song.Title}" />
@@ -21,7 +20,7 @@
 
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
       <Image x:Name="AlbumImage"
-             BackgroundColor="LightGray"
+             BackgroundColor="DarkGray"
              HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
              WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
       <controls:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />

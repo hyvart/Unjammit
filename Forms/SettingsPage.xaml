@@ -2,27 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
-             x:Class="Jammit.Forms.SettingsPage"
-             BackgroundColor="DarkGray">
+             x:Class="Jammit.Forms.SettingsPage">
 
-  <ContentPage.Content>
-    <StackLayout>
-      <Grid BackgroundColor="WhiteSmoke">
-        <Label Grid.Row="0" Grid.Column="0" Text="Service URI" />
-        <Entry
-          Grid.Row="0"
-          Grid.Column="1"
-          Grid.ColumnSpan="2"
-          Placeholder="Enter service URI path."
-          x:Name="ServiceUriEntry"
-          Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
+  <StackLayout BackgroundColor="DimGray">
+    <Grid BackgroundColor="WhiteSmoke">
+      <Label Grid.Row="0" Grid.Column="0" Text="Service URI" />
+      <Entry
+        Grid.Row="0"
+        Grid.Column="1"
+        Grid.ColumnSpan="2"
+        Placeholder="Enter service URI path."
+        x:Name="ServiceUriEntry"
+        Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
 
-        <Label Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
-        <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
-        <Button Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
-      </Grid>
-      <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
-    </StackLayout>
-  </ContentPage.Content>
+      <Label Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
+      <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
+      <Button Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
+    </Grid>
+    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
+  </StackLayout>
 
 </ContentPage>
