@@ -23,7 +23,7 @@
     <IntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
     <OutputPath>$(SolutionDir)Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
     <AppxPackageDir>$(OutputPath)AppPackages</AppxPackageDir>
-    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <AppxBundlePlatforms>$(Platform)</AppxBundlePlatforms>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
