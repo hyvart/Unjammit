@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="37296HyvartSoftware.Unjammit" Publisher="CN=Unjammit" Version="0.0.0.0" />
+  <Identity Name="37296HyvartSoftware.Unjammit" Publisher="CN=A7DD9B3B-9FBA-4D40-AF7D-04619F62AF66" Version="0.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="a4d6840d-61e7-4a35-a2e5-de93e1d91139" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Unjammit.UWP</DisplayName>
+    <DisplayName>Unjammit!</DisplayName>
     <PublisherDisplayName>Hyvart Software</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
