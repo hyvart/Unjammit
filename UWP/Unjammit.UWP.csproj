@@ -23,8 +23,7 @@
     <IntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
     <OutputPath>$(SolutionDir)Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
     <AppxPackageDir>$(OutputPath)AppPackages</AppxPackageDir>
-    <!-- TODO: Extend supported platforms. -->
-    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+    <AppxBundlePlatforms>x64|x86|ARM</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup>
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
