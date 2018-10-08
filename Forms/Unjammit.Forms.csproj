@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj" />
+    <ProjectReference Include="..\Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker\Plugin.FilePicker.csproj" />
   </ItemGroup>
 
 </Project>

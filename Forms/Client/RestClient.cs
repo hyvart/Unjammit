@@ -34,31 +34,48 @@ namespace Jammit.Forms.Client
     {
       var result = new List<SongInfo>();
 
-      using (var cliente = new HttpClient())
+      using (var client = new HttpClient())
       {
-        cliente.BaseAddress = new Uri($"{Settings.ServiceUri}/track");
-        cliente.DefaultRequestHeaders.Clear();
-        cliente.DefaultRequestHeaders.Add("Accept", "application/json");
+        client.BaseAddress = new Uri($"{Settings.ServiceUri}/track");
+        client.DefaultRequestHeaders.Clear();
+        client.DefaultRequestHeaders.Add("Accept", "application/json");
 
-        var response = await cliente.GetAsync(cliente.BaseAddress.AbsoluteUri);
+        var response = await client.GetAsync(client.BaseAddress.AbsoluteUri);
         if (response.IsSuccessStatusCode)
         {
           var jsonString = await response.Content.ReadAsStringAsync();
           var jsonObject = JObject.Parse(jsonString);
 
-          var tracks = jsonObject["_embedded"]["track"] as JArray;
-          foreach (var track in tracks)
+          var songs = jsonObject["_embedded"]["track"] as JArray;
+          foreach (var song in songs)
           {
-            result.Add(new SongInfo(
-              Guid.Parse(track["id"].ToString()),
-              track["artist"].ToString(),
-              track["album"].ToString(),
-              track["title"].ToString(),
-              track["instrument"].ToString(),
-              track["genre"].ToString()
-            ));
+            result.Add(new SongInfo()
+            {
+              Id = Guid.Parse(song["id"].ToString()),
+              Sku = song["sku"].ToString(),
+              Artist = song["artist"].ToString(),
+              Album = song["album"].ToString(),
+              Title = song["title"].ToString(),
+              Instrument = song["instrument"].ToString(),
+              Genre = song["genre"].ToString()
+            });
           }
         } // if Succeeded response
+        else
+        {
+          string suffix = "";
+          switch (response.StatusCode)
+          {
+            case System.Net.HttpStatusCode.NotFound:
+              suffix = $": {client.BaseAddress.AbsoluteUri}";
+              break;
+
+            default:
+              break;
+          }
+
+          throw new HttpRequestException(response.ReasonPhrase + suffix);
+        } // Response failed
       }
 
       result.Sort(Comparer<SongInfo>.Create(

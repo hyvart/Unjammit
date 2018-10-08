@@ -18,8 +18,6 @@ namespace Jammit.Forms
       }
     }
 
-    private static string[] COLORS = { "774444", "447744", "444477" };
-
     #region Setting Constants
 
     private const string SettingsKey = "settings_key";
@@ -27,12 +25,6 @@ namespace Jammit.Forms
 
     private const string TrackPathKey = "trackpath_key";
     private static readonly string TrackPathDefault = ".";
-
-    private const string DummyIndexKey = "dummyindex_key";
-    private static readonly int DummyIndexDefault = 0;
-
-    private const string SkipDownloadKey = "skipdownload_key";
-    private static readonly bool SkipDownloadDefault = false;
 
     private const string ServiceUriKey = "serviceuri_key";
     private static readonly string ServiceUriDefault = string.Empty;
@@ -55,23 +47,6 @@ namespace Jammit.Forms
     {
       get { return AppSettings.GetValueOrDefault(TrackPathKey, TrackPathDefault); }
       set { AppSettings.AddOrUpdateValue(TrackPathKey, value); }
-    }
-
-    public static string Dummy
-    {
-      get
-      {
-        int index = AppSettings.GetValueOrDefault(DummyIndexKey, DummyIndexDefault);
-        AppSettings.AddOrUpdateValue(DummyIndexKey, (index + 1) % COLORS.Length);
-
-        return COLORS[index];
-      }
-    }
-
-    public static bool SkipDownload
-    {
-      get { return AppSettings.GetValueOrDefault(SkipDownloadKey, SkipDownloadDefault); }
-      set { AppSettings.AddOrUpdateValue(SkipDownloadKey, value); }
     }
 
     public static string ServiceUri

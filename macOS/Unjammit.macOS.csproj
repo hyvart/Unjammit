@@ -111,6 +111,10 @@
       <Project>{48D9D038-DA23-4BDF-8A71-F19078A2C94A}</Project>
       <Name>Unjammit.Apple</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker.Mac\Plugin.FilePicker.Mac.csproj">
+      <Project>{c1e6d43d-38eb-4673-a9aa-8b1116ce9c10}</Project>
+      <Name>Plugin.FilePicker.Mac</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />

@@ -21,10 +21,16 @@ namespace Jammit.Model
     }
 
     public Guid Id { get; set; }
+    public string Sku { get; set; }
     public string Artist { get; set; }
     public string Album { get; set; }
     public string Title { get; set; }
     public string Instrument { get; set; }
     public string Genre { get; set; }
+
+    public override string ToString()
+    {
+      return $"{Artist} - {Title} [{Instrument}]";
+    }
   }
 }

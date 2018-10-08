@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Jammit.Forms.Controls.TrackSlider">
+             x:Class="Jammit.Forms.Controls.TrackSlider"
+             BackgroundColor="DarkGray">
 
   <StackLayout Orientation="Horizontal">
     <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" />
@@ -11,7 +12,8 @@
             Value="{Binding Volume, Mode=OneWayToSource}"
             ValueChanged="VolumeSlider_ValueChanged"
             HorizontalOptions="FillAndExpand"
-            BackgroundColor="LightCyan" />
+            MinimumTrackColor="DarkCyan"
+            MaximumTrackColor="LightCyan" />
     <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" />
     <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" />
   </StackLayout>

@@ -1,16 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
              x:Class="Jammit.Forms.MainPage">
 
-  <StackLayout>
+  <StackLayout BackgroundColor="DimGray">
     <ListView
       x:Name="LibraryView"
       HorizontalOptions="Fill"
       VerticalOptions="Start"
       ItemTapped="LibraryView_ItemTapped"
-      BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}">
+      BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}"
+      BackgroundColor="WhiteSmoke">
       <ListView.Header>
         <Grid>
           <Label Grid.Column="0" FontAttributes="Bold" Text="Artist" />
@@ -35,14 +36,14 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" />
-    <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" />
-    <StackLayout Orientation="Horizontal">
-      <Label x:Name="VersionLabel" />
-      <Label Text="{x:Static local:MainPage.DevicePlatform}" />
-      <Label Text="{x:Static local:MainPage.DeviceId}" />
+    <StackLayout x:Name="OpenButtonsLayout" Orientation="Horizontal">
+      <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" WidthRequest="200" HorizontalOptions="Fill" />
+      <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" WidthRequest="200" HorizontalOptions="Fill" />
     </StackLayout>
-    <Label x:Name="FilesPath" />
+    <StackLayout x:Name="SettingsButtonsLayout" Orientation="Horizontal">
+      <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" WidthRequest="200" HorizontalOptions="Fill" />
+      <Button x:Name="AboutButton" Text="About" WidthRequest="200" HorizontalOptions="Fill" Clicked="AboutButton_Clicked" />
+    </StackLayout>
   </StackLayout>
 
 </ContentPage>

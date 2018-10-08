@@ -44,6 +44,7 @@ namespace Jammit.Model
       return new SongInfo
       {
         Id = Guid.Parse(xe.Attribute("id").Value),
+        Sku = xe.Element("sku").Value,
         Artist = xe.Element("artist").Value,
         Album = xe.Element("album").Value,
         Title = xe.Element("title").Value,
@@ -87,7 +88,8 @@ namespace Jammit.Model
     public XElement ToXml(SongInfo song)
     {
       return new XElement("song",
-        new XAttribute("id", song.Id.ToString().ToUpper()),
+        new XAttribute("id", song.Id),
+        new XElement("sku", song.Sku),
         new XElement("artist", song.Artist),
         new XElement("album", song.Album),
         new XElement("title", song.Title),
@@ -132,6 +134,81 @@ namespace Jammit.Model
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
 
         Save();
+      }
+    }
+
+    public SongInfo AddSong(Stream contentStream)
+    {
+      using (var archive = new ZipArchive(contentStream, ZipArchiveMode.Read))
+      {
+        //TODO: Throw explicitly if non-compliant.
+
+        var jcfEntry = archive.Entries.Where(e => e.FullName.EndsWith(".jcf/")).FirstOrDefault();
+        var jcfName = jcfEntry.FullName.Remove(jcfEntry.FullName.IndexOf(".jcf/"));
+        Guid id;
+        string idString;
+        try
+        {
+          id = Guid.Parse(jcfName);
+        }
+        catch (Exception)
+        {
+          id = Guid.NewGuid();
+
+        }
+        finally
+        {
+          idString = id.ToString().ToUpper();
+        }
+
+        var infoEntry = archive.Entries.Where(e => e.Name == "info.plist").FirstOrDefault();
+        var dict = Claunia.PropertyList.PropertyListParser.Parse(infoEntry.Open()) as Claunia.PropertyList.NSDictionary;
+
+        var song = new SongInfo()
+        {
+          Id = id,
+          Sku = dict.String("sku"),
+          Artist = dict.String("artist"),
+          Album = dict.String("album"),
+          Title = dict.String("title"),
+          Genre = dict.String("genre")
+        };
+        switch (dict.Int("instrument"))
+        {
+          case 0:
+            song.Instrument = "Guitar"; break;
+          case 1:
+            song.Instrument = "Bass"; break;
+          case 2:
+            song.Instrument = "Drums"; break;
+          case 3:
+            song.Instrument = "Keyboard"; break;
+          case 4:
+            song.Instrument = "Vocals"; break;
+        }
+
+        var tracksDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Tracks"));
+
+        // Delete target directory if exists, then add again.
+        if (_cache.ContainsKey(song))
+        {
+          _cache.Remove(song);
+          tracksDir.GetDirectories(song.Id.ToString().ToUpper() + "*", SearchOption.TopDirectoryOnly).All(d =>
+          {
+            d.Delete(true); return true;
+          });
+        }
+        archive.ExtractToDirectory(tracksDir.FullName);
+
+        // Rename the extracted JCF to a GUID, if needed.
+        if (idString != jcfName)
+          Directory.Move(Path.Combine(tracksDir.FullName, jcfName + ".jcf"), Path.Combine(tracksDir.FullName, idString + ".jcf"));
+
+        _cache[song] = song;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
+        Save();
+
+        return song;
       }
     }
 
