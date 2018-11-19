@@ -129,6 +129,9 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>3.1.0.697729</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Plugin.FilePicker">
+      <Version>2.0.121</Version>
+    </PackageReference>
     <PackageReference Include="YunFan.Gallery.FFmpegInterop">
       <Version>1.0.21</Version>
     </PackageReference>
@@ -144,10 +147,6 @@
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
       <Project>{33fe7079-b3cf-49b3-89c1-165ef78457b4}</Project>
       <Name>Unjammit.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker.UWP\Plugin.FilePicker.UWP.csproj">
-      <Project>{e34b516d-c0d8-450f-9db0-bb6a5b04aef1}</Project>
-      <Name>Plugin.FilePicker.UWP</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0' ">
