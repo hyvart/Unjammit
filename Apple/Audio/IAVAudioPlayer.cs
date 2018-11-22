@@ -21,5 +21,7 @@ namespace Jammit.Audio
     float Volume { get; set; }
 
     int NumberOfLoops { get; set; }
+
+    event EventHandler PositionChanged;
   }
 }
