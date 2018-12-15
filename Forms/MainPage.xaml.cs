@@ -22,8 +22,8 @@ namespace Jammit.Forms
       }
       else
       {
-        var screenWidth = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Width;
-        var screenDensity = Xamarin.Essentials.DeviceDisplay.ScreenMetrics.Density;
+        var screenWidth = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.Width;
+        var screenDensity = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.Density;
         pad = screenWidth / screenDensity / 4;
       }
 
