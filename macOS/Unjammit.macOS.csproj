@@ -120,7 +120,7 @@
       <Version>4.5.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Plugin.FilePicker">
-      <Version>2.0.121</Version>
+      <Version>2.0.135</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
