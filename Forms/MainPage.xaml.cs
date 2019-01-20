@@ -94,11 +94,13 @@ namespace Jammit.Forms
     private async void AboutButton_Clicked(object sender, EventArgs e)
     {
       var mdi = "";
+      var version = "";
       if (Plugin.DeviceInfo.Abstractions.Platform.macOS != Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
       {
         mdi = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.ToString();
+        version = Xamarin.Essentials.VersionTracking.CurrentVersion;
       }
-      await DisplayAlert("Info", $"Unjammit! Version 0.1.x\nDisplayInfo: [{mdi}]", "OK");
+      await DisplayAlert("Info", $"Unjammit! Version [{version}]\nDisplayInfo: [{mdi}]", "OK");
     }
   }
 }
