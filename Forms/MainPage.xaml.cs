@@ -18,22 +18,6 @@ namespace Jammit.Forms
       //TODO: Defining a header throws a NullReferenceExeption in macOS starting with Xamarin.Forms 3.3.
       if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
         LibraryView.Header = null;
-
-      double pad;
-      if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
-      {
-        pad = 250;
-      }
-      else
-      {
-        var screenWidth = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.Width;
-        var screenDensity = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.Density;
-        pad = screenWidth / screenDensity / 4;
-      }
-
-      var thickness = new Thickness(pad, 0, pad, 0);
-      OpenButtonsLayout.Padding = thickness;
-      SettingsButtonsLayout.Padding = thickness;
     }
 
     [Obsolete]
@@ -109,7 +93,12 @@ namespace Jammit.Forms
 
     private async void AboutButton_Clicked(object sender, EventArgs e)
     {
-      await DisplayAlert("Info", $"Unjammit! Version 0.1.x", "OK");
+      var mdi = "";
+      if (Plugin.DeviceInfo.Abstractions.Platform.macOS != Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
+      {
+        mdi = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.ToString();
+      }
+      await DisplayAlert("Info", $"Unjammit! Version 0.1.x\nDisplayInfo: [{mdi}]", "OK");
     }
   }
 }

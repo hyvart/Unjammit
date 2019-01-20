@@ -7,8 +7,6 @@
   <StackLayout BackgroundColor="DimGray">
     <ListView
       x:Name="LibraryView"
-      HorizontalOptions="Fill"
-      VerticalOptions="Start"
       ItemTapped="LibraryView_ItemTapped"
       BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}"
       BackgroundColor="WhiteSmoke">
@@ -36,13 +34,11 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <StackLayout x:Name="OpenButtonsLayout" Orientation="Horizontal">
-      <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" WidthRequest="200" HorizontalOptions="Fill" />
-      <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" WidthRequest="200" HorizontalOptions="Fill" />
-    </StackLayout>
-    <StackLayout x:Name="SettingsButtonsLayout" Orientation="Horizontal">
-      <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" WidthRequest="200" HorizontalOptions="Fill" />
-      <Button x:Name="AboutButton" Text="About" WidthRequest="200" HorizontalOptions="Fill" Clicked="AboutButton_Clicked" />
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" />
+      <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" />
+      <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" />
+      <Button x:Name="AboutButton" Text="About" Clicked="AboutButton_Clicked" />
     </StackLayout>
   </StackLayout>
 
