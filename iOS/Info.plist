@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Unjammit!</string>
+	<string>UnjammitDev!</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
@@ -22,7 +22,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.unjammit.player</string>
 	<key>CFBundleName</key>
-	<string>Unjammit!</string>
+	<string>UnjammitDev!</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.0.0</string>
 	<key>CFBundleVersion</key>
