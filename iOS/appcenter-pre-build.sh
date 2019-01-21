@@ -14,6 +14,6 @@ if [ -n "$UPDATE_VERSION" ]; then
 
 	/usr/libexec/PlistBuddy -c "Set :CFBundleName ${BUNDLE_NAME}" Info.plist
 	/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName ${DISPLAY_NAME}" Info.plist
-	/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${UNJAMMIT_BASE_VERSION}" Info.plist
+	/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${UNJAMMIT_BASE_VERSION}.${APPCENTER_BUILD_ID}" Info.plist
 	/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${UNJAMMIT_BASE_VERSION}.${APPCENTER_BUILD_ID}" Info.plist
 fi
