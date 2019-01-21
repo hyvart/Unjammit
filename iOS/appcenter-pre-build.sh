@@ -8,12 +8,12 @@ echo "APPCENTER_TRIGGER [$APPCENTER_TRIGGER]"
 echo "pwsh [$(which pwsh)]"
 
 if [ -n "$UPDATE_VERSION" ]; then
-  echo "UNJAMMIT_BASE_VERSION [$UNJAMMIT_BASE_VERSION]"
-  echo "BUNDLE_NAME           [$BUNDLE_NAME]"
-  echo "DISPLAY_NAME          [$DISPLAY_NAME]"
+	echo "UNJAMMIT_BASE_VERSION [$UNJAMMIT_BASE_VERSION]"
+	echo "BUNDLE_NAME           [$BUNDLE_NAME]"
+	echo "DISPLAY_NAME          [$DISPLAY_NAME]"
 
-  /usr/libexec/PlistBuddy -c "Set :CFBundleName ${BUNDLE_NAME}" iOS/Info.plist
-  /usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName ${DISPLAY_NAME}" iOS/Info.plist
-  /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${UNJAMMIT_BASE_VERSION}" iOS/Info.plist
-  /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${UNJAMMIT_BASE_VERSION}.${APPCENTER_BUILD_ID}" iOS/Info.plist
+	/usr/libexec/PlistBuddy -c "Set :CFBundleName ${BUNDLE_NAME}" Info.plist
+	/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName ${DISPLAY_NAME}" Info.plist
+	/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${UNJAMMIT_BASE_VERSION}" Info.plist
+	/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${UNJAMMIT_BASE_VERSION}.${APPCENTER_BUILD_ID}" Info.plist
 fi
