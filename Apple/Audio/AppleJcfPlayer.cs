@@ -30,6 +30,10 @@ namespace Jammit.Audio
 
       players[media.BackingTrack] = playerFactory(media.BackingTrack, File.OpenRead(Path.Combine(media.Path, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx")));
       players[media.BackingTrack].NumberOfLoops = 0;
+      players[media.BackingTrack].PositionChanged += (sender, args) =>
+      {
+        this.PositionChanged?.Invoke(this, new EventArgs());
+      };
     }
 
     #region IJcfPlayer members

@@ -11,14 +11,14 @@
     <AssemblyName>Unjammit.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Unjammit.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot;win10-aot</RuntimeIdentifiers>
     <PackageCertificateThumbprint>2F93C904226C7819BDCB85439D3A5223DA1C9C7C</PackageCertificateThumbprint>
     <IntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
     <OutputPath>$(SolutionDir)Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
@@ -118,7 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.1.7</Version>
+      <Version>6.1.9</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.DeviceInfo">
       <Version>4.0.0.13</Version>
@@ -127,10 +127,13 @@
       <Version>4.0.0.7</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.1.0.697729</Version>
+      <Version>3.4.0.1009999</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Plugin.FilePicker">
+      <Version>2.0.135</Version>
     </PackageReference>
     <PackageReference Include="YunFan.Gallery.FFmpegInterop">
-      <Version>1.0.21</Version>
+      <Version>1.0.23</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -144,10 +147,6 @@
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
       <Project>{33fe7079-b3cf-49b3-89c1-165ef78457b4}</Project>
       <Name>Unjammit.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker.UWP\Plugin.FilePicker.UWP.csproj">
-      <Project>{e34b516d-c0d8-450f-9db0-bb6a5b04aef1}</Project>
-      <Name>Plugin.FilePicker.UWP</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0' ">

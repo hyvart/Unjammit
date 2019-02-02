@@ -97,7 +97,9 @@ namespace Jammit.Forms
 
     void PositionSlider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
     {
-      Player.Position = TimeSpan.FromSeconds(e.NewValue);
+      // Update the player position only on manual ( > 1 ) slider changes.
+      if (Math.Abs(e.NewValue - Player.Position.TotalSeconds) > 1)
+        Player.Position = TimeSpan.FromSeconds(e.NewValue);
     }
 
     private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)

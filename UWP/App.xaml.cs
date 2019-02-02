@@ -47,6 +47,10 @@ namespace Jammit.UWP
       }
 #endif
 
+      // https://docs.microsoft.com/en-us/windows/uwp/design/devices/designing-for-tv#tv-safe-area
+      Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode
+        (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
+
       Frame rootFrame = Window.Current.Content as Frame;
 
       // Do not repeat app initialization when the Window already has content,

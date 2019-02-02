@@ -10,6 +10,7 @@ namespace Jammit.Audio
     #region private members
 
     AVAudioPlayer player;
+    NSTimer timer;
 
     #endregion // private members
 
@@ -20,11 +21,16 @@ namespace Jammit.Audio
 
       //TODO: Do something useful here or remove (beware nullptr after playback done).
       player.FinishedPlaying += delegate {};
-
       player.PrepareToPlay();
+
+      timer = NSTimer.CreateRepeatingScheduledTimer(1, delegate {
+        PositionChanged?.Invoke(this, new EventArgs());
+      });
     }
 
     #region IAvAudioPlayer members
+
+    public event EventHandler PositionChanged;
 
     public void Play()
     {

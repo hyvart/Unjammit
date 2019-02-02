@@ -14,8 +14,8 @@
             HorizontalOptions="FillAndExpand"
             MinimumTrackColor="DarkCyan"
             MaximumTrackColor="LightCyan" />
-    <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" />
-    <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" />
+    <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" Clicked="MuteButton_Clicked" />
+    <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" IsEnabled="False" />
   </StackLayout>
 
 </ContentView>

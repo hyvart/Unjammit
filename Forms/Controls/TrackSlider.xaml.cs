@@ -13,9 +13,36 @@ namespace Jammit.Forms.Controls
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class TrackSlider : ContentView
   {
+    #region static members
+
+    static Color NormalButtonTextColor;
+    static Color NormalButtonBackgroundColor;
+    static Color MutedButtonTextColor = Color.DarkRed;
+    static Color MutedButtonBackgroundColor = Color.LightPink;
+
+    #endregion // static members
+
+    #region private members
+
+    enum State
+    {
+      Normal,
+      Muted,
+      Solo
+    }
+
+    State _state;
+
+    #endregion
+
     public TrackSlider()
     {
+      _state = State.Normal;
+
       InitializeComponent();
+
+      NormalButtonBackgroundColor = MuteButton.BackgroundColor;
+      NormalButtonTextColor = MuteButton.TextColor;
 
       //TODO: Nope...
       TitleLabel.WidthRequest = 66;
@@ -105,12 +132,35 @@ namespace Jammit.Forms.Controls
       }
     }
 
+    #endregion // Events
+
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
       //TODO: How about setting the track volume right here and drop the Volume property?
-      Volume = (uint)e.NewValue;
+      if (State.Muted != _state)
+        Volume = (uint)e.NewValue;
     }
 
-    #endregion // Events
+    private void MuteButton_Clicked(object sender, EventArgs e)
+    {
+      if (State.Muted == _state)
+      {
+        Volume = (uint)VolumeSlider.Value;
+        _state = State.Normal;
+
+        //TODO: Ewww! Use styles and binding instead.
+        MuteButton.TextColor = NormalButtonTextColor;
+        MuteButton.BackgroundColor = NormalButtonBackgroundColor;
+      }
+      else
+      {
+        Volume = 0;
+        _state = State.Muted;
+
+        //TODO: Ewww! Use styles and binding instead.
+        MuteButton.TextColor = MutedButtonTextColor;
+        MuteButton.BackgroundColor = MutedButtonBackgroundColor;
+      }
+    }
   }
 }

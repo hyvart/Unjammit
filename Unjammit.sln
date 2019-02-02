@@ -31,18 +31,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unjammit.Android", "Android
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{98528D8F-C5D6-4D79-809B-B67FBC0C3799}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FilePicker", "FilePicker", "{B7FAE3D6-CC8D-42D9-8BC9-5D38E191C29B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugin.FilePicker.Abstractions", "Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker.Abstractions\Plugin.FilePicker.Abstractions.csproj", "{BBF3F38F-4D0D-4F6C-B23B-3F33B63DB1C0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.FilePicker.UWP", "Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker.UWP\Plugin.FilePicker.UWP.csproj", "{E34B516D-C0D8-450F-9DB0-BB6A5B04AEF1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.FilePicker.Mac", "Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker.Mac\Plugin.FilePicker.Mac.csproj", "{C1E6D43D-38EB-4673-A9AA-8B1116CE9C10}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.FilePicker.iOS", "Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker.iOS\Plugin.FilePicker.iOS.csproj", "{2882AEEB-D4CD-4EB9-8A6C-6653B33681F0}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Plugin.FilePicker", "Modules\filepicker\src\Plugin.FilePicker\Plugin.FilePicker\Plugin.FilePicker.csproj", "{358D3B0D-1349-4EBC-AE4A-9361F7BAD248}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -287,8 +275,8 @@ Global
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|ARM.ActiveCfg = Debug|ARM
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|ARM.Build.0 = Debug|ARM
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|ARM.Deploy.0 = Debug|ARM
-		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|iPhone.ActiveCfg = Debug|x64
-		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|iPhoneSimulator.ActiveCfg = Debug|x64
+		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|iPhone.ActiveCfg = Debug|x86
+		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|x64.ActiveCfg = Debug|x64
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|x64.Build.0 = Debug|x64
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Debug|x64.Deploy.0 = Debug|x64
@@ -299,8 +287,8 @@ Global
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|ARM.ActiveCfg = Release|ARM
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|ARM.Build.0 = Release|ARM
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|ARM.Deploy.0 = Release|ARM
-		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|iPhone.ActiveCfg = Release|x64
-		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|iPhoneSimulator.ActiveCfg = Release|x64
+		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|iPhone.ActiveCfg = Release|x86
+		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|iPhoneSimulator.ActiveCfg = Release|x86
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|x64.ActiveCfg = Release|x64
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|x64.Build.0 = Release|x64
 		{17311CD3-DA86-4669-8153-9BD37636EB05}.Release|x64.Deploy.0 = Release|x64
@@ -718,14 +706,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B7FAE3D6-CC8D-42D9-8BC9-5D38E191C29B} = {98528D8F-C5D6-4D79-809B-B67FBC0C3799}
-		{BBF3F38F-4D0D-4F6C-B23B-3F33B63DB1C0} = {B7FAE3D6-CC8D-42D9-8BC9-5D38E191C29B}
-		{E34B516D-C0D8-450F-9DB0-BB6A5B04AEF1} = {B7FAE3D6-CC8D-42D9-8BC9-5D38E191C29B}
-		{C1E6D43D-38EB-4673-A9AA-8B1116CE9C10} = {B7FAE3D6-CC8D-42D9-8BC9-5D38E191C29B}
-		{2882AEEB-D4CD-4EB9-8A6C-6653B33681F0} = {B7FAE3D6-CC8D-42D9-8BC9-5D38E191C29B}
-		{358D3B0D-1349-4EBC-AE4A-9361F7BAD248} = {B7FAE3D6-CC8D-42D9-8BC9-5D38E191C29B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69C0538F-205A-43CA-A7F7-9AEE0F17C743}
