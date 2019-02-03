@@ -22,7 +22,7 @@ namespace Jammit.Android
             LoadApplication(
               new Jammit.Forms.App(
                 Xamarin.Essentials.FileSystem.AppDataDirectory,
-                (media) => { return null; },
+                (media) => { return new Audio.AndroidMediaJcfPlayer(media); },
                 new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
               )
             );
