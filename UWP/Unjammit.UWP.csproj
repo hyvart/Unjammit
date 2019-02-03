@@ -121,7 +121,7 @@
       <Version>6.1.9</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.DeviceInfo">
-      <Version>4.0.0.13</Version>
+      <Version>4.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Settings">
       <Version>4.0.0.7</Version>
