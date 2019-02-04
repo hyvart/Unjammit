@@ -16,8 +16,7 @@ namespace Jammit.Audio
     public AndroidMediaJcfPlayer(JcfMedia media)
     {
       _player = new MediaPlayer();
-      var path = media.Path;
-      path += media.BackingTrack.Identifier.ToString().ToUpper();
+      var path = System.IO.Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
 
       _player.SetDataSource(path);
       _player.Prepare();
