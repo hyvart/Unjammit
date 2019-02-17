@@ -3,6 +3,8 @@ param(
 	[ValidateScript({Test-Path $_})]
 	[string] $InfoPlist,
 
+	[string] $BundleId,
+
 	[string] $BundleName,
 
 	[string] $BundleDisplayName,
@@ -30,6 +32,9 @@ Add-Type -Path "$DownloadDir\plist-cil.1.50.0\lib\netstandard2.0\plist-cil.dll"
 
 $dict = [Claunia.PropertyList.PropertyListParser]::Parse($plist)
 
+if ($BundleId) {
+	$dict['CFBundleIdentifier'].Content = $BundleId
+}
 if ($BundleName) {
 	$dict['CFBundleName'].Content = $BundleName
 }
