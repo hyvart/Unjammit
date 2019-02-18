@@ -19,7 +19,7 @@ namespace Jammit.Audio
       var path = System.IO.Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
 
       _player.SetDataSource(path);
-      _player.Prepare();
+      //_player.Prepare();
     }
 
     #region IJcfPlayer
