@@ -127,7 +127,7 @@
       <Version>4.0.0.7</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.4.0.1029999</Version>
+      <Version>3.5.0.129452</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Plugin.FilePicker">
       <Version>2.0.135</Version>

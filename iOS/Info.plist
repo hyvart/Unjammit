@@ -20,7 +20,7 @@
 		<string>Icon-Small@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.unjammit.player</string>
+	<string>com.unjammit.player.dev</string>
 	<key>CFBundleName</key>
 	<string>UnjammitDev!</string>
 	<key>CFBundleShortVersionString</key>
