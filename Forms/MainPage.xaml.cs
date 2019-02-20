@@ -102,5 +102,21 @@ namespace Jammit.Forms
       }
       await DisplayAlert("Info", $"Unjammit! Version [{version}]\nDisplayInfo: [{mdi}]", "OK");
     }
+
+    void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      LibraryView.BeginRefresh();
+
+      if (string.IsNullOrWhiteSpace(e.NewTextValue))
+        LibraryView.ItemsSource = App.Library.Songs;
+      else
+        LibraryView.ItemsSource = App.Library.Songs.Where(
+          s => s.Title.IndexOf(e.NewTextValue, StringComparison.OrdinalIgnoreCase) >= 0 ||
+          s.Artist.IndexOf(e.NewTextValue, StringComparison.OrdinalIgnoreCase) >= 0 ||
+          s.Album.IndexOf(e.NewTextValue, StringComparison.OrdinalIgnoreCase) >= 0
+        );
+
+      LibraryView.EndRefresh();
+    }
   }
 }

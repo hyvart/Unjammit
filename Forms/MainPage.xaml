@@ -5,6 +5,7 @@
              x:Class="Jammit.Forms.MainPage">
 
   <StackLayout BackgroundColor="DimGray">
+    <SearchBar Placeholder="Type a title, artist or album..." TextChanged="SearchBar_TextChanged" />
     <ListView
       x:Name="LibraryView"
       ItemTapped="LibraryView_ItemTapped"

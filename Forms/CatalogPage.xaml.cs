@@ -68,5 +68,21 @@ namespace Jammit.Forms
         await DisplayAlert("Error", $"Could not download or install song with ID [{selectedSong.Id}].", "OK");
       }
     }
+
+    void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      CatalogView.BeginRefresh();
+
+      if (string.IsNullOrWhiteSpace(e.NewTextValue))
+        CatalogView.ItemsSource = Catalog;
+      else
+        CatalogView.ItemsSource = Catalog.Where(
+          s => s.Title.IndexOf(e.NewTextValue, StringComparison.OrdinalIgnoreCase) >= 0 ||
+          s.Artist.IndexOf(e.NewTextValue, StringComparison.OrdinalIgnoreCase) >= 0 ||
+          s.Album.IndexOf(e.NewTextValue, StringComparison.OrdinalIgnoreCase) >= 0
+        );
+
+      CatalogView.EndRefresh();
+    }
   }
 }

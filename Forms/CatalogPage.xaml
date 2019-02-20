@@ -7,6 +7,7 @@
   <!--TODO: Put back in CatalogView attributes.-->
   <!--ListView: ItemsSource="{x:Static local:CatalogPage.Catalog}"-->
   <StackLayout BackgroundColor="DimGray">
+    <SearchBar Placeholder="Type a title, artist or album..." TextChanged="SearchBar_TextChanged" />
     <ListView
       x:Name="CatalogView"
       HorizontalOptions="Fill"

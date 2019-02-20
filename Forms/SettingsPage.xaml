@@ -13,6 +13,7 @@
         Grid.ColumnSpan="2"
         Placeholder="Enter service URI path."
         x:Name="ServiceUriEntry"
+        Keyboard="Url"
         Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
 
       <Label Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
