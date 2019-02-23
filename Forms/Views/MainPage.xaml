@@ -9,6 +9,6 @@
   </MasterDetailPage.Master>
 
   <MasterDetailPage.Detail>
-    <oldviews:MainPage />
+    <oldviews:LibraryPage />
   </MasterDetailPage.Detail>
 </MasterDetailPage>

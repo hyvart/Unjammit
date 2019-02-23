@@ -9,9 +9,9 @@ using Jammit.Model;
 
 namespace Jammit.Forms
 {
-  public partial class MainPage : ContentPage
+  public partial class LibraryPage : ContentPage
   {
-    public MainPage()
+    public LibraryPage()
     {
       InitializeComponent();
 
