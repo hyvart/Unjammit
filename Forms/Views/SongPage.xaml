@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:controls="clr-namespace:Jammit.Forms.Controls"
+             xmlns:local="clr-namespace:Jammit.Forms.Views"
              xmlns:converters="clr-namespace:Jammit.Forms.Converters"
              x:Class="Jammit.Forms.Views.SongPage">
     
@@ -30,7 +30,7 @@
              BackgroundColor="DarkGray"
              HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
              WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
-      <controls:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
+      <local:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
       <StackLayout HorizontalOptions="FillAndExpand">
         <FlexLayout>
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
