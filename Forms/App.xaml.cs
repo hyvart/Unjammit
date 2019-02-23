@@ -19,7 +19,7 @@ namespace Jammit.Forms
       App.PlayerFactory = playerFactory;
       App.MediaLoader = loader;
 
-      MainPage = new Jammit.Forms.MainPage();
+      MainPage = new Jammit.Forms.Views.MainPage();
     }
 
     #region Properties
