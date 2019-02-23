@@ -9,11 +9,9 @@ namespace Jammit.Forms.Views
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class MainPage : MasterDetailPage
   {
-    public MainPage ()
+    public MainPage()
     {
       InitializeComponent();
-
-      MasterBehavior = MasterBehavior.Popover;
     }
   }
 }
