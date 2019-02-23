@@ -2,14 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
-             x:Class="Jammit.Forms.LibraryPage">
+             x:Class="Jammit.Forms.Views.CatalogPage">
 
+  <!--TODO: Put back in CatalogView attributes.-->
+  <!--ListView: ItemsSource="{x:Static local:CatalogPage.Catalog}"-->
   <StackLayout BackgroundColor="DimGray">
     <SearchBar Placeholder="Type a title, artist or album..." TextChanged="SearchBar_TextChanged" />
     <ListView
-      x:Name="LibraryView"
-      ItemTapped="LibraryView_ItemTapped"
-      BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}"
+      x:Name="CatalogView"
+      HorizontalOptions="Fill"
+      VerticalOptions="Start"
       BackgroundColor="WhiteSmoke">
       <ListView.Header>
         <Grid>
@@ -28,19 +30,14 @@
               <Label Grid.Column="2" Text="{Binding Instrument}" />
               <Label Grid.Column="3" Text="{Binding Album}" />
             </Grid>
-            <ViewCell.ContextActions>
-              <MenuItem Text="Delete" IsDestructive="True" Clicked="LibraryItem_Delete" />
-            </ViewCell.ContextActions>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-      <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" />
-      <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" />
-      <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" />
-      <Button x:Name="AboutButton" Text="About" Clicked="AboutButton_Clicked" />
-    </StackLayout>
+    <Button x:Name="DownloadButton" Text="Download" Clicked="DownloadButton_Clicked" />
+    <ProgressBar x:Name="DownloadProgressBar" Progress="{Binding Source={x:Static local:App.Client}, Path=SongDownloadProgress}" />
+    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
+    <Button x:Name="LoadButton" Text="Reload Catalog" Clicked="LoadButton_Clicked" />
   </StackLayout>
 
 </ContentPage>

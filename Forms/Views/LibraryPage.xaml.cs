@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 using Jammit.Model;
 
-namespace Jammit.Forms
+namespace Jammit.Forms.Views
 {
   public partial class LibraryPage : ContentPage
   {
