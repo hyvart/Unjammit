@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
-             x:Class="Jammit.Forms.SettingsPage">
+             x:Class="Jammit.Forms.Views.SettingsPage">
 
   <StackLayout BackgroundColor="DimGray">
     <Grid BackgroundColor="WhiteSmoke">
@@ -20,7 +20,7 @@
       <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
       <Button Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
     </Grid>
-    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
+    <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked" />
   </StackLayout>
 
 </ContentPage>

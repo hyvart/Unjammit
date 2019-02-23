@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Jammit.Forms
+namespace Jammit.Forms.Views
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class SettingsPage : ContentPage
@@ -17,13 +17,11 @@ namespace Jammit.Forms
       InitializeComponent();
     }
 
-    private void CloseButton_Clicked(object sender, EventArgs e)
+    private void SaveButton_Clicked(object sender, EventArgs e)
     {
       //Hack: Manually flushing settings.
       //TODO: Replace with tow-way binding.
       Settings.ServiceUri = ServiceUriEntry.Text;
-
-      Navigation.PopModalAsync();
     }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)

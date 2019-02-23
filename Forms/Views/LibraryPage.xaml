@@ -35,12 +35,6 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-      <Button x:Name="CatalogButton" Text="View Catalog" Clicked="CatalogButton_Clicked" />
-      <Button x:Name="OpenButton" Text="Open Local..." Clicked="OpenButton_Clicked" />
-      <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked" />
-      <Button x:Name="AboutButton" Text="About" Clicked="AboutButton_Clicked" />
-    </StackLayout>
   </StackLayout>
 
 </ContentPage>

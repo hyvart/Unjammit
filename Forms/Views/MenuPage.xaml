@@ -1,19 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Jammit.Forms.Views"
+             xmlns:models="clr-namespace:Jammit.Forms.Models"
              x:Class="Jammit.Forms.Views.MenuPage"
              Title="Menu">
   <StackLayout VerticalOptions="FillAndExpand">
-    <ListView x:Name="MenuListView" HasUnevenRows="True">
+    <ListView x:Name="MenuListView" x:FieldModifier="public">
+      <ListView.ItemsSource>
+        <x:Array Type="{x:Type models:HomeMenuItem}">
+          <models:HomeMenuItem Title="Library" TargetType="{x:Type local:LibraryPage}" />
+          <models:HomeMenuItem Title="Catalog" TargetType="{x:Type local:CatalogPage}" />
+          <models:HomeMenuItem Title="Settings" TargetType="{x:Type local:SettingsPage}" />
+        </x:Array>
+      </ListView.ItemsSource>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <Grid Padding="10">
-              <Label TabIndex="{Binding Title}" />
+            <Grid>
+              <Label Text="{Binding Title}" />
             </Grid>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+    <Button x:Name="OpenButton" Text="Import Local..." Clicked="OpenButton_Clicked" />
+    <Button x:Name="AboutButton" Text="About" Clicked="AboutButton_Clicked" />
   </StackLayout>
 </ContentPage>

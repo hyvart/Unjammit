@@ -36,11 +36,6 @@ namespace Jammit.Forms.Views
       await LoadCatalog();
     }
 
-    private void CloseButton_Clicked(object sender, EventArgs e)
-    {
-      Navigation.PopModalAsync();
-    }
-
     private async void DownloadButton_Clicked(object sender, EventArgs e)
     {
       if (null == CatalogView.SelectedItem)
