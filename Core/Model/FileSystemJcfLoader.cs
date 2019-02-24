@@ -156,9 +156,9 @@ namespace Jammit.Model
       var sectionArray = PropertyListParser.Parse(Path.Combine(songPath, "sections.plist")) as NSArray;
       media.Sections = sectionArray.OfType<NSDictionary>().Select(dict => new Section
       {
-        BeatIdx = dict.Int("beat") ?? int.Parse(dict.String("beat")), // Key can sometimes be string instead of integer.
+        BeatIdx = dict.Int("beat") ?? int.Parse(dict.String("beat")),    // Key can sometimes be string instead of integer.
         Beat = media.Beats[dict.Int("beat") ?? int.Parse(dict.String("beat"))],
-        Number = dict.Int("number").Value,
+        Number = dict.Int("number") ?? int.Parse(dict.String("number")), // Key can sometimes be string instead of integer.
         Type = dict.Int("type").Value
       }).ToList();
     }
