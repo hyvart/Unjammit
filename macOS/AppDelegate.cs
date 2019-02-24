@@ -32,7 +32,12 @@ namespace Jammit.macOS
       Xamarin.Forms.Forms.Init();
 
       //TODO: Replace with Xamarin.Essentials API.
-      string dataDir = NSSearchPath.GetDirectories(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomain.User)[0];
+      string dataDir = NSSearchPath.GetDirectories(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
+      dataDir = System.IO.Path.Combine(dataDir, "Unjammit");
+      // Create dataDir, if it doesnt' exist.
+      if (!System.IO.Directory.Exists(dataDir))
+        System.IO.Directory.CreateDirectory(dataDir);
+
       Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
 
       LoadApplication(
