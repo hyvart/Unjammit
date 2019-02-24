@@ -14,10 +14,6 @@ namespace Jammit.Forms.Views
     public LibraryPage()
     {
       InitializeComponent();
-
-      //TODO: Defining a header throws a NullReferenceExeption in macOS starting with Xamarin.Forms 3.3.
-      if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
-        LibraryView.Header = null;
     }
 
     [Obsolete]
