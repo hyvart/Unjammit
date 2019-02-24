@@ -115,9 +115,6 @@
     <InterfaceDefinition Include="MainMenu.xib" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Memory">
-      <Version>4.5.2</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.Plugin.FilePicker">
       <Version>2.0.135</Version>
     </PackageReference>
