@@ -47,7 +47,9 @@ namespace Jammit.macOS
           new Model.FileSystemJcfLoader(dataDir)
         )
       );
+
       base.DidFinishLaunching(notification);
+      _window.Toolbar.Visible = false;
     }
 
     public override void WillTerminate(NSNotification notification)
