@@ -11,6 +11,7 @@ namespace Jammit.Forms
 {
   public partial class App : Application
   {
+    [Obsolete("Use parameter-less constructor.")]
     public App(string dataDirectory, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
     {
       App.Client = new Jammit.Forms.Client.RestClient();
@@ -22,18 +23,28 @@ namespace Jammit.Forms
       MainPage = new Jammit.Forms.Views.MainPage();
     }
 
+    public App()
+    {
+      InitializeComponent();
+
+      App.Client = new Jammit.Forms.Client.RestClient();
+      App.Library = new FolderLibrary(DataDirectory, Client);
+
+      MainPage = new Jammit.Forms.Views.MainPage();
+    }
+
     #region Properties
 
-    public static Jammit.Client.IClient Client { get; private set; }
+    public static Jammit.Client.IClient Client { get; /*private*/ set; }
 
-    public static ILibrary Library { get; private set; }
+    public static ILibrary Library { get; /*private*/ set; }
 
     [Obsolete("Remove when Xamarin.Essentials supports all platforms.")]
-    public static string DataDirectory { get; private set; }
+    public static string DataDirectory { get; /*private*/ set; }
 
-    public static Func<JcfMedia, IJcfPlayer> PlayerFactory { get; private set; }
+    public static Func<JcfMedia, IJcfPlayer> PlayerFactory { get; /*private*/ set; }
 
-    public static IJcfLoader MediaLoader { get; private set; }
+    public static IJcfLoader MediaLoader { get; /*private*/ set; }
 
     public static string[] AllowedFileTypes { get; set; } = new string[] { ".zip" };
 

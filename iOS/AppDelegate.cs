@@ -27,20 +27,19 @@ namespace Jammit.iOS
       // Audio options
       NSError error = AVFoundation.AVAudioSession.SharedInstance().SetCategory(AVFoundation.AVAudioSessionCategory.Playback);
       Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
+      Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
+      Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
+      Jammit.Forms.App.PlayerFactory = (media) =>
+      {
+        return new Audio.AppleJcfPlayer(media, (track, stream) =>
+        {
+          return new Audio.IOSAVAudioPlayer(track, stream);
+        });
+      };
+      Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
 
-      LoadApplication(
-        new Jammit.Forms.App(
-          Xamarin.Essentials.FileSystem.AppDataDirectory,
-          (media) =>
-          {
-            return new Audio.AppleJcfPlayer(media, (track, stream) =>
-            {
-              return new Audio.IOSAVAudioPlayer(track, stream);
-            });
-          },
-          new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
-        )
-      );
+      LoadApplication(new Jammit.Forms.App());
+
       return base.FinishedLaunching(app, options);
     }
   }

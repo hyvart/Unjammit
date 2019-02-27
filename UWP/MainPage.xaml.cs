@@ -21,12 +21,12 @@ namespace Jammit.UWP
     {
       this.InitializeComponent();
 
+      Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
+      Jammit.Forms.App.PlayerFactory = (media) => { return new Audio.FFmpegJcfPlayer(media); };
+      Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
+
       LoadApplication(
-        new Jammit.Forms.App(
-          Xamarin.Essentials.FileSystem.AppDataDirectory,
-          (media) => { return new Audio.FFmpegJcfPlayer(media); },
-          new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory)
-        )
+        new Jammit.Forms.App()
       );
     }
   }

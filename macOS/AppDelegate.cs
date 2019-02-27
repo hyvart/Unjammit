@@ -39,19 +39,17 @@ namespace Jammit.macOS
         System.IO.Directory.CreateDirectory(dataDir);
 
       Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
+      Jammit.Forms.App.DataDirectory = dataDir;
+      Jammit.Forms.App.PlayerFactory = (media) =>
+      {
+        return new Audio.AppleJcfPlayer(media, (track, stream) =>
+        {
+          return new Audio.MacOSAVAudioPlayer(track, stream);
+        });
+      };
+      Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
 
-      LoadApplication(
-        new Jammit.Forms.App(
-          dataDir,
-          (media) => {
-            return new Audio.AppleJcfPlayer(media, (track, stream) =>
-            {
-              return new Audio.MacOSAVAudioPlayer(track, stream);
-            });
-          },
-          new Model.FileSystemJcfLoader(dataDir)
-        )
-      );
+      LoadApplication(new Jammit.Forms.App());
 
       base.DidFinishLaunching(notification);
       _window.Toolbar.Visible = false;
