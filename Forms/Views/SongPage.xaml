@@ -31,7 +31,7 @@
              HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
              WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
       <local:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
-      <StackLayout HorizontalOptions="FillAndExpand">
+      <StackLayout HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
         <FlexLayout>
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
                  BackgroundColor="LightGray"
