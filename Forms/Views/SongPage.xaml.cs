@@ -43,7 +43,11 @@ namespace Jammit.Forms.Views
       //TODO: Should be set in binding.
       ScorePicker.SelectedIndex = 0;
 
-      AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
+      //TODO: Fix UI proportions on Android.
+      if (Xamarin.Essentials.DeviceInfo.Platform == Xamarin.Essentials.DevicePlatform.Android)
+        AlbumImage.IsVisible = false;
+      else
+        AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
     }
 
     #region Properties
