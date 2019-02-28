@@ -40,6 +40,7 @@ namespace Jammit.Audio
       _media = new Media(_libVLC, backingPath, FromType.FromLocation);
       _media.AddOption(config);
 
+      //TODO: Fix. Not currently working.
       foreach (var track in media.InstrumentTracks)
       {
         var path = "file://" + Path.Combine(media.Path, track.Identifier.ToString().ToUpper() + "_jcfx");
@@ -47,17 +48,14 @@ namespace Jammit.Audio
       }
 
       _player.Media = _media;
-      _player.LengthChanged += Player_LengthChanged;
       _player.PositionChanged += Player_PositionChanged;
+
+      Length = media.Length;
     }
 
     private void Player_PositionChanged(object sender, MediaPlayerPositionChangedEventArgs e)
     {
       PositionChanged?.Invoke(this, new EventArgs());
-    }
-
-    private void Player_LengthChanged(object sender, MediaPlayerLengthChangedEventArgs e)
-    {
     }
 
     #region IJcfPlayer
@@ -69,19 +67,13 @@ namespace Jammit.Audio
         return TimeSpan.FromMilliseconds(_player.Position * _player.Length);
       }
 
-      set => throw new NotImplementedException();
-    }
-
-    public TimeSpan Length
-    {
-      get
+      set
       {
-        if (_player.Length < 1)
-          return TimeSpan.FromMilliseconds(60 * 1000);
-
-        return TimeSpan.FromMilliseconds(_player.Length);
+        _player.Position = (float)(value.TotalMilliseconds / Length.TotalMilliseconds);
       }
     }
+
+    public TimeSpan Length { get; private set; }
 
     public PlaybackStatus State
     {
