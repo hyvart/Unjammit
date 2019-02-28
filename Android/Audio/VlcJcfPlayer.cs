@@ -28,10 +28,10 @@ namespace Jammit.Audio
 
     #endregion // private members
 
-    public VlcJcfPlayer(JcfMedia media, LibVLC vlc, MediaPlayer player)
+    public VlcJcfPlayer(JcfMedia media)
     {
-      _libVLC = vlc;
-      _player = player;
+      _libVLC = new LibVLC();
+      _player = new MediaPlayer(_libVLC);
 
       var backingPath = "file://" + Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
       var config = new MediaConfiguration();
@@ -47,18 +47,41 @@ namespace Jammit.Audio
       }
 
       _player.Media = _media;
+      _player.LengthChanged += Player_LengthChanged;
+      _player.PositionChanged += Player_PositionChanged;
+    }
+
+    private void Player_PositionChanged(object sender, MediaPlayerPositionChangedEventArgs e)
+    {
+      PositionChanged?.Invoke(this, new EventArgs());
+    }
+
+    private void Player_LengthChanged(object sender, MediaPlayerLengthChangedEventArgs e)
+    {
     }
 
     #region IJcfPlayer
 
     public TimeSpan Position
     {
-      get => TimeSpan.Zero;
+      get
+      {
+        return TimeSpan.FromMilliseconds(_player.Position * _player.Length);
+      }
 
       set => throw new NotImplementedException();
     }
 
-    public TimeSpan Length => TimeSpan.FromMilliseconds(300 * 1000);// TimeSpan.FromMilliseconds(_media.Duration);
+    public TimeSpan Length
+    {
+      get
+      {
+        if (_player.Length < 1)
+          return TimeSpan.FromMilliseconds(60 * 1000);
+
+        return TimeSpan.FromMilliseconds(_player.Length);
+      }
+    }
 
     public PlaybackStatus State
     {
