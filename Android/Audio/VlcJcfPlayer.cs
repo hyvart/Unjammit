@@ -14,6 +14,8 @@ using Jammit.Audio;
 using Jammit.Model;
 using LibVLCSharp.Shared;
 
+using Path = System.IO.Path;
+
 namespace Jammit.Audio
 {
   public class VlcJcfPlayer : IJcfPlayer
@@ -28,24 +30,23 @@ namespace Jammit.Audio
 
     public VlcJcfPlayer(JcfMedia media, LibVLC vlc, MediaPlayer player)
     {
-      var path = System.IO.Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
-      if (!System.IO.File.Exists(path + ".aifc"))
-        System.IO.File.Copy(path, path + ".aifc");
-
-      path += ".aifc";
-
       _libVLC = vlc;
       _player = player;
+
+      var backingPath = "file://" + Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
       var config = new MediaConfiguration();
       config.EnableHardwareDecoding();
 
-      _media = new Media(_libVLC, $"file://{path}");
+      _media = new Media(_libVLC, backingPath, FromType.FromLocation);
       _media.AddOption(config);
 
+      foreach (var track in media.InstrumentTracks)
+      {
+        var path = "file://" + Path.Combine(media.Path, track.Identifier.ToString().ToUpper() + "_jcfx");
+        _media.AddSlave(MediaSlaveType.Audio, 4, path);
+      }
+
       _player.Media = _media;
-      var x = _player.AudioTrackCount;
-      var z = _player.AudioTrack;
-      var a = _player.AudioTrackDescription;
     }
 
     #region IJcfPlayer

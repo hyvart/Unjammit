@@ -32,12 +32,13 @@ namespace Jammit.Android
       _videoView = new LibVLCSharp.Platforms.Android.VideoView(this) { MediaPlayer = _mediaPlayer };
 
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
-      Jammit.Forms.App.PlayerFactory = (media) => { return new Audio.AndroidMediaJcfPlayer(media); };
+      Jammit.Forms.App.PlayerFactory = (media) => { return new Audio.VlcJcfPlayer(media, _libVLC, _mediaPlayer); };
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
 
       global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
       LoadApplication(new Jammit.Forms.App());
+
     }
   }
 }
