@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Android.App;
 using Android.Content.PM;
@@ -24,19 +24,18 @@ namespace Jammit.Android
       ToolbarResource = Resource.Layout.Toolbar;
 
       base.OnCreate(savedInstanceState);
-
       global::LibVLCSharp.Forms.Shared.LibVLCSharpFormsRenderer.Init();
       global::LibVLCSharp.Shared.Core.Initialize();
-      
+
       _libVLC = new LibVLC();
       _mediaPlayer = new MediaPlayer(_libVLC);
       _videoView = new LibVLCSharp.Platforms.Android.VideoView(this) { MediaPlayer = _mediaPlayer };
 
-      global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
       Jammit.Forms.App.PlayerFactory = (media) => { return new Audio.AndroidMediaJcfPlayer(media); };
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
+
+      global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
       LoadApplication(new Jammit.Forms.App());
     }
