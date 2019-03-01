@@ -10,7 +10,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-using Jammit.Audio;
 using Jammit.Model;
 using LibVLCSharp.Shared;
 
@@ -23,32 +22,35 @@ namespace Jammit.Audio
     #region private members
 
     LibVLC _libVLC;
-    MediaPlayer _player;
-    Media _media;
+    Dictionary<PlayableTrackInfo, MediaPlayer> _players;
+    PlayableTrackInfo _backingTrack; // Keep for tracking player.
 
     #endregion // private members
 
     public VlcJcfPlayer(JcfMedia media)
     {
       _libVLC = new LibVLC();
-      _player = new MediaPlayer(_libVLC);
+      _players = new Dictionary<PlayableTrackInfo, MediaPlayer>(media.InstrumentTracks.Count + 1);
 
-      var backingPath = "file://" + Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
       var config = new MediaConfiguration();
       config.EnableHardwareDecoding();
 
-      _media = new Media(_libVLC, backingPath, FromType.FromLocation);
-      _media.AddOption(config);
+      var backingPath = "file://" + Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
+      var backingPlayer = new MediaPlayer(_libVLC);
+      backingPlayer.Media = new Media(_libVLC, backingPath, FromType.FromLocation);
+      backingPlayer.Media.AddOption(config);
+      backingPlayer.PositionChanged += Player_PositionChanged;
+      _players[media.BackingTrack] = backingPlayer;
+      _backingTrack = media.BackingTrack;
 
-      //TODO: Fix. Not currently working.
       foreach (var track in media.InstrumentTracks)
       {
         var path = "file://" + Path.Combine(media.Path, track.Identifier.ToString().ToUpper() + "_jcfx");
-        _media.AddSlave(MediaSlaveType.Audio, 4, path);
+        var player = new MediaPlayer(_libVLC);
+        player.Media = new Media(_libVLC, path, FromType.FromLocation);
+        player.Media.AddOption(config);
+        _players[track] = player;
       }
-
-      _player.Media = _media;
-      _player.PositionChanged += Player_PositionChanged;
 
       Length = media.Length;
     }
@@ -64,12 +66,13 @@ namespace Jammit.Audio
     {
       get
       {
-        return TimeSpan.FromMilliseconds(_player.Position * _player.Length);
+        return TimeSpan.FromMilliseconds(_players[_backingTrack].Position * _players[_backingTrack].Length);
       }
 
       set
       {
-        _player.Position = (float)(value.TotalMilliseconds / Length.TotalMilliseconds);
+        foreach(var player in _players.Values)
+          player.Position = (float)(value.TotalMilliseconds / Length.TotalMilliseconds);
       }
     }
 
@@ -79,7 +82,7 @@ namespace Jammit.Audio
     {
       get
       {
-        switch (_player.State)
+        switch (_players[_backingTrack].State)
         {
           case VLCState.NothingSpecial:
             return PlaybackStatus.Stopped;
@@ -105,31 +108,34 @@ namespace Jammit.Audio
 
     public uint GetVolume(PlayableTrackInfo track)
     {
-      return (uint)_player.Volume;
+      return (uint)_players[track].Volume;
     }
 
     public void Pause()
     {
       if (State != PlaybackStatus.Paused)
-        _player.Pause();
+        foreach(var player in _players.Values)
+          player.Pause();
     }
 
     public void Play()
     {
       if (State != PlaybackStatus.Playing)
-        _player.Play();
+        foreach(var player in _players.Values)
+          player.Play();
     }
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      _player.Volume = (int)volume;
+      _players[track].Volume = (int)volume;
     }
 
     public void Stop()
     {
       if (State != PlaybackStatus.Stopped)
-        _player.Stop();
-    } 
+        foreach(var player in _players.Values)
+          player.Stop();
+    }
 
     #endregion //IJcfPlayer
   }
