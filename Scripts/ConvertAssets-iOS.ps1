@@ -36,6 +36,7 @@ $indexes = @{
 	'40x71' = 2;
 	'192x251' = 3;
 }
+$numColors = 4
 
 foreach ($relPath in (Get-ChildItem -Name -Recurse -Include '*.png','iTunesArtwork*' $SourceDir)) {
 	$file = Get-ChildItem (Join-Path -Path $SourceDir -ChildPath $relPath)
@@ -44,7 +45,11 @@ foreach ($relPath in (Get-ChildItem -Name -Recurse -Include '*.png','iTunesArtwo
 	$height = $bmp.Height
 
 	$ratio = ratio $bmp
-	$index = $indexes[$ratio] + $IndexOffset
+	if ($file.Name -like 'iTunesArtwork*') { # 1x1|1.32
+		$index = 4 * $numColors + $IndexOffset
+	} else {
+		$index = $indexes[$ratio] * $numColors + $IndexOffset
+	}
 
-	magick convert $Xcf"[$index]" -resize ${width}x${height} (Join-Path -Path $TargetDir -ChildPath $file.Name)
+	magick convert $Xcf"[$index]" -resize ${width}x${height} (Join-Path -Path $TargetDir -ChildPath $relPath)
 }
