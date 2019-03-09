@@ -8,7 +8,13 @@ param(
 	[string] $PackageDisplayName,
 
 	[Parameter(Mandatory=$true)]
-	[version] $Version
+	[version] $Version,
+
+	[ValidateScript({Test-Path $_})]
+	[string] $AssetsSource,
+
+	[ValidateScript({Test-Path $_})]
+	[string] $AssetsTarget
 )
 
 $manifest = Get-ChildItem -Path $AppxManifest
@@ -28,3 +34,9 @@ if ($PackageDisplayName) {
 $xml.Package.Identity.Version = "$Version"
 
 $xml.Save($manifest)
+
+# Replace assets?
+if ($AssetsSource -and $AssetsTarget) {
+	Copy-Item -Force -Recurse (Join-Path $AssetsSource -ChildPath *) $AssetsTarget
+}
+#.\Scripts\Set-Version-UWP.ps1 -AppxManifest .\UWP\Package.appxmanifest -Version '0.0.7.0' -AssetsSource .\Assets\Alpha\UWP\ -AssetsTarget .
