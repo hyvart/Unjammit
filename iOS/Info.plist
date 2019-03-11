@@ -4,11 +4,13 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>UnjammitDev!</string>
-	<key>CFBundleIconFiles</key>
+  	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
 		<string>Icon-76.png</string>
 		<string>Icon-76@2x.png</string>
+		<string>Icon-167.png</string>
+		<string>Icon-167@2x.png</string>
 		<string>Default.png</string>
 		<string>Default@2x.png</string>
 		<string>Default-568h@2x.png</string>
