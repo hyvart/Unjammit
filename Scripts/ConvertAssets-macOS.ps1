@@ -18,5 +18,5 @@ foreach ($relPath in (Get-ChildItem -Name -Recurse -Include '*.png' $SourceDir))
 
 	$index = 0 + $IndexOffset
 
-	magick convert $Xcf"[$index]" -resize ${width}x${height} (Join-Path -Path $TargetDir -ChildPath $file.Name)
+	magick convert $Xcf"[$index]" -resize ${width}x${height} (Join-Path -Path $TargetDir -ChildPath $relPath)
 }
