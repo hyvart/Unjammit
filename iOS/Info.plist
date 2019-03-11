@@ -45,5 +45,15 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This app does not require contacts access.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app does not require calendar access.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app does not require microphone access.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This app does not require Apple Music access.</string>
+	<key>NSSiriUsageDescription</key>
+	<string>This app does not require Siri access.</string>
 </dict>
 </plist>
