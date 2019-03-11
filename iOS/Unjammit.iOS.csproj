@@ -76,7 +76,6 @@
     <BundleResource Include="Resources\Default.png" />
     <BundleResource Include="Resources\Default%402x.png" />
     <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-167.png" />
     <BundleResource Include="Resources\Icon-167%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%403x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
