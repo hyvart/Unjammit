@@ -83,12 +83,10 @@ namespace Jammit.Forms.Views
       if (Audio.PlaybackStatus.Playing == Player.State)
       {
         Player.Stop();
-        PlayButton.Text = "Play";
       }
       else
       {
         Player.Play();
-        PlayButton.Text = "Stop";
       }
     }
 
@@ -162,6 +160,11 @@ namespace Jammit.Forms.Views
     private void ForwardButton_Clicked(object sender, EventArgs e)
     {
       SetScorePage(PageIndex + 1);
+    }
+
+    private void StopButton_Clicked(object sender, EventArgs e)
+    {
+
     }
 
     private void StartButton_Clicked(object sender, EventArgs e)

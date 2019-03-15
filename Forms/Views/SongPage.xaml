@@ -50,12 +50,13 @@
                 WidthRequest="10" />
         <Image x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-          <Button Text="Loop" HorizontalOptions="Center" IsEnabled="False" />
-          <Button x:Name="StartButton" Text="&lt;&lt;" HorizontalOptions="Center" Clicked="StartButton_Clicked" />
-          <Button x:Name="BackButton" Text="&lt;" HorizontalOptions="Center" Clicked="BackButton_Clicked" />
-          <Button x:Name="PlayButton" Text="Play" HorizontalOptions="Center" Clicked="PlayButton_Clicked" />
-          <Button x:Name="ForwardButton" Text="&gt;" HorizontalOptions="Center" Clicked="ForwardButton_Clicked" />
-          <Button x:Name="EndButton" Text="&gt;&gt;" HorizontalOptions="Center" Clicked="EndButton_Clicked" />
+          <Button Text="🔁" HorizontalOptions="Center" IsEnabled="False" />
+          <Button x:Name="StartButton" Text="⏬" HorizontalOptions="Center" FontSize="Small" Padding="0" Clicked="StartButton_Clicked" />
+          <Button x:Name="BackButton" Text="⏪" HorizontalOptions="Center" FontSize="Small" Clicked="BackButton_Clicked" />
+          <Button x:Name="PlayButton" Text="⏯" HorizontalOptions="Center" FontSize="Small" Clicked="PlayButton_Clicked" />
+          <Button x:Name="StopButton" Text="⏹" HorizontalOptions="Center" FontSize="Small" Clicked="StopButton_Clicked" />
+          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Small" Clicked="ForwardButton_Clicked" />
+          <Button x:Name="EndButton" Text="⏫" HorizontalOptions="Center" FontSize="Small" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
     </StackLayout>
