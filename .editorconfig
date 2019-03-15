@@ -5,6 +5,7 @@ end_of_line = crlf
 
 [*.{sln}]
 indent_size = 4
+indent_style = tab
 
 [*.{editorconfig,md}]
 end_of_line = lf
