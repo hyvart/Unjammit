@@ -63,6 +63,8 @@ namespace Jammit.Audio
       set
       {
         _player.SeekTo((int) value.TotalMilliseconds);
+
+        PositionChanged?.Invoke(this, new EventArgs());
       }
     }
 

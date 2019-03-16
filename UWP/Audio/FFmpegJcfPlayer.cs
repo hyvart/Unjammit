@@ -77,7 +77,7 @@ namespace Jammit.Audio
       if (PlaybackStatus.Playing == State)
         return;
 
-      _mediaTimelineController.Start();
+      _mediaTimelineController.Resume();
 
       State = PlaybackStatus.Playing;
     }
@@ -94,11 +94,10 @@ namespace Jammit.Audio
 
     public void Stop()
     {
-      if (PlaybackStatus.Stopped == State)
-        return;
+      if (PlaybackStatus.Stopped != State)
+        _mediaTimelineController.Pause();
 
-      _mediaTimelineController.Pause();
-
+      Position = TimeSpan.Zero;
       State = PlaybackStatus.Stopped;
     }
 

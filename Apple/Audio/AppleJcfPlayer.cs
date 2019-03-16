@@ -58,19 +58,21 @@ namespace Jammit.Audio
       if (PlaybackStatus.Paused == State)
         return;
 
-      Stop();
-    }
-
-    public void Stop()
-    {
-      if (PlaybackStatus.Stopped == State)
-        return;
-
       foreach (var player in players.Values)
       {
         player.Stop();
       }
 
+      State = PlaybackStatus.Paused;
+    }
+
+    public void Stop()
+    {
+      if (PlaybackStatus.Stopped != State)
+        foreach (var player in players.Values)
+          player.Stop();
+
+      Position = TimeSpan.Zero;
       State = PlaybackStatus.Stopped;
     }
 

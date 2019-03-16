@@ -73,6 +73,8 @@ namespace Jammit.Audio
       {
         foreach(var player in _players.Values)
           player.Position = (float)(value.TotalMilliseconds / Length.TotalMilliseconds);
+
+        PositionChanged?.Invoke(this, new EventArgs());
       }
     }
 
@@ -135,6 +137,8 @@ namespace Jammit.Audio
       if (State != PlaybackStatus.Stopped)
         foreach(var player in _players.Values)
           player.Stop();
+
+      Position = TimeSpan.Zero;
     }
 
     #endregion //IJcfPlayer
