@@ -52,6 +52,14 @@ namespace Jammit.Forms.Views
       if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform ||
           Plugin.DeviceInfo.Abstractions.Platform.Windows == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
         VolumeSlider.WidthRequest = 250;
+      else if (Device.Android == Device.RuntimePlatform)
+        VolumeSlider.WidthRequest = 100;
+
+      if (Device.Android == Device.RuntimePlatform)
+      {
+        MuteButton.MinimumWidthRequest = 3;
+        SoloButton.MinimumWidthRequest = 3;
+      }
 
       //TODO: Inject by property only
       VolumeSlider.Value = VolumeSlider.Maximum;

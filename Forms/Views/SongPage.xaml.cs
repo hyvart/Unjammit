@@ -25,6 +25,17 @@ namespace Jammit.Forms.Views
 
       InitializeComponent();
 
+      if (Device.Android == Device.RuntimePlatform)
+      {
+        RepeatButton.MinimumWidthRequest = 3;
+        StartButton.MinimumWidthRequest = 3;
+        BackButton.MinimumWidthRequest = 3;
+        PlayButton.MinimumWidthRequest = 3;
+        StopButton.MinimumWidthRequest = 3;
+        ForwardButton.MinimumWidthRequest = 3;
+        EndButton.MinimumWidthRequest = 3;
+      }
+
       //TODO: Move to XAML?
       //TODO: Why is it still needed?
       PositionSlider.SetBinding(

@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Jammit.Forms.Views"
              xmlns:converters="clr-namespace:Jammit.Forms.Converters"
              x:Class="Jammit.Forms.Views.SongPage">
-    
+
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:DigitalTimeConverter x:Key="floatToTimeSpan" />
@@ -50,8 +50,8 @@
                 WidthRequest="10" />
         <Image x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-          <Button Text="🔁" HorizontalOptions="Center" IsEnabled="False" />
-          <Button x:Name="StartButton" Text="⏬" HorizontalOptions="Center" FontSize="Small" Padding="0" Clicked="StartButton_Clicked" />
+          <Button x:Name="RepeatButton" Text="🔁" HorizontalOptions="Center" IsEnabled="False" />
+          <Button x:Name="StartButton" Text="⏬" HorizontalOptions="Center" FontSize="Small" Clicked="StartButton_Clicked" />
           <Button x:Name="BackButton" Text="⏪" HorizontalOptions="Center" FontSize="Small" Clicked="BackButton_Clicked" />
           <Button x:Name="PlayButton" Text="⏯" HorizontalOptions="Center" FontSize="Small" Clicked="PlayButton_Clicked" />
           <Button x:Name="StopButton" Text="⏹" HorizontalOptions="Center" FontSize="Small" Clicked="StopButton_Clicked" />
