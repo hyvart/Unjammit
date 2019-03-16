@@ -13,6 +13,13 @@ namespace Jammit.Forms.Views
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class SongPage : ContentPage
   {
+    #region static members
+
+    static Color NormalButtonTextColor;
+    static Color NormalButtonBackgroundColor;
+
+    #endregion // static members
+
     public SongPage(SongInfo song)
     {
       // Needed to actually bind local properties.
@@ -24,6 +31,9 @@ namespace Jammit.Forms.Views
       PageIndex = 0;
 
       InitializeComponent();
+
+      NormalButtonBackgroundColor = PlayButton.BackgroundColor;
+      NormalButtonTextColor = PlayButton.TextColor;
 
       if (Device.Android == Device.RuntimePlatform)
       {
@@ -93,12 +103,28 @@ namespace Jammit.Forms.Views
     {
       if (Audio.PlaybackStatus.Playing == Player.State)
       {
-        Player.Stop();
+        Player.Pause();
+
+        PlayButton.BackgroundColor = Color.PaleGoldenrod;
+        PlayButton.TextColor = Color.Olive;
+        PlayButton.BorderColor = PlayButton.TextColor;
       }
       else
       {
         Player.Play();
+
+        PlayButton.BackgroundColor = Color.PaleGreen;
+        PlayButton.TextColor = Color.DarkGreen;
+        PlayButton.BorderColor = PlayButton.TextColor;
       }
+    }
+
+    private void StopButton_Clicked(object sender, EventArgs e)
+    {
+      Player.Stop();
+
+      PlayButton.BackgroundColor = NormalButtonBackgroundColor;
+      PlayButton.TextColor = NormalButtonTextColor;
     }
 
     private void CloseButton_Clicked(object sender, EventArgs e)
@@ -171,11 +197,6 @@ namespace Jammit.Forms.Views
     private void ForwardButton_Clicked(object sender, EventArgs e)
     {
       SetScorePage(PageIndex + 1);
-    }
-
-    private void StopButton_Clicked(object sender, EventArgs e)
-    {
-
     }
 
     private void StartButton_Clicked(object sender, EventArgs e)
