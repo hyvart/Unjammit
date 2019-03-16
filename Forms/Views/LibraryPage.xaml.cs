@@ -16,13 +16,6 @@ namespace Jammit.Forms.Views
       InitializeComponent();
     }
 
-    [Obsolete]
-    public static string DeviceId => Plugin.DeviceInfo.CrossDeviceInfo.Current.Id;
-
-    [Obsolete]
-    //public static string DevicePlatform => Xamarin.Essentials.DeviceInfo.Platform; // Not macOS-ready.
-    public static string DevicePlatform => Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform.ToString();
-
     #region Events
 
     protected override void OnAppearing()

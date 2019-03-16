@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using Jammit.Client;
 using Jammit.Model;
 using Newtonsoft.Json.Linq;
-using Plugin.DeviceInfo;
 
 namespace Jammit.Forms.Client
 {
@@ -129,8 +128,9 @@ namespace Jammit.Forms.Client
         cliente.DefaultRequestHeaders.Add("Accept", "application/json");
 
         var json = new JObject();
-        json.Add("id", CrossDeviceInfo.Current.Id);
-        json.Add("platform", CrossDeviceInfo.Current.Platform.ToString());
+        // See https://montemagno.com/unique-device-id-for-mobile-apps/
+        json.Add("id", Plugin.DeviceInfo.CrossDeviceInfo.Current.Id);
+        json.Add("platform", Xamarin.Forms.Device.RuntimePlatform);
         var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
 
         var response = await cliente.PostAsync(cliente.BaseAddress.AbsoluteUri, content);

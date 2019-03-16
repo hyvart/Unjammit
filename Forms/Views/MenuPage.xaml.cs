@@ -40,7 +40,7 @@ namespace Jammit.Forms.Views
     {
       var mdi = "";
       var version = "";
-      if (Plugin.DeviceInfo.Abstractions.Platform.macOS != Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
+      if (Device.macOS != Device.RuntimePlatform)
       {
         mdi = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.ToString();
         version = Xamarin.Essentials.VersionTracking.CurrentVersion;

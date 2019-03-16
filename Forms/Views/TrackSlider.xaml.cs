@@ -49,8 +49,7 @@ namespace Jammit.Forms.Views
 
       //TODO: Drop in favor of Xamarin.Essentials APIs, when released.
       //TODO: Design a decent UI that doesn't crash when certain size requests are missing.
-      if (Plugin.DeviceInfo.Abstractions.Platform.macOS == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform ||
-          Plugin.DeviceInfo.Abstractions.Platform.Windows == Plugin.DeviceInfo.CrossDeviceInfo.Current.Platform)
+      if (Device.macOS == Device.RuntimePlatform || Device.UWP == Device.RuntimePlatform)
         VolumeSlider.WidthRequest = 250;
       else if (Device.Android == Device.RuntimePlatform)
         VolumeSlider.WidthRequest = 100;

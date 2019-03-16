@@ -55,7 +55,7 @@ namespace Jammit.Forms.Views
       ScorePicker.SelectedIndex = 0;
 
       //TODO: Fix UI proportions on Android.
-      if (Xamarin.Essentials.DeviceInfo.Platform == Xamarin.Essentials.DevicePlatform.Android)
+      if (Device.Android == Device.RuntimePlatform)
         AlbumImage.IsVisible = false;
       else
         AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
