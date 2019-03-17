@@ -28,5 +28,17 @@ namespace Jammit.Forms.Views
     {
       App.Client.RequestAuthorization().Wait();
     }
+
+    private async void DeleteDataButton_Clicked(object sender, System.EventArgs e)
+    {
+      if (await DisplayAlert("Please confirm", "Your local library will be completely deleted.\nThis can not be undone.", "Yes", "No"))
+      {
+        var dataDir = new System.IO.DirectoryInfo(App.DataDirectory);
+        foreach (var file in dataDir.GetFiles())
+          file.Delete();
+        foreach (var dir in dataDir.GetDirectories())
+          dir.Delete(true);
+      }
+    }
   }
 }
