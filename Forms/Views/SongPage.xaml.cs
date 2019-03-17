@@ -44,6 +44,14 @@ namespace Jammit.Forms.Views
         StopButton.MinimumWidthRequest = 3;
         ForwardButton.MinimumWidthRequest = 3;
         EndButton.MinimumWidthRequest = 3;
+
+        RepeatButton.MinimumHeightRequest = 3;
+        StartButton.MinimumHeightRequest = 3;
+        BackButton.MinimumHeightRequest = 3;
+        PlayButton.MinimumHeightRequest = 3;
+        StopButton.MinimumHeightRequest = 3;
+        ForwardButton.MinimumHeightRequest = 3;
+        EndButton.MinimumHeightRequest = 3;
       }
 
       //TODO: Move to XAML?

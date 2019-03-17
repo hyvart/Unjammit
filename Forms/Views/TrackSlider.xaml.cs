@@ -58,6 +58,9 @@ namespace Jammit.Forms.Views
       {
         MuteButton.MinimumWidthRequest = 3;
         SoloButton.MinimumWidthRequest = 3;
+
+        MuteButton.MinimumHeightRequest = 3;
+        SoloButton.MinimumHeightRequest = 3;
       }
 
       //TODO: Inject by property only
