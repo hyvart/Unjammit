@@ -3,7 +3,7 @@
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+        <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectGuid>{D8D3D97A-E679-48F4-A9FC-8BDDAD0778D2}</ProjectGuid>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
@@ -16,6 +16,7 @@
     </NuGetPackageImportStamp>
     <IntermediateOutputPath>..\Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
     <OutputPath>..\Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+    <XamMacArch>x86_64</XamMacArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,10 +34,6 @@
     <UseRefCounting>true</UseRefCounting>
     <HttpClientHandler>
     </HttpClientHandler>
-    <LinkMode>
-    </LinkMode>
-    <XamMacArch>
-    </XamMacArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -54,8 +51,6 @@
     <LinkMode>SdkOnly</LinkMode>
     <HttpClientHandler>
     </HttpClientHandler>
-    <XamMacArch>
-    </XamMacArch>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
