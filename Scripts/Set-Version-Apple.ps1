@@ -14,38 +14,60 @@ param(
 
 	[version] $BundleVersion,
 
-	[string] $DownloadDir = "$($PSScriptRoot | Split-Path)\Build"
+	[string] $DownloadDir = "$($PSScriptRoot | Split-Path)\Build",
+
+	[switch] $UsePlistCil
 )
 
 $plist = Get-ChildItem -Path $InfoPlist
 
-# Install plist-cil
-if (! (Test-Path "$DownloadDir\plist-cil.1.50.0\lib\netstandard2.0\plist-cil.dll")) {
-	if (! (Test-Path $DownloadDir)) {
-		New-Item -ItemType Directory $DownloadDir
+if ($UsePlistCil) {
+	# Install plist-cil
+	if (! (Test-Path "$DownloadDir\plist-cil.1.50.0\lib\netstandard2.0\plist-cil.dll")) {
+		if (! (Test-Path $DownloadDir)) {
+			New-Item -ItemType Directory $DownloadDir
+		}
+
+		nuget install plist-cil -Version 1.50.0 -OutputDirectory $DownloadDir
 	}
 
-	nuget install plist-cil -Version 1.50.0 -OutputDirectory $DownloadDir
+	Add-Type -Path "$DownloadDir\plist-cil.1.50.0\lib\netstandard2.0\plist-cil.dll"
+
+	$dict = [Claunia.PropertyList.PropertyListParser]::Parse($plist)
+
+	if ($BundleId) {
+		$dict['CFBundleIdentifier'].Content = $BundleId
+	}
+	if ($BundleName) {
+		$dict['CFBundleName'].Content = $BundleName
+	}
+	if ($BundleDisplayName) {
+		$dict['CFBundleDisplayName'].Content = $BundleDisplayName
+	}
+
+	$dict['CFBundleShortVersionString'].Content = $BundleShortVersionString
+
+	if ($BundleVersion) {
+		$dict['CFBundleVersion'].Content = $BundleVersion
+	}
+
+	[Claunia.PropertyList.PropertyListParser]::SaveAsXml($dict, $plist)
+} else {
+	if ($BundleId) {
+		/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier '${BundleId}'" $InfoPlist
+	}
+
+	if ($BundleName) {
+		/usr/libexec/PlistBuddy -c "Set :CFBundleName '${BundleName}'" $InfoPlist
+	}
+	
+	if ($BundleDisplayName) {
+		/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName '${BundleDisplayName}'" $InfoPlist
+	}
+	
+	if ($BundleVersion) {
+		/usr/libexec/PlistBuddy -c "Set :CFBundleVersion '${BundleVersion}'" $InfoPlist
+	}
+	
+	/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString '${BundleShortVersionString}'" $InfoPlist
 }
-
-Add-Type -Path "$DownloadDir\plist-cil.1.50.0\lib\netstandard2.0\plist-cil.dll"
-
-$dict = [Claunia.PropertyList.PropertyListParser]::Parse($plist)
-
-if ($BundleId) {
-	$dict['CFBundleIdentifier'].Content = $BundleId
-}
-if ($BundleName) {
-	$dict['CFBundleName'].Content = $BundleName
-}
-if ($BundleDisplayName) {
-	$dict['CFBundleDisplayName'].Content = $BundleDisplayName
-}
-
-$dict['CFBundleShortVersionString'].Content = $BundleShortVersionString
-
-if ($BundleVersion) {
-	$dict['CFBundleVersion'].Content = $BundleVersion
-}
-
-[Claunia.PropertyList.PropertyListParser]::SaveAsXml($dict, $plist)
