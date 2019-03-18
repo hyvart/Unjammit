@@ -14,6 +14,11 @@ param(
 
 	[version] $BundleVersion,
 
+	[ValidateScript({Test-Path $_})]
+	[string] $EntitlementsPlist,
+
+	[string] $TeamPrefix,
+
 	[string] $DownloadDir = "$($PSScriptRoot | Split-Path)\Build",
 
 	[switch] $UsePlistCil
@@ -51,6 +56,8 @@ if ($UsePlistCil) {
 		$dict['CFBundleVersion'].Content = $BundleVersion
 	}
 
+	#TODO: Set custom entitlements
+
 	[Claunia.PropertyList.PropertyListParser]::SaveAsXml($dict, $plist)
 } else {
 	if ($BundleId) {
@@ -70,4 +77,8 @@ if ($UsePlistCil) {
 	}
 	
 	/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString '${BundleShortVersionString}'" $InfoPlist
+
+	if ($EntitlementsPlist -and $TeamPrefix) {
+		/usr/libexec/PlistBuddy -c "Set :com.apple.application-identifier '${TeamPrefix}.${BundleId}'" $EntitlementsPlist
+	}
 }
