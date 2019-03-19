@@ -57,6 +57,8 @@ namespace Jammit.Forms.Views
         //TODO: Assert selected item and downloaded content metadata are equal.
 
         await DisplayAlert("Downloaded Song", song.ToString(), "OK");
+
+        DownloadProgressBar.Progress = 0;
       }
       catch (Exception ex)
       {
