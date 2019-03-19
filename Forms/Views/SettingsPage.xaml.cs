@@ -38,6 +38,11 @@ namespace Jammit.Forms.Views
           file.Delete();
         foreach (var dir in dataDir.GetDirectories())
           dir.Delete(true);
+
+        foreach (var song in App.Library.Songs)
+        {
+          App.Library.RemoveSong(song);
+        }
       }
     }
   }
