@@ -98,30 +98,32 @@ namespace Jammit.Forms.Client
       }
     }
 
-    private long _estimateTotalBytes; // Hack. Android doesn't acknowledge TotalBytesToReceive.
     public async Task DownloadSong(SongInfo song, string path)
     {
       // Reset Download progress.
       SongDownloadProgress = 0;
-      _estimateTotalBytes = 0;
 
       using (var client = new System.Net.WebClient())
       {
         client.DownloadProgressChanged += (sender, e) =>
         {
-          if (e.TotalBytesToReceive < 0)
+          if (e.TotalBytesToReceive >= 0)
           {
-            if (_estimateTotalBytes == 0)
-              _estimateTotalBytes = e.BytesReceived * 10;
-            else if (e.BytesReceived >= _estimateTotalBytes)
-              _estimateTotalBytes += (long)(_estimateTotalBytes * 1.7);
+            SongDownloadProgress = (double)e.BytesReceived / e.TotalBytesToReceive;
 
-            SongDownloadProgress = (double)e.BytesReceived / (double)_estimateTotalBytes;
+            return;
           }
-          else
+
+          var contentLength = long.Parse(client.ResponseHeaders[System.Net.HttpResponseHeader.ContentLength]);
+          if (contentLength > 0)
           {
-            SongDownloadProgress = (double)e.BytesReceived / (double)e.TotalBytesToReceive;
+            SongDownloadProgress = (double)e.BytesReceived / contentLength;
+
+            return;
           }
+
+          // Unknown content length. Throw error.
+          throw new HttpRequestException("Unknown download size.");
         };
         client.DownloadFileCompleted += (sender, e) =>
         {
