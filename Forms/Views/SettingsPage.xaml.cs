@@ -38,18 +38,17 @@ namespace Jammit.Forms.Views
           App.Library.RemoveSong(song);
         }
 
-        var userDirs = new System.IO.DirectoryInfo[]
+        foreach(var userDir in new string[] { "Downloads", "Tracks" })
         {
-          new System.IO.DirectoryInfo(System.IO.Path.Combine(App.DataDirectory, "Downloads")),
-          new System.IO.DirectoryInfo(System.IO.Path.Combine(App.DataDirectory, "Tracks")),
-        };
-
-        foreach (var dataDir in userDirs)
-        {
-          foreach (var file in dataDir.GetFiles())
-            file.Delete();
-          foreach (var dir in dataDir.GetDirectories())
-            dir.Delete(true);
+          var userDirPath = System.IO.Path.Combine(App.DataDirectory, userDir);
+          if (System.IO.Directory.Exists(userDirPath))
+          {
+            var userDirInfo = new System.IO.DirectoryInfo(userDirPath);
+            foreach (var file in userDirInfo.GetFiles())
+              file.Delete();
+            foreach (var dir in userDirInfo.GetDirectories())
+              dir.Delete(true);
+          }
         }
       }
     }
