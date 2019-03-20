@@ -33,15 +33,23 @@ namespace Jammit.Forms.Views
     {
       if (await DisplayAlert("Please confirm", "Your local library will be completely deleted.\nThis can not be undone.", "Yes", "No"))
       {
-        var dataDir = new System.IO.DirectoryInfo(App.DataDirectory);
-        foreach (var file in dataDir.GetFiles())
-          file.Delete();
-        foreach (var dir in dataDir.GetDirectories())
-          dir.Delete(true);
-
         foreach (var song in App.Library.Songs)
         {
           App.Library.RemoveSong(song);
+        }
+
+        var userDirs = new System.IO.DirectoryInfo[]
+        {
+          new System.IO.DirectoryInfo(System.IO.Path.Combine(App.DataDirectory, "Downloads")),
+          new System.IO.DirectoryInfo(System.IO.Path.Combine(App.DataDirectory, "Tracks")),
+        };
+
+        foreach (var dataDir in userDirs)
+        {
+          foreach (var file in dataDir.GetFiles())
+            file.Delete();
+          foreach (var dir in dataDir.GetDirectories())
+            dir.Delete(true);
         }
       }
     }
