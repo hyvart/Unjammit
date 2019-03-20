@@ -23,7 +23,10 @@ namespace Jammit.Model
     private void InitCache()
     {
       _cache = new SortedList<SongInfo, SongInfo>(
-        Comparer<SongInfo>.Create((s1, s2) => s1.Artist.CompareTo(s2.Artist) * 10 + s1.Title.CompareTo(s2.Title))
+        Comparer<SongInfo>.Create((s1, s2) =>
+        {
+          return s1.Artist.CompareTo(s2.Artist) * 100 + s1.Title.CompareTo(s2.Title) * 10 + s1.Instrument.CompareTo(s2.Instrument);
+        })
       );
 
       using (var stream = File.OpenRead(_libraryPath))
