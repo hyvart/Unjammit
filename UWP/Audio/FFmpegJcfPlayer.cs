@@ -19,7 +19,7 @@ namespace Jammit.Audio
   {
     #region private members
 
-    private Dictionary<PlayableTrackInfo, Tuple<MediaPlayer, FFmpegInterop.FFmpegInteropMSS>> _players;
+    private Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)> _players;
     private MediaTimelineController _mediaTimelineController;
 
     private void InitPlayer(PlayableTrackInfo track, string mediaPath)
@@ -35,7 +35,7 @@ namespace Jammit.Audio
       player.Source = MediaSource.CreateFromMediaStreamSource(ffmpegSource.GetMediaStreamSource());
 
       // FFmpegInteropMSS instances hold the stream reference. Their scope must be kept.
-      _players[track] = Tuple.Create(player, ffmpegSource);
+      _players[track] = (player, ffmpegSource);
     }
 
     #endregion
@@ -43,7 +43,7 @@ namespace Jammit.Audio
     public FFmpegJcfPlayer(JcfMedia media)
     {
       // Capacity => instruments + backing (TODO: + click)
-      _players = new Dictionary<PlayableTrackInfo, Tuple<MediaPlayer, FFmpegInterop.FFmpegInteropMSS>>(media.InstrumentTracks.Count + 1);
+      _players = new Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)>(media.InstrumentTracks.Count + 1);
       _mediaTimelineController = new MediaTimelineController();
       _mediaTimelineController.PositionChanged += (sender, args) =>
       {
@@ -103,12 +103,12 @@ namespace Jammit.Audio
 
     public uint GetVolume(PlayableTrackInfo track)
     {
-      return (uint)_players[track].Item1.Volume;
+      return (uint)_players[track].Player.Volume;
     }
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      _players[track].Item1.Volume = volume / 100.0 ;
+      _players[track].Player.Volume = volume / 100.0;
     }
 
     public TimeSpan Position
