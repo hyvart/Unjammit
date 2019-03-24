@@ -6,5 +6,7 @@
 	<string>TEAMID.com.unjammit.player.macos.dev</string>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
+	<key>com.apple.security.network.client</key>
+	<true/>
 </dict>
 </plist>
