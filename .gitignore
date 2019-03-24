@@ -23,6 +23,7 @@ bld/
 [Oo]bj/
 Build/
 Target/
+_pkginfo.txt
 
 # Visual Studio 2015 cache/options directory
 .vs/
