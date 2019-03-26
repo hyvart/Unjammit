@@ -7,9 +7,8 @@ This software aims to implement the playback functionality of the defunct [Jammi
 
 | |
 |:-:|
-| <a href='https://www.microsoft.com/store/apps/9MZJMJZMDD8Q?cid=storebadge&	ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='Universal Windows' height="50px" /></a> |
-| <a href='https://play.google.com/store/apps/details?id=com.unjammit.player&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' alt='Android' height="75px" /></a> |
-
+| [Windows Release](https://www.microsoft.com/store/apps/9MZJMJZMDD8Q) |
+| [Android Release](https://play.google.com/store/apps/details?id=com.unjammit.player) |
 
 For more, see the [Releases](https://github.com/JunielKatarn/Unjammit/releases) section.
 
