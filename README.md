@@ -4,7 +4,14 @@ Multi-platform port of the [Jam.NET](https://github.com/maxton/Jam.NET) JCF medi
 This software aims to implement the playback functionality of the defunct [Jammit](https://www.youtube.com/channel/UCTmh3zCCSybVNMye-3lozJQ) app.
 
 ## Install
-See [releases](https://github.com/JunielKatarn/Unjammit/releases) section.
+
+| |
+|:-:|
+| <a href='https://www.microsoft.com/store/apps/9MZJMJZMDD8Q?cid=storebadge&	ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='Universal Windows' height="50px" /></a> |
+| <a href='https://play.google.com/store/apps/details?id=com.unjammit.player&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' alt='Android' height="75px" /></a> |
+
+
+For more, see the [Releases](https://github.com/JunielKatarn/Unjammit/releases) section.
 
 ## Features (current)
 
@@ -29,7 +36,7 @@ See [releases](https://github.com/JunielKatarn/Unjammit/releases) section.
 
 Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's [`xplat`](https://github.com/JunielKatarn/Unjammit/tree/xplat) branch.
 
-### Requirements
+### Build Requirements
 - Visual Studio 2017
   - Add the `Mobile development with .NET` workload.
 - Visual Studio for Mac
