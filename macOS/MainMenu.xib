@@ -77,7 +77,7 @@
                             <menuItem isSeparatorItem="YES" id="79"/>
                             <menuItem title="Close" keyEquivalent="w" id="73">
                                 <connections>
-                                    <action selector="performClose:" target="-1" id="193"/>
+                                    <action selector="terminate:" target="-1" id="yam-96-brA"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Save…" keyEquivalent="s" id="75">
