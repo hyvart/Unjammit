@@ -1,4 +1,4 @@
-﻿using AppKit;
+using AppKit;
 using Foundation;
 
 using Xamarin.Forms.Platform.MacOS;
@@ -6,7 +6,7 @@ using Xamarin.Forms.Platform.MacOS;
 namespace Jammit.macOS
 {
   [Register("AppDelegate")]
-  public class AppDelegate : FormsApplicationDelegate
+  public partial class AppDelegate : FormsApplicationDelegate
   {
     NSWindow _window;
 
@@ -53,6 +53,13 @@ namespace Jammit.macOS
 
       base.DidFinishLaunching(notification);
       _window.Toolbar.Visible = false;
+    }
+
+    // See https://docs.microsoft.com/en-us/xamarin/mac/user-interface/menu#status-bar-menus
+    [Export("customHelp:")]
+    void ShowHelp(NSObject sender)
+    {
+      NSWorkspace.SharedWorkspace.OpenUrl(new NSUrl(@"http://unjammit.com/help"));
     }
 
     public override void WillTerminate(NSNotification notification)
