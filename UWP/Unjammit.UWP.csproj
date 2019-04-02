@@ -120,9 +120,6 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.8</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms">
-      <Version>3.5.0.169047</Version>
-    </PackageReference>
     <PackageReference Include="YunFan.Gallery.FFmpegInterop">
       <Version>1.0.23</Version>
     </PackageReference>
