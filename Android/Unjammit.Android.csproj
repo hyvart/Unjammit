@@ -26,7 +26,7 @@
     <OutputPath>..\Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidSupportedAbis>arm64-v8a;armeabi;x86_64;x86;armeabi-v7a</AndroidSupportedAbis>
+    <AndroidSupportedAbis>arm64-v8a;x86_64;x86;armeabi-v7a</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugType>portable</DebugType>
