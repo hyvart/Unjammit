@@ -3,4 +3,8 @@
   <PropertyGroup>
   </PropertyGroup>
 
+  <Target Name="Dump">
+    <Message Text="XamarinMacFrameworkRoot  [$(XamarinMacFrameworkRoot)]" />
+  </Target>
+
 </Project>
