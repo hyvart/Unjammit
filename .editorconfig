@@ -7,7 +7,7 @@ end_of_line = crlf
 indent_size = 4
 indent_style = tab
 
-[*.{editorconfig,md}]
+[*.{editorconfig,md,plist}]
 end_of_line = lf
 
 [*.{ps1,sh}]
