@@ -17,6 +17,19 @@ namespace Jammit.Forms.Views
       InitializeComponent();
     }
 
+    #region Page overrides
+
+    protected override void OnAppearing()
+    {
+      // Workaround Mojave dark mode.
+      if (Device.RuntimePlatform == Xamarin.Forms.Device.macOS)
+      {
+        ServiceUriEntry.TextColor = Color.Black;
+      }
+    }
+
+    #endregion // Page overrides
+
     private void SaveButton_Clicked(object sender, EventArgs e)
     {
       //Hack: Manually flushing settings.

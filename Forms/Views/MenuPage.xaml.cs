@@ -17,6 +17,20 @@ namespace Jammit.Forms.Views
       InitializeComponent();
     }
 
+    #region Page overrides
+
+    protected override void OnAppearing()
+    {
+      // Workaround Mojave dark mode.
+      if (Device.RuntimePlatform == Xamarin.Forms.Device.macOS)
+      {
+        OpenButton.TextColor = Color.Black;
+        AboutButton.TextColor = OpenButton.TextColor;
+      }
+    }
+
+    #endregion // Page overrides
+
     private async void OpenButton_Clicked(object sender, EventArgs e)
     {
       Plugin.FilePicker.Abstractions.FileData picked = null;
@@ -44,6 +58,11 @@ namespace Jammit.Forms.Views
       {
         mdi = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.ToString();
         version = Xamarin.Essentials.VersionTracking.CurrentVersion;
+      }
+      else
+      {
+        mdi = "Desktop";
+        version = "1.0";
       }
       await DisplayAlert("Info", $"Unjammit! Version [{version}]\nDisplayInfo: [{mdi}]", "OK");
     }
