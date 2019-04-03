@@ -18,6 +18,9 @@
     <OutputPath>..\Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
     <XamMacArch>x86_64</XamMacArch>
     <AOTMode>None</AOTMode>
+    <!-- Xamarin.Mac 5.6 doesn't Support macOS 10.7 target -->
+    <XamarinMacFrameworkVersion>5.2.1.16</XamarinMacFrameworkVersion>
+    <XamarinMacFrameworkRoot>/Library/Frameworks/Xamarin.Mac.framework/Versions/$(XamarinMacFrameworkVersion)</XamarinMacFrameworkRoot>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
