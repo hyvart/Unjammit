@@ -8,6 +8,7 @@ This software aims to implement the playback functionality of the defunct [Jammi
 | |
 |:-:|
 | [Windows Release](https://www.microsoft.com/store/apps/9MZJMJZMDD8Q) |
+| [macOS Release](https://itunes.apple.com/us/app/unjammit/id1456515707) |
 | [Android Release](https://play.google.com/store/apps/details?id=com.unjammit.player) |
 
 For more, see the [Releases](https://github.com/JunielKatarn/Unjammit/releases) section.
