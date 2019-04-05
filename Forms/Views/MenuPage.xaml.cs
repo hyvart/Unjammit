@@ -21,12 +21,6 @@ namespace Jammit.Forms.Views
 
     protected override void OnAppearing()
     {
-      // Workaround Mojave dark mode.
-      if (Device.RuntimePlatform == Xamarin.Forms.Device.macOS)
-      {
-        OpenButton.TextColor = Color.Black;
-        AboutButton.TextColor = OpenButton.TextColor;
-      }
     }
 
     #endregion // Page overrides

@@ -21,11 +21,6 @@ namespace Jammit.Forms.Views
 
     protected override void OnAppearing()
     {
-      // Workaround Mojave dark mode.
-      if (Device.RuntimePlatform == Xamarin.Forms.Device.macOS)
-      {
-        ServiceUriEntry.TextColor = Color.Black;
-      }
     }
 
     #endregion // Page overrides
