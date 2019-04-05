@@ -51,11 +51,11 @@ namespace Jammit.Forms.Views
       //TODO: Design a decent UI that doesn't crash when certain size requests are missing.
       if (Device.macOS == Device.RuntimePlatform || Device.UWP == Device.RuntimePlatform)
         VolumeSlider.WidthRequest = 250;
-      else if (Device.Android == Device.RuntimePlatform)
-        VolumeSlider.WidthRequest = 100;
 
       if (Device.Android == Device.RuntimePlatform)
       {
+        VolumeSlider.WidthRequest = 100;
+
         MuteButton.MinimumWidthRequest = 3;
         SoloButton.MinimumWidthRequest = 3;
 
