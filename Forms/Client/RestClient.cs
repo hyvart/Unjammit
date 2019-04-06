@@ -77,8 +77,11 @@ namespace Jammit.Forms.Client
         } // Response failed
       }
 
+      // See Mode.FolderLibrary.InitCache
       result.Sort(Comparer<SongInfo>.Create(
-        (s1, s2) => s1.Artist.CompareTo(s2.Artist) * 10 + s1.Title.CompareTo(s2.Title)
+        (s1, s2) => string.Compare(s1.Artist,     s2.Artist,      StringComparison.Ordinal) * 100 +
+                    string.Compare(s1.Title,      s2.Title,       StringComparison.Ordinal) *  10 +
+                    string.Compare(s1.Instrument, s2.Instrument,  StringComparison.Ordinal) *   1
       ));
       return result;
     }

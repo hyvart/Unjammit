@@ -22,12 +22,13 @@ namespace Jammit.Model
 
     private void InitCache()
     {
+      // See Client.RestClient.LoadCatalog
       _cache = new SortedList<SongInfo, SongInfo>(
-        Comparer<SongInfo>.Create((s1, s2) =>
-        {
-          return s1.Artist.CompareTo(s2.Artist) * 100 + s1.Title.CompareTo(s2.Title) * 10 + s1.Instrument.CompareTo(s2.Instrument);
-        })
-      );
+        Comparer<SongInfo>.Create(
+          (s1, s2) => string.Compare(s1.Artist,     s2.Artist,      StringComparison.Ordinal) * 100 +
+                      string.Compare(s1.Title,      s2.Title,       StringComparison.Ordinal) *  10 +
+                      string.Compare(s1.Instrument, s2.Instrument,  StringComparison.Ordinal) *   1
+      ));
 
       using (var stream = File.OpenRead(_libraryPath))
       {
