@@ -59,5 +59,9 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This app does not access or share any health information.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>This app does not access or share any health information.</string>
 </dict>
 </plist>
