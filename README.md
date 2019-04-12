@@ -8,6 +8,7 @@ This software aims to implement the playback functionality of the defunct [Jammi
 | |
 |:-:|
 | [Windows Release](https://www.microsoft.com/store/apps/9MZJMJZMDD8Q) |
+| [iOS Release](https://itunes.apple.com/us/app/unjammit/id1456516372) |
 | [macOS Release](https://itunes.apple.com/us/app/unjammit/id1456515707) |
 | [Android Release](https://play.google.com/store/apps/details?id=com.unjammit.player) |
 
@@ -30,9 +31,12 @@ For more, see the [Releases](https://github.com/JunielKatarn/Unjammit/releases) 
 | Android | 2.3 Gingerbread | [![Build status](https://dev.azure.com/junielkatarn/Unjammit/_apis/build/status/Unjammit%20CI%20Android?branchName=ci)](https://dev.azure.com/junielkatarn/Unjammit/_build/latest?definitionId=8&branchName=ci) |
 
 ## License
+
 [3-Clause BSD License](https://github.com/maxton/Jam.NET/blob/master/COPYING)
 
 ## Contributing
+
+[![Gitter chat](https://badges.gitter.im/Unjammit/community.png)](https://gitter.im/Unjammit/community)
 
 Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's [`xplat`](https://github.com/JunielKatarn/Unjammit/tree/xplat) branch.
 
