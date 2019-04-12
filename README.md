@@ -41,6 +41,7 @@ For more, see the [Releases](https://github.com/JunielKatarn/Unjammit/releases) 
 Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's [`xplat`](https://github.com/JunielKatarn/Unjammit/tree/xplat) branch.
 
 ### Build Requirements
+
 - Visual Studio 2017
   - Add the `Mobile development with .NET` workload.
 - Visual Studio for Mac
