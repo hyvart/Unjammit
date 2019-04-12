@@ -4,9 +4,10 @@ using System.Linq;
 using System.IO;
 
 using Claunia.PropertyList;
-using Jammit.Audio;
+using Jam.NET.Audio;
+using Jammit; // PlistExtensions
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   /// <summary>
   /// Represents a song in a raw file sistem folder.
@@ -17,11 +18,11 @@ namespace Jammit.Model
 
     public IReadOnlyList<Track> Tracks { get; }
 
-    public IReadOnlyList<Beat> Beats { get; }
+    public IReadOnlyList<Jammit.Model.Beat> Beats { get; }
 
-    public IReadOnlyList<Section> Sections { get; }
+    public IReadOnlyList<Jammit.Model.Section> Sections { get; }
 
-    private List<ScoreNodes> _notationData;
+    private List<Jammit.Model.ScoreNodes> _notationData;
 
     public FolderSong(SongMeta metadata)
     {
@@ -39,7 +40,7 @@ namespace Jammit.Model
       using (var ms = new MemoryStream())
       {
         fs.CopyTo(ms);
-        return new UnionArray { Bytes = ms.ToArray() }.Sbytes;
+        return new Jammit.UnionArray { Bytes = ms.ToArray() }.Sbytes;
       }
     }
 
@@ -74,7 +75,7 @@ namespace Jammit.Model
       return ret;
     }
 
-    public ScoreNodes GetNotationData(string trackName, string notationType)
+    public Jammit.Model.ScoreNodes GetNotationData(string trackName, string notationType)
     {
       return _notationData.FirstOrDefault(score => trackName == score.Title && notationType == score.Type);
     }
@@ -99,17 +100,17 @@ namespace Jammit.Model
       return Track.FromNSArray(tracksArray, path => File.Exists(Path.Combine(Metadata.SongPath, path)));
     }
 
-    private List<Beat> InitBeats()
+    private List<Jammit.Model.Beat> InitBeats()
     {
       var beatArray = (NSArray)PropertyListParser.Parse(Path.Combine(Metadata.SongPath, "beats.plist"));
       var ghostArray = (NSArray)PropertyListParser.Parse(Path.Combine(Metadata.SongPath, "ghost.plist"));
-      return Beat.FromNSArrays(beatArray, ghostArray);
+      return Jammit.Model.Beat.FromNSArrays(beatArray, ghostArray);
     }
 
-    private List<Section> InitSections()
+    private List<Jammit.Model.Section> InitSections()
     {
       var sectionArray = (NSArray)PropertyListParser.Parse(Path.Combine(Metadata.SongPath, "sections.plist"));
-      return sectionArray.GetArray().OfType<NSDictionary>().Select(dict => new Section
+      return sectionArray.OfType<NSDictionary>().Select(dict => new Jammit.Model.Section
       {
         BeatIdx = dict.Int("beat") ?? 0,
         Beat = Beats[dict.Int("beat") ?? 0],
@@ -118,11 +119,11 @@ namespace Jammit.Model
       }).ToList();
     }
 
-    private List<ScoreNodes> InitScoreNodes()
+    private List<Jammit.Model.ScoreNodes> InitScoreNodes()
     {
       using (var nodes = GetContentStream("nowline.nodes"))
       {
-        return ScoreNodes.FromStream(nodes);
+        return Jammit.Model.ScoreNodes.FromStream(nodes);
       }
     }
   }

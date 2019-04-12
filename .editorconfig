@@ -2,3 +2,15 @@
 indent_style = space
 indent_size = 2
 end_of_line = crlf
+
+[*.{sln}]
+indent_size = 4
+indent_style = tab
+
+[*.{editorconfig,md,plist}]
+end_of_line = lf
+
+[*.{ps1,sh}]
+indent_size = 4
+indent_style = tab
+end_of_line = lf

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>UnjammitDev!</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.unjammit.player.ios.dev</string>
+	<key>CFBundleName</key>
+	<string>UnjammitDev!</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>MinimumOSVersion</key>
+	<string>9.3</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>This app does not require Apple Music access.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app does not require Calendar access.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This app does not require Contacts access.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This app does not access or share any health information.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>This app does not access or share any health information.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app does not require Location access.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app does not require Location access.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app does not require microphone access.</string>
+	<key>NSSiriUsageDescription</key>
+	<string>This app does not require Siri access.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportsDocumentBrowser</key>
+	<true/>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
+</dict>
+</plist>

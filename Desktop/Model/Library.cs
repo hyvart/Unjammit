@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   public static class Library
   {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Jammit.Controls
+namespace Jam.NET.Controls
 {
   public partial class Fader : UserControl
   {

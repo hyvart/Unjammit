@@ -1,4 +1,4 @@
-﻿namespace Jammit
+﻿namespace Jam.NET
 {
   partial class SongWindow
   {
@@ -38,9 +38,9 @@
       this.leftSeekBtn = new System.Windows.Forms.Button();
       this.rightSeekBtn = new System.Windows.Forms.Button();
       this.button2 = new System.Windows.Forms.Button();
-      this.score1 = new Jammit.Controls.Score();
-      this.waveform1 = new Jammit.Controls.Waveform();
-      this.seekBar1 = new Jammit.Controls.SeekBar();
+      this.score1 = new Jam.NET.Controls.Score();
+      this.waveform1 = new Jam.NET.Controls.Waveform();
+      this.seekBar1 = new Jam.NET.Controls.SeekBar();
       this.groupBox1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.albumArtwork)).BeginInit();
       this.menuStrip1.SuspendLayout();

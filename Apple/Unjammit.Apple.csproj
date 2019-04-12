@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Jammit</RootNamespace>
+    <IntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
+    <OutputPath>$(SolutionDir)Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Unjammit.Core.csproj" />
+  </ItemGroup>
+</Project>

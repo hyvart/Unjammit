@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using Jammit.Model;
+using Jam.NET.Model;
 
-namespace Jammit.Controls
+namespace Jam.NET.Controls
 {
-  public class Score : UserControl, ISynchronizable
+  public class Score : UserControl, Jammit.Model.ISynchronizable
   {
     public long SamplePosition
     {
@@ -22,8 +22,8 @@ namespace Jammit.Controls
 
     // State data for selected notation
     private List<Image> _imgs;
-    private IReadOnlyList<BeatInfo> _nodes;
-    private IReadOnlyList<Beat> _beats;
+    private IReadOnlyList<Jammit.Model.BeatInfo> _nodes;
+    private IReadOnlyList<Jammit.Model.Beat> _beats;
     private int _beatNum;
     private Track _track;
 
@@ -67,7 +67,7 @@ namespace Jammit.Controls
       dropdown.SelectedIndex = 0;
     }
 
-    private void SetNotation(List<Image> imgs, ScoreNodes nodes, Track track)
+    private void SetNotation(List<Image> imgs, Jammit.Model.ScoreNodes nodes, Track track)
     {
       DoubleBuffered = true;
       if (imgs == null) return;

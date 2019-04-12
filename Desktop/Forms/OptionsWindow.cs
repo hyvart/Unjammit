@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Jammit
+namespace Jam.NET
 {
   public partial class OptionsWindow : Form
   {

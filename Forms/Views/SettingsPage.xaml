@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Jammit.Forms"
+             x:Class="Jammit.Forms.Views.SettingsPage">
+
+  <StackLayout BackgroundColor="DimGray">
+    <Grid BackgroundColor="WhiteSmoke">
+      <Label Grid.Row="0" Grid.Column="0" Text="Service URI" />
+      <Entry
+        Grid.Row="0"
+        Grid.Column="1"
+        Grid.ColumnSpan="2"
+        Placeholder="Enter service URL address."
+        x:Name="ServiceUriEntry"
+        Keyboard="Url"
+        Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
+
+      <Label IsVisible="false" Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
+      <Entry IsVisible="false" Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
+      <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
+    </Grid>
+    <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked" />
+    <Button x:Name="DeleteDataButton" Text="Delete All Data" Clicked="DeleteDataButton_Clicked" />
+  </StackLayout>
+
+</ContentPage>

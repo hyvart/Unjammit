@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using Jammit.Audio;
-using Jammit.Controls;
-using Jammit.Model;
+using Jam.NET.Audio;
+using Jam.NET.Controls;
+using Jam.NET.Model;
 
-namespace Jammit
+namespace Jam.NET
 {
   
   public partial class SongWindow : Form

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using Jammit.Model;
-using Jammit.Properties;
+using Jam.NET.Model;
+using Jam.NET.Properties;
 
-namespace Jammit
+namespace Jam.NET
 {
 
   public partial class LibraryWindow : Form

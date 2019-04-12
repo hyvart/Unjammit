@@ -21,6 +21,9 @@
 bld/
 [Bb]in/
 [Oo]bj/
+Build/
+Target/
+_pkginfo.txt
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -245,3 +248,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# macOS
+.DS_Store

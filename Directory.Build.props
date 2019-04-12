@@ -1,0 +1,14 @@
+<Project>
+
+  <PropertyGroup>
+    <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <!-- <BaseIntermediateOutputPath>$(SolutionDir)Build\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath> -->
+
+    <!-- <BaseOutputPath>$(SolutionDir)Target\</BaseOutputPath>
+    <OutputPath>$(BaseOutputPath)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath> -->
+  </PropertyGroup>
+
+</Project>

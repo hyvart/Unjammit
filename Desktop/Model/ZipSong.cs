@@ -4,9 +4,10 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using Claunia.PropertyList;
-using Jammit.Audio;
+using Jam.NET.Audio;
+using Jammit; // PlistExtensions
 
-namespace Jammit.Model
+namespace Jam.NET.Model
 {
   /// <summary>
   /// Represents a song backed with a standard .zip content file.
@@ -16,10 +17,10 @@ namespace Jammit.Model
     public SongMeta Metadata { get; }
 
     public IReadOnlyList<Track> Tracks { get; }
-    public IReadOnlyList<Beat> Beats { get; }
-    public IReadOnlyList<Section> Sections { get; }
+    public IReadOnlyList<Jammit.Model.Beat> Beats { get; }
+    public IReadOnlyList<Jammit.Model.Section> Sections { get; }
 
-    private List<ScoreNodes> _notationData;
+    private List<Jammit.Model.ScoreNodes> _notationData;
     private string _basePath;
 
     public ZipSong(SongMeta metadata)
@@ -48,7 +49,7 @@ namespace Jammit.Model
       using (var ms = new MemoryStream())
       {
         s.CopyTo(ms);
-        return new UnionArray { Bytes = ms.ToArray() }.Sbytes;
+        return new Jammit.UnionArray { Bytes = ms.ToArray() }.Sbytes;
       }
     }
 
@@ -96,7 +97,7 @@ namespace Jammit.Model
     public Stream GetContentStream(string s)
     {
       var zip = OpenZip();
-      var stream = new OnDisposeStream(zip.GetEntry(_basePath + "/" + s).Open());
+      var stream = new Jammit.OnDisposeStream(zip.GetEntry(_basePath + "/" + s).Open());
       stream.OnDispose += () => zip.Dispose();
       return stream;
     }
@@ -111,7 +112,7 @@ namespace Jammit.Model
         return ms;
       }
     }
-    public ScoreNodes GetNotationData(string trackName, string notationType)
+    public Jammit.Model.ScoreNodes GetNotationData(string trackName, string notationType)
     {
       return _notationData.FirstOrDefault(score => trackName == score.Title && notationType == score.Type);
     }
@@ -126,7 +127,7 @@ namespace Jammit.Model
       }
     }
 
-    private List<Beat> InitBeats()
+    private List<Jammit.Model.Beat> InitBeats()
     {
       NSArray beatArray, ghostArray;
       using (var arc = OpenZip())
@@ -136,16 +137,16 @@ namespace Jammit.Model
         using (var stream = arc.GetEntry($"{_basePath}/ghost.plist").Open())
           ghostArray = (NSArray) PropertyListParser.Parse(stream);
       }
-      return Beat.FromNSArrays(beatArray, ghostArray);
+      return Jammit.Model.Beat.FromNSArrays(beatArray, ghostArray);
     }
 
-    private List<Section> InitSections()
+    private List<Jammit.Model.Section> InitSections()
     {
       NSArray sectionArray;
       using (var arc = OpenZip())
       using (var stream = arc.GetEntry($"{_basePath}/sections.plist").Open())
         sectionArray = (NSArray)PropertyListParser.Parse(stream);
-      return sectionArray.GetArray().OfType<NSDictionary>().Select(dict => new Section
+      return sectionArray.OfType<NSDictionary>().Select(dict => new Jammit.Model.Section
       {
         BeatIdx = dict.Int("beat") ?? 0,
         Beat = Beats[dict.Int("beat") ?? 0],
@@ -154,11 +155,11 @@ namespace Jammit.Model
       }).ToList();
     }
 
-    private List<ScoreNodes> InitScoreNodes()
+    private List<Jammit.Model.ScoreNodes> InitScoreNodes()
     {
       using (var nodes = GetContentStream("nowline.nodes"))
       {
-        return ScoreNodes.FromStream(nodes);
+        return Jammit.Model.ScoreNodes.FromStream(nodes);
       }
     }
 

@@ -1,4 +1,4 @@
-﻿namespace Jammit.Controls
+﻿namespace Jam.NET.Controls
 {
   partial class Fader
   {

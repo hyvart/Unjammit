@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Jammit.Model;
 
-namespace Jammit.Controls
+namespace Jam.NET.Controls
 {
   public partial class SeekBar : UserControl, ISynchronizable
   {
