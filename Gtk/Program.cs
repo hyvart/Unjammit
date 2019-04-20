@@ -12,6 +12,16 @@ namespace Jammit.Gtk
       global::Gtk.Application.Init();
       Xamarin.Forms.Forms.Init();
 
+      var dataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+      dataDir = System.IO.Path.Combine(dataDir, "Unjammit");
+      // Create dataDir, if it doesnt' exist.
+      if (!System.IO.Directory.Exists(dataDir))
+        System.IO.Directory.CreateDirectory(dataDir);
+
+      Jammit.Forms.App.DataDirectory = dataDir;
+      Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
+      Jammit.Forms.App.PlayerFactory = (media) => null;
+
       var app = new Jammit.Forms.App();
       var window = new FormsWindow();
       window.LoadApplication(app);
