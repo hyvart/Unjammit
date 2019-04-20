@@ -80,4 +80,8 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- https://github.com/dotnet/corefx/issues/19914#issuecomment-353278794 -->
+  <Target Name="AfterBuild">
+    <Delete Files="$(OutputPath)/System.Net.Http.dll" />
+  </Target>
 </Project>
