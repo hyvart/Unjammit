@@ -1,16 +1,23 @@
 ﻿using System;
-using Gtk;
+using Xamarin.Forms;
 
 namespace Unjammit.Gtk
 {
   class MainClass
   {
+    [STAThread]
     public static void Main(string[] args)
     {
-      Application.Init();
-      MainWindow win = new MainWindow();
-      win.Show();
-      Application.Run();
+      global::Gtk.Application.Init();
+//      Forms.Init();
+
+//      var app = new Unjammit.Forms.App();
+//      var window = new FormsWindow();
+//      window.LoadApplication(app);
+//      window.SetApplicationTitle("Unjammit!");
+//      window.Show();
+
+      global::Gtk.Application.Run();
     }
   }
 }
