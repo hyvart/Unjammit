@@ -38,7 +38,7 @@ For more, see the [Releases](https://github.com/JunielKatarn/Unjammit/releases) 
 
 [![Gitter chat](https://badges.gitter.im/Unjammit/community.png)](https://gitter.im/Unjammit/community)
 
-Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's [`xplat`](https://github.com/JunielKatarn/Unjammit/tree/xplat) branch.
+Submit [Pull Requests](https://github.com/maxton/Jam.NET/compare) against this repository's [`master`](https://github.com/JunielKatarn/Unjammit/tree/master) branch.
 
 ### Build Requirements
 
