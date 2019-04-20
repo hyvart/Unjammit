@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6F7F48F5-3D84-4B6D-BF83-FFF623B89BFE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Unjammit.Gtk</RootNamespace>
+    <RootNamespace>Jammit</RootNamespace>
     <AssemblyName>Unjammit.Gtk</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <IntermediateOutputPath>..\Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
