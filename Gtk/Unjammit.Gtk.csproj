@@ -63,6 +63,7 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Audio\VlcJcfPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
@@ -78,10 +79,13 @@
     <PackageReference Include="Xamarin.Forms.Platform.GTK">
       <Version>3.6.0.344457</Version>
     </PackageReference>
+    <PackageReference Include="LibVLCSharp.Forms.GTK">
+      <Version>0.8.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- https://github.com/dotnet/corefx/issues/19914#issuecomment-353278794 -->
   <Target Name="AfterBuild">
+    <Message Text="See [https://github.com/dotnet/corefx/issues/19914#issuecomment-353278794]" />
     <Delete Files="$(OutputPath)/System.Net.Http.dll" />
   </Target>
 </Project>
