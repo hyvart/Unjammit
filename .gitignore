@@ -251,3 +251,7 @@ ModelManifest.xml
 
 # macOS
 .DS_Store
+
+# Gtk# generated files
+gtk-gui/
+

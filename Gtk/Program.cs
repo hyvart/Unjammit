@@ -1,5 +1,5 @@
 ﻿using System;
-using Xamarin.Forms;
+
 using Xamarin.Forms.Platform.GTK;
 
 namespace Jammit.Gtk
@@ -10,10 +10,7 @@ namespace Jammit.Gtk
     public static void Main(string[] args)
     {
       global::Gtk.Application.Init();
-      Xamarin.Forms.Forms.Init();
-
-      global::LibVLCSharp.Forms.Shared.LibVLCSharpFormsRenderer.Init();
-      global::LibVLCSharp.Shared.Core.Initialize();
+      global::Xamarin.Forms.Forms.Init();
 
       var dataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
       dataDir = System.IO.Path.Combine(dataDir, "Unjammit");
@@ -32,6 +29,8 @@ namespace Jammit.Gtk
       window.Show();
 
       global::Gtk.Application.Run();
+      global::LibVLCSharp.Forms.Shared.LibVLCSharpFormsRenderer.Init();
+      global::LibVLCSharp.Shared.Core.Initialize();
     }
   }
 }
