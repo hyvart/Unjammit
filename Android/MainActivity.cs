@@ -20,7 +20,6 @@ namespace Jammit.Android
       ToolbarResource = Resource.Layout.Toolbar;
 
       base.OnCreate(savedInstanceState);
-      global::LibVLCSharp.Forms.Shared.LibVLCSharpFormsRenderer.Init();
       global::LibVLCSharp.Shared.Core.Initialize();
 
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;

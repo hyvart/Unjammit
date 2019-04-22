@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
@@ -63,7 +63,6 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Audio\VlcJcfPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
@@ -73,6 +72,10 @@
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">
       <Project>{C99DB4A0-9987-45E2-9F9E-D27D09F743CF}</Project>
       <Name>Unjammit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vlc\Unjammit.Vlc.csproj">
+      <Project>{c1e423f3-95c1-4807-8db8-6d07979623c7}</Project>
+      <Name>Unjammit.Vlc</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

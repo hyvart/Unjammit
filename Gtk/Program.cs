@@ -29,7 +29,6 @@ namespace Jammit.Gtk
       window.Show();
 
       global::Gtk.Application.Run();
-      global::LibVLCSharp.Forms.Shared.LibVLCSharpFormsRenderer.Init();
       global::LibVLCSharp.Shared.Core.Initialize();
     }
   }
