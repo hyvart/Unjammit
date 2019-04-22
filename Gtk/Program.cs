@@ -20,7 +20,7 @@ namespace Jammit.Gtk
 
       Jammit.Forms.App.DataDirectory = dataDir;
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
-      Jammit.Forms.App.PlayerFactory = (media) => new Audio.VlcJcfPlayer(media);
+      Jammit.Forms.App.PlayerFactory = (media) => new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] { });
 
       var app = new Jammit.Forms.App();
       var window = new FormsWindow();
