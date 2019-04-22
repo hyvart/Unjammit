@@ -23,7 +23,6 @@ namespace Jammit.Audio
       _libVLC = new LibVLC();
       _players = new Dictionary<PlayableTrackInfo, MediaPlayer>(media.InstrumentTracks.Count + 1);
 
-
       var backingPath = "file://" + Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
       var backingPlayer = new MediaPlayer(_libVLC);
       backingPlayer.Media = new Media(_libVLC, backingPath, FromType.FromLocation);
