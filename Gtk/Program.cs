@@ -1,0 +1,35 @@
+﻿using System;
+
+using Xamarin.Forms.Platform.GTK;
+
+namespace Jammit.Gtk
+{
+  class MainClass
+  {
+    [STAThread]
+    public static void Main(string[] args)
+    {
+      global::Gtk.Application.Init();
+      global::Xamarin.Forms.Forms.Init();
+
+      var dataDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+      dataDir = System.IO.Path.Combine(dataDir, "Unjammit");
+      // Create dataDir, if it doesnt' exist.
+      if (!System.IO.Directory.Exists(dataDir))
+        System.IO.Directory.CreateDirectory(dataDir);
+
+      Jammit.Forms.App.DataDirectory = dataDir;
+      Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
+      Jammit.Forms.App.PlayerFactory = (media) => new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] { });
+
+      var app = new Jammit.Forms.App();
+      var window = new FormsWindow();
+      window.LoadApplication(app);
+      window.SetApplicationTitle("Unjammit!");
+      window.Show();
+
+      global::Gtk.Application.Run();
+      global::LibVLCSharp.Shared.Core.Initialize();
+    }
+  }
+}

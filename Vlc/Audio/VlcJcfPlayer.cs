@@ -1,14 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 using Jammit.Model;
 using LibVLCSharp.Shared;
@@ -27,18 +18,16 @@ namespace Jammit.Audio
 
     #endregion // private members
 
-    public VlcJcfPlayer(JcfMedia media)
+    public VlcJcfPlayer(JcfMedia media, MediaConfiguration[] configs)
     {
       _libVLC = new LibVLC();
       _players = new Dictionary<PlayableTrackInfo, MediaPlayer>(media.InstrumentTracks.Count + 1);
 
-      var config = new MediaConfiguration();
-      config.EnableHardwareDecoding();
-
       var backingPath = "file://" + Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
       var backingPlayer = new MediaPlayer(_libVLC);
       backingPlayer.Media = new Media(_libVLC, backingPath, FromType.FromLocation);
-      backingPlayer.Media.AddOption(config);
+      foreach (var config in configs)
+        backingPlayer.Media.AddOption(config);
       backingPlayer.PositionChanged += Player_PositionChanged;
       _players[media.BackingTrack] = backingPlayer;
       _backingTrack = media.BackingTrack;
@@ -48,7 +37,8 @@ namespace Jammit.Audio
         var path = "file://" + Path.Combine(media.Path, track.Identifier.ToString().ToUpper() + "_jcfx");
         var player = new MediaPlayer(_libVLC);
         player.Media = new Media(_libVLC, path, FromType.FromLocation);
-        player.Media.AddOption(config);
+        foreach(var config in configs)
+          player.Media.AddOption(config);
         _players[track] = player;
       }
 
