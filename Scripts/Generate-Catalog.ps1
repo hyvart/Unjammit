@@ -53,7 +53,7 @@ foreach ($zipFile in $zipFiles) {
 	}
 }
 
-Out-File -Encoding utf8 -FilePath $OutFile -InputObject (ConvertTo-Json $processed)
+[PSCustomObject] @{ songs = $processed } | ConvertTo-Json | Out-File -Encoding utf8 -FilePath $OutFile
 Write-Output "Processed $($processed.Length) files."
 
 if ($unprocessed.Length -gt 0) {
