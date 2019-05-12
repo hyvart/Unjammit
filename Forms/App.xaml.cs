@@ -27,7 +27,7 @@ namespace Jammit.Forms
     {
       InitializeComponent();
 
-      App.Client = new Jammit.Forms.Client.RestClient();
+      App.Client = new Jammit.Forms.Client.BasicHttpClient();
       App.Library = new FolderLibrary(DataDirectory, Client);
 
       MainPage = new Jammit.Forms.Views.MainPage();
