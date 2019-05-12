@@ -15,11 +15,11 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 Add-Type -Path "$(& $NugetExe config repositoryPath)/plist-cil/1.60.0/lib/netstandard2.0/plist-cil.dll"
 
 $instrumentIds = @{
-	0 = 'guitar';
-	1 = 'bass';
-	2 = 'drums';
-	3 = 'keyboard';
-	4 = 'vocal'
+	0 = 'Guitar';
+	1 = 'Bass';
+	2 = 'Drums';
+	3 = 'Keyboard';
+	4 = 'Vocal'
 }
 
 $zipFiles = Get-ChildItem -Path $Path -Filter *.zip
@@ -36,15 +36,14 @@ foreach ($zipFile in $zipFiles) {
 			$id = $id.Substring(0, 36)
 		}
 		$instrumentId = [int]$songInfo['instrument']
-		$object = @{
-			'id' = $id
-			'artist' = $songInfo['artist'].Content
-			'album' = $songInfo['album'].Content
-			'title' = $songInfo['title'].Content
-			'genre' = $songInfo['genre'].Content
-			'instrumentId' = $instrumentId
-			'instrument' = $instrumentIds[$instrumentId]
-			'sku' = $songInfo['sku'].Content
+		$object = [PSCustomObject] @{
+			id         = $id
+			sku        = $songInfo['sku'].Content
+			artist     = $songInfo['artist'].Content
+			album      = $songInfo['album'].Content
+			title      = $songInfo['title'].Content
+			instrument = $instrumentIds[$instrumentId]
+			genre      = $songInfo['genre'].Content
 		}
 
 		$processed += $object
