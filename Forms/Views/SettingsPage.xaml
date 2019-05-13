@@ -16,8 +16,8 @@
         Keyboard="Url"
         Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
 
-      <Label IsVisible="false" Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
-      <Entry IsVisible="false" Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
+      <Label Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
+      <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
       <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
     </Grid>
     <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked" />

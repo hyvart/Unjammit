@@ -16,13 +16,10 @@ namespace Jammit.Forms.Client
   {
     #region private members
 
+    private AuthorizationStatus _authStatus = AuthorizationStatus.Unknown;
     private double _songDownloadProgress;
 
     #endregion
-
-    public BasicHttpClient()
-    {
-    }
 
     #region IClient
 
@@ -32,7 +29,19 @@ namespace Jammit.Forms.Client
 
     #endregion
 
-    public AuthorizationStatus AuthStatus => AuthorizationStatus.Unknown;
+    public AuthorizationStatus AuthStatus
+    {
+      get
+      {
+        return _authStatus;
+      }
+
+      set
+      {
+        _authStatus = value;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AuthStatus"));
+      }
+    }
 
     public double SongDownloadProgress
     {
@@ -101,8 +110,10 @@ namespace Jammit.Forms.Client
         client.DefaultRequestHeaders.Add("Accept", "application/json");
 
         var response = await client.GetAsync(client.BaseAddress.AbsoluteUri + "/catalog.json");
+        AuthStatus = AuthorizationStatus.Requested;
         if (response.IsSuccessStatusCode)
         {
+          AuthStatus = AuthorizationStatus.Approved;
           var jsonString = await response.Content.ReadAsStringAsync();
           var jsonObject = JObject.Parse(jsonString);
 
@@ -127,6 +138,11 @@ namespace Jammit.Forms.Client
           switch (response.StatusCode)
           {
             case System.Net.HttpStatusCode.NotFound:
+              suffix = $": {client.BaseAddress.AbsoluteUri}";
+              break;
+
+            case System.Net.HttpStatusCode.Unauthorized:
+              AuthStatus = AuthorizationStatus.Rejected;
               suffix = $": {client.BaseAddress.AbsoluteUri}";
               break;
 
