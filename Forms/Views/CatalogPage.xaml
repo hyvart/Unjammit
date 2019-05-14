@@ -7,6 +7,15 @@
   <!--TODO: Put back in CatalogView attributes.-->
   <!--ListView: ItemsSource="{x:Static local:CatalogPage.Catalog}"-->
   <StackLayout BackgroundColor="DimGray">
+    <ContentView x:Name="AuthPopup" IsVisible="False">
+      <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout Orientation="Vertical">
+          <Entry Placeholder="User" />
+          <Entry Placeholder="Password" IsPassword="True" />
+          <Button x:Name="AuthButton" Text="Authenticate" />
+        </StackLayout>
+      </StackLayout>
+    </ContentView>
     <SearchBar Placeholder="Type a title, artist or album..." TextChanged="SearchBar_TextChanged" />
     <ListView
       x:Name="CatalogView"

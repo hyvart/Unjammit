@@ -19,16 +19,43 @@ namespace Jammit.Forms.Views
     public CatalogPage()
     {
       InitializeComponent();
+    }
 
-      Task.Run(async () => await LoadCatalog()).Wait();
+    #region Page overrides
+
+    protected override async void OnAppearing()
+    {
+      base.OnAppearing();
+
+      await LoadCatalog();
 
       //TODO: Move back into XAML bindings.
       this.CatalogView.ItemsSource = Catalog;
     }
 
+    #endregion // Page overrides
+
     private async Task LoadCatalog()
     {
-      Catalog = await App.Client.LoadCatalog();
+      try
+      {
+        Catalog = await App.Client.LoadCatalog();
+      }
+      catch (System.Net.Http.HttpRequestException ex)
+      {
+        Catalog = default;
+        await DisplayAlert("Error", ex.Message, "Cancel");
+
+        if (App.Client.AuthStatus == Jammit.Client.AuthorizationStatus.Rejected)
+        {
+          AuthPopup.IsVisible = true;
+        }
+      }
+      catch (Exception ex)
+      {
+        Catalog = default;
+        await DisplayAlert("Error", ex.Message, "Cancel");
+      }
     }
 
     private async void LoadButton_Clicked(object sender, EventArgs e)
