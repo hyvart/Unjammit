@@ -28,9 +28,6 @@ namespace Jammit.Forms.Views
       base.OnAppearing();
 
       await LoadCatalog();
-
-      //TODO: Move back into XAML bindings.
-      this.CatalogView.ItemsSource = Catalog;
     }
 
     #endregion // Page overrides
@@ -40,6 +37,8 @@ namespace Jammit.Forms.Views
       try
       {
         Catalog = await App.Client.LoadCatalog();
+
+        AuthPopup.IsVisible = false;
       }
       catch (System.Net.Http.HttpRequestException ex)
       {
@@ -56,6 +55,9 @@ namespace Jammit.Forms.Views
         Catalog = default;
         await DisplayAlert("Error", ex.Message, "Cancel");
       }
+
+      //TODO: Move back into XAML bindings.
+      this.CatalogView.ItemsSource = Catalog;
     }
 
     private async void LoadButton_Clicked(object sender, EventArgs e)
@@ -93,7 +95,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+    private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
     {
       CatalogView.BeginRefresh();
 
@@ -107,6 +109,13 @@ namespace Jammit.Forms.Views
         );
 
       CatalogView.EndRefresh();
+    }
+
+    private async void AuthButton_Clicked(object sender, EventArgs e)
+    {
+      Settings.Credentials = AuthUser.Text + ':' + AuthPassword.Text;
+
+      await LoadCatalog();
     }
   }
 }

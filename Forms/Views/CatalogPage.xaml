@@ -10,9 +10,9 @@
     <ContentView x:Name="AuthPopup" IsVisible="False">
       <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <StackLayout Orientation="Vertical">
-          <Entry Placeholder="User" />
-          <Entry Placeholder="Password" IsPassword="True" />
-          <Button x:Name="AuthButton" Text="Authenticate" />
+          <Entry x:Name="AuthUser" Placeholder="User" />
+          <Entry x:Name="AuthPassword" Placeholder="Password" IsPassword="True" />
+          <Button x:Name="AuthButton" Text="Authenticate" Clicked="AuthButton_Clicked" />
         </StackLayout>
       </StackLayout>
     </ContentView>

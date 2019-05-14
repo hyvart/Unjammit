@@ -103,11 +103,18 @@ namespace Jammit.Forms.Client
     {
       var result = new List<SongInfo>();
 
-      using (var client = new HttpClient())
+      using (var handler = new HttpClientHandler())
+      using (var client = new HttpClient(handler))
       {
         client.BaseAddress = new Uri($"{Settings.ServiceUri}");
         client.DefaultRequestHeaders.Clear();
         client.DefaultRequestHeaders.Add("Accept", "application/json");
+
+        if (!string.IsNullOrEmpty(Settings.Credentials))
+        {
+          var rawCreds = Settings.Credentials.Split(':');
+          handler.Credentials = new System.Net.NetworkCredential(rawCreds[0], rawCreds[1]);
+        }
 
         var response = await client.GetAsync(client.BaseAddress.AbsoluteUri + "/catalog.json");
         AuthStatus = AuthorizationStatus.Requested;

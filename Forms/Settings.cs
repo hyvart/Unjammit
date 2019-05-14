@@ -29,6 +29,9 @@ namespace Jammit.Forms
     private const string ServiceUriKey = "serviceuri_key";
     private static readonly string ServiceUriDefault = string.Empty;
 
+    private const string CredentialsKey = "credentials_key";
+    private static readonly string CredentialsDefault = string.Empty;
+
     #endregion
 
     public static string GeneralSettings
@@ -53,6 +56,12 @@ namespace Jammit.Forms
     {
       get { return AppSettings.GetValueOrDefault(ServiceUriKey, ServiceUriDefault); }
       set { AppSettings.AddOrUpdateValue(ServiceUriKey, value); }
+    }
+
+    public static string Credentials
+    {
+      get { return AppSettings.GetValueOrDefault(CredentialsKey, CredentialsDefault); }
+      set { AppSettings.AddOrUpdateValue(CredentialsKey, value); }
     }
   }
 }
