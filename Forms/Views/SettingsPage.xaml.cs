@@ -39,7 +39,7 @@ namespace Jammit.Forms.Views
 
     private async void DeleteDataButton_Clicked(object sender, System.EventArgs e)
     {
-      if (await DisplayAlert("Please confirm", "Your local library will be completely deleted.\nThis can not be undone.", "Yes", "No"))
+      if (await DisplayAlert("Please confirm", "Your local library and service credentials will be completely deleted.\nThis can not be undone.", "Yes", "No"))
       {
         foreach (var song in App.Library.Songs)
         {
@@ -58,6 +58,9 @@ namespace Jammit.Forms.Views
               dir.Delete(true);
           }
         }
+
+        Settings.Credentials = default;
+        Settings.ServiceUri = default;
       }
     }
   }

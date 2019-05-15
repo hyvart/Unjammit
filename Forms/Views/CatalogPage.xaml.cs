@@ -47,6 +47,7 @@ namespace Jammit.Forms.Views
 
         if (App.Client.AuthStatus == Jammit.Client.AuthorizationStatus.Rejected)
         {
+          Settings.Credentials = default;
           AuthPopup.IsVisible = true;
         }
       }

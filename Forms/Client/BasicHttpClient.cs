@@ -113,7 +113,8 @@ namespace Jammit.Forms.Client
         if (!string.IsNullOrEmpty(Settings.Credentials))
         {
           var rawCreds = Settings.Credentials.Split(':');
-          handler.Credentials = new System.Net.NetworkCredential(rawCreds[0], rawCreds[1]);
+          if (rawCreds != null && rawCreds.Length > 1)
+            handler.Credentials = new System.Net.NetworkCredential(rawCreds[0], rawCreds[1]);
         }
 
         var response = await client.GetAsync(client.BaseAddress.AbsoluteUri + "/catalog.json");
@@ -149,6 +150,7 @@ namespace Jammit.Forms.Client
               break;
 
             case System.Net.HttpStatusCode.Unauthorized:
+            case System.Net.HttpStatusCode.Forbidden:
               AuthStatus = AuthorizationStatus.Rejected;
               suffix = $": {client.BaseAddress.AbsoluteUri}";
               break;
