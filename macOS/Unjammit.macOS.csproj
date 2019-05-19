@@ -120,7 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Memory">
-      <Version>4.5.2</Version>
+      <Version>4.5.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
