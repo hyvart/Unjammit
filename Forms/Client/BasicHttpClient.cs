@@ -69,6 +69,13 @@ namespace Jammit.Forms.Client
 
       using (var client = new System.Net.WebClient())
       {
+        if (!string.IsNullOrEmpty(Settings.Credentials))
+        {
+          var rawCreds = Settings.Credentials.Split(':');
+          if (rawCreds != null && rawCreds.Length > 1)
+            client.Credentials = new System.Net.NetworkCredential(rawCreds[0], rawCreds[1]);
+        }
+
         client.DownloadProgressChanged += (sender, e) =>
         {
           if (e.TotalBytesToReceive >= 0)
