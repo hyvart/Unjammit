@@ -9,6 +9,9 @@
 
     <!-- <BaseOutputPath>$(SolutionDir)Target\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath> -->
+
+    <!-- Set global C# language version. -->
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
 
 </Project>
