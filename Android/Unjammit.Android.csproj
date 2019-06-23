@@ -22,8 +22,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <DebugSymbols>true</DebugSymbols>
-    <IntermediateOutputPath>..\Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
-    <OutputPath>..\Target\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidSupportedAbis>arm64-v8a;x86_64;x86;armeabi-v7a</AndroidSupportedAbis>

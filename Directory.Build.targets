@@ -14,8 +14,6 @@
     <Message Text="=> IntermediateOutputPath     [$(IntermediateOutputPath)]" />
     <Message Text="=> BaseOutputPath             [$(BaseOutputPath)]" />
     <Message Text="=> OutputPath                 [$(OutputPath)]" />
-    <Message Text="=> BaseIntDir                 [$(BaseIntDir)]" />
-    <Message Text="=> BaseOutDir                 [$(BaseOutDir)]" />
     <Message Text="=> IntDir                     [$(IntDir)]" />
     <Message Text="=> OutDir                     [$(OutDir)]" />
     <Message Text="=> TargetDir                  [$(TargetDir)]" />
@@ -30,6 +28,7 @@
     <Message Text="%0A" />
     <Message Text="macOS" />
     <Message Text="=> XamarinMacFrameworkRoot    [$(XamarinMacFrameworkRoot)]" />
+    <Message Text="=> XamarinMacFrameworkVersion [$(XamarinMacFrameworkVersion)]" />
 
     <Message Text="%0A" />
     <Message Text="=> ProjectHome                [$(ProjectHome)]" />
