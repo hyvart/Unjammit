@@ -23,7 +23,7 @@ namespace Jammit.Android
       global::LibVLCSharp.Shared.Core.Initialize();
 
       var config = new MediaConfiguration();
-      config.EnableHardwareDecoding();
+      config.EnableHardwareDecoding = true;
 
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
       Jammit.Forms.App.PlayerFactory = (media) => new Audio.VlcJcfPlayer(media, new MediaConfiguration[]{ config });
