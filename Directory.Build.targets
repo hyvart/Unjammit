@@ -1,10 +1,43 @@
 <Project>
 
-  <PropertyGroup>
-  </PropertyGroup>
+    <!-- For build debugging purposes. -->
+  <Target Name="Vars">
+    <Message Text="General" />
+    <Message Text="=> SolutionDir                [$(SolutionDir)]" />
+    <Message Text="=> Configuration              [$(Configuration)]" />
+    <Message Text="=> Platform                   [$(Platform)]" />
+    <Message Text="=> PlatformTarget             [$(PlatformTarget)]" />
+    <Message Text="=> PlatformName               [$(PlatformName)]" />
 
-  <Target Name="Dump">
-    <Message Text="XamarinMacFrameworkRoot  [$(XamarinMacFrameworkRoot)]" />
+    
+    <Message Text="=> BaseIntermediateOutputPath [$(BaseIntermediateOutputPath)]" />
+    <Message Text="=> IntermediateOutputPath     [$(IntermediateOutputPath)]" />
+    <Message Text="=> BaseOutputPath             [$(BaseOutputPath)]" />
+    <Message Text="=> OutputPath                 [$(OutputPath)]" />
+    <Message Text="=> BaseIntDir                 [$(BaseIntDir)]" />
+    <Message Text="=> BaseOutDir                 [$(BaseOutDir)]" />
+    <Message Text="=> IntDir                     [$(IntDir)]" />
+    <Message Text="=> OutDir                     [$(OutDir)]" />
+    <Message Text="=> TargetDir                  [$(TargetDir)]" />
+    <Message Text="=> TargetPath                 [$(TargetPath)]" />
+
+    <Message Text="%0A" />
+    <Message Text="UWP" />
+    <Message Text="=> GeneratedFilesDir          [$(GeneratedFilesDir)]" />
+    <Message Text="=> UnmergedWinmdDirectory     [$(UnmergedWinmdDirectory)]" />
+    <Message Text="=> MergedWinmdDirectory       [$(MergedWinmdDirectory)]" />
+
+    <Message Text="%0A" />
+    <Message Text="macOS" />
+    <Message Text="=> XamarinMacFrameworkRoot    [$(XamarinMacFrameworkRoot)]" />
+
+    <Message Text="%0A" />
+    <Message Text="=> ProjectHome                [$(ProjectHome)]" />
+    <Message Text="=> UserRootDir                [$(UserRootDir)]" />
+    <Message Text="=> MSBuildExtensionsPath      [$(MSBuildExtensionsPath)]" />
+    <Message Text="=> MSBuildExtensionsPath32    [$(MSBuildExtensionsPath32)]" />
+    <Message Text="=> MSBuildExtensionsPath64    [$(MSBuildExtensionsPath64)]" />
+    <Message Text="=> VCTargetsPath              [$(VCTargetsPath)]" />
   </Target>
 
 </Project>
