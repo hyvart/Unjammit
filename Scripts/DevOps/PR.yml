@@ -1,12 +1,12 @@
 name: $(BuildId)
 
-trigger: none
-
-
 parameters:
   jobs: []
   buildPlatforms: ["x64", "x86"]
   buildConfigurations: ["Debug", "Release"]
+
+trigger: none
+
 
 jobs:
   - job:
