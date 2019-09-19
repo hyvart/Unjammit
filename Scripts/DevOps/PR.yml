@@ -1,6 +1,6 @@
 name: $(BuildId)
 
-parameters:
+variables:
   jobs: []
   buildPlatforms: ["x64", "x86"]
   buildConfigurations: ["Debug", "Release"]
