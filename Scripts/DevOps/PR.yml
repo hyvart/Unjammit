@@ -27,3 +27,9 @@ jobs:
       buildPlatforms: [ 'Any CPU' ]
 
   - template: Templates/XamariniOS.yml
+    parameters:
+      name: iOS
+      displayName: iOS
+      project: $(Build.SourcesDirectory)/iOS/Unjammit.iOS.csproj
+      platformVariableGroup: iOS Build Variables
+

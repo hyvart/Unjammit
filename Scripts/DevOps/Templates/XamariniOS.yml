@@ -3,10 +3,7 @@ parameters:
   displayName:
   project:
   platformVariableGroup: ''
-  buildPlatforms: []
   buildConfigurations: [ Debug, Release ]
-  msbuildArguments: ''
-  showVars: false
 
 jobs:
   - job: ${{ parameters.name }}
@@ -21,11 +18,9 @@ jobs:
 
     strategy:
       matrix:
-        ${{ each platform in parameters.buildPlatforms }}:
-          ${{ each configuration in parameters.buildConfigurations }}:
-            ${{ format('{0} {1}', platform, configuration) }}:
-              BuildPlatform: ${{platform}}
-              BuildConfiguration: ${{configuration}}
+        ${{ each configuration in parameters.buildConfigurations }}:
+          ${{ format('{0}', configuration) }}:
+            BuildConfiguration: ${{configuration}}
 
     steps:
       - checkout: self
@@ -38,13 +33,9 @@ jobs:
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           msbuildArguments: /t:Restore
 
-      - task: MSBuild@1
-        displayName: Build Unjammit.UWP
+      - task: XamariniOS@2
+        displayName: ${{ parameters.displayName }}
         inputs:
-          solution: ${{ parameters.project }}
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          solutionFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
-          platform: $(BuildPlatform)
-          msbuildArguments: ${{ parameters.msbuildArguments }}
           clean: true
-          maximumCpuCount: $(MSBuild.MaximumCpuCount)
