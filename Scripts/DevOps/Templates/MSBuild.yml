@@ -14,8 +14,9 @@ jobs:
     displayName: ${{ parameters.displayName }}
 
     variables:
-      ${{ each group in parameters.variableGroups }}:
-        - group: ${{ group }}
+      #${{ each group in parameters.variableGroups }}:
+      - group: Windows Build Variables
+      - group: Global Build Variables
 
     pool: 
       vmImage: $(Job.VmImage)
