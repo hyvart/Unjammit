@@ -5,7 +5,7 @@ name: $(BuildId)
 #   buildPlatforms: ["x64", "x86"]
 #   buildConfigurations: ["Debug", "Release"]
 
-variables:
+parameters:
   buildPlatforms: [x64, x86]
   buildConfigurations: [Debug, Release]
 
@@ -25,9 +25,9 @@ jobs:
 
     strategy:
       matrix:
-#        ${{ each job in variables.jobs }}:
-        ${{ each BuildPlatform in variables.buildPlatforms }}:
-          ${{ each BuildConfiguration in variables.buildConfigurations }}:
+#        ${{ each job in parameters.jobs }}:
+        ${{ each BuildPlatform in parameters.buildPlatforms }}:
+          ${{ each BuildConfiguration in parameters.buildConfigurations }}:
             ${{ format('{0}{1}', BuildPlatform, BuildConfiguration) }}:
               BuildPlatform: $(BuildPlatform)
               BuildConfiguration: $(BuildConfiguration)
