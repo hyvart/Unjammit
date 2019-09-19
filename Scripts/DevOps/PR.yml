@@ -6,12 +6,8 @@ name: $(BuildId)
 #   buildConfigurations: ["Debug", "Release"]
 
 variables:
-  buildPlatforms: |
-    x64
-    x86
-  buildConfigurations: |
-    Debug
-    Release
+  buildPlatforms: [x64, x86]
+  buildConfigurations: [Debug, Release]
 
 trigger: none
 
