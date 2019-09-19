@@ -2,15 +2,13 @@ name: Pull Request
 
 trigger: none
 
-variables:
-  - group: Global Build Variables
-
 jobs:
   - job:
     displayName: Windows Universal
 
     variables:
       - group: Windows Build Variables
+      - group: Global Build Variables
 
     #strategy:
     pool: $(Job.VmImage)
