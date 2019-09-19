@@ -26,6 +26,12 @@ jobs:
       - checkout: self
         clean: false
 
+      - task: Bash@3
+        inputs:
+          targetType: inline
+          script: |
+            ls /Library/Frameworks/Mono.framework/Versions/
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
@@ -39,3 +45,4 @@ jobs:
           solutionFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
           clean: true
+          mdtoolFile: /Library/Frameworks/Mono.framework/Versions/$(XamariniOS.MonoVersion)/bin/msbuild
