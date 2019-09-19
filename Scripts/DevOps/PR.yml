@@ -1,9 +1,5 @@
 name: $(BuildId)
 
-parameters:
-  buildPlatforms: [x64, x86]
-  buildConfigurations: [Debug, Release]
-
 trigger: none
 
 
