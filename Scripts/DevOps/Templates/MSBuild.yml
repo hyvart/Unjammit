@@ -3,25 +3,29 @@
 parameters:
   name:
   displayName:
-  pool:
+  # pool:
+  variableGroups: []
   buildPlatforms: []
   buildConfigurations: []
+  showVars: false
 
 jobs:
   - job: ${{ parameters.name }}
     displayName: ${{ parameters.displayName }}
-    pool: ${{ parameters.pool }}
 
     variables:
-      - group: Windows Build Variables
-      - group: Global Build Variables
+      ${{ each group in parameters.variableGroups }}:
+        - group: ${{ group }}
+
+    pool: 
+      vmImage: $(Job.VmImage)
 
     strategy:
       matrix:
         ${{ each platform in parameters.buildPlatforms }}:
           ${{ each configuration in parameters.buildConfigurations }}:
             ${{ format('{0}|{1}', platform, configuration) }}:
-              BuildPlatform: ${{platform}})
+              BuildPlatform: ${{platform}}
               BuildConfiguration: ${{configuration}}
 
     steps:
@@ -38,3 +42,26 @@ jobs:
             echo "[${env:Job_CancelTimeoutInMinutes}]"
             echo "[${env:BuildPlatform}]"
             echo "[${env:BuildConfiguration}]"
+        condition: variables['showVars']
+
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildArguments: /t:Restore
+
+      - task: MSBuild@1
+        displayName: Build Unjammit.UWP
+        inputs:
+          solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          configuration: $(BuildConfiguration)
+          platform: $(BuildPlatform)
+          # msbuildArguments: |
+          #   /p:AppxBundle=Always
+          #   /p:AppxBundlePlatforms="$(BuildPlatform)"
+          #   /p:UapAppxPackageBuildMode=StoreUpload
+          #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+          clean: true
+          maximumCpuCount: $(MSBuild.MaximumCpuCount)

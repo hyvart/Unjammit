@@ -2,15 +2,15 @@ name: $(BuildId)
 
 trigger: none
 
-
 jobs:
 
   - template: Templates/MSBuild.yml
     parameters:
       name: UWP
       displayName: Windows Universal
-      pool:
-        vmImage: $(Job.VmImage)
+      variableGroups: ['Global Build Variables', 'Windows Build Variables']
+      # pool:
+      #   vmImage: $(Job.VmImage)
       buildPlatforms: [ x64, x86 ]
       buildConfigurations: [ Debug, Release ]
 
