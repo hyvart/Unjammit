@@ -7,7 +7,8 @@ jobs:
 
   - template: Templates/MSBuild.yml
     parameters:
-      name: Windows Universal
+      name: UWP
+      displayName: Windows Universal
       pool:
         vmImage: $(Job.VmImage)
       buildPlatforms: [ x64, x86 ]
