@@ -7,7 +7,7 @@ parameters:
   buildConfigurations: []
 
 jobs:
-  - job: ${{ parameters.name }}
+  - job: Templated
     pool: ${{ parameters.pool }}
 
     variables:
