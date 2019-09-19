@@ -3,15 +3,15 @@ name: Pull Request
 trigger: none
 
 variables:
-  - name: BuildPlatform
-  - name: BuildConfiguration
-  - name: Job.VmImage
-  - name: MSBuild.MSBuildArchitecture
-  - name: MSBuild.MaximumCpuCount
+  - group: Global Build Variables
 
 jobs:
   - job:
     displayName: Windows Universal
+
+    variables:
+      - group: Windows Build Variables
+
     #strategy:
     pool: $(Job.VmImage)
     timeoutInMinutes: $(Job.TimeoutInMinutes)
