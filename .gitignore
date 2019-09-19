@@ -11,6 +11,8 @@
 *.userprefs
 
 # Build results
+/Build/
+/Target/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -21,8 +23,6 @@
 bld/
 [Bb]in/
 [Oo]bj/
-Build/
-Target/
 _pkginfo.txt
 
 # Visual Studio 2015 cache/options directory
