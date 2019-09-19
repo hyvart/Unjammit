@@ -11,7 +11,8 @@ jobs:
       - group: Global Build Variables
 
     #strategy:
-    pool: $(Job.VmImage)
+    pool:
+      - name: windows-2019
     timeoutInMinutes: 30
     cancelTimeoutInMinutes: 5
 
