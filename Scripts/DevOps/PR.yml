@@ -11,11 +11,7 @@ jobs:
       projects: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
       platformVariableGroup: Windows Build Variables
       buildPlatforms: [ x64, x86 ]
-      msbuildArguments: |
-        /p:AppxBundle=Always
-        /p:AppxBundlePlatforms="$(BuildPlatform)"
-        /p:UapAppxPackageBuildMode=StoreUpload
-        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+      msbuildArguments: '/p:AppxBundle=Always /p:AppxBundlePlatforms="$(BuildPlatform)" /p:UapAppxPackageBuildMode=StoreUpload /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"'
       showVars: true
 
   - template: Templates/MSBuild.yml
