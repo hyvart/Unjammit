@@ -1,7 +1,7 @@
 # jobs template
 
 parameters:
-  pool:
+  pool: ''
   buildPlatforms: []
   buildConfigurations: []
 
