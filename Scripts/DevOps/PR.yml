@@ -1,14 +1,26 @@
 name: $(BuildId)
 
+# variables:
+#   jobs: []
+#   buildPlatforms: ["x64", "x86"]
+#   buildConfigurations: ["Debug", "Release"]
+
 variables:
-  jobs: []
-  buildPlatforms: ["x64", "x86"]
-  buildConfigurations: ["Debug", "Release"]
+  jobs: |
+
+  buildPlatforms: |
+    x64
+    x86
+
+  buildConfigurations: |
+    Debug
+    Release
 
 trigger: none
 
 
 jobs:
+
   - job:
     displayName: Windows Universal
     timeoutInMinutes: 30
