@@ -5,15 +5,16 @@ trigger: none
 jobs:
   - job:
     displayName: Windows Universal
+    timeoutInMinutes: 30
+    cancelTimeoutInMinutes: 5
 
     variables:
       - group: Windows Build Variables
       - group: Global Build Variables
 
     #strategy:
-    pool: windows-2019
-    timeoutInMinutes: 30
-    cancelTimeoutInMinutes: 5
+    pool:
+      vmImage: $(Job.VmImage)
 
     steps:
       - checkout: self
@@ -25,8 +26,8 @@ jobs:
           targetType: inline
           script: |
             echo "[" + $env:Job_VmImage
-            echo "[" + $env:TimeoutInMinutes
-            echo "[" + $env:CancelTimeoutInMinutes
+            echo "[" + $env:Job_TimeoutInMinutes
+            echo "[" + $env:Job_CancelTimeoutInMinutes
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
