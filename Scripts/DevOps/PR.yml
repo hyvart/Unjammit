@@ -2,7 +2,9 @@ name: $(BuildId)
 
 trigger: none
 
+
 parameters:
+  jobs: []
   buildPlatforms: ["x64", "x86"]
   buildConfigurations: ["Debug", "Release"]
 
@@ -18,11 +20,12 @@ jobs:
 
     strategy:
       matrix:
-        ${{ each BuildPlatform in parameters.buildPlatforms }}:
-          ${{ each BuildConfiguration in parameters.buildConfigurations }}:
-            "$(BuildPlatform)|$(BuildConfiguration)":
-              BuildPlatform: $(BuildPlatform)
-              BuildConfiguration: $(BuildConfiguration)
+        ${{ each job in variables.jobs }}:
+          ${{ each BuildPlatform in variables.buildPlatforms }}:
+            ${{ each BuildConfiguration in variables.buildConfigurations }}:
+              "$(BuildPlatform)|$(BuildConfiguration)":
+                BuildPlatform: $(BuildPlatform)
+                BuildConfiguration: $(BuildConfiguration)
 
     pool:
       vmImage: $(Job.VmImage)
