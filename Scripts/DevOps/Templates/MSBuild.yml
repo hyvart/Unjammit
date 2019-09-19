@@ -18,14 +18,14 @@ jobs:
       - group: Windows Build Variables
       - group: Global Build Variables
 
-    pool: 
+    pool:
       vmImage: $(Job.VmImage)
 
     strategy:
       matrix:
         ${{ each platform in parameters.buildPlatforms }}:
           ${{ each configuration in parameters.buildConfigurations }}:
-            ${{ format('{0}|{1}', platform, configuration) }}:
+            ${{ format('{0} {1}', platform, configuration) }}:
               BuildPlatform: ${{platform}}
               BuildConfiguration: ${{configuration}}
 
