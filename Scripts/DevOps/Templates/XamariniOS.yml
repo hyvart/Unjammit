@@ -1,7 +1,7 @@
 parameters:
   name:
   displayName:
-  projects:
+  project:
   platformVariableGroup: ''
   buildPlatforms: []
   buildConfigurations: [ Debug, Release ]
@@ -31,29 +31,17 @@ jobs:
       - checkout: self
         clean: false
 
-      - task: PowerShell@2
-        displayName: Show Variables
-        inputs:
-          targetType: inline
-          script: |
-            echo "[${env:Job_VmImage}]"
-            echo "[${env:Job_TimeoutInMinutes}]"
-            echo "[${env:Job_CancelTimeoutInMinutes}]"
-            echo "[${env:BuildPlatform}]"
-            echo "[${env:BuildConfiguration}]"
-        condition: variables['showVars']
-
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
-          solution: ${{ parameters.projects }}
+          solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           msbuildArguments: /t:Restore
 
       - task: MSBuild@1
         displayName: Build Unjammit.UWP
         inputs:
-          solution: ${{ parameters.projects }}
+          solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           configuration: $(BuildConfiguration)
           platform: $(BuildPlatform)

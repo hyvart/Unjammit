@@ -8,9 +8,22 @@ jobs:
     parameters:
       name: UWP
       displayName: Windows Universal
+      projects: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
       platformVariableGroup: Windows Build Variables
-      # pool:
-      #   vmImage: $(Job.VmImage)
       buildPlatforms: [ x64, x86 ]
-      buildConfigurations: [ Debug, Release ]
+      msbuildArguments: |
+        /p:AppxBundle=Always
+        /p:AppxBundlePlatforms="$(BuildPlatform)"
+        /p:UapAppxPackageBuildMode=StoreUpload
+        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
       showVars: true
+
+  - template: Templates/MSBuild.yml
+    parameters:
+      name: WinForms
+      displayName: Jam.NET
+      projects: $(Build.SourcesDirectory)/WinForms/Jam.NET.csproj
+      platformVariableGroup: Windows Build Variables
+      buildPlatforms: [ 'Any CPU' ]
+
+  - template: Templates/XamariniOS.yml
