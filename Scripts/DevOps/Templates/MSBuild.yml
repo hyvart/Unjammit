@@ -14,9 +14,8 @@ jobs:
     displayName: ${{ parameters.displayName }}
 
     variables:
-      ${{ each group in parameters.variableGroups }}:
-        - name: group
-          value: ${{group}}
+      ${{ each grp in parameters.variableGroups }}:
+        - group: ${{grp}}
       # - group: Windows Build Variables
       # - group: Global Build Variables
 
