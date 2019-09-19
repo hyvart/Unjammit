@@ -23,9 +23,7 @@ jobs:
         ${{ each job in variables.jobs }}:
           ${{ each BuildPlatform in variables.buildPlatforms }}:
             ${{ each BuildConfiguration in variables.buildConfigurations }}:
-              "$(BuildPlatform)|$(BuildConfiguration)":
-                BuildPlatform: $(BuildPlatform)
-                BuildConfiguration: $(BuildConfiguration)
+              ${{ format('{0}{1}', BuildPlatform, BuildConfiguration) }}:
 
     pool:
       vmImage: $(Job.VmImage)
