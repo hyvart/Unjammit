@@ -1,0 +1,62 @@
+parameters:
+  name:
+  displayName:
+  projects:
+  platformVariableGroup: ''
+  buildPlatforms: []
+  buildConfigurations: [ Debug, Release ]
+  msbuildArguments: ''
+  showVars: false
+
+jobs:
+  - job: ${{ parameters.name }}
+    displayName: ${{ parameters.displayName }}
+
+    variables:
+      - group: Global Build Variables
+      - group: ${{ parameters.platformVariableGroup }}
+
+    pool:
+      vmImage: $(Job.VmImage)
+
+    strategy:
+      matrix:
+        ${{ each platform in parameters.buildPlatforms }}:
+          ${{ each configuration in parameters.buildConfigurations }}:
+            ${{ format('{0} {1}', platform, configuration) }}:
+              BuildPlatform: ${{platform}}
+              BuildConfiguration: ${{configuration}}
+
+    steps:
+      - checkout: self
+        clean: false
+
+      - task: PowerShell@2
+        displayName: Show Variables
+        inputs:
+          targetType: inline
+          script: |
+            echo "[${env:Job_VmImage}]"
+            echo "[${env:Job_TimeoutInMinutes}]"
+            echo "[${env:Job_CancelTimeoutInMinutes}]"
+            echo "[${env:BuildPlatform}]"
+            echo "[${env:BuildConfiguration}]"
+        condition: variables['showVars']
+
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: ${{ parameters.projects }}
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildArguments: /t:Restore
+
+      - task: MSBuild@1
+        displayName: ${{ parameters.displayName }}
+        inputs:
+          solution: ${{ parameters.projects }}
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          configuration: $(BuildConfiguration)
+          platform: $(BuildPlatform)
+          msbuildArguments: ${{ parameters.msbuildArguments }}
+          clean: true
+          maximumCpuCount: $(MSBuild.MaximumCpuCount)

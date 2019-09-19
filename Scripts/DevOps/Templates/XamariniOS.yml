@@ -1,0 +1,48 @@
+parameters:
+  name:
+  displayName:
+  project:
+  platformVariableGroup: ''
+  buildConfigurations: [ Debug, Release ]
+
+jobs:
+  - job: ${{ parameters.name }}
+    displayName: ${{ parameters.displayName }}
+
+    variables:
+      - group: Global Build Variables
+      - group: ${{ parameters.platformVariableGroup }}
+
+    pool:
+      vmImage: $(Job.VmImage)
+
+    strategy:
+      matrix:
+        ${{ each configuration in parameters.buildConfigurations }}:
+          ${{ format('{0}', configuration) }}:
+            BuildConfiguration: ${{configuration}}
+
+    steps:
+      - checkout: self
+        clean: false
+
+      - task: Bash@3
+        inputs:
+          targetType: inline
+          script: |
+            ls /Library/Frameworks/Mono.framework/Versions/
+
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: ${{ parameters.project }}
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildArguments: /t:Restore
+
+      - task: XamariniOS@2
+        displayName: ${{ parameters.displayName }}
+        inputs:
+          solutionFile: ${{ parameters.project }}
+          configuration: $(BuildConfiguration)
+          clean: true
+          mdtoolFile: /Library/Frameworks/Mono.framework/Versions/$(XamariniOS.MonoVersion)/bin/msbuild
