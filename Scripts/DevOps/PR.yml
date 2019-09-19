@@ -28,24 +28,25 @@ jobs:
             echo "[" + $env:Job_VmImage
             echo "[" + $env:Job_TimeoutInMinutes
             echo "[" + $env:Job_CancelTimeoutInMinutes
-      - task: MSBuild@1
-        displayName: Restore Packages
-        inputs:
-          solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildArguments: /t:Restore
 
-      - task: MSBuild@1
-        displayName: Build Unjammit.UWP
-        inputs:
-          solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          configuration: $(BuildConfiguration)
-          platform: $(BuildPlatform)
-          msbuildArguments: |
-            /p:AppxBundle=Always
-            /p:AppxBundlePlatforms="$(BuildPlatform)"
-            /p:UapAppxPackageBuildMode=StoreUpload
-            /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
-          clean: true
-          maximumCpuCount: $(MSBuild.MaximumCpuCount)
+      # - task: MSBuild@1
+      #   displayName: Restore Packages
+      #   inputs:
+      #     solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      #     msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      #     msbuildArguments: /t:Restore
+
+      # - task: MSBuild@1
+      #   displayName: Build Unjammit.UWP
+      #   inputs:
+      #     solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      #     msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      #     configuration: $(BuildConfiguration)
+      #     platform: $(BuildPlatform)
+      #     msbuildArguments: |
+      #       /p:AppxBundle=Always
+      #       /p:AppxBundlePlatforms="$(BuildPlatform)"
+      #       /p:UapAppxPackageBuildMode=StoreUpload
+      #       /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+      #     clean: true
+      #     maximumCpuCount: $(MSBuild.MaximumCpuCount)
