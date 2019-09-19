@@ -25,23 +25,23 @@ jobs:
             ${{ each BuildConfiguration in variables.buildConfigurations }}:
               ${{ format('{0}{1}', BuildPlatform, BuildConfiguration) }}:
 
-    pool:
-      vmImage: $(Job.VmImage)
+                pool:
+                  vmImage: $(Job.VmImage)
 
-    steps:
-      - checkout: self
-        clean: false
+                steps:
+                  - checkout: self
+                    clean: false
 
-      - task: PowerShell@2
-        displayName: Show Variables
-        inputs:
-          targetType: inline
-          script: |
-            echo ("[" + $env:Job_VmImage)
-            echo ("[" + $env:Job_TimeoutInMinutes)
-            echo ("[" + $env:Job_CancelTimeoutInMinutes)
-            echo ("[" + $env:BuildPlatform)
-            echo ("[" + $env:BuildConfiguration)
+                  - task: PowerShell@2
+                    displayName: Show Variables
+                    inputs:
+                      targetType: inline
+                      script: |
+                        echo ("[" + $env:Job_VmImage)
+                        echo ("[" + $env:Job_TimeoutInMinutes)
+                        echo ("[" + $env:Job_CancelTimeoutInMinutes)
+                        echo ("[" + $env:BuildPlatform)
+                        echo ("[" + $env:BuildConfiguration)
 
       # - task: MSBuild@1
       #   displayName: Restore Packages
