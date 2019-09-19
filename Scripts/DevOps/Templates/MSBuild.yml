@@ -1,16 +1,15 @@
 # jobs template
 
 parameters:
+  pool:
   buildPlatforms: []
   buildConfigurations: []
 
-variables:
-  - group: Windows Build Variables
-  - group: Global Build Variables
+pool: ${{ parameters.pool }}
 
-pool:
-  vmImage: $(Job.VmImage)
-
+# variables:
+#   - group: Windows Build Variables
+#   - group: Global Build Variables
 
 strategy:
   matrix:
