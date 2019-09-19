@@ -12,8 +12,8 @@ jobs:
 
     #strategy:
     pool: $(Job.VmImage)
-    timeoutInMinutes: $(Job.TimeoutInMinutes)
-    cancelTimeoutInMinutes: $(Job.CancelTimeoutInMinutes)
+    timeoutInMinutes: 30
+    cancelTimeoutInMinutes: 5
 
     steps:
       - checkout: self
