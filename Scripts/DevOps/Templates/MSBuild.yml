@@ -1,0 +1,36 @@
+# jobs template
+
+parameters:
+  buildPlatforms: []
+  buildConfigurations: []
+
+variables:
+  - group: Windows Build Variables
+  - group: Global Build Variables
+
+pool:
+  vmImage: $(Job.VmImage)
+
+
+strategy:
+  matrix:
+    ${{ each BuildPlatform in parameters.buildPlatforms }}:
+      ${{ each BuildConfiguration in parameters.buildConfigurations }}:
+        ${{ format('{0}{1}', BuildPlatform, BuildConfiguration) }}:
+          BuildPlatform: $(BuildPlatform)
+          BuildConfiguration: $(BuildConfiguration)
+
+steps:
+  - checkout: self
+    clean: false
+
+  - task: PowerShell@2
+    displayName: Show Variables
+    inputs:
+      targetType: inline
+      script: |
+        echo ("[" + $env:Job_VmImage)
+        echo ("[" + $env:Job_TimeoutInMinutes)
+        echo ("[" + $env:Job_CancelTimeoutInMinutes)
+        echo ("[" + $env:BuildPlatform)
+        echo ("[" + $env:BuildConfiguration)

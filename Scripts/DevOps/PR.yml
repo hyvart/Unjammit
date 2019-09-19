@@ -1,10 +1,5 @@
 name: $(BuildId)
 
-# variables:
-#   jobs: []
-#   buildPlatforms: ["x64", "x86"]
-#   buildConfigurations: ["Debug", "Release"]
-
 parameters:
   buildPlatforms: [x64, x86]
   buildConfigurations: [Debug, Release]
@@ -14,41 +9,48 @@ trigger: none
 
 jobs:
 
-  - job:
-    displayName: Windows Universal
-    timeoutInMinutes: 30
-    cancelTimeoutInMinutes: 5
+  - template: Templates/MSBuild.yml
+    parameters:
+      buildPlatforms: [ x64, x86 ]
+      buildConfigurations: [ Debug, Release ]
 
-    variables:
-      - group: Windows Build Variables
-      - group: Global Build Variables
+  # - job:
+  #   displayName: Windows Universal
+  #   timeoutInMinutes: 30
+  #   cancelTimeoutInMinutes: 5
 
-    strategy:
-      matrix:
-#        ${{ each job in parameters.jobs }}:
-        ${{ each BuildPlatform in parameters.buildPlatforms }}:
-          ${{ each BuildConfiguration in parameters.buildConfigurations }}:
-            ${{ format('{0}{1}', BuildPlatform, BuildConfiguration) }}:
-              BuildPlatform: $(BuildPlatform)
-              BuildConfiguration: $(BuildConfiguration)
+  #   variables:
+  #     - group: Windows Build Variables
+  #     - group: Global Build Variables
 
-    pool:
-      vmImage: $(Job.VmImage)
+  #   pool:
+  #     vmImage: $(Job.VmImage)
 
-    steps:
-      - checkout: self
-        clean: false
+    # strategy:
+    #   matrix:
+    #     ${{ each BuildPlatform in parameters.buildPlatforms }}:
+    #       ${{ each BuildConfiguration in parameters.buildConfigurations }}:
+    #         ${{ format('{0}{1}', BuildPlatform, BuildConfiguration) }}:
+    #           BuildPlatform: $(BuildPlatform)
+    #           BuildConfiguration: $(BuildConfiguration)
 
-      - task: PowerShell@2
-        displayName: Show Variables
-        inputs:
-          targetType: inline
-          script: |
-            echo ("[" + $env:Job_VmImage)
-            echo ("[" + $env:Job_TimeoutInMinutes)
-            echo ("[" + $env:Job_CancelTimeoutInMinutes)
-            echo ("[" + $env:BuildPlatform)
-            echo ("[" + $env:BuildConfiguration)
+    # pool:
+    #   vmImage: $(Job.VmImage)
+
+    # steps:
+    #   - checkout: self
+    #     clean: false
+
+    #   - task: PowerShell@2
+    #     displayName: Show Variables
+    #     inputs:
+    #       targetType: inline
+    #       script: |
+    #         echo ("[" + $env:Job_VmImage)
+    #         echo ("[" + $env:Job_TimeoutInMinutes)
+    #         echo ("[" + $env:Job_CancelTimeoutInMinutes)
+    #         echo ("[" + $env:BuildPlatform)
+    #         echo ("[" + $env:BuildConfiguration)
 
       # - task: MSBuild@1
       #   displayName: Restore Packages
