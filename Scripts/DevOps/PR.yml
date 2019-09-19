@@ -17,7 +17,7 @@ jobs:
   - template: Templates/MSBuild.yml
     parameters:
       name: WinForms
-      displayName: Jam.NET
+      displayName: Windows Forms
       projects: $(Build.SourcesDirectory)/WinForms/Jam.NET.csproj
       platformVariableGroup: Windows Build Variables
       buildPlatforms: [ 'Any CPU' ]
