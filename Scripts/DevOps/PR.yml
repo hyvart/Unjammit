@@ -1,0 +1,44 @@
+name: Pull Request
+
+trigger: none
+
+variables:
+  - name: BuildPlatform
+  - name: BuildConfiguration
+  - name: Job.VmImage
+  - name: MSBuild.MSBuildArchitecture
+  - name: MSBuild.MaximumCpuCount
+
+jobs:
+  - job:
+    displayName: Windows Universal
+    #strategy:
+    pool: $(Job.VmImage)
+    timeoutInMinutes: $(Job.TimeoutInMinutes)
+    cancelTimeoutInMinutes: $(Job.CancelTimeoutInMinutes)
+
+    steps:
+      - checkout: self
+        clean: false
+      
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildArguments: /t:Restore
+
+      - task: MSBuild@1
+        displayName: Build Unjammit.UWP
+        inputs:
+          solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          configuration: $(BuildConfiguration)
+          platform: $(BuildPlatform)
+          msbuildArguments: |
+            /p:AppxBundle=Always
+            /p:AppxBundlePlatforms="$(BuildPlatform)"
+            /p:UapAppxPackageBuildMode=StoreUpload
+            /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+          clean: true
+          maximumCpuCount: $(MSBuild.MaximumCpuCount)
