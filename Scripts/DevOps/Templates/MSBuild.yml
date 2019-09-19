@@ -4,7 +4,7 @@ parameters:
   name:
   displayName:
   # pool:
-  variableGroups: []
+  platformVariableGroup: ''
   buildPlatforms: []
   buildConfigurations: []
   showVars: false
@@ -14,10 +14,8 @@ jobs:
     displayName: ${{ parameters.displayName }}
 
     variables:
-      ${{ each grp in parameters.variableGroups }}:
-        - group: ${{grp}}
-      # - group: Windows Build Variables
-      # - group: Global Build Variables
+      - group: Global Build Variables
+      - group: ${{ parameters.platformVariableGroup }}
 
     pool:
       vmImage: $(Job.VmImage)
