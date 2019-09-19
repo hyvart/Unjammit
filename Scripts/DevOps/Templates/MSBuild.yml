@@ -18,11 +18,11 @@ jobs:
 
     strategy:
       matrix:
-        ${{ each BuildPlatform in parameters.buildPlatforms }}:
-          ${{ each BuildConfiguration in parameters.buildConfigurations }}:
-            ${{ format('{0}{1}', BuildPlatform, BuildConfiguration) }}:
-              BuildPlatform: $(BuildPlatform)
-              BuildConfiguration: $(BuildConfiguration)
+        ${{ each platform in parameters.buildPlatforms }}:
+          ${{ each configuration in parameters.buildConfigurations }}:
+            ${{ format('{0}|{1}', platform, configuration) }}:
+              BuildPlatform: $(platform)
+              BuildConfiguration: $(configuration)
 
     steps:
       - checkout: self
