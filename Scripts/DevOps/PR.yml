@@ -6,7 +6,7 @@ name: $(BuildId)
 #   buildConfigurations: ["Debug", "Release"]
 
 variables:
-  jobs: |
+  jobs:
 
   buildPlatforms: |
     x64
