@@ -5,7 +5,7 @@ parameters:
   buildPlatforms: []
   buildConfigurations: []
 
-pool: ${{ parameters.pool }}
+#pool: ${{ parameters.pool }}
 
 # variables:
 #   - group: Windows Build Variables
