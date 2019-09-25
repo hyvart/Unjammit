@@ -1,0 +1,48 @@
+parameters:
+  # name:
+  displayName:
+  project:
+  platformVariableGroup: ''
+  buildConfigurations: [ Debug, Release ]
+
+  # XamarinAndroid
+  createAppPackage: false
+  buildForSimulator: true
+  msbuildArguments: ''
+
+  debug: false
+
+jobs:
+  - job:
+    displayName: ${{ parameters.displayName }}
+
+    variables:
+      - group: ${{ parameters.platformVariableGroup }}
+
+    pool:
+      vmImage: $(Job.VmImage)
+
+    strategy:
+      matrix:
+        ${{ each configuration in parameters.buildConfigurations }}:
+            "${{ configuration }}":
+              BuildConfiguration: ${{ configuration }}
+
+    steps:
+      - checkout: self
+        clean: false
+
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: ${{ parameters.project }}
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildArguments: /t:Restore
+
+      - task: XamarinAndroid@1
+        displayName: Build ${{ parameters.project }}
+        inputs:
+          projectFile: ${{ parameters.project }}
+          configuration: $(BuildConfiguration)
+          createAppPackage: ${{ parameters.createAppPackage }}
+          clean: true

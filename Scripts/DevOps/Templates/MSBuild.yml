@@ -1,19 +1,20 @@
 parameters:
-  name:
+  # name:
   displayName:
-  projects:
-  platformVariableGroup: ''
+  project:
+  platformVariableGroups: []
+  platformVariableGroup: '' # Until we can pass the group array above
   buildPlatforms: []
   buildConfigurations: [ Debug, Release ]
   msbuildArguments: ''
   showVars: false
 
 jobs:
-  - job: ${{ parameters.name }}
+  - job: #${{ parameters.name }}
     displayName: ${{ parameters.displayName }}
 
     variables:
-      - group: Global Build Variables
+      #${{each group in parameters.platformVariableGroups}}:
       - group: ${{ parameters.platformVariableGroup }}
 
     pool:
@@ -21,9 +22,9 @@ jobs:
 
     strategy:
       matrix:
-        ${{ each platform in parameters.buildPlatforms }}:
-          ${{ each configuration in parameters.buildConfigurations }}:
-            ${{ format('{0} {1}', platform, configuration) }}:
+        ${{ each configuration in parameters.buildConfigurations }}:
+          ${{ each platform in parameters.buildPlatforms }}:
+            "${{ platform }}|${{ configuration }}":
               BuildPlatform: ${{platform}}
               BuildConfiguration: ${{configuration}}
 
@@ -41,19 +42,19 @@ jobs:
             echo "[${env:Job_CancelTimeoutInMinutes}]"
             echo "[${env:BuildPlatform}]"
             echo "[${env:BuildConfiguration}]"
-        condition: variables['showVars']
+        condition: ${{ parameters.showVars}}
 
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
-          solution: ${{ parameters.projects }}
+          solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           msbuildArguments: /t:Restore
 
       - task: MSBuild@1
-        displayName: ${{ parameters.displayName }}
+        displayName: Build ${{ parameters.project }}
         inputs:
-          solution: ${{ parameters.projects }}
+          solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           configuration: $(BuildConfiguration)
           platform: $(BuildPlatform)

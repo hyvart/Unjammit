@@ -1,16 +1,24 @@
 parameters:
-  name:
+  # name:
   displayName:
   project:
   platformVariableGroup: ''
   buildConfigurations: [ Debug, Release ]
 
+  # XamariniOS
+  packageApp: false
+  buildForSimulator: true
+  xcodeArguments: ''
+  signingIdentity: ''
+  signingProvisioningProfileID: ''
+
+  debug: false
+
 jobs:
-  - job: ${{ parameters.name }}
+  - job: #${{ parameters.name }}
     displayName: ${{ parameters.displayName }}
 
     variables:
-      - group: Global Build Variables
       - group: ${{ parameters.platformVariableGroup }}
 
     pool:
@@ -19,8 +27,8 @@ jobs:
     strategy:
       matrix:
         ${{ each configuration in parameters.buildConfigurations }}:
-          ${{ format('{0}', configuration) }}:
-            BuildConfiguration: ${{configuration}}
+            "${{ configuration }}":
+              BuildConfiguration: ${{ configuration }}
 
     steps:
       - checkout: self
@@ -31,18 +39,25 @@ jobs:
           targetType: inline
           script: |
             ls /Library/Frameworks/Mono.framework/Versions/
+        condition: ${{ parameters.debug }}
 
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamariniOS.MonoVersion)/bin/msbuild
           msbuildArguments: /t:Restore
 
       - task: XamariniOS@2
-        displayName: ${{ parameters.displayName }}
+        displayName: Build ${{ parameters.project }}
         inputs:
           solutionFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
           clean: true
+          packageApp: ${{ parameters.packageApp }}
+          buildForSimulator: ${{ parameters.buildForSimulator }}
+          args: ${{ parameters.xcodeArguments }}
           mdtoolFile: /Library/Frameworks/Mono.framework/Versions/$(XamariniOS.MonoVersion)/bin/msbuild
+          signingIdentity: ${{ parameters.signingIdentity }}
+          signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
