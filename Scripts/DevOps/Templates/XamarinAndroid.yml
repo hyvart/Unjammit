@@ -46,7 +46,7 @@ jobs:
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           msbuildArguments: /t:Restore
 
-      - task: XamarinAndroid
+      - task: XamarinAndroid@1
         displayName: Build ${{ parameters.project }}
         inputs:
           projectFile: ${{ parameters.project }}
