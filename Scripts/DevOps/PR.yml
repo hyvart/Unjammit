@@ -99,10 +99,10 @@ jobs:
           configuration: $(BuildConfiguration)
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           maximumCpuCount: $(MSBuild.MaximumCpuCount)
-          msbuildArguments: |
-            /p:AppxBundle=Always 
-            /p:AppxBundlePlatforms="$(BuildPlatform)" 
-            /p:UapAppxPackageBuildMode=StoreUpload 
+          msbuildArguments:
+            /p:AppxBundle=Always
+            /p:AppxBundlePlatforms="$(BuildPlatform)"
+            /p:UapAppxPackageBuildMode=StoreUpload
             /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
 
   - job:
@@ -143,8 +143,8 @@ jobs:
           configuration: $(BuildConfiguration)
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           maximumCpuCount: $(MSBuild.MaximumCpuCount)
-          msbuildArguments: |
-            /p:EnableCodeSigning=true
+          msbuildArguments:
+            /p:EnableCodeSigning=false
             /p:XamarinMacFrameworkVersion=$(XamarinMacFrameworkVersion)
             /p:LangVersion=7.2
 
