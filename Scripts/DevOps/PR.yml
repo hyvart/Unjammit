@@ -17,7 +17,7 @@ jobs:
       - group: Windows Build Variables
 
     pool:
-      vmImage: $(VmImage)
+      vmImage: $(Job.VmImage)
 
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
       - group: Windows Build Variables
 
     pool:
-      vmImage: $(VmImage)
+      vmImage: $(Job.VmImage)
 
     strategy:
       matrix:
