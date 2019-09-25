@@ -10,37 +10,16 @@ variables:
 
 jobs:
 
-  # - job:
-  #   displayName: Test
+  - template: Templates/MSBuild.yml
 
-  #   steps:
-
-  # - template: Templates/MSBuild.yml
-
-  #   parameters:
-  #     # name:
-  #     displayName: Some Test
-  #     project: $(Build.SourcesDirectory)/iOS/Unjammit.iOS.csproj
-  #     platformVariableGroups: [
-  #       'Global Build Variables',
-  #       'macOS Build Variables'
-  #     ]
-
-  - job: Other
-    variables:
-      - group: macOS Build Variables
-
-    steps:
-    - template: Templates/MSBuild.yml
-
-      parameters:
-        # name:
-        displayName: Some Test
-        project: $(Build.SourcesDirectory)/iOS/Unjammit.iOS.csproj
-        platformVariableGroups: [
-          'Global Build Variables',
-          'macOS Build Variables'
-        ]
+    parameters:
+      # name:
+      displayName: Some Test
+      project: $(Build.SourcesDirectory)/iOS/Unjammit.iOS.csproj
+      platformVariableGroups: [
+        'Global Build Variables',
+        'macOS Build Variables'
+      ]
 
   # - job:
   #   displayName: Windows Forms

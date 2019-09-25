@@ -8,28 +8,29 @@ parameters:
   msbuildArguments: ''
   showVars: false
 
-# jobs:
-  # - job: # ${{ parameters.name }}
-  #   displayName: ${{ parameters.displayName }}
+jobs:
+  - job: # ${{ parameters.name }}
+    displayName: ${{ parameters.displayName }}
 
+    variables:
       # - group: ${{ parameters.platformVariableGroup }}
-    # variables:
-    #   - ${{ each group in parameters.platformVariableGroups }}: ${{ group }}
+    $[ each group in parameters.platformVariableGroups ]:
+      - group: ${{ group }}
 
 
-  pool:
-    vmImage: $(Job.VmImage)
+    pool:
+      vmImage: $(Job.VmImage)
 
-  strategy:
-    matrix:
-      ${{ each platform in parameters.buildPlatforms }}:
-        ${{ each configuration in parameters.buildConfigurations }}:
-          ${{ format('{0} {1}', platform, configuration) }}:
-            BuildPlatform: ${{platform}}
-            BuildConfiguration: ${{configuration}}
+    strategy:
+      matrix:
+        ${{ each platform in parameters.buildPlatforms }}:
+          ${{ each configuration in parameters.buildConfigurations }}:
+            ${{ format('{0} {1}', platform, configuration) }}:
+              BuildPlatform: ${{platform}}
+              BuildConfiguration: ${{configuration}}
 
-  steps:
-    - checkout: none
+    steps:
+      - checkout: none
 
     # steps:
     #   - checkout: self
