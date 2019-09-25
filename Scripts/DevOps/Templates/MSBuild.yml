@@ -1,5 +1,5 @@
 parameters:
-  name: ''
+  name:
   displayName:
   projects:
   platformVariableGroups: []
@@ -9,7 +9,7 @@ parameters:
   showVars: false
 
 jobs:
-  - job: ${{ parameters.name }}
+  - job: # ${{ parameters.name }}
     displayName: ${{ parameters.displayName }}
 
       # - group: ${{ parameters.platformVariableGroup }}
