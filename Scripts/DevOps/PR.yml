@@ -13,13 +13,14 @@ jobs:
   - template: Templates/MSBuild.yml
 
     parameters:
-      # name:
-      displayName: Some Test
-      project: $(Build.SourcesDirectory)/iOS/Unjammit.iOS.csproj
-      platformVariableGroups: [
-        'Global Build Variables',
-        'macOS Build Variables'
-      ]
+      displayName: macOS
+      project: $(Build.SourcesDirectory)/macOS/Unjammit.macOS.csproj
+      platformVariableGroup: macOS Build Variables
+      buildPlatforms: [ 'AnyCPU' ]
+      msbuildArguments:
+        /p:EnableCodeSigning=false
+        /p:XamarinMacFrameworkVersion=$(XamarinMacFrameworkVersion)
+        /p:LangVersion=7.2
 
   # - job:
   #   displayName: Windows Forms
