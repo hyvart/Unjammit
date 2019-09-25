@@ -52,7 +52,7 @@ jobs:
           msbuildArguments: /t:Restore
 
       - task: MSBuild@1
-        displayName: ${{ parameters.displayName }}
+        displayName: Build ${{ parameters.project }}
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)

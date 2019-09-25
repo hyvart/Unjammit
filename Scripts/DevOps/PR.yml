@@ -13,7 +13,7 @@ jobs:
   - template: Templates/MSBuild.yml
     parameters:
       displayName: Windows Universal
-      project: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      project: UWP/Unjammit.UWP.csproj
       platformVariableGroup: Windows Build Variables
       buildPlatforms: [ x64, x86 ]
       msbuildArguments:
@@ -25,7 +25,7 @@ jobs:
   - template: Templates/MSBuild.yml
     parameters:
       displayName: macOS
-      project: $(Build.SourcesDirectory)/macOS/Unjammit.macOS.csproj
+      project: macOS/Unjammit.macOS.csproj
       platformVariableGroup: macOS Build Variables
       buildPlatforms: [ AnyCPU ]
       msbuildArguments:
@@ -36,7 +36,7 @@ jobs:
   - template: Templates/MSBuild.yml
     parameters:
       displayName: Windows Forms
-      project: $(Build.SourcesDirectory)/WinForms/Jam.NET.csproj
+      project: WinForms/Jam.NET.csproj
       platformVariableGroup: Windows Build Variables
       buildPlatforms: [ AnyCPU ]
 
