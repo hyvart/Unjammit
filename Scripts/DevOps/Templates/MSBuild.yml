@@ -9,14 +9,12 @@ parameters:
   showVars: false
 
 jobs:
-  - job: # ${{ parameters.name }}
+  - job: ${{ parameters.name }}
     displayName: ${{ parameters.displayName }}
 
     variables:
-      # - group: ${{ parameters.platformVariableGroup }}
-      $[ each group in parameters.platformVariableGroups ]:
-        - group: ${{ group }}
-
+      ${{each group in parameters.platformVariableGroups}}:
+       - group: ${{ group }}
 
     pool:
       vmImage: $(Job.VmImage)
