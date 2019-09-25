@@ -146,8 +146,6 @@ jobs:
           msbuildArguments:
             /p:EnableCodeSigning=false
             /p:XamarinMacFrameworkVersion=$(XamarinMacFrameworkVersion)
-            /p:LangVersion=7.2
-
 
   # - template: Templates/XamariniOS.yml
   #   parameters:
