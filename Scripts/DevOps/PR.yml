@@ -11,155 +11,34 @@ variables:
 jobs:
 
   - template: Templates/MSBuild.yml
+    parameters:
+      displayName: Windows Universal
+      project: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      platformVariableGroup: Windows Build Variables
+      buildPlatforms: [ x64, x86 ]
+      msbuildArguments:
+        /p:AppxBundle=Always
+        /p:AppxBundlePlatforms="$(BuildPlatform)"
+        /p:UapAppxPackageBuildMode=StoreUpload
+        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
 
+  - template: Templates/MSBuild.yml
     parameters:
       displayName: macOS
       project: $(Build.SourcesDirectory)/macOS/Unjammit.macOS.csproj
       platformVariableGroup: macOS Build Variables
-      buildPlatforms: [ 'AnyCPU' ]
+      buildPlatforms: [ AnyCPU ]
       msbuildArguments:
         /p:EnableCodeSigning=false
         /p:XamarinMacFrameworkVersion=$(XamarinMacFrameworkVersion)
         /p:LangVersion=7.2
-      showvars: true
 
-  # - job:
-  #   displayName: Windows Forms
-
-  #   variables:
-  #     - group: Windows Build Variables
-
-  #   pool:
-  #     vmImage: $(Job.VmImage)
-
-  #   strategy:
-  #     matrix:
-  #       'Any CPU|Debug':
-  #         BuildPlatform: AnyCPU
-  #         BuildConfiguration: Debug
-  #       'Any CPU|Release':
-  #         BuildPlatform: AnyCPU
-  #         BuildConfiguration: Release
-
-  #   steps:
-  #     - checkout: self
-  #       clean: false
-
-  #     - task: MSBuild@1
-  #       displayName: Restore Packages
-  #       inputs:
-  #         solution: $(Build.SourcesDirectory)/WinForms/Jam.NET.csproj
-  #         msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-  #         maximumCpuCount: $(MSBuild.MaximumCpuCount)
-  #         msbuildArguments: /t:Restore
-
-  #     - task: MSBuild@1
-  #       displayName: Build Solution
-  #       inputs:
-  #         solution: $(Build.SourcesDirectory)/WinForms/Jam.NET.csproj
-  #         platform: $(BuildPlatform)
-  #         configuration: $(BuildConfiguration)
-  #         msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-  #         maximumCpuCount: $(MSBuild.MaximumCpuCount)
-
-  # - job:
-  #   displayName: Windows Universal
-
-  #   variables:
-  #     - group: Windows Build Variables
-
-  #   pool:
-  #     vmImage: $(Job.VmImage)
-
-  #   strategy:
-  #     matrix:
-  #       'x64|Debug':
-  #         BuildPlatform: x64
-  #         BuildConfiguration: Debug
-  #       'x86|Debug':
-  #         BuildPlatform: x86
-  #         BuildConfiguration: Debug
-  #       # 'ARM|Debug':
-  #       #   BuildPlatform: ARM
-  #       #   BuildConfiguration: Debug
-  #       'x64|Release':
-  #         BuildPlatform: x64
-  #         BuildConfiguration: Release
-  #       'x86|Release':
-  #         BuildPlatform: x86
-  #         BuildConfiguration: Release
-  #       # 'ARM|Release':
-  #       #   BuildPlatform: ARM
-  #       #   BuildConfiguration: Release
-
-  #   steps:
-  #     - checkout: self
-  #       clean: false
-
-  #     - task: MSBuild@1
-  #       displayName: Restore Packages
-  #       inputs:
-  #         solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
-  #         msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-  #         maximumCpuCount: $(MSBuild.MaximumCpuCount)
-  #         msbuildArguments: /t:Restore
-
-  #     - task: MSBuild@1
-  #       displayName: Build Solution
-  #       inputs:
-  #         solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
-  #         platform: $(BuildPlatform)
-  #         configuration: $(BuildConfiguration)
-  #         msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-  #         maximumCpuCount: $(MSBuild.MaximumCpuCount)
-  #         msbuildArguments:
-  #           /p:AppxBundle=Always
-  #           /p:AppxBundlePlatforms="$(BuildPlatform)"
-  #           /p:UapAppxPackageBuildMode=StoreUpload
-  #           /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
-
-  # - job:
-  #   displayName: macOS
-
-  #   variables:
-  #     - group: macOS Build Variables
-
-  #   pool:
-  #     vmImage: $(Job.VmImage)
-
-  #   strategy:
-  #     matrix:
-  #       'Any CPU|Debug':
-  #         BuildPlatform: AnyCPU
-  #         BuildConfiguration: Debug
-  #       'Any CPU|Release':
-  #         BuildPlatform: AnyCPU
-  #         BuildConfiguration: Release
-
-  #   steps:
-  #     - checkout: self
-  #       clean: false
-
-  #     - task: MSBuild@1
-  #       displayName: Restore Packages
-  #       inputs:
-  #         solution: $(Build.SourcesDirectory)/macOS/Unjammit.macOS.csproj
-  #         msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-  #         maximumCpuCount: $(MSBuild.MaximumCpuCount)
-  #         msbuildArguments: /t:Restore
-
-  #     - task: MSBuild@1
-  #       displayName: Build Solution
-  #       inputs:
-  #         solution: $(Build.SourcesDirectory)/macOS/Unjammit.macOS.csproj
-  #         platform: $(BuildPlatform)
-  #         configuration: $(BuildConfiguration)
-  #         msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-  #         maximumCpuCount: $(MSBuild.MaximumCpuCount)
-  #         msbuildArguments:
-  #           /p:EnableCodeSigning=false
-  #           /p:XamarinMacFrameworkVersion=$(XamarinMacFrameworkVersion)
-  #           /p:LangVersion=7.2
+  - template: Templates/MSBuild.yml
+    parameters:
+      displayName: Windows Forms
+      project: $(Build.SourcesDirectory)/WinForms/Jam.NET.csproj
+      platformVariableGroup: Windows Build Variables
+      buildPlatforms: [ AnyCPU ]
 
   # - template: Templates/XamariniOS.yml
   #   parameters:
