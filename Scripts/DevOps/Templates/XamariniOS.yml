@@ -27,10 +27,8 @@ jobs:
     strategy:
       matrix:
         ${{ each configuration in parameters.buildConfigurations }}:
-          ${{ each platform in parameters.buildPlatforms }}:
-            "${{ platform }}|${{ configuration }}":
-              BuildPlatform: ${{platform}}
-              BuildConfiguration: ${{configuration}}
+            "${{ configuration }}":
+              BuildConfiguration: ${{ configuration }}
 
     steps:
       - checkout: self
