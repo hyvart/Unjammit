@@ -14,8 +14,8 @@ jobs:
 
     variables:
       # - group: ${{ parameters.platformVariableGroup }}
-    $[ each group in parameters.platformVariableGroups ]:
-      - group: ${{ group }}
+      $[ each group in parameters.platformVariableGroups ]:
+        - group: ${{ group }}
 
 
     pool:
