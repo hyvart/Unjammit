@@ -17,19 +17,19 @@ parameters:
     #   - ${{ each group in parameters.platformVariableGroups }}: ${{ group }}
 
 
-pool:
-  vmImage: $(Job.VmImage)
+  pool:
+    vmImage: $(Job.VmImage)
 
-strategy:
-  matrix:
-    ${{ each platform in parameters.buildPlatforms }}:
-      ${{ each configuration in parameters.buildConfigurations }}:
-        ${{ format('{0} {1}', platform, configuration) }}:
-          BuildPlatform: ${{platform}}
-          BuildConfiguration: ${{configuration}}
+  strategy:
+    matrix:
+      ${{ each platform in parameters.buildPlatforms }}:
+        ${{ each configuration in parameters.buildConfigurations }}:
+          ${{ format('{0} {1}', platform, configuration) }}:
+            BuildPlatform: ${{platform}}
+            BuildConfiguration: ${{configuration}}
 
-steps:
-  - checkout: none
+  steps:
+    - checkout: none
 
     # steps:
     #   - checkout: self
