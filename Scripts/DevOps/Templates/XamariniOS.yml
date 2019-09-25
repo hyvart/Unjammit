@@ -46,6 +46,7 @@ jobs:
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamariniOS.MonoVersion)/bin/msbuild
           msbuildArguments: /t:Restore
 
       - task: XamariniOS@2
