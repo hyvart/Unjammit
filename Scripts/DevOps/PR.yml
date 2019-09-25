@@ -13,6 +13,12 @@ jobs:
   - job:
     displayName: Windows Forms
 
+    variables:
+      - group: Windows Build Variables
+
+    pool:
+      vmImage: $(VmImage)
+
     strategy:
       matrix:
         'Any CPU|Debug':
@@ -24,6 +30,13 @@ jobs:
 
   - job:
     displayName: Windows Universal
+
+    variables:
+      - group: Windows Build Variables
+
+    pool:
+      vmImage: $(VmImage)
+
     strategy:
       matrix:
         'x64|Debug':
