@@ -1,0 +1,55 @@
+parameters:
+  # name:
+  displayName:
+  project:
+  platformVariableGroup: ''
+  buildConfigurations: [ Debug, Release ]
+
+  # XamarinAndroid
+  createAppPackage: false
+  buildForSimulator: true
+  msbuildArguments: ''
+
+  debug: false
+
+jobs:
+  - job:
+    displayName: ${{ parameters.displayName }}
+
+    variables:
+      - group: ${{ parameters.platformVariableGroup }}
+
+    pool:
+      vmImage: $(Job.VmImage)
+
+    strategy:
+      matrix:
+        ${{ each configuration in parameters.buildConfigurations }}:
+            "${{ configuration }}":
+              BuildConfiguration: ${{ configuration }}
+
+    steps:
+      - checkout: self
+        clean: false
+
+      - task: Bash@3
+        inputs:
+          targetType: inline
+          script: |
+            ls /Library/Frameworks/Mono.framework/Versions/
+        condition: ${{ parameters.debug }}
+
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: ${{ parameters.project }}
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildArguments: /t:Restore
+
+      - task: XamarinAndroid
+        displayName: Build ${{ parameters.project }}
+        inputs:
+          projectFile: ${{ parameters.project }}
+          configuration: $(BuildConfiguration)
+          createAppPackage: ${{ parameters.createAppPackage }}
+          clean: true
