@@ -21,6 +21,7 @@ jobs:
         /p:EnableCodeSigning=false
         /p:XamarinMacFrameworkVersion=$(XamarinMacFrameworkVersion)
         /p:LangVersion=7.2
+      showvars: true
 
   # - job:
   #   displayName: Windows Forms

@@ -24,7 +24,8 @@ jobs:
       matrix:
         ${{ each configuration in parameters.buildConfigurations }}:
           ${{ each platform in parameters.buildPlatforms }}:
-            ${{ format('{0}|{1}', platform, configuration) }}:
+            # ${{ format('{0}|{1}', platform, configuration) }}:
+            "${{ platform }}|${{ configuration }}":
               BuildPlatform: ${{platform}}
               BuildConfiguration: ${{configuration}}
 
