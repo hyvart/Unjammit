@@ -16,6 +16,9 @@ jobs:
   #   steps:
 
   - template: Templates/MSBuild.yml
+
+    variables:
+      x: y
     parameters:
       # name:
       displayName: Some Test
