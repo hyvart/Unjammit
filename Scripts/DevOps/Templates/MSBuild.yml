@@ -15,7 +15,7 @@ jobs:
       # - group: ${{ parameters.platformVariableGroup }}
     variables:
       ${{ each g in parameters.platformVariableGroups }}:
-        - group: ${{ g }}
+      - group: ${{ g }}
 
     pool:
       vmImage: $(Job.VmImage)
