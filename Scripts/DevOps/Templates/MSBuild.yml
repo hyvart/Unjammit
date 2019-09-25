@@ -1,8 +1,8 @@
 parameters:
-  name:
+  name: ''
   displayName:
   projects:
-  platformVariableGroup: ''
+  platformVariableGroups: []
   buildPlatforms: []
   buildConfigurations: [ Debug, Release ]
   msbuildArguments: ''
@@ -12,9 +12,11 @@ jobs:
   - job: ${{ parameters.name }}
     displayName: ${{ parameters.displayName }}
 
+      # - group: ${{ parameters.platformVariableGroup }}
     variables:
       - group: Global Build Variables
-      - group: ${{ parameters.platformVariableGroup }}
+        ${{ each g in parameters.platformVariableGroups }}:
+        - group: ${{ g }}
 
     pool:
       vmImage: $(Job.VmImage)
@@ -27,36 +29,36 @@ jobs:
               BuildPlatform: ${{platform}}
               BuildConfiguration: ${{configuration}}
 
-    steps:
-      - checkout: self
-        clean: false
+    # steps:
+    #   - checkout: self
+    #     clean: false
 
-      - task: PowerShell@2
-        displayName: Show Variables
-        inputs:
-          targetType: inline
-          script: |
-            echo "[${env:Job_VmImage}]"
-            echo "[${env:Job_TimeoutInMinutes}]"
-            echo "[${env:Job_CancelTimeoutInMinutes}]"
-            echo "[${env:BuildPlatform}]"
-            echo "[${env:BuildConfiguration}]"
-        condition: variables['showVars']
+    #   - task: PowerShell@2
+    #     displayName: Show Variables
+    #     inputs:
+    #       targetType: inline
+    #       script: |
+    #         echo "[${env:Job_VmImage}]"
+    #         echo "[${env:Job_TimeoutInMinutes}]"
+    #         echo "[${env:Job_CancelTimeoutInMinutes}]"
+    #         echo "[${env:BuildPlatform}]"
+    #         echo "[${env:BuildConfiguration}]"
+    #     condition: variables['showVars']
 
-      - task: MSBuild@1
-        displayName: Restore Packages
-        inputs:
-          solution: ${{ parameters.projects }}
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildArguments: /t:Restore
+    #   - task: MSBuild@1
+    #     displayName: Restore Packages
+    #     inputs:
+    #       solution: ${{ parameters.projects }}
+    #       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+    #       msbuildArguments: /t:Restore
 
-      - task: MSBuild@1
-        displayName: ${{ parameters.displayName }}
-        inputs:
-          solution: ${{ parameters.projects }}
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          configuration: $(BuildConfiguration)
-          platform: $(BuildPlatform)
-          msbuildArguments: ${{ parameters.msbuildArguments }}
-          clean: true
-          maximumCpuCount: $(MSBuild.MaximumCpuCount)
+    #   - task: MSBuild@1
+    #     displayName: ${{ parameters.displayName }}
+    #     inputs:
+    #       solution: ${{ parameters.projects }}
+    #       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+    #       configuration: $(BuildConfiguration)
+    #       platform: $(BuildPlatform)
+    #       msbuildArguments: ${{ parameters.msbuildArguments }}
+    #       clean: true
+    #       maximumCpuCount: $(MSBuild.MaximumCpuCount)
