@@ -5,8 +5,8 @@ trigger:
     include:
       - azure/pipes/init
 
-# variables:
-#   - group: Global Build Variables
+variables:
+  - group: Global Build Variables
 
 jobs:
 
@@ -17,8 +17,6 @@ jobs:
 
   - template: Templates/MSBuild.yml
 
-    variables:
-      x: y
     parameters:
       # name:
       displayName: Some Test
@@ -28,7 +26,21 @@ jobs:
         'macOS Build Variables'
       ]
 
+  - job: Other
+    variables:
+      - group: X
 
+    steps:
+    - template: Templates/MSBuild.yml
+
+      parameters:
+        # name:
+        displayName: Some Test
+        project: $(Build.SourcesDirectory)/iOS/Unjammit.iOS.csproj
+        platformVariableGroups: [
+          'Global Build Variables',
+          'macOS Build Variables'
+        ]
 
   # - job:
   #   displayName: Windows Forms
