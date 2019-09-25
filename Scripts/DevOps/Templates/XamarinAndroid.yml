@@ -32,13 +32,6 @@ jobs:
       - checkout: self
         clean: false
 
-      - task: Bash@3
-        inputs:
-          targetType: inline
-          script: |
-            ls /Library/Frameworks/Mono.framework/Versions/
-        condition: ${{ parameters.debug }}
-
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
