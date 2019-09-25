@@ -43,7 +43,7 @@ jobs:
             echo "[${env:Job_CancelTimeoutInMinutes}]"
             echo "[${env:BuildPlatform}]"
             echo "[${env:BuildConfiguration}]"
-        condition: variables['showVars']
+        condition: ${{ parameters.showVars}}
 
       - task: MSBuild@1
         displayName: Restore Packages
