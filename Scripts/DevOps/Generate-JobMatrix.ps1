@@ -14,7 +14,7 @@ foreach ($k in $Matrix.Keys) {
 	$total = $total * $Matrix[$k].Count
 }
 
-$result = @{}
+$result = [ordered]@{}
 [string[]]$keys = $Matrix.Keys
 foreach($i in 0..($total-1)) {
 	$m = 1
@@ -25,7 +25,7 @@ foreach($i in 0..($total-1)) {
 	}
 
 	$newKey = $values -join '|'
-	$result[$newKey] = @{}
+	$result[$newKey] = [ordered]@{}
 	foreach($j in 0..($keys.Count-1)) {
 		$result[$newKey][$keys[$j]] = $values[$j]
 	}
