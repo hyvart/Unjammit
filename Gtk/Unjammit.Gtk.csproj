@@ -81,7 +81,7 @@
       <Version>3.6.0.709228</Version>
     </PackageReference>
     <PackageReference Include="LibVLCSharp.Forms.GTK">
-      <Version>3.2.1</Version>
+      <Version>3.2.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
