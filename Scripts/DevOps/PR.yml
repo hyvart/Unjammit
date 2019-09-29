@@ -36,7 +36,8 @@ jobs:
       platformVariableGroup: macOS Build Variables
       msbuildArguments:
         /p:EnableCodeSigning=false
-        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
+
+#        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
 
   - template: Templates/XamarinAndroid.yml
     parameters:
