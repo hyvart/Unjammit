@@ -32,6 +32,10 @@ jobs:
       - checkout: self
         clean: false
 
+      - task: DotNetCoreInstaller@1
+        inputs:
+          version: 3.x
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
@@ -46,3 +50,4 @@ jobs:
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
           clean: false
+          msbuildArguments: /p:LangVersion='8.0'
