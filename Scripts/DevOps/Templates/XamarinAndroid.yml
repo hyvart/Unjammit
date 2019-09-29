@@ -39,9 +39,9 @@ jobs:
         inputs:
           version: 3.x
 
-      - bash: |
-          curl -O https://download.mono-project.com/archive/${XAMARINANDROID_MONOVERSION}/macos-10-universal/MonoFramework-MDK-${XAMARINANDROID_MONOVERSION}.macos10.xamarin.universal.pkg
-          sudo installer -pkg MonoFramework-MDK-${XAMARINANDROID_MONOVERSION}.macos10.xamarin.universal.pkg -target /
+      - template: InstallMonoMacOS.yml
+        parameters:
+          version: $(XamarinAndroid.MonoVersion)
 
       - task: MSBuild@1
         displayName: Restore Packages

@@ -44,6 +44,10 @@ jobs:
             echo "[${env:BuildConfiguration}]"
         condition: ${{ parameters.showVars}}
 
+      - task: DotNetCoreInstaller@1
+        inputs:
+          version: 3.x
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
