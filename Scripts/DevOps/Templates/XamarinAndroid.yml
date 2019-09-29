@@ -46,4 +46,3 @@ jobs:
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
           clean: false
-          msbuildArguments: /p:LangVersion=7.2
