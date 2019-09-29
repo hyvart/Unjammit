@@ -27,6 +27,8 @@ jobs:
           ls /Library/Frameworks/Mono*/Versions/
           ls /Library/Frameworks/Xamarin*/Versions/
           cat $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh
+          echo 'xcode'
+          ls /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
 
       - template: InstallMonoMacOS.yml
         parameters:
