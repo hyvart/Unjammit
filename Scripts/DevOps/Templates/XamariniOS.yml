@@ -44,6 +44,14 @@ jobs:
             ls /Library/Frameworks/Mono.framework/Versions/
         condition: ${{ parameters.debug }}
 
+      - task: DotNetCoreInstaller@1
+        inputs:
+          version: 3.x
+
+      - bash: |
+          curl -O https://download.mono-project.com/archive/${XAMARINANDROID_MONOVERSION}/macos-10-universal/MonoFramework-MDK-${XAMARINANDROID_MONOVERSION}.macos10.xamarin.universal.pkg
+          sudo installer MonoFramework-MDK-${XAMARINANDROID_MONOVERSION}.macos10.xamarin.universal.pkg -target /
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
