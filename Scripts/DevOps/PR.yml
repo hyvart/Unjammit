@@ -29,7 +29,7 @@ jobs:
       platformVariableGroup: iOS Build Variables
       debug: true
 
-  - template: Templates/MSBuild.yml
+  - template: Templates/BuildMacOS.yml
     parameters:
       displayName: macOS
       project: macOS/Unjammit.macOS.csproj
@@ -38,7 +38,7 @@ jobs:
       msbuildArguments:
         /p:EnableCodeSigning=false
         /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
-        /p:LangVersion=7.2
+
 
   - template: Templates/XamarinAndroid.yml
     parameters:

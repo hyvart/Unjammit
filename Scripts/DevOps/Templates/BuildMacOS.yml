@@ -1,0 +1,54 @@
+parameters:
+  displayName:
+  project:
+  platformVariableGroup:
+  buildConfigurations: [ Debug, Release ]
+  msbuildArguments: ''
+  debug: false
+
+jobs:
+  - job:
+    displayName: ${{ parameters.displayName }}
+
+    variables:
+    - group: ${{ parameters.platformVariableGroup }}
+
+    pool:
+      vmImage: $(Job.VmImage)
+
+    strategy:
+      matrix:
+        ${{ each configuration in parameters.buildConfigurations }}:
+          ${{ each platform in parameters.buildPlatforms }}:
+            "${{ platform }}|${{ configuration }}":
+              BuildPlatform: ${{platform}}
+              BuildConfiguration: ${{configuration}}
+
+    steps:
+      - template: InstallMonoMacOS.yml
+        parameters:
+          version: $(XamarinMac.MonoVersion)
+
+      - task: DotNetCoreInstaller@1
+        inputs:
+          version: 3.x
+
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: ${{ parameters.project }}
+          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildArguments: /t:Restore
+
+      # TODO: Replace with MSBuildSteps
+      - task: MSBuild@1
+        displayName: Build ${{ parameters.project }}
+        inputs:
+          solution: ${{ parameters.project }}
+          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          configuration: $(BuildConfiguration)
+          platform: $(BuildPlatform)
+          msbuildArguments: ${{ parameters.msbuildArguments }}
+          maximumCpuCount: $(MSBuild.MaximumCpuCount)
