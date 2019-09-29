@@ -1,3 +1,6 @@
+# Expected variables:
+#   - XamarinAndroid.MonoVersion
+
 parameters:
   # name:
   displayName:
@@ -32,11 +35,21 @@ jobs:
       - checkout: self
         clean: false
 
+      - task: DotNetCoreInstaller@1
+        inputs:
+          version: 3.x
+
+      - powershell: |
+          ls /Library/Frameworks/Mono.framework/Versions
+          /Library/Frameworks/Mono.framework/Versions/6.0.0/bin/mono /Library/Frameworks/Mono.framework/Versions/6.0.0/lib/mono/msbuild/15.0/bin/Roslyn/csc.exe /langversion:?
+        #condition: ${{ parameters.debug }}
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinAndroid.MonoVersion)/bin/msbuild
           msbuildArguments: /t:Restore
 
       - task: XamarinAndroid@1
@@ -45,4 +58,6 @@ jobs:
           projectFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
-          clean: true
+          clean: false
+          msbuildFile: /Library/Frameworks/Mono.framework/Versions/$(XamarinAndroid.MonoVersion)/bin/msbuild
+
