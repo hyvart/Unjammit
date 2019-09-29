@@ -49,8 +49,8 @@ jobs:
           version: 3.x
 
       - bash: |
-          curl -O https://download.mono-project.com/archive/${XAMARINANDROID_MONOVERSION}/macos-10-universal/MonoFramework-MDK-${XAMARINANDROID_MONOVERSION}.macos10.xamarin.universal.pkg
-          sudo installer -pkg MonoFramework-MDK-${XAMARINANDROID_MONOVERSION}.macos10.xamarin.universal.pkg -target /
+          curl -O https://download.mono-project.com/archive/${XAMARINIOS_MONOVERSION}/macos-10-universal/MonoFramework-MDK-${XAMARINIOS_MONOVERSION}.macos10.xamarin.universal.pkg
+          sudo installer -pkg MonoFramework-MDK-${XAMARINIOS_MONOVERSION}.macos10.xamarin.universal.pkg -target /
 
       - task: MSBuild@1
         displayName: Restore Packages
