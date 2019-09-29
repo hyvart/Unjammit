@@ -10,17 +10,17 @@ variables:
 
 jobs:
 
-  - template: Templates/MSBuild.yml
-    parameters:
-      displayName: Windows Universal
-      project: UWP/Unjammit.UWP.csproj
-      platformVariableGroup: Windows Build Variables
-      buildPlatforms: [ x64, x86 ]
-      # msbuildArguments:
-      #   /p:AppxBundle=Always
-      #   /p:AppxBundlePlatforms="$(BuildPlatform)"
-      #   /p:UapAppxPackageBuildMode=StoreUpload
-      #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+  # - template: Templates/MSBuild.yml
+  #   parameters:
+  #     displayName: Windows Universal
+  #     project: UWP/Unjammit.UWP.csproj
+  #     platformVariableGroup: Windows Build Variables
+  #     buildPlatforms: [ x64, x86 ]
+  #     # msbuildArguments:
+  #     #   /p:AppxBundle=Always
+  #     #   /p:AppxBundlePlatforms="$(BuildPlatform)"
+  #     #   /p:UapAppxPackageBuildMode=StoreUpload
+  #     #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
 
   - template: Templates/XamariniOS.yml
     parameters:
@@ -29,34 +29,33 @@ jobs:
       platformVariableGroup: iOS Build Variables
       debug: true
 
-  - template: Templates/MSBuild.yml
+  - template: Templates/BuildMacOS.yml
     parameters:
       displayName: macOS
       project: macOS/Unjammit.macOS.csproj
       platformVariableGroup: macOS Build Variables
-      buildPlatforms: [ AnyCPU ]
       msbuildArguments:
         /p:EnableCodeSigning=false
-        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
-        /p:LangVersion=7.2
 
-  - template: Templates/XamarinAndroid.yml
-    parameters:
-      displayName: Android
-      project: Android/Unjammit.Android.csproj
-      platformVariableGroup: Android Build Variables
-      # msbuildArguments:
-      #   /p:Configuration=Release
-      #   /p:AndroidKeyStore=true
-      #   /p:AndroidSigningKeyStore="$(AndroidSigningKeyStore)"
-      #   /p:AndroidSigningKeyAlias="$(AndroidSigningKeyAlias)"
-      #   /p:AndroidSigningKeyPass="$(AndroidSigningKeyPass)"
-      #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
-      debug: true
+#        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
 
-  - template: Templates/MSBuild.yml
-    parameters:
-      displayName: Windows Forms
-      project: WinForms/Jam.NET.csproj
-      platformVariableGroup: Windows Build Variables
-      buildPlatforms: [ AnyCPU ]
+  # - template: Templates/XamarinAndroid.yml
+  #   parameters:
+  #     displayName: Android
+  #     project: Android/Unjammit.Android.csproj
+  #     platformVariableGroup: Android Build Variables
+  #     # msbuildArguments:
+  #     #   /p:Configuration=Release
+  #     #   /p:AndroidKeyStore=true
+  #     #   /p:AndroidSigningKeyStore="$(AndroidSigningKeyStore)"
+  #     #   /p:AndroidSigningKeyAlias="$(AndroidSigningKeyAlias)"
+  #     #   /p:AndroidSigningKeyPass="$(AndroidSigningKeyPass)"
+  #     #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
+  #     debug: true
+
+  # - template: Templates/MSBuild.yml
+  #   parameters:
+  #     displayName: Windows Forms
+  #     project: WinForms/Jam.NET.csproj
+  #     platformVariableGroup: Windows Build Variables
+  #     buildPlatforms: [ AnyCPU ]

@@ -1,0 +1,43 @@
+# Expected variables:
+#   - MSBuild.MSBuildArchitecture
+#   - MSBuild.MaximumCpuCount
+
+parameters:
+  project:
+  msbuildArguments: ''
+  debug: false
+
+steps:
+  - task: PowerShell@2
+    displayName: Show Variables
+    inputs:
+      targetType: inline
+      script: |
+        Write-Host "[${env:Job_VmImage}]"
+        Write-Host "[${env:Job_TimeoutInMinutes}]"
+        Write-Host "[${env:Job_CancelTimeoutInMinutes}]"
+        Write-Host "[${env:BuildPlatform}]"
+        Write-Host "[${env:BuildConfiguration}]"
+    condition: ${{ parameters.debug}}
+
+  - task: DotNetCoreInstaller@1
+    inputs:
+      version: 3.x
+
+  - task: MSBuild@1
+    displayName: Restore Packages
+    inputs:
+      solution: ${{ parameters.project }}
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      msbuildArguments: /t:Restore
+
+  - task: MSBuild@1
+    displayName: Build ${{ parameters.project }}
+    inputs:
+      solution: ${{ parameters.project }}
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      configuration: $(BuildConfiguration)
+      platform: $(BuildPlatform)
+      msbuildArguments: ${{ parameters.msbuildArguments }}
+      clean: true
+      maximumCpuCount: $(MSBuild.MaximumCpuCount)
