@@ -36,6 +36,10 @@ jobs:
         inputs:
           version: 3.x
 
+      - powershell: |
+          ls /Library/Frameworks/Mono.framework/Versions/
+          ls /usr/local/share/dotnet/sdk/
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
@@ -50,4 +54,4 @@ jobs:
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
           clean: false
-          msbuildArguments: /p:LangVersion=8.0
+          msbuildArguments: /p:LangVersion=8
