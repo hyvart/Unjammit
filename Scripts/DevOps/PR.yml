@@ -37,7 +37,7 @@ jobs:
       buildPlatforms: [ AnyCPU ]
       msbuildArguments:
         /p:EnableCodeSigning=false
-        /p:XamarinMacFrameworkVersion=$(XamarinMacFrameworkVersion)
+        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
         /p:LangVersion=7.2
 
   - template: Templates/XamarinAndroid.yml
