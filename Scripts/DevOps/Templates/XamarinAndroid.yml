@@ -45,4 +45,4 @@ jobs:
           projectFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
-          clean: true
+          clean: false
