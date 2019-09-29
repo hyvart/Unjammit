@@ -1,0 +1,8 @@
+parameters:
+  version:
+
+steps:
+  - template: InstallMacOSPkg.yml
+    parameters:
+      pkgurl: https://download.mono-project.com/archive/${{parameters.version}}/macos-10-universal/MonoFramework-MDK-${{parameters.version}}.macos10.xamarin.universal.pkg
+      fileName: MonoFramework-MDK-${{parameters.version}}.macos10.xamarin.universal.pkg

@@ -1,0 +1,8 @@
+parameters:
+  pkgUrl:
+  fileName:
+  target: '/'
+
+  - bash: |
+      curl -o ${{ parameters.fileName }} "${{ parameters.pkgUrl }}"
+      sudo installer -pkg ${{ parameters.fileName }} -target ${{ parameters.target }}
