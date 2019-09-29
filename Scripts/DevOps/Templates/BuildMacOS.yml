@@ -19,12 +19,13 @@ jobs:
     strategy:
       matrix:
         ${{ each configuration in parameters.buildConfigurations }}:
-          ${{ each platform in parameters.buildPlatforms }}:
-            "${{ platform }}|${{ configuration }}":
-              BuildPlatform: ${{platform}}
-              BuildConfiguration: ${{configuration}}
+          ${{ configuration }}:
+            BuildConfiguration: ${{configuration}}
 
     steps:
+      - bash: |
+          cat $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh
+
       - template: InstallMonoMacOS.yml
         parameters:
           version: $(XamarinMac.MonoVersion)
@@ -55,6 +56,6 @@ jobs:
           msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           configuration: $(BuildConfiguration)
-          platform: $(BuildPlatform)
+          platform: AnyCPU
           msbuildArguments: ${{ parameters.msbuildArguments }}
           maximumCpuCount: $(MSBuild.MaximumCpuCount)

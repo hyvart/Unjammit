@@ -10,17 +10,17 @@ variables:
 
 jobs:
 
-  - template: Templates/MSBuild.yml
-    parameters:
-      displayName: Windows Universal
-      project: UWP/Unjammit.UWP.csproj
-      platformVariableGroup: Windows Build Variables
-      buildPlatforms: [ x64, x86 ]
-      # msbuildArguments:
-      #   /p:AppxBundle=Always
-      #   /p:AppxBundlePlatforms="$(BuildPlatform)"
-      #   /p:UapAppxPackageBuildMode=StoreUpload
-      #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+  # - template: Templates/MSBuild.yml
+  #   parameters:
+  #     displayName: Windows Universal
+  #     project: UWP/Unjammit.UWP.csproj
+  #     platformVariableGroup: Windows Build Variables
+  #     buildPlatforms: [ x64, x86 ]
+  #     # msbuildArguments:
+  #     #   /p:AppxBundle=Always
+  #     #   /p:AppxBundlePlatforms="$(BuildPlatform)"
+  #     #   /p:UapAppxPackageBuildMode=StoreUpload
+  #     #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
 
   - template: Templates/XamariniOS.yml
     parameters:
@@ -34,11 +34,9 @@ jobs:
       displayName: macOS
       project: macOS/Unjammit.macOS.csproj
       platformVariableGroup: macOS Build Variables
-      buildPlatforms: [ AnyCPU ]
       msbuildArguments:
         /p:EnableCodeSigning=false
         /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
-
 
   - template: Templates/XamarinAndroid.yml
     parameters:
@@ -54,9 +52,9 @@ jobs:
       #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
       debug: true
 
-  - template: Templates/MSBuild.yml
-    parameters:
-      displayName: Windows Forms
-      project: WinForms/Jam.NET.csproj
-      platformVariableGroup: Windows Build Variables
-      buildPlatforms: [ AnyCPU ]
+  # - template: Templates/MSBuild.yml
+  #   parameters:
+  #     displayName: Windows Forms
+  #     project: WinForms/Jam.NET.csproj
+  #     platformVariableGroup: Windows Build Variables
+  #     buildPlatforms: [ AnyCPU ]
