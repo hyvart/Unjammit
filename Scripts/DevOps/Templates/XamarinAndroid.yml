@@ -60,4 +60,4 @@ jobs:
           createAppPackage: ${{ parameters.createAppPackage }}
           clean: false
           msbuildFile: /Library/Frameworks/Mono.framework/Versions/$(XamarinAndroid.MonoVersion)/bin/msbuild
-          msbuildArguments: /p:LangVersion=8
+
