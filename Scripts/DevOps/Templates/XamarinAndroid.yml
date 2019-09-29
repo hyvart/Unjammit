@@ -50,4 +50,4 @@ jobs:
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
           clean: false
-          msbuildArguments: /p:LangVersion='8.0'
+          msbuildArguments: /p:LangVersion=8.0
