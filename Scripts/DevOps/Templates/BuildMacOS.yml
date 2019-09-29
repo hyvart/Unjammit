@@ -24,6 +24,8 @@ jobs:
 
     steps:
       - bash: |
+          ls /Library/Frameworks/Mono*/Versions/
+          ls /Library/Frameworks/Xamarin*/Versions/
           cat $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh
 
       - template: InstallMonoMacOS.yml
