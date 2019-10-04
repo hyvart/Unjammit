@@ -24,22 +24,13 @@ jobs:
 
     steps:
       - bash: |
-          # echo "mono*"
-          # ls /Library/Frameworks/Mono*/Versions/
-          # echo "xam*"
-          # ls /Library/Frameworks/Xamarin*/Versions/
-          # echo "SH"
           cat $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh
           echo 'xcode'
-          # ls /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
           ls /Library/Frameworks/Mono.framework/Versions/
           ls /Library/Frameworks/Xamarin.Mac.framework/Versions/
           ls -ld /Applications/Xcode*
 
       - bash: |
-          # sudo rm -f /Library/Frameworks/Xamarin.Mac.framework/Versions/Current
-          # sudo ln -s /Library/Frameworks/Xamarin.Mac.framework/Versions/${XAMARINMAC_FRAMEWORKVERSION} /Library/Frameworks/Xamarin.Mac.framework/Versions/Current
-
           echo 'currmono at /Library/Frameworks/Mono.framework/Versions/Current'
           ls -l /Library/Frameworks/Mono.framework/Versions/Current
           sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
@@ -57,32 +48,8 @@ jobs:
       #   parameters:
       #     version: $(XamarinMac.MonoVersion)
 
-      # - bash: |
-      #     echo '/'
-      #     ls /Library/Frameworks/Mono.framework/
-      #     echo '/ext'
-      #     ls /Library/Frameworks/Mono.framework/External/
-      #     echo '/ext/xb'
-      #     ls /Library/Frameworks/Mono.framework/External/xbuild/
-      #     echo '/ext/xb/xam'
-      #     ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
-      #     echo '/ext/xb/xam/mac'
-      #     ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
-
-      # - bash: |
-      #     $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINMAC_MONOVERSION
-
-      # - bash: |
-      #     echo '/'
-      #     ls /Library/Frameworks/Mono.framework/
-      #     echo '/ext'
-      #     ls /Library/Frameworks/Mono.framework/External/
-      #     echo '/ext/xb'
-      #     ls /Library/Frameworks/Mono.framework/External/xbuild/
-      #     echo '/ext/xb/xam'
-      #     ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
-      #     echo '/ext/xb/xam/mac'
-      #     ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
+      - bash: |
+          dotnet --version
 
       - task: DotNetCoreInstaller@1
         inputs:
