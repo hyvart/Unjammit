@@ -51,15 +51,15 @@ jobs:
       - bash: |
           dotnet --version
 
-      - task: DotNetCoreInstaller@1
-        inputs:
-          packageType: sdk
-          version: $(DotNetCoreSdk.Version)
+      # - task: DotNetCoreInstaller@1
+      #   inputs:
+      #     packageType: sdk
+      #     version: $(DotNetCoreSdk.Version)
 
-      - task: UseDotNet@2
-        inputs:
-          packageType: sdk
-          version: $(DotNetCoreSdk.Version)
+      # - task: UseDotNet@2
+      #   inputs:
+      #     packageType: sdk
+      #     version: $(DotNetCoreSdk.Version)
 
       - bash: |
           dotnet --version
