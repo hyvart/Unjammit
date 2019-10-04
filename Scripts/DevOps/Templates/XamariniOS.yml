@@ -55,6 +55,12 @@ jobs:
       - bash: |
           $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINIOS_MONOVERSION
 
+      - bash: |
+          ls /Library/Frameworks/Mono.framework/
+          ls /Library/Frameworks/Mono.framework/External/
+          ls /Library/Frameworks/Mono.framework/External/xbuild/
+          ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
