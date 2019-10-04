@@ -84,10 +84,10 @@ jobs:
       #     echo '/ext/xb/xam/mac'
       #     ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
 
-      - task: DotNetCoreInstaller@1
-        inputs:
-          packageType: sdk
-          version: $(DotNetCoreSdk.Version)
+      # - task: DotNetCoreInstaller@1
+      #   inputs:
+      #     packageType: sdk
+      #     version: $(DotNetCoreSdk.Version)
 
       - task: UseDotNet@2
         inputs:
