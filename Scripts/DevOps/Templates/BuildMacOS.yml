@@ -44,9 +44,13 @@ jobs:
           $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINMAC_MONOVERSION
 
       - bash: |
+          echo '/'
           ls /Library/Frameworks/Mono.framework/
+          echo '/ext'
           ls /Library/Frameworks/Mono.framework/External/
+          echo '/ext/xb'
           ls /Library/Frameworks/Mono.framework/External/xbuild/
+          echo '/ext/xb/xam'
           ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
 
       - task: DotNetCoreInstaller@1
