@@ -47,6 +47,8 @@ jobs:
           echo 'newmono at /Library/Frameworks/Mono.framework/Versions/Current'
           ls -l /Library/Frameworks/Mono.framework/Versions/Current
 
+          dotnet --list-sdks
+
 
       # - template: InstallMonoMacOS.yml
       #   parameters:
