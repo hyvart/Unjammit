@@ -113,6 +113,6 @@ jobs:
           platform: AnyCPU
           msbuildArguments:
             ${{ parameters.msbuildArguments }}
-            /p:AutoGenerateBindingRedirects=true
+#            /p:AutoGenerateBindingRedirects=true
 # /p:DepsFileGenerationMode=old
           maximumCpuCount: $(MSBuild.MaximumCpuCount)
