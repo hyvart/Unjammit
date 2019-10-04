@@ -49,6 +49,9 @@ jobs:
 
           dotnet --list-sdks
 
+          echo "path:"
+          echo $PATH
+
 
       # - template: InstallMonoMacOS.yml
       #   parameters:
