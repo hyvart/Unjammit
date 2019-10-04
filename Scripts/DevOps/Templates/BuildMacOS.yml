@@ -73,15 +73,15 @@ jobs:
       #     echo '/ext/xb/xam/mac'
       #     ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
 
-      - task: DotNetCoreInstaller@1
-        inputs:
-          packageType: sdk
-          version: 3.x
+      # - task: DotNetCoreInstaller@1
+      #   inputs:
+      #     packageType: sdk
+      #     version: 3.x
 
-      - task: UseDotNet@2
-        inputs:
-          packageType: sdk
-          version: 3.x
+      # - task: UseDotNet@2
+      #   inputs:
+      #     packageType: sdk
+      #     version: 3.x
 
       - task: MSBuild@1
         displayName: Restore Packages
