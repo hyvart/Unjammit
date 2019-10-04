@@ -44,7 +44,7 @@ jobs:
           echo '/ext/xb/xam'
           ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
           echo '/ext/xb/xam/mac'
-          ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
+          ll /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
 
       - bash: |
           $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINMAC_MONOVERSION
@@ -59,7 +59,7 @@ jobs:
           echo '/ext/xb/xam'
           ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
           echo '/ext/xb/xam/mac'
-          ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
+          ll /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
 
       - task: DotNetCoreInstaller@1
         inputs:
