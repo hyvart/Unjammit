@@ -52,6 +52,9 @@ jobs:
         parameters:
           version: $(XamariniOS.MonoVersion)
 
+      - bash: |
+          $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINIOS_MONOVERSION
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
