@@ -24,45 +24,47 @@ jobs:
 
     steps:
       - bash: |
-          echo "mono*"
-          ls /Library/Frameworks/Mono*/Versions/
-          echo "xam*"
-          ls /Library/Frameworks/Xamarin*/Versions/
-          echo "SH"
+          # echo "mono*"
+          # ls /Library/Frameworks/Mono*/Versions/
+          # echo "xam*"
+          # ls /Library/Frameworks/Xamarin*/Versions/
+          # echo "SH"
           cat $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh
           echo 'xcode'
-          ls /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+          # ls /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+          ls /Library/Frameworks/Mono.framework/Versions/
+          ls /Library/Frameworks/Xamarin.*.framework/Versions/
 
-      - template: InstallMonoMacOS.yml
-        parameters:
-          version: $(XamarinMac.MonoVersion)
+      # - template: InstallMonoMacOS.yml
+      #   parameters:
+      #     version: $(XamarinMac.MonoVersion)
 
-      - bash: |
-          echo '/'
-          ls /Library/Frameworks/Mono.framework/
-          echo '/ext'
-          ls /Library/Frameworks/Mono.framework/External/
-          echo '/ext/xb'
-          ls /Library/Frameworks/Mono.framework/External/xbuild/
-          echo '/ext/xb/xam'
-          ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
-          echo '/ext/xb/xam/mac'
-          ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
+      # - bash: |
+      #     echo '/'
+      #     ls /Library/Frameworks/Mono.framework/
+      #     echo '/ext'
+      #     ls /Library/Frameworks/Mono.framework/External/
+      #     echo '/ext/xb'
+      #     ls /Library/Frameworks/Mono.framework/External/xbuild/
+      #     echo '/ext/xb/xam'
+      #     ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
+      #     echo '/ext/xb/xam/mac'
+      #     ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
 
       - bash: |
           $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINMAC_MONOVERSION
 
-      - bash: |
-          echo '/'
-          ls /Library/Frameworks/Mono.framework/
-          echo '/ext'
-          ls /Library/Frameworks/Mono.framework/External/
-          echo '/ext/xb'
-          ls /Library/Frameworks/Mono.framework/External/xbuild/
-          echo '/ext/xb/xam'
-          ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
-          echo '/ext/xb/xam/mac'
-          ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
+      # - bash: |
+      #     echo '/'
+      #     ls /Library/Frameworks/Mono.framework/
+      #     echo '/ext'
+      #     ls /Library/Frameworks/Mono.framework/External/
+      #     echo '/ext/xb'
+      #     ls /Library/Frameworks/Mono.framework/External/xbuild/
+      #     echo '/ext/xb/xam'
+      #     ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
+      #     echo '/ext/xb/xam/mac'
+      #     ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
 
       - task: DotNetCoreInstaller@1
         inputs:

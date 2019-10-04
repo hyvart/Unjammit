@@ -22,12 +22,12 @@ jobs:
   #     #   /p:UapAppxPackageBuildMode=StoreUpload
   #     #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
 
-  - template: Templates/XamariniOS.yml
-    parameters:
-      displayName: iOS
-      project: iOS/Unjammit.iOS.csproj
-      platformVariableGroup: iOS Build Variables
-      debug: true
+  # - template: Templates/XamariniOS.yml
+  #   parameters:
+  #     displayName: iOS
+  #     project: iOS/Unjammit.iOS.csproj
+  #     platformVariableGroup: iOS Build Variables
+  #     debug: true
 
   - template: Templates/BuildMacOS.yml
     parameters:
@@ -39,19 +39,19 @@ jobs:
 
 #        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
 
-  - template: Templates/XamarinAndroid.yml
-    parameters:
-      displayName: Android
-      project: Android/Unjammit.Android.csproj
-      platformVariableGroup: Android Build Variables
-      # msbuildArguments:
-      #   /p:Configuration=Release
-      #   /p:AndroidKeyStore=true
-      #   /p:AndroidSigningKeyStore="$(AndroidSigningKeyStore)"
-      #   /p:AndroidSigningKeyAlias="$(AndroidSigningKeyAlias)"
-      #   /p:AndroidSigningKeyPass="$(AndroidSigningKeyPass)"
-      #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
-      debug: true
+  # - template: Templates/XamarinAndroid.yml
+  #   parameters:
+  #     displayName: Android
+  #     project: Android/Unjammit.Android.csproj
+  #     platformVariableGroup: Android Build Variables
+  #     # msbuildArguments:
+  #     #   /p:Configuration=Release
+  #     #   /p:AndroidKeyStore=true
+  #     #   /p:AndroidSigningKeyStore="$(AndroidSigningKeyStore)"
+  #     #   /p:AndroidSigningKeyAlias="$(AndroidSigningKeyAlias)"
+  #     #   /p:AndroidSigningKeyPass="$(AndroidSigningKeyPass)"
+  #     #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
+  #     debug: true
 
   # - template: Templates/MSBuild.yml
   #   parameters:
