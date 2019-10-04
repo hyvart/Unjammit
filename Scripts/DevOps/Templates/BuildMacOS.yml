@@ -61,6 +61,9 @@ jobs:
           packageType: sdk
           version: $(DotNetCoreSdk.Version)
 
+      - bash: |
+          dotnet --version
+
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
