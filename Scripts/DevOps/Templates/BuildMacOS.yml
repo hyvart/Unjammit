@@ -35,6 +35,13 @@ jobs:
           ls /Library/Frameworks/Mono.framework/Versions/
           ls /Library/Frameworks/Xamarin.*.framework/Versions/
 
+      - bash: |
+          sudo rm -f /Library/Frameworks/Xamarin.Mac.framework/Versions/Current
+          sudo ln -s /Library/Frameworks/Xamarin.Mac.framework/Versions/${XAMARINMAC_FRAMEWORKVERSION} /Library/Frameworks/Xamarin.Mac.framework/Versions/Current
+
+          sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
+          sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINMAC_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
+
       # - template: InstallMonoMacOS.yml
       #   parameters:
       #     version: $(XamarinMac.MonoVersion)
@@ -51,8 +58,8 @@ jobs:
       #     echo '/ext/xb/xam/mac'
       #     ls -l /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Mac/
 
-      - bash: |
-          $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINMAC_MONOVERSION
+      # - bash: |
+      #     $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINMAC_MONOVERSION
 
       # - bash: |
       #     echo '/'
