@@ -81,12 +81,12 @@ jobs:
       - task: DotNetCoreInstaller@1
         inputs:
           packageType: sdk
-          version: 2.2.105
+          version: 2.2.104
 
       - task: UseDotNet@2
         inputs:
           packageType: sdk
-          version: 2.2.105
+          version: 2.2.104
 
       - task: MSBuild@1
         displayName: Restore Packages
