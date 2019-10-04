@@ -67,7 +67,7 @@ jobs:
         displayName: Restore Packages
         inputs:
           solution: ${{ parameters.project }}
-          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
+          #msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           msbuildArguments: /t:Restore
 
@@ -76,7 +76,7 @@ jobs:
         displayName: Build ${{ parameters.project }}
         inputs:
           solution: ${{ parameters.project }}
-          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
+          #msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           configuration: $(BuildConfiguration)
           platform: AnyCPU
