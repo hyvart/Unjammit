@@ -3,7 +3,10 @@ name: $(BuildId)
 trigger:
   branches:
     include:
-      - azure/pipes/init
+      - azure/pipes/test
+
+pr:
+  - master
 
 variables:
   - group: Global Build Variables
@@ -16,11 +19,12 @@ jobs:
       project: UWP/Unjammit.UWP.csproj
       platformVariableGroup: Windows Build Variables
       buildPlatforms: [ x64, x86 ]
-      # msbuildArguments:
-      #   /p:AppxBundle=Always
-      #   /p:AppxBundlePlatforms="$(BuildPlatform)"
-      #   /p:UapAppxPackageBuildMode=StoreUpload
-      #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+      msbuildArguments:
+        /p:AppxBundlePlatforms="$(BuildPlatform)"
+        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\"
+        /p:AppxBundle=Always
+        /p:UapAppxPackageBuildMode=StoreUpload
+        /p:AppxPackageSigningEnabled=false
 
   - template: Templates/XamariniOS.yml
     parameters:
