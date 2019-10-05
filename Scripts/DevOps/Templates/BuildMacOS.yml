@@ -67,7 +67,8 @@ jobs:
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
-          solution: ${{ parameters.project }}
+          # solution: ${{ parameters.project }}
+          solution: Unjammit.sln
           #msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           msbuildArguments: /t:Restore
