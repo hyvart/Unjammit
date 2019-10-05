@@ -70,8 +70,6 @@ jobs:
           clean: true
           packageApp: ${{ parameters.packageApp }}
           buildForSimulator: ${{ parameters.buildForSimulator }}
-          args:
-            ${{ parameters.xcodeArguments }}
-            /p:MtouchExtraArgs='-v -v -v -v'
+          args: ${{ parameters.xcodeArguments }}
           signingIdentity: ${{ parameters.signingIdentity }}
           signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
