@@ -47,7 +47,7 @@ jobs:
           ls -l /Library/Frameworks/Mono.framework/Versions/Current
 
       - bash: |
-          ll /Library/Frameworks/Xamarin.Android.framework/Versions/
+          ls -l /Library/Frameworks/Xamarin.Android.framework/Versions/
 
       - task: DotNetCoreInstaller@1
         inputs:
