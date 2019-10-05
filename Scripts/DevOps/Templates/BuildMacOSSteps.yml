@@ -1,6 +1,8 @@
 # Expected variables:
+#   - BuildConfiguration
+#   - DotNetCoreSdk.Version
 #   - MSBuild.MSBuildArchitecture
-#   - MSBuild.MaximumCpuCount
+#   - XamarinMac.MonoVersion
 
 parameters:
   project:
@@ -8,21 +10,22 @@ parameters:
   debug: false
 
 steps:
-  - task: PowerShell@2
-    displayName: Show Variables
-    inputs:
-      targetType: inline
-      script: |
-        Write-Host "[${env:Job_VmImage}]"
-        Write-Host "[${env:Job_TimeoutInMinutes}]"
-        Write-Host "[${env:Job_CancelTimeoutInMinutes}]"
-        Write-Host "[${env:BuildPlatform}]"
-        Write-Host "[${env:BuildConfiguration}]"
-    condition: ${{ parameters.debug }}
+  - template: SetMacOSFrameworkVersion.yml
+    parameters:
+      framework: Mono
+      version: $(XamarinMac.MonoVersion)
 
   - task: DotNetCoreInstaller@1
+    displayName: Install .NET Core $(DotNetCoreSdk.Version)
     inputs:
-      version: 3.x
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
+
+  - task: UseDotNet@2
+    displayName: Use .NET Core $(DotNetCoreSdk.Version)
+    inputs:
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
 
   - task: MSBuild@1
     displayName: Restore Packages
@@ -31,13 +34,14 @@ steps:
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
       msbuildArguments: /t:Restore
 
+  # TODO: Replace with MSBuildSteps
   - task: MSBuild@1
     displayName: Build ${{ parameters.project }}
     inputs:
       solution: ${{ parameters.project }}
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
       configuration: $(BuildConfiguration)
-      platform: $(BuildPlatform)
-      msbuildArguments: ${{ parameters.msbuildArguments }}
-      clean: true
+      platform: AnyCPU
+      msbuildArguments:
+        ${{ parameters.msbuildArguments }}
       maximumCpuCount: $(MSBuild.MaximumCpuCount)

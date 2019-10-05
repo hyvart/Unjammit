@@ -27,36 +27,7 @@ jobs:
             BuildConfiguration: ${{configuration}}
 
     steps:
-      - template: SetMacOSFrameworkVersion.yml
+      - template: BuildMacOSSteps.yml
         parameters:
-          framework: Mono
-          version: $(XamarinMac.MonoVersion)
-
-      - task: DotNetCoreInstaller@1
-        inputs:
-          packageType: sdk
-          version: $(DotNetCoreSdk.Version)
-
-      - task: UseDotNet@2
-        inputs:
-          packageType: sdk
-          version: $(DotNetCoreSdk.Version)
-
-      - task: MSBuild@1
-        displayName: Restore Packages
-        inputs:
-          solution: ${{ parameters.project }}
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildArguments: /t:Restore
-
-      # TODO: Replace with MSBuildSteps
-      - task: MSBuild@1
-        displayName: Build ${{ parameters.project }}
-        inputs:
-          solution: ${{ parameters.project }}
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          configuration: $(BuildConfiguration)
-          platform: AnyCPU
-          msbuildArguments:
-            ${{ parameters.msbuildArguments }}
-          maximumCpuCount: $(MSBuild.MaximumCpuCount)
+          project: ${{ parameters.project }}
+          msbuildArguments: ${{ parameters.msbuildArguments }}

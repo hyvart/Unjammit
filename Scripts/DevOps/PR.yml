@@ -3,13 +3,13 @@ name: $(BuildId)
 trigger:
   branches:
     include:
-      - azure/pipes/test
+      - ci/test/pr*
 
 pr:
   - master
 
 variables:
-  - group: Global Build Variables
+  - group: Build - Global
 
 jobs:
 
@@ -17,27 +17,26 @@ jobs:
     parameters:
       displayName: Windows Universal
       project: UWP/Unjammit.UWP.csproj
-      platformVariableGroup: Windows Build Variables
+      platformVariableGroup: Build - Windows
       buildPlatforms: [ x64, x86 ]
       msbuildArguments:
         /p:AppxBundlePlatforms="$(BuildPlatform)"
-        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\"
+        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
         /p:AppxBundle=Always
         /p:UapAppxPackageBuildMode=StoreUpload
-        /p:AppxPackageSigningEnabled=false
 
   - template: Templates/XamariniOS.yml
     parameters:
       displayName: iOS
       project: iOS/Unjammit.iOS.csproj
-      platformVariableGroup: iOS Build Variables
+      platformVariableGroup: Build - iOS
       debug: true
 
   - template: Templates/BuildMacOS.yml
     parameters:
       displayName: macOS
       project: macOS/Unjammit.macOS.csproj
-      platformVariableGroup: macOS Build Variables
+      platformVariableGroup: Build - macOS
       msbuildArguments:
         /p:EnableCodeSigning=false
 
@@ -45,7 +44,7 @@ jobs:
     parameters:
       displayName: Android
       project: Android/Unjammit.Android.csproj
-      platformVariableGroup: Android Build Variables
+      platformVariableGroup: Build - Android
       # msbuildArguments:
       #   /p:Configuration=Release
       #   /p:AndroidKeyStore=true
@@ -59,5 +58,5 @@ jobs:
     parameters:
       displayName: Windows Forms
       project: WinForms/Jam.NET.csproj
-      platformVariableGroup: Windows Build Variables
+      platformVariableGroup: Build - Windows
       buildPlatforms: [ AnyCPU ]
