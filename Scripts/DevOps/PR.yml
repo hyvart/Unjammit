@@ -36,7 +36,6 @@ jobs:
       platformVariableGroup: macOS Build Variables
       msbuildArguments:
         /p:EnableCodeSigning=false
-        /p:DepsFileGenerationMode=old
 
 #        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
 
