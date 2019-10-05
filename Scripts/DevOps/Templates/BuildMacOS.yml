@@ -61,5 +61,4 @@ jobs:
           msbuildArguments:
             ${{ parameters.msbuildArguments }}
             /p:DepsFileGenerationMode=old
-            /p:AutoGenerateBindingRedirects=true
           maximumCpuCount: $(MSBuild.MaximumCpuCount)
