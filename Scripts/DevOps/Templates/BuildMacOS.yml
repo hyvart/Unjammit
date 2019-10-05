@@ -1,3 +1,7 @@
+# Expected variables:
+#   - DotNetCoreSdk.Version
+#   - XamarinMac.MonoVersion
+
 parameters:
   displayName:
   project:

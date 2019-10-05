@@ -1,4 +1,5 @@
 # Expected variables:
+#   - DotNetCoreSdk.Version
 #   - XamariniOS.MonoVersion
 
 parameters:
@@ -37,36 +38,32 @@ jobs:
       - checkout: self
         clean: false
 
-      - task: Bash@3
-        inputs:
-          targetType: inline
-          script: |
-            ls /Library/Frameworks/Mono.framework/Versions/
-        condition: ${{ parameters.debug }}
+    steps:
+      - bash: |
+          ls -l /Library/Frameworks/Mono.framework/Versions/Current
+          sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
+          sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINMAC_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
+          ls -l /Library/Frameworks/Mono.framework/Versions/Current
+
+      # - template: InstallMonoMacOS.yml
+      #   parameters:
+      #     version: $(XamariniOS.MonoVersion)
 
       - task: DotNetCoreInstaller@1
         inputs:
-          version: 3.x
+          packageType: sdk
+          version: $(DotNetCoreSdk.Version)
 
-      - template: InstallMonoMacOS.yml
-        parameters:
-          version: $(XamariniOS.MonoVersion)
-
-      - bash: |
-          $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh $XAMARINIOS_MONOVERSION
-
-      - bash: |
-          ls /Library/Frameworks/Mono.framework/
-          ls /Library/Frameworks/Mono.framework/External/
-          ls /Library/Frameworks/Mono.framework/External/xbuild/
-          ls /Library/Frameworks/Mono.framework/External/xbuild/Xamarin/
+      - task: UseDotNet@2
+        inputs:
+          packageType: sdk
+          version: $(DotNetCoreSdk.Version)
 
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamariniOS.MonoVersion)/bin/msbuild
           msbuildArguments: /t:Restore
 
       - task: XamariniOS@2
@@ -78,6 +75,5 @@ jobs:
           packageApp: ${{ parameters.packageApp }}
           buildForSimulator: ${{ parameters.buildForSimulator }}
           args: ${{ parameters.xcodeArguments }}
-          mdtoolFile: /Library/Frameworks/Mono.framework/Versions/$(XamariniOS.MonoVersion)/bin/msbuild
           signingIdentity: ${{ parameters.signingIdentity }}
           signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
