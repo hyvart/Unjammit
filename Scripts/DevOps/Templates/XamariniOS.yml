@@ -35,12 +35,6 @@ jobs:
               BuildConfiguration: ${{ configuration }}
 
     steps:
-      - bash: |
-          ls -l /Library/Frameworks/Mono.framework/Versions/Current
-          sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
-          sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINIOS_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
-          ls -l /Library/Frameworks/Mono.framework/Versions/Current
-
       - template: SetMacOSFrameworkVersion.yml
         parameters:
           framework: Mono
