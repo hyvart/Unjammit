@@ -60,5 +60,4 @@ jobs:
           platform: AnyCPU
           msbuildArguments:
             ${{ parameters.msbuildArguments }}
-            /p:DepsFileGenerationMode=old
           maximumCpuCount: $(MSBuild.MaximumCpuCount)
