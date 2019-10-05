@@ -38,10 +38,6 @@ jobs:
           framework: Mono
           version: $(XamarinMac.MonoVersion)
 
-      # - template: InstallMonoMacOS.yml
-      #   parameters:
-      #     version: $(XamarinMac.MonoVersion)
-
       - task: DotNetCoreInstaller@1
         inputs:
           packageType: sdk

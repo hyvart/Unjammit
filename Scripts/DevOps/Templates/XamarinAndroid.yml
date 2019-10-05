@@ -37,21 +37,15 @@ jobs:
       - checkout: self
         clean: false
 
-      # - template: InstallMonoMacOS.yml
-      #   parameters:
-      #     version: $(XamarinAndroid.MonoVersion)
+      - template: SetMacOSFrameworkVersion.yml
+        parameters:
+          framework: Mono
+          version: $(XamarinAndroid.MonoVersion)
 
-      - bash: |
-          ls -l /Library/Frameworks/Mono.framework/Versions/Current
-          sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
-          sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINANDROID_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
-          ls -l /Library/Frameworks/Mono.framework/Versions/Current
-
-      - bash: |
-          ls -l /Library/Frameworks/Xamarin.Android.framework/Versions/Current
-          sudo rm -f /Library/Frameworks/Xamarin.Android.framework/Versions/Current
-          sudo ln -s /Library/Frameworks/Xamarin.Android.framework/Versions/${XAMARINANDROID_VERSION} /Library/Frameworks/Xamarin.Android.framework/Versions/Current
-          ls -l /Library/Frameworks/Xamarin.Android.framework/Versions/Current
+      - template: SetMacOSFrameworkVersion.yml
+        parameters:
+          framework: Xamarin.Android
+          version: $(XamarinAndroid.Version)
 
       - task: DotNetCoreInstaller@1
         inputs:
