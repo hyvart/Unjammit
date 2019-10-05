@@ -35,10 +35,6 @@ jobs:
               BuildConfiguration: ${{ configuration }}
 
     steps:
-      - checkout: self
-        clean: false
-
-    steps:
       - bash: |
           ls -l /Library/Frameworks/Mono.framework/Versions/Current
           sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
