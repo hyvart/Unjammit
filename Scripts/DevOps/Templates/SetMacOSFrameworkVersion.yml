@@ -7,6 +7,7 @@ steps:
     displayName: Setting ${{ parameters.framework }} to version ${{ parameters.version }}
     inputs:
       script: |
+        echo "[/Library/Frameworks/${{ parameters.framework }}.framework/Versions/${{ parameters.version }}]"
         ls -l /Library/Frameworks/${{ parameters.framework }}.framework/Versions/Current
         sudo rm -f /Library/Frameworks/${{ parameters.framework }}.framework/Versions/Current
         sudo ln -s /Library/Frameworks/${{ parameters.framework }}.framework/Versions/${{ parameters.version }} /Library/Frameworks/${{ parameters.framework }}.framework/Versions/Current
