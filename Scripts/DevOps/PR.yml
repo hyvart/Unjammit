@@ -32,7 +32,7 @@ jobs:
   - template: Templates/BuildMacOS.yml
     parameters:
       displayName: macOS
-      project: Core/Unjammit.Core.csproj
+      project: macOS/Unjammit.macOS.csproj
       platformVariableGroup: macOS Build Variables
       msbuildArguments:
         /p:EnableCodeSigning=false
