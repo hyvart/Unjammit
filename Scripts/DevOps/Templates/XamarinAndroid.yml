@@ -1,6 +1,7 @@
 # Expected variables:
 #   - DotNetCoreSdk.Version
 #   - XamarinAndroid.MonoVersion
+#   - XamarinAndroid.Version
 
 parameters:
   # name:
@@ -47,7 +48,10 @@ jobs:
           ls -l /Library/Frameworks/Mono.framework/Versions/Current
 
       - bash: |
-          ls -l /Library/Frameworks/Xamarin.Android.framework/Versions/
+          ls -l /Library/Frameworks/Xamarin.Android.framework/Versions/Current
+          sudo rm -f /Library/Frameworks/Xamarin.Android.framework/Versions/Current
+          sudo ln -s /Library/Frameworks/Xamarin.Android.framework/Versions/${XAMARINANDROID_VERSION} /Library/Frameworks/Xamarin.Android.framework/Versions/Current
+          ls -l /Library/Frameworks/Xamarin.Android.framework/Versions/Current
 
       - task: DotNetCoreInstaller@1
         inputs:
