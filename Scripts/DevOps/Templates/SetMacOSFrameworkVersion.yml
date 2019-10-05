@@ -6,6 +6,7 @@ steps:
   - task: Bash@3
     displayName: Setting ${{ parameters.framework }} to version ${{ parameters.version }}
     inputs:
+      targetType: inline
       script: |
         echo "[/Library/Frameworks/${{ parameters.framework }}.framework/Versions/${{ parameters.version }}]"
         ls -l /Library/Frameworks/${{ parameters.framework }}.framework/Versions/Current
