@@ -29,27 +29,27 @@ jobs:
   #     platformVariableGroup: iOS Build Variables
   #     debug: true
 
-  # - template: Templates/BuildMacOS.yml
-  #   parameters:
-  #     displayName: macOS
-  #     project: macOS/Unjammit.macOS.csproj
-  #     platformVariableGroup: macOS Build Variables
-  #     msbuildArguments:
-  #       /p:EnableCodeSigning=false
-
-  - template: Templates/XamarinAndroid.yml
+  - template: Templates/BuildMacOS.yml
     parameters:
-      displayName: Android
-      project: Android/Unjammit.Android.csproj
-      platformVariableGroup: Android Build Variables
-      # msbuildArguments:
-      #   /p:Configuration=Release
-      #   /p:AndroidKeyStore=true
-      #   /p:AndroidSigningKeyStore="$(AndroidSigningKeyStore)"
-      #   /p:AndroidSigningKeyAlias="$(AndroidSigningKeyAlias)"
-      #   /p:AndroidSigningKeyPass="$(AndroidSigningKeyPass)"
-      #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
-      debug: true
+      displayName: macOS
+      project: macOS/Unjammit.macOS.csproj
+      platformVariableGroup: macOS Build Variables
+      msbuildArguments:
+        /p:EnableCodeSigning=false
+
+  # - template: Templates/XamarinAndroid.yml
+  #   parameters:
+  #     displayName: Android
+  #     project: Android/Unjammit.Android.csproj
+  #     platformVariableGroup: Android Build Variables
+  #     # msbuildArguments:
+  #     #   /p:Configuration=Release
+  #     #   /p:AndroidKeyStore=true
+  #     #   /p:AndroidSigningKeyStore="$(AndroidSigningKeyStore)"
+  #     #   /p:AndroidSigningKeyAlias="$(AndroidSigningKeyAlias)"
+  #     #   /p:AndroidSigningKeyPass="$(AndroidSigningKeyPass)"
+  #     #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
+  #     debug: true
 
   # - template: Templates/MSBuild.yml
   #   parameters:

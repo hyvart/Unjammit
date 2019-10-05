@@ -33,6 +33,11 @@ jobs:
           sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINMAC_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
           ls -l /Library/Frameworks/Mono.framework/Versions/Current
 
+      - template: SetMacOSFrameworkVersion.yml
+        parameters:
+          framework: Mono
+          version: $(XamarinMac.MonoVersion)
+
       # - template: InstallMonoMacOS.yml
       #   parameters:
       #     version: $(XamarinMac.MonoVersion)
