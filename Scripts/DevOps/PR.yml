@@ -37,7 +37,6 @@ jobs:
       msbuildArguments:
         /p:EnableCodeSigning=false
         /p:DepsFileGenerationMode=old
-      buildConfigurations: ['Debug']
 
 #        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
 

@@ -23,33 +23,9 @@ jobs:
             BuildConfiguration: ${{configuration}}
 
     steps:
-      - bash: |
-          cat $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh
-          echo 'xcode'
-          ls /Library/Frameworks/Mono.framework/Versions/
-          ls /Library/Frameworks/Xamarin.Mac.framework/Versions/
-          ls -ld /Applications/Xcode*
-
-      - bash: |
-          echo 'currmono at /Library/Frameworks/Mono.framework/Versions/Current'
-          ls -l /Library/Frameworks/Mono.framework/Versions/Current
-          sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
-          sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINMAC_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
-          echo 'newmono at /Library/Frameworks/Mono.framework/Versions/Current'
-          ls -l /Library/Frameworks/Mono.framework/Versions/Current
-
-          dotnet --list-sdks
-
-          echo "path:"
-          echo $PATH
-
-
       # - template: InstallMonoMacOS.yml
       #   parameters:
       #     version: $(XamarinMac.MonoVersion)
-
-      - bash: |
-          dotnet --version
 
       - task: DotNetCoreInstaller@1
         inputs:
@@ -61,15 +37,10 @@ jobs:
           packageType: sdk
           version: $(DotNetCoreSdk.Version)
 
-      - bash: |
-          dotnet --version
-
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
           solution: ${{ parameters.project }}
-          # solution: Unjammit.sln
-          #msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           msbuildArguments: /t:Restore
 
@@ -78,12 +49,9 @@ jobs:
         displayName: Build ${{ parameters.project }}
         inputs:
           solution: ${{ parameters.project }}
-          #msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinMac.MonoVersion)/bin/msbuild
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
           configuration: $(BuildConfiguration)
           platform: AnyCPU
           msbuildArguments:
             ${{ parameters.msbuildArguments }}
-#            /p:AutoGenerateBindingRedirects=true
-# /p:DepsFileGenerationMode=old
           maximumCpuCount: $(MSBuild.MaximumCpuCount)
