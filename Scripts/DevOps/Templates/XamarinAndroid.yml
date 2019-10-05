@@ -1,4 +1,5 @@
 # Expected variables:
+#   - DotNetCoreSdk.Version
 #   - XamarinAndroid.MonoVersion
 
 parameters:
@@ -35,20 +36,31 @@ jobs:
       - checkout: self
         clean: false
 
+      # - template: InstallMonoMacOS.yml
+      #   parameters:
+      #     version: $(XamarinAndroid.MonoVersion)
+
+      - bash: |
+          ls -l /Library/Frameworks/Mono.framework/Versions/Current
+          sudo rm -f /Library/Frameworks/Mono.framework/Versions/Current
+          sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINANDROID_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
+          ls -l /Library/Frameworks/Mono.framework/Versions/Current
+
       - task: DotNetCoreInstaller@1
         inputs:
-          version: 3.x
+          packageType: sdk
+          version: $(DotNetCoreSdk.Version)
 
-      - template: InstallMonoMacOS.yml
-        parameters:
-          version: $(XamarinAndroid.MonoVersion)
+      - task: UseDotNet@2
+        inputs:
+          packageType: sdk
+          version: $(DotNetCoreSdk.Version)
 
       - task: MSBuild@1
         displayName: Restore Packages
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildLocation: /Library/Frameworks/Mono.framework/Versions/$(XamarinAndroid.MonoVersion)/bin/msbuild
           msbuildArguments: /t:Restore
 
       - task: XamarinAndroid@1
@@ -58,4 +70,3 @@ jobs:
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
           clean: false
-          msbuildFile: /Library/Frameworks/Mono.framework/Versions/$(XamarinAndroid.MonoVersion)/bin/msbuild
