@@ -32,10 +32,11 @@ jobs:
   - template: Templates/BuildMacOS.yml
     parameters:
       displayName: macOS
-      project: macOS/Unjammit.macOS.csproj
+      project: Core/Unjammit.Core.csproj
       platformVariableGroup: macOS Build Variables
       msbuildArguments:
         /p:EnableCodeSigning=false
+      buildConfigurations: ['Debug']
 
 #        /p:XamarinMacFrameworkVersion=$(XamarinMac.FrameworkVersion)
 
