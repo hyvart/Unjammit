@@ -46,6 +46,9 @@ jobs:
           sudo ln -s /Library/Frameworks/Mono.framework/Versions/${XAMARINANDROID_MONOVERSION} /Library/Frameworks/Mono.framework/Versions/Current
           ls -l /Library/Frameworks/Mono.framework/Versions/Current
 
+      - bash: |
+          ll /Library/Frameworks/Xamarin.Android.framework/Versions/
+
       - task: DotNetCoreInstaller@1
         inputs:
           packageType: sdk

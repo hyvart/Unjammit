@@ -22,20 +22,20 @@ jobs:
   #     #   /p:UapAppxPackageBuildMode=StoreUpload
   #     #   /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
 
-  - template: Templates/XamariniOS.yml
-    parameters:
-      displayName: iOS
-      project: iOS/Unjammit.iOS.csproj
-      platformVariableGroup: iOS Build Variables
-      debug: true
+  # - template: Templates/XamariniOS.yml
+  #   parameters:
+  #     displayName: iOS
+  #     project: iOS/Unjammit.iOS.csproj
+  #     platformVariableGroup: iOS Build Variables
+  #     debug: true
 
-  - template: Templates/BuildMacOS.yml
-    parameters:
-      displayName: macOS
-      project: macOS/Unjammit.macOS.csproj
-      platformVariableGroup: macOS Build Variables
-      msbuildArguments:
-        /p:EnableCodeSigning=false
+  # - template: Templates/BuildMacOS.yml
+  #   parameters:
+  #     displayName: macOS
+  #     project: macOS/Unjammit.macOS.csproj
+  #     platformVariableGroup: macOS Build Variables
+  #     msbuildArguments:
+  #       /p:EnableCodeSigning=false
 
   - template: Templates/XamarinAndroid.yml
     parameters:
