@@ -24,7 +24,6 @@ jobs:
         /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\"
         /p:AppxBundle=Always
         /p:UapAppxPackageBuildMode=StoreUpload
-        /p:AppxPackageSigningEnabled=false
 
   - template: Templates/XamariniOS.yml
     parameters:
