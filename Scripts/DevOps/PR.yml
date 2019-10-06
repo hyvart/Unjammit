@@ -21,10 +21,9 @@ jobs:
       buildPlatforms: [ x64, x86 ]
       msbuildArguments:
         /p:AppxBundlePlatforms="$(BuildPlatform)"
-        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\"
+        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
         /p:AppxBundle=Always
         /p:UapAppxPackageBuildMode=StoreUpload
-        /p:AppxPackageSigningEnabled=false
 
   - template: Templates/XamariniOS.yml
     parameters:
