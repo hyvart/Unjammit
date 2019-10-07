@@ -74,7 +74,7 @@ jobs:
     #   inputs:
     #     provProfileSecureFile: $(ProvisioningProfile)
 
-    - template: BuildMacOSSteps.yml
+    - template: Templates/BuildMacOSSteps.yml
       parameters:
         project: macOS/Unjammit.macOS.csproj
         msbuildArguments:
