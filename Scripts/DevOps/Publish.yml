@@ -1,0 +1,99 @@
+# Expected variables:
+#   - Release.Phase
+#   - Job.VmImage
+# Expected variables (macOS, iOS):
+#   - BundleId
+#   - BundleName
+#   - TeamId
+
+name: $(BuildId)
+
+trigger:
+  branches:
+    include:
+      - release/alpha/*
+      - ci/test/pub*
+
+variables:
+  - group: Build - Global
+  - name: Release.Phase
+    value: Alpha
+  - name: BuildConfiguration
+    value: Release
+
+jobs:
+
+  - job:
+    displayName: macOS
+
+    variables:
+      - group: Build - macOS
+      - group: Distribute - $(Release.Phase)
+      - group: Distribute - $(Release.Phase) - Apple
+      - group: Distribute - $(Release.Phase) - macOS
+      - name: BundleShortVersionString
+        value: $(BaseBuildVersion).$(BuildRevision)
+      - name: BundleVersion
+        value: $(BaseBuildVersion).$(BuildRevision)
+
+    pool:
+      vmImage: $(Job.VmImage)
+
+    steps:
+    - task: PowerShell@2
+      displayName: Set Version
+      inputs:
+        targetType: filePath
+        filePath: $(Build.SourcesDirectory)/Scripts/Set-Version-Apple.ps1
+        arguments:
+          -InfoPlist $(Build.SourcesDirectory)/macOS/Info.plist
+          -BundleId $(BundleId)
+          -BundleName "$(BundleName)"
+          -BundleShortVersionString $(BundleShortVersionString)
+          -BundleVersion $(BundleVersion)
+          -EntitlementsPlist $(Build.SourcesDirectory)/macOS/Entitlements.plist
+          -TeamPrefix $(TeamId)
+
+    - task: PowerShell@2
+      displayName: Upate Assets
+      inputs:
+        targetType: inline
+        script: |
+          Copy-Item -Force -Recurse `
+            -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\macOS\* `
+            -Destination ${env:BUILD_SOURCESDIRECTORY}\macOS\
+
+    # - task: InstallAppleCertificate@2
+    #   displayName: Install Certificate
+    #   inputs:
+    #     certSecureFile: $(SigningCertificate)
+    #     certPwd: $(SigningKeyPassword)
+
+    # - task: InstallAppleProvisioningProfile@1
+    #   displayName: Install Provisioning Profile
+    #   inputs:
+    #     provProfileSecureFile: $(ProvisioningProfile)
+
+    - template: BuildMacOSSteps.yml
+      parameters:
+        project: macOS/Unjammit.macOS.csproj
+        msbuildArguments:
+          /p:EnableCodeSigning=false
+
+    - task: Bash@3
+      displayName: Create Disk Image
+      inputs:
+        targetType: inline
+        script: |
+          echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
+          echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
+          hdiutil create -format UDZO \
+            -srcfolder $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
+            $(Build.ArtifactStagingDirectory)/Unjammit.dmg
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish artifact: drop'
+      inputs:
+        PathtoPublish: $(Build.ArtifactStagingDirectory)
+        ArtifactName: drop
+        publishLocation: Container
