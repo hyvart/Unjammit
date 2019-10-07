@@ -1,5 +1,5 @@
 # Expected variables:
-#   - Release.Phase
+#   - Release.Phase # Can't use?
 #   - Job.VmImage
 # Expected variables (macOS, iOS):
 #   - BundleId
@@ -28,9 +28,9 @@ jobs:
 
     variables:
       - group: Build - macOS
-      - group: Distribute - $(Release.Phase)
-      - group: Distribute - $(Release.Phase) - Apple
-      - group: Distribute - $(Release.Phase) - macOS
+      - group: Distribute - Alpha
+      - group: Distribute - Alpha - Apple
+      - group: Distribute - Alpha - macOS
       - name: BundleShortVersionString
         value: $(BaseBuildVersion).$(BuildRevision)
       - name: BundleVersion
