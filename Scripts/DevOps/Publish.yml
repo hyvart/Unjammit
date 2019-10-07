@@ -88,9 +88,12 @@ jobs:
         targetType: inline
         script: |
           echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
+          echo "Renaming"
+          mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
+            "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
           echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
           hdiutil create -format UDZO \
-            -srcfolder $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
+            -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
             $(Build.ArtifactStagingDirectory)/Unjammit.dmg
 
     - task: PublishBuildArtifacts@1
