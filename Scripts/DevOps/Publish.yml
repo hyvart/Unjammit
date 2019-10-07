@@ -31,6 +31,8 @@ jobs:
       - group: Distribute - Alpha
       - group: Distribute - Alpha - Apple
       - group: Distribute - Alpha - macOS
+      - name: BuildPlatform
+        value: AnyCPU
       - name: BundleShortVersionString
         value: $(BaseBuildVersion).$(BuildRevision)
       - name: BundleVersion
