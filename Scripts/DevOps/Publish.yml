@@ -65,23 +65,23 @@ jobs:
             -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\macOS\* `
             -Destination ${env:BUILD_SOURCESDIRECTORY}\macOS\
 
-    # - task: InstallAppleCertificate@2
-    #   displayName: Install Certificate
-    #   inputs:
-    #     certSecureFile: com.unjammit.mac.app.p12
-    #     certPwd: $(SigningKeyPassword)
+    - task: InstallAppleCertificate@2
+      displayName: Install Certificate
+      inputs:
+        certSecureFile: com.unjammit.mac.app.p12
+        certPwd: $(SigningKeyPassword)
 
-    # - task: InstallAppleProvisioningProfile@1
-    #   displayName: Install Provisioning Profile
-    #   inputs:
-    #     provProfileSecureFile: com.unjammit.mac.alpha.mobileprovision
+    - task: InstallAppleProvisioningProfile@1
+      displayName: Install Provisioning Profile
+      inputs:
+        provisioningProfileLocation: secureFiles
+        provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
 
     - template: Templates/BuildMacOSSteps.yml
       parameters:
         project: macOS/Unjammit.macOS.csproj
         msbuildArguments:
           /p:EnableCodeSigning=true
-          # /p:CodeSignProvision=$(APPLE_PROV_PROFILE_UUID)
 
     - task: Bash@3
       displayName: Create Disk Image

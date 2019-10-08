@@ -34,19 +34,6 @@ steps:
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
       msbuildArguments: /t:Restore
 
-  - task: InstallAppleCertificate@2
-    displayName: Install Certificate
-    inputs:
-      certSecureFile: com.unjammit.mac.app.p12
-      certPwd: $(SigningKeyPassword)
-
-  - task: InstallAppleProvisioningProfile@1
-    displayName: Install Provisioning Profile
-    inputs:
-      provisioningProfileLocation: secureFiles
-      provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
-      removeProfile: false
-
   # TODO: Replace with MSBuildSteps
   - task: MSBuild@1
     displayName: Build ${{ parameters.project }}
