@@ -44,7 +44,7 @@ steps:
     displayName: Install Provisioning Profile
     inputs:
       provisioningProfileLocation: secureFiles
-      provProfileSecureFile: com.unjammit.mac.alpha.mobileprovision
+      provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
       removeProfile: false
 
   # TODO: Replace with MSBuildSteps
