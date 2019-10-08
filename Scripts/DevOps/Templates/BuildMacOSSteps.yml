@@ -45,6 +45,7 @@ steps:
     inputs:
       provisioningProfileLocation: secureFiles
       provProfileSecureFile: com.unjammit.mac.alpha.mobileprovision
+      removeProfile: false
 
   # TODO: Replace with MSBuildSteps
   - task: MSBuild@1
