@@ -81,7 +81,7 @@ jobs:
         project: macOS/Unjammit.macOS.csproj
         msbuildArguments:
           /p:EnableCodeSigning=true
-          /p:CodeSignProvision="Unjammit macOS Alpha"
+          /p:CodeSignProvision=$(APPLE.PROV.PROFILE.UUID)
 
     - task: Bash@3
       displayName: Create Disk Image
