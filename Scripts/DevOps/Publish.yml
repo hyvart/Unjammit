@@ -80,7 +80,7 @@ jobs:
       parameters:
         project: macOS/Unjammit.macOS.csproj
         msbuildArguments:
-          /p:EnableCodeSigning=false
+          /p:EnableCodeSigning=true
 
     - task: Bash@3
       displayName: Create Disk Image
