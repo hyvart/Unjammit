@@ -68,13 +68,13 @@ jobs:
     - task: InstallAppleCertificate@2
       displayName: Install Certificate
       inputs:
-        certSecureFile: $(SigningCertificate)
+        certSecureFile: com.unjammit.mac.app.p12
         certPwd: $(SigningKeyPassword)
 
     - task: InstallAppleProvisioningProfile@1
       displayName: Install Provisioning Profile
       inputs:
-        provProfileSecureFile: $(ProvisioningProfile)
+        provProfileSecureFile: com.unjammit.mac.alpha.mobileprovision
 
     - template: Templates/BuildMacOSSteps.yml
       parameters:
