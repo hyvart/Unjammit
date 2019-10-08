@@ -65,16 +65,16 @@ jobs:
             -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\macOS\* `
             -Destination ${env:BUILD_SOURCESDIRECTORY}\macOS\
 
-    # - task: InstallAppleCertificate@2
-    #   displayName: Install Certificate
-    #   inputs:
-    #     certSecureFile: $(SigningCertificate)
-    #     certPwd: $(SigningKeyPassword)
+    - task: InstallAppleCertificate@2
+      displayName: Install Certificate
+      inputs:
+        certSecureFile: $(SigningCertificate)
+        certPwd: $(SigningKeyPassword)
 
-    # - task: InstallAppleProvisioningProfile@1
-    #   displayName: Install Provisioning Profile
-    #   inputs:
-    #     provProfileSecureFile: $(ProvisioningProfile)
+    - task: InstallAppleProvisioningProfile@1
+      displayName: Install Provisioning Profile
+      inputs:
+        provProfileSecureFile: $(ProvisioningProfile)
 
     - template: Templates/BuildMacOSSteps.yml
       parameters:

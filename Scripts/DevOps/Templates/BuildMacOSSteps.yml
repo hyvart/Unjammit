@@ -16,7 +16,7 @@ steps:
       version: $(XamarinMac.MonoVersion)
 
   - task: DotNetCoreInstaller@1
-    displayName: Use .NET Core $(DotNetCoreSdk.Version)
+    displayName: Install .NET Core $(DotNetCoreSdk.Version)
     inputs:
       packageType: sdk
       version: $(DotNetCoreSdk.Version)
