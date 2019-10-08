@@ -43,6 +43,7 @@ steps:
   - task: InstallAppleProvisioningProfile@1
     displayName: Install Provisioning Profile
     inputs:
+      provisioningProfileLocation: secureFiles
       provProfileSecureFile: com.unjammit.mac.alpha.mobileprovision
 
   # TODO: Replace with MSBuildSteps
