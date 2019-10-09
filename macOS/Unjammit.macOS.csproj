@@ -123,4 +123,16 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+
+  <!-- Override -->
+  <!-- HACK -->
+  <!-- <Target Name="_GenerateBundleName">
+    <PropertyGroup>
+      <_AppBundleName>$(AssemblyName) Alpha</_AppBundleName>
+
+      <AppBundleDir>$(OutputPath)$(_AppBundleName).app</AppBundleDir>
+      <_AppBundlePath>$(OutputPath)$(_AppBundleName).app\</_AppBundlePath>
+      <_AppResourcesPath>$(_AppBundlePath)Contents\Resources\</_AppResourcesPath>
+    </PropertyGroup>
+  </Target> -->
 </Project>
