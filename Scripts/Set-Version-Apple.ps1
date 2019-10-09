@@ -1,7 +1,6 @@
 param(
 	[Parameter(Mandatory=$true)]
-	[ValidateScript({Test-Path $_})]
-	[string] $InfoPlist,
+	[System.IO.FileInfo] $InfoPlist,
 
 	[string] $BundleId,
 
@@ -14,14 +13,17 @@ param(
 
 	[version] $BundleVersion,
 
-	[ValidateScript({Test-Path $_})]
-	[string] $EntitlementsPlist,
+	[System.IO.FileInfo] $EntitlementsPlist,
 
 	[string] $TeamPrefix,
 
-	[string] $DownloadDir = "$($PSScriptRoot | Split-Path)\Build",
+	[string] $AssemblyName,
 
-	[switch] $UsePlistCil
+	[System.IO.FileInfo] $Project,
+
+	[switch] $UsePlistCil,
+
+	[string] $DownloadDir = "$($PSScriptRoot | Split-Path)\Build"
 )
 
 $plist = Get-ChildItem -Path $InfoPlist
@@ -81,4 +83,14 @@ if ($UsePlistCil) {
 	if ($EntitlementsPlist -and $TeamPrefix) {
 		/usr/libexec/PlistBuddy -c "Set :com.apple.application-identifier '${TeamPrefix}.${BundleId}'" $EntitlementsPlist
 	}
+}
+
+if ($AssemblyName -and $Project) {
+	$xml = New-Object -TypeName System.Xml.XmlDocument
+	$xml.PreserveWhitespace = $true
+	$xml.Load((Get-ChildItem $Project))
+
+	($xml.Project.PropertyGroup | Where-Object -Property AssemblyName).AssemblyName = $AssemblyName
+
+	$xml.Save((Get-ChildItem $Project))
 }

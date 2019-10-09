@@ -26,9 +26,9 @@
 	<string>Copyright © 2019 Hyvart Software</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSRequiresAquaSystemAppearance</key>
 	<true/>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
 </plist>
