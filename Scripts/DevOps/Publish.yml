@@ -98,10 +98,10 @@ jobs:
               $(Build.ArtifactStagingDirectory)/Unjammit.dmg
 
       - task: PublishBuildArtifacts@1
-        displayName: 'Publish artifact: drop'
+        displayName: 'Publish artifact: macOS-Alpha'
         inputs:
           PathtoPublish: $(Build.ArtifactStagingDirectory)
-          ArtifactName: drop
+          ArtifactName: macOS-Alpha
           publishLocation: Container
 
   - job:
