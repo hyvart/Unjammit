@@ -75,7 +75,7 @@ jobs:
         displayName: Install Provisioning Profile
         inputs:
           provisioningProfileLocation: secureFiles
-          provProfileSecureFile: $(ProvisioningProfile)
+          provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
 
       - template: Templates/BuildMacOSSteps.yml
         parameters:
@@ -158,7 +158,7 @@ jobs:
         displayName: Install Provisioning Profile
         inputs:
           provisioningProfileLocation: secureFiles
-          provProfileSecureFile: $(ProvisioningProfile)
+          provProfileSecureFile: com.unjammit.ios.alpha.mobileprovision
 
       - template: Templates/BuildiOSSteps.yml
         parameters:
