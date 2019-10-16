@@ -159,4 +159,4 @@ jobs:
     displayName: Install Provisioning Profile
     inputs:
       provisioningProfileLocation: secureFiles
-      provProfileSecureFile: com.unjammit.player.ios.alpha.provisionprofile
+      provProfileSecureFile: com.unjammit.ios.alpha.mobileprovision
