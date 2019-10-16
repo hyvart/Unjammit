@@ -137,7 +137,6 @@ jobs:
         -BundleDisplayName "$(BundleName)"
         -BundleShortVersionString $(BundleShortVersionString)
         -BundleVersion $(BundleVersion)
-        -EntitlementsPlist $(Build.SourcesDirectory)/iOS/Entitlements.plist
         -TeamPrefix $(TeamId)
 
   - task: PowerShell@2
