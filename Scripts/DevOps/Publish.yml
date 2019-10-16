@@ -167,3 +167,6 @@ jobs:
           buildConfiguration: Release
           packageApp: true
           buildForSimulator: false
+
+      - powershell: |
+          ls "Target/iPhone/Ad-Hoc/Unjammit.iOS/"
