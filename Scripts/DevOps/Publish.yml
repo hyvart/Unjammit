@@ -168,5 +168,16 @@ jobs:
           packageApp: true
           buildForSimulator: false
 
-      - powershell: |
-          ls "Target/iPhone/Ad-Hoc/Unjammit.iOS/"
+      - task: CopyFiles@2
+        displayName: Stage IPA
+        inputs:
+          SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.iOS/
+          Contents: Unjammit.iOS.ipa
+          TargetFolder: $(Build.ArtifactStagingDirectory)
+
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publish artifact: iOS-Alpha'
+        inputs:
+          PathtoPublish: $(Build.ArtifactStagingDirectory)
+          ArtifactName: iOS-Alpha
+          publishLocation: Container
