@@ -1,0 +1,51 @@
+# Expected variables:
+#   - DotNetCoreSdk.Version
+#   - XamariniOS.MonoVersion
+
+parameters:
+  # name:
+  project:
+
+  # XamariniOS
+  packageApp: false
+  buildForSimulator: true
+  xcodeArguments: ''
+#  signingIdentity: ''
+#  signingProvisioningProfileID: ''
+
+  debug: false
+
+steps:
+  - template: SetMacOSFrameworkVersion.yml
+    parameters:
+      framework: Mono
+      version: $(XamariniOS.MonoVersion)
+
+  - task: DotNetCoreInstaller@1
+    inputs:
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
+
+  - task: UseDotNet@2
+    inputs:
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
+
+  - task: MSBuild@1
+    displayName: Restore Packages
+    inputs:
+      solution: ${{ parameters.project }}
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      msbuildArguments: /t:Restore
+
+  - task: XamariniOS@2
+    displayName: Build ${{ parameters.project }}
+    inputs:
+      solutionFile: ${{ parameters.project }}
+      configuration: $(BuildConfiguration)
+      clean: true
+      packageApp: ${{ parameters.packageApp }}
+      buildForSimulator: ${{ parameters.buildForSimulator }}
+      args: ${{ parameters.xcodeArguments }}
+  #    signingIdentity: ${{ parameters.signingIdentity }}
+  #    signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}

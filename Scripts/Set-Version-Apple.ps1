@@ -11,7 +11,7 @@ param(
 	[Parameter(Mandatory=$true)]
 	[version] $BundleShortVersionString,
 
-	[version] $BundleVersion,
+	[string] $BundleVersion,
 
 	[System.IO.FileInfo] $EntitlementsPlist,
 

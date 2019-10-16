@@ -1,0 +1,58 @@
+# Expected variables:
+#   - BuildVersion
+#   - Build.SourceVersion
+#   - Release.Phase # Can't use?
+#   - Job.VmImage
+# Expected variables (macOS, iOS):
+#   - BundleId
+#   - BundleName
+#   - TeamId
+
+parameters:
+  phase: # Alpha, Beta, Production (Omega)
+
+steps:
+  - powershell: |
+      Write-Host "##vso[task.setvariable variable=ShortSourceVersion]$($env:BUILD_SOURCEVERSION.Substring(0, 7))"
+    displayName: Set short source verison
+
+  - task: PowerShell@2
+    displayName: Set Version
+    inputs:
+      targetType: filePath
+      filePath: $(Build.SourcesDirectory)/Scripts/Set-Version-Apple.ps1
+      arguments:
+        -InfoPlist $(Build.SourcesDirectory)/macOS/Info.plist
+        -BundleId $(BundleId)
+        -BundleName "$(BundleName)"
+        -BundleShortVersionString $(BuildVersion)
+        -BundleVersion $(ShortSourceVersion)
+        -EntitlementsPlist $(Build.SourcesDirectory)/macOS/Entitlements.plist
+        -TeamPrefix $(TeamId)
+
+  - task: PowerShell@2
+    displayName: Update Assets
+    inputs:
+      targetType: inline
+      script: |
+        Copy-Item -Force -Recurse `
+          -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\macOS\* `
+          -Destination ${env:BUILD_SOURCESDIRECTORY}\macOS\
+
+  - task: InstallAppleCertificate@2
+    displayName: Install Certificate
+    inputs:
+      certSecureFile: com.unjammit.mac.app.p12
+      certPwd: $(SigningKeyPassword)
+
+  - task: InstallAppleProvisioningProfile@1
+    displayName: Install Provisioning Profile
+    inputs:
+      provisioningProfileLocation: secureFiles
+      provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
+
+  - template: BuildMacOSSteps.yml
+    parameters:
+      project: macOS/Unjammit.macOS.csproj
+      msbuildArguments:
+        /p:EnableCodeSigning=false

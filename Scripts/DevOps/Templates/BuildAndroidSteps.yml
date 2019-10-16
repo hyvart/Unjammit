@@ -1,0 +1,49 @@
+# Expected variables:
+#   - DotNetCoreSdk.Version
+#   - XamarinAndroid.MonoVersion
+
+parameters:
+  # name:
+  project:
+  createAppPackage:
+
+  # XamarinAndroid
+
+steps:
+  # - template: SetMacOSFrameworkVersion.yml
+  #   parameters:
+  #     framework: Mono
+  #     version: $(XamarinAndroid.MonoVersion)
+
+  # - template: SetMacOSFrameworkVersion.yml
+  #   parameters:
+  #     framework: Xamarin.Android
+  #     version: $(XamarinAndroid.Version)
+
+  - bash: |
+      /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"
+
+  - task: DotNetCoreInstaller@1
+    inputs:
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
+
+  - task: UseDotNet@2
+    inputs:
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
+
+  - task: MSBuild@1
+    displayName: Restore Packages
+    inputs:
+      solution: ${{ parameters.project }}
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      msbuildArguments: /t:Restore
+
+  - task: XamarinAndroid@1
+    displayName: Build ${{ parameters.project }}
+    inputs:
+      projectFile: ${{ parameters.project }}
+      configuration: $(BuildConfiguration)
+      createAppPackage: ${{ parameters.createAppPackage }}
+      clean: false

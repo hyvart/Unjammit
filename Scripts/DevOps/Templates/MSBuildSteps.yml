@@ -22,7 +22,13 @@ steps:
 
   - task: DotNetCoreInstaller@1
     inputs:
-      version: 3.x
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
+
+  - task: UseDotNet@2
+    inputs:
+      packageType: sdk
+      version: $(DotNetCoreSdk.Version)
 
   - task: MSBuild@1
     displayName: Restore Packages

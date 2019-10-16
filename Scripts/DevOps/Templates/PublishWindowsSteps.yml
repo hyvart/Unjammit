@@ -1,0 +1,35 @@
+# Expected variables:
+#   - 
+
+parameters:
+  phase: # Alpha, Beta, Production (Omega)
+
+steps:
+  - task: PowerShell@2
+    displayName: Set Version
+    inputs:
+      targetType: filePath
+      filePath: $(Build.SourcesDirectory)/Scripts/Set-Version-UWP.ps1
+      arguments:
+        -AppxManifest $(Build.SourcesDirectory)/UWP/Package.appxmanifest
+        -PackageIdentityName $(PackageIdentityName)
+        -PackageDisplayName "$(PackageDisplayName)"
+        -Version $(BuildVersion)
+
+  - task: PowerShell@2
+    displayName: Update Assets
+    inputs:
+      targetType: inline
+      script: |
+        Copy-Item -Force -Recurse `
+          -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\UWP\* `
+          -Destination ${env:BUILD_SOURCESDIRECTORY}\UWP\
+
+  - template: MSBuildSteps.yml
+    parameters:
+      project: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      msbuildArguments:
+        /p:AppxBundlePlatforms="x64|x86"
+        /p:AppxPackageDir="$(Build.StagingDirectory)\AppPackages\\"
+        /p:AppxBundle=Always
+        /p:UapAppxPackageBuildMode=StoreUpload
