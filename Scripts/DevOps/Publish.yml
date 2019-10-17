@@ -162,7 +162,8 @@ stages:
               releaseNotesInput: Alpha Build
               isMandatory: true
               destinationType: groups
-              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+              # distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+              distributionGroupId: $(AppCenter.DG)
               isSilent: false
 
       - job:
@@ -205,5 +206,6 @@ stages:
               releaseNotesInput: Alpha Build
               isMandatory: true
               destinationType: groups
-              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+              #distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+              distributionGroupId: $(AppCenter.DG)
               isSilent: false
