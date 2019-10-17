@@ -22,9 +22,10 @@ variables:
     value: Release
 
 stages:
-  - stage: Setup
+  - stage: Publish
+
     jobs:
-      - job:
+      - job: SetUp
         steps:
           - task: PowerShell@2
             displayName: Set global version
@@ -34,15 +35,9 @@ stages:
                 $version = $(Get-Date -Format 'yyyy.MM.dd.HHmmss')
                 Write-Host "##vso[task.setvariable variable=BuildVersion]$version"
 
-          - powershell: |
-              gci env:\
-
-  - stage: Publish
-    dependsOn: Setup
-
-    jobs:
       - job:
         displayName: macOS
+        dependsOn: SetUp
 
         variables:
           - group: Build - macOS
@@ -102,6 +97,7 @@ stages:
 
       - job:
         displayName: iOS
+        dependsOn: SetUp
 
         variables:
           - group: Build - iOS
