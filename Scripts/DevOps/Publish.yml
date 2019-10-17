@@ -33,6 +33,7 @@ stages:
               script: |
                 $version = $(Get-Date -Format 'yyyy.MM.dd.HHmmss')
                 Write-Host "##vso[task.setvariable variable=BuildVersion]$version"
+                Write-Host "##vso[task.setvariable variable=MyBuildVersion]$version"
 
   - stage: Publish
     dependsOn: Setup
@@ -57,7 +58,10 @@ stages:
           vmImage: $(Job.VmImage)
 
         steps:
-          - powershell: echo "bv[${env:BUILDVERSION}]"
+          - powershell: |
+              gci Env:\
+              echo "bv[${env:BUILDVERSION}]"
+              echo "mv[${env:MYBUILDVERSION}]"
 
           - task: PowerShell@2
             displayName: Set global version
