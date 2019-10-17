@@ -26,7 +26,7 @@ steps:
         -BundleId $(BundleId)
         -BundleName "$(BundleName)"
         -BundleShortVersionString $(BuildVersion)
-        -BundleVersion $(Build.SourceVersion)
+        -BundleVersion $(ShortSourceVersion)
         -EntitlementsPlist $(Build.SourcesDirectory)/macOS/Entitlements.plist
         -TeamPrefix $(TeamId)
 

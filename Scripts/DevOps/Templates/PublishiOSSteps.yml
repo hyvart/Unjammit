@@ -27,7 +27,7 @@ steps:
         -BundleName "$(BundleName)"
         -BundleDisplayName "$(BundleName)"
         -BundleShortVersionString $(BuildVersion)
-        -BundleVersion $(Build.SourceVersion)
+        -BundleVersion $(ShortSourceVersion)
         -TeamPrefix $(TeamId)
 
   - task: PowerShell@2
