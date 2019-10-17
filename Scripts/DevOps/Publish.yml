@@ -57,7 +57,17 @@ stages:
           vmImage: $(Job.VmImage)
 
         steps:
-          - powershell: echo "[${env:BUILDVERSION}]"
+          - powershell: echo "bv[${env:BUILDVERSION}]"
+
+          - task: PowerShell@2
+            displayName: Set global version
+            inputs:
+              targetType: inline
+              script: |
+                $version = $(Get-Date -Format 'yyyy.MM.dd.HHmmss')
+                Write-Host "##vso[task.setvariable variable=BuildVersion]$version"
+
+          - powershell: echo "BV[${env:BUILDVERSION}]"
 
           - template: Templates/PublishMacOSSteps.yml
             parameters:
