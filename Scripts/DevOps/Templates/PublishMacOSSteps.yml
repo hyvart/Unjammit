@@ -52,7 +52,7 @@ steps:
       provisioningProfileLocation: secureFiles
       provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
 
-  - template: Templates/BuildMacOSSteps.yml
+  - template: BuildMacOSSteps.yml
     parameters:
       project: macOS/Unjammit.macOS.csproj
       msbuildArguments:
