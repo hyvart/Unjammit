@@ -40,82 +40,82 @@ stages:
                 $version = $(Get-Date -Date ([datetime]::UtcNow) -Format 'yyyy.MM.dd.HHmmss')
                 Write-Host "##vso[task.setvariable variable=BuildVersion;isOutput=true]$version"
 
-      # - job:
-      #   displayName: macOS
-      #   dependsOn: SetUp
+      - job:
+        displayName: macOS
+        dependsOn: SetUp
 
-      #   variables:
-      #     - group: Build - macOS
-      #     - group: Distribute - Alpha - macOS
-      #     - name: BuildPlatform
-      #       value: AnyCPU
-      #     - name: BuildVersion
-      #       value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
+        variables:
+          - group: Build - macOS
+          - group: Distribute - Alpha - macOS
+          - name: BuildPlatform
+            value: AnyCPU
+          - name: BuildVersion
+            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
-      #   pool:
-      #     vmImage: $(Job.VmImage)
+        pool:
+          vmImage: $(Job.VmImage)
 
-      #   steps:
-      #     - template: Templates/PublishMacOSSteps.yml
-      #       parameters:
-      #         phase: Alpha
+        steps:
+          - template: Templates/PublishMacOSSteps.yml
+            parameters:
+              phase: Alpha
 
-      #     - task: Bash@3
-      #       displayName: Create Disk Image
-      #       inputs:
-      #         targetType: inline
-      #         script: |
-      #           echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
-      #           echo "Renaming"
-      #           mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
-      #             "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
-      #           echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
-      #           hdiutil create -format UDZO \
-      #             -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
-      #             $(Build.ArtifactStagingDirectory)/Unjammit.dmg
+          - task: Bash@3
+            displayName: Create Disk Image
+            inputs:
+              targetType: inline
+              script: |
+                echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
+                echo "Renaming"
+                mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
+                  "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
+                echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
+                hdiutil create -format UDZO \
+                  -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
+                  $(Build.ArtifactStagingDirectory)/Unjammit.dmg
 
-      #     - task: PublishBuildArtifacts@1
-      #       displayName: 'Publish artifact: macOS-Alpha'
-      #       inputs:
-      #         PathtoPublish: $(Build.ArtifactStagingDirectory)
-      #         ArtifactName: macOS-Alpha
-      #         publishLocation: Container
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish artifact: macOS-Alpha'
+            inputs:
+              PathtoPublish: $(Build.ArtifactStagingDirectory)
+              ArtifactName: macOS-Alpha
+              publishLocation: Container
 
-      # - job:
-      #   displayName: iOS
-      #   dependsOn: SetUp
+      - job:
+        displayName: iOS
+        dependsOn: SetUp
 
-      #   variables:
-      #     - group: Build - iOS
-      #     - group: Distribute - Alpha - iOS
-      #     - name: BuildPlatform
-      #       value: iPhone
-      #     - name: BuildConfiguration
-      #       value: Ad-Hoc
-      #     - name: BuildVersion
-      #       value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
+        variables:
+          - group: Build - iOS
+          - group: Distribute - Alpha - iOS
+          - name: BuildPlatform
+            value: iPhone
+          - name: BuildConfiguration
+            value: Ad-Hoc
+          - name: BuildVersion
+            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
-      #   pool:
-      #     vmImage: $(Job.VmImage)
+        pool:
+          vmImage: $(Job.VmImage)
 
-      #   steps:
-      #     - template: Templates/PublishiOSSteps.yml
-      #       parameters:
-      #         phase: Alpha
+        steps:
+          - template: Templates/PublishiOSSteps.yml
+            parameters:
+              phase: Alpha
 
-      #     - task: CopyFiles@2
-      #       displayName: Stage IPA
-      #       inputs:
-      #         SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.iOS/
-      #         Contents: Unjammit.iOS.ipa
-      #         TargetFolder: $(Build.ArtifactStagingDirectory)
+          - task: CopyFiles@2
+            displayName: Stage IPA
+            inputs:
+              SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.iOS/
+              Contents: Unjammit.iOS.ipa
+              TargetFolder: $(Build.ArtifactStagingDirectory)
 
-      #     - task: PublishBuildArtifacts@1
-      #       displayName: 'Publish artifact: iOS-Alpha'
-      #       inputs:
-      #         PathtoPublish: $(Build.ArtifactStagingDirectory)
-      #         ArtifactName: iOS-Alpha
-      #         publishLocation: Container
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish artifact: iOS-Alpha'
+            inputs:
+              PathtoPublish: $(Build.ArtifactStagingDirectory)
+              ArtifactName: iOS-Alpha
+              publishLocation: Container
 
   - stage: Deploy
     dependsOn:
@@ -131,26 +131,21 @@ stages:
         steps:
           - checkout: none
 
-          # - task: DownloadBuildArtifacts@0
-          #   displayName: Download macOS-Alpha
-          #   inputs:
-          #     buildType: current
-          #     artifactName: macOS-Alpha
-
           - task: DownloadBuildArtifacts@0
+            displayName: Download macOS-Alpha
             inputs:
-              buildType: specific
-              project: Unjammit
-              pipeline: Publish
-              specificBuildWithTriggering: false
-              buildVersionToDownload: specific
-              buildId: 1371
+              buildType: current
               artifactName: macOS-Alpha
 
-          - powershell: |
-              Get-ChildItem -Name -Recurse $env:SYSTEM_ARTIFACTSDIRECTORY
-              Write-Host "Public [${env:APPCENTER_DG_PUBLIC}]"
-              Write-Host "Alpha  [${env:APPCENTER_DG}]"
+          # - task: DownloadBuildArtifacts@0
+          #   inputs:
+          #     buildType: specific
+          #     project: Unjammit
+          #     pipeline: Publish
+          #     specificBuildWithTriggering: false
+          #     buildVersionToDownload: specific
+          #     buildId: 1371
+          #     artifactName: macOS-Alpha
 
           - task: AppCenterDistribute@3
             displayName: Distribute in App Center
@@ -162,8 +157,7 @@ stages:
               releaseNotesInput: Alpha Build
               isMandatory: true
               destinationType: groups
-              # distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
-              distributionGroupId: $(AppCenter.DG)
+              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
               isSilent: false
 
       - job:
@@ -175,26 +169,21 @@ stages:
         steps:
           - checkout: none
 
-          # - task: DownloadBuildArtifacts@0
-          #   displayName: Download iOS-Alpha
-          #   inputs:
-          #     buildType: current
-          #     artifactName: iOS-Alpha
-
           - task: DownloadBuildArtifacts@0
+            displayName: Download iOS-Alpha
             inputs:
-              buildType: specific
-              project: Unjammit
-              pipeline: Publish
-              specificBuildWithTriggering: false
-              buildVersionToDownload: specific
-              buildId: 1371
+              buildType: current
               artifactName: iOS-Alpha
 
-          - powershell: |
-              Get-ChildItem -Name -Recurse $env:SYSTEM_ARTIFACTSDIRECTORY
-              Write-Host "Public [${env:APPCENTER_DG_PUBLIC}]"
-              Write-Host "Alpha  [${env:APPCENTER_DG}]"
+          # - task: DownloadBuildArtifacts@0
+          #   inputs:
+          #     buildType: specific
+          #     project: Unjammit
+          #     pipeline: Publish
+          #     specificBuildWithTriggering: false
+          #     buildVersionToDownload: specific
+          #     buildId: 1371
+          #     artifactName: iOS-Alpha
 
           - task: AppCenterDistribute@3
             displayName: Distribute in App Center
@@ -206,6 +195,5 @@ stages:
               releaseNotesInput: Alpha Build
               isMandatory: true
               destinationType: groups
-              #distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
-              distributionGroupId: $(AppCenter.DG)
+              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
               isSilent: false
