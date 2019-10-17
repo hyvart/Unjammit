@@ -200,7 +200,7 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-iOS
+              appSlug: hyvart/Unjammit
               appFile: $(System.ArtifactsDirectory)/iOS-Alpha/Unjammit.iOS.ipa
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
