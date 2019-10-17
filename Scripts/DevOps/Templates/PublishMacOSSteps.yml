@@ -12,6 +12,10 @@ parameters:
   phase: # Alpha, Beta, Production (Omega)
 
 steps:
+  - powershell: |
+      Write-Host "##vso[task.setvariable variable=ShortSourceVersion;isOutput=true]$($env:BUILD_SOURCEVERSION.Substring(0, 7))"
+    displayName: Set short source verison
+
   - task: PowerShell@2
     displayName: Set Version
     inputs:
