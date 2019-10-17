@@ -20,13 +20,12 @@ variables:
     value: Alpha
   - name: BuildConfiguration
     value: Release
+  - group: Distribute - Global
+  - group: Distribute - Alpha
+  - group: Distribute - Alpha - Apple
 
 stages:
   - stage: Publish
-
-    variables:
-      - group: Distribute - Alpha
-      - group: Distribute - Alpha - Apple
 
     jobs:
       - job: SetUp
@@ -123,12 +122,57 @@ stages:
 
     jobs:
       - job:
-        displayName: Deploy iOS
-        steps:
-          - powershell: 'echo TODO: deploy IPA'
-
-      - job:
         displayName: Deploy macOS
 
+        variables:
+          - group: Distribute - Alpha - macOS
+
         steps:
-          - powershell: 'echo "TODO: deploy DMG"'
+          - task: DownloadBuildArtifacts@0
+            displayName: Download macOS-Alpha
+            inputs:
+              buildType: current
+              artifactName: macOS-Alpha
+
+          - powershell: ls -name -Recurse ${env:SYSTEM_ARTIFACTSDIRECTORY}
+
+          - task: AppCenterDistribute@3
+            displayName: Distribute in App Center
+            inputs:
+              serverEndpoint: App Center - Hyvart
+              appSlug: hyvart/Unjammit-macOS
+              appFile: $(System.StagingDirectory)/macOS-Alpha/Unjammit.dmg
+              releaseNotesOption: input
+              releaseNotesInput: Alpha Build
+              isMandatory: true
+              destinationType: groups
+              distributionGroupId: $(AppCenter.DG)
+              isSilent: false
+
+      - job:
+        displayName: Deploy iOS
+
+        variables:
+          - group: Distribute - Alpha - iOS
+
+        steps:
+          - task: DownloadBuildArtifacts@0
+            displayName: Download iOS-Alpha
+            inputs:
+              buildType: current
+              artifactName: iOS-Alpha
+
+          - powershell: ls -name -Recurse ${env:SYSTEM_ARTIFACTSDIRECTORY}
+
+          - task: AppCenterDistribute@3
+            displayName: Distribute in App Center
+            inputs:
+              serverEndpoint: App Center - Hyvart
+              appSlug: hyvart/Unjammit-iOS
+              appFile: $(System.ArtifactsDirectory)/iOS-Alpha/Unjammit.iOS.ipa
+              releaseNotesOption: input
+              releaseNotesInput: Alpha Build
+              isMandatory: true
+              destinationType: groups
+              distributionGroupId: $(AppCenter.DG)
+              isSilent: false
