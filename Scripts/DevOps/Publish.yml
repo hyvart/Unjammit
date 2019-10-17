@@ -21,7 +21,7 @@ variables:
   - name: BuildConfiguration
     value: Release
   - name: BuildVersion
-
+    value:
 stages:
   - stage: Setup
     jobs:
