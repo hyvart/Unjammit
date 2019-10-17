@@ -134,7 +134,8 @@ stages:
               buildType: current
               artifactName: macOS-Alpha
 
-          - powershell: ls -name -Recurse ${env:SYSTEM_ARTIFACTSDIRECTORY}
+          - powershell: |
+              Get-ChildItem -Name -Recurse $env:SYSTEM_ARTIFACTSDIRECTORY
 
           - task: AppCenterDistribute@3
             displayName: Distribute in App Center
@@ -146,7 +147,7 @@ stages:
               releaseNotesInput: Alpha Build
               isMandatory: true
               destinationType: groups
-              distributionGroupId: $(AppCenter.DG)
+              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
               isSilent: false
 
       - job:
@@ -162,7 +163,8 @@ stages:
               buildType: current
               artifactName: iOS-Alpha
 
-          - powershell: ls -name -Recurse ${env:SYSTEM_ARTIFACTSDIRECTORY}
+          - powershell: |
+              Get-ChildItem -Name -Recurse $env:SYSTEM_ARTIFACTSDIRECTORY
 
           - task: AppCenterDistribute@3
             displayName: Distribute in App Center
@@ -174,5 +176,5 @@ stages:
               releaseNotesInput: Alpha Build
               isMandatory: true
               destinationType: groups
-              distributionGroupId: $(AppCenter.DG)
+              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
               isSilent: false
