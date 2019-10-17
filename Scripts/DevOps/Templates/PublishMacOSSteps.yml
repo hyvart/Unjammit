@@ -16,18 +16,6 @@ parameters:
 #   - name: BuildConfiguration
 #     value: Release
 
-variables:
-  - group: Build - macOS
-  - group: Distribute - Alpha
-  - group: Distribute - Alpha - Apple
-  - group: Distribute - Alpha - macOS
-  - name: BuildPlatform
-    value: AnyCPU
-  - name: BundleShortVersionString
-    value: $(BaseBuildVersion).$(BuildRevision)
-  - name: BundleVersion
-    value: $(BaseBuildVersion).$(BuildRevision)
-
 steps:
   - task: PowerShell@2
     displayName: Set Version
