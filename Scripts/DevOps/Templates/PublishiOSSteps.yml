@@ -13,7 +13,7 @@ parameters:
 
 steps:
   - powershell: |
-      Write-Host "##vso[task.setvariable variable=ShortSourceVersion;isOutput=true]$($env:BUILD_SOURCEVERSION.Substring(0, 7))"
+      Write-Host "##vso[task.setvariable variable=ShortSourceVersion]$($env:BUILD_SOURCEVERSION.Substring(0, 7))"
     displayName: Set short source verison
 
   - task: PowerShell@2
