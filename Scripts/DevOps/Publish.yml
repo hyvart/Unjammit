@@ -33,7 +33,7 @@ stages:
               targetType: inline
               script: |
                 $version = $(Get-Date -Format 'yyyy.MM.dd.HHmmss')
-                Write-Host "##vso[task.setvariable variable=BuildVersion]$version"
+                Write-Host "##vso[task.setvariable variable=BuildVersion;isOutput=true]$version"
 
       - job:
         displayName: macOS
@@ -56,19 +56,7 @@ stages:
 
         steps:
           - powershell: |
-              gci Env:\
               echo "bv[${env:BUILDVERSION}]"
-              echo "mv[${env:MYBUILDVERSION}]"
-
-          - task: PowerShell@2
-            displayName: Set global version
-            inputs:
-              targetType: inline
-              script: |
-                $version = $(Get-Date -Format 'yyyy.MM.dd.HHmmss')
-                Write-Host "##vso[task.setvariable variable=BuildVersion]$version"
-
-          - powershell: echo "BV[${env:BUILDVERSION}]"
 
           - template: Templates/PublishMacOSSteps.yml
             parameters:
