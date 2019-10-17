@@ -29,6 +29,8 @@ stages:
 
     jobs:
       - job: SetUp
+
+
         steps:
           - task: PowerShell@2
             displayName: Set global version
@@ -128,6 +130,8 @@ stages:
           - group: Distribute - Alpha - macOS
 
         steps:
+          - checkout: none
+
           - task: DownloadBuildArtifacts@0
             displayName: Download macOS-Alpha
             inputs:
@@ -142,7 +146,7 @@ stages:
             inputs:
               serverEndpoint: App Center - Hyvart
               appSlug: hyvart/Unjammit-macOS
-              appFile: $(System.StagingDirectory)/macOS-Alpha/Unjammit.dmg
+              appFile: $(System.ArtifactsDirectory)/macOS-Alpha/Unjammit.dmg
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
               isMandatory: true
@@ -157,6 +161,8 @@ stages:
           - group: Distribute - Alpha - iOS
 
         steps:
+          - checkout: none
+
           - task: DownloadBuildArtifacts@0
             displayName: Download iOS-Alpha
             inputs:
