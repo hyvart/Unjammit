@@ -33,7 +33,7 @@ stages:
             inputs:
               targetType: inline
               script: |
-                $version = $(Get-Date -Format 'yyyy.MM.dd.HHmmss')
+                $version = $(Get-Date -Date ([datetime]::UtcNow) -Format 'yyyy.MM.dd.HHmmss')
                 Write-Host "##vso[task.setvariable variable=BuildVersion;isOutput=true]$version"
 
       - job:
