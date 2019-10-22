@@ -138,6 +138,13 @@ stages:
             parameters:
               phase: Alpha
 
+          - task: CopyFiles@2
+            displayName: Stage APK
+            inputs:
+              SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.Android/
+              Contents: $(PackageName).apk
+              TargetFolder: $(Build.ArtifactStagingDirectory)
+
           - task: PublishBuildArtifacts@1
             displayName: 'Publish artifact: Android-Alpha'
             inputs:
