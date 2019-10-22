@@ -19,7 +19,7 @@ steps:
       arguments:
         -Manifest $(Build.SourcesDirectory)/Android/Properties/AndroidManifest.xml
         -PackageName $(PackageName)
-        -Label $(Label)
+        -Label "$(Label)"
         -VersionCode $(Build.BuildId)
         -VersionName $(BuildVersion)
 
