@@ -134,7 +134,7 @@ stages:
           vmImage: $(Job.VmImage)
 
         steps:
-          - template: PublishAndroidSteps.yml
+          - template: Templates/PublishAndroidSteps.yml
             parameters:
               phase: Alpha
 
