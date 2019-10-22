@@ -1,25 +1,24 @@
 # Expected variables:
 #   - DotNetCoreSdk.Version
-#   - XamariniOS.MonoVersion
+#   - XamarinAndroid.MonoVersion
 
 parameters:
   # name:
   project:
+  createAppPackage:
 
-  # XamariniOS
-  packageApp: false
-  buildForSimulator: true
-  xcodeArguments: ''
-#  signingIdentity: ''
-#  signingProvisioningProfileID: ''
-
-  debug: false
+  # XamarinAndroid
 
 steps:
   - template: SetMacOSFrameworkVersion.yml
     parameters:
       framework: Mono
-      version: $(XamariniOS.MonoVersion)
+      version: $(XamarinAndroid.MonoVersion)
+
+  - template: SetMacOSFrameworkVersion.yml
+    parameters:
+      framework: Xamarin.Android
+      version: $(XamarinAndroid.Version)
 
   - task: DotNetCoreInstaller@1
     inputs:
@@ -38,14 +37,10 @@ steps:
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
       msbuildArguments: /t:Restore
 
-  - task: XamariniOS@2
+  - task: XamarinAndroid@1
     displayName: Build ${{ parameters.project }}
     inputs:
-      solutionFile: ${{ parameters.project }}
+      projectFile: ${{ parameters.project }}
       configuration: $(BuildConfiguration)
-      clean: true
-      packageApp: ${{ parameters.packageApp }}
-      buildForSimulator: ${{ parameters.buildForSimulator }}
-      args: ${{ parameters.xcodeArguments }}
-  #    signingIdentity: ${{ parameters.signingIdentity }}
-  #    signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
+      createAppPackage: ${{ parameters.createAppPackage }}
+      clean: false

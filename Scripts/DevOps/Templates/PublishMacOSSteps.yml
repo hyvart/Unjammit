@@ -31,7 +31,7 @@ steps:
         -TeamPrefix $(TeamId)
 
   - task: PowerShell@2
-    displayName: Upate Assets
+    displayName: Update Assets
     inputs:
       targetType: inline
       script: |
@@ -55,4 +55,4 @@ steps:
     parameters:
       project: macOS/Unjammit.macOS.csproj
       msbuildArguments:
-        /p:EnableCodeSigning=true
+        /p:EnableCodeSigning=false

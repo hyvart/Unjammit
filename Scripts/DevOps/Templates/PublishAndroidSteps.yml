@@ -1,0 +1,40 @@
+# Expected variables:
+#   - DotNetCoreSdk.Version
+#   - XamarinAndroid.MonoVersion
+#   - XamarinAndroid.Version
+
+parameters:
+  phase: # Aplha, Beta, Production (Omega)
+
+steps:
+  - powershell: |
+      Write-Host "##vso[task.setvariable variable=ShortSourceVersion]$($env:BUILD_SOURCEVERSION.Substring(0, 7))"
+    displayName: Set short source verison
+
+  - task: PowerShell@2
+    displayName: Set Version
+    inputs:
+      targetType: filePath
+      filePath: $(Build.SourcesDirectory)/Scripts/Set-Version-Android.ps1
+      arguments:
+        -Manifest $(Build.SourcesDirectory)/Android/Properties/AndroidManifest.xml
+        -PackageName $(PackageName)
+        -Label $(Label)
+        -VersionCode $(BuildId)
+        -VersionName $(BuildVersion)
+
+  - task: PowerShell@2
+    displayName: Update Assets
+    inputs:
+      targetType: inline
+      script: |
+        Copy-Item -Force -Recurse `
+          -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\Android\* `
+          -Destination ${env:BUILD_SOURCESDIRECTORY}\Android\
+
+  #TODO: Install certs.
+
+  - template: BuildAndroidSteps.yml
+    parameters:
+      project: $(Build.SourcesDirectory)/Android/Unjammit.Android.csproj
+      createAppPackage: true
