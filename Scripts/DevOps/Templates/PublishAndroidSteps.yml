@@ -20,7 +20,7 @@ steps:
         -Manifest $(Build.SourcesDirectory)/Android/Properties/AndroidManifest.xml
         -PackageName $(PackageName)
         -Label $(Label)
-        -VersionCode $(BuildId)
+        -VersionCode $(Build.BuildId)
         -VersionName $(BuildVersion)
 
   - task: PowerShell@2
