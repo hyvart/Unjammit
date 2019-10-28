@@ -10,15 +10,18 @@ parameters:
   # XamarinAndroid
 
 steps:
-  - template: SetMacOSFrameworkVersion.yml
-    parameters:
-      framework: Mono
-      version: $(XamarinAndroid.MonoVersion)
+  # - template: SetMacOSFrameworkVersion.yml
+  #   parameters:
+  #     framework: Mono
+  #     version: $(XamarinAndroid.MonoVersion)
 
-  - template: SetMacOSFrameworkVersion.yml
-    parameters:
-      framework: Xamarin.Android
-      version: $(XamarinAndroid.Version)
+  # - template: SetMacOSFrameworkVersion.yml
+  #   parameters:
+  #     framework: Xamarin.Android
+  #     version: $(XamarinAndroid.Version)
+
+  - bash: |
+      /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"
 
   - task: DotNetCoreInstaller@1
     inputs:
