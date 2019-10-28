@@ -152,6 +152,38 @@ stages:
               ArtifactName: Android-Alpha
               publishLocation: Container
 
+      - job:
+        displayName: Windows
+        dependsOn: SetUp
+
+        variables:
+          - group: Build - Windows
+          - group: Distribute - Alpha - Windows
+          - name: BuildVersion
+            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
+
+        pool:
+          vmImage: $(Job.VmImage)
+
+        steps:
+          - template: Templates/PublishWindowsSteps.yml
+            parameters:
+              phase: Alpha
+
+          - task: CopyFiles@2
+            displayName: Stage APPXBUNDLE
+            inputs:
+              SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.UWP/
+              Contents: '**/*.appxbundle'
+              TargetFolder: $(Build.ArtifactsDirectory)
+
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish artifact: Windows-Alpha'
+            inputs:
+              PathtoPublish: $(Build.ArtifactsDirectory)
+              ArtifactName: Windows-Alpha
+              publishLocation: Container
+
   - stage: Deploy
     dependsOn:
       - Publish
@@ -254,6 +286,34 @@ stages:
               serverEndpoint: App Center - Hyvart
               appSlug: hyvart/Unjammit-Android
               appFile: $(System.ArtifactsDirectory)/Android-Alpha/$(PackageName).apk
+              releaseNotesOption: input
+              releaseNotesInput: Alpha Build
+              isMandatory: true
+              destinationType: groups
+              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+              isSilent: false
+
+      - job:
+        displayName: Deploy Windows
+
+        variables:
+          - group: Distribute - Alpha - Windows
+
+        steps:
+          - checkout: none
+
+          - task: DownloadBuildArtifacts@0
+            displayName: Download Windows-Alpha
+            inputs:
+              buildType: current
+              artifactName: Windows-Alpha
+
+          - task: AppCenterDistribute@3
+            displayName: Distribute in App Center
+            inputs:
+              serverEndpoint: App Center - Hyvart
+              appSlug: hyvart/Unjammit-UWP
+              appFile: $(System.ArtifactsDirectory)/Windows-Alpha/$(TODO).appxbundle
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
               isMandatory: true
