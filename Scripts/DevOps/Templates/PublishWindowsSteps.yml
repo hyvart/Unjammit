@@ -13,8 +13,8 @@ steps:
       filePath: $(Build.SourcesDirectory)/Scripts/Set-Version-UWP.ps1
       arguments:
         -AppxManifest $(Build.SourcesDirectory)/UWP/Package.appxmanifest
-        -PackageIdentityName TODO
-        -PackageDisplayName TODO
+        -PackageIdentityName $(PackageIdentityName)
+        -PackageDisplayName $(PackageDisplayName)
         -Version $(BuildVersion)
 
   - task: PowerShell@2
