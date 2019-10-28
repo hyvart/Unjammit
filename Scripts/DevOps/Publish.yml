@@ -135,7 +135,7 @@ stages:
 
         steps:
           - bash: |
-              ls -ld /Library/Frameworks/Mono.framework/Versions/
+              ls -l /Library/Frameworks/Mono.framework/Versions/
 
           - template: Templates/PublishAndroidSteps.yml
             parameters:
