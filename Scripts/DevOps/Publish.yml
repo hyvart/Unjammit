@@ -134,6 +134,9 @@ stages:
           vmImage: $(Job.VmImage)
 
         steps:
+          - bash: |
+              ls -ld /Library/Frameworks/Mono.framework/Versions/
+
           - template: Templates/PublishAndroidSteps.yml
             parameters:
               phase: Alpha
@@ -159,6 +162,8 @@ stages:
         variables:
           - group: Build - Windows
           - group: Distribute - Alpha - Windows
+          - name: BuildPlatform
+            value: x64
           - name: BuildVersion
             value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
@@ -169,13 +174,6 @@ stages:
           - template: Templates/PublishWindowsSteps.yml
             parameters:
               phase: Alpha
-
-          - task: CopyFiles@2
-            displayName: Stage APPXBUNDLE
-            inputs:
-              SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.UWP/
-              Contents: '**/*.appxbundle'
-              TargetFolder: $(Build.ArtifactsDirectory)
 
           - task: PublishBuildArtifacts@1
             displayName: 'Publish artifact: Windows-Alpha'
