@@ -186,7 +186,7 @@ stages:
           - task: PublishBuildArtifacts@1
             displayName: 'Publish artifact: Windows-Alpha'
             inputs:
-              PathtoPublish: $(Build.ArtifactsDirectory)
+              PathtoPublish: $(Build.StagingDirectory)
               ArtifactName: Windows-Alpha
               publishLocation: Container
 
