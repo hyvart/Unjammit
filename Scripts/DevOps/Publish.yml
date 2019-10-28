@@ -136,6 +136,14 @@ stages:
         steps:
           - bash: |
               ls -l /Library/Frameworks/Mono.framework/Versions/
+              echo '-===='
+              ls /Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/xbuild/Xamarin/Android/Xamarin.Android.CSharp.targets
+              ls /Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/xbuild/Xamarin/Android/
+              ls /Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/xbuild/Xamarin/
+              ls /Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/xbuild/
+              ls /Library/Frameworks/Mono.framework/Versions/6.4.0/lib/mono/
+              ls /Library/Frameworks/Mono.framework/Versions/6.4.0/lib/
+              ls /Library/Frameworks/Mono.framework/Versions/6.4.0/
 
           - template: Templates/PublishAndroidSteps.yml
             parameters:
