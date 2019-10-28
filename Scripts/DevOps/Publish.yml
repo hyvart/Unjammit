@@ -189,81 +189,81 @@ stages:
       - Publish
 
     jobs:
-      - job:
-        displayName: Deploy macOS
+      # - job:
+      #   displayName: Deploy macOS
 
-        variables:
-          - group: Distribute - Alpha - macOS
+      #   variables:
+      #     - group: Distribute - Alpha - macOS
 
-        steps:
-          - checkout: none
+      #   steps:
+      #     - checkout: none
 
-          - task: DownloadBuildArtifacts@0
-            displayName: Download macOS-Alpha
-            inputs:
-              buildType: current
-              artifactName: macOS-Alpha
+      #     - task: DownloadBuildArtifacts@0
+      #       displayName: Download macOS-Alpha
+      #       inputs:
+      #         buildType: current
+      #         artifactName: macOS-Alpha
 
-          # - task: DownloadBuildArtifacts@0
-          #   inputs:
-          #     buildType: specific
-          #     project: Unjammit
-          #     pipeline: Publish
-          #     specificBuildWithTriggering: false
-          #     buildVersionToDownload: specific
-          #     buildId: 1371
-          #     artifactName: macOS-Alpha
+      #     # - task: DownloadBuildArtifacts@0
+      #     #   inputs:
+      #     #     buildType: specific
+      #     #     project: Unjammit
+      #     #     pipeline: Publish
+      #     #     specificBuildWithTriggering: false
+      #     #     buildVersionToDownload: specific
+      #     #     buildId: 1371
+      #     #     artifactName: macOS-Alpha
 
-          - task: AppCenterDistribute@3
-            displayName: Distribute in App Center
-            inputs:
-              serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-macOS
-              appFile: $(System.ArtifactsDirectory)/macOS-Alpha/Unjammit.dmg
-              releaseNotesOption: input
-              releaseNotesInput: Alpha Build
-              isMandatory: true
-              destinationType: groups
-              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
-              isSilent: false
+      #     - task: AppCenterDistribute@3
+      #       displayName: Distribute in App Center
+      #       inputs:
+      #         serverEndpoint: App Center - Hyvart
+      #         appSlug: hyvart/Unjammit-macOS
+      #         appFile: $(System.ArtifactsDirectory)/macOS-Alpha/Unjammit.dmg
+      #         releaseNotesOption: input
+      #         releaseNotesInput: Alpha Build
+      #         isMandatory: true
+      #         destinationType: groups
+      #         distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+      #         isSilent: false
 
-      - job:
-        displayName: Deploy iOS
+      # - job:
+      #   displayName: Deploy iOS
 
-        variables:
-          - group: Distribute - Alpha - iOS
+      #   variables:
+      #     - group: Distribute - Alpha - iOS
 
-        steps:
-          - checkout: none
+      #   steps:
+      #     - checkout: none
 
-          - task: DownloadBuildArtifacts@0
-            displayName: Download iOS-Alpha
-            inputs:
-              buildType: current
-              artifactName: iOS-Alpha
+      #     - task: DownloadBuildArtifacts@0
+      #       displayName: Download iOS-Alpha
+      #       inputs:
+      #         buildType: current
+      #         artifactName: iOS-Alpha
 
-          # - task: DownloadBuildArtifacts@0
-          #   inputs:
-          #     buildType: specific
-          #     project: Unjammit
-          #     pipeline: Publish
-          #     specificBuildWithTriggering: false
-          #     buildVersionToDownload: specific
-          #     buildId: 1371
-          #     artifactName: iOS-Alpha
+      #     # - task: DownloadBuildArtifacts@0
+      #     #   inputs:
+      #     #     buildType: specific
+      #     #     project: Unjammit
+      #     #     pipeline: Publish
+      #     #     specificBuildWithTriggering: false
+      #     #     buildVersionToDownload: specific
+      #     #     buildId: 1371
+      #     #     artifactName: iOS-Alpha
 
-          - task: AppCenterDistribute@3
-            displayName: Distribute in App Center
-            inputs:
-              serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit
-              appFile: $(System.ArtifactsDirectory)/iOS-Alpha/Unjammit.iOS.ipa
-              releaseNotesOption: input
-              releaseNotesInput: Alpha Build
-              isMandatory: true
-              destinationType: groups
-              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
-              isSilent: false
+      #     - task: AppCenterDistribute@3
+      #       displayName: Distribute in App Center
+      #       inputs:
+      #         serverEndpoint: App Center - Hyvart
+      #         appSlug: hyvart/Unjammit
+      #         appFile: $(System.ArtifactsDirectory)/iOS-Alpha/Unjammit.iOS.ipa
+      #         releaseNotesOption: input
+      #         releaseNotesInput: Alpha Build
+      #         isMandatory: true
+      #         destinationType: groups
+      #         distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+      #         isSilent: false
 
       - job:
         displayName: Deploy Android

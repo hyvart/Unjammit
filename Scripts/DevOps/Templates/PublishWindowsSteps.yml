@@ -14,7 +14,7 @@ steps:
       arguments:
         -AppxManifest $(Build.SourcesDirectory)/UWP/Package.appxmanifest
         -PackageIdentityName $(PackageIdentityName)
-        -PackageDisplayName $(PackageDisplayName)
+        -PackageDisplayName "$(PackageDisplayName)"
         -Version $(BuildVersion)
 
   - task: PowerShell@2
