@@ -23,11 +23,11 @@ For more, see the [Releases](https://github.com/hyvart/Unjammit/releases) sectio
 
 | | Minimum Version | Status |
 |:-:|:-:|:-:|
-| iOS | 9.3 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Pull%20Request?branchName=master&jobName=iOS)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=61&branchName=master) |
-| macOS | 10.7 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Pull%20Request?branchName=master&jobName=macOS)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=61&branchName=master) |
-| Windows Universal | [10 1803](https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1803) | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Pull%20Request?branchName=master&jobName=Windows%20Universal)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=61&branchName=master) |
-| Windows Desktop | 7 SP1 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Pull%20Request?branchName=master&jobName=Windows%20Forms)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=61&branchName=master) |
-| Android | 2.3 Gingerbread | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Pull%20Request?branchName=master&jobName=Android)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=61&branchName=master) |
+| iOS | 9.3 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=iOS)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
+| macOS | 10.7 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=macOS)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
+| Windows Universal | [10 1803](https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1803) | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=Windows%20Universal)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
+| Windows Desktop | 7 SP1 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=Windows%20Forms)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
+| Android | 2.3 Gingerbread | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=Android)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
 
 ## License
 
