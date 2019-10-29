@@ -11,8 +11,8 @@ name: $(BuildId)
 trigger:
   branches:
     include:
+      - master
       - release/alpha/*
-      - ci/test/pub*
 
 variables:
   - group: Build - Global
@@ -28,7 +28,6 @@ stages:
 
     jobs:
       - job: SetUp
-
         steps:
           - task: PowerShell@2
             displayName: Set global version
