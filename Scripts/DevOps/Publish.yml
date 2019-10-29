@@ -319,8 +319,8 @@ stages:
             inputs:
               serverEndpoint: App Center - Hyvart
               appSlug: hyvart/Unjammit-UWP
-              # appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppxPackages/Unjammit.UWP_$(BuildVersion)_x64_x86_bundle.appxupload
-              appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppxPackages/Unjammit.UWP_*_x64_x86_bundle.appxupload
+              # appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/Unjammit.UWP_$(BuildVersion)_x64_x86_bundle.appxupload
+              appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/Unjammit.UWP_*_x64_x86_bundle.appxupload
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
               isMandatory: true
