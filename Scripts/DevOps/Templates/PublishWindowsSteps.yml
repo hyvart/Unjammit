@@ -1,7 +1,6 @@
 # Expected variables:
 #   - 
 
-
 parameters:
   phase: # Alpha, Beta, Production (Omega)
 
