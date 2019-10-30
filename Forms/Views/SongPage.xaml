@@ -21,8 +21,27 @@
               HorizontalOptions="FillAndExpand" />
     </StackLayout>
 
-    <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="5,5,5,5">
-      <Image x:Name="ScoreImage" Aspect="AspectFit" HeightRequest="1024" />
+    <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="0">
+      <RelativeLayout
+        HeightRequest="1024" MinimumHeightRequest="1024"
+        WidthRequest="724" MinimumWidthRequest="724"
+        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Image x:Name="ScoreImage"
+               Aspect="AspectFit"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               />
+
+        <Frame x:Name="Cursor"
+               BorderColor="Green"
+               BackgroundColor="Transparent"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=34}"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=704}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-352}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=56}"
+               />
+      </RelativeLayout>
     </ScrollView>
 
     <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
