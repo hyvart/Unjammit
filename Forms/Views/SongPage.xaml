@@ -33,14 +33,22 @@
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                />
 
-        <Frame x:Name="Cursor"
+        <Frame x:Name="CursorFrame"
                BorderColor="Green"
                BackgroundColor="Transparent"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=34}"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=704}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-352}"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=56}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=41}">
+        </Frame>
+
+        <Frame BorderColor="Red" BackgroundColor="Red"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=1}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=34}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=100}"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=Y}"
                />
+
       </RelativeLayout>
     </ScrollView>
 
