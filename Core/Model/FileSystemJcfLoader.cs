@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
+using System.Text;
 using Claunia.PropertyList;
 
 namespace Jammit.Model
@@ -36,6 +36,8 @@ namespace Jammit.Model
       LoadBeats(result, songPath);
 
       LoadSections(result, songPath);
+
+      LoadScoreNodes(result, songPath);
 
       return result;
     }
@@ -163,11 +165,31 @@ namespace Jammit.Model
       }).ToList();
     }
 
+    /// <summary>
+    /// Loads score nodes for each instrument track.
+    /// </summary>
+    /// <param name="media">Must already have InstrumentTracks set.</param>
+    /// <param name="songPath"></param>
     private void LoadScoreNodes(JcfMedia media, string songPath)
     {
       using (var stream = File.OpenRead(Path.Combine(songPath, "nowline.nodes")))
       {
-        //TODO: Emulate ScoreNodes.FromStream
+        var numTracks = stream.ReadInt32LE();
+        var temp = new byte[32];
+        for (var i = 0; i < numTracks; i++)
+        {
+          stream.Read(temp, 0, 32);
+          var title = Encoding.UTF8.GetString(temp, 0, 32);
+          title = title.Remove(title.IndexOf('\0'));
+
+          stream.Read(temp, 0, 32);
+          var type = Encoding.UTF8.GetString(temp, 0, 32);
+          type = type.Remove(type.IndexOf('\0'));
+
+          var nodes = BeatInfo.FromStream(stream);
+          var index = media.InstrumentTracks.FirstOrDefault(track => track.Title == title);
+          media.ScoreNodes[index] = new ScoreNodes(title, type, nodes);
+        }
       }
     }
   }
