@@ -18,7 +18,13 @@ namespace Jammit.Forms.Views
     static Color NormalButtonTextColor;
     static Color NormalButtonBackgroundColor;
 
-    #endregion  static members
+    #endregion static members
+
+    #region private fields
+
+    private int _beatIndex;
+
+    #endregion private fields
 
     public SongPage(SongInfo song)
     {
@@ -67,6 +73,8 @@ namespace Jammit.Forms.Views
         var newPosition = (player as Audio.IJcfPlayer).Position;
         if (newPosition.TotalSeconds != PositionSlider.Value)
           PositionSlider.Value = newPosition.TotalSeconds;
+
+        MoveCursor(newPosition);
       };
 
       //TODO: Should be set in binding.
@@ -77,6 +85,8 @@ namespace Jammit.Forms.Views
         AlbumImage.IsVisible = false;
       else
         AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
+
+      _beatIndex = 0;
     }
 
     #region Properties
@@ -155,6 +165,13 @@ namespace Jammit.Forms.Views
     }
 
     #endregion Handlers
+
+    private void MoveCursor(TimeSpan position)
+    {
+      //TODO: compute _beatIndex as a function of position.
+      var nodes = Media.ScoreNodes[(ScorePicker.SelectedItem as ScoreInfo).Track].Nodes;
+      CursorBar.TranslationX = nodes[_beatIndex].X;
+    }
 
     //TODO: Re-enable.
     private async void ScoreLayout_Scrolled(object sender, ScrolledEventArgs e)

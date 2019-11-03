@@ -42,7 +42,9 @@
                RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=41}">
         </Frame>
 
-        <Frame BorderColor="Red" BackgroundColor="Red"
+        <Frame x:Name="CursorBar"
+               BorderColor="Red"
+               BackgroundColor="Red"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=1}"
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=34}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=100}"
