@@ -23,7 +23,7 @@ namespace Jammit.Forms.Views
       base.OnAppearing();
     }
 
-    #endregion // Events
+    #endregion  Events
 
     private void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {

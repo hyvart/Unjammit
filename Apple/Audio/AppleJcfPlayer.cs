@@ -15,7 +15,7 @@ namespace Jammit.Audio
     JcfMedia media;
     Dictionary<PlayableTrackInfo, IAVAudioPlayer> players;
 
-    #endregion // private members
+    #endregion  private members
 
     public AppleJcfPlayer(JcfMedia media, Func<PlayableTrackInfo, Stream, IAVAudioPlayer> playerFactory)
     {
@@ -108,6 +108,6 @@ namespace Jammit.Audio
 
     public PlaybackStatus State { get; private set; }
 
-    #endregion // IJcfPlayer members
+    #endregion  IJcfPlayer members
   }
 }

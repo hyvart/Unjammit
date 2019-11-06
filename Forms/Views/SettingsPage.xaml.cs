@@ -23,7 +23,7 @@ namespace Jammit.Forms.Views
     {
     }
 
-    #endregion // Page overrides
+    #endregion  Page overrides
 
     private void SaveButton_Clicked(object sender, EventArgs e)
     {

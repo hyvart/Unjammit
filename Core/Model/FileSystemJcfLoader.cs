@@ -59,7 +59,7 @@ namespace Jammit.Model
       return File.OpenRead(path);
     }
 
-    #endregion // IJcfLoader members
+    #endregion  IJcfLoader members
 
     private void LoadTracks(JcfMedia media, string songPath)
     {

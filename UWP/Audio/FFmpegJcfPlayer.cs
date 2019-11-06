@@ -66,7 +66,7 @@ namespace Jammit.Audio
 
     #region Bindable Properties
 
-    #endregion // Bindable Properties
+    #endregion  Bindable Properties
 
     #region IJcfPlayer members
 
@@ -128,6 +128,6 @@ namespace Jammit.Audio
 
     public PlaybackStatus State { get; private set; }
 
-    #endregion // IJcfPlayer members
+    #endregion  IJcfPlayer members
   }
 }

@@ -12,7 +12,7 @@ namespace Jammit.Audio
     AVAudioPlayer player;
     NSTimer timer;
 
-    #endregion // private members
+    #endregion  private members
 
     public MacOSAVAudioPlayer(Model.PlayableTrackInfo track, System.IO.Stream stream)
     {
@@ -93,6 +93,6 @@ namespace Jammit.Audio
       }
     }
 
-    #endregion // IAvAudioPlayer members
+    #endregion  IAvAudioPlayer members
   }
 }

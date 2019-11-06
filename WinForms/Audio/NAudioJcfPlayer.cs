@@ -19,7 +19,7 @@ namespace Jam.NET.Audio
     readonly WaveMixerStream32 _mixer;
     readonly WaveOutEvent _waveOut;
 
-    #endregion // private members
+    #endregion  private members
 
     public NAudioJcfPlayer(JcfMedia media)
     {
@@ -121,6 +121,6 @@ namespace Jam.NET.Audio
       }
     }
 
-    #endregion // IJcfPlayer members
+    #endregion  IJcfPlayer members
   }
 }

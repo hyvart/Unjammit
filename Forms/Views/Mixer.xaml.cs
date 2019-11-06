@@ -26,7 +26,7 @@ namespace Jammit.Forms.Views
     public static readonly BindableProperty PlayerProperty =
       BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
 
-    #endregion // Bindable Properties
+    #endregion  Bindable Properties
 
     #region Properties
 
@@ -56,7 +56,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    #endregion // Properties
+    #endregion  Properties
 
     #region Events
 
@@ -81,6 +81,6 @@ namespace Jammit.Forms.Views
       }
     }
 
-    #endregion // Events
+    #endregion  Events
   }
 }

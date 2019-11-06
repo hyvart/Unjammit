@@ -74,7 +74,7 @@ namespace Jammit.Model
       }
     }
 
-    #endregion // private members
+    #endregion  private members
 
     public FolderLibrary(string storagePath, Client.IClient client)
     {
@@ -105,7 +105,7 @@ namespace Jammit.Model
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    #endregion // INotifyPropertyChanged members
+    #endregion  INotifyPropertyChanged members
 
     #region ILibrary members
 
@@ -242,6 +242,6 @@ namespace Jammit.Model
       Save();
     }
 
-    #endregion // ILibrary members
+    #endregion  ILibrary members
   }
 }

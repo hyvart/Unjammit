@@ -19,7 +19,7 @@ namespace Jammit.Forms.Client
     private AuthorizationStatus _authStatus;
     private double _songDownloadProgress;
 
-    #endregion // private members
+    #endregion  private members
 
     #region INotifyPropertyChanged members
 
@@ -205,6 +205,6 @@ namespace Jammit.Forms.Client
       }
     }
 
-    #endregion // IClient members
+    #endregion  IClient members
   }
 }

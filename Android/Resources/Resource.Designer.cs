@@ -26,6 +26,7 @@ namespace Jammit
 		
 		public static void UpdateIdValues()
 		{
+			global::LibVLCSharp.Resource.String.app_name = global::Jammit.Resource.String.app_name;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Jammit.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::Jammit.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::Jammit.Resource.Attribute.font;

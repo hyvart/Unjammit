@@ -18,7 +18,7 @@ namespace Jammit.Forms.Views
     static Color NormalButtonTextColor;
     static Color NormalButtonBackgroundColor;
 
-    #endregion // static members
+    #endregion  static members
 
     public SongPage(SongInfo song)
     {
@@ -154,7 +154,7 @@ namespace Jammit.Forms.Views
       SetScorePage(PageIndex);
     }
 
-    #endregion //Handlers
+    #endregion Handlers
 
     //TODO: Re-enable.
     private async void ScoreLayout_Scrolled(object sender, ScrolledEventArgs e)
