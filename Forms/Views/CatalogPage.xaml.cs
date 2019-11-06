@@ -30,7 +30,7 @@ namespace Jammit.Forms.Views
       Device.BeginInvokeOnMainThread(async () => await LoadCatalog());
     }
 
-    #endregion // Page overrides
+    #endregion Page overrides
 
     private async Task LoadCatalog()
     {

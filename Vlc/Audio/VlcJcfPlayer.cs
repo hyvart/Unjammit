@@ -16,7 +16,7 @@ namespace Jammit.Audio
     Dictionary<PlayableTrackInfo, MediaPlayer> _players;
     PlayableTrackInfo _backingTrack; // Keep for tracking player.
 
-    #endregion // private members
+    #endregion private members
 
     public VlcJcfPlayer(JcfMedia media, MediaConfiguration[] configs)
     {
@@ -131,6 +131,6 @@ namespace Jammit.Audio
       Position = TimeSpan.Zero;
     }
 
-    #endregion //IJcfPlayer
+    #endregion IJcfPlayer
   }
 }

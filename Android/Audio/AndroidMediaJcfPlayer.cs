@@ -11,7 +11,7 @@ namespace Jammit.Audio
 
     private MediaPlayer _player;
 
-    #endregion // private members
+    #endregion private members
 
     public AndroidMediaJcfPlayer(JcfMedia media)
     {
@@ -77,6 +77,6 @@ namespace Jammit.Audio
 
     public PlaybackStatus State { get; private set; }
 
-    #endregion //IJcfPlayer
+    #endregion IJcfPlayer
   }// class AndroidMediaJcfPlayer
 }// namespace Jammit.Audio
