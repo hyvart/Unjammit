@@ -23,11 +23,11 @@ namespace Jammit.Forms.Views
 
     #region Page overrides
 
-    protected override async void OnAppearing()
+    protected override void OnAppearing()
     {
       base.OnAppearing();
 
-      await LoadCatalog();
+      Device.BeginInvokeOnMainThread(async () => await LoadCatalog());
     }
 
     #endregion // Page overrides
