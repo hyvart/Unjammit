@@ -115,7 +115,6 @@ namespace Jammit.Forms.Views
 
     #region Handlers
 
-    bool _firstPlay = true;
     private void PlayButton_Clicked(object sender, EventArgs e)
     {
       if (Audio.PlaybackStatus.Playing == Player.State)
@@ -128,19 +127,14 @@ namespace Jammit.Forms.Views
       }
       else
       {
-        if (_firstPlay)
-        {
-          Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
-          {
-            MoveCursor(Player.Position);
-
-            return true;
-          });
-
-          _firstPlay = false;
-        }
-
         Player.Play();
+
+        Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
+        {
+          MoveCursor(Player.Position);
+
+          return Player.State == Audio.PlaybackStatus.Playing;
+        });
 
         PlayButton.BackgroundColor = Color.PaleGreen;
         PlayButton.TextColor = Color.DarkGreen;
