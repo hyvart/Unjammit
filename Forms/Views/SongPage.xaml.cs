@@ -87,6 +87,26 @@ namespace Jammit.Forms.Views
       _beatIndex = 0;
     }
 
+    #region Page overrides
+
+    protected override void OnAppearing()
+    {
+      base.OnAppearing();
+
+      if (null == ScorePicker.SelectedItem)
+        return;
+
+      var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+      var y = track.ScoreSystemInterval / 2 - (-track.ScoreSystemInterval + track.ScoreSystemHeight);
+      var h = track.ScoreSystemHeight;
+      CursorFrame.HeightRequest = h;
+      CursorBar.HeightRequest = h;
+      CursorFrame.TranslationY = y;
+      CursorBar.TranslationY = y;
+    }
+
+    #endregion Page overrides
+
     #region Properties
 
     public SongInfo Song { get; set; }
@@ -210,13 +230,23 @@ namespace Jammit.Forms.Views
       //_beatIndex = Media.Beats.Count - 1;
       //FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
 
-      var nodes = Media.ScoreNodes[(ScorePicker.SelectedItem as ScoreInfo).Track].Nodes;
+      var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+      var nodes = Media.ScoreNodes[track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
+
+      var yOffset = track.ScoreSystemInterval * (nodes[_beatIndex].Row) + track.ScoreSystemHeight;
+      CursorFrame.TranslationY = yOffset;
+      CursorBar.TranslationY = yOffset;
+
+
       BeatLabel.Text =
         $"P: {position}\n" +
         $"S: {Player.State}\n" +
         $"X: {nodes[_beatIndex].X}\n" +
+        $"R: {nodes[_beatIndex].Row}\n" +
+        $"M: {nodes[_beatIndex].Measure}\n" +
         $"TX: {CursorBar.TranslationX}\n" +
+        $"TY: {CursorBar.TranslationY}\n" +
         $"Idx:{_beatIndex}\n" +
         $"BT: {Media.Beats[_beatIndex].Time}\n";
     }
