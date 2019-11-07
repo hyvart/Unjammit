@@ -133,7 +133,7 @@ namespace Jammit.Forms.Views
         {
           MoveCursor(Player.Position);
 
-          return Player.State == Audio.PlaybackStatus.Playing;
+          return Player.State == Audio.PlaybackStatus.Playing;// && Player.Position < Player.Length;
         });
 
         PlayButton.BackgroundColor = Color.PaleGreen;
@@ -171,27 +171,53 @@ namespace Jammit.Forms.Views
 
     #endregion Handlers
 
+    private void FindBeat(double totalSeconds, int start, int end)
+    {
+      int mid = (start + end) / 2;
+      if (Media.Beats[mid].Time < totalSeconds)
+      {
+        FindBeat(totalSeconds, mid, end);
+      }
+      else if (Media.Beats[mid].Time > totalSeconds)
+      {
+        // If [mid] is the very next major element, finish.
+        if (Media.Beats[mid - 1].Time <= totalSeconds)
+        {
+          _beatIndex = mid - 1;
+          return;
+        }
+
+        FindBeat(totalSeconds, start, mid);
+      }
+      else
+      {
+        // Unlikely, double equality.
+        _beatIndex = mid;
+      }
+    }
 
     private void MoveCursor(TimeSpan position)
     {
-      //TODO: EWWW! Efficient search, please!
+      //TODO: EWWW! Use FindBeat instead!
       for (int i = 0; i < Media.Beats.Count - 1; i++)
       {
-        if (Media.Beats[i+1].Time > position.TotalSeconds)
+        if (Media.Beats[i + 1].Time > position.TotalSeconds)
         {
           _beatIndex = i;
           break;
         }
       }
       //_beatIndex = Media.Beats.Count - 1;
+      //FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
 
       var nodes = Media.ScoreNodes[(ScorePicker.SelectedItem as ScoreInfo).Track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
       BeatLabel.Text =
         $"P: {position}\n" +
+        $"S: {Player.State}\n" +
         $"X: {nodes[_beatIndex].X}\n" +
         $"TX: {CursorBar.TranslationX}\n" +
-        $"Index:{_beatIndex}\n" +
+        $"Idx:{_beatIndex}\n" +
         $"BT: {Media.Beats[_beatIndex].Time}\n";
     }
 
