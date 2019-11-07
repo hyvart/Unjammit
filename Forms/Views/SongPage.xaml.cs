@@ -97,8 +97,9 @@ namespace Jammit.Forms.Views
         return;
 
       var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
-      var y = track.ScoreSystemInterval / 2 - (-track.ScoreSystemInterval + track.ScoreSystemHeight);
-      var h = track.ScoreSystemHeight;
+      var y = track.ScoreSystemInterval / 4;// - (-track.ScoreSystemInterval + track.ScoreSystemHeight);
+      //var h = track.ScoreSystemHeight / 4;
+      var h = track.ScoreSystemHeight - track.ScoreSystemInterval;
       CursorFrame.HeightRequest = h;
       CursorBar.HeightRequest = h;
       CursorFrame.TranslationY = y;
@@ -234,10 +235,9 @@ namespace Jammit.Forms.Views
       var nodes = Media.ScoreNodes[track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
 
-      var yOffset = track.ScoreSystemInterval * (nodes[_beatIndex].Row) + track.ScoreSystemHeight;
+      var yOffset = (track.ScoreSystemInterval / 4) + track.ScoreSystemInterval * (nodes[_beatIndex].Row) + (track.ScoreSystemHeight - track.ScoreSystemInterval);
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
-
 
       BeatLabel.Text =
         $"P: {position}\n" +

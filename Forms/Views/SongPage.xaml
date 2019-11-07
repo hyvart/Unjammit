@@ -37,8 +37,7 @@
                BorderColor="Green"
                BackgroundColor="Transparent"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=704}"
-               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-352}"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}">
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-352}">
         </Frame>
 
         <Frame x:Name="CursorBar"
@@ -46,7 +45,6 @@
                BackgroundColor="Red"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=1}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=100}"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=Y}"
                />
 
       </RelativeLayout>
