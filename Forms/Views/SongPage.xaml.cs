@@ -73,8 +73,6 @@ namespace Jammit.Forms.Views
         var newPosition = (player as Audio.IJcfPlayer).Position;
         if (newPosition.TotalSeconds != PositionSlider.Value)
           PositionSlider.Value = newPosition.TotalSeconds;
-
-        MoveCursor(newPosition);
       };
 
       //TODO: Should be set in binding.
@@ -117,6 +115,7 @@ namespace Jammit.Forms.Views
 
     #region Handlers
 
+    bool _firstPlay = true;
     private void PlayButton_Clicked(object sender, EventArgs e)
     {
       if (Audio.PlaybackStatus.Playing == Player.State)
@@ -129,6 +128,18 @@ namespace Jammit.Forms.Views
       }
       else
       {
+        if (_firstPlay)
+        {
+          Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
+          {
+            MoveCursor(Player.Position);
+
+            return true;
+          });
+
+          _firstPlay = false;
+        }
+
         Player.Play();
 
         PlayButton.BackgroundColor = Color.PaleGreen;
@@ -169,9 +180,25 @@ namespace Jammit.Forms.Views
 
     private void MoveCursor(TimeSpan position)
     {
-      //TODO: compute _beatIndex as a function of position.
+      //TODO: EWWW! Efficient search, please!
+      for (int i = 0; i < Media.Beats.Count - 1; i++)
+      {
+        if (Media.Beats[i+1].Time > position.TotalSeconds)
+        {
+          _beatIndex = i;
+          break;
+        }
+      }
+      //_beatIndex = Media.Beats.Count - 1;
+
       var nodes = Media.ScoreNodes[(ScorePicker.SelectedItem as ScoreInfo).Track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
+      BeatLabel.Text =
+        $"P: {position}\n" +
+        $"X: {nodes[_beatIndex].X}\n" +
+        $"TX: {CursorBar.TranslationX}\n" +
+        $"Index:{_beatIndex}\n" +
+        $"BT: {Media.Beats[_beatIndex].Time}\n";
     }
 
     //TODO: Re-enable.
