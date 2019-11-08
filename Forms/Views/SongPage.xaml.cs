@@ -97,11 +97,11 @@ namespace Jammit.Forms.Views
         return;
 
       var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
-      var y = track.ScoreSystemInterval / 4;// - (-track.ScoreSystemInterval + track.ScoreSystemHeight);
-      //var h = track.ScoreSystemHeight / 4;
       var h = track.ScoreSystemHeight - track.ScoreSystemInterval;
       CursorFrame.HeightRequest = h;
       CursorBar.HeightRequest = h;
+
+      var y = (track.ScoreSystemInterval / 4) /*+ track.ScoreSystemInterval*/ + (track.ScoreSystemHeight - track.ScoreSystemInterval);
       CursorFrame.TranslationY = y;
       CursorBar.TranslationY = y;
     }
@@ -219,6 +219,7 @@ namespace Jammit.Forms.Views
 
     private void MoveCursor(TimeSpan position)
     {
+#if false
       //TODO: EWWW! Use FindBeat instead!
       for (int i = 0; i < Media.Beats.Count - 1; i++)
       {
