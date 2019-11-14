@@ -193,22 +193,23 @@ namespace Jammit.Forms.Views
 
     #endregion Handlers
 
-    int x = 9;
     private void FindBeat(double totalSeconds, int start, int end)
     {
       int mid = (start + end) / 2;
-      if (Media.Beats[mid].Time < totalSeconds)
+      if (mid == start)
+      {
+        _beatIndex = mid;
+      }
+      else if (Media.Beats[mid].Time < totalSeconds)
       {
         FindBeat(totalSeconds, mid, end);
       }
       else if (Media.Beats[mid].Time > totalSeconds)
       {
-        if (_beatIndex == 374)
-          x = -1;
         // If [mid] is the very next major element, finish.
         if (Media.Beats[mid - 1].Time <= totalSeconds)
         {
-          _beatIndex = mid;// - 1;
+          _beatIndex = mid - 1;
           return;
         }
 
@@ -234,9 +235,9 @@ namespace Jammit.Forms.Views
         }
       }
       //_beatIndex = Media.Beats.Count - 1;
-#endif
+#else
       FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
-
+#endif
       var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
       var nodes = Media.ScoreNodes[track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
