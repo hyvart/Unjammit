@@ -148,9 +148,9 @@ namespace Jammit.Forms.Views
 
         Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
         {
-          MoveCursor(Player.Position);
+          Device.BeginInvokeOnMainThread(async() => await MoveCursor(Player.Position));
 
-          return Player.State == Audio.PlaybackStatus.Playing;// && Player.Position < Player.Length;
+          return Player.State == Audio.PlaybackStatus.Playing;
         });
 
         PlayButton.BackgroundColor = Color.PaleGreen;
@@ -217,7 +217,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    private void MoveCursor(TimeSpan position)
+    private async Task MoveCursor(TimeSpan position)
     {
 #if false
       //TODO: EWWW! Use FindBeat instead!
@@ -237,9 +237,14 @@ namespace Jammit.Forms.Views
       var nodes = Media.ScoreNodes[track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
 
-      var yOffset = track.ScoreSystemInterval * (nodes[_beatIndex].Row) % ScoreImage.Height;
+      var y = track.ScoreSystemInterval * (nodes[_beatIndex].Row);
+      uint page = (uint)(y / ScoreImage.Height);
+      if (page != PageIndex)
+        SetScorePage(page);
+      var yOffset = y % ScoreImage.Height;
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
+      await ScoreLayout.ScrollToAsync(0, yOffset, true);
 
       BeatLabel.Text =
         $"P: {position}\n" +
@@ -250,7 +255,8 @@ namespace Jammit.Forms.Views
         $"TX: {CursorBar.TranslationX}\n" +
         $"TY: {CursorBar.TranslationY}\n" +
         $"Idx:{_beatIndex}\n" +
-        $"BT: {Media.Beats[_beatIndex].Time}\n";
+        $"BT: {Media.Beats[_beatIndex].Time}\n" +
+        $"Pg: {page}";
     }
 
     //TODO: Re-enable.
@@ -296,22 +302,18 @@ namespace Jammit.Forms.Views
 
     private void BackButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage(PageIndex - 1);
     }
 
     private void ForwardButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage(PageIndex + 1);
     }
 
     private void StartButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage(0);
     }
 
     private void EndButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage((ScorePicker.SelectedItem as ScoreInfo).PageCount - 1);
     }
   }
 }
