@@ -166,6 +166,7 @@ namespace Jammit.Forms.Views
 
     #endregion Handlers
 
+
     private void MoveCursor(TimeSpan position)
     {
       //TODO: compute _beatIndex as a function of position.
