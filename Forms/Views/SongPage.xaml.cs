@@ -229,7 +229,6 @@ namespace Jammit.Forms.Views
           break;
         }
       }
-      //_beatIndex = Media.Beats.Count - 1;
 #else
       FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
 #endif
@@ -241,10 +240,18 @@ namespace Jammit.Forms.Views
       uint page = (uint)(y / ScoreImage.Height);
       if (page != PageIndex)
         SetScorePage(page);
+
       var yOffset = y % ScoreImage.Height;
+      if (Device.macOS == Device.RuntimePlatform)
+      {
+        yOffset *= -1;
+      }
+      else
+      {
+        await ScoreLayout.ScrollToAsync(0, yOffset, false);
+      }
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
-      await ScoreLayout.ScrollToAsync(0, yOffset, true);
 
       BeatLabel.Text =
         $"P: {position}\n" +
