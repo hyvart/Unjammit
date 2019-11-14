@@ -97,14 +97,9 @@ namespace Jammit.Forms.Views
         return;
 
       var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
-      var h = track.ScoreSystemHeight - track.ScoreSystemInterval;
+      var h = track.ScoreSystemHeight * .775;
       CursorFrame.HeightRequest = h;
       CursorBar.HeightRequest = h;
-
-      var y = -track.ScoreSystemInterval / 4;
-        //(track.ScoreSystemInterval / 4) /*+ track.ScoreSystemInterval*/ + (track.ScoreSystemHeight - track.ScoreSystemInterval);
-      CursorFrame.TranslationY = y;
-      CursorBar.TranslationY = y;
     }
 
     #endregion Page overrides
@@ -242,9 +237,9 @@ namespace Jammit.Forms.Views
       var nodes = Media.ScoreNodes[track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
 
-      //var yOffset = (track.ScoreSystemInterval / 4) + track.ScoreSystemInterval * (nodes[_beatIndex].Row) + (track.ScoreSystemHeight - track.ScoreSystemInterval);
-      //CursorFrame.TranslationY = yOffset;
-      //CursorBar.TranslationY = yOffset;
+      var yOffset = track.ScoreSystemInterval * (nodes[_beatIndex].Row) % ScoreImage.Height;
+      CursorFrame.TranslationY = yOffset;
+      CursorBar.TranslationY = yOffset;
 
       BeatLabel.Text =
         $"P: {position}\n" +
