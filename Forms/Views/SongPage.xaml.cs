@@ -230,7 +230,8 @@ namespace Jammit.Forms.Views
         }
       }
       //_beatIndex = Media.Beats.Count - 1;
-      //FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
+#endif
+      FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
 
       var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
       var nodes = Media.ScoreNodes[track].Nodes;

@@ -47,6 +47,9 @@
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
                />
 
+        <Label x:Name="BeatLabel"
+               TextColor="Blue"/>
+
       </RelativeLayout>
     </ScrollView>
 
