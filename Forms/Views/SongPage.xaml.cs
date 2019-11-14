@@ -101,7 +101,8 @@ namespace Jammit.Forms.Views
       CursorFrame.HeightRequest = h;
       CursorBar.HeightRequest = h;
 
-      var y = (track.ScoreSystemInterval / 4) /*+ track.ScoreSystemInterval*/ + (track.ScoreSystemHeight - track.ScoreSystemInterval);
+      var y = -track.ScoreSystemInterval / 4;
+        //(track.ScoreSystemInterval / 4) /*+ track.ScoreSystemInterval*/ + (track.ScoreSystemHeight - track.ScoreSystemInterval);
       CursorFrame.TranslationY = y;
       CursorBar.TranslationY = y;
     }
@@ -192,6 +193,7 @@ namespace Jammit.Forms.Views
 
     #endregion Handlers
 
+    int x = 9;
     private void FindBeat(double totalSeconds, int start, int end)
     {
       int mid = (start + end) / 2;
@@ -201,10 +203,12 @@ namespace Jammit.Forms.Views
       }
       else if (Media.Beats[mid].Time > totalSeconds)
       {
+        if (_beatIndex == 374)
+          x = -1;
         // If [mid] is the very next major element, finish.
         if (Media.Beats[mid - 1].Time <= totalSeconds)
         {
-          _beatIndex = mid - 1;
+          _beatIndex = mid;// - 1;
           return;
         }
 
@@ -237,9 +241,9 @@ namespace Jammit.Forms.Views
       var nodes = Media.ScoreNodes[track].Nodes;
       CursorBar.TranslationX = nodes[_beatIndex].X;
 
-      var yOffset = (track.ScoreSystemInterval / 4) + track.ScoreSystemInterval * (nodes[_beatIndex].Row) + (track.ScoreSystemHeight - track.ScoreSystemInterval);
-      CursorFrame.TranslationY = yOffset;
-      CursorBar.TranslationY = yOffset;
+      //var yOffset = (track.ScoreSystemInterval / 4) + track.ScoreSystemInterval * (nodes[_beatIndex].Row) + (track.ScoreSystemHeight - track.ScoreSystemInterval);
+      //CursorFrame.TranslationY = yOffset;
+      //CursorBar.TranslationY = yOffset;
 
       BeatLabel.Text =
         $"P: {position}\n" +
