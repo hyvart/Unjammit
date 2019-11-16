@@ -41,9 +41,9 @@
         </Frame>
 
         <Frame x:Name="CursorBar"
-               BorderColor="Red"
-               BackgroundColor="Red"
-               RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=1}"
+               BorderColor="Green"
+               BackgroundColor="Green"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=2}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
                />
 
@@ -78,13 +78,13 @@
                 WidthRequest="10" />
         <Image x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-          <Button x:Name="RepeatButton" Text="🔁" HorizontalOptions="Center" IsEnabled="False" />
-          <Button x:Name="StartButton" Text="⏬" HorizontalOptions="Center" FontSize="Small" Clicked="StartButton_Clicked" />
-          <Button x:Name="BackButton" Text="⏪" HorizontalOptions="Center" FontSize="Small" Clicked="BackButton_Clicked" />
-          <Button x:Name="PlayButton" Text="⏯" HorizontalOptions="Center" FontSize="Small" Clicked="PlayButton_Clicked" />
-          <Button x:Name="StopButton" Text="⏹" HorizontalOptions="Center" FontSize="Small" Clicked="StopButton_Clicked" />
+          <Button x:Name="RepeatButton"  Text="🔁" HorizontalOptions="Center" IsEnabled="False" />
+          <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Small" Clicked="StartButton_Clicked" />
+          <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Small" Clicked="BackButton_Clicked" />
+          <Button x:Name="PlayButton"    Text="⏯" HorizontalOptions="Center" FontSize="Small" Clicked="PlayButton_Clicked" />
+          <Button x:Name="StopButton"    Text="⏹" HorizontalOptions="Center" FontSize="Small" Clicked="StopButton_Clicked" />
           <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Small" Clicked="ForwardButton_Clicked" />
-          <Button x:Name="EndButton" Text="⏫" HorizontalOptions="Center" FontSize="Small" Clicked="EndButton_Clicked" />
+          <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Small" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
     </StackLayout>
