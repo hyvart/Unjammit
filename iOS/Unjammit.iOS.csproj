@@ -39,9 +39,6 @@
     <Optimize>true</Optimize>
     <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
-  <!-- <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
-    <MtouchLink>SdkOnly</MtouchLink>
-  </PropertyGroup> -->
   <PropertyGroup Condition=" '$(Platform)' == 'iPhone' ">
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
