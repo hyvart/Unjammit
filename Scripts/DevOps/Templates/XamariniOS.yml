@@ -35,6 +35,11 @@ jobs:
               BuildConfiguration: ${{ configuration }}
 
     steps:
+      - bash: |
+          xcode-select --print-path
+          /bin/bash -c "sudo xcode-select -switch /Applications/Xcode_${XCODE_VERSION}.app"
+        displayName: Select Xcode $(Xcode.Version)
+
       - template: SetMacOSFrameworkVersion.yml
         parameters:
           framework: Mono
