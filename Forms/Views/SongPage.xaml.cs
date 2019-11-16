@@ -22,7 +22,7 @@ namespace Jammit.Forms.Views
 
     #region private fields
 
-    private int _beatIndex;
+    private int _beatIndex = 0;
 
     #endregion private fields
 
@@ -309,18 +309,38 @@ namespace Jammit.Forms.Views
 
     private void BackButton_Clicked(object sender, EventArgs e)
     {
+      for(int i = Media.Sections.Count-1; i >= 0; i--)
+      {
+        if (Media.Sections[i].BeatIdx < _beatIndex)
+        {
+          Player.Position = TimeSpan.FromSeconds(Media.Sections[i].Beat.Time);
+
+          return;
+        }
+      }
     }
 
     private void ForwardButton_Clicked(object sender, EventArgs e)
     {
+      for (int i = 0; i < Media.Sections.Count; i++)
+      {
+        if (Media.Sections[i].BeatIdx > _beatIndex)
+        {
+          Player.Position = TimeSpan.FromSeconds(Media.Sections[i].Beat.Time);
+
+          return;
+        }
+      }
     }
 
     private void StartButton_Clicked(object sender, EventArgs e)
     {
+      Player.Position = TimeSpan.FromSeconds(Media.Sections.First().Beat.Time);
     }
 
     private void EndButton_Clicked(object sender, EventArgs e)
     {
+      Player.Position = TimeSpan.FromSeconds(Media.Sections.Last().Beat.Time);
     }
   }
 }
