@@ -22,7 +22,7 @@ namespace Jammit.Forms.Views
 
     #region private fields
 
-    private int _beatIndex = 0;
+    private int _beatIndex;
 
     #endregion private fields
 
@@ -40,25 +40,6 @@ namespace Jammit.Forms.Views
 
       NormalButtonBackgroundColor = PlayButton.BackgroundColor;
       NormalButtonTextColor = PlayButton.TextColor;
-
-      if (Device.Android == Device.RuntimePlatform)
-      {
-        RepeatButton.MinimumWidthRequest = 3;
-        StartButton.MinimumWidthRequest = 3;
-        BackButton.MinimumWidthRequest = 3;
-        PlayButton.MinimumWidthRequest = 3;
-        StopButton.MinimumWidthRequest = 3;
-        ForwardButton.MinimumWidthRequest = 3;
-        EndButton.MinimumWidthRequest = 3;
-
-        RepeatButton.MinimumHeightRequest = 3;
-        StartButton.MinimumHeightRequest = 3;
-        BackButton.MinimumHeightRequest = 3;
-        PlayButton.MinimumHeightRequest = 3;
-        StopButton.MinimumHeightRequest = 3;
-        ForwardButton.MinimumHeightRequest = 3;
-        EndButton.MinimumHeightRequest = 3;
-      }
 
       //TODO: Move to XAML?
       //TODO: Why is it still needed?

@@ -79,12 +79,12 @@
         <Image x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
           <Button x:Name="RepeatButton"  Text="🔁" HorizontalOptions="Center" IsEnabled="False" />
-          <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Small" Clicked="StartButton_Clicked" />
-          <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Small" Clicked="BackButton_Clicked" />
-          <Button x:Name="PlayButton"    Text="⏯" HorizontalOptions="Center" FontSize="Small" Clicked="PlayButton_Clicked" />
-          <Button x:Name="StopButton"    Text="⏹" HorizontalOptions="Center" FontSize="Small" Clicked="StopButton_Clicked" />
-          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Small" Clicked="ForwardButton_Clicked" />
-          <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Small" Clicked="EndButton_Clicked" />
+          <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Small" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="StartButton_Clicked" />
+          <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Small" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="BackButton_Clicked" />
+          <Button x:Name="PlayButton"    Text="⏯" HorizontalOptions="Center" FontSize="Small" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="PlayButton_Clicked" />
+          <Button x:Name="StopButton"    Text="⏹" HorizontalOptions="Center" FontSize="Small" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="StopButton_Clicked" />
+          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Small" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="ForwardButton_Clicked" />
+          <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Small" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
     </StackLayout>

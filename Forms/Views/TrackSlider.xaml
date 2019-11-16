@@ -5,7 +5,7 @@
              BackgroundColor="DarkGray">
 
   <StackLayout Orientation="Horizontal">
-    <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" />
+    <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" WidthRequest="66" />
     <Slider x:Name="VolumeSlider"
             Minimum="0"
             Maximum="100"
@@ -13,9 +13,10 @@
             ValueChanged="VolumeSlider_ValueChanged"
             HorizontalOptions="FillAndExpand"
             MinimumTrackColor="DarkCyan"
-            MaximumTrackColor="LightCyan" />
-    <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" Clicked="MuteButton_Clicked" />
-    <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" IsEnabled="False" />
+            MaximumTrackColor="LightCyan"
+            WidthRequest="{OnPlatform Android=100}" />
+    <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" Clicked="MuteButton_Clicked" />
+    <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" IsEnabled="False" />
   </StackLayout>
 
 </ContentView>
