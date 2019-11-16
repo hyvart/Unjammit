@@ -14,7 +14,7 @@
             HorizontalOptions="FillAndExpand"
             MinimumTrackColor="DarkCyan"
             MaximumTrackColor="LightCyan"
-            WidthRequest="{OnIdiom Phone=100, Default=150}" />
+            WidthRequest="{OnIdiom Default=100}" />
     <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" Clicked="MuteButton_Clicked" />
     <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" IsEnabled="False" />
   </StackLayout>
