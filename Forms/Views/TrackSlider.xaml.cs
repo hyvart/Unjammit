@@ -44,11 +44,6 @@ namespace Jammit.Forms.Views
       NormalButtonBackgroundColor = MuteButton.BackgroundColor;
       NormalButtonTextColor = MuteButton.TextColor;
 
-      //TODO: Drop in favor of Xamarin.Essentials APIs, when released.
-      //TODO: Design a decent UI that doesn't crash when certain size requests are missing.
-      if (Device.macOS == Device.RuntimePlatform || Device.UWP == Device.RuntimePlatform)
-        VolumeSlider.WidthRequest = 250;
-
       //TODO: Inject by property only
       VolumeSlider.Value = VolumeSlider.Maximum;
     }
