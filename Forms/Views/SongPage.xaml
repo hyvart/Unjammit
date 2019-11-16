@@ -54,15 +54,17 @@
     </ScrollView>
 
     <RelativeLayout x:Name="ControlsLayout" HorizontalOptions="FillAndExpand">
-      <StackLayout Orientation="Horizontal"
+      <StackLayout x:Name="MixerLayout"
+                   Orientation="Horizontal"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
         <Image x:Name="AlbumImage"
                BackgroundColor="DarkGray"
                HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
                WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
-        <local:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
+        <local:Mixer Player="{Binding Player}" Media="{Binding Media}" />
       </StackLayout>
-      <StackLayout HorizontalOptions="FillAndExpand"
+      <StackLayout x:Name="ProgressLayout"
+                   HorizontalOptions="FillAndExpand"
                    Padding="0,0,5,0"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
