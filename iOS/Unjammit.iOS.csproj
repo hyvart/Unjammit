@@ -31,7 +31,6 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'Ad-Hoc' Or '$(Configuration)' == 'AppStore' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <MtouchLink>None</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'iPhoneSimulator' ">
     <MtouchArch>x86_64</MtouchArch>
