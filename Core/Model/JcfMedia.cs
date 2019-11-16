@@ -12,7 +12,7 @@ namespace Jammit.Model
       Path = path;
       InstrumentTracks = new List<NotatedTrackInfo>();
       Scores = new List<ScoreInfo>();
-      ScoreNodes = new SortedList<PlayableTrackInfo, ScoreNodes>();
+      ScoreNodes = new SortedList<NotatedTrackInfo, ScoreNodes>();
     }
 
     public SongInfo Song { get; private set; }
@@ -34,7 +34,7 @@ namespace Jammit.Model
     //TODO: Section
     public IReadOnlyList<Section> Sections { get; set; }
 
-    public IDictionary<PlayableTrackInfo, ScoreNodes> ScoreNodes { get; private set; }
+    public IDictionary<NotatedTrackInfo, ScoreNodes> ScoreNodes { get; set; }
 
     //TODO: WaveForm?
 

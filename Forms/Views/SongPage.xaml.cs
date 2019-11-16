@@ -18,7 +18,13 @@ namespace Jammit.Forms.Views
     static Color NormalButtonTextColor;
     static Color NormalButtonBackgroundColor;
 
-    #endregion  static members
+    #endregion static members
+
+    #region private fields
+
+    private int _beatIndex = 0;
+
+    #endregion private fields
 
     public SongPage(SongInfo song)
     {
@@ -77,7 +83,26 @@ namespace Jammit.Forms.Views
         AlbumImage.IsVisible = false;
       else
         AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
+
+      _beatIndex = 0;
     }
+
+    #region Page overrides
+
+    protected override void OnAppearing()
+    {
+      base.OnAppearing();
+
+      if (null == ScorePicker.SelectedItem)
+        return;
+
+      var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+      var h = track.ScoreSystemHeight * .775;
+      CursorFrame.HeightRequest = h;
+      CursorBar.HeightRequest = h;
+    }
+
+    #endregion Page overrides
 
     #region Properties
 
@@ -121,6 +146,13 @@ namespace Jammit.Forms.Views
       {
         Player.Play();
 
+        Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
+        {
+          Device.BeginInvokeOnMainThread(async() => await MoveCursor(Player.Position));
+
+          return Player.State == Audio.PlaybackStatus.Playing;
+        });
+
         PlayButton.BackgroundColor = Color.PaleGreen;
         PlayButton.TextColor = Color.DarkGreen;
         PlayButton.BorderColor = PlayButton.TextColor;
@@ -155,6 +187,84 @@ namespace Jammit.Forms.Views
     }
 
     #endregion Handlers
+
+    private void FindBeat(double totalSeconds, int start, int end)
+    {
+      int mid = (start + end) / 2;
+      if (mid == start)
+      {
+        _beatIndex = mid;
+      }
+      else if (Media.Beats[mid].Time < totalSeconds)
+      {
+        FindBeat(totalSeconds, mid, end);
+      }
+      else if (Media.Beats[mid].Time > totalSeconds)
+      {
+        // If [mid] is the very next major element, finish.
+        if (Media.Beats[mid - 1].Time <= totalSeconds)
+        {
+          _beatIndex = mid - 1;
+          return;
+        }
+
+        FindBeat(totalSeconds, start, mid);
+      }
+      else
+      {
+        // Unlikely, double equality.
+        _beatIndex = mid;
+      }
+    }
+
+    private async Task MoveCursor(TimeSpan position)
+    {
+#if false
+      //TODO: EWWW! Use FindBeat instead!
+      for (int i = 0; i < Media.Beats.Count - 1; i++)
+      {
+        if (Media.Beats[i + 1].Time > position.TotalSeconds)
+        {
+          _beatIndex = i;
+          break;
+        }
+      }
+#else
+      FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
+#endif
+      var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+      var nodes = Media.ScoreNodes[track].Nodes;
+      CursorBar.TranslationX = nodes[_beatIndex].X;
+
+      var y = track.ScoreSystemInterval * (nodes[_beatIndex].Row);
+      uint page = (uint)(y / ScoreImage.Height);
+      if (page != PageIndex)
+        SetScorePage(page);
+
+      var yOffset = y % ScoreImage.Height;
+      if (Device.macOS == Device.RuntimePlatform)
+      {
+        yOffset *= -1;
+      }
+      else
+      {
+        await ScoreLayout.ScrollToAsync(0, yOffset, false);
+      }
+      CursorFrame.TranslationY = yOffset;
+      CursorBar.TranslationY = yOffset;
+
+      BeatLabel.Text =
+        $"P: {position}\n" +
+        $"S: {Player.State}\n" +
+        $"X: {nodes[_beatIndex].X}\n" +
+        $"R: {nodes[_beatIndex].Row}\n" +
+        $"M: {nodes[_beatIndex].Measure}\n" +
+        $"TX: {CursorBar.TranslationX}\n" +
+        $"TY: {CursorBar.TranslationY}\n" +
+        $"Idx:{_beatIndex}\n" +
+        $"BT: {Media.Beats[_beatIndex].Time}\n" +
+        $"Pg: {page}";
+    }
 
     //TODO: Re-enable.
     private async void ScoreLayout_Scrolled(object sender, ScrolledEventArgs e)
@@ -199,22 +309,38 @@ namespace Jammit.Forms.Views
 
     private void BackButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage(PageIndex - 1);
+      for(int i = Media.Sections.Count-1; i >= 0; i--)
+      {
+        if (Media.Sections[i].BeatIdx < _beatIndex)
+        {
+          Player.Position = TimeSpan.FromSeconds(Media.Sections[i].Beat.Time);
+
+          return;
+        }
+      }
     }
 
     private void ForwardButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage(PageIndex + 1);
+      for (int i = 0; i < Media.Sections.Count; i++)
+      {
+        if (Media.Sections[i].BeatIdx > _beatIndex)
+        {
+          Player.Position = TimeSpan.FromSeconds(Media.Sections[i].Beat.Time);
+
+          return;
+        }
+      }
     }
 
     private void StartButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage(0);
+      Player.Position = TimeSpan.FromSeconds(Media.Sections.First().Beat.Time);
     }
 
     private void EndButton_Clicked(object sender, EventArgs e)
     {
-      SetScorePage((ScorePicker.SelectedItem as ScoreInfo).PageCount - 1);
+      Player.Position = TimeSpan.FromSeconds(Media.Sections.Last().Beat.Time);
     }
   }
 }
