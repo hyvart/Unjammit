@@ -66,11 +66,12 @@
                    Padding="6,0,0,0"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
-        <FlexLayout VerticalOptions="Start">
+        <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="35" BackgroundColor="Green">
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
                  FontFamily="Consolas"
                  BackgroundColor="LightGray"
-                 HorizontalOptions="Start" />
+                 HorizontalOptions="Start"
+                  />
           <Slider x:Name="PositionSlider"
                   MinimumTrackColor="DarkCyan"
                   MaximumTrackColor="LightCyan"
@@ -84,7 +85,8 @@
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, Converter={StaticResource floatToTimeSpan}}"
                  FontFamily="Consolas"
                  BackgroundColor="LightGray"
-                 HorizontalOptions="End" />
+                 HorizontalOptions="End"
+                  />
         </FlexLayout>
 
         <Label x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand" TextColor="White" FontFamily="Consolas" MaxLines="8" Text="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8" />

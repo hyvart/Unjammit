@@ -5,7 +5,7 @@
              BackgroundColor="DarkGray">
 
   <StackLayout Orientation="Vertical">
-    <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" WidthRequest="40" HeightRequest="35" BackgroundColor="Green" FontSize="12" VerticalOptions="Start" />
+    <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" MaxLines="2" WidthRequest="40" HeightRequest="35" BackgroundColor="Green" FontSize="12" VerticalOptions="Start" />
     <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Aqua">
       <Slider x:Name="VolumeSlider"
               Minimum="0"

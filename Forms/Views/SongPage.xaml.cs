@@ -238,8 +238,10 @@ namespace Jammit.Forms.Views
         $"R: {nodes[_beatIndex].Row}\n" +
         $"M: {nodes[_beatIndex].Measure}\n" +
         $"TX: {CursorBar.TranslationX}\n" +
-        $"TY: {CursorBar.TranslationY}\t" +       $"Idx:{_beatIndex}\n" +
-        $"BT: {Media.Beats[_beatIndex].Time}\t" + $"Pg: {page}"
+        $"TY: {CursorBar.TranslationY}\t" +
+        $"Idx:{_beatIndex}\n" +
+        $"BT: {Media.Beats[_beatIndex].Time}\t" +
+        $"Pg: {page}"
         ;
     }
 
