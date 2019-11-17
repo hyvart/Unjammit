@@ -43,11 +43,11 @@ namespace Jammit.Forms.Views
 
       //TODO: Move to XAML?
       //TODO: Why is it still needed?
-      PositionSlider.SetBinding(
-        Slider.ValueProperty,
-        new Binding(
-          nameof(Player.Position),
-          BindingMode.TwoWay));
+      //PositionSlider.SetBinding(
+      //  Slider.ValueProperty,
+      //  new Binding(
+      //    nameof(Player.Position),
+      //    BindingMode.TwoWay));
 
       Player.PositionChanged += (player, args) =>
       {

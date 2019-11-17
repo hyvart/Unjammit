@@ -77,6 +77,7 @@
                   MaximumTrackColor="LightCyan"
                   Minimum="0"
                   Maximum="{Binding Player.Length.TotalSeconds}"
+                  Value="{Binding Player.Position, Mode=TwoWay}"
                   ValueChanged="PositionSlider_ValueChanged"
                   WidthRequest="10"
                   FlexLayout.Grow="1"
