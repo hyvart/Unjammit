@@ -47,9 +47,6 @@
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
                />
 
-        <Label x:Name="BeatLabel"
-               TextColor="Blue"/>
-
       </RelativeLayout>
     </ScrollView>
 
@@ -69,8 +66,9 @@
                    Padding="6,0,0,0"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
-        <FlexLayout>
+        <FlexLayout VerticalOptions="Start">
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
+                 FontFamily="Consolas"
                  BackgroundColor="LightGray"
                  HorizontalOptions="Start" />
           <Slider x:Name="PositionSlider"
@@ -84,12 +82,14 @@
                   Margin="6,0,6,0"
                   />
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, Converter={StaticResource floatToTimeSpan}}"
+                 FontFamily="Consolas"
                  BackgroundColor="LightGray"
                  HorizontalOptions="End" />
         </FlexLayout>
 
-        <BoxView x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand"/>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand" TextColor="White" FontFamily="Consolas" MaxLines="8" Text="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
           <Button x:Name="RepeatButton"  Text="🔁" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" IsEnabled="False" />
           <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="StartButton_Clicked" />
           <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="BackButton_Clicked" />

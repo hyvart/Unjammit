@@ -59,12 +59,6 @@ namespace Jammit.Forms.Views
       //TODO: Should be set in binding.
       ScorePicker.SelectedIndex = 0;
 
-      ////TODO: Fix UI proportions on Android.
-      //if (Device.Android == Device.RuntimePlatform)
-      //  AlbumImage.IsVisible = false;
-      //else
-      //  AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
-
       _beatIndex = 0;
     }
 
@@ -237,17 +231,16 @@ namespace Jammit.Forms.Views
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
 
-      BeatLabel.Text =
+      TimelineImage.Text =
         $"P: {position}\n" +
         $"S: {Player.State}\n" +
         $"X: {nodes[_beatIndex].X}\n" +
         $"R: {nodes[_beatIndex].Row}\n" +
         $"M: {nodes[_beatIndex].Measure}\n" +
         $"TX: {CursorBar.TranslationX}\n" +
-        $"TY: {CursorBar.TranslationY}\n" +
-        $"Idx:{_beatIndex}\n" +
-        $"BT: {Media.Beats[_beatIndex].Time}\n" +
-        $"Pg: {page}";
+        $"TY: {CursorBar.TranslationY}\t" +       $"Idx:{_beatIndex}\n" +
+        $"BT: {Media.Beats[_beatIndex].Time}\t" + $"Pg: {page}"
+        ;
     }
 
     //TODO: Re-enable.
