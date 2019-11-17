@@ -50,7 +50,7 @@
       </RelativeLayout>
     </ScrollView>
 
-    <RelativeLayout x:Name="ControlsLayout" HorizontalOptions="FillAndExpand">
+    <RelativeLayout x:Name="ControlsLayout" HorizontalOptions="FillAndExpand" MinimumWidthRequest="200">
       <StackLayout x:Name="MixerLayout"
                    Orientation="Horizontal"
                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
