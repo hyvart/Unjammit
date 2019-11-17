@@ -41,14 +41,6 @@ namespace Jammit.Forms.Views
       NormalButtonBackgroundColor = PlayButton.BackgroundColor;
       NormalButtonTextColor = PlayButton.TextColor;
 
-      //TODO: Move to XAML?
-      //TODO: Why is it still needed?
-      //PositionSlider.SetBinding(
-      //  Slider.ValueProperty,
-      //  new Binding(
-      //    nameof(Player.Position),
-      //    BindingMode.TwoWay));
-
       Player.PositionChanged += (player, args) =>
       {
         var newPosition = (player as Audio.IJcfPlayer).Position;
