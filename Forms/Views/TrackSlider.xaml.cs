@@ -20,7 +20,7 @@ namespace Jammit.Forms.Views
     static Color MutedButtonTextColor = Color.DarkRed;
     static Color MutedButtonBackgroundColor = Color.LightPink;
 
-    #endregion  static members
+    #endregion static members
 
     #region private members
 
@@ -33,7 +33,7 @@ namespace Jammit.Forms.Views
 
     State _state;
 
-    #endregion
+    #endregion private members
 
     public TrackSlider()
     {
@@ -60,7 +60,7 @@ namespace Jammit.Forms.Views
     public static readonly BindableProperty VolumeProperty =
       BindableProperty.Create("Volume", typeof(uint), typeof(uint), (uint)100);
 
-    #endregion  Bindable properties
+    #endregion Bindable properties
 
     #region Properties
 
@@ -104,7 +104,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    #endregion  Properties
+    #endregion Properties
 
     #region Events
 
@@ -123,7 +123,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    #endregion  Events
+    #endregion Events
 
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
