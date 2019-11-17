@@ -14,7 +14,7 @@
               ValueChanged="VolumeSlider_ValueChanged"
               MinimumTrackColor="DarkCyan"
               MaximumTrackColor="LightCyan"
-              Rotation="90" />
+              Rotation="{OnPlatform Android=270, Default=90}" />
     </StackLayout>
     <StackLayout Orientation="Horizontal" VerticalOptions="End">
       <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" Clicked="MuteButton_Clicked" />
