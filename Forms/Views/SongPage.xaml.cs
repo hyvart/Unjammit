@@ -59,11 +59,11 @@ namespace Jammit.Forms.Views
       //TODO: Should be set in binding.
       ScorePicker.SelectedIndex = 0;
 
-      //TODO: Fix UI proportions on Android.
-      if (Device.Android == Device.RuntimePlatform)
-        AlbumImage.IsVisible = false;
-      else
-        AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
+      ////TODO: Fix UI proportions on Android.
+      //if (Device.Android == Device.RuntimePlatform)
+      //  AlbumImage.IsVisible = false;
+      //else
+      //  AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
 
       _beatIndex = 0;
     }
@@ -81,6 +81,9 @@ namespace Jammit.Forms.Views
       var h = track.ScoreSystemHeight * .775;
       CursorFrame.HeightRequest = h;
       CursorBar.HeightRequest = h;
+
+      if (AlbumImage.IsVisible)
+        AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
     }
 
     #endregion Page overrides

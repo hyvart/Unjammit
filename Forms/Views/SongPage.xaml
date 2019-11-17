@@ -60,7 +60,8 @@
         <Image x:Name="AlbumImage"
                BackgroundColor="DarkGray"
                HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
-               WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
+               WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
+               IsVisible="{OnIdiom Phone=false, Watch=false, Default=true}"/>
         <local:Mixer Player="{Binding Player}" Media="{Binding Media}" />
       </StackLayout>
       <StackLayout x:Name="ProgressLayout"
