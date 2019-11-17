@@ -16,7 +16,7 @@
               MaximumTrackColor="LightCyan"
               Rotation="270"
               HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127}"
-              WidthRequest="{OnPlatform macOS=1}" />
+              WidthRequest="{OnPlatform macOS=40}" />
     </StackLayout>
     <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="0">
       <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" FontSize="12" BorderWidth="0" WidthRequest="26" HeightRequest="26" MinimumWidthRequest="{OnPlatform Android=3}" Clicked="MuteButton_Clicked" />
