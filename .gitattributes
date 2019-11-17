@@ -6,7 +6,7 @@
 #*.txt text eol=crlf
 
 # Special Android designer case.
-Resource.Designer.cs text eol=lf
+Resource.Designer.cs text eol=auto
 
 ###############################################################################
 # Set default behavior for command prompt diff.

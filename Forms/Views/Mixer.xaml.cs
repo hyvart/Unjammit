@@ -56,7 +56,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    #endregion  Properties
+    #endregion Properties
 
     #region Events
 

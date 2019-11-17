@@ -41,14 +41,6 @@ namespace Jammit.Forms.Views
       NormalButtonBackgroundColor = PlayButton.BackgroundColor;
       NormalButtonTextColor = PlayButton.TextColor;
 
-      //TODO: Move to XAML?
-      //TODO: Why is it still needed?
-      PositionSlider.SetBinding(
-        Slider.ValueProperty,
-        new Binding(
-          nameof(Player.Position),
-          BindingMode.TwoWay));
-
       Player.PositionChanged += (player, args) =>
       {
         var newPosition = (player as Audio.IJcfPlayer).Position;
@@ -58,12 +50,6 @@ namespace Jammit.Forms.Views
 
       //TODO: Should be set in binding.
       ScorePicker.SelectedIndex = 0;
-
-      //TODO: Fix UI proportions on Android.
-      if (Device.Android == Device.RuntimePlatform)
-        AlbumImage.IsVisible = false;
-      else
-        AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
 
       _beatIndex = 0;
     }
@@ -81,6 +67,9 @@ namespace Jammit.Forms.Views
       var h = track.ScoreSystemHeight * .775;
       CursorFrame.HeightRequest = h;
       CursorBar.HeightRequest = h;
+
+      if (AlbumImage.IsVisible)
+        AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
     }
 
     #endregion Page overrides
@@ -234,17 +223,18 @@ namespace Jammit.Forms.Views
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
 
-      BeatLabel.Text =
+      TimelineImage.Text =
         $"P: {position}\n" +
         $"S: {Player.State}\n" +
         $"X: {nodes[_beatIndex].X}\n" +
         $"R: {nodes[_beatIndex].Row}\n" +
         $"M: {nodes[_beatIndex].Measure}\n" +
         $"TX: {CursorBar.TranslationX}\n" +
-        $"TY: {CursorBar.TranslationY}\n" +
+        $"TY: {CursorBar.TranslationY}\t" +
         $"Idx:{_beatIndex}\n" +
-        $"BT: {Media.Beats[_beatIndex].Time}\n" +
-        $"Pg: {page}";
+        $"BT: {Media.Beats[_beatIndex].Time}\t" +
+        $"Pg: {page}"
+        ;
     }
 
     //TODO: Re-enable.
