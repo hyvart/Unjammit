@@ -16,7 +16,7 @@
               MaximumTrackColor="LightCyan"
               Rotation="90" />
     </StackLayout>
-    <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+    <StackLayout Orientation="Horizontal" VerticalOptions="End">
       <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" Clicked="MuteButton_Clicked" />
       <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" IsEnabled="False" />
     </StackLayout>
