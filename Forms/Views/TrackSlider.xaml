@@ -16,9 +16,9 @@
               MaximumTrackColor="LightCyan"
               Rotation="270" />
     </StackLayout>
-    <StackLayout Orientation="Horizontal" VerticalOptions="End">
-      <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" Clicked="MuteButton_Clicked" />
-      <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" MinimumWidthRequest="{OnPlatform Android=3}" IsEnabled="False" />
+    <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="0">
+      <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" FontSize="12" BorderWidth="0" WidthRequest="26" HeightRequest="26" MinimumWidthRequest="{OnPlatform Android=3}" Clicked="MuteButton_Clicked" />
+      <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" FontSize="12" BorderWidth="0" WidthRequest="26" HeightRequest="26" MinimumWidthRequest="{OnPlatform Android=3}" IsEnabled="False" />
     </StackLayout>
   </StackLayout>
 
