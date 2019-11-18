@@ -19,8 +19,8 @@
     <SearchBar Placeholder="Type a title, artist or album..." TextChanged="SearchBar_TextChanged" />
     <ListView
       x:Name="CatalogView"
-      HorizontalOptions="Fill"
-      VerticalOptions="Start"
+      HorizontalOptions="FillAndExpand"
+      VerticalOptions="FillAndExpand"
       BackgroundColor="WhiteSmoke">
       <ListView.Header>
         <Grid>
