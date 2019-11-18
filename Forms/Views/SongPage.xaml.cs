@@ -223,13 +223,12 @@ namespace Jammit.Forms.Views
         $"P: {position}\n" +
         $"S: {Player.State}\n" +
         $"X: {nodes[_beatIndex].X}\n" +
-        $"R: {nodes[_beatIndex].Row}\n" +
+        $"Pg: {page}\t" + $"R: {nodes[_beatIndex].Row}\n" +
         $"M: {nodes[_beatIndex].Measure}\n" +
         $"TX: {CursorBar.TranslationX}\n" +
         $"TY: {CursorBar.TranslationY}\t" +
         $"Idx:{_beatIndex}\n" +
-        $"BT: {Media.Beats[_beatIndex].Time}\t" +
-        $"Pg: {page}"
+        $"BT: {Media.Beats[_beatIndex].Time}"
         ;
     }
 
