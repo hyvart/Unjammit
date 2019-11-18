@@ -8,6 +8,9 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:DigitalTimeConverter x:Key="floatToTimeSpan" />
+      <Style x:Key="ProgressStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="{OnPlatform UWP=Consolas, iOS=Courier, macOS=Courier}" />
+      </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -68,10 +71,10 @@
                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
         <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="35" BackgroundColor="Green">
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
-                 FontFamily="Consolas"
                  BackgroundColor="LightGray"
                  HorizontalOptions="Start"
-                  />
+                 Style="{StaticResource Key=ProgressStyle}"
+                 />
           <Slider x:Name="PositionSlider"
                   MinimumTrackColor="DarkCyan"
                   MaximumTrackColor="LightCyan"
@@ -84,13 +87,20 @@
                   Margin="6,0,6,0"
                   />
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, Converter={StaticResource floatToTimeSpan}}"
-                 FontFamily="Consolas"
                  BackgroundColor="LightGray"
                  HorizontalOptions="End"
+                 Style="{StaticResource Key=ProgressStyle}"
                  />
         </FlexLayout>
 
-        <Label x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand" TextColor="White" FontFamily="Consolas" MaxLines="8" Text="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8" />
+        <Label x:Name="TimelineImage"
+               BackgroundColor="Black"
+               VerticalOptions="FillAndExpand"
+               TextColor="White"
+               MaxLines="8"
+               Text="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8"
+               Style="{StaticResource Key=ProgressStyle}"
+               />
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
           <Button x:Name="RepeatButton"  Text="🔁" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" IsEnabled="False" />
