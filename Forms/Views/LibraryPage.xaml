@@ -9,7 +9,8 @@
     <ListView
       x:Name="LibraryView"
       ItemTapped="LibraryView_ItemTapped"
-      BindingContext="{Static local:App.Library}" ItemsSource="{Binding Songs}"
+      BindingContext="{Static local:App.Library}"
+      ItemsSource="{Binding Songs}"
       BackgroundColor="WhiteSmoke">
       <ListView.Header>
         <Grid>
