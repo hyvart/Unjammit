@@ -20,7 +20,7 @@ namespace Jammit.Forms.Views
     static Color MutedButtonTextColor = Color.DarkRed;
     static Color MutedButtonBackgroundColor = Color.LightPink;
 
-    #endregion  static members
+    #endregion static members
 
     #region private members
 
@@ -33,7 +33,7 @@ namespace Jammit.Forms.Views
 
     State _state;
 
-    #endregion
+    #endregion private members
 
     public TrackSlider()
     {
@@ -43,25 +43,6 @@ namespace Jammit.Forms.Views
 
       NormalButtonBackgroundColor = MuteButton.BackgroundColor;
       NormalButtonTextColor = MuteButton.TextColor;
-
-      //TODO: Nope...
-      TitleLabel.WidthRequest = 66;
-
-      //TODO: Drop in favor of Xamarin.Essentials APIs, when released.
-      //TODO: Design a decent UI that doesn't crash when certain size requests are missing.
-      if (Device.macOS == Device.RuntimePlatform || Device.UWP == Device.RuntimePlatform)
-        VolumeSlider.WidthRequest = 250;
-
-      if (Device.Android == Device.RuntimePlatform)
-      {
-        VolumeSlider.WidthRequest = 100;
-
-        MuteButton.MinimumWidthRequest = 3;
-        SoloButton.MinimumWidthRequest = 3;
-
-        MuteButton.MinimumHeightRequest = 3;
-        SoloButton.MinimumHeightRequest = 3;
-      }
 
       //TODO: Inject by property only
       VolumeSlider.Value = VolumeSlider.Maximum;
@@ -79,7 +60,7 @@ namespace Jammit.Forms.Views
     public static readonly BindableProperty VolumeProperty =
       BindableProperty.Create("Volume", typeof(uint), typeof(uint), (uint)100);
 
-    #endregion  Bindable properties
+    #endregion Bindable properties
 
     #region Properties
 
@@ -123,7 +104,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    #endregion  Properties
+    #endregion Properties
 
     #region Events
 
@@ -142,7 +123,7 @@ namespace Jammit.Forms.Views
       }
     }
 
-    #endregion  Events
+    #endregion Events
 
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {

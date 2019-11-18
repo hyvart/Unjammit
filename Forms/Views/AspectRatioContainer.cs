@@ -14,7 +14,6 @@ namespace Jammit.Forms.Views
   {
     protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
     {
-      //return base.OnMeasure(widthConstraint, widthConstraint * AspectRatio);
       return base.OnMeasure(widthConstraint, widthConstraint * AspectRatio);
     }
 

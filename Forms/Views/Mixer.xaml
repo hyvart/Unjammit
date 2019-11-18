@@ -4,18 +4,10 @@
              xmlns:local="clr-namespace:Jammit.Forms.Views"
              x:Class="Jammit.Forms.Views.Mixer">
 
-  <StackLayout x:Name="ControlsLayout">
+  <StackLayout x:Name="ControlsLayout" Orientation="Horizontal">
     <local:TrackSlider Player="{Binding Player}" Track="{Binding Media.BackingTrack}" />
-    <local:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}" IsEnabled="false">
-      <local:TrackSlider.IsVisible>
-        <OnPlatform x:TypeArguments="x:Boolean">
-          <On Platform="Android" Value="true" />
-          <On Platform="iOS" Value="true" />
-          <On Platform="macOS" Value="false" />
-          <On Platform="UWP" Value="true" />
-        </OnPlatform>
-      </local:TrackSlider.IsVisible>
-    </local:TrackSlider>
+    <local:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}"
+                       IsEnabled="false" IsVisible="{OnPlatform macOS=false, Default=true}" />
   </StackLayout>
 
 </ContentView>

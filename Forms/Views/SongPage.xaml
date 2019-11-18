@@ -21,45 +21,88 @@
               HorizontalOptions="FillAndExpand" />
     </StackLayout>
 
-    <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="5,5,5,5">
-      <Image x:Name="ScoreImage" Aspect="AspectFit" HeightRequest="1024" />
+    <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="0">
+      <RelativeLayout
+        HeightRequest="1024" MinimumHeightRequest="1024"
+        WidthRequest="724" MinimumWidthRequest="724"
+        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Image x:Name="ScoreImage"
+               Aspect="AspectFit"
+               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+               />
+
+        <Frame x:Name="CursorFrame"
+               BorderColor="Green"
+               BackgroundColor="Transparent"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=704}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-352}">
+        </Frame>
+
+        <Frame x:Name="CursorBar"
+               BorderColor="Green"
+               BackgroundColor="Green"
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=2}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
+               />
+
+      </RelativeLayout>
     </ScrollView>
 
-    <StackLayout x:Name="ControlsLayout" Orientation="Horizontal" HorizontalOptions="FillAndExpand" MinimumWidthRequest="100">
-      <Image x:Name="AlbumImage"
-             BackgroundColor="DarkGray"
-             HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
-             WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
-      <local:Mixer  Player="{Binding Player}" Media="{Binding Media}"  />
-      <StackLayout HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
-        <FlexLayout>
+    <RelativeLayout x:Name="ControlsLayout" HorizontalOptions="FillAndExpand" MinimumWidthRequest="200">
+      <StackLayout x:Name="MixerLayout"
+                   Orientation="Horizontal"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+        <Image x:Name="AlbumImage"
+               BackgroundColor="DarkGray"
+               HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
+               WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
+               IsVisible="{OnIdiom Phone=false, Watch=false, Default=true}"/>
+        <local:Mixer Player="{Binding Player}" Media="{Binding Media}" />
+      </StackLayout>
+      <StackLayout x:Name="ProgressLayout"
+                   HorizontalOptions="FillAndExpand"
+                   Padding="6,0,0,0"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+        <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="35" BackgroundColor="Green">
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
+                 FontFamily="Consolas"
                  BackgroundColor="LightGray"
-                 HorizontalOptions="Start" />
-          <FlexLayout FlexLayout.Grow="1" />
+                 HorizontalOptions="Start"
+                  />
+          <Slider x:Name="PositionSlider"
+                  MinimumTrackColor="DarkCyan"
+                  MaximumTrackColor="LightCyan"
+                  Minimum="0"
+                  Maximum="{Binding Player.Length.TotalSeconds}"
+                  Value="{Binding Player.Position, Mode=TwoWay}"
+                  ValueChanged="PositionSlider_ValueChanged"
+                  WidthRequest="10"
+                  FlexLayout.Grow="1"
+                  Margin="6,0,6,0"
+                  />
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, Converter={StaticResource floatToTimeSpan}}"
+                 FontFamily="Consolas"
                  BackgroundColor="LightGray"
-                 HorizontalOptions="End" />
+                 HorizontalOptions="End"
+                  />
         </FlexLayout>
-        <Slider x:Name="PositionSlider"
-                MinimumTrackColor="DarkCyan"
-                MaximumTrackColor="LightCyan"
-                Minimum="0"
-                Maximum="{Binding Player.Length.TotalSeconds}"
-                ValueChanged="PositionSlider_ValueChanged"
-                WidthRequest="10" />
-        <Image x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand"/>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-          <Button x:Name="RepeatButton" Text="🔁" HorizontalOptions="Center" IsEnabled="False" />
-          <Button x:Name="StartButton" Text="⏬" HorizontalOptions="Center" FontSize="Small" Clicked="StartButton_Clicked" />
-          <Button x:Name="BackButton" Text="⏪" HorizontalOptions="Center" FontSize="Small" Clicked="BackButton_Clicked" />
-          <Button x:Name="PlayButton" Text="⏯" HorizontalOptions="Center" FontSize="Small" Clicked="PlayButton_Clicked" />
-          <Button x:Name="StopButton" Text="⏹" HorizontalOptions="Center" FontSize="Small" Clicked="StopButton_Clicked" />
-          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Small" Clicked="ForwardButton_Clicked" />
-          <Button x:Name="EndButton" Text="⏫" HorizontalOptions="Center" FontSize="Small" Clicked="EndButton_Clicked" />
+
+        <Label x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand" TextColor="White" FontFamily="Consolas" MaxLines="8" Text="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+          <Button x:Name="RepeatButton"  Text="🔁" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" IsEnabled="False" />
+          <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="StartButton_Clicked" />
+          <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="BackButton_Clicked" />
+          <Button x:Name="PlayButton"    Text="⏯" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="PlayButton_Clicked" />
+          <Button x:Name="StopButton"    Text="⏹" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="StopButton_Clicked" />
+          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="ForwardButton_Clicked" />
+          <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
-    </StackLayout>
+    </RelativeLayout>
 
     <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
 

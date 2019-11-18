@@ -11,7 +11,7 @@ namespace Jammit.Model
     public readonly string Type;
     public readonly IReadOnlyList<BeatInfo> Nodes;
 
-    private ScoreNodes(string t, string y, IReadOnlyList<BeatInfo> nodes)
+    public ScoreNodes(string t, string y, IReadOnlyList<BeatInfo> nodes)
     {
       Title = t;
       Type = y;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jammit.Model
 {
-  public abstract class TrackInfo
+  public abstract class TrackInfo : IComparable<TrackInfo>
   {
     #region Properties
 
@@ -15,6 +15,15 @@ namespace Jammit.Model
     public Guid Identifier { get; set; }
 
     #endregion
+
+    #region IComparable
+
+    public int CompareTo(TrackInfo other)
+    {
+      return Identifier.CompareTo(other.Identifier);
+    }
+
+    #endregion IComparable
   }
 
   /// <summary>

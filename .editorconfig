@@ -17,3 +17,6 @@ indent_style = tab
 [*.{ps1,sh}]
 indent_size = 4
 indent_style = tab
+
+[Resource.Designer.cs]
+end_of_line = auto
