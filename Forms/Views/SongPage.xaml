@@ -87,19 +87,19 @@
                  FontFamily="Consolas"
                  BackgroundColor="LightGray"
                  HorizontalOptions="End"
-                  />
+                 />
         </FlexLayout>
 
         <Label x:Name="TimelineImage" BackgroundColor="Black" VerticalOptions="FillAndExpand" TextColor="White" FontFamily="Consolas" MaxLines="8" Text="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8" />
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
           <Button x:Name="RepeatButton"  Text="🔁" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" IsEnabled="False" />
-          <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="StartButton_Clicked" />
-          <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="BackButton_Clicked" />
-          <Button x:Name="PlayButton"    Text="⏯" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="PlayButton_Clicked" />
-          <Button x:Name="StopButton"    Text="⏹" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="StopButton_Clicked" />
-          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="ForwardButton_Clicked" />
-          <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" MinimumWidthRequest="{OnPlatform Android=3}" MinimumHeightRequest="{OnPlatform Android=3}" Clicked="EndButton_Clicked" />
+          <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="StartButton_Clicked" />
+          <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="BackButton_Clicked" />
+          <Button x:Name="PlayButton"    Text="⏯" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="PlayButton_Clicked" />
+          <Button x:Name="StopButton"    Text="⏹" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="StopButton_Clicked" />
+          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="ForwardButton_Clicked" />
+          <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
     </RelativeLayout>
