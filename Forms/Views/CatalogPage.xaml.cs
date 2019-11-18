@@ -58,7 +58,7 @@ namespace Jammit.Forms.Views
       }
 
       //TODO: Move back into XAML bindings.
-      this.CatalogView.ItemsSource = Catalog;
+      CatalogView.ItemsSource = Catalog;
     }
 
     private async void LoadButton_Clicked(object sender, EventArgs e)

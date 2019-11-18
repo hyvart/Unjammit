@@ -212,11 +212,7 @@ namespace Jammit.Forms.Views
         SetScorePage(page);
 
       var yOffset = y % ScoreImage.Height;
-      if (Device.macOS == Device.RuntimePlatform)
-      {
-        yOffset *= -1;
-      }
-      else
+      if (Device.macOS != Device.RuntimePlatform)
       {
         await ScoreLayout.ScrollToAsync(0, yOffset, false);
       }
