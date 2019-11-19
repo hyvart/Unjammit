@@ -15,7 +15,6 @@
               ValueChanged="VolumeSlider_ValueChanged"
               MinimumTrackColor="DarkCyan"
               MaximumTrackColor="LightCyan"
-              Rotation="270"
               HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127}"
               WidthRequest="{OnPlatform macOS=1}"
               />

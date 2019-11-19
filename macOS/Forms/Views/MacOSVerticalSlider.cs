@@ -10,8 +10,8 @@ namespace Jammit.Forms.Views
   /// </summary>
   public class MacOSVerticalSlider : NSSlider
   {
-    public MacOSVerticalSlider()
-    {
-    }
+    public MacOSVerticalSlider() {}
+
+    public override nint IsVertical { get => 1; }
   }
 }
