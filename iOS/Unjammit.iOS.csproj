@@ -67,6 +67,8 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <Compile Include="Audio\IOSAVAudioPlayer.cs" />
+    <Compile Include="Forms\Views\IOSVerticalSlider.cs" />
+    <Compile Include="Forms\Renderers\IOSVerticalSliderRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-60%403x.png" />
@@ -87,6 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Forms\Renderers\" />
+    <Folder Include="Forms\Views\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
