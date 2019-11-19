@@ -83,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Forms\Renderers\" />
+    <Folder Include="Forms\Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -99,6 +102,8 @@
     <Compile Include="AppDelegate.designer.cs">
       <DependentUpon>AppDelegate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Renderers\MacOSVerticalSliderRenderer.cs" />
+    <Compile Include="Forms\Views\MacOSVerticalSlider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">
