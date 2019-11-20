@@ -13,11 +13,19 @@ namespace Jammit.Forms.Renderers
   {
     public UWPVerticalSliderRenderer() { }
 
-    protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
-    {
-      SetNativeControl(new FormsSlider() { /*Rotation = 270*/ });
+    //protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
+    //{
+    //  SetNativeControl(new FormsSlider() { /*Rotation = 270*/ });
 
-      base.OnElementChanged(e);
+    //  base.OnElementChanged(e);
+    //}
+
+    protected new void SetNativeControl(FormsSlider control)
+    {
+      control.Orientation = Windows.UI.Xaml.Controls.Orientation.Vertical;
+      control.Rotation = 90;
+
+      base.SetNativeControl(control);
     }
   }
 }
