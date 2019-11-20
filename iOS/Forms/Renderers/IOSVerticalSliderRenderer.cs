@@ -14,8 +14,12 @@ namespace Jammit.Forms.Renderers
 
     protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
     {
-      SetNativeControl(new Views.IOSVerticalSlider());
       base.OnElementChanged(e);
+
+      if (Control != null)
+      {
+        Control.Transform.Rotate(new nfloat(Math.PI / 2));
+      }
     }
   }
 }
