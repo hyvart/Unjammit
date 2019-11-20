@@ -14,10 +14,11 @@ namespace Jammit.Forms.Renderers
     {
       base.OnElementChanged(e);
 
-      if (Control != null)
-      {
-        Control.Transform.Rotate(new nfloat(Math.PI / 2));
-      }
+      //TODO: Make it work and enable, then disable explicit XAML Rotation.
+      //if (Control != null)
+      //{
+      //  Control.Transform.Rotate(NMath.PI / 2);
+      //}
     }
 
     #endregion ViewRenderer overrides

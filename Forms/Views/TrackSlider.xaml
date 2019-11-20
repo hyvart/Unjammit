@@ -17,6 +17,7 @@
               MaximumTrackColor="LightCyan"
               HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127, UWP=127}"
               WidthRequest="{OnPlatform macOS=1}"
+              Rotation="{OnPlatform iOS=270}"
               />
     </StackLayout>
     <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="0">
