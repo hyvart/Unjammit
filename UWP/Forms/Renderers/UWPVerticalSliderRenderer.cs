@@ -7,25 +7,21 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.UWP;
 
+[assembly: ExportRenderer(typeof(Jammit.Forms.Views.VerticalSlider), typeof(Jammit.Forms.Renderers.UWPVerticalSliderRenderer))]
 namespace Jammit.Forms.Renderers
 {
   public class UWPVerticalSliderRenderer : SliderRenderer
   {
     public UWPVerticalSliderRenderer() { }
 
-    //protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
-    //{
-    //  SetNativeControl(new FormsSlider() { /*Rotation = 270*/ });
-
-    //  base.OnElementChanged(e);
-    //}
-
-    protected new void SetNativeControl(FormsSlider control)
+    protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
     {
-      control.Orientation = Windows.UI.Xaml.Controls.Orientation.Vertical;
-      control.Rotation = 90;
+      base.OnElementChanged(e);
 
-      base.SetNativeControl(control);
+      if (Control != null)
+      {
+        Control.Orientation = Windows.UI.Xaml.Controls.Orientation.Vertical;
+      }
     }
   }
 }

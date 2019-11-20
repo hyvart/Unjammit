@@ -15,7 +15,7 @@
               ValueChanged="VolumeSlider_ValueChanged"
               MinimumTrackColor="DarkCyan"
               MaximumTrackColor="LightCyan"
-              HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127}"
+              HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127, UWP=127}"
               WidthRequest="{OnPlatform macOS=1}"
               />
     </StackLayout>
