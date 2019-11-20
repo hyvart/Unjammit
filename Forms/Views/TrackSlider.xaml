@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Jammit.Forms.Views"
              x:Class="Jammit.Forms.Views.TrackSlider"
              BackgroundColor="DarkGray">
 
   <StackLayout Orientation="Vertical">
     <Label  x:Name="TitleLabel" Text="{Binding Track.Title}" MaxLines="2" WidthRequest="40" HeightRequest="35" BackgroundColor="Green" FontSize="12" VerticalOptions="Start" />
     <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Aqua">
-      <Slider x:Name="VolumeSlider"
+      <local:VerticalSlider x:Name="VolumeSlider"
               Minimum="0"
               Maximum="100"
               Value="{Binding Volume, Mode=OneWayToSource}"
               ValueChanged="VolumeSlider_ValueChanged"
               MinimumTrackColor="DarkCyan"
               MaximumTrackColor="LightCyan"
-              Rotation="270"
-              HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127}" />
+              HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127, UWP=127}"
+              WidthRequest="{OnPlatform macOS=1}"
+              Rotation="{OnPlatform iOS=270}"
+              />
     </StackLayout>
     <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="0">
       <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" FontSize="12" BorderWidth="0" WidthRequest="26" HeightRequest="26" Clicked="MuteButton_Clicked" />
