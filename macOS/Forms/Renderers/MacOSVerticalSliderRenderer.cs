@@ -14,18 +14,16 @@ namespace Jammit.Forms.Renderers
   /// </summary>
   public class MacOSVerticalSliderRenderer : SliderRenderer
   {
-    public MacOSVerticalSliderRenderer()
-    {
-    }
+    #region ViewRenderer overrides
 
     protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
     {
-      //TODO: Likely remove MacOSVerticalSlider.
-      //SetNativeControl(new Views.MacOSVerticalSlider());
       base.OnElementChanged(e);
 
       if (Control != null)
         Control.IsVertical = 1;
     }
+
+    #endregion ViewRenderer overrides
   }
 }

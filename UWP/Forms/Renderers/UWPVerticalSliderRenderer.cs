@@ -14,6 +14,8 @@ namespace Jammit.Forms.Renderers
   {
     public UWPVerticalSliderRenderer() { }
 
+    #region ViewRenderer overrides
+
     protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
     {
       base.OnElementChanged(e);
@@ -23,5 +25,7 @@ namespace Jammit.Forms.Renderers
         Control.Orientation = Windows.UI.Xaml.Controls.Orientation.Vertical;
       }
     }
+
+    #endregion ViewRenderer overrides
   }
 }

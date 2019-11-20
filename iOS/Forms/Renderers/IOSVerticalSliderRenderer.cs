@@ -8,9 +8,7 @@ namespace Jammit.Forms.Renderers
 {
   public class IOSVerticalSliderRenderer : SliderRenderer
   {
-    public IOSVerticalSliderRenderer()
-    {
-    }
+    #region ViewRenderer overrides
 
     protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
     {
@@ -21,5 +19,7 @@ namespace Jammit.Forms.Renderers
         Control.Transform.Rotate(new nfloat(Math.PI / 2));
       }
     }
+
+    #endregion ViewRenderer overrides
   }
 }
