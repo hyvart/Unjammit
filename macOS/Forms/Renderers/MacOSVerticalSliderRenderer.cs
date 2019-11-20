@@ -20,8 +20,12 @@ namespace Jammit.Forms.Renderers
 
     protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
     {
-      SetNativeControl(new Views.MacOSVerticalSlider());
+      //TODO: Likely remove MacOSVerticalSlider.
+      //SetNativeControl(new Views.MacOSVerticalSlider());
       base.OnElementChanged(e);
+
+      if (Control != null)
+        Control.IsVertical = 1;
     }
   }
 }
