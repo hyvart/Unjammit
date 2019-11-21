@@ -1,26 +1,99 @@
 ﻿using System;
+using System.ComponentModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.GTK;
-using Xamarin.Forms.Platform.GTK.Renderers;
 
 [assembly: ExportRenderer(typeof(Jammit.Forms.Views.VerticalSlider), typeof(Jammit.Forms.Renderers.GtkVerticalSliderRenderer))]
 namespace Jammit.Forms.Renderers
 {
-  public class GtkVerticalSliderRenderer : SliderRenderer
+  /// <summary>
+  /// Based on https://github.com/xamarin/Xamarin.Forms/blob/release-4.3.0-sr2/Xamarin.Forms.Platform.GTK/Renderers/SliderRenderer.cs
+  /// </summary>
+  public class GtkVerticalSliderRenderer : ViewRenderer<Slider, global::Gtk.VScale>
   {
-    #region ViewRenderer overrides
+    private double _minimum;
+    private double _maximum;
+    private bool _disposed;
+
+    protected override bool PreventGestureBubbling { get; set; } = true;
+
+    protected override void Dispose(bool disposing)
+    {
+      if (Control != null)
+        Control.ValueChanged -= OnControlValueChanged;
+
+      if (disposing && !_disposed)
+      {
+        _disposed = true;
+      }
+
+      base.Dispose(disposing);
+    }
 
     protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
     {
-      base.OnElementChanged(e);
-
-      if (Control != null)
+      if (e.NewElement != null)
       {
+        if (Control == null)
+        {
+          _minimum = e.NewElement.Minimum;
+          _maximum = e.NewElement.Maximum;
+          double stepping = Math.Min((e.NewElement.Maximum - e.NewElement.Minimum) / 10, 1);
 
+          // Use gtk.HScale, a horizontal slider widget for selecting a value from a range.
+          SetNativeControl(new global::Gtk.VScale(_minimum, _maximum, stepping)
+          {
+            // Do not show a label in order to mimic the rest of the Xamarin.Forms backends
+            DrawValue = false,
+            Inverted = true
+          });
+          Control.ValueChanged += OnControlValueChanged;
+        }
+
+        UpdateMaximum();
+        UpdateMinimum();
+        UpdateValue();
       }
+
+      base.OnElementChanged(e);
     }
 
-    #endregion ViewRenderer overrides
+    protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+      base.OnElementPropertyChanged(sender, e);
+
+      if (e.PropertyName == Slider.MaximumProperty.PropertyName)
+        UpdateMaximum();
+      else if (e.PropertyName == Slider.MinimumProperty.PropertyName)
+        UpdateMinimum();
+      else if (e.PropertyName == Slider.ValueProperty.PropertyName)
+        UpdateValue();
+    }
+
+    private void OnControlValueChanged(object sender, EventArgs eventArgs)
+    {
+      ElementController.SetValueFromRenderer(Slider.ValueProperty, Control.Value);
+    }
+
+    private void UpdateMaximum()
+    {
+      _maximum = (float)Element.Maximum;
+
+      Control.SetRange(_minimum, _maximum);
+    }
+
+    private void UpdateMinimum()
+    {
+      _minimum = (float)Element.Minimum;
+
+      Control.SetRange(_minimum, _maximum);
+    }
+
+    private void UpdateValue()
+    {
+      Control.Value = (float)Element.Value;
+    }
+
   }
 }
