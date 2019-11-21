@@ -14,11 +14,11 @@ namespace Jammit.Forms.Renderers
     {
       base.OnElementChanged(e);
 
-      //TODO: Make it work and enable, then disable explicit XAML Rotation.
-      //if (Control != null)
-      //{
-      //  Control.Transform.Rotate(NMath.PI / 2);
-      //}
+      if (Control != null)
+      {
+        // See https://github.com/susairajs/Xamarin-iOS-Vertical-Slider/blob/1bfdfa35103afc13742bd5ead4db76fe8e8d4d0a/XamariniOSSlider/ViewController.cs#L23
+        Control.Transform = CoreGraphics.CGAffineTransform.MakeRotation(-NMath.PI / 2);
+      }
     }
 
     #endregion ViewRenderer overrides
