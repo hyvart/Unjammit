@@ -53,10 +53,17 @@
       </RelativeLayout>
     </ScrollView>
 
-    <RelativeLayout x:Name="ControlsLayout" HorizontalOptions="FillAndExpand" MinimumWidthRequest="200">
+    <StackLayout x:Name="ControlsLayout"
+                 Orientation="Horizontal"
+                 HorizontalOptions="FillAndExpand"
+                 Padding="6,0,6,0"
+                 MinimumWidthRequest="200">
+
       <StackLayout x:Name="MixerLayout"
                    Orientation="Horizontal"
-                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                   
+                   BackgroundColor="Yellow"
+                   Opacity=".3">
         <Image x:Name="AlbumImage"
                BackgroundColor="DarkGray"
                HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
@@ -66,9 +73,9 @@
       </StackLayout>
       <StackLayout x:Name="ProgressLayout"
                    HorizontalOptions="FillAndExpand"
-                   Padding="6,0,0,0"
-                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
-                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}">
+                   
+                   BackgroundColor="Red"
+                   Opacity=".3">
         <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="35" BackgroundColor="Green">
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
                  BackgroundColor="LightGray"
@@ -82,7 +89,6 @@
                   Maximum="{Binding Player.Length.TotalSeconds}"
                   Value="{Binding Player.Position, Mode=TwoWay}"
                   ValueChanged="PositionSlider_ValueChanged"
-                  WidthRequest="10"
                   FlexLayout.Grow="1"
                   Margin="6,0,6,0"
                   />
@@ -112,7 +118,7 @@
           <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
-    </RelativeLayout>
+    </StackLayout>
 
     <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
 
