@@ -49,7 +49,6 @@
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=2}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
                />
-
       </RelativeLayout>
     </ScrollView>
 
@@ -57,26 +56,19 @@
                  Orientation="Horizontal"
                  HorizontalOptions="FillAndExpand"
                  Padding="6,0,6,0"
-                 MinimumWidthRequest="200">
+                 MinimumWidthRequest="{OnIdiom Phone=150, Default=200}">
 
       <StackLayout x:Name="MixerLayout"
-                   Orientation="Horizontal"
-                   
-                   BackgroundColor="Yellow"
-                   Opacity=".3">
+                   Orientation="Horizontal">
         <Image x:Name="AlbumImage"
                BackgroundColor="DarkGray"
                HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
-               WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
-               IsVisible="{OnIdiom Phone=false, Watch=false, Default=true}"/>
+               WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
         <local:Mixer Player="{Binding Player}" Media="{Binding Media}" />
       </StackLayout>
       <StackLayout x:Name="ProgressLayout"
-                   HorizontalOptions="FillAndExpand"
-                   
-                   BackgroundColor="Red"
-                   Opacity=".3">
-        <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="35" BackgroundColor="Green">
+                   HorizontalOptions="FillAndExpand">
+        <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="35">
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
                  BackgroundColor="LightGray"
                  HorizontalOptions="Start"
