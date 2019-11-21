@@ -5,7 +5,7 @@
              x:Class="Jammit.Forms.Views.TrackSlider"
              BackgroundColor="DarkGray">
 
-  <StackLayout Orientation="Vertical" WidthRequest="{OnPlatform iOS=40}">
+  <StackLayout Orientation="Vertical" WidthRequest="{OnPlatform iOS=52}">
     <Label x:Name="TitleLabel"
            Text="{Binding Track.Title}"
            MaxLines="2"
@@ -14,7 +14,7 @@
            FontSize="12"
            VerticalOptions="Start"
            />
-    <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Aqua">
+    <StackLayout VerticalOptions="FillAndExpand">
       <local:VerticalSlider x:Name="VolumeSlider"
               Minimum="0"
               Maximum="100"
