@@ -32,9 +32,17 @@ steps:
           -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\Android\* `
           -Destination ${env:BUILD_SOURCESDIRECTORY}\Android\
 
-  #TODO: Install certs.
-
   - template: BuildAndroidSteps.yml
     parameters:
       project: $(Build.SourcesDirectory)/Android/Unjammit.Android.csproj
       createAppPackage: true
+
+  - task: AndroidSigning@3
+    inputs:
+      apkFiles: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.Android/$(PackageName).apk
+      apksign: true # Optional
+      apksignerKeystoreFile: com.unjammit.player.android.alpha.keystore
+      apksignerKeystorePassword: $(SigningKeyStorePassword)
+      apksignerKeystoreAlias: $(SigningKeyStoreAlias)
+      apksignerKeyPassword: $(SigningKeyPassword)
+      zipalign: true
