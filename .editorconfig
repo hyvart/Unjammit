@@ -18,5 +18,8 @@ indent_style = tab
 indent_size = 4
 indent_style = tab
 
+[AndroidManifest.xml]
+end_of_line = auto
+
 [Resource.Designer.cs]
 end_of_line = auto

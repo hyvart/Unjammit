@@ -7,6 +7,7 @@
 
 # Special Android designer case.
 Resource.Designer.cs text eol=auto
+AndroidManifest.xml eol=auto
 
 ###############################################################################
 # Set default behavior for command prompt diff.
