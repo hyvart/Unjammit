@@ -11,6 +11,16 @@
       <Style x:Key="ProgressStyle" TargetType="Label">
         <Setter Property="FontFamily" Value="{OnPlatform UWP=Consolas, iOS=Courier, macOS=Courier}" />
       </Style>
+      <Style x:Key="PlaybackButtonStyle" TargetType="Button">
+        <Setter Property="FontSize"           Value="Micro" />
+        <Setter Property="WidthRequest"       Value="36" />
+        <Setter Property="HeightRequest"      Value="36" />
+        <Setter Property="BorderWidth"        Value="0" />
+        <Setter Property="HorizontalOptions"  Value="Center" />
+      </Style>
+      <x:Double x:Key="ScoreHeight">1024</x:Double>
+      <x:Double x:Key="ScoreWidth">724</x:Double>
+      <x:Double x:Key="ScoreCursorOffset">-352</x:Double><!-- ScoreWidth/2 - 20 -->
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -26,8 +36,10 @@
 
     <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="0">
       <RelativeLayout
-        HeightRequest="1024" MinimumHeightRequest="1024"
-        WidthRequest="724" MinimumWidthRequest="724"
+        HeightRequest="{StaticResource Key=ScoreHeight}"
+        MinimumHeightRequest="{StaticResource Key=ScoreHeight}"
+        WidthRequest="{StaticResource Key=ScoreWidth}"
+        MinimumWidthRequest="{StaticResource Key=ScoreWidth}"
         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Image x:Name="ScoreImage"
                Aspect="AspectFit"
@@ -39,8 +51,8 @@
         <Frame x:Name="CursorFrame"
                BorderColor="Green"
                BackgroundColor="Transparent"
-               RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=704}"
-               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-352}">
+               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=WidthRequest, Constant=-20}"
+               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant={StaticResource Key=ScoreCursorOffset}}">
         </Frame>
 
         <Frame x:Name="CursorBar"
@@ -68,7 +80,7 @@
       </StackLayout>
       <StackLayout x:Name="ProgressLayout"
                    HorizontalOptions="FillAndExpand">
-        <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="35">
+        <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="36">
           <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
                  BackgroundColor="LightGray"
                  HorizontalOptions="Start"
@@ -101,13 +113,13 @@
                />
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
-          <Button x:Name="RepeatButton"  Text="🔁" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" IsEnabled="False" />
-          <Button x:Name="StartButton"   Text="⏬" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="StartButton_Clicked" />
-          <Button x:Name="BackButton"    Text="⏪" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="BackButton_Clicked" />
-          <Button x:Name="PlayButton"    Text="⏯" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="PlayButton_Clicked" />
-          <Button x:Name="StopButton"    Text="⏹" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="StopButton_Clicked" />
-          <Button x:Name="ForwardButton" Text="⏩" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="ForwardButton_Clicked" />
-          <Button x:Name="EndButton"     Text="⏫" HorizontalOptions="Center" FontSize="Micro" BorderWidth="0" WidthRequest="36" HeightRequest="36" Clicked="EndButton_Clicked" />
+          <Button x:Name="RepeatButton"  Text="🔁" Style="{StaticResource Key=PlaybackButtonStyle}" IsEnabled="False" />
+          <Button x:Name="StartButton"   Text="⏬" Style="{StaticResource Key=PlaybackButtonStyle}" Clicked="StartButton_Clicked" />
+          <Button x:Name="BackButton"    Text="⏪" Style="{StaticResource Key=PlaybackButtonStyle}" Clicked="BackButton_Clicked" />
+          <Button x:Name="PlayButton"    Text="⏯" Style="{StaticResource Key=PlaybackButtonStyle}" Clicked="PlayButton_Clicked" />
+          <Button x:Name="StopButton"    Text="⏹" Style="{StaticResource Key=PlaybackButtonStyle}" Clicked="StopButton_Clicked" />
+          <Button x:Name="ForwardButton" Text="⏩" Style="{StaticResource Key=PlaybackButtonStyle}" Clicked="ForwardButton_Clicked" />
+          <Button x:Name="EndButton"     Text="⏫" Style="{StaticResource Key=PlaybackButtonStyle}" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
     </StackLayout>
