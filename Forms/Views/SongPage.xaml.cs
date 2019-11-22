@@ -72,6 +72,15 @@ namespace Jammit.Forms.Views
         AlbumImage.Source = ImageSource.FromStream(() => { return App.MediaLoader.LoadAlbumCover(Media); });
     }
 
+    protected override void OnSizeAllocated(double width, double height)
+    {
+      base.OnSizeAllocated(width, height);
+
+      // Page Width shoud be greater or equal. Else, there is children overflow.
+      if (Width < MixerLayout.Width + ProgressLayout.Width)
+        AlbumImage.IsVisible = false;
+    }
+
     #endregion Page overrides
 
     #region Properties
@@ -220,9 +229,9 @@ namespace Jammit.Forms.Views
       CursorBar.TranslationY = yOffset;
 
       TimelineImage.Text =
-        $"P: {position}\n" +
+        $"P: {position}\t" +
         $"S: {Player.State}\n" +
-        $"X: {nodes[_beatIndex].X}\n" +
+        $"X: {nodes[_beatIndex].X}\t" +
         $"Pg: {page}\t" + $"R: {nodes[_beatIndex].Row}\n" +
         $"M: {nodes[_beatIndex].Measure}\n" +
         $"TX: {CursorBar.TranslationX}\n" +

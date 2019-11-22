@@ -5,13 +5,15 @@
              x:Class="Jammit.Forms.Views.TrackSlider"
              BackgroundColor="DarkGray">
 
+  <!--WidthRequest: 2 x Mute|Solo WidthRequest-->
   <StackLayout Orientation="Vertical" WidthRequest="{OnPlatform iOS=52}">
     <Label x:Name="TitleLabel"
            Text="{Binding Track.Title}"
            MaxLines="2"
            WidthRequest="40"
-           HeightRequest="35"
+           HeightRequest="32"
            FontSize="12"
+           VerticalTextAlignment="Center"
            VerticalOptions="Start"
            />
     <StackLayout VerticalOptions="FillAndExpand">
@@ -22,7 +24,7 @@
               ValueChanged="VolumeSlider_ValueChanged"
               MinimumTrackColor="DarkCyan"
               MaximumTrackColor="LightCyan"
-              HeightRequest="{OnPlatform Android=127, iOS=127, macOS=127, UWP=127, GTK=127}"
+              VerticalOptions="FillAndExpand"
               WidthRequest="{OnPlatform macOS=1}"
               />
     </StackLayout>
