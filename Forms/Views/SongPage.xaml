@@ -5,6 +5,12 @@
              xmlns:converters="clr-namespace:Jammit.Forms.Converters"
              x:Class="Jammit.Forms.Views.SongPage">
 
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS" Value="{OnIdiom Tablet='0,20,0,0'}" />
+    </OnPlatform>
+  </ContentPage.Padding>
+
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:DigitalTimeConverter x:Key="floatToTimeSpan" />
