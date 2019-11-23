@@ -23,6 +23,7 @@ namespace Jammit.Forms.Views
     #region private fields
 
     private int _beatIndex;
+    int _sectionIndex;
 
     #endregion private fields
 
@@ -207,6 +208,27 @@ namespace Jammit.Forms.Views
       }
     }
 
+    private void FindSection(int beatIndex, int start, int end)
+    {
+      int mid = (start + end) / 2;
+      if (mid == start)
+      {
+        _sectionIndex = mid;
+      }
+      else if(Media.Sections[mid].BeatIdx < beatIndex)
+      {
+        FindSection(beatIndex, mid, end);
+      }
+      else if(Media.Sections[mid].BeatIdx > beatIndex)
+      {
+        FindSection(beatIndex, start, mid);
+      }
+      else
+      {
+        _sectionIndex = mid;
+      }
+    }
+
     private async Task MoveCursor(TimeSpan position)
     {
 #if false
@@ -219,8 +241,18 @@ namespace Jammit.Forms.Views
           break;
         }
       }
+
+      for (int i = 0; i  < Media.Sections.Count; i++)
+      {
+        if (Media.Sections[i].BeatIdx == _beatIndex)
+        {
+          _sectionIndex = i;
+          break;
+        }
+      }
 #else
       FindBeat(position.TotalSeconds, 0, Media.Beats.Count);
+      FindSection(_beatIndex, 0, Media.Sections.Count);
 #endif
       var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
       var nodes = Media.ScoreNodes[track].Nodes;
@@ -239,6 +271,7 @@ namespace Jammit.Forms.Views
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
 
+#if false
       TimelineImage.Text =
         $"P: {position}\t" +
         $"S: {Player.State}\n" +
@@ -250,6 +283,9 @@ namespace Jammit.Forms.Views
         $"Idx:{_beatIndex}\n" +
         $"BT: {Media.Beats[_beatIndex].Time}"
         ;
+#else
+      TimelineImage.Text = $"{Media.Sections[_sectionIndex].Name}\n\n\n\n\n";
+#endif
     }
 
     //TODO: Re-enable.
