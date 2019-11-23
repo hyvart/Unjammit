@@ -60,6 +60,9 @@ namespace Jammit.Forms.Views
     {
       base.OnAppearing();
 
+      if (Device.Android == Device.RuntimePlatform && TargetIdiom.Phone == Device.Idiom)
+        MessagingCenter.Send(this, "PreventPortrait");
+
       if (null == ScorePicker.SelectedItem)
         return;
 
@@ -79,6 +82,14 @@ namespace Jammit.Forms.Views
       // Page Width shoud be greater or equal. Else, there is children overflow.
       if (Width < MixerLayout.Width + ProgressLayout.Width)
         AlbumImage.IsVisible = false;
+    }
+
+    protected override void OnDisappearing()
+    {
+      base.OnDisappearing();
+
+      if (Device.Android == Device.RuntimePlatform && TargetIdiom.Phone == Device.Idiom)
+        MessagingCenter.Send(this, "AllowLandScapePortrait");
     }
 
     #endregion Page overrides
