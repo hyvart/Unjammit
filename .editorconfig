@@ -12,7 +12,8 @@ insert_final_newline = false
 indent_size = 4
 indent_style = tab
 
-#[*.{editorconfig,md,plist}]
+[*.{plist}]
+indent_style = tab
 
 [*.{ps1,sh}]
 indent_size = 4
