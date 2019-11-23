@@ -57,6 +57,7 @@
     <CodeSignProvision>Automatic</CodeSignProvision>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
