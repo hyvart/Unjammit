@@ -26,6 +26,9 @@ namespace Jammit.Forms.Renderers
       if (Control != null)
       {
         Control.Rotation = 270;
+
+        // Rotated: bottom, left, top, right
+        Control.SetPadding(0, 0, Control.Thumb.IntrinsicWidth / 2, 0);
       }
     }
   }
