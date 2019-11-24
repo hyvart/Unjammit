@@ -58,30 +58,31 @@ stages:
           - bash: |
               ls -l /Library/Frameworks/Mono.framework/Versions/
               ls -l /Library/Frameworks/Xamarin.Mac.framework/Versions/
-          # - template: Templates/PublishMacOSSteps.yml
-          #   parameters:
-          #     phase: Alpha
 
-          # - task: Bash@3
-          #   displayName: Create Disk Image
-          #   inputs:
-          #     targetType: inline
-          #     script: |
-          #       echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
-          #       echo "Renaming"
-          #       mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
-          #         "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
-          #       echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
-          #       hdiutil create -format UDZO \
-          #         -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
-          #         $(Build.ArtifactStagingDirectory)/Unjammit.dmg
+          - template: Templates/PublishMacOSSteps.yml
+            parameters:
+              phase: Alpha
 
-          # - task: PublishBuildArtifacts@1
-          #   displayName: 'Publish artifact: macOS-Alpha'
-          #   inputs:
-          #     PathtoPublish: $(Build.ArtifactStagingDirectory)
-          #     ArtifactName: macOS-Alpha
-          #     publishLocation: Container
+          - task: Bash@3
+            displayName: Create Disk Image
+            inputs:
+              targetType: inline
+              script: |
+                echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
+                echo "Renaming"
+                mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
+                  "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
+                echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
+                hdiutil create -format UDZO \
+                  -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
+                  $(Build.ArtifactStagingDirectory)/Unjammit.dmg
+
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish artifact: macOS-Alpha'
+            inputs:
+              PathtoPublish: $(Build.ArtifactStagingDirectory)
+              ArtifactName: macOS-Alpha
+              publishLocation: Container
 
       # - job:
       #   displayName: iOS

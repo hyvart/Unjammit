@@ -10,10 +10,13 @@ parameters:
   debug: false
 
 steps:
-  - template: SetMacOSFrameworkVersion.yml
-    parameters:
-      framework: Mono
-      version: 5.18.1
+  # - template: SetMacOSFrameworkVersion.yml
+  #   parameters:
+  #     framework: Mono
+  #     version: 6.0.0
+  - bash: |
+      /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"
+
 
   - task: DotNetCoreInstaller@1
     displayName: Install .NET Core $(DotNetCoreSdk.Version)
