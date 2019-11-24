@@ -7,7 +7,7 @@
 
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness">
-      <On Platform="iOS" Value="{OnIdiom Tablet='0,20,0,0'}" />
+      <On Platform="iOS" Value="{OnIdiom Tablet='0,20,0,0', Default=0}" />
     </OnPlatform>
   </ContentPage.Padding>
 
