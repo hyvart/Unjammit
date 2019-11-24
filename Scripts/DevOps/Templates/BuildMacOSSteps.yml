@@ -13,9 +13,10 @@ steps:
   # - template: SetMacOSFrameworkVersion.yml
   #   parameters:
   #     framework: Mono
-  #     version: 6.0.0
+  #     version: $(XamarinMac.MonoVersion)
   - bash: |
-      /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"
+      /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh ${XAMARINMAC_MONOVERSION}"
+    displayName: Set Xamarin version set to $(XamarinMac.MonoVersion)
 
 
   - task: DotNetCoreInstaller@1
