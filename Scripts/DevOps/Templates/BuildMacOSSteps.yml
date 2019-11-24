@@ -10,10 +10,10 @@ parameters:
   debug: false
 
 steps:
-  # - template: SetMacOSFrameworkVersion.yml
-  #   parameters:
-  #     framework: Mono
-  #     version: $(XamarinMac.MonoVersion)
+  - template: SetMacOSFrameworkVersion.yml
+    parameters:
+      framework: Mono
+      version: 5.18.1
 
   - task: DotNetCoreInstaller@1
     displayName: Install .NET Core $(DotNetCoreSdk.Version)
