@@ -6,7 +6,7 @@
 //
 using Foundation;
 
-namespace Jam.NET.macOS
+namespace Jammit.macOS
 {
   [Register("ViewController")]
   partial class ViewController
