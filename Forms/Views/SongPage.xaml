@@ -82,7 +82,7 @@
                BackgroundColor="DarkGray"
                HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
                WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
-        <local:Mixer Player="{Binding Player}" Media="{Binding Media}" />
+        <local:Mixer Player="{Binding Player}" Media="{Binding Media}" WidthRequest="200" />
       </StackLayout>
       <StackLayout x:Name="ProgressLayout"
                    HorizontalOptions="FillAndExpand">
