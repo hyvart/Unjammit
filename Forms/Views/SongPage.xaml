@@ -27,7 +27,6 @@
       <x:Double x:Key="ScoreHeight">1024</x:Double>
       <x:Double x:Key="ScoreWidth">724</x:Double>
       <x:Double x:Key="ScoreCursorOffset">-352</x:Double><!-- ScoreWidth/2 - 20 -->
-      <x:Double x:Key="ScoreHeightX2">2048</x:Double>
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -43,22 +42,15 @@
 
     <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="0">
       <RelativeLayout
-        HeightRequest="{StaticResource Key=ScoreHeightX2}"
-        MinimumHeightRequest="{StaticResource Key=ScoreHeightX2}"
+        HeightRequest="{StaticResource Key=ScoreHeight}"
+        MinimumHeightRequest="{StaticResource Key=ScoreHeight}"
         WidthRequest="{StaticResource Key=ScoreWidth}"
         MinimumWidthRequest="{StaticResource Key=ScoreWidth}"
         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Image x:Name="ScoreImage"
                Aspect="AspectFit"
                RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
-               RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
-               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-               />
-        
-        <Image x:Name="ScoreImagePad"
-               Aspect="AspectFit"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
-               RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
+               RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                />
 

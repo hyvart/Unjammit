@@ -327,13 +327,6 @@ namespace Jammit.Forms.Views
       {
         return App.MediaLoader.LoadNotation(Media, score, index);
       });
-      if (index + 1 < score.PageCount)
-      {
-        ScoreImagePad.Source = ImageSource.FromStream(() =>
-        {
-          return App.MediaLoader.LoadNotation(Media, score, index + 1);
-        });
-      }
     }
 
     private void BackButton_Clicked(object sender, EventArgs e)
