@@ -43,8 +43,8 @@
 
     <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="0">
       <RelativeLayout
-        HeightRequest="{StaticResource Key=ScoreHeightX2}"
-        MinimumHeightRequest="{StaticResource Key=ScoreHeightX2}"
+        HeightRequest="1280"
+        MinimumHeightRequest="1280"
         WidthRequest="{StaticResource Key=ScoreWidth}"
         MinimumWidthRequest="{StaticResource Key=ScoreWidth}"
         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -54,13 +54,17 @@
                RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                />
-        
-        <Image x:Name="ScoreImagePad"
-               Aspect="AspectFit"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
-               RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
-               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-               />
+
+        <local:DisabledScrollView
+            x:Name="ScoreImagePadLayout"
+            Padding="0" Margin="0"
+            BackgroundColor="Pink"
+            HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ScoreImage, Property=Height}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=256}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+          <Image x:Name="ScoreImagePad" Aspect="AspectFit" />
+        </local:DisabledScrollView>
 
         <Frame x:Name="CursorFrame"
                BorderColor="Green"
