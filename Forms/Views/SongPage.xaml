@@ -78,6 +78,13 @@
       </RelativeLayout>
     </ScrollView>
 
+    <Button HeightRequest="10"
+            BorderWidth="0"
+            Padding="0"
+            Margin="0"
+            Clicked="HideControlsButton_Clicked"
+            />
+
     <StackLayout x:Name="ControlsLayout"
                  Orientation="Horizontal"
                  HorizontalOptions="FillAndExpand"

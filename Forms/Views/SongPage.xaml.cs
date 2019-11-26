@@ -371,5 +371,10 @@ namespace Jammit.Forms.Views
     {
       Player.Position = TimeSpan.FromSeconds(Media.Sections.Last().Beat.Time);
     }
+
+    private void HideControlsButton_Clicked(object sender, EventArgs e)
+    {
+      ControlsLayout.IsVisible = !ControlsLayout.IsVisible;
+    }
   }
 }
