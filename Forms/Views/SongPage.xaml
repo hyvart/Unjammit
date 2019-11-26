@@ -59,6 +59,7 @@
         <local:DisabledScrollView
             x:Name="ScoreImagePadLayout"
             Padding="0" Margin="0"
+            IsEnabled="False"
             ParentScroller="{x:Reference ScoreLayout}"
             BackgroundColor="Pink"
             HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"

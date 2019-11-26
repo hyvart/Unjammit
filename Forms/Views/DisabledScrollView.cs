@@ -24,8 +24,6 @@ namespace Jammit.Forms.Views
       }
 
       var evt = field.GetValue(ParentScroller);
-      var method = typeof(EventHandler<ScrollToRequestedEventArgs>).GetMethod("GetInvocationList");
-      //var invocationList = method.Invoke(evt, new object[] { }) as System.Delegate[];
       NativeParentScroller = (evt as EventHandler<ScrollToRequestedEventArgs>).Target;
     }
 
