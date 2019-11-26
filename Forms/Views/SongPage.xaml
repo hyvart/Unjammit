@@ -48,6 +48,7 @@
         WidthRequest="{StaticResource Key=ScoreWidth}"
         MinimumWidthRequest="{StaticResource Key=ScoreWidth}"
         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
         <Image x:Name="ScoreImage"
                Aspect="AspectFit"
                RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
@@ -58,6 +59,7 @@
         <local:DisabledScrollView
             x:Name="ScoreImagePadLayout"
             Padding="0" Margin="0"
+            ParentScroller="{x:Reference ScoreLayout}"
             BackgroundColor="Pink"
             HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ScoreImage, Property=Height}"

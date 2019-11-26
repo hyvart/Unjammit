@@ -1,24 +1,18 @@
-﻿using System;
+﻿using Xamarin.Forms;
 
-using Xamarin.Forms;
-
-//[assembly: ExportRenderer(typeof(Jammit.Forms.Views.DisabledScrollView), typeof(Jammit.Forms.Renderers.MacOSDisabledScrollViewRenderer))]
+[assembly: ExportRenderer(typeof(Jammit.Forms.Views.DisabledScrollView), typeof(Jammit.Forms.Renderers.MacOSDisabledScrollViewRenderer))]
 namespace Jammit.Forms.Renderers
 {
   public class MacOSDisabledScrollViewRenderer : Xamarin.Forms.Platform.MacOS.ScrollViewRenderer
   {
-    public MacOSDisabledScrollViewRenderer()
+    // https://apptyrant.com/2015/05/18/how-to-disable-nsscrollview-scrolling/
+    public override void ScrollWheel(AppKit.NSEvent theEvent)
     {
-      ElementChanged += MacOSDisabledScrollViewRenderer_ElementChanged;
-      //this.ViewController.
+      //TODO: Horrible hack! Making a delegate scrollview do the job.
+      var elem = Element as Views.DisabledScrollView;
+      var psc = elem.NativeParentScroller;
+      var nssv = psc as AppKit.NSScrollView;
+      nssv.ScrollWheel(theEvent);
     }
-
-    private void MacOSDisabledScrollViewRenderer_ElementChanged(object sender, Xamarin.Forms.Platform.MacOS.VisualElementChangedEventArgs e)
-    {
-    }
-
-    #region ViewRenderer overrides
-
-    #endregion ViewRenderer overrides
   }
 }

@@ -329,6 +329,9 @@ namespace Jammit.Forms.Views
       });
       if (index + 1 < score.PageCount)
       {
+        //TODO: Fix. Not working.
+        //ScoreLayout.HeightRequest = 1024 + score.Track.ScoreSystemHeight;
+        //ScoreImagePadLayout.HeightRequest = score.Track.ScoreSystemHeight;
         ScoreImagePad.Source = ImageSource.FromStream(() =>
         {
           return App.MediaLoader.LoadNotation(Media, score, index + 1);
