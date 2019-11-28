@@ -359,6 +359,7 @@ namespace Jammit.Forms.Views
     private void HideControlsButton_Clicked(object sender, EventArgs e)
     {
       ControlsLayout.IsVisible = !ControlsLayout.IsVisible;
+      HideControlsButton.Text = ControlsLayout.IsVisible? "▼" : "▲";
     }
 
     private void ScoreLayout_SizeChanged(object sender, EventArgs e)

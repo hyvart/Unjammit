@@ -91,6 +91,7 @@
       </ScrollView>
       <Label x:Name="ScoreHiddenLabel"
              BackgroundColor="LightGray"
+             MinimumHeightRequest="0"
              FontSize="Title"
              Text="Score systems won't fit this screen."
              VerticalTextAlignment="Center"
@@ -105,13 +106,15 @@
             BorderWidth="0"
             Padding="0"
             Margin="0"
-            BackgroundColor="DarkCyan"
+            Text="▼"
+            BackgroundColor="DarkGray"
             Clicked="HideControlsButton_Clicked"
             />
 
     <StackLayout x:Name="ControlsLayout"
                  Orientation="Horizontal"
                  HorizontalOptions="FillAndExpand"
+                 Margin="0"
                  Padding="6,0,6,0"
                  MinimumWidthRequest="{OnIdiom Phone=150, Default=200}">
 
