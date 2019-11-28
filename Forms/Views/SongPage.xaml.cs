@@ -84,17 +84,8 @@ namespace Jammit.Forms.Views
       if (Width < MixerLayout.Width + ProgressLayout.Width)
         AlbumImage.IsVisible = false;
 
-
-      // Hide score layout if it won't fit the screen.
-      var systemHeight = (ScorePicker.SelectedItem as ScoreInfo).Track.ScoreSystemHeight;
-      if (ScoreView.IsVisible && ScoreLayout.Height > 0 && ScoreLayout.Height < systemHeight)
-      {
-        ScoreView.IsVisible = false;
-      }
-      else if (!ScoreView.IsVisible && ScoreLayout.Height >= systemHeight)
-      {
-        ScoreView.IsVisible = true;
-      }
+      // Adjust ScoreView, if needed.
+      ScoreLayout_SizeChanged(null, null);
     }
 
     protected override void OnDisappearing()
@@ -370,6 +361,22 @@ namespace Jammit.Forms.Views
     private void HideControlsButton_Clicked(object sender, EventArgs e)
     {
       ControlsLayout.IsVisible = !ControlsLayout.IsVisible;
+    }
+
+    private void ScoreLayout_SizeChanged(object sender, EventArgs e)
+    {
+      // Hide score layout if it won't fit the screen.
+      var systemHeight = (ScorePicker.SelectedItem as ScoreInfo).Track.ScoreSystemHeight;
+      if (ScoreView.IsVisible && ScoreLayout.Height > 0 && ScoreLayout.Height < systemHeight)
+      {
+        ScoreView.IsVisible = false;
+        ScoreHiddenLabel.IsVisible = true;
+      }
+      else if (!ScoreView.IsVisible && ScoreLayout.Height >= systemHeight)
+      {
+        ScoreHiddenLabel.IsVisible = false;
+        ScoreView.IsVisible = true;
+      }
     }
   }
 }

@@ -41,7 +41,11 @@
               HorizontalOptions="FillAndExpand" />
     </StackLayout>
 
-    <StackLayout x:Name="ScoreLayout" Padding="0" Margin="0" VerticalOptions="FillAndExpand">
+    <StackLayout x:Name="ScoreLayout"
+                 Padding="0"
+                 Margin="0"
+                 SizeChanged="ScoreLayout_SizeChanged"
+                 VerticalOptions="FillAndExpand">
       <ScrollView x:Name="ScoreView" BackgroundColor="LightGray" Padding="0">
         <RelativeLayout
         HeightRequest="1280"
@@ -85,6 +89,16 @@
                />
         </RelativeLayout>
       </ScrollView>
+      <Label x:Name="ScoreHiddenLabel"
+             BackgroundColor="LightGray"
+             FontSize="Title"
+             Text="Score systems won't fit this screen."
+             VerticalTextAlignment="Center"
+             HorizontalTextAlignment="Center"
+             TextColor="Black"
+             VerticalOptions="FillAndExpand"
+             IsVisible="False" />
+
     </StackLayout>
 
     <Button x:Name="HideControlsButton"
@@ -92,6 +106,7 @@
             BorderWidth="0"
             Padding="0"
             Margin="0"
+            BackgroundColor="DarkCyan"
             Clicked="HideControlsButton_Clicked"
             />
 
@@ -141,6 +156,7 @@
                MaxLines="{OnIdiom Phone=6, Default=8}"
                VerticalTextAlignment="Start"
                Style="{StaticResource Key=ProgressStyle}"
+               Text="&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;"
                />
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
