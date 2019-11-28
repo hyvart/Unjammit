@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-using Jammit.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using Jammit.Model;
 
 namespace Jammit.Forms.Views
 {
@@ -86,6 +85,10 @@ namespace Jammit.Forms.Views
 
       // Adjust ScoreView, if needed.
       ScoreLayout_SizeChanged(null, null);
+
+      var systemHeight = (ScorePicker.SelectedItem as ScoreInfo).Track.ScoreSystemHeight;
+      ScoreContainer.HeightRequest = (double)Resources["ScoreHeight"] + systemHeight;
+      ScoreImagePadLayout.HeightRequest = systemHeight;
     }
 
     protected override void OnDisappearing()
