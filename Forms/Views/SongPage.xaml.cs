@@ -298,15 +298,16 @@ namespace Jammit.Forms.Views
         $"Idx:{_beatIndex}\n" +
         $"BT: {Media.Beats[_beatIndex].Time}"
         ;
+
+      //TimelineImage.Text =
+      //  $"H {Height}\n" +
+      //  $"HLO.H {HeaderLayout.Height}\n" +
+      //  $"SVW.H {ScoreView.Height}\n" +
+      //  $"HCB.H {HideControlsButton.Height}\n" +
+      //  $"CLO.H {ControlsLayout.Height}\n" +
+      //  $"FLO.H {FooterLayout.Height}";
 #else
-      //TimelineImage.Text = $"{Media.Sections[_sectionIndex].Name}\n\n\n\n\n";
-      TimelineImage.Text =
-        $"H {Height}\n" +
-        $"HLO.H {HeaderLayout.Height}\n" +
-        $"SLO.H {ScoreView.Height}\n" +
-        $"HCB.H {HideControlsButton.Height}\n" +
-        $"CLO.H {ControlsLayout.Height}\n" +
-        $"FLO.H {FooterLayout.Height}";
+      TimelineImage.Text = $"{Media.Sections[_sectionIndex].Name}\n\n\n\n\n";
 #endif
     }
 
