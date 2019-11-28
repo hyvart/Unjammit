@@ -65,7 +65,7 @@
             x:Name="ScoreImagePadLayout"
             Padding="0" Margin="0"
             IsEnabled="False"
-            ParentScroller="{x:Reference ScoreView}"
+            Delegate="{x:Reference ScoreView}"
             BackgroundColor="Pink"
             HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ScoreImage, Property=Height}"
