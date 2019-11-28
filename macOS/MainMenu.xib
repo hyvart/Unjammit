@@ -15,7 +15,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Unjammit!" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About Unjammit..." id="58">
+                            <menuItem title="About Unjammit!..." id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -29,7 +29,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="130"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="144"/>
-                            <menuItem title="Hide Unjammit" keyEquivalent="h" id="134">
+                            <menuItem title="Hide Unjammit!" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -47,7 +47,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="149"/>
-                            <menuItem title="Quit Unjammit" keyEquivalent="q" id="136">
+                            <menuItem title="Quit Unjammit!" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="369"/>
                                 </connections>
@@ -142,7 +142,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="106">
                         <items>
-                            <menuItem title="Unjammit Help" keyEquivalent="?" id="111">
+                            <menuItem title="Unjammit! Help" keyEquivalent="?" id="111">
                                 <connections>
                                     <action selector="customHelp:" target="-1" id="tdR-jf-Hmc"/>
                                 </connections>

@@ -66,5 +66,19 @@ namespace Jammit.macOS
     {
       // Insert code here to tear down your application
     }
+
+    #region NSApplicationDelegate overrides
+
+    /// <summary>
+    /// Make application exit when closing the main window.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <returns></returns>
+    public override bool ApplicationShouldTerminateAfterLastWindowClosed(NSApplication sender)
+    {
+      return true;
+    }
+
+    #endregion NSApplicationDelegate overrides
   }
 }

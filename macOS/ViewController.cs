@@ -3,7 +3,7 @@
 using AppKit;
 using Foundation;
 
-namespace Jam.NET.macOS
+namespace Jammit.macOS
 {
   public partial class ViewController : NSViewController
   {
