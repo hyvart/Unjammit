@@ -124,64 +124,6 @@ namespace Jammit.Forms.Views
 
     #endregion
 
-    #region Handlers
-
-    private void PlayButton_Clicked(object sender, EventArgs e)
-    {
-      if (Audio.PlaybackStatus.Playing == Player.State)
-      {
-        Player.Pause();
-
-        PlayButton.BackgroundColor = Color.PaleGoldenrod;
-        PlayButton.TextColor = Color.Olive;
-        PlayButton.BorderColor = PlayButton.TextColor;
-      }
-      else
-      {
-        Player.Play();
-
-        Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
-        {
-          Device.BeginInvokeOnMainThread(async() => await MoveCursor(Player.Position));
-
-          return Player.State == Audio.PlaybackStatus.Playing;
-        });
-
-        PlayButton.BackgroundColor = Color.PaleGreen;
-        PlayButton.TextColor = Color.DarkGreen;
-        PlayButton.BorderColor = PlayButton.TextColor;
-      }
-    }
-
-    private void StopButton_Clicked(object sender, EventArgs e)
-    {
-      Player.Stop();
-
-      PlayButton.BackgroundColor = NormalButtonBackgroundColor;
-      PlayButton.TextColor = NormalButtonTextColor;
-    }
-
-    private void CloseButton_Clicked(object sender, EventArgs e)
-    {
-      Player.Stop();
-
-      Navigation.PopModalAsync();
-    }
-
-    void PositionSlider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
-    {
-      // Update the player position only on manual ( > 1 ) slider changes.
-      if (Math.Abs(e.NewValue - Player.Position.TotalSeconds) > 1)
-        Player.Position = TimeSpan.FromSeconds(e.NewValue);
-    }
-
-    private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      SetScorePage(PageIndex);
-    }
-
-    #endregion Handlers
-
     private void FindBeat(double totalSeconds, int start, int end)
     {
       int mid = (start + end) / 2;
@@ -320,6 +262,62 @@ namespace Jammit.Forms.Views
           return App.MediaLoader.LoadNotation(Media, score, index + 1);
         });
       }
+    }
+
+    //#region Handlers
+
+    private void PlayButton_Clicked(object sender, EventArgs e)
+    {
+      if (Audio.PlaybackStatus.Playing == Player.State)
+      {
+        Player.Pause();
+
+        PlayButton.BackgroundColor = Color.PaleGoldenrod;
+        PlayButton.TextColor = Color.Olive;
+        PlayButton.BorderColor = PlayButton.TextColor;
+      }
+      else
+      {
+        Player.Play();
+
+        Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
+        {
+          Device.BeginInvokeOnMainThread(async () => await MoveCursor(Player.Position));
+
+          return Player.State == Audio.PlaybackStatus.Playing;
+        });
+
+        PlayButton.BackgroundColor = Color.PaleGreen;
+        PlayButton.TextColor = Color.DarkGreen;
+        PlayButton.BorderColor = PlayButton.TextColor;
+      }
+    }
+
+    private void StopButton_Clicked(object sender, EventArgs e)
+    {
+      Player.Stop();
+
+      PlayButton.BackgroundColor = NormalButtonBackgroundColor;
+      PlayButton.TextColor = NormalButtonTextColor;
+    }
+
+    private void CloseButton_Clicked(object sender, EventArgs e)
+    {
+      Player.Stop();
+
+      Navigation.PopModalAsync();
+    }
+
+    void PositionSlider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
+    {
+      // Update the player position only on manual ( > 1 ) slider changes.
+      if (Math.Abs(e.NewValue - Player.Position.TotalSeconds) > 1)
+        Player.Position = TimeSpan.FromSeconds(e.NewValue);
+    }
+
+    private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SetScorePage(PageIndex);
     }
 
     private void BackButton_Clicked(object sender, EventArgs e)

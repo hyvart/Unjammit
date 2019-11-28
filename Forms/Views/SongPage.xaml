@@ -98,7 +98,6 @@
              TextColor="Black"
              VerticalOptions="FillAndExpand"
              IsVisible="False" />
-
     </StackLayout>
 
     <Button x:Name="HideControlsButton"
