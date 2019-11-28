@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-using Jammit.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using Jammit.Model;
 
 namespace Jammit.Forms.Views
 {
@@ -83,6 +82,13 @@ namespace Jammit.Forms.Views
       // Page Width shoud be greater or equal. Else, there is children overflow.
       if (Width < MixerLayout.Width + ProgressLayout.Width)
         AlbumImage.IsVisible = false;
+
+      // Adjust ScoreView, if needed.
+      ScoreLayout_SizeChanged(null, null);
+
+      var systemHeight = (ScorePicker.SelectedItem as ScoreInfo).Track.ScoreSystemHeight;
+      ScoreContainer.HeightRequest = (double)Resources["ScoreHeight"] + systemHeight;
+      ScoreImagePadLayout.HeightRequest = systemHeight;
     }
 
     protected override void OnDisappearing()
@@ -120,64 +126,6 @@ namespace Jammit.Forms.Views
     }
 
     #endregion
-
-    #region Handlers
-
-    private void PlayButton_Clicked(object sender, EventArgs e)
-    {
-      if (Audio.PlaybackStatus.Playing == Player.State)
-      {
-        Player.Pause();
-
-        PlayButton.BackgroundColor = Color.PaleGoldenrod;
-        PlayButton.TextColor = Color.Olive;
-        PlayButton.BorderColor = PlayButton.TextColor;
-      }
-      else
-      {
-        Player.Play();
-
-        Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
-        {
-          Device.BeginInvokeOnMainThread(async() => await MoveCursor(Player.Position));
-
-          return Player.State == Audio.PlaybackStatus.Playing;
-        });
-
-        PlayButton.BackgroundColor = Color.PaleGreen;
-        PlayButton.TextColor = Color.DarkGreen;
-        PlayButton.BorderColor = PlayButton.TextColor;
-      }
-    }
-
-    private void StopButton_Clicked(object sender, EventArgs e)
-    {
-      Player.Stop();
-
-      PlayButton.BackgroundColor = NormalButtonBackgroundColor;
-      PlayButton.TextColor = NormalButtonTextColor;
-    }
-
-    private void CloseButton_Clicked(object sender, EventArgs e)
-    {
-      Player.Stop();
-
-      Navigation.PopModalAsync();
-    }
-
-    void PositionSlider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
-    {
-      // Update the player position only on manual ( > 1 ) slider changes.
-      if (Math.Abs(e.NewValue - Player.Position.TotalSeconds) > 1)
-        Player.Position = TimeSpan.FromSeconds(e.NewValue);
-    }
-
-    private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      SetScorePage(PageIndex);
-    }
-
-    #endregion Handlers
 
     private void FindBeat(double totalSeconds, int start, int end)
     {
@@ -266,7 +214,7 @@ namespace Jammit.Forms.Views
       var yOffset = y % ScoreImage.Height;
       if (Device.macOS != Device.RuntimePlatform)
       {
-        await ScoreLayout.ScrollToAsync(0, yOffset, false);
+        await ScoreView.ScrollToAsync(0, yOffset, false);
       }
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
@@ -283,37 +231,17 @@ namespace Jammit.Forms.Views
         $"Idx:{_beatIndex}\n" +
         $"BT: {Media.Beats[_beatIndex].Time}"
         ;
+
+      //TimelineImage.Text =
+      //  $"H {Height}\n" +
+      //  $"HLO.H {HeaderLayout.Height}\n" +
+      //  $"SVW.H {ScoreView.Height}\n" +
+      //  $"HCB.H {HideControlsButton.Height}\n" +
+      //  $"CLO.H {ControlsLayout.Height}\n" +
+      //  $"FLO.H {FooterLayout.Height}";
 #else
       TimelineImage.Text = $"{Media.Sections[_sectionIndex].Name}\n\n\n\n\n";
 #endif
-    }
-
-    //TODO: Re-enable.
-    private async void ScoreLayout_Scrolled(object sender, ScrolledEventArgs e)
-    {
-      var score = ScorePicker.SelectedItem as ScoreInfo;
-      double targetY = -1;
-
-      //TODO: Compute score height. Might change due to resizing.
-      if (PageIndex < score.PageCount - 1 && ScoreLayout.Height + e.ScrollY >= ScoreImage.Height)
-      {
-        PageIndex++;
-        targetY = ScoreImage.Height - ScoreLayout.Height;
-      }
-      else if (PageIndex > 0 && e.ScrollY <= 0)
-      {
-        PageIndex--;
-        targetY = 0;
-      }
-
-      // If PageIndex changed.
-      if (targetY >= 0)
-      {
-        SetScorePage(PageIndex);
-
-        //TODO: Meh. Doen't really work (at least on UWP).
-        await ScoreLayout.ScrollToAsync(e.ScrollX, targetY, true);
-      }
     }
 
     void SetScorePage(uint index)
@@ -329,11 +257,70 @@ namespace Jammit.Forms.Views
       });
       if (index + 1 < score.PageCount)
       {
+        //TODO: Fix. Not working.
+        //ScoreLayout.HeightRequest = 1024 + score.Track.ScoreSystemHeight;
+        //ScoreImagePadLayout.HeightRequest = score.Track.ScoreSystemHeight;
         ScoreImagePad.Source = ImageSource.FromStream(() =>
         {
           return App.MediaLoader.LoadNotation(Media, score, index + 1);
         });
       }
+    }
+
+    //#region Handlers
+
+    private void PlayButton_Clicked(object sender, EventArgs e)
+    {
+      if (Audio.PlaybackStatus.Playing == Player.State)
+      {
+        Player.Pause();
+
+        PlayButton.BackgroundColor = Color.PaleGoldenrod;
+        PlayButton.TextColor = Color.Olive;
+        PlayButton.BorderColor = PlayButton.TextColor;
+      }
+      else
+      {
+        Player.Play();
+
+        Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
+        {
+          Device.BeginInvokeOnMainThread(async () => await MoveCursor(Player.Position));
+
+          return Player.State == Audio.PlaybackStatus.Playing;
+        });
+
+        PlayButton.BackgroundColor = Color.PaleGreen;
+        PlayButton.TextColor = Color.DarkGreen;
+        PlayButton.BorderColor = PlayButton.TextColor;
+      }
+    }
+
+    private void StopButton_Clicked(object sender, EventArgs e)
+    {
+      Player.Stop();
+
+      PlayButton.BackgroundColor = NormalButtonBackgroundColor;
+      PlayButton.TextColor = NormalButtonTextColor;
+    }
+
+    private void CloseButton_Clicked(object sender, EventArgs e)
+    {
+      Player.Stop();
+
+      Navigation.PopModalAsync();
+    }
+
+    void PositionSlider_ValueChanged(object sender, Xamarin.Forms.ValueChangedEventArgs e)
+    {
+      // Update the player position only on manual ( > 1 ) slider changes.
+      if (Math.Abs(e.NewValue - Player.Position.TotalSeconds) > 1)
+        Player.Position = TimeSpan.FromSeconds(e.NewValue);
+    }
+
+    private void ScorePicker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SetScorePage(PageIndex);
     }
 
     private void BackButton_Clicked(object sender, EventArgs e)
@@ -370,6 +357,28 @@ namespace Jammit.Forms.Views
     private void EndButton_Clicked(object sender, EventArgs e)
     {
       Player.Position = TimeSpan.FromSeconds(Media.Sections.Last().Beat.Time);
+    }
+
+    private void HideControlsButton_Clicked(object sender, EventArgs e)
+    {
+      ControlsLayout.IsVisible = !ControlsLayout.IsVisible;
+      HideControlsButton.Text = ControlsLayout.IsVisible? "▼" : "▲";
+    }
+
+    private void ScoreLayout_SizeChanged(object sender, EventArgs e)
+    {
+      // Hide score layout if it won't fit the screen.
+      var systemHeight = (ScorePicker.SelectedItem as ScoreInfo).Track.ScoreSystemHeight;
+      if (ScoreView.IsVisible && ScoreLayout.Height > 0 && ScoreLayout.Height < systemHeight)
+      {
+        ScoreView.IsVisible = false;
+        ScoreHiddenLabel.IsVisible = true;
+      }
+      else if (!ScoreView.IsVisible && ScoreLayout.Height >= systemHeight)
+      {
+        ScoreHiddenLabel.IsVisible = false;
+        ScoreView.IsVisible = true;
+      }
     }
   }
 }

@@ -27,7 +27,6 @@
       <x:Double x:Key="ScoreHeight">1024</x:Double>
       <x:Double x:Key="ScoreWidth">724</x:Double>
       <x:Double x:Key="ScoreCursorOffset">-352</x:Double><!-- ScoreWidth/2 - 20 -->
-      <x:Double x:Key="ScoreHeightX2">2048</x:Double>
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -41,46 +40,85 @@
               HorizontalOptions="FillAndExpand" />
     </StackLayout>
 
-    <ScrollView x:Name="ScoreLayout" BackgroundColor="LightGray" Padding="0">
-      <RelativeLayout
-        HeightRequest="{StaticResource Key=ScoreHeightX2}"
-        MinimumHeightRequest="{StaticResource Key=ScoreHeightX2}"
-        WidthRequest="{StaticResource Key=ScoreWidth}"
-        MinimumWidthRequest="{StaticResource Key=ScoreWidth}"
-        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Image x:Name="ScoreImage"
-               Aspect="AspectFit"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
-               RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
-               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-               />
-        
-        <Image x:Name="ScoreImagePad"
-               Aspect="AspectFit"
-               RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
-               RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
-               RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
-               />
+    <StackLayout x:Name="ScoreLayout"
+                 Padding="0"
+                 Margin="0"
+                 SizeChanged="ScoreLayout_SizeChanged"
+                 VerticalOptions="FillAndExpand">
+      <ScrollView x:Name="ScoreView" BackgroundColor="LightGray" Padding="0">
+        <RelativeLayout
+          x:Name="ScoreContainer"
+          HeightRequest="{StaticResource Key=ScoreHeight}"
+          MinimumHeightRequest="{StaticResource Key=ScoreHeight}"
+          WidthRequest="{StaticResource Key=ScoreWidth}"
+          MinimumWidthRequest="{StaticResource Key=ScoreWidth}"
+          VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-        <Frame x:Name="CursorFrame"
+          <Image x:Name="ScoreImage"
+                 Aspect="AspectFit"
+                 BackgroundColor="LightCyan"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                 />
+
+          <local:DisabledScrollView
+            x:Name="ScoreImagePadLayout"
+            Padding="0" Margin="0"
+            IsEnabled="False"
+            Delegate="{x:Reference ScoreView}"
+            BackgroundColor="Pink"
+            HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ScoreImage, Property=Height}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            >
+            <Image x:Name="ScoreImagePad" Aspect="AspectFit"
+                   BackgroundColor="LightYellow"
+                   WidthRequest="{StaticResource Key=ScoreWidth}"
+                   HeightRequest="{StaticResource Key=ScoreHeight}"
+                   />
+          </local:DisabledScrollView>
+
+          <Frame x:Name="CursorFrame"
                BorderColor="Green"
                BackgroundColor="Transparent"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=WidthRequest, Constant=-20}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant={StaticResource Key=ScoreCursorOffset}}">
-        </Frame>
+          </Frame>
 
-        <Frame x:Name="CursorBar"
+          <Frame x:Name="CursorBar"
                BorderColor="Green"
                BackgroundColor="Green"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=2}"
                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
                />
-      </RelativeLayout>
-    </ScrollView>
+        </RelativeLayout>
+      </ScrollView>
+      <Label x:Name="ScoreHiddenLabel"
+             BackgroundColor="LightGray"
+             MinimumHeightRequest="0"
+             FontSize="Title"
+             Text="Score systems won't fit this screen."
+             VerticalTextAlignment="Center"
+             HorizontalTextAlignment="Center"
+             TextColor="Black"
+             VerticalOptions="FillAndExpand"
+             IsVisible="False" />
+    </StackLayout>
+
+    <Button x:Name="HideControlsButton"
+            HeightRequest="10"
+            BorderWidth="0"
+            Padding="0"
+            Margin="0"
+            Text="▼"
+            BackgroundColor="DarkGray"
+            Clicked="HideControlsButton_Clicked"
+            />
 
     <StackLayout x:Name="ControlsLayout"
                  Orientation="Horizontal"
                  HorizontalOptions="FillAndExpand"
+                 Margin="0"
                  Padding="6,0,6,0"
                  MinimumWidthRequest="{OnIdiom Phone=150, Default=200}">
 
@@ -124,6 +162,7 @@
                MaxLines="{OnIdiom Phone=6, Default=8}"
                VerticalTextAlignment="Start"
                Style="{StaticResource Key=ProgressStyle}"
+               Text="&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;"
                />
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="End">
@@ -138,7 +177,9 @@
       </StackLayout>
     </StackLayout>
 
-    <Button x:Name="CloseButton" Text="Close" Clicked="CloseButton_Clicked" />
+    <StackLayout x:Name="FooterLayout" Orientation="Horizontal" Padding="0" Margin="0" VerticalOptions="End">
+      <Button x:Name="CloseButton" Text="Close" HorizontalOptions="FillAndExpand" Clicked="CloseButton_Clicked" />
+    </StackLayout>
 
   </StackLayout>
 
