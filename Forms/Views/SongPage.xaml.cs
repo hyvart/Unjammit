@@ -83,6 +83,21 @@ namespace Jammit.Forms.Views
       // Page Width shoud be greater or equal. Else, there is children overflow.
       if (Width < MixerLayout.Width + ProgressLayout.Width)
         AlbumImage.IsVisible = false;
+
+      // Hide score layout if it won't fit the screen.
+      var nonScoreViewHeight =
+        HeaderLayout.Height +
+        HideControlsButton.Height +
+        ControlsLayout.Height +
+        FooterLayout.Height;
+      if (ScoreView.IsVisible && ScoreView.Height > 0 && Height - nonScoreViewHeight < (ScorePicker.SelectedItem as ScoreInfo).Track.ScoreSystemHeight)
+      {
+        ScoreView.IsVisible = false;
+      }
+      else if (!ScoreView.IsVisible && Height - nonScoreViewHeight >= (ScorePicker.SelectedItem as ScoreInfo).Track.ScoreSystemHeight)
+      {
+        ScoreView.IsVisible = true;
+      }
     }
 
     protected override void OnDisappearing()
@@ -266,7 +281,7 @@ namespace Jammit.Forms.Views
       var yOffset = y % ScoreImage.Height;
       if (Device.macOS != Device.RuntimePlatform)
       {
-        await ScoreLayout.ScrollToAsync(0, yOffset, false);
+        await ScoreView.ScrollToAsync(0, yOffset, false);
       }
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
@@ -284,36 +299,15 @@ namespace Jammit.Forms.Views
         $"BT: {Media.Beats[_beatIndex].Time}"
         ;
 #else
-      TimelineImage.Text = $"{Media.Sections[_sectionIndex].Name}\n\n\n\n\n";
+      //TimelineImage.Text = $"{Media.Sections[_sectionIndex].Name}\n\n\n\n\n";
+      TimelineImage.Text =
+        $"H {Height}\n" +
+        $"HLO.H {HeaderLayout.Height}\n" +
+        $"SLO.H {ScoreView.Height}\n" +
+        $"HCB.H {HideControlsButton.Height}\n" +
+        $"CLO.H {ControlsLayout.Height}\n" +
+        $"FLO.H {FooterLayout.Height}";
 #endif
-    }
-
-    //TODO: Re-enable.
-    private async void ScoreLayout_Scrolled(object sender, ScrolledEventArgs e)
-    {
-      var score = ScorePicker.SelectedItem as ScoreInfo;
-      double targetY = -1;
-
-      //TODO: Compute score height. Might change due to resizing.
-      if (PageIndex < score.PageCount - 1 && ScoreLayout.Height + e.ScrollY >= ScoreImage.Height)
-      {
-        PageIndex++;
-        targetY = ScoreImage.Height - ScoreLayout.Height;
-      }
-      else if (PageIndex > 0 && e.ScrollY <= 0)
-      {
-        PageIndex--;
-        targetY = 0;
-      }
-
-      // If PageIndex changed.
-      if (targetY >= 0)
-      {
-        SetScorePage(PageIndex);
-
-        //TODO: Meh. Doen't really work (at least on UWP).
-        await ScoreLayout.ScrollToAsync(e.ScrollX, targetY, true);
-      }
     }
 
     void SetScorePage(uint index)
