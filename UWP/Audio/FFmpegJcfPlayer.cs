@@ -45,16 +45,10 @@ namespace Jammit.Audio
       // Capacity => instruments + backing (TODO: + click)
       _players = new Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)>(media.InstrumentTracks.Count + 1);
       _mediaTimelineController = new MediaTimelineController();
-      _mediaTimelineController.PositionChanged += (sender, args) =>
-      {
+      _mediaTimelineController.PositionChanged += MediaTimelineController_PositionChanged;
+      _mediaTimelineController.Ended += MediaTimelineController_Ended;
 
-        Device.BeginInvokeOnMainThread(() =>
-        {
-          PositionChanged?.Invoke(this, new EventArgs());
-        });
-      };
       var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
-
       foreach (var track in media.InstrumentTracks)
       {
         InitPlayer(track, mediaPath);
@@ -62,6 +56,19 @@ namespace Jammit.Audio
       InitPlayer(media.BackingTrack, mediaPath);
 
       Length = media.Length;
+    }
+
+    private void MediaTimelineController_PositionChanged(MediaTimelineController sender, object args)
+    {
+      Device.BeginInvokeOnMainThread(() =>
+      {
+        PositionChanged?.Invoke(this, new EventArgs());
+      });
+    }
+
+    private void MediaTimelineController_Ended(MediaTimelineController sender, object args)
+    {
+      State = PlaybackStatus.Stopped;
     }
 
     #region Bindable Properties
