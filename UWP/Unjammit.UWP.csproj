@@ -117,11 +117,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Hyvart.FFmpegInteropX">
+      <Version>0.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>
-    </PackageReference>
-    <PackageReference Include="YunFan.Gallery.FFmpegInterop">
-      <Version>1.0.23</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

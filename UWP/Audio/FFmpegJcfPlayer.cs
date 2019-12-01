@@ -10,9 +10,6 @@ using Windows.Media.Core;
 using Windows.Media.Playback;
 using Xamarin.Forms;
 
-// Prefer YunFan.Gallery.FFmpegInterop over FFmpegInterop.UWP due to memory leaks.
-using FFmpegInterop = YunFan.Gallery.FFmpegInterop;
-
 namespace Jammit.Audio
 {
   public class FFmpegJcfPlayer : IJcfPlayer
