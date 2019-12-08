@@ -61,15 +61,17 @@ namespace Jammit.Audio
       switch (sender.State)
       {
         case MediaTimelineControllerState.Paused:
+          State = PlaybackStatus.Paused;
           break;
         case MediaTimelineControllerState.Running:
-          break;
         case MediaTimelineControllerState.Stalled:
+          State = PlaybackStatus.Playing;
           break;
         case MediaTimelineControllerState.Error:
+          State = PlaybackStatus.Stopped;
           break;
         default:
-          break;
+          throw new Exception("Unknown playback state");
       }
     }
 
@@ -103,7 +105,9 @@ namespace Jammit.Audio
 
       _mediaTimelineController.Resume();
 
-      State = PlaybackStatus.Playing;
+      //Force Playing state due to _mediaTimelineController.StateChanged delay.
+      if (PlaybackStatus.Playing != State)
+        State = PlaybackStatus.Playing;
     }
 
     public void Pause()
@@ -112,8 +116,6 @@ namespace Jammit.Audio
         return;
 
       _mediaTimelineController.Pause();
-
-      State = PlaybackStatus.Paused;
     }
 
     public void Stop()
