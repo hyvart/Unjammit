@@ -44,6 +44,7 @@ namespace Jammit.Audio
       _mediaTimelineController = new MediaTimelineController();
       _mediaTimelineController.PositionChanged += MediaTimelineController_PositionChanged;
       _mediaTimelineController.Ended += MediaTimelineController_Ended;
+      _mediaTimelineController.StateChanged += MediaTimelineController_StateChanged;
 
       var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
       foreach (var track in media.InstrumentTracks)
@@ -53,6 +54,23 @@ namespace Jammit.Audio
       InitPlayer(media.BackingTrack, mediaPath);
 
       Length = media.Length;
+    }
+
+    private void MediaTimelineController_StateChanged(MediaTimelineController sender, object args)
+    {
+      switch (sender.State)
+      {
+        case MediaTimelineControllerState.Paused:
+          break;
+        case MediaTimelineControllerState.Running:
+          break;
+        case MediaTimelineControllerState.Stalled:
+          break;
+        case MediaTimelineControllerState.Error:
+          break;
+        default:
+          break;
+      }
     }
 
     private void MediaTimelineController_PositionChanged(MediaTimelineController sender, object args)
@@ -65,6 +83,8 @@ namespace Jammit.Audio
 
     private void MediaTimelineController_Ended(MediaTimelineController sender, object args)
     {
+      //TODO: Trigger. Not currently hit.
+      Position = TimeSpan.Zero;
       State = PlaybackStatus.Stopped;
     }
 
