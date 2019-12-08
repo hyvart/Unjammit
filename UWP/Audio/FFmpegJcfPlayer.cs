@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Jammit.Model;
@@ -39,7 +37,7 @@ namespace Jammit.Audio
       return instance;
     }
 
-    #endregion
+    #endregion static members
 
     #region private members
 
@@ -64,47 +62,9 @@ namespace Jammit.Audio
       _players[track] = (player, ffmpegSource);
     }
 
-    private void InitPlayerSync(PlayableTrackInfo track, string mediaPath)
-    {
-      var uri = new Uri($"{mediaPath}/{track.Identifier.ToString().ToUpper()}_jcfx");
-      var stream = Task.Run(async () =>
-      {
-        var file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
-        return await file.OpenReadAsync();
-      }).Result;
-      var ffmpegSource = FFmpegInterop.FFmpegInteropMSS.CreateFFmpegInteropMSSFromStream(stream, false, false);
-
-      var player = new MediaPlayer();
-      player.CommandManager.IsEnabled = false;
-      player.TimelineController = _mediaTimelineController;
-      player.Source = MediaSource.CreateFromMediaStreamSource(ffmpegSource.GetMediaStreamSource());
-
-      // FFmpegInteropMSS instances hold the stream reference. Their scope must be kept.
-      _players[track] = (player, ffmpegSource);
-    }
-
     #endregion
 
     public FFmpegJcfPlayer() {}
-
-    public FFmpegJcfPlayer(JcfMedia media)
-    {
-      // Capacity => instruments + backing (TODO: + click)
-      _players = new Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)>(media.InstrumentTracks.Count + 1);
-      _mediaTimelineController = new MediaTimelineController();
-      _mediaTimelineController.PositionChanged += MediaTimelineController_PositionChanged;
-      _mediaTimelineController.Ended += MediaTimelineController_Ended;
-      _mediaTimelineController.StateChanged += MediaTimelineController_StateChanged;
-
-      var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
-      foreach (var track in media.InstrumentTracks)
-      {
-        InitPlayerSync(track, mediaPath);
-      }
-      InitPlayerSync(media.BackingTrack, mediaPath);
-
-      Length = media.Length;
-    }
 
     private void MediaTimelineController_StateChanged(MediaTimelineController sender, object args)
     {
@@ -139,10 +99,6 @@ namespace Jammit.Audio
       Position = TimeSpan.Zero;
       State = PlaybackStatus.Stopped;
     }
-
-    #region Bindable Properties
-
-    #endregion  Bindable Properties
 
     #region IJcfPlayer members
 

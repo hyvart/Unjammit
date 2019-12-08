@@ -56,34 +56,6 @@ namespace Jammit.Forms.Views
       PageIndex = 0;
     }
 
-    public SongPage(SongInfo song)
-    {
-     // Needed to actually bind local properties.
-     BindingContext = this;
-
-     Song = song;
-     Media = App.MediaLoader.LoadMedia(song);
-     Player = Task.Run(async () => await App.PlayerFactory(Media)).Result;
-     PageIndex = 0;
-
-     InitializeComponent();
-
-     NormalButtonBackgroundColor = PlayButton.BackgroundColor;
-     NormalButtonTextColor = PlayButton.TextColor;
-
-     Player.PositionChanged += (player, args) =>
-     {
-       var newPosition = (player as Audio.IJcfPlayer).Position;
-       if (newPosition.TotalSeconds != PositionSlider.Value)
-         PositionSlider.Value = newPosition.TotalSeconds;
-     };
-
-     //TODO: Should be set in binding.
-     ScorePicker.SelectedIndex = 0;
-
-     _beatIndex = 0;
-    }
-
     #region Page overrides
 
     protected override void OnAppearing()
