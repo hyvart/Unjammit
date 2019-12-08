@@ -26,7 +26,7 @@ namespace Jammit.Android
       config.EnableHardwareDecoding = true;
 
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
-      Jammit.Forms.App.PlayerFactory = (media) => new Audio.VlcJcfPlayer(media, new MediaConfiguration[]{ config });
+      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() => new Audio.VlcJcfPlayer(media, new MediaConfiguration[]{ config }));
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
 
       global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
