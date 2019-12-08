@@ -14,12 +14,57 @@ namespace Jammit.Audio
 {
   public class FFmpegJcfPlayer : IJcfPlayer
   {
+    #region static members
+
+    public static async Task<FFmpegJcfPlayer> CreateAsync(JcfMedia media)
+    {
+      var instance = new FFmpegJcfPlayer();
+
+      // Capacity => instruments + backing (TODO: + click)
+      instance._players = new Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)>(media.InstrumentTracks.Count + 1);
+      instance._mediaTimelineController = new MediaTimelineController();
+      instance._mediaTimelineController.PositionChanged += instance.MediaTimelineController_PositionChanged;
+      instance._mediaTimelineController.StateChanged += instance.MediaTimelineController_StateChanged;
+      instance._mediaTimelineController.Ended += instance.MediaTimelineController_Ended;
+
+      var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
+      foreach (var track in media.InstrumentTracks)
+      {
+        await instance.InitPlayer(track, mediaPath);
+      }
+      await instance.InitPlayer(media.BackingTrack, mediaPath);
+
+      instance.Length = media.Length;
+
+      return instance;
+    }
+
+    #endregion
+
     #region private members
 
     private Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)> _players;
     private MediaTimelineController _mediaTimelineController;
 
-    private void InitPlayer(PlayableTrackInfo track, string mediaPath)
+    private async Task InitPlayer(PlayableTrackInfo track, string mediaPath)
+    {
+      var uri = $"{mediaPath}/{track.Identifier.ToString().ToUpper()}_jcfx";
+      var file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(uri));
+      var stream = await file.OpenReadAsync();
+      var ffmpegSource = await FFmpegInterop.FFmpegInteropMSS.CreateFromStreamAsync(stream);
+
+      //var ffmpegSource = await FFmpegInterop.FFmpegInteropMSS.CreateFromUriAsync(uri);
+
+      var player = new MediaPlayer();
+      player.CommandManager.IsEnabled = false;
+      player.TimelineController = _mediaTimelineController;
+      player.Source = MediaSource.CreateFromMediaStreamSource(ffmpegSource.GetMediaStreamSource());
+
+      // FFmpegInteropMSS instances hold the stream reference. Their scope must be kept.
+      _players[track] = (player, ffmpegSource);
+    }
+
+    private void InitPlayerSync(PlayableTrackInfo track, string mediaPath)
     {
       var uri = new Uri($"{mediaPath}/{track.Identifier.ToString().ToUpper()}_jcfx");
       var stream = Task.Run(async () =>
@@ -40,6 +85,8 @@ namespace Jammit.Audio
 
     #endregion
 
+    public FFmpegJcfPlayer() {}
+
     public FFmpegJcfPlayer(JcfMedia media)
     {
       // Capacity => instruments + backing (TODO: + click)
@@ -52,9 +99,9 @@ namespace Jammit.Audio
       var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
       foreach (var track in media.InstrumentTracks)
       {
-        InitPlayer(track, mediaPath);
+        InitPlayerSync(track, mediaPath);
       }
-      InitPlayer(media.BackingTrack, mediaPath);
+      InitPlayerSync(media.BackingTrack, mediaPath);
 
       Length = media.Length;
     }

@@ -20,7 +20,7 @@ namespace Jammit.Forms.Views
 
       instance.Song = song;
       instance.Media = App.MediaLoader.LoadMedia(song);
-      instance.Player = App.PlayerFactory(instance.Media);//TODO: Init async
+      instance.Player = await App.PlayerFactory(instance.Media);
       instance.Player.PositionChanged += instance.Player_PositionChanged;
 
       instance.InitializeComponent();
@@ -63,7 +63,7 @@ namespace Jammit.Forms.Views
 
      Song = song;
      Media = App.MediaLoader.LoadMedia(song);
-     Player = App.PlayerFactory(Media);
+     Player = Task.Run(async () => await App.PlayerFactory(Media)).Result;
      PageIndex = 0;
 
      InitializeComponent();
