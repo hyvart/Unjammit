@@ -22,8 +22,11 @@ namespace Jammit.Audio
     private void InitPlayer(PlayableTrackInfo track, string mediaPath)
     {
       var uri = new Uri($"{mediaPath}/{track.Identifier.ToString().ToUpper()}_jcfx");
-      var file = Task.Run(async () => await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri)).Result;
-      var stream = Task.Run(async () => await file.OpenReadAsync()).Result;
+      var stream = Task.Run(async () =>
+      {
+        var file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+        return await file.OpenReadAsync();
+      }).Result;
       var ffmpegSource = FFmpegInterop.FFmpegInteropMSS.CreateFFmpegInteropMSSFromStream(stream, false, false);
 
       var player = new MediaPlayer();
