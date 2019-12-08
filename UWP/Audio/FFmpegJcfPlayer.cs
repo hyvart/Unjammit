@@ -52,7 +52,7 @@ namespace Jammit.Audio
       var file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(uri));
       var stream = await file.OpenReadAsync();
       var ffmpegSource = await FFmpegInterop.FFmpegInteropMSS.CreateFromStreamAsync(stream);
-
+      //TODO: Re-enable. Possible bug in FFmpegInterop.
       //var ffmpegSource = await FFmpegInterop.FFmpegInteropMSS.CreateFromUriAsync(uri);
 
       var player = new MediaPlayer();
