@@ -33,3 +33,6 @@ steps:
         /p:AppxPackageDir="$(Build.StagingDirectory)\AppPackages\\"
         /p:AppxBundle=Always
         /p:UapAppxPackageBuildMode=StoreUpload
+        /p:AppxPackageSigningEnabled=True
+        /p:PackageCertificateThumbprint=$(TODO)
+        /p:PackageCertificatePassword=$(TODO)
