@@ -20,6 +20,8 @@ namespace Jammit.Audio
 
     public VlcJcfPlayer(JcfMedia media, MediaConfiguration[] configs)
     {
+      // To prevent audo desync, use SoXR resampler.
+      // See https://code.videolan.org/videolan/LibVLCSharp/issues/263#note_48330
       _libVLC = new LibVLC("--audio-resampler=soxr");
       _players = new Dictionary<PlayableTrackInfo, MediaPlayer>(media.InstrumentTracks.Count + 1);
 
