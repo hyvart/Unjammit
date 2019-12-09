@@ -5,6 +5,8 @@ param(
 
 	[string] $PackageIdentityName,
 
+	[string] $PackageIdentityPublisher,
+
 	[string] $PackageDisplayName,
 
 	[Parameter(Mandatory=$true)]
@@ -25,6 +27,9 @@ $xml.Load($manifest)
 
 if ($PackageIdentityName) {
 	$xml.Package.Identity.Name = $PackageIdentityName
+}
+if ($PackageIdentityPublisher) {
+	$xml.Package.Identity.Publisher = $PackageIdentityPublisher
 }
 if ($PackageDisplayName) {
 	$xml.Package.Properties.DisplayName = $PackageDisplayName
