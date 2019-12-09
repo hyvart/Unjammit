@@ -27,10 +27,7 @@ namespace Jammit.Forms.Views
 
     private async void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
-      Navigation.PushModalAsync(new SongPage(e.Item as SongInfo));
-
-      //TODO: Use this!
-      // await Navigation.PushModalAsync(await SongPage.CreateAsync(e.Item as SongInfo));
+      await Navigation.PushModalAsync(await SongPage.CreateAsync(e.Item as SongInfo));
     }
 
     private void LibraryItem_Delete(object sender, EventArgs e)

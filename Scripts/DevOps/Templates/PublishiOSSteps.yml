@@ -58,4 +58,3 @@ steps:
       buildConfiguration: Release
       packageApp: true
       buildForSimulator: false
-

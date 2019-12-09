@@ -40,13 +40,13 @@ namespace Jammit.macOS
 
       Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
       Jammit.Forms.App.DataDirectory = dataDir;
-      Jammit.Forms.App.PlayerFactory = (media) =>
+      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
       {
         return new Audio.AppleJcfPlayer(media, (track, stream) =>
         {
           return new Audio.MacOSAVAudioPlayer(track, stream);
         });
-      };
+      });
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
 
       LoadApplication(new Jammit.Forms.App());

@@ -24,7 +24,6 @@ steps:
       /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh ${XAMARINIOS_MONOVERSION}"
     displayName: Set Xamarin version set to $(XamariniOS.MonoVersion)
 
-
   - task: DotNetCoreInstaller@1
     inputs:
       packageType: sdk

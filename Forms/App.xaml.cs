@@ -6,13 +6,14 @@ using System.Text;
 using Xamarin.Forms;
 using Jammit.Audio;
 using Jammit.Model;
+using System.Threading.Tasks;
 
 namespace Jammit.Forms
 {
   public partial class App : Application
   {
     [Obsolete("Use parameter-less constructor.")]
-    public App(string dataDirectory, Func<JcfMedia, IJcfPlayer> playerFactory, IJcfLoader loader)
+    public App(string dataDirectory, Func<JcfMedia, Task<IJcfPlayer>> playerFactory, IJcfLoader loader)
     {
       App.Client = new Jammit.Forms.Client.RestClient();
       App.DataDirectory = dataDirectory;
@@ -42,7 +43,7 @@ namespace Jammit.Forms
     [Obsolete("Remove when Xamarin.Essentials supports all platforms.")]
     public static string DataDirectory { get; /*private*/ set; }
 
-    public static Func<JcfMedia, IJcfPlayer> PlayerFactory { get; /*private*/ set; }
+    public static Func<JcfMedia, Task<IJcfPlayer>> PlayerFactory { get; /*private*/ set; }
 
     public static IJcfLoader MediaLoader { get; /*private*/ set; }
 
