@@ -41,7 +41,7 @@ steps:
     inputs:
       apkFiles: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.Android/$(PackageName).apk
       apksign: true # Optional
-      apksignerKeystoreFile: $[variables.SigningKeyStoreFile]
+      apksignerKeystoreFile: '$(SigningKeyStoreFile)'
       apksignerKeystorePassword: $(SigningKeyStorePassword)
       apksignerKeystoreAlias: $(SigningKeyStoreAlias)
       apksignerKeyPassword: $(SigningKeyPassword)
