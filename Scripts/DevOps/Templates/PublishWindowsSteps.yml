@@ -34,5 +34,6 @@ steps:
         /p:AppxBundle=Always
         /p:UapAppxPackageBuildMode=StoreUpload
         /p:AppxPackageSigningEnabled=True
-        /p:PackageCertificateThumbprint=$(TODO)
-        /p:PackageCertificatePassword=$(TODO)
+        /p:PackageCertificateKeyFile=$(PackageCertificateKeyFile)
+        /p:PackageCertificateThumbprint=$(PackageCertificateThumbprint)
+        /p:PackageCertificatePassword=$(PackageCertificatePassword)
