@@ -20,7 +20,7 @@ namespace Jammit.Audio
 
     public VlcJcfPlayer(JcfMedia media, MediaConfiguration[] configs)
     {
-      _libVLC = new LibVLC();
+      _libVLC = new LibVLC("--audio-resampler=soxr");
       _players = new Dictionary<PlayableTrackInfo, MediaPlayer>(media.InstrumentTracks.Count + 1);
 
       var backingPath = "file://" + Path.Combine(media.Path, media.BackingTrack.Identifier.ToString().ToUpper() + "_jcfx");
