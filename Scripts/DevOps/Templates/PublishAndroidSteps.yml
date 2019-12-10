@@ -6,6 +6,9 @@
 parameters:
   phase: # Aplha, Beta, Production (Omega)
 
+variables:
+  SigningKeyStoreFile: com.unjammit.alpha.keystore
+
 steps:
   - powershell: |
       Write-Host "##vso[task.setvariable variable=ShortSourceVersion]$($env:BUILD_SOURCEVERSION.Substring(0, 7))"
@@ -41,7 +44,7 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      secureFile: '$(storeFile)'
+      secureFile: '$(SigningKeyStoreFile)'
 
   # - task: AndroidSigning@3
   #   inputs:
