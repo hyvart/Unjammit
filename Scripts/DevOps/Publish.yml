@@ -180,11 +180,11 @@ stages:
       #         ArtifactName: Windows-Alpha
       #         publishLocation: Container
 
-  # - stage: Deploy
-  #   dependsOn:
-  #     - Publish
+  - stage: Deploy
+    dependsOn:
+      - Publish
 
-  #   jobs:
+    jobs:
   #     # - job:
   #     #   displayName: Deploy macOS
 
