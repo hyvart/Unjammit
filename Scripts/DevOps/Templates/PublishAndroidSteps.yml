@@ -7,7 +7,6 @@ parameters:
   phase: # Aplha, Beta, Production (Omega)
 
 variables:
-  SigningKeyStoreFile: com.unjammit.alpha.keystore
 
 steps:
   - powershell: |
@@ -44,7 +43,7 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      secureFile: '$(SigningKeyStoreFile)'
+      secureFile: com.unjammit.alpha.keystore
 
   # - task: AndroidSigning@3
   #   inputs:
