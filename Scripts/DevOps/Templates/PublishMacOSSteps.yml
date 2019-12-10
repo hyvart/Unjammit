@@ -58,4 +58,3 @@ steps:
         /p:EnableCodeSigning=true
         /p:CodeSigningKey="$(APPLE_CERTIFICATE_SIGNING_IDENTITY)"
         /p:UseHardenedRuntime=false
-        /p:CodeSignProvision=None
