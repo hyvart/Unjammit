@@ -41,7 +41,7 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      secureFile: '$(SigningKeyStoreFile)'
+      secureFile: '$(storeFile)'
 
   # - task: AndroidSigning@3
   #   inputs:
