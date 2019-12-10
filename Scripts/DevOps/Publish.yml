@@ -153,32 +153,32 @@ stages:
               ArtifactName: Android-Alpha
               publishLocation: Container
 
-      - job:
-        displayName: Windows
-        dependsOn: SetUp
+      # - job:
+      #   displayName: Windows
+      #   dependsOn: SetUp
 
-        variables:
-          - group: Build - Windows
-          - group: Distribute - Alpha - Windows
-          - name: BuildPlatform
-            value: x64
-          - name: BuildVersion
-            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
+      #   variables:
+      #     - group: Build - Windows
+      #     - group: Distribute - Alpha - Windows
+      #     - name: BuildPlatform
+      #       value: x64
+      #     - name: BuildVersion
+      #       value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
-        pool:
-          vmImage: $(Job.VmImage)
+      #   pool:
+      #     vmImage: $(Job.VmImage)
 
-        steps:
-          - template: Templates/PublishWindowsSteps.yml
-            parameters:
-              phase: Alpha
+      #   steps:
+      #     - template: Templates/PublishWindowsSteps.yml
+      #       parameters:
+      #         phase: Alpha
 
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish artifact: Windows-Alpha'
-            inputs:
-              PathtoPublish: $(Build.StagingDirectory)
-              ArtifactName: Windows-Alpha
-              publishLocation: Container
+      #     - task: PublishBuildArtifacts@1
+      #       displayName: 'Publish artifact: Windows-Alpha'
+      #       inputs:
+      #         PathtoPublish: $(Build.StagingDirectory)
+      #         ArtifactName: Windows-Alpha
+      #         publishLocation: Container
 
   - stage: Deploy
     dependsOn:
