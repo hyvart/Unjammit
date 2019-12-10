@@ -45,11 +45,11 @@ steps:
       certSecureFile: com.unjammit.macos.devid.p12
       certPwd: $(SigningKeyPassword)
 
-  # - task: InstallAppleProvisioningProfile@1
-  #   displayName: Install Provisioning Profile
-  #   inputs:
-  #     provisioningProfileLocation: secureFiles
-  #     provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
+  - task: InstallAppleProvisioningProfile@1
+    displayName: Install Provisioning Profile
+    inputs:
+      provisioningProfileLocation: secureFiles
+      provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
 
   - template: BuildMacOSSteps.yml
     parameters:
@@ -57,5 +57,5 @@ steps:
       msbuildArguments:
         /p:EnableCodeSigning=true
         /p:CodeSigningKey="$(APPLE_CERTIFICATE_SIGNING_IDENTITY)"
+        /p:CodeSignProvision="$(APPLE_PROV_PROFILE_UUID)"
         /p:UseHardenedRuntime=false
-        /p:CodeSignProvision=
