@@ -41,7 +41,7 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      secureFile: com.unjammit.alpha.keystore
+      secureFile: $(SigningKeyStoreFile)
 
   # - task: AndroidSigning@3
   #   inputs:
