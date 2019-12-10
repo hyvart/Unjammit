@@ -37,18 +37,18 @@ steps:
       project: $(Build.SourcesDirectory)/Android/Unjammit.Android.csproj
       createAppPackage: true
 
-  - task: DownloadSecureFile@1
-    displayName: Apply Assets
-    name: signingCert
-    inputs:
-      secureFile: com.unjammit.alpha.keystore
-
-  # - task: AndroidSigning@3
+  # - task: DownloadSecureFile@1
+  #   displayName: Apply Assets
+  #   name: signingCert
   #   inputs:
-  #     apkFiles: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.Android/$(PackageName).apk
-  #     apksign: true # Optional
-  #     apksignerKeystoreFile: '$(SigningKeyStoreFile)'
-  #     apksignerKeystorePassword: $(SigningKeyStorePassword)
-  #     apksignerKeystoreAlias: $(SigningKeyStoreAlias)
-  #     apksignerKeyPassword: $(SigningKeyPassword)
-  #     zipalign: true
+  #     secureFile: $(SigningKeyStoreFile)
+
+  - task: AndroidSigning@3
+    inputs:
+      apkFiles: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.Android/$(PackageName).apk
+      apksign: true # Optional
+      apksignerKeystoreFile: com.unjammit.alpha.keystore
+      apksignerKeystorePassword: $(SigningKeyStorePassword)
+      apksignerKeystoreAlias: $(SigningKeyStoreAlias)
+      apksignerKeyPassword: $(SigningKeyPassword)
+      zipalign: true
