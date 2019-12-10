@@ -56,5 +56,5 @@ steps:
       project: macOS/Unjammit.macOS.csproj
       msbuildArguments:
         /p:EnableCodeSigning=true
-        /p:CodeSigningKey=$(APPLE_CERTIFICATE_SIGNING_IDENTITY)
+        /p:CodeSigningKey="$(APPLE_CERTIFICATE_SIGNING_IDENTITY)"
         /p:UseHardenedRuntime=false
