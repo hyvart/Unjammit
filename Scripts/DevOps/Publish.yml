@@ -124,6 +124,8 @@ stages:
         variables:
           - group: Build - Android
           - group: Distribute - Alpha - Android
+          - name: SigningKeyStoreFile
+            value: com.unjammit.alpha.keystore
           - name: BuildPlatform
             value: AnyCPU
           - name: BuildVersion
