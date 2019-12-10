@@ -6,8 +6,6 @@
 parameters:
   phase: # Aplha, Beta, Production (Omega)
 
-variables:
-
 steps:
   - powershell: |
       Write-Host "##vso[task.setvariable variable=ShortSourceVersion]$($env:BUILD_SOURCEVERSION.Substring(0, 7))"
