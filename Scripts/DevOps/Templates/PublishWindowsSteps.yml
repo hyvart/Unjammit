@@ -29,7 +29,8 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      secureFile: $(PackageCertificateKeyFile)
+      secureFile: com.unjammit.generic.p12
+      # secureFile: $(PackageCertificateKeyFile)
 
   - template: MSBuildSteps.yml
     parameters:
