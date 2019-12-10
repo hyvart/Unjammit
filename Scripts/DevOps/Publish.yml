@@ -241,33 +241,33 @@ stages:
   #             distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
   #             isSilent: false
 
-  #     - job:
-  #       displayName: Deploy Android
+      - job:
+        displayName: Deploy Android
 
-  #       variables:
-  #         - group: Distribute - Alpha - Android
+        variables:
+          - group: Distribute - Alpha - Android
 
-  #       steps:
-  #         - checkout: none
+        steps:
+          - checkout: none
 
-  #         - task: DownloadBuildArtifacts@0
-  #           displayName: Download Android-Alpha
-  #           inputs:
-  #             buildType: current
-  #             artifactName: Android-Alpha
+          - task: DownloadBuildArtifacts@0
+            displayName: Download Android-Alpha
+            inputs:
+              buildType: current
+              artifactName: Android-Alpha
 
-  #         - task: AppCenterDistribute@3
-  #           displayName: Distribute in App Center
-  #           inputs:
-  #             serverEndpoint: App Center - Hyvart
-  #             appSlug: hyvart/Unjammit-Android
-  #             appFile: $(System.ArtifactsDirectory)/Android-Alpha/$(PackageName).apk
-  #             releaseNotesOption: input
-  #             releaseNotesInput: Alpha Build
-  #             isMandatory: true
-  #             destinationType: groups
-  #             distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
-  #             isSilent: false
+          - task: AppCenterDistribute@3
+            displayName: Distribute in App Center
+            inputs:
+              serverEndpoint: App Center - Hyvart
+              appSlug: hyvart/Unjammit-Android
+              appFile: $(System.ArtifactsDirectory)/Android-Alpha/$(PackageName).apk
+              releaseNotesOption: input
+              releaseNotesInput: Alpha Build
+              isMandatory: true
+              destinationType: groups
+              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+              isSilent: false
 
   #     - job:
   #       displayName: Deploy Windows
