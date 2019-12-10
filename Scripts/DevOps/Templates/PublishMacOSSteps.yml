@@ -49,7 +49,7 @@ steps:
     displayName: Install Provisioning Profile
     inputs:
       provisioningProfileLocation: secureFiles
-      provProfileSecureFile: com.unjammit.macos.devid.alpha.provisionprofile
+      provProfileSecureFile: com.unjammit.player.macos.devid.alpha.provisionprofile
 
   - template: BuildMacOSSteps.yml
     parameters:
