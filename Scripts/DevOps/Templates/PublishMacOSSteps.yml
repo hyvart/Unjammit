@@ -42,17 +42,17 @@ steps:
   - task: InstallAppleCertificate@2
     displayName: Install Certificate
     inputs:
-      certSecureFile: com.unjammit.mac.app.p12
+      certSecureFile: $(SigningCertificate)
       certPwd: $(SigningKeyPassword)
 
-  - task: InstallAppleProvisioningProfile@1
-    displayName: Install Provisioning Profile
-    inputs:
-      provisioningProfileLocation: secureFiles
-      provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
+  # - task: InstallAppleProvisioningProfile@1
+  #   displayName: Install Provisioning Profile
+  #   inputs:
+  #     provisioningProfileLocation: secureFiles
+  #     provProfileSecureFile: com.unjammit.player.macos.alpha.provisionprofile
 
   - template: BuildMacOSSteps.yml
     parameters:
       project: macOS/Unjammit.macOS.csproj
       msbuildArguments:
-        /p:EnableCodeSigning=false
+        /p:EnableCodeSigning=true

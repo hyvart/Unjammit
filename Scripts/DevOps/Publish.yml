@@ -38,47 +38,47 @@ stages:
                 $version = $(Get-Date -Date ([datetime]::UtcNow) -Format 'yyyy.MMdd.HHmm.ss')
                 Write-Host "##vso[task.setvariable variable=BuildVersion;isOutput=true]$version"
 
-      # - job:
-      #   displayName: macOS
-      #   dependsOn: SetUp
+      - job:
+        displayName: macOS
+        dependsOn: SetUp
 
-      #   variables:
-      #     - group: Build - macOS
-      #     - group: Distribute - Alpha - Apple
-      #     - group: Distribute - Alpha - macOS
-      #     - name: BuildPlatform
-      #       value: AnyCPU
-      #     - name: BuildVersion
-      #       value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
+        variables:
+          - group: Build - macOS
+          - group: Distribute - Alpha - Apple
+          - group: Distribute - Alpha - macOS
+          - name: BuildPlatform
+            value: AnyCPU
+          - name: BuildVersion
+            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
-      #   pool:
-      #     vmImage: $(Job.VmImage)
+        pool:
+          vmImage: $(Job.VmImage)
 
-      #   steps:
-      #     - template: Templates/PublishMacOSSteps.yml
-      #       parameters:
-      #         phase: Alpha
+        steps:
+          - template: Templates/PublishMacOSSteps.yml
+            parameters:
+              phase: Alpha
 
-      #     - task: Bash@3
-      #       displayName: Create Disk Image
-      #       inputs:
-      #         targetType: inline
-      #         script: |
-      #           echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
-      #           echo "Renaming"
-      #           mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
-      #             "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
-      #           echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
-      #           hdiutil create -format UDZO \
-      #             -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
-      #             $(Build.ArtifactStagingDirectory)/Unjammit.dmg
+          - task: Bash@3
+            displayName: Create Disk Image
+            inputs:
+              targetType: inline
+              script: |
+                echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
+                echo "Renaming"
+                mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
+                  "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
+                echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
+                hdiutil create -format UDZO \
+                  -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
+                  $(Build.ArtifactStagingDirectory)/Unjammit.dmg
 
-      #     - task: PublishBuildArtifacts@1
-      #       displayName: 'Publish artifact: macOS-Alpha'
-      #       inputs:
-      #         PathtoPublish: $(Build.ArtifactStagingDirectory)
-      #         ArtifactName: macOS-Alpha
-      #         publishLocation: Container
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish artifact: macOS-Alpha'
+            inputs:
+              PathtoPublish: $(Build.ArtifactStagingDirectory)
+              ArtifactName: macOS-Alpha
+              publishLocation: Container
 
       # - job:
       #   displayName: iOS
@@ -117,41 +117,41 @@ stages:
       #         ArtifactName: iOS-Alpha
       #         publishLocation: Container
 
-      - job:
-        displayName: Android
-        dependsOn: SetUp
+      # - job:
+      #   displayName: Android
+      #   dependsOn: SetUp
 
-        variables:
-          - group: Build - Android
-          - group: Distribute - Alpha - Android
-          - name: SigningKeyStoreFile
-            value: com.unjammit.alpha.keystore
-          - name: BuildPlatform
-            value: AnyCPU
-          - name: BuildVersion
-            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
+      #   variables:
+      #     - group: Build - Android
+      #     - group: Distribute - Alpha - Android
+      #     - name: SigningKeyStoreFile
+      #       value: com.unjammit.alpha.keystore
+      #     - name: BuildPlatform
+      #       value: AnyCPU
+      #     - name: BuildVersion
+      #       value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
-        pool:
-          vmImage: $(Job.VmImage)
+      #   pool:
+      #     vmImage: $(Job.VmImage)
 
-        steps:
-          - template: Templates/PublishAndroidSteps.yml
-            parameters:
-              phase: Alpha
+      #   steps:
+      #     - template: Templates/PublishAndroidSteps.yml
+      #       parameters:
+      #         phase: Alpha
 
-          - task: CopyFiles@2
-            displayName: Stage APK
-            inputs:
-              SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.Android/
-              Contents: $(PackageName).apk
-              TargetFolder: $(Build.ArtifactStagingDirectory)
+      #     - task: CopyFiles@2
+      #       displayName: Stage APK
+      #       inputs:
+      #         SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.Android/
+      #         Contents: $(PackageName).apk
+      #         TargetFolder: $(Build.ArtifactStagingDirectory)
 
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish artifact: Android-Alpha'
-            inputs:
-              PathtoPublish: $(Build.ArtifactStagingDirectory)
-              ArtifactName: Android-Alpha
-              publishLocation: Container
+      #     - task: PublishBuildArtifacts@1
+      #       displayName: 'Publish artifact: Android-Alpha'
+      #       inputs:
+      #         PathtoPublish: $(Build.ArtifactStagingDirectory)
+      #         ArtifactName: Android-Alpha
+      #         publishLocation: Container
 
       # - job:
       #   displayName: Windows
@@ -180,11 +180,11 @@ stages:
       #         ArtifactName: Windows-Alpha
       #         publishLocation: Container
 
-  - stage: Deploy
-    dependsOn:
-      - Publish
+  # - stage: Deploy
+  #   dependsOn:
+  #     - Publish
 
-    jobs:
+  #   jobs:
   #     # - job:
   #     #   displayName: Deploy macOS
 
@@ -241,33 +241,33 @@ stages:
   #             distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
   #             isSilent: false
 
-      - job:
-        displayName: Deploy Android
+      # - job:
+      #   displayName: Deploy Android
 
-        variables:
-          - group: Distribute - Alpha - Android
+      #   variables:
+      #     - group: Distribute - Alpha - Android
 
-        steps:
-          - checkout: none
+      #   steps:
+      #     - checkout: none
 
-          - task: DownloadBuildArtifacts@0
-            displayName: Download Android-Alpha
-            inputs:
-              buildType: current
-              artifactName: Android-Alpha
+      #     - task: DownloadBuildArtifacts@0
+      #       displayName: Download Android-Alpha
+      #       inputs:
+      #         buildType: current
+      #         artifactName: Android-Alpha
 
-          - task: AppCenterDistribute@3
-            displayName: Distribute in App Center
-            inputs:
-              serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-Android
-              appFile: $(System.ArtifactsDirectory)/Android-Alpha/$(PackageName).apk
-              releaseNotesOption: input
-              releaseNotesInput: Alpha Build
-              isMandatory: true
-              destinationType: groups
-              distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
-              isSilent: false
+      #     - task: AppCenterDistribute@3
+      #       displayName: Distribute in App Center
+      #       inputs:
+      #         serverEndpoint: App Center - Hyvart
+      #         appSlug: hyvart/Unjammit-Android
+      #         appFile: $(System.ArtifactsDirectory)/Android-Alpha/$(PackageName).apk
+      #         releaseNotesOption: input
+      #         releaseNotesInput: Alpha Build
+      #         isMandatory: true
+      #         destinationType: groups
+      #         distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+      #         isSilent: false
 
   #     - job:
   #       displayName: Deploy Windows
