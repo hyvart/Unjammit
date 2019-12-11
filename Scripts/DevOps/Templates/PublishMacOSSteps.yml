@@ -62,6 +62,5 @@ steps:
 #        /p:CodeSignProvision="$(APPLE_PROV_PROFILE_UUID)"
 
   - bash: |
-      security find-identity /Volumes/DATA/Build/unjammit/tmp/ios_signing_temp.keychain
       codesign -v --force --timestamp=none --sign "${APPLE_CERTIFICATE_SIGNING_IDENTITY}" \
         Target/AnyCPU/Release/Unjammit.macOS/Unjammit.app
