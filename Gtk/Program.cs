@@ -21,7 +21,7 @@ namespace Jammit.Gtk
       Jammit.Forms.App.DataDirectory = dataDir;
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-        new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] { })
+        new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] {}, new string[] {})
       );
 
       var app = new Jammit.Forms.App();
