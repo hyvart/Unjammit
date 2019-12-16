@@ -56,7 +56,6 @@
 
           <Image x:Name="ScoreImage"
                  Aspect="AspectFit"
-                 BackgroundColor="LightCyan"
                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource Key=ScoreHeight}}"
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
                  />
@@ -66,13 +65,11 @@
             Padding="0" Margin="0"
             IsEnabled="False"
             Delegate="{x:Reference ScoreView}"
-            BackgroundColor="Pink"
             HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never"
             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=ScoreImage, Property=Height}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
             >
             <Image x:Name="ScoreImagePad" Aspect="AspectFit"
-                   BackgroundColor="LightYellow"
                    WidthRequest="{StaticResource Key=ScoreWidth}"
                    HeightRequest="{StaticResource Key=ScoreHeight}"
                    />
