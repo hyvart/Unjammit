@@ -22,10 +22,6 @@ namespace Jammit.Audio
       //TODO: Do something useful here or remove (beware nullptr after playback done).
       player.FinishedPlaying += delegate {};
       player.PrepareToPlay();
-
-      timer = NSTimer.CreateRepeatingScheduledTimer(1, delegate {
-        PositionChanged?.Invoke(this, new EventArgs());
-      });
     }
 
     #region IAvAudioPlayer members
@@ -35,11 +31,23 @@ namespace Jammit.Audio
     public void Play()
     {
       player.Play();
+
+      //TODO: Avoid repetition. Move into some post-construct phase.
+      if (timer == null)
+        timer = NSTimer.CreateRepeatingScheduledTimer(1, delegate {
+          PositionChanged?.Invoke(this, new EventArgs());
+        });
     }
 
     public void PlayAtTime(double time)
     {
       player.PlayAtTime(time);
+
+      //TODO: Avoid repetition. Move into some post-construct phase.
+      if (timer == null)
+        timer = NSTimer.CreateRepeatingScheduledTimer(1, delegate {
+          PositionChanged?.Invoke(this, new EventArgs());
+        });
     }
 
     public void Stop()

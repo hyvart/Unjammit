@@ -60,3 +60,10 @@ jobs:
       project: WinForms/Jam.NET.csproj
       platformVariableGroup: Build - Windows
       buildPlatforms: [ AnyCPU ]
+
+  - template: Templates/MSBuild.yml
+    parameters:
+      displayName: Linux
+      project: Gtk/Unjammit.Gtk.csproj
+      platformVariableGroup: Build - Linux
+      buildPlatforms: [ AnyCPU ]

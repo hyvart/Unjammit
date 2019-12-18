@@ -38,47 +38,47 @@ stages:
                 $version = $(Get-Date -Date ([datetime]::UtcNow) -Format 'yyyy.MMdd.HHmm.ss')
                 Write-Host "##vso[task.setvariable variable=BuildVersion;isOutput=true]$version"
 
-      - job:
-        displayName: macOS
-        dependsOn: SetUp
+      # - job:
+      #   displayName: macOS
+      #   dependsOn: SetUp
 
-        variables:
-          - group: Build - macOS
-          - group: Distribute - Alpha - Apple
-          - group: Distribute - Alpha - macOS
-          - name: BuildPlatform
-            value: AnyCPU
-          - name: BuildVersion
-            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
+      #   variables:
+      #     - group: Build - macOS
+      #     - group: Distribute - Alpha - Apple
+      #     - group: Distribute - Alpha - macOS
+      #     - name: BuildPlatform
+      #       value: AnyCPU
+      #     - name: BuildVersion
+      #       value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
-        pool:
-          vmImage: $(Job.VmImage)
+      #   pool:
+      #     vmImage: $(Job.VmImage)
 
-        steps:
-          - template: Templates/PublishMacOSSteps.yml
-            parameters:
-              phase: Alpha
+      #   steps:
+      #     - template: Templates/PublishMacOSSteps.yml
+      #       parameters:
+      #         phase: Alpha
 
-          - task: Bash@3
-            displayName: Create Disk Image
-            inputs:
-              targetType: inline
-              script: |
-                echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
-                echo "Renaming"
-                mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
-                  "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
-                echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
-                hdiutil create -format UDZO \
-                  -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
-                  $(Build.ArtifactStagingDirectory)/Unjammit.dmg
+      #     - task: Bash@3
+      #       displayName: Create Disk Image
+      #       inputs:
+      #         targetType: inline
+      #         script: |
+      #           echo "Input: Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app"
+      #           echo "Renaming"
+      #           mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
+      #             "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
+      #           echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
+      #           hdiutil create -format UDZO \
+      #             -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
+      #             $(Build.ArtifactStagingDirectory)/Unjammit.dmg
 
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish artifact: macOS-Alpha'
-            inputs:
-              PathtoPublish: $(Build.ArtifactStagingDirectory)
-              ArtifactName: macOS-Alpha
-              publishLocation: Container
+      #     - task: PublishBuildArtifacts@1
+      #       displayName: 'Publish artifact: macOS-Alpha'
+      #       inputs:
+      #         PathtoPublish: $(Build.ArtifactStagingDirectory)
+      #         ArtifactName: macOS-Alpha
+      #         publishLocation: Container
 
       - job:
         displayName: iOS
