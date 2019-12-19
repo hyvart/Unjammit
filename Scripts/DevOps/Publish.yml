@@ -103,9 +103,6 @@ stages:
             parameters:
               phase: Alpha
 
-          - powershell: |
-              echo "[$env:SIGNINGCERTIFICATE]"
-
           - task: CopyFiles@2
             displayName: Stage IPA
             inputs:
