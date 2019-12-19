@@ -42,7 +42,8 @@ steps:
   - task: InstallAppleCertificate@2
     displayName: Install Certificate
     inputs:
-      certSecureFile: com.unjammit.generic.p12
+      # certSecureFile: com.unjammit.generic.p12
+      certSecureFile: $(SigningCertificate)
       certPwd: $(SigningKeyPassword)
 
   #TODO: Use or remove
