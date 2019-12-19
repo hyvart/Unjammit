@@ -45,4 +45,4 @@ steps:
         /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"
         /p:PackageCertificateThumbprint=$(SigningCertificateThumbprint)
         /p:PackageCertificatePassword=$(SigningKeyPassword)
-        /p:EnableSigningChecks=False
+        /p:EnableSigningChecks=True
