@@ -43,14 +43,15 @@ steps:
     displayName: Install Certificate
     inputs:
       certSecureFile: com.unjammit.generic.p12
-      certPwd: $(GenericSigningKeyPassword)
+      certPwd: $(SigningKeyPassword)
 
   #TODO: Use or remove
   - task: InstallAppleProvisioningProfile@1
     displayName: Install Provisioning Profile
     inputs:
       provisioningProfileLocation: secureFiles
-      provProfileSecureFile: com.unjammit.player.macos.devid.alpha.provisionprofile
+      # provProfileSecureFile: com.unjammit.player.macos.devid.alpha.provisionprofile
+      provProfileSecureFile: $(SigningCertificate)
 
   - template: BuildMacOSSteps.yml
     parameters:

@@ -14,6 +14,7 @@ steps:
         -AppxManifest $(Build.SourcesDirectory)/UWP/Package.appxmanifest
         -PackageIdentityName $(PackageIdentityName)
         -PackageDisplayName "$(PackageDisplayName)"
+        -PackageIdentityPublisher "$(SigningCertificateCommonName)"
         -Version $(BuildVersion)
 
   - task: PowerShell@2
@@ -29,8 +30,8 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      secureFile: com.unjammit.generic.p12
-      # secureFile: $(PackageCertificateKeyFile)
+      # secureFile: com.unjammit.generic.p12
+      secureFile: $(SigningCertificate)
 
   - template: MSBuildSteps.yml
     parameters:
@@ -42,6 +43,6 @@ steps:
         /p:UapAppxPackageBuildMode=StoreUpload
         /p:AppxPackageSigningEnabled=True
         /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"
-        /p:PackageCertificateThumbprint=$(PackageCertificateThumbprint)
-        /p:PackageCertificatePassword=$(PackageCertificatePassword)
+        /p:PackageCertificateThumbprint=$(SigningCertificateThumbprint)
+        /p:PackageCertificatePassword=$(SigningKeyPassword)
         /p:EnableSigningChecks=False
