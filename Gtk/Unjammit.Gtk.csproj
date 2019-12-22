@@ -78,7 +78,7 @@
       <Version>4.4.0.991265</Version>
     </PackageReference>
     <PackageReference Include="LibVLCSharp.Forms.GTK">
-      <Version>3.4.0</Version>
+      <Version>3.3.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
