@@ -56,7 +56,7 @@ namespace Jammit.Audio
       var player = new MediaPlayer();
       player.CommandManager.IsEnabled = false;
       player.TimelineController = _mediaTimelineController;
-      player.Source = MediaSource.CreateFromMediaStreamSource(ffmpegSource.GetMediaStreamSource());
+      player.Source = Windows.Media.Core.MediaSource.CreateFromMediaStreamSource(ffmpegSource.GetMediaStreamSource());
 
       // FFmpegInteropMSS instances hold the stream reference. Their scope must be kept.
       _players[track] = (player, ffmpegSource);
