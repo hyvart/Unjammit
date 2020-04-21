@@ -8,11 +8,14 @@ param(
 	$NugetExe = $(Get-Command nuget).Source,
 
 	[string]
-	$OutFile = $(Join-Path -Path $Path -ChildPath 'catalog.json')
+	$OutFile = $(Join-Path -Path $Path -ChildPath 'catalog.json'),
+
+	[version]
+	$PlistCilVersion = '2.1.0'
 )
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
-Add-Type -Path "$(& $NugetExe config repositoryPath)/plist-cil/1.60.0/lib/netstandard2.0/plist-cil.dll"
+Add-Type -Path "$(& $NugetExe config globalPackagesFolder)/plist-cil/$PlistCilVersion/lib/netstandard2.0/plist-cil.dll"
 
 $instrumentIds = @{
 	0 = 'Guitar';
