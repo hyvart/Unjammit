@@ -34,6 +34,10 @@ namespace Jammit.Gtk
 
       // See runtime requirements at:
       // https://github.com/videolan/libvlcsharp/blob/3.x/docs/linux-setup.md
+      // NOTE: Major Linux distros (Ubuntu 20.04 just released) ship libVLC 3.
+      // LibVLCSharp expects libVLC 4.
+      // TODO: Ship with LibVLC 4 nightly build binaries: https://nightlies.videolan.org/
+      // TODO: Write a GitHub issue!
       global::LibVLCSharp.Shared.Core.Initialize();
     }
   }
