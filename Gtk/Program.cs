@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Xamarin.Forms.Platform.GTK;
 
@@ -31,6 +31,9 @@ namespace Jammit.Gtk
       window.Show();
 
       global::Gtk.Application.Run();
+
+      // See runtime requirements at:
+      // https://github.com/videolan/libvlcsharp/blob/3.x/docs/linux-setup.md
       global::LibVLCSharp.Shared.Core.Initialize();
     }
   }
