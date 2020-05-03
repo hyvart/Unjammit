@@ -33,6 +33,7 @@
     <UseRefCounting>true</UseRefCounting>
     <HttpClientHandler>
     </HttpClientHandler>
+    <UseHardenedRuntime>true</UseHardenedRuntime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
