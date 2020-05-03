@@ -48,7 +48,7 @@ jobs:
       #     version: $(XamarinAndroid.Version)
 
       - bash: |
-          /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"
+          /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_8_0"
         displayName: Set Xamarin version.
 
       - task: DotNetCoreInstaller@1
