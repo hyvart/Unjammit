@@ -145,10 +145,11 @@ namespace Jammit.Model
     {
       using (var archive = new ZipArchive(contentStream, ZipArchiveMode.Read))
       {
-        //TODO: Throw explicitly if non-compliant.
-
+        //TODO: Throw explicitly if non-compliant
+        string jcfName = string.Empty;
         var jcfEntry = archive.Entries.Where(e => e.FullName.EndsWith(".jcf/")).FirstOrDefault();
-        var jcfName = jcfEntry.FullName.Remove(jcfEntry.FullName.IndexOf(".jcf/"));
+        if (jcfEntry != null)
+          jcfName = jcfEntry.FullName.Remove(jcfEntry.FullName.IndexOf(".jcf/"));
         Guid id;
         string idString;
         try
@@ -202,11 +203,18 @@ namespace Jammit.Model
             d.Delete(true); return true;
           });
         }
-        archive.ExtractToDirectory(tracksDir.FullName);
+
+        var extractDirectory = tracksDir.FullName;
+        if (string.IsNullOrEmpty(jcfName))
+        {
+          extractDirectory = Path.Combine(tracksDir.FullName, idString + "__temp");
+        }
+
+        archive.ExtractToDirectory(extractDirectory);
 
         // Rename the extracted JCF to a GUID, if needed.
         if (idString != jcfName)
-          Directory.Move(Path.Combine(tracksDir.FullName, jcfName + ".jcf"), Path.Combine(tracksDir.FullName, idString + ".jcf"));
+          Directory.Move(extractDirectory, Path.Combine(tracksDir.FullName, idString + ".jcf"));
 
         _cache[song] = song;
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
