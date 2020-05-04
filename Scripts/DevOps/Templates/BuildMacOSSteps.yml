@@ -16,8 +16,7 @@ steps:
   #     version: $(XamarinMac.MonoVersion)
   - bash: |
       /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh ${XAMARINMAC_MONOVERSION}"
-    displayName: Set Xamarin version set to $(XamarinMac.MonoVersion)
-
+    displayName: Set Xamarin Mono version to $(XamarinMac.MonoVersion)
 
   - task: DotNetCoreInstaller@1
     displayName: Install .NET Core $(DotNetCoreSdk.Version)
