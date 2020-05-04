@@ -26,7 +26,8 @@ steps:
 
   - bash: |
       echo "##vso[task.setvariable variable=MD_APPLE_SDK_ROOT;]/Applications/Xcode_${XCODE_VERSION}.app"
-      sudo xcode-select --switch ${MD_APPLE_SDK_ROOT}/Contents/Developer
+      sudo xcode-select --switch /Applications/Xcode_${XCODE_VERSION}.app/Contents/Developer
+      ##vso[task.setvariable variable=MD_APPLE_SDK_ROOT;]'$(xcodeRoot);sudo xcode-select --switch $(xcodeRoot)/Contents/Developer
 
   - task: DotNetCoreInstaller@1
     inputs:
