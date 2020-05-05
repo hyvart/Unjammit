@@ -55,6 +55,11 @@ stages:
           vmImage: $(Job.VmImage)
 
         steps:
+          - bash: |
+              echo 'TODO: Remove this'
+              sudo npm install -g appcenter-cli
+              appcenter distribute releases list --quiet --token ${APPCENTER_TOKEN}
+
           - template: Templates/PublishMacOSSteps.yml
             parameters:
               phase: Alpha
