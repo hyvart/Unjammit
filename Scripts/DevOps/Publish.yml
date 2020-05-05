@@ -73,6 +73,10 @@ stages:
                   -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
                   $(Build.ArtifactStagingDirectory)/Unjammit.dmg
 
+          - bash: |
+              echo "${BUILDVERSION}" > ${BUILD_ARTIFACTSTAGINGDIRECTORY}/buildVersion.txt
+              echo "${BUILD_SOURCEVERSION}" | cut -c1-7 > ${BUILD_ARTIFACTSTAGINGDIRECTORY}/shortSourceVersion.txt
+
           - task: PublishBuildArtifacts@1
             displayName: 'Publish artifact: macOS-Alpha'
             inputs:
@@ -216,20 +220,25 @@ stages:
           - bash: |
               sudo npm install -g appcenter-cli
 
-              appcenter login --token ${APPCENTER_TOKEN}
+              #appcenter login --token ${APPCENTER_TOKEN}
 
               appcenter distribute release \
+              --quiet \
+              --token ${APPCENTER_TOKEN} \
               --app hyvart/unjammit-macos \
               --file ${SYSTEM_ARTIFACTSDIRECTORY}/macOS-Alpha/Unjammit.dmg \
               --mandatory \
               --group Alpha \
-              --build-version 2020.504.741.56 --build-number 7d76704
+              --build-version $(cat ${BUILD_ARTIFACTSTAGINGDIRECTORY}/buildVersion.txt) \
+              --build-number $(cat ${BUILD_ARTIFACTSTAGINGDIRECTORY}/shortSourceVersion.txt)
 
               appcenter distribute releases add-destination \
+              --quiet \
+              --token ${APPCENTER_TOKEN} \
               --app hyvart/unjammit-macos \
               --mandatory \
               --type group --destination Public \
-              --release-id $(appcenter distribute releases list --app hyvart/unjammit-macos | grep ID | head -1 | tr -s ' ' | cut -f2 -d ' ')
+              --release-id $(appcenter distribute releases list --quiet --token ${APPCENTER_TOKEN} --app hyvart/unjammit-macos | grep ID | head -1 | tr -s ' ' | cut -f2 -d ' ')
 
       - job:
         displayName: Deploy iOS
