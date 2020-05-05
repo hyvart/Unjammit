@@ -229,7 +229,7 @@ stages:
               --app hyvart/unjammit-macos \
               --mandatory \
               --type group --destination Public \
-              --release-id $(appcenter distribute releases list --app hyvart/unjammit-macos | grep ID | head -1) 
+              --release-id $(appcenter distribute releases list --app hyvart/unjammit-macos | grep ID | head -1 | tr -s ' ' | cut -f2 -d ' ')
 
       - job:
         displayName: Deploy iOS
