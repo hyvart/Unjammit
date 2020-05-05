@@ -228,8 +228,8 @@ stages:
               --file ${SYSTEM_ARTIFACTSDIRECTORY}/macOS-Alpha/Unjammit.dmg \
               --mandatory \
               --group Alpha \
-              --build-version $(cat ${BUILD_ARTIFACTSTAGINGDIRECTORY}/buildVersion.txt) \
-              --build-number $(cat ${BUILD_ARTIFACTSTAGINGDIRECTORY}/shortSourceVersion.txt)
+              --build-version $(cat ${BUILD_ARTIFACTSTAGINGDIRECTORY}/macOS-Alpha/buildVersion.txt) \
+              --build-number $(cat ${BUILD_ARTIFACTSTAGINGDIRECTORY}/macOS-Alpha/shortSourceVersion.txt)
 
               appcenter distribute releases add-destination \
               --quiet \
