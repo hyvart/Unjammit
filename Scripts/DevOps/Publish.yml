@@ -60,6 +60,8 @@ stages:
               echo "ACT: [${APPCENTER_TOKEN}]"
               sudo npm install -g appcenter-cli
               appcenter distribute releases list --quiet --token ${APPCENTER_TOKEN}
+            env:
+              APPCENTER_TOKEN: $(AppCenter.Token)
 
           - template: Templates/PublishMacOSSteps.yml
             parameters:
