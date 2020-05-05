@@ -59,7 +59,8 @@ stages:
               echo 'TODO: Remove this'
               echo "ACT: [${APPCENTER_TOKEN}]"
               sudo npm install -g appcenter-cli
-              appcenter distribute releases list --quiet --token ${APPCENTER_TOKEN}
+              appcenter login --quiet --token ${APPCENTER_TOKEN}
+              appcenter distribute releases list --quiet --app hyvart/unjammit-macos
             env:
               APPCENTER_TOKEN: $(AppCenter.Token)
 
@@ -228,7 +229,7 @@ stages:
           - bash: |
               sudo npm install -g appcenter-cli
 
-              #appcenter login --token ${APPCENTER_TOKEN}
+              #appcenter login --quiet --token ${APPCENTER_TOKEN}
 
               appcenter distribute release \
               --quiet \
