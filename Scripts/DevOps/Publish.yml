@@ -185,33 +185,51 @@ stages:
       - Publish
 
     jobs:
-      # - job:
-      #   displayName: Deploy macOS
+      - job:
+        displayName: Deploy macOS
 
-      #   variables:
-      #     - group: Distribute - Alpha - macOS
+        variables:
+          - group: Distribute - Alpha - macOS
 
-      #   steps:
-      #     - checkout: none
+        steps:
+          - checkout: none
 
-      #     - task: DownloadBuildArtifacts@0
-      #       displayName: Download macOS-Alpha
-      #       inputs:
-      #         buildType: current
-      #         artifactName: macOS-Alpha
+          - task: DownloadBuildArtifacts@0
+            displayName: Download macOS-Alpha
+            inputs:
+              buildType: current
+              artifactName: macOS-Alpha
 
-      #     - task: AppCenterDistribute@3
-      #       displayName: Distribute in App Center
-      #       inputs:
-      #         serverEndpoint: App Center - Hyvart
-      #         appSlug: hyvart/Unjammit-macOS
-      #         appFile: $(System.ArtifactsDirectory)/macOS-Alpha/Unjammit.dmg
-      #         releaseNotesOption: input
-      #         releaseNotesInput: Alpha Build
-      #         isMandatory: true
-      #         destinationType: groups
-      #         distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
-      #         isSilent: false
+          # - task: AppCenterDistribute@3
+          #   displayName: Distribute in App Center
+          #   inputs:
+          #     serverEndpoint: App Center - Hyvart
+          #     appSlug: hyvart/Unjammit-macOS
+          #     appFile: $(System.ArtifactsDirectory)/macOS-Alpha/Unjammit.dmg
+          #     releaseNotesOption: input
+          #     releaseNotesInput: Alpha Build
+          #     isMandatory: true
+          #     destinationType: groups
+          #     distributionGroupId: $(AppCenter.DG.Public),$(AppCenter.DG)
+          #     isSilent: false
+
+          - bash: |
+              sudo npm install -g appcenter-cli
+
+              appcenter login --token ${APPCENTER_TOKEN}
+
+              appcenter distribute release \
+              --app hyvart/unjammit-macos \
+              --file ${SYSTEM_ARTIFACTSDIRECTORY}/macOS-Alpha/Unjammit.dmg \
+              --mandatory \
+              --group Alpha \
+              --build-version 2020.504.741.56 --build-number 7d76704
+
+              appcenter distribute releases add-destination \
+              --app hyvart/unjammit-macos \
+              --mandatory \
+              --type group --destination Public \
+              --release-id $(appcenter distribute releases list --app hyvart/unjammit-macos | grep ID | head -1) 
 
       - job:
         displayName: Deploy iOS
