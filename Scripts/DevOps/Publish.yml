@@ -55,15 +55,6 @@ stages:
           vmImage: $(Job.VmImage)
 
         steps:
-          - bash: |
-              echo 'TODO: Remove this'
-              echo "ACT: [${APPCENTER_TOKEN}]"
-              sudo npm install -g appcenter-cli
-              appcenter login --quiet --token ${APPCENTER_TOKEN}
-              appcenter distribute releases list --quiet --app hyvart/unjammit-macos
-            env:
-              APPCENTER_TOKEN: $(AppCenter.Token)
-
           - template: Templates/PublishMacOSSteps.yml
             parameters:
               phase: Alpha
@@ -229,11 +220,10 @@ stages:
           - bash: |
               sudo npm install -g appcenter-cli
 
-              #appcenter login --quiet --token ${APPCENTER_TOKEN}
+              appcenter login --quiet --token ${APPCENTER_TOKEN}
 
               appcenter distribute release \
               --quiet \
-              --token ${APPCENTER_TOKEN} \
               --app hyvart/unjammit-macos \
               --file ${SYSTEM_ARTIFACTSDIRECTORY}/macOS-Alpha/Unjammit.dmg \
               --mandatory \
@@ -243,11 +233,12 @@ stages:
 
               appcenter distribute releases add-destination \
               --quiet \
-              --token ${APPCENTER_TOKEN} \
               --app hyvart/unjammit-macos \
               --mandatory \
               --type group --destination Public \
-              --release-id $(appcenter distribute releases list --quiet --token ${APPCENTER_TOKEN} --app hyvart/unjammit-macos | grep ID | head -1 | tr -s ' ' | cut -f2 -d ' ')
+              --release-id $(appcenter distribute releases list --quiet --app hyvart/unjammit-macos | grep ID | head -1 | tr -s ' ' | cut -f2 -d ' ')
+            env:
+              APPCENTER_TOKEN: $(AppCenter.Token)
 
       - job:
         displayName: Deploy iOS
