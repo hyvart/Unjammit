@@ -16,7 +16,11 @@ namespace Jammit.macOS
 
       var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);
       _window = new NSWindow(rect, style, NSBackingStore.Buffered, false);
-      _window.TitleVisibility = NSWindowTitleVisibility.Hidden;
+
+      // Selector setTitleVisibility available on macOS 10.10 and later.
+      var osVersion = new NSProcessInfo().OperatingSystemVersion;
+      if ((osVersion.Major == 10 && osVersion.Minor > 9) || osVersion.Major > 10)
+        _window.TitleVisibility = NSWindowTitleVisibility.Hidden;
     }
 
     public override NSWindow MainWindow
