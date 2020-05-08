@@ -69,7 +69,9 @@ stages:
                 mv Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit.app \
                   "Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app"
                 echo "Output: $(Build.ArtifactStagingDirectory)/Unjammit.dmg"
-                hdiutil create -format UDZO \
+                hdiutil create \
+                  -fs HFS+ \
+                  -format UDZO \
                   -srcfolder "$(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.macOS/Unjammit Alpha.app" \
                   $(Build.ArtifactStagingDirectory)/Unjammit.dmg
 
