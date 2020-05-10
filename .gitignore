@@ -252,3 +252,5 @@ ModelManifest.xml
 # macOS
 .DS_Store
 
+# Vim
+.swp
