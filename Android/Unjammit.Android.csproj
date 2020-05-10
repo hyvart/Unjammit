@@ -66,7 +66,7 @@
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0" />
     <PackageReference Include="Xamarin.AndroidX.CardView" Version="1.0.0" />
     <PackageReference Include="Xamarin.AndroidX.MediaRouter" Version="1.1.0" />
-    <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.5" />
+    <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.6" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio\AndroidMediaJcfPlayer.cs" />
