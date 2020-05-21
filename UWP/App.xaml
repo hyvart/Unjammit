@@ -4,5 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Jammit.UWP"
     RequestedTheme="Light">
-
+  <!-- Based on Microsoft.UI.Xaml readme.txt. Check if actually needed. -->
+  <!--<Application.Resources>
+    <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+  </Application.Resources>-->
 </Application>
