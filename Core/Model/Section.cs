@@ -17,15 +17,19 @@
 
     private static readonly string[] TypeStrings =
     {
-      "Count In", "Intro", "Verse", "Pre-Chorus", "Chorus",
-      "Solo", "Bridge", "Outro", "Break", "End", "Post-Chorus",
-      "Instrumental", "Re Intro", "B-Section", "Riff", "Breakdown",
-      "Pre-Intro", "Interlude", "Refrain", "Pre-Verse", "Free Time",
-      "Part", "Reprise", "C-Section", "Ending", "Guitar Solo", "Keyboard Solo",
-      "Bass Solo", "Drum Solo", "Fill", "Fade Out", "Fade In", "Post Fade",
-      "Post Solo", "Post Break", "Count Off", "Transition", "Modulation",
-      "Prelude", "Ad Lib", "Middle Eight", "Vamp", "Theme", "Hook", "Figure",
-      "Motif", "Piece", "Cycle", "Section"
+      "Count In",     "Intro",        "Verse",          "Pre-Chorus",
+      "Chorus",       "Solo",         "Bridge",         "Outro",
+      "Break",        "End",          "Post-Chorus",    "Instrumental",
+      "Re Intro",     "B-Section",    "Riff",           "Breakdown",
+      "Pre-Intro",    "Interlude",    "Refrain",        "Pre-Verse",
+      "Free Time",    "Part",         "Reprise",        "C-Section",
+      "Ending",       "Guitar Solo",  "Keyboard Solo",  "Bass Solo",
+      "Drum Solo",    "Fill",         "Fade Out",       "Fade In",
+      "Post Fade",    "Post Solo",    "Post Break",     "Count Off",
+      "Transition",   "Modulation",   "Prelude",        "Ad Lib",
+      "Middle Eight", "Vamp",         "Theme",          "Hook",
+      "Figure",       "Motif",        "Piece",          "Cycle",
+      "Section"
     };
   }
 }
