@@ -12,6 +12,16 @@ param(
 	$PlistCilVersion = '2.1.0'
 )
 
+function collectNode([int] $index) {
+	$result = [byte[]]::new(0)
+
+	$result += [System.BitConverter]::GetBytes([ushort] 0 )
+	$result += [System.BitConverter]::GetBytes([ushort] [System.Math]::Floor($index / 8))
+	$result += [System.BitConverter]::GetBytes([float]  (672 / 8 * ($_ % 8) + 80))
+
+	return $result
+}
+
 $packagesFolder = $(& $NugetExe config globalPackagesFolder)
 Add-Type -Path (
 	Join-Path `
@@ -40,9 +50,7 @@ $nodes +=  [System.BitConverter]::GetBytes($tracks.Count - 3)
 		#TODO: Actual nodes
 		$nodes += [System.BitConverter]::GetBytes($beats.Count)
 		(0 .. ($beats.Count - 1)) | ForEach-Object {
-			$nodes += [System.BitConverter]::GetBytes( [ushort] 0 )
-			$nodes += [System.BitConverter]::GetBytes( [ushort] ($_ / 8) )
-			$nodes += [System.BitConverter]::GetBytes( [float] (672 / 8 * ($_ % 8) + 80) )
+			$nodes += collectNode $_
 		}
 	}
 
@@ -56,9 +64,7 @@ $nodes +=  [System.BitConverter]::GetBytes($tracks.Count - 3)
 		#TODO: Actual nodes
 		$nodes += [System.BitConverter]::GetBytes($beats.Count)
 		(0 .. ($beats.Count - 1)) | ForEach-Object {
-			$nodes += [System.BitConverter]::GetBytes( [ushort] 0 )
-			$nodes += [System.BitConverter]::GetBytes( [ushort] ($_ / 8) )
-			$nodes += [System.BitConverter]::GetBytes( [float] (672 / 8 * ($_ % 8) + 80) )
+			$nodes += collectNode $_
 		}
 	}
 }
