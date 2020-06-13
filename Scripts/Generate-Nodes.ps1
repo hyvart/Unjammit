@@ -37,12 +37,13 @@ $tracks = [Claunia.PropertyList.PropertyListParser]::Parse( (Join-Path "$JcfPath
 # 	[byte[]]::Reverse($trackCount)
 # }
 $beats = [Claunia.PropertyList.PropertyListParser]::Parse( (Join-Path "$JcfPath" -ChildPath "beats.plist") )
-$nodes = New-Object -TypeName byte[] -ArgumentList 0 #-ArgumentList (4 + 32 + 32 + ($tracks.Count - 3) * (4 + ($beats.Count * 2 * 2 * 2)))
+$nodes = New-Object -TypeName byte[] -ArgumentList 0 #-ArgumentList (4 + 32 + 32 + ($instrumentTrackCount) * (4 + ($beats.Count * 2 * 2 * 2)))
 
-$nodes +=  [System.BitConverter]::GetBytes($tracks.Count - 3)
+$instrumentTrackCount = $tracks.Count - 3 # - Click - Input - Band
+$nodes +=  [System.BitConverter]::GetBytes($instrumentTrackCount)
 
 # 0-based instrument track count
-(0..($tracks.Count - 3 - 1)) | ForEach-Object {
+(0..($instrumentTrackCount - 1)) | ForEach-Object {
 	if ( (Join-Path -Path $JcfPath -ChildPath "$($tracks[${_}]['identifier'].Content)_jcfn*" | Get-ChildItem).Count ) {
 		$nodes += [System.Text.Encoding]::ASCII.GetBytes( $tracks[$_]['title'].Content ) + [byte[]]::new(32 - ($tracks[$_]['title'].Content.Length))
 		$nodes += [System.Text.Encoding]::ASCII.GetBytes('Score') + [byte[]]::new(32 - 'Score'.Length)
