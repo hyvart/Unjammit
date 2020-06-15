@@ -221,14 +221,14 @@ namespace Jammit.Forms.Views
       CursorFrame.TranslationY = yOffset;
       CursorBar.TranslationY = yOffset;
 
-#if true
+#if false
       TimelineImage.Text =
         $"P:  {position}\t"                     + $"S:  {Player.State}\n"           +
         $"BT: {Media.Beats[_beatIndex].Time}\n"                                     +
-                                                  $"\tId: {_beatIndex}\n" +
+        $"\t"                                   + $"Id: {_beatIndex}\n" +
         $"X:  {nodes[_beatIndex].X}\t"          + $"R:  {nodes[_beatIndex].Row}\t"  + $"M: {nodes[_beatIndex].Measure}\n" +
         $"TX: {CursorBar.TranslationX}\t"       + $"TY: {CursorBar.TranslationY}\n" +
-                                                  $"\tPg: {page}"
+        $"\t"                                   + $"Pg: {page}"
         ;
 
       //TimelineImage.Text =

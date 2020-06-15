@@ -12,6 +12,16 @@ param(
 	$PlistCilVersion = '2.1.0'
 )
 
+function collectNode([int] $index) {
+	$result = [byte[]]::new(0)
+
+	$result += [System.BitConverter]::GetBytes([ushort] 0 )
+	$result += [System.BitConverter]::GetBytes([ushort] [System.Math]::Floor($index / 8))
+	$result += [System.BitConverter]::GetBytes([float]  (672 / 8 * ($_ % 8) + 80))
+
+	return $result
+}
+
 $packagesFolder = $(& $NugetExe config globalPackagesFolder)
 Add-Type -Path (
 	Join-Path `
@@ -27,12 +37,13 @@ $tracks = [Claunia.PropertyList.PropertyListParser]::Parse( (Join-Path "$JcfPath
 # 	[byte[]]::Reverse($trackCount)
 # }
 $beats = [Claunia.PropertyList.PropertyListParser]::Parse( (Join-Path "$JcfPath" -ChildPath "beats.plist") )
-$nodes = New-Object -TypeName byte[] -ArgumentList 0 #-ArgumentList (4 + 32 + 32 + ($tracks.Count - 3) * (4 + ($beats.Count * 2 * 2 * 2)))
+$nodes = New-Object -TypeName byte[] -ArgumentList 0 #-ArgumentList (4 + 32 + 32 + ($instrumentTrackCount) * (4 + ($beats.Count * 2 * 2 * 2)))
 
-$nodes +=  [System.BitConverter]::GetBytes($tracks.Count - 3)
+$instrumentTrackCount = $tracks.Count - 3 # - Click - Input - Band
+$nodes +=  [System.BitConverter]::GetBytes($instrumentTrackCount)
 
 # 0-based instrument track count
-(0..($tracks.Count - 3 - 1)) | ForEach-Object {
+(0..($instrumentTrackCount - 1)) | ForEach-Object {
 	if ( (Join-Path -Path $JcfPath -ChildPath "$($tracks[${_}]['identifier'].Content)_jcfn*" | Get-ChildItem).Count ) {
 		$nodes += [System.Text.Encoding]::ASCII.GetBytes( $tracks[$_]['title'].Content ) + [byte[]]::new(32 - ($tracks[$_]['title'].Content.Length))
 		$nodes += [System.Text.Encoding]::ASCII.GetBytes('Score') + [byte[]]::new(32 - 'Score'.Length)
@@ -40,9 +51,7 @@ $nodes +=  [System.BitConverter]::GetBytes($tracks.Count - 3)
 		#TODO: Actual nodes
 		$nodes += [System.BitConverter]::GetBytes($beats.Count)
 		(0 .. ($beats.Count - 1)) | ForEach-Object {
-			$nodes += [System.BitConverter]::GetBytes( [ushort] 0 )
-			$nodes += [System.BitConverter]::GetBytes( [ushort] ($_ / 8) )
-			$nodes += [System.BitConverter]::GetBytes( [float] (672 / 8 * ($_ % 8) + 80) )
+			$nodes += collectNode $_
 		}
 	}
 
@@ -56,9 +65,7 @@ $nodes +=  [System.BitConverter]::GetBytes($tracks.Count - 3)
 		#TODO: Actual nodes
 		$nodes += [System.BitConverter]::GetBytes($beats.Count)
 		(0 .. ($beats.Count - 1)) | ForEach-Object {
-			$nodes += [System.BitConverter]::GetBytes( [ushort] 0 )
-			$nodes += [System.BitConverter]::GetBytes( [ushort] ($_ / 8) )
-			$nodes += [System.BitConverter]::GetBytes( [float] (672 / 8 * ($_ % 8) + 80) )
+			$nodes += collectNode $_
 		}
 	}
 }
