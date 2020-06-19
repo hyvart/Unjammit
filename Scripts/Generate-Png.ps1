@@ -44,6 +44,7 @@ if ([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Ru
 	Exit
 }
 
+Write-Debug "Creating temporary symlink to native library [$("Magick.Native-${MagickNetVariant}-${arch}.${ext}")]"
 New-Item -ItemType SymbolicLink `
 	-Name "Magick.Native-${MagickNetVariant}-${arch}.${ext}" `
 	-Value (Join-Path -Path $globalPackagesFolder -ChildPath $packageName -AdditionalChildPath $MagickNetVersion, 'runtimes', "${os}-${arch}", 'native', "Magick.Native-${MagickNetVariant}-${arch}.${ext}") `
@@ -64,4 +65,5 @@ $Sources | ForEach-Object {
 	$count = $count + 1
 }
 
+Write-Debug 'Removing temporary symlink'
 Remove-Item -Path "$(Get-Location)/Magick.Native-${MagickNetVariant}-${arch}.${ext}"
