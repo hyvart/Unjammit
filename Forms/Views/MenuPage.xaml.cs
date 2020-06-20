@@ -48,7 +48,7 @@ namespace Jammit.Forms.Views
     {
       var mdi = "";
       var version = "";
-      if (Device.macOS != Device.RuntimePlatform)
+      if (Device.macOS != Device.RuntimePlatform && Device.GTK != Device.RuntimePlatform)
       {
         mdi = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.ToString();
         version = Xamarin.Essentials.VersionTracking.CurrentVersion;
