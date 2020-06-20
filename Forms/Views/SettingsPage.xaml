@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
+             xmlns:resources="clr-namespace:Jammit.Forms.Resources"
              x:Class="Jammit.Forms.Views.SettingsPage">
 
   <StackLayout BackgroundColor="DimGray">
@@ -20,6 +21,12 @@
       <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
       <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
     </Grid>
+    <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue">
+      <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
+        <RadioButton x:Name="LocaleRadioButton" GroupName="Locales" IsChecked="True" WidthRequest="{Binding Source={x:Reference LocaleRadioButton}, Path=Height}" BackgroundColor="LightGreen" />
+        <Image x:Name="LocaleImage" BackgroundColor="Pink" />
+      </StackLayout>
+    </StackLayout>
     <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked" />
     <Button x:Name="DeleteDataButton" Text="Delete All Data" Clicked="DeleteDataButton_Clicked" />
   </StackLayout>

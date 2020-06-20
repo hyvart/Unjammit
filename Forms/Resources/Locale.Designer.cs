@@ -68,5 +68,15 @@ namespace Jammit.Forms.Resources {
                 return ResourceManager.GetString("MenuPage_AboutButton", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SettingsPage_LocaleImage {
+            get {
+                object obj = ResourceManager.GetObject("SettingsPage_LocaleImage", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
