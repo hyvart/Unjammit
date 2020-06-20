@@ -25,10 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Locale.Designer.cs">
+    <Compile Update="Resources\Localized.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Locale.resx</DependentUpon>
+      <DependentUpon>Localized.resx</DependentUpon>
     </Compile>
     <Compile Update="Views\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
@@ -36,12 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Locale.en-US.resx">
+    <EmbeddedResource Update="Resources\Localized.en-US.resx">
       <Generator></Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\Locale.resx">
+    <EmbeddedResource Update="Resources\Localized.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Locale.Designer.cs</LastGenOutput>
+      <LastGenOutput>Localized.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

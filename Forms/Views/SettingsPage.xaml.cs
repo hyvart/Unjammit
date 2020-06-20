@@ -20,7 +20,7 @@ namespace Jammit.Forms.Views
     {
       InitializeComponent();
 
-      LocaleImage.Source = ImageSource.FromStream(() => new MemoryStream(Locale.SettingsPage_LocaleImage));
+      LocaleImage.Source = ImageSource.FromStream(() => new MemoryStream(Localized.SettingsPage_LocaleImage));
     }
 
     #region Page overrides

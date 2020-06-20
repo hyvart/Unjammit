@@ -26,6 +26,6 @@
       </ListView.ItemTemplate>
     </ListView>
     <Button x:Name="OpenButton" Text="Import Local..." Clicked="OpenButton_Clicked" />
-    <Button x:Name="AboutButton" Text="{x:Static resources:Locale.MenuPage_AboutButton}" Clicked="AboutButton_Clicked" />
+    <Button x:Name="AboutButton" Text="{x:Static resources:Localized.MenuPage_AboutButton}" Clicked="AboutButton_Clicked" />
   </StackLayout>
 </ContentPage>
