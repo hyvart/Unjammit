@@ -20,13 +20,20 @@ namespace Jammit.Forms.Views
     {
       InitializeComponent();
 
-      LocaleImage.Source = ImageSource.FromStream(() => new MemoryStream(Localized.SettingsPage_LocaleImage));
+      var rm = new System.Resources.ResourceManager("Jammit.Forms.Resources.Localized", typeof(SettingsPage).Assembly);
+
+      LocaleImageEn.Source = ImageSource.FromStream(() =>
+        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("en-US")) as byte[]));
+
+      LocaleImageEs.Source = ImageSource.FromStream(() =>
+        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("es-MX")) as byte[]));
     }
 
     #region Page overrides
 
     protected override void OnAppearing()
     {
+      LocalePicker.SelectedItem = Settings.Culture;
     }
 
     #endregion  Page overrides
@@ -35,7 +42,9 @@ namespace Jammit.Forms.Views
     {
       //Hack: Manually flushing settings.
       //TODO: Replace with tow-way binding.
+
       Settings.ServiceUri = ServiceUriEntry.Text;
+      Settings.Culture = LocalePicker.SelectedItem as string;
     }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)
@@ -68,6 +77,13 @@ namespace Jammit.Forms.Views
         Settings.Credentials = default;
         Settings.ServiceUri = default;
       }
+    }
+
+    void LocalePicker_SelectedIndexChanged(object sender, System.EventArgs e)
+    {
+      CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo((sender as Picker).SelectedItem as string);
+
+      LocaleLabel.Text = Settings.Culture;
     }
   }
 }

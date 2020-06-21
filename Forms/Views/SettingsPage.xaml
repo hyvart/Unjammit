@@ -21,11 +21,20 @@
       <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
       <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
     </Grid>
-    <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue">
-      <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
-        <RadioButton x:Name="LocaleRadioButton" GroupName="Locales" IsChecked="True" WidthRequest="{Binding Source={x:Reference LocaleRadioButton}, Path=Height}" BackgroundColor="LightGreen" />
-        <Image x:Name="LocaleImage" BackgroundColor="Pink" />
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Start" BackgroundColor="LightBlue">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="LightYellow">
+        <Image x:Name="LocaleImageEn" BackgroundColor="Pink" />
       </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="LightGreen">
+        <Image x:Name="LocaleImageEs" BackgroundColor="BlanchedAlmond" />
+      </StackLayout>
+      <Picker x:Name="LocalePicker" SelectedIndexChanged="LocalePicker_SelectedIndexChanged">
+        <Picker.Items>
+          <x:String>en-US</x:String>
+          <x:String>es-MX</x:String>
+        </Picker.Items>
+      </Picker>
+      <Label x:Name="LocaleLabel" />
     </StackLayout>
     <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked" />
     <Button x:Name="DeleteDataButton" Text="Delete All Data" Clicked="DeleteDataButton_Clicked" />
