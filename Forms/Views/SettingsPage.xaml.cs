@@ -54,7 +54,7 @@ namespace Jammit.Forms.Views
       Settings.ServiceUri = ServiceUriEntry.Text;
       Settings.Culture = CultureInfo.CurrentUICulture.Name;
 
-      LocaleLabel.Text = "Language settings will be reflected after the app is restarted.";
+      LocaleLabel.Text = "Language settings will take effect after the app is restarted.";
     }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)

@@ -20,18 +20,21 @@
       <Label Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
       <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
       <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
+
+      <Label Grid.Row="2" Grid.Column="0" Text="Language" />
+      <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="LightBlue">
+        <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
+          <RadioButton x:Name="LocaleRadioButtonEn" GroupName="Locale" Text="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
+          <Image x:Name="LocaleImageEn" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
+          <RadioButton x:Name="LocaleRadioButtonEs" GroupName="Locale" Text="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
+          <Image x:Name="LocaleImageEs" />
+        </StackLayout>
+      </StackLayout>
+
+      <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LocaleLabel" />
     </Grid>
-    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="LightBlue">
-      <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
-        <RadioButton x:Name="LocaleRadioButtonEn" GroupName="Locale" Text="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
-        <Image x:Name="LocaleImageEn" />
-      </StackLayout>
-      <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
-        <RadioButton x:Name="LocaleRadioButtonEs" GroupName="Locale" Text="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
-        <Image x:Name="LocaleImageEs" />
-      </StackLayout>
-    </StackLayout>
-    <Label x:Name="LocaleLabel" />
     <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked" />
     <Button x:Name="DeleteDataButton" Text="Delete All Data" Clicked="DeleteDataButton_Clicked" />
   </StackLayout>
