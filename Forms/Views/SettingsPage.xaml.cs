@@ -45,6 +45,8 @@ namespace Jammit.Forms.Views
 
       Settings.ServiceUri = ServiceUriEntry.Text;
       Settings.Culture = LocalePicker.SelectedItem as string;
+
+      LocaleLabel.Text = "Language settings will be reflected after the app is restarted.";
     }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)
@@ -79,11 +81,12 @@ namespace Jammit.Forms.Views
       }
     }
 
+    //TODO: Make Settings-level or App-level static member.
+    ILocaleSwitcher _localeSwitcher = DependencyService.Get<ILocaleSwitcher>();
     void LocalePicker_SelectedIndexChanged(object sender, System.EventArgs e)
     {
       CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo((sender as Picker).SelectedItem as string);
-
-      LocaleLabel.Text = Settings.Culture;
+      _localeSwitcher?.SwitchLocale((sender as Picker).SelectedItem as string);
     }
   }
 }
