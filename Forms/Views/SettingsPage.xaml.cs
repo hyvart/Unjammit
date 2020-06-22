@@ -33,7 +33,15 @@ namespace Jammit.Forms.Views
 
     protected override void OnAppearing()
     {
-      LocalePicker.SelectedItem = Settings.Culture;
+      switch(CultureInfo.CurrentUICulture.Name)
+      {
+        case "en-US":
+          LocaleRadioButtonEn.IsChecked = true;
+          break;
+        case "es-MX":
+          LocaleRadioButtonEs.IsChecked = true;
+          break;
+      }
     }
 
     #endregion  Page overrides
@@ -44,7 +52,7 @@ namespace Jammit.Forms.Views
       //TODO: Replace with tow-way binding.
 
       Settings.ServiceUri = ServiceUriEntry.Text;
-      Settings.Culture = LocalePicker.SelectedItem as string;
+      Settings.Culture = CultureInfo.CurrentUICulture.Name;
 
       LocaleLabel.Text = "Language settings will be reflected after the app is restarted.";
     }
@@ -83,10 +91,22 @@ namespace Jammit.Forms.Views
 
     //TODO: Make Settings-level or App-level static member.
     ILocaleSwitcher _localeSwitcher = DependencyService.Get<ILocaleSwitcher>();
-    void LocalePicker_SelectedIndexChanged(object sender, System.EventArgs e)
+    void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-      CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo((sender as Picker).SelectedItem as string);
-      _localeSwitcher?.SwitchLocale((sender as Picker).SelectedItem as string);
+      if (e.Value)
+      {
+        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+        _localeSwitcher?.SwitchLocale("en-US");
+      }
+    }
+
+    void LocaleRadioButtonEs_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+      if (e.Value)
+      {
+        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("es-MX");
+        _localeSwitcher?.SwitchLocale("es-MX");
+      }
     }
   }
 }

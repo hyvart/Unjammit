@@ -22,6 +22,9 @@ namespace Jammit.iOS
     //
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
+      //TODO: Remove once RadioButton is promoted from Experimental.
+      global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
+
       global::Xamarin.Forms.Forms.Init();
 
       // Audio options

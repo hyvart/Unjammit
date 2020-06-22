@@ -34,6 +34,9 @@ namespace Jammit.Android
 
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
 
+      //TODO: Remove once RadioButton is promoted from Experimental.
+      Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
+
       global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
       global::Xamarin.Forms.MessagingCenter.Subscribe<Jammit.Forms.Views.SongPage>(this, "PreventPortrait", sender =>
