@@ -117,11 +117,101 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CatalogPage_DownloadButton" xml:space="preserve">
+    <value>Descargar</value>
+  </data>
+  <data name="CatalogPage_DownloadButtonClicked_AlertTitle" xml:space="preserve">
+    <value>Canción descargada</value>
+  </data>
+  <data name="CatalogPage_DownloadButtonClicked_CatchMessage" xml:space="preserve">
+    <value>No se pudo descargar o importar la canción con ID [{0}].</value>
+  </data>
+  <data name="CatalogPage_DownloadButtonClicked_CatchTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="CatalogPage_LoadButton" xml:space="preserve">
+    <value>Recargar Catálogo</value>
+  </data>
+  <data name="CatalogPage_LoadCatalogCatchCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CatalogPage_LoadCatalogCatchTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Client_AuthStatusLabel" xml:space="preserve">
+    <value>Autorización</value>
+  </data>
+  <data name="Client_RequestAuthLabel" xml:space="preserve">
+    <value>Autentificar</value>
+  </data>
+  <data name="LibraryPage_DeleteOption" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
   <data name="MenuPage_AboutButton" xml:space="preserve">
     <value>Acerca de</value>
+  </data>
+  <data name="MenuPage_CatalogItem" xml:space="preserve">
+    <value>Catálogo</value>
+  </data>
+  <data name="MenuPage_Import" xml:space="preserve">
+    <value>Canción importada</value>
+  </data>
+  <data name="MenuPage_ImportCatch" xml:space="preserve">
+    <value>No se ha podido procesarel archivo {0}</value>
+  </data>
+  <data name="MenuPage_ImportCatchTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="MenuPage_LibraryItem" xml:space="preserve">
+    <value>Librería</value>
+  </data>
+  <data name="MenuPage_OpenButton" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="MenuPage_SettingsItem" xml:space="preserve">
+    <value>Preferencias</value>
+  </data>
+  <data name="MenuPage_Title" xml:space="preserve">
+    <value>Menú</value>
+  </data>
+  <data name="SettingsPage_DeleteDataButton" xml:space="preserve">
+    <value>Borrar todos los datos</value>
+  </data>
+  <data name="SettingsPage_LanguageLabel" xml:space="preserve">
+    <value>Idioma</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SettingsPage_LocaleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SettingsPage_LocaleImage.es-MX.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SettingsPage_LocaleLabel" xml:space="preserve">
+    <value>El lenguaje será actualizado al reiniciar la aplicación.</value>
+  </data>
+  <data name="SettingsPage_SaveButton" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="SettingsPage_ServiceUriEntryPlaceholder" xml:space="preserve">
+    <value>Dirección URL del servidor</value>
+  </data>
+  <data name="SongInfo_Album" xml:space="preserve">
+    <value>Álbum</value>
+  </data>
+  <data name="SongInfo_Artist" xml:space="preserve">
+    <value>Artista</value>
+  </data>
+  <data name="SongInfo_Instrument" xml:space="preserve">
+    <value>Instrumento</value>
+  </data>
+  <data name="SongInfo_Title" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="SongPage_CloseButton" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="SongPage_ScoreHiddenLabel" xml:space="preserve">
+    <value>La partitura no tiene espacio para mostrarse</value>
+  </data>
+  <data name="SongSearch_Placeholder" xml:space="preserve">
+    <value>Ingrese el título, álbumo o artista...</value>
   </data>
 </root>

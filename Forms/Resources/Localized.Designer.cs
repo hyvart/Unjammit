@@ -63,9 +63,189 @@ namespace Jammit.Forms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        internal static string CatalogPage_DownloadButton {
+            get {
+                return ResourceManager.GetString("CatalogPage_DownloadButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CatalogPage_DownloadButtonClicked_AlertTitle {
+            get {
+                return ResourceManager.GetString("CatalogPage_DownloadButtonClicked_AlertTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CatalogPage_DownloadButtonClicked_CatchMessage {
+            get {
+                return ResourceManager.GetString("CatalogPage_DownloadButtonClicked_CatchMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CatalogPage_DownloadButtonClicked_CatchTitle {
+            get {
+                return ResourceManager.GetString("CatalogPage_DownloadButtonClicked_CatchTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CatalogPage_LoadButton {
+            get {
+                return ResourceManager.GetString("CatalogPage_LoadButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CatalogPage_LoadCatalogCatchCancel {
+            get {
+                return ResourceManager.GetString("CatalogPage_LoadCatalogCatchCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string CatalogPage_LoadCatalogCatchTitle {
+            get {
+                return ResourceManager.GetString("CatalogPage_LoadCatalogCatchTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Client_AuthStatusLabel {
+            get {
+                return ResourceManager.GetString("Client_AuthStatusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Client_RequestAuthLabel {
+            get {
+                return ResourceManager.GetString("Client_RequestAuthLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string LibraryPage_DeleteOption {
+            get {
+                return ResourceManager.GetString("LibraryPage_DeleteOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         internal static string MenuPage_AboutButton {
             get {
                 return ResourceManager.GetString("MenuPage_AboutButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_CatalogItem {
+            get {
+                return ResourceManager.GetString("MenuPage_CatalogItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_Import {
+            get {
+                return ResourceManager.GetString("MenuPage_Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_ImportCatch {
+            get {
+                return ResourceManager.GetString("MenuPage_ImportCatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_ImportCatchTitle {
+            get {
+                return ResourceManager.GetString("MenuPage_ImportCatchTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_LibraryItem {
+            get {
+                return ResourceManager.GetString("MenuPage_LibraryItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_OpenButton {
+            get {
+                return ResourceManager.GetString("MenuPage_OpenButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_SettingsItem {
+            get {
+                return ResourceManager.GetString("MenuPage_SettingsItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string MenuPage_Title {
+            get {
+                return ResourceManager.GetString("MenuPage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_DeleteDataButton {
+            get {
+                return ResourceManager.GetString("SettingsPage_DeleteDataButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_LanguageLabel {
+            get {
+                return ResourceManager.GetString("SettingsPage_LanguageLabel", resourceCulture);
             }
         }
         
@@ -76,6 +256,96 @@ namespace Jammit.Forms.Resources {
             get {
                 object obj = ResourceManager.GetObject("SettingsPage_LocaleImage", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_LocaleLabel {
+            get {
+                return ResourceManager.GetString("SettingsPage_LocaleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_SaveButton {
+            get {
+                return ResourceManager.GetString("SettingsPage_SaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_ServiceUriEntryPlaceholder {
+            get {
+                return ResourceManager.GetString("SettingsPage_ServiceUriEntryPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SongInfo_Album {
+            get {
+                return ResourceManager.GetString("SongInfo_Album", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SongInfo_Artist {
+            get {
+                return ResourceManager.GetString("SongInfo_Artist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SongInfo_Instrument {
+            get {
+                return ResourceManager.GetString("SongInfo_Instrument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SongInfo_Title {
+            get {
+                return ResourceManager.GetString("SongInfo_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SongPage_CloseButton {
+            get {
+                return ResourceManager.GetString("SongPage_CloseButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SongPage_ScoreHiddenLabel {
+            get {
+                return ResourceManager.GetString("SongPage_ScoreHiddenLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SongSearch_Placeholder {
+            get {
+                return ResourceManager.GetString("SongSearch_Placeholder", resourceCulture);
             }
         }
     }
