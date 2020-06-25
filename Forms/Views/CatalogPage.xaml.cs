@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Jammit.Model;
+using Jammit.Forms.Resources;
 
 namespace Jammit.Forms.Views
 {
@@ -43,7 +44,7 @@ namespace Jammit.Forms.Views
       catch (System.Net.Http.HttpRequestException ex)
       {
         Catalog = default;
-        await DisplayAlert("Error", ex.Message, "Cancel");
+        await DisplayAlert(Localized.CatalogPage_LoadCatalogCatchTitle, ex.Message, Localized.CatalogPage_LoadCatalogCatchCancel);
 
         if (App.Client.AuthStatus == Jammit.Client.AuthorizationStatus.Rejected)
         {
@@ -54,7 +55,7 @@ namespace Jammit.Forms.Views
       catch (Exception ex)
       {
         Catalog = default;
-        await DisplayAlert("Error", ex.Message, "Cancel");
+        await DisplayAlert(Localized.CatalogPage_LoadCatalogCatchTitle, ex.Message, Localized.CatalogPage_LoadCatalogCatchCancel);
       }
 
       //TODO: Move back into XAML bindings.
@@ -86,13 +87,13 @@ namespace Jammit.Forms.Views
 
         //TODO: Assert selected item and downloaded content metadata are equal.
 
-        await DisplayAlert("Downloaded Song", song.ToString(), "OK");
+        await DisplayAlert(Localized.CatalogPage_DownloadButtonClicked_AlertTitle, song.ToString(), "OK");
 
         DownloadProgressBar.Progress = 0;
       }
       catch (Exception ex)
       {
-        await DisplayAlert("Error", $"Could not download or install song with ID [{selectedSong.Id}].", "OK");
+        await DisplayAlert(Localized.CatalogPage_DownloadButtonClicked_CatchTitle, string.Format(Localized.CatalogPage_DownloadButtonClicked_CatchMessage, selectedSong.Id), "OK");
       }
     }
 

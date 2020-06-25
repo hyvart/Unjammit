@@ -32,6 +32,9 @@ namespace Jammit.Forms
     private const string CredentialsKey = "credentials_key";
     private static readonly string CredentialsDefault = string.Empty;
 
+    private const string CultureKey = "culture_key";
+    private static readonly string CultureDefault = System.Globalization.CultureInfo.CurrentUICulture.Name;
+
     #endregion
 
     public static string GeneralSettings
@@ -62,6 +65,12 @@ namespace Jammit.Forms
     {
       get { return AppSettings.GetValueOrDefault(CredentialsKey, CredentialsDefault); }
       set { AppSettings.AddOrUpdateValue(CredentialsKey, value); }
+    }
+
+    public static string Culture
+    {
+      get { return AppSettings.GetValueOrDefault(CultureKey, CultureDefault); }
+      set { AppSettings.AddOrUpdateValue(CultureKey, value); }
     }
   }
 }

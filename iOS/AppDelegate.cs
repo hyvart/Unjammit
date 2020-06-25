@@ -22,11 +22,13 @@ namespace Jammit.iOS
     //
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
+      //TODO: Remove once RadioButton is promoted from Experimental.
+      global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
+
       global::Xamarin.Forms.Forms.Init();
 
       // Audio options
       NSError error = AVFoundation.AVAudioSession.SharedInstance().SetCategory(AVFoundation.AVAudioSessionCategory.Playback);
-      Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
       Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>

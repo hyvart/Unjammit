@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
+             xmlns:resources="clr-namespace:Jammit.Forms.Resources"
              x:Class="Jammit.Forms.Views.SettingsPage">
 
   <StackLayout BackgroundColor="DimGray">
@@ -11,17 +12,31 @@
         Grid.Row="0"
         Grid.Column="1"
         Grid.ColumnSpan="2"
-        Placeholder="Enter service URL address."
+        Placeholder="{x:Static resources:Localized.SettingsPage_ServiceUriEntryPlaceholder}"
         x:Name="ServiceUriEntry"
         Keyboard="Url"
         Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
 
-      <Label Grid.Row="1" Grid.Column="0" Text="Authorization Status" />
+      <Label Grid.Row="1" Grid.Column="0" Text="{x:Static resources:Localized.Client_AuthStatusLabel}" />
       <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
-      <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="Request Authorization" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
+      <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="{x:Static resources:Localized.Client_RequestAuthLabel}" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
+
+      <Label Grid.Row="2" Grid.Column="0" Text="{x:Static resources:Localized.SettingsPage_LanguageLabel}" />
+      <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="LightBlue">
+        <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
+          <RadioButton x:Name="LocaleRadioButtonEn" GroupName="Locale" Text="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
+          <Image x:Name="LocaleImageEn" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
+          <RadioButton x:Name="LocaleRadioButtonEs" GroupName="Locale" Text="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
+          <Image x:Name="LocaleImageEs" />
+        </StackLayout>
+      </StackLayout>
+
+      <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LocaleLabel" />
     </Grid>
-    <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked" />
-    <Button x:Name="DeleteDataButton" Text="Delete All Data" Clicked="DeleteDataButton_Clicked" />
+    <Button x:Name="SaveButton" Text="{x:Static resources:Localized.SettingsPage_SaveButton}" Clicked="SaveButton_Clicked" />
+    <Button x:Name="DeleteDataButton" Text="{x:Static resources:Localized.SettingsPage_DeleteDataButton}" Clicked="DeleteDataButton_Clicked" />
   </StackLayout>
 
 </ContentPage>

@@ -68,6 +68,7 @@
     <Compile Include="Audio\IOSAVAudioPlayer.cs" />
     <Compile Include="Forms\Renderers\IOSVerticalSliderRenderer.cs" />
     <Compile Include="Forms\Renderers\IOSDisabledScrollViewRenderer.cs" />
+    <Compile Include="Forms\IOSLocaleSwitcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-60%403x.png" />

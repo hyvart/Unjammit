@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Localized = Jammit.Forms.Resources.Localized;
+
 namespace Jammit.Forms.Views
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -36,11 +38,11 @@ namespace Jammit.Forms.Views
 
         var song = App.Library.AddSong(picked.GetStream());
 
-        await DisplayAlert("Imported Song", song.ToString(), "OK");
+        await DisplayAlert(Localized.MenuPage_Import, song.ToString(), "OK");
       }
-      catch (Exception ex)
+      catch (Exception)
       {
-        await DisplayAlert("Error", $"Could not process file {picked.FilePath}.", "OK");
+        await DisplayAlert(Localized.MenuPage_ImportCatchTitle, string.Format(Localized.MenuPage_ImportCatch, picked.FilePath), "OK");
       }
     }
 
@@ -48,7 +50,7 @@ namespace Jammit.Forms.Views
     {
       var mdi = "";
       var version = "";
-      if (Device.macOS != Device.RuntimePlatform)
+      if (Device.macOS != Device.RuntimePlatform && Device.GTK != Device.RuntimePlatform)
       {
         mdi = Xamarin.Essentials.DeviceDisplay.MainDisplayInfo.ToString();
         version = Xamarin.Essentials.VersionTracking.CurrentVersion;
