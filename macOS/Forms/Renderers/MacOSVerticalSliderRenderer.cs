@@ -21,7 +21,7 @@ namespace Jammit.Forms.Renderers
       base.OnElementChanged(e);
 
       if (Control != null)
-        Control.IsVertical = 1;
+        Control.BoundsRotation = 270;
     }
 
     #endregion ViewRenderer overrides
