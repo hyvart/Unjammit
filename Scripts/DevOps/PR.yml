@@ -18,7 +18,7 @@ jobs:
       displayName: Windows Universal
       project: UWP/Unjammit.UWP.csproj
       platformVariableGroup: Build - Windows
-      buildPlatforms: [ x64, x86 ]
+      buildPlatforms: [ x64, x86, ARM, ARM64 ]
       msbuildArguments:
         /p:AppxBundlePlatforms="$(BuildPlatform)"
         /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
