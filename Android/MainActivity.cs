@@ -30,7 +30,7 @@ namespace Jammit.Android
       // To prevent audo desync, use SoXR resampler.
       // See https://code.videolan.org/videolan/LibVLCSharp/issues/263#note_48330
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-        new Audio.VlcJcfPlayer(media, new MediaConfiguration[]{ config }, new string[] { "--audio-resampler=soxr" }));
+        new Audio.VlcJcfPlayer(media, new MediaConfiguration[]{ config }, new string[] {}));
 
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
 
