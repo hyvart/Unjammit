@@ -132,11 +132,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="FFmpegInteropX">
-      <Version>0.9.0-pre2</Version>
-    </PackageReference>
-    <PackageReference Include="FFmpegInteropX.FFmpegUWP">
-      <Version>4.2.200-pre</Version>
+    <PackageReference Include="Hyvart.FFmpegInteropX">
+      <Version>0.0.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
