@@ -37,7 +37,7 @@ steps:
     parameters:
       project: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
       msbuildArguments:
-        /p:AppxBundlePlatforms="x64|x86|ARM|ARM64"
+        /p:AppxBundlePlatforms="x64|x86"
         /p:AppxPackageDir="$(Build.StagingDirectory)\AppPackages\\"
         /p:AppxBundle=Always
         /p:UapAppxPackageBuildMode=StoreUpload
