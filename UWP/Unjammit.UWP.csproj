@@ -28,7 +28,9 @@
       win10-x86-aot;
       win10-x64;
       win10-x64-aot;
-      win10-aot
+      win10-aot;
+      win10-arm;
+      win10-arm64-aot
     </RuntimeIdentifiers>
     <PackageCertificateThumbprint>56AC209ABB564F2DE3E94542D3B69CE47FBA5A84</PackageCertificateThumbprint>
     <AppxPackageDir>$(OutputPath)AppPackages</AppxPackageDir>
@@ -134,7 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hyvart.FFmpegInteropX">
-      <Version>0.0.2</Version>
+      <Version>0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
