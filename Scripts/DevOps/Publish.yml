@@ -35,12 +35,10 @@ stages:
               Write-Host "Changed files:", $changedFiles
 
               $changedFiles | Foreach-Object {
-                if ( $_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt' ) {
-                  continue
+                if (! ($_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt') ) {
+                  Write-Host "[$_] is not a documentation file."
+                  exit
                 }
-
-                Write-Host "[$_] is not a documentation file."
-                exit
               }
 
               Write-Host 'Documentation changes only'
