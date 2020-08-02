@@ -55,6 +55,7 @@ stages:
                 -Body         $json
 
               Write-Host "Build status: $($build.status)"
+            displayName: Skip doc-only changes
 
           - task: PowerShell@2
             displayName: Set global version
