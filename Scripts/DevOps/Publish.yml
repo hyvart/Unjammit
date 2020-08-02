@@ -29,6 +29,34 @@ stages:
     jobs:
       - job: SetUp
         steps:
+          - pwsh: |
+              $changedFiles = $(git diff --name-only HEAD HEAD~)
+              Write-Host "Changed files:", $changedFiles
+
+              $changedFiles | Foreach-Object {
+                if (! ($_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt') ) {
+                  Write-Host "[$_] is not a documentation file."
+                  exit
+                }
+              }
+
+              Write-Host 'Documentation changes only'
+
+              # This build
+              $uri = "$(System.TeamFoundationCollectionUri)/$(System.TeamProject)/_apis/build/builds/$(Build.BuildId)?api-version=5.1"
+
+              $json = @{status='Cancelling'} | ConvertTo-Json -Compress
+
+              $build = Invoke-RestMethod `
+                -Uri          $uri `
+                -Method       Patch `
+                -Headers      @{Authorization = "Bearer $(System.AccessToken)"} `
+                -ContentType 'application/json' `
+                -Body         $json
+
+              Write-Host "Build status: $($build.status)"
+            displayName: Skip doc-only changes
+
           - task: PowerShell@2
             displayName: Set global version
             name: SetBuildVersion
