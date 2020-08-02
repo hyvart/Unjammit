@@ -34,14 +34,14 @@ stages:
               $changedFiles = $(git diff --name-only HEAD HEAD~1)
               Write-Host "Changed files:", $changedFiles
 
-              $changedFiles | Foreach-Object {
-                if ( $_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt' ) {
-                  continue
-                }
+              # $changedFiles | Foreach-Object {
+              #   if ( $_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt' ) {
+              #     continue
+              #   }
 
-                Write-Host "[$_] is not a documentation file."
-                exit
-              }
+              #   Write-Host "[$_] is not a documentation file."
+              #   exit
+              # }
 
               Write-Debug 'Documentation changes only. Cancelling build...'
 
