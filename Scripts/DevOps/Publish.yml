@@ -24,7 +24,6 @@ variables:
   - group: Distribute - Alpha
 
 stages:
-
   - stage: Publish
 
     jobs:
