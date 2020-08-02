@@ -25,23 +25,16 @@ variables:
 
 stages:
 
-  - stage: Validate
-
-    jobs:
-      - job: DocsOnly
-        steps:
-          - pwsh: 
-
   - stage: Publish
-    dependsOn: 
 
     jobs:
       - job: SetUp
         steps:
           - pwsh: |
               git diff --name-only HEAD HEAD~1 | Foreach-Object {
-                if ( $_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt' )
+                if ( $_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt' ) {
                   continue
+                }
 
                 # This build
                 $uri = "$(System.TeamFoundationCollectionUri)/$(System.TeamProject)/_apis/build/builds/$(Build.BuildId)?api-version=5.1"
