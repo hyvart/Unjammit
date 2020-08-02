@@ -48,14 +48,14 @@ stages:
 
               $json = @{status='Cancelling'} | ConvertTo-Json -Compress
 
-              Invoke-RestMethod `
+              $build = Invoke-RestMethod `
                 -Uri          $uri `
                 -Method       Patch `
                 -Headers      @{Authorization = "Bearer $(System.AccessToken)"} `
                 -ContentType 'application/json' `
-                -Body         $json `
-                -OutVariable  build
+                -Body         $json
 
+              Write-Host "[$build]"
 
           - task: PowerShell@2
             displayName: Set global version
