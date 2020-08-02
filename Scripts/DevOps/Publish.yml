@@ -39,7 +39,7 @@ stages:
                   continue
                 }
 
-                echo "$_ didn't match!!"
+                Write-Host "[$_] is not a documentation file."
                 exit
               }
 
