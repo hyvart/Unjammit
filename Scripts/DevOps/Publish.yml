@@ -34,16 +34,16 @@ stages:
               $changedFiles = $(git diff --name-only HEAD HEAD~1)
               Write-Host "Changed files:", $changedFiles
 
-              # $changedFiles | Foreach-Object {
-              #   if ( $_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt' ) {
-              #     continue
-              #   }
+              $changedFiles | Foreach-Object {
+                if ( $_ -like '*.md' -or $_ -in '.editorconfig', '.gitattributes', '.gitignore', 'LICENSE.txt' ) {
+                  continue
+                }
 
-              #   Write-Host "[$_] is not a documentation file."
-              #   exit
-              # }
+                Write-Host "[$_] is not a documentation file."
+                exit
+              }
 
-              Write-Host 'Documentation changes only. Cancelling build...'
+              Write-Host 'Documentation changes only'
 
               # This build
               $uri = "$(System.TeamFoundationCollectionUri)/$(System.TeamProject)/_apis/build/builds/$(Build.BuildId)?api-version=5.1"
