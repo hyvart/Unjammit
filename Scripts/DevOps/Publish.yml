@@ -43,7 +43,7 @@ stages:
               #   exit
               # }
 
-              Write-Debug 'Documentation changes only. Cancelling build...'
+              Write-Host 'Documentation changes only. Cancelling build...'
 
               # This build
               $uri = "$(System.TeamFoundationCollectionUri)/$(System.TeamProject)/_apis/build/builds/$(Build.BuildId)?api-version=5.1"
@@ -52,14 +52,13 @@ stages:
 
               $json = @{status='Cancelling'} | ConvertTo-Json -Compress
 
-              $build = Invoke-RestMethod `
+              Invoke-RestMethod `
                 -Uri          $uri `
                 -Method       Patch `
                 -Headers      @{Authorization = "Bearer $(System.AccessToken)"} `
                 -ContentType 'application/json' `
-                -Body         $json
-
-              Write-Debug "[$build]"
+                -Body         $json `
+                -OutVariable  build
 
           - task: PowerShell@2
             displayName: Set global version
