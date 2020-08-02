@@ -31,7 +31,7 @@ stages:
       - job: SetUp
         steps:
           - pwsh: |
-              $changedFiles = $(git diff --name-only HEAD HEAD~1)
+              $changedFiles = $(git diff --name-only HEAD HEAD~)
               Write-Host "Changed files:", $changedFiles
 
               $changedFiles | Foreach-Object {
