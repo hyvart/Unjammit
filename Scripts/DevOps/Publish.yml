@@ -55,7 +55,7 @@ stages:
                 -ContentType 'application/json' `
                 -Body         $json
 
-              echo "[$build]"
+              Write-Debug "[$build]"
 
           - task: PowerShell@2
             displayName: Set global version
