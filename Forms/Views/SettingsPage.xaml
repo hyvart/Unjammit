@@ -31,6 +31,10 @@
           <RadioButton x:Name="LocaleRadioButtonEs" GroupName="Locale" Text="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
           <Image x:Name="LocaleImageEs" />
         </StackLayout>
+        <StackLayout Orientation="Horizontal" Background="LightBlue">
+          <RadioButton x:Name="LocaleRadioButtonRu" GroupName="Locale" Text="☭" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
+          <Image x:Name="LocaleImageRu" />
+        </StackLayout>
       </StackLayout>
 
       <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LocaleLabel" />

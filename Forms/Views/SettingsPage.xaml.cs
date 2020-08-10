@@ -27,6 +27,9 @@ namespace Jammit.Forms.Views
 
       LocaleImageEs.Source = ImageSource.FromStream(() =>
         new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("es-MX")) as byte[]));
+
+      LocaleImageRu.Source = ImageSource.FromStream(() =>
+        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("ru")) as byte[]));
     }
 
     #region Page overrides
@@ -91,7 +94,7 @@ namespace Jammit.Forms.Views
 
     //TODO: Make Settings-level or App-level static member.
     ILocaleSwitcher _localeSwitcher = DependencyService.Get<ILocaleSwitcher>();
-    void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
       if (e.Value)
       {
@@ -100,12 +103,21 @@ namespace Jammit.Forms.Views
       }
     }
 
-    void LocaleRadioButtonEs_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void LocaleRadioButtonEs_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
       if (e.Value)
       {
         CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("es-MX");
         _localeSwitcher?.SwitchLocale("es-MX");
+      }
+    }
+
+    private void LocaleRadioButtonRu_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+      if (e.Value)
+      {
+        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("ru");
+        _localeSwitcher?.SwitchLocale("ru");
       }
     }
   }
