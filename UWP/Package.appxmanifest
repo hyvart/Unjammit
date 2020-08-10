@@ -13,7 +13,7 @@
   <Resources>
     <Resource Language="x-generate" />
     <Resource Language="en-us" />
-    <Resource Language="es-mx" />
+    <Resource Language="es" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Jammit.UWP.App">
