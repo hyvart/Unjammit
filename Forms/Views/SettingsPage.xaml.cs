@@ -44,6 +44,9 @@ namespace Jammit.Forms.Views
         case "es-MX":
           LocaleRadioButtonEs.IsChecked = true;
           break;
+        case "ru":
+          LocaleRadioButtonRu.IsChecked = true;
+          break;
       }
     }
 
