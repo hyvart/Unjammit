@@ -191,7 +191,10 @@
     <value>Save</value>
   </data>
   <data name="SettingsPage_ServiceUriEntryPlaceholder" xml:space="preserve">
-    <value>Enter service URL address.</value>
+    <value>Enter content server address.</value>
+  </data>
+  <data name="SettingsPage_ServiceUriLabel" xml:space="preserve">
+    <value>Service URI</value>
   </data>
   <data name="SongInfo_Album" xml:space="preserve">
     <value>Album</value>

@@ -289,6 +289,15 @@ namespace Jammit.Forms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        internal static string SettingsPage_ServiceUriLabel {
+            get {
+                return ResourceManager.GetString("SettingsPage_ServiceUriLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         internal static string SongInfo_Album {
             get {
                 return ResourceManager.GetString("SongInfo_Album", resourceCulture);

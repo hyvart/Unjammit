@@ -7,7 +7,7 @@
 
   <StackLayout BackgroundColor="DimGray">
     <Grid BackgroundColor="WhiteSmoke">
-      <Label Grid.Row="0" Grid.Column="0" Text="Service URI" />
+      <Label Grid.Row="0" Grid.Column="0" Text="{x:Static resources:Localized.SettingsPage_ServiceUriLabel}" />
       <Entry
         Grid.Row="0"
         Grid.Column="1"
