@@ -12,7 +12,7 @@
   </Dependencies>
   <Resources>
     <Resource Language="x-generate" />
-    <Resource Language="en-us" />
+    <Resource Language="en" />
     <Resource Language="es" />
     <Resource Language="ru" />
   </Resources>

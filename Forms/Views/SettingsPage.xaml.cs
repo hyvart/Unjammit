@@ -23,7 +23,7 @@ namespace Jammit.Forms.Views
       var rm = new System.Resources.ResourceManager("Jammit.Forms.Resources.Localized", typeof(SettingsPage).Assembly);
 
       LocaleImageEn.Source = ImageSource.FromStream(() =>
-        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("en-US")) as byte[]));
+        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("en")) as byte[]));
 
       LocaleImageEs.Source = ImageSource.FromStream(() =>
         new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("es")) as byte[]));
@@ -38,7 +38,7 @@ namespace Jammit.Forms.Views
     {
       switch(CultureInfo.CurrentUICulture.Name)
       {
-        case "en-US":
+        case "en":
           LocaleRadioButtonEn.IsChecked = true;
           break;
         case "es":
@@ -101,8 +101,8 @@ namespace Jammit.Forms.Views
     {
       if (e.Value)
       {
-        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
-        _localeSwitcher?.SwitchLocale("en-US");
+        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("en");
+        _localeSwitcher?.SwitchLocale("en");
       }
     }
 
