@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
              xmlns:resources="clr-namespace:Jammit.Forms.Resources"
+             xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
              x:Class="Jammit.Forms.Views.CatalogPage">
 
   <!--TODO: Put back in CatalogView attributes.-->
@@ -17,7 +18,7 @@
         </StackLayout>
       </StackLayout>
     </ContentView>
-    <SearchBar Placeholder="{x:Static resources:Localized.SongSearch_Placeholder}" TextChanged="SearchBar_TextChanged" />
+    <SearchBar Placeholder="{xaml:TranslateText SongSearch_Placeholder}" TextChanged="SearchBar_TextChanged" />
     <ListView
       x:Name="CatalogView"
       HorizontalOptions="FillAndExpand"
@@ -25,10 +26,10 @@
       BackgroundColor="WhiteSmoke">
       <ListView.Header>
         <Grid>
-          <Label Grid.Column="0" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Artist}" />
-          <Label Grid.Column="1" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Title}" />
-          <Label Grid.Column="2" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Instrument}" />
-          <Label Grid.Column="3" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Album}" />
+          <Label Grid.Column="0" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Artist}" />
+          <Label Grid.Column="1" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Title}" />
+          <Label Grid.Column="2" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Instrument}" />
+          <Label Grid.Column="3" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Album}" />
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
@@ -44,9 +45,9 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button x:Name="DownloadButton" Text="{x:Static resources:Localized.CatalogPage_DownloadButton}" Clicked="DownloadButton_Clicked" />
+    <Button x:Name="DownloadButton" Text="{xaml:TranslateText CatalogPage_DownloadButton}" Clicked="DownloadButton_Clicked" />
     <ProgressBar x:Name="DownloadProgressBar" Progress="{Binding Source={x:Static local:App.Client}, Path=SongDownloadProgress, Mode=TwoWay}" />
-    <Button x:Name="LoadButton" Text="{x:Static resources:Localized.CatalogPage_LoadButton}" Clicked="LoadButton_Clicked" />
+    <Button x:Name="LoadButton" Text="{xaml:TranslateText CatalogPage_LoadButton}" Clicked="LoadButton_Clicked" />
   </StackLayout>
 
 </ContentPage>

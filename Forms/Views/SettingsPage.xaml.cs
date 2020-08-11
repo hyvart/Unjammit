@@ -101,7 +101,8 @@ namespace Jammit.Forms.Views
     {
       if (e.Value)
       {
-        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("en");
+        //CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("en");
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("en"));
         _localeSwitcher?.SwitchLocale("en");
       }
     }
@@ -110,7 +111,8 @@ namespace Jammit.Forms.Views
     {
       if (e.Value)
       {
-        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("es");
+        //CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("es");
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("es"));
         _localeSwitcher?.SwitchLocale("es");
       }
     }
@@ -119,7 +121,8 @@ namespace Jammit.Forms.Views
     {
       if (e.Value)
       {
-        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("ru");
+        //CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("ru");
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("ru"));
         _localeSwitcher?.SwitchLocale("ru");
       }
     }

@@ -11,6 +11,12 @@ namespace Jammit.Forms
   {
     public static LocalizationResourceManager Instance { get; } = new LocalizationResourceManager();
 
+    private LocalizationResourceManager()
+    {
+      if (Resources.Localized.Culture != null)
+        SetCulture(Resources.Localized.Culture);
+    }
+
     public string this[string text]
     {
       get

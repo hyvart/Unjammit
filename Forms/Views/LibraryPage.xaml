@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
              xmlns:resources="clr-namespace:Jammit.Forms.Resources"
+             xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
              x:Class="Jammit.Forms.Views.LibraryPage">
 
   <StackLayout BackgroundColor="DimGray">
-    <SearchBar Placeholder="{x:Static resources:Localized.SongSearch_Placeholder}" TextChanged="SearchBar_TextChanged" />
+    <SearchBar Placeholder="{xaml:TranslateText SongSearch_Placeholder}" TextChanged="SearchBar_TextChanged" />
     <ListView
       x:Name="LibraryView"
       ItemTapped="LibraryView_ItemTapped"
@@ -15,10 +16,10 @@
       BackgroundColor="WhiteSmoke">
       <ListView.Header>
         <Grid>
-          <Label Grid.Column="0" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Artist}" />
-          <Label Grid.Column="1" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Title}" />
-          <Label Grid.Column="2" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Instrument}" />
-          <Label Grid.Column="3" FontAttributes="Bold" Text="{x:Static resources:Localized.SongInfo_Album}" />
+          <Label Grid.Column="0" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Artist}" />
+          <Label Grid.Column="1" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Title}" />
+          <Label Grid.Column="2" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Instrument}" />
+          <Label Grid.Column="3" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Album}" />
         </Grid>
       </ListView.Header>
       <ListView.ItemTemplate>
@@ -31,7 +32,7 @@
               <Label Grid.Column="3" Text="{Binding Album}" />
             </Grid>
             <ViewCell.ContextActions>
-              <MenuItem Text="{x:Static resources:Localized.LibraryPage_DeleteOption}" IsDestructive="True" Clicked="LibraryItem_Delete" />
+              <MenuItem Text="{xaml:TranslateText LibraryPage_DeleteOption}" IsDestructive="True" Clicked="LibraryItem_Delete" />
             </ViewCell.ContextActions>
           </ViewCell>
         </DataTemplate>

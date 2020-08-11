@@ -4,14 +4,16 @@
              xmlns:local="clr-namespace:Jammit.Forms.Views"
              xmlns:models="clr-namespace:Jammit.Forms.Models"
              xmlns:resources="clr-namespace:Jammit.Forms.Resources"
+             xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
              x:Class="Jammit.Forms.Views.MenuPage"
-             Title="{x:Static resources:Localized.MenuPage_Title}">
+             Title="{xaml:TranslateTitle MenuPage_Title}">
   <StackLayout VerticalOptions="FillAndExpand">
     <ListView x:Name="MenuListView" x:FieldModifier="public">
       <ListView.ItemsSource>
         <x:Array Type="{x:Type models:HomeMenuItem}">
-          <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_LibraryItem}" TargetType="{x:Type local:LibraryPage}" />
-          <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_CatalogItem}" TargetType="{x:Type local:CatalogPage}" />
+          <!--TODO: Make Title bindable!-->
+          <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_LibraryItem}"  TargetType="{x:Type local:LibraryPage}" />
+          <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_CatalogItem}"  TargetType="{x:Type local:CatalogPage}" />
           <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_SettingsItem}" TargetType="{x:Type local:SettingsPage}" />
         </x:Array>
       </ListView.ItemsSource>
@@ -25,7 +27,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button x:Name="OpenButton" Text="{x:Static resources:Localized.MenuPage_OpenButton}" Clicked="OpenButton_Clicked" />
-    <Button x:Name="AboutButton" Text="{x:Static resources:Localized.MenuPage_AboutButton}" Clicked="AboutButton_Clicked" />
+    <Button x:Name="OpenButton" Text="{xaml:TranslateText MenuPage_OpenButton}" Clicked="OpenButton_Clicked" />
+    <Button x:Name="AboutButton" Text="{xaml:TranslateText MenuPage_AboutButton}" Clicked="AboutButton_Clicked" />
   </StackLayout>
 </ContentPage>
