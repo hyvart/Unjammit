@@ -31,7 +31,6 @@ namespace Jammit.Forms
       App.Client = new Jammit.Forms.Client.BasicHttpClient();
       App.Library = new FolderLibrary(DataDirectory, Client);
 
-      //System.Globalization.CultureInfo.CurrentUICulture = System.Globalization.CultureInfo.GetCultureInfo(Settings.Culture);
       LocalizationResourceManager.Instance.SetCulture(System.Globalization.CultureInfo.GetCultureInfo(Settings.Culture));
 
       MainPage = new Jammit.Forms.Views.MainPage();

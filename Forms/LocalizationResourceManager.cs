@@ -7,6 +7,7 @@ using System.Threading;
 /// </summary>
 namespace Jammit.Forms
 {
+  //TODO: Rename this class!
   public class LocalizationResourceManager : INotifyPropertyChanged
   {
     public static LocalizationResourceManager Instance { get; } = new LocalizationResourceManager();
