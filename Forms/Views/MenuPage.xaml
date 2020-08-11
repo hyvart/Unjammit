@@ -12,9 +12,9 @@
       <ListView.ItemsSource>
         <x:Array Type="{x:Type models:HomeMenuItem}">
           <!--TODO: Make Title bindable!-->
-          <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_LibraryItem}"  TargetType="{x:Type local:LibraryPage}" />
-          <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_CatalogItem}"  TargetType="{x:Type local:CatalogPage}" />
-          <models:HomeMenuItem Title="{x:Static resources:Localized.MenuPage_SettingsItem}" TargetType="{x:Type local:SettingsPage}" />
+          <models:HomeMenuItem Title="{xaml:TranslateTitle MenuPage_LibraryItem}"  TargetType="{x:Type local:LibraryPage}" />
+          <models:HomeMenuItem Title="{xaml:TranslateTitle MenuPage_CatalogItem}"  TargetType="{x:Type local:CatalogPage}" />
+          <models:HomeMenuItem Title="{xaml:TranslateTitle MenuPage_SettingsItem}" TargetType="{x:Type local:SettingsPage}" />
         </x:Array>
       </ListView.ItemsSource>
       <ListView.ItemTemplate>
