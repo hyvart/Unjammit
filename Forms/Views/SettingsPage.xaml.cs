@@ -58,8 +58,6 @@ namespace Jammit.Forms.Views
 
       Settings.ServiceUri = ServiceUriEntry.Text;
       Settings.Culture = CultureInfo.CurrentUICulture.Name;
-
-      LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
     }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)
@@ -102,6 +100,8 @@ namespace Jammit.Forms.Views
       {
         LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("en"));
         _localeSwitcher?.SwitchLocale("en");
+
+        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
       }
     }
 
@@ -111,6 +111,8 @@ namespace Jammit.Forms.Views
       {
         LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("es"));
         _localeSwitcher?.SwitchLocale("es");
+
+        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
       }
     }
 
@@ -120,6 +122,8 @@ namespace Jammit.Forms.Views
       {
         LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("ru"));
         _localeSwitcher?.SwitchLocale("ru");
+
+        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
       }
     }
   }
