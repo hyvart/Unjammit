@@ -118,100 +118,103 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CatalogPage_DownloadButton" xml:space="preserve">
-    <value>Descargar</value>
+    <value>Загрузить Песню</value>
   </data>
   <data name="CatalogPage_DownloadButtonClicked_AlertTitle" xml:space="preserve">
-    <value>Canción descargada</value>
+    <value>Успешно загружено</value>
   </data>
   <data name="CatalogPage_DownloadButtonClicked_CatchMessage" xml:space="preserve">
-    <value>No se pudo descargar o importar la canción con ID [{0}].</value>
+    <value>Не удалось загрузить или установить песню, ID [{0}].</value>
   </data>
   <data name="CatalogPage_DownloadButtonClicked_CatchTitle" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="CatalogPage_LoadButton" xml:space="preserve">
-    <value>Recargar Catálogo</value>
+    <value>Перезагрузить Каталог</value>
   </data>
   <data name="CatalogPage_LoadCatalogCatchCancel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Отмена</value>
   </data>
   <data name="CatalogPage_LoadCatalogCatchTitle" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="Client_AuthStatusLabel" xml:space="preserve">
-    <value>Autorización</value>
+    <value>Статус Авторизации</value>
   </data>
   <data name="Client_RequestAuthLabel" xml:space="preserve">
-    <value>Autentificar</value>
+    <value>Запрос Авторизации</value>
   </data>
   <data name="LibraryPage_DeleteOption" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Удалить</value>
   </data>
   <data name="MenuPage_AboutButton" xml:space="preserve">
-    <value>Acerca de</value>
+    <value>О Приложении</value>
   </data>
   <data name="MenuPage_CatalogItem" xml:space="preserve">
-    <value>Catálogo</value>
+    <value>Каталог</value>
   </data>
   <data name="MenuPage_Import" xml:space="preserve">
-    <value>Canción importada</value>
+    <value>Испортированная Песня</value>
   </data>
   <data name="MenuPage_ImportCatch" xml:space="preserve">
-    <value>No se ha podido procesarel archivo {0}</value>
+    <value>Не удалось импортировать файл {0}</value>
   </data>
   <data name="MenuPage_ImportCatchTitle" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="MenuPage_LibraryItem" xml:space="preserve">
-    <value>Librería</value>
+    <value>Локальная Библиотека</value>
   </data>
   <data name="MenuPage_OpenButton" xml:space="preserve">
-    <value>Importar</value>
+    <value>Импорт Файла</value>
   </data>
   <data name="MenuPage_SettingsItem" xml:space="preserve">
-    <value>Preferencias</value>
+    <value>Настройки</value>
   </data>
   <data name="MenuPage_Title" xml:space="preserve">
-    <value>Menú</value>
+    <value>Меню</value>
   </data>
   <data name="SettingsPage_DeleteDataButton" xml:space="preserve">
-    <value>Borrar todos los datos</value>
+    <value>Удалить Все Данные и Настройки</value>
   </data>
   <data name="SettingsPage_LanguageLabel" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Язык</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SettingsPage_LocaleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>SettingsPage_LocaleImage.es-MX.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>SettingsPage_LocaleImage.ru.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SettingsPage_LocaleLabel" xml:space="preserve">
-    <value>El lenguaje será actualizado al reiniciar la aplicación.</value>
+    <value>Нажмите "Сохранить", чтобы сохранить выбор языка приложения.</value>
   </data>
   <data name="SettingsPage_SaveButton" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Сохранить</value>
   </data>
   <data name="SettingsPage_ServiceUriEntryPlaceholder" xml:space="preserve">
-    <value>Dirección URL del servidor</value>
+    <value>Введите адрес сервера контента.</value>
+  </data>
+  <data name="SettingsPage_ServiceUriLabel" xml:space="preserve">
+    <value>URI Сервера</value>
   </data>
   <data name="SongInfo_Album" xml:space="preserve">
-    <value>Álbum</value>
+    <value>Альбом</value>
   </data>
   <data name="SongInfo_Artist" xml:space="preserve">
-    <value>Artista</value>
+    <value>Исполнитель</value>
   </data>
   <data name="SongInfo_Instrument" xml:space="preserve">
-    <value>Instrumento</value>
+    <value>Инструмент</value>
   </data>
   <data name="SongInfo_Title" xml:space="preserve">
-    <value>Título</value>
+    <value>Наименование</value>
   </data>
   <data name="SongPage_CloseButton" xml:space="preserve">
-    <value>Cerrar</value>
+    <value>Закрыть</value>
   </data>
   <data name="SongPage_ScoreHiddenLabel" xml:space="preserve">
-    <value>La partitura no tiene espacio para mostrarse</value>
+    <value>На Вашем экране приложения не хватает места, чтобы загрузить ноты.</value>
   </data>
   <data name="SongSearch_Placeholder" xml:space="preserve">
-    <value>Ingrese el título, álbumo o artista...</value>
+    <value>Поиск по наименованию песни, артисту или альбому...</value>
   </data>
 </root>

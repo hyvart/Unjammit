@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms.Views"
              xmlns:converters="clr-namespace:Jammit.Forms.Converters"
-             xmlns:resources="clr-namespace:Jammit.Forms.Resources"
+             xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
              x:Class="Jammit.Forms.Views.SongPage">
 
   <ContentPage.Padding>
@@ -95,7 +95,7 @@
              BackgroundColor="LightGray"
              MinimumHeightRequest="0"
              FontSize="Title"
-             Text="{x:Static resources:Localized.SongPage_ScoreHiddenLabel}"
+             Text="{xaml:TranslateText SongPage_ScoreHiddenLabel}"
              VerticalTextAlignment="Center"
              HorizontalTextAlignment="Center"
              TextColor="Black"
@@ -176,7 +176,7 @@
     </StackLayout>
 
     <StackLayout x:Name="FooterLayout" Orientation="Horizontal" Padding="0" Margin="0" VerticalOptions="End">
-      <Button x:Name="CloseButton" Text="{x:Static resources:Localized.SongPage_CloseButton}" HorizontalOptions="FillAndExpand" Clicked="CloseButton_Clicked" />
+      <Button x:Name="CloseButton" Text="{xaml:TranslateText SongPage_CloseButton}" HorizontalOptions="FillAndExpand" Clicked="CloseButton_Clicked" />
     </StackLayout>
 
   </StackLayout>

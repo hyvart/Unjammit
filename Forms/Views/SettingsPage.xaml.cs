@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,10 +22,13 @@ namespace Jammit.Forms.Views
       var rm = new System.Resources.ResourceManager("Jammit.Forms.Resources.Localized", typeof(SettingsPage).Assembly);
 
       LocaleImageEn.Source = ImageSource.FromStream(() =>
-        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("en-US")) as byte[]));
+        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("en")) as byte[]));
 
       LocaleImageEs.Source = ImageSource.FromStream(() =>
-        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("es-MX")) as byte[]));
+        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("es")) as byte[]));
+
+      LocaleImageRu.Source = ImageSource.FromStream(() =>
+        new MemoryStream(rm.GetObject("SettingsPage_LocaleImage", CultureInfo.GetCultureInfo("ru")) as byte[]));
     }
 
     #region Page overrides
@@ -35,11 +37,14 @@ namespace Jammit.Forms.Views
     {
       switch(CultureInfo.CurrentUICulture.Name)
       {
-        case "en-US":
+        case "en":
           LocaleRadioButtonEn.IsChecked = true;
           break;
-        case "es-MX":
+        case "es":
           LocaleRadioButtonEs.IsChecked = true;
+          break;
+        case "ru":
+          LocaleRadioButtonRu.IsChecked = true;
           break;
       }
     }
@@ -53,8 +58,6 @@ namespace Jammit.Forms.Views
 
       Settings.ServiceUri = ServiceUriEntry.Text;
       Settings.Culture = CultureInfo.CurrentUICulture.Name;
-
-      LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
     }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)
@@ -91,21 +94,36 @@ namespace Jammit.Forms.Views
 
     //TODO: Make Settings-level or App-level static member.
     ILocaleSwitcher _localeSwitcher = DependencyService.Get<ILocaleSwitcher>();
-    void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
       if (e.Value)
       {
-        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
-        _localeSwitcher?.SwitchLocale("en-US");
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("en"));
+        _localeSwitcher?.SwitchLocale("en");
+
+        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
       }
     }
 
-    void LocaleRadioButtonEs_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    private void LocaleRadioButtonEs_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
       if (e.Value)
       {
-        CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("es-MX");
-        _localeSwitcher?.SwitchLocale("es-MX");
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("es"));
+        _localeSwitcher?.SwitchLocale("es");
+
+        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
+      }
+    }
+
+    private void LocaleRadioButtonRu_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+      if (e.Value)
+      {
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("ru"));
+        _localeSwitcher?.SwitchLocale("ru");
+
+        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
       }
     }
   }

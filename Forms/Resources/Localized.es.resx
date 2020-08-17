@@ -118,100 +118,103 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CatalogPage_DownloadButton" xml:space="preserve">
-    <value>Download</value>
+    <value>Descargar</value>
   </data>
   <data name="CatalogPage_DownloadButtonClicked_AlertTitle" xml:space="preserve">
-    <value>Downloaded Song</value>
+    <value>Canción descargada</value>
   </data>
   <data name="CatalogPage_DownloadButtonClicked_CatchMessage" xml:space="preserve">
-    <value>Could not download or install song with ID [{0}].</value>
+    <value>No se pudo descargar o importar la canción con ID [{0}].</value>
   </data>
   <data name="CatalogPage_DownloadButtonClicked_CatchTitle" xml:space="preserve">
     <value>Error</value>
   </data>
   <data name="CatalogPage_LoadButton" xml:space="preserve">
-    <value>Reload Catalog</value>
+    <value>Recargar catálogo</value>
   </data>
   <data name="CatalogPage_LoadCatalogCatchCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="CatalogPage_LoadCatalogCatchTitle" xml:space="preserve">
     <value>Error</value>
   </data>
   <data name="Client_AuthStatusLabel" xml:space="preserve">
-    <value>Authorization Status</value>
+    <value>Estado de autorización</value>
   </data>
   <data name="Client_RequestAuthLabel" xml:space="preserve">
-    <value>Request Authorization</value>
+    <value>Autentificar</value>
   </data>
   <data name="LibraryPage_DeleteOption" xml:space="preserve">
-    <value>Delete</value>
+    <value>Eliminar</value>
   </data>
   <data name="MenuPage_AboutButton" xml:space="preserve">
-    <value>About</value>
+    <value>Acerca de</value>
   </data>
   <data name="MenuPage_CatalogItem" xml:space="preserve">
-    <value>Catalog</value>
+    <value>Catálogo</value>
   </data>
   <data name="MenuPage_Import" xml:space="preserve">
-    <value>Imported Song</value>
+    <value>Canción importada</value>
   </data>
   <data name="MenuPage_ImportCatch" xml:space="preserve">
-    <value>Could not process file {0}</value>
+    <value>No se ha podido procesarel archivo {0}</value>
   </data>
   <data name="MenuPage_ImportCatchTitle" xml:space="preserve">
     <value>Error</value>
   </data>
   <data name="MenuPage_LibraryItem" xml:space="preserve">
-    <value>Library</value>
+    <value>Librería</value>
   </data>
   <data name="MenuPage_OpenButton" xml:space="preserve">
-    <value>Import</value>
+    <value>Importar</value>
   </data>
   <data name="MenuPage_SettingsItem" xml:space="preserve">
-    <value>Settings</value>
+    <value>Preferencias</value>
   </data>
   <data name="MenuPage_Title" xml:space="preserve">
-    <value>Menu</value>
+    <value>Menú</value>
   </data>
   <data name="SettingsPage_DeleteDataButton" xml:space="preserve">
-    <value>Delete All Data</value>
+    <value>Borrar todos los datos</value>
   </data>
   <data name="SettingsPage_LanguageLabel" xml:space="preserve">
-    <value>Language</value>
+    <value>Idioma</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SettingsPage_LocaleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>SettingsPage_LocaleImage.en-US.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>SettingsPage_LocaleImage.es.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SettingsPage_LocaleLabel" xml:space="preserve">
-    <value>Language settings will take effect after the app is restarted.</value>
+    <value>El lenguaje será actualizado al reiniciar la aplicación.</value>
   </data>
   <data name="SettingsPage_SaveButton" xml:space="preserve">
-    <value>Save</value>
+    <value>Guardar</value>
   </data>
   <data name="SettingsPage_ServiceUriEntryPlaceholder" xml:space="preserve">
-    <value>Enter service URL address.</value>
+    <value>Ingrese la dirección del servidor de contenido.</value>
+  </data>
+  <data name="SettingsPage_ServiceUriLabel" xml:space="preserve">
+    <value>URI del servidor</value>
   </data>
   <data name="SongInfo_Album" xml:space="preserve">
-    <value>Album</value>
+    <value>Álbum</value>
   </data>
   <data name="SongInfo_Artist" xml:space="preserve">
-    <value>Artist</value>
+    <value>Artista</value>
   </data>
   <data name="SongInfo_Instrument" xml:space="preserve">
-    <value>Instrument</value>
+    <value>Instrumento</value>
   </data>
   <data name="SongInfo_Title" xml:space="preserve">
-    <value>Title</value>
+    <value>Título</value>
   </data>
   <data name="SongPage_CloseButton" xml:space="preserve">
-    <value>Close</value>
+    <value>Cerrar</value>
   </data>
   <data name="SongPage_ScoreHiddenLabel" xml:space="preserve">
-    <value>Score systems won't fit this screen.</value>
+    <value>La partitura no tiene espacio para mostrarse</value>
   </data>
   <data name="SongSearch_Placeholder" xml:space="preserve">
-    <value>Type a title, artist or album...</value>
+    <value>Ingrese el título, álbumo o artista...</value>
   </data>
 </root>
