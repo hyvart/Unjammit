@@ -32,7 +32,7 @@
           <Image x:Name="LocaleImageEs" />
         </StackLayout>
         <StackLayout Orientation="Horizontal" Background="LightBlue">
-          <RadioButton x:Name="LocaleRadioButtonRu" GroupName="Locale" Text="Русский" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
+          <RadioButton x:Name="LocaleRadioButtonRu" GroupName="Locale" Text="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
           <Image x:Name="LocaleImageRu" />
         </StackLayout>
       </StackLayout>
