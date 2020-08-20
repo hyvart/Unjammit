@@ -125,7 +125,7 @@ stages:
           - name: BuildPlatform
             value: iPhone
           - name: BuildConfiguration
-            value: Release
+            value: Ad-Hoc
           - name: BuildVersion
             value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
 
