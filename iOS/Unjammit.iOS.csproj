@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{41182BA1-FEE1-4FF3-AC8D-5A234DDF8664}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Jammit.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Unjammit.iOS</AssemblyName>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <!-- <ProvisioningType>manual</ProvisioningType> -->
   </PropertyGroup>
   <PropertyGroup>
     <ErrorReport>prompt</ErrorReport>
@@ -27,12 +28,13 @@
     <Optimize>false</Optimize>
     <DefineConstants>DEBUG</DefineConstants>
     <MtouchDebug>true</MtouchDebug>
+    <IOSDebugOverWiFi>False</IOSDebugOverWiFi>
+    <IOSDebuggerPort>10000</IOSDebuggerPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'iPhoneSimulator' ">
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <!--Release|iPhoneSimulator???-->
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'Ad-Hoc' Or '$(Configuration)' == 'AppStore' ">
     <DebugType>none</DebugType>
@@ -44,10 +46,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
-    <IOSDebugOverWiFi>False</IOSDebugOverWiFi>
-    <IOSDebuggerPort>10000</IOSDebuggerPort>
-  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <BuildIpa>True</BuildIpa>
     <CodesignProvision>Automatic:AdHoc</CodesignProvision>
@@ -56,6 +54,9 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -78,7 +79,6 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="netstandard" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -89,8 +89,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Forms\" />
-    <Folder Include="Forms\Renderers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Explicit reference to enable Hot Restart. -->
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
