@@ -1498,6 +1498,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.String.fab_transformation_sheet_behavior = global::Jammit.Resource.String.fab_transformation_sheet_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.hide_bottom_view_on_scroll_behavior = global::Jammit.Resource.String.hide_bottom_view_on_scroll_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_chip_close_icon_content_description = global::Jammit.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.overflow_tab_title = global::Jammit.Resource.String.overflow_tab_title;
 			global::Xamarin.Forms.Platform.Android.Resource.String.password_toggle_content_description = global::Jammit.Resource.String.password_toggle_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye = global::Jammit.Resource.String.path_password_eye;
 			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_strike_through = global::Jammit.Resource.String.path_password_eye_mask_strike_through;
@@ -4053,6 +4054,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.String.fab_transformation_sheet_behavior = global::Jammit.Resource.String.fab_transformation_sheet_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.hide_bottom_view_on_scroll_behavior = global::Jammit.Resource.String.hide_bottom_view_on_scroll_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.mtrl_chip_close_icon_content_description = global::Jammit.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Platform.Resource.String.overflow_tab_title = global::Jammit.Resource.String.overflow_tab_title;
 			global::Xamarin.Forms.Platform.Resource.String.password_toggle_content_description = global::Jammit.Resource.String.password_toggle_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.path_password_eye = global::Jammit.Resource.String.path_password_eye;
 			global::Xamarin.Forms.Platform.Resource.String.path_password_eye_mask_strike_through = global::Jammit.Resource.String.path_password_eye_mask_strike_through;
@@ -10793,25 +10795,28 @@ namespace Jammit
 			public const int mtrl_chip_close_icon_content_description = 2131558463;
 			
 			// aapt resource value: 0x7F0D0040
-			public const int password_toggle_content_description = 2131558464;
+			public const int overflow_tab_title = 2131558464;
 			
 			// aapt resource value: 0x7F0D0041
-			public const int path_password_eye = 2131558465;
+			public const int password_toggle_content_description = 2131558465;
 			
 			// aapt resource value: 0x7F0D0042
-			public const int path_password_eye_mask_strike_through = 2131558466;
+			public const int path_password_eye = 2131558466;
 			
 			// aapt resource value: 0x7F0D0043
-			public const int path_password_eye_mask_visible = 2131558467;
+			public const int path_password_eye_mask_strike_through = 2131558467;
 			
 			// aapt resource value: 0x7F0D0044
-			public const int path_password_strike_through = 2131558468;
+			public const int path_password_eye_mask_visible = 2131558468;
 			
 			// aapt resource value: 0x7F0D0045
-			public const int search_menu_title = 2131558469;
+			public const int path_password_strike_through = 2131558469;
 			
 			// aapt resource value: 0x7F0D0046
-			public const int status_bar_notification_info_overflow = 2131558470;
+			public const int search_menu_title = 2131558470;
+			
+			// aapt resource value: 0x7F0D0047
+			public const int status_bar_notification_info_overflow = 2131558471;
 			
 			static String()
 			{
