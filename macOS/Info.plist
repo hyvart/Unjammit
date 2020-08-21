@@ -34,6 +34,7 @@
 	<array>
 		<string>en</string>
 		<string>es</string>
+		<string>ru</string>
 	</array>
 	<key>CFBundleDisplayName</key>
 	<string>UnjammitDev!</string>
