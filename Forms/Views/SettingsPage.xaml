@@ -22,7 +22,12 @@
       <Button IsVisible="false" Grid.Row="1" Grid.Column="2" x:Name="AuthorizeButton" Text="{xaml:TranslateText Client_RequestAuthLabel}" Clicked="AuthorizeButton_Clicked" IsEnabled="false" />
 
       <Label Grid.Row="2" Grid.Column="0" Text="{xaml:TranslateText SettingsPage_LanguageLabel}" />
-      <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="LightBlue">
+      <StackLayout Grid.Row="2"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Orientation="Horizontal"
+                   HorizontalOptions="Start"
+                   BackgroundColor="DarkGoldenrod">
         <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
           <RadioButton x:Name="LocaleRadioButtonEn" GroupName="Locale" Text="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
           <Image x:Name="LocaleImageEn" />
