@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Explicit reference to enable Hot Restart. -->
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
