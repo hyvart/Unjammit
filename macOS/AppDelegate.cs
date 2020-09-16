@@ -38,9 +38,7 @@ namespace Jammit.macOS
 
       Xamarin.Forms.Forms.Init();
 
-      //TODO: Replace with Xamarin.Essentials API.
-      string dataDir = NSSearchPath.GetDirectories(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
-      dataDir = System.IO.Path.Combine(dataDir, "Unjammit");
+      string dataDir = System.IO.Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "Application Support", "Unjammit");
       // Create dataDir, if it doesnt' exist.
       if (!System.IO.Directory.Exists(dataDir))
         System.IO.Directory.CreateDirectory(dataDir);
