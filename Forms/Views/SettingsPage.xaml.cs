@@ -1,5 +1,4 @@
-﻿using Jammit.Forms.Resources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,6 +8,8 @@ using System.Text;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using Jammit.Forms.Resources;
 
 namespace Jammit.Forms.Views
 {
@@ -65,9 +66,13 @@ namespace Jammit.Forms.Views
       App.Client.RequestAuthorization().Wait();
     }
 
-    private async void DeleteDataButton_Clicked(object sender, System.EventArgs e)
+    private async void DeleteDataButton_Clicked(object sender, EventArgs e)
     {
-      if (await DisplayAlert("Please confirm", "Your local library and service credentials will be completely deleted.\nThis can not be undone.", "Yes", "No"))
+      if (await DisplayAlert(
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataConfirm"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataText"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataYes"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataNo"]))
       {
         foreach (var song in App.Library.Songs)
         {

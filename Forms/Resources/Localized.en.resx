@@ -177,6 +177,19 @@
   <data name="SettingsPage_DeleteDataButton" xml:space="preserve">
     <value>Delete All Data</value>
   </data>
+  <data name="SettingsPage_DeleteDataConfirm" xml:space="preserve">
+    <value>Please confirm</value>
+  </data>
+  <data name="SettingsPage_DeleteDataNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SettingsPage_DeleteDataText" xml:space="preserve">
+    <value>Your local library and service credentials will be completely deleted.
+This can not be undone.</value>
+  </data>
+  <data name="SettingsPage_DeleteDataYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
   <data name="SettingsPage_LanguageLabel" xml:space="preserve">
     <value>Language</value>
   </data>

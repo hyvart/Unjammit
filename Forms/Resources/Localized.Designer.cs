@@ -243,6 +243,42 @@ namespace Jammit.Forms.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        internal static string SettingsPage_DeleteDataConfirm {
+            get {
+                return ResourceManager.GetString("SettingsPage_DeleteDataConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_DeleteDataNo {
+            get {
+                return ResourceManager.GetString("SettingsPage_DeleteDataNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_DeleteDataText {
+            get {
+                return ResourceManager.GetString("SettingsPage_DeleteDataText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SettingsPage_DeleteDataYes {
+            get {
+                return ResourceManager.GetString("SettingsPage_DeleteDataYes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         internal static string SettingsPage_LanguageLabel {
             get {
                 return ResourceManager.GetString("SettingsPage_LanguageLabel", resourceCulture);

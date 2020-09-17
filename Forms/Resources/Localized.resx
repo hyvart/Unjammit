@@ -177,6 +177,18 @@
   <data name="SettingsPage_DeleteDataButton" xml:space="preserve">
     <value />
   </data>
+  <data name="SettingsPage_DeleteDataConfirm" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsPage_DeleteDataNo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsPage_DeleteDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsPage_DeleteDataYes" xml:space="preserve">
+    <value />
+  </data>
   <data name="SettingsPage_LanguageLabel" xml:space="preserve">
     <value />
   </data>

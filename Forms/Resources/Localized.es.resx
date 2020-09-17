@@ -177,6 +177,19 @@
   <data name="SettingsPage_DeleteDataButton" xml:space="preserve">
     <value>Borrar todos los datos</value>
   </data>
+  <data name="SettingsPage_DeleteDataConfirm" xml:space="preserve">
+    <value>Favor de confirmar</value>
+  </data>
+  <data name="SettingsPage_DeleteDataNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="SettingsPage_DeleteDataText" xml:space="preserve">
+    <value>La librería local, credenciales y demás preferencias serán eliminadas.
+Esta acción no puede revertirse.</value>
+  </data>
+  <data name="SettingsPage_DeleteDataYes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
   <data name="SettingsPage_LanguageLabel" xml:space="preserve">
     <value>Idioma</value>
   </data>
