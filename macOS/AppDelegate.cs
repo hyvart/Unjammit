@@ -38,6 +38,7 @@ namespace Jammit.macOS
 
       Xamarin.Forms.Forms.Init();
 
+      // Xamarin.Essentials.FileSystem.AppDataDirectory yields '/Users/<user name>/Library' on macOS
       string dataDir = System.IO.Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "Application Support", "Unjammit");
       // Create dataDir, if it doesnt' exist.
       if (!System.IO.Directory.Exists(dataDir))
