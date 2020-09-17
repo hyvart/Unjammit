@@ -1,5 +1,4 @@
-﻿using Plugin.Settings;
-using Plugin.Settings.Abstractions;
+﻿using Xamarin.Essentials;
 
 namespace Jammit.Forms
 {
@@ -10,14 +9,6 @@ namespace Jammit.Forms
   /// </summary>
   public static class Settings
   {
-    private static ISettings AppSettings
-    {
-      get
-      {
-        return CrossSettings.Current;
-      }
-    }
-
     #region Setting Constants
 
     private const string SettingsKey = "settings_key";
@@ -37,40 +28,74 @@ namespace Jammit.Forms
 
     #endregion
 
+    public static void Clear()
+    {
+      //AppSettings.Clear();
+      Preferences.Clear();
+    }
+
     public static string GeneralSettings
     {
       get
       {
-        return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+        return Preferences.Get(SettingsKey, SettingsDefault);
       }
       set
       {
-        AppSettings.AddOrUpdateValue(SettingsKey, value);
+        Preferences.Set(SettingsKey, value);
       }
     }
 
     public static string TrackPath
     {
-      get { return AppSettings.GetValueOrDefault(TrackPathKey, TrackPathDefault); }
-      set { AppSettings.AddOrUpdateValue(TrackPathKey, value); }
+      get
+      {
+        return Preferences.Get(TrackPathKey, TrackPathDefault);
+      }
+
+      set
+      {
+        Preferences.Set(TrackPathKey, value);
+      }
     }
 
     public static string ServiceUri
     {
-      get { return AppSettings.GetValueOrDefault(ServiceUriKey, ServiceUriDefault); }
-      set { AppSettings.AddOrUpdateValue(ServiceUriKey, value); }
+      get
+      {
+        return Preferences.Get(ServiceUriKey, ServiceUriDefault);
+      }
+
+      set
+      {
+        Preferences.Set(ServiceUriKey, value);
+      }
     }
 
     public static string Credentials
     {
-      get { return AppSettings.GetValueOrDefault(CredentialsKey, CredentialsDefault); }
-      set { AppSettings.AddOrUpdateValue(CredentialsKey, value); }
+      get
+      {
+        return Preferences.Get(CredentialsKey, CredentialsDefault);
+      }
+
+      set
+      {
+        Preferences.Set(CredentialsKey, value);
+      }
     }
 
     public static string Culture
     {
-      get { return AppSettings.GetValueOrDefault(CultureKey, CultureDefault); }
-      set { AppSettings.AddOrUpdateValue(CultureKey, value); }
+      get
+      {
+        return Preferences.Get(CultureKey, CultureDefault);
+      }
+
+      set
+      {
+        Preferences.Set(CultureKey, value);
+      }
     }
   }
 }

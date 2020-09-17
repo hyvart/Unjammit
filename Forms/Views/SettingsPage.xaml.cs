@@ -87,8 +87,7 @@ namespace Jammit.Forms.Views
           }
         }
 
-        Settings.Credentials = default;
-        Settings.ServiceUri = default;
+        Settings.Clear();
       }
     }
 
