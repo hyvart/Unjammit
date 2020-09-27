@@ -143,14 +143,14 @@ namespace Jammit.Forms
       Preferences.Set(key, value);
     }
 
-    public static int Get(string key, int defaultValue)
+    public static uint Get(string key, uint defaultValue)
     {
-      return Preferences.Get(key, defaultValue);
+      return (uint)Preferences.Get(key, (long)defaultValue);
     }
 
-    public static void Set(string key, int value)
+    public static void Set(string key, uint value)
     {
-      Preferences.Set(key, value);
+      Preferences.Set(key, (long)value);
     }
 
     public static float Get(string key, float defaultValue)
