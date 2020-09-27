@@ -45,6 +45,92 @@ namespace Jammit.Forms.Views
     private int _beatIndex;
     int _sectionIndex;
 
+    #region Settings
+
+    uint SelectedScore
+    {
+      get
+      {
+        return Settings.Get($"Song/{Song.Id}/SelectedScore", 0);
+      }
+
+      set
+      {
+        Settings.Set($"Song/{Song.Id}/SelectedScore", value);
+      }
+    }
+
+    bool IsMixerCollapsed
+    {
+      get
+      {
+        return Settings.Get($"Song/{Song.Id}/MixerCollapsed", false);
+      }
+
+      set
+      {
+        Settings.Set($"Song/{Song.Id}/MixerCollapsed", value);
+      }
+    }
+
+    uint TrackVolume
+    {
+      get
+      {
+        var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+        return Settings.Get($"Track/{track.Identifier}/Volume", 100);
+      }
+
+      set
+      {
+        var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+        Settings.Set($"Track/{track.Identifier}/Volume", value);
+      }
+    }
+
+    bool IsTrackMuted
+    {
+      get
+      {
+        var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+        return Settings.Get($"Track/{track.Identifier}/Muted", false);
+      }
+
+      set
+      {
+        var track = (ScorePicker.SelectedItem as ScoreInfo).Track;
+        Settings.Set($"Track/{track.Identifier}/Muted", value);
+      }
+    }
+
+    string SoloTrackId
+    {
+      get
+      {
+        return Settings.Get($"Song/{Song.Id}/SoloTrack", null);
+      }
+
+      set
+      {
+        Settings.Set($"Song/{Song.Id}/SoloTrack", value);
+      }
+    }
+
+    TimeSpan Position
+    {
+      get
+      {
+        return Settings.Get($"Song/{Song.Id}/Position", TimeSpan.Zero);
+      }
+
+      set
+      {
+        Settings.Set($"Song/{Song.Id}/Position", value);
+      }
+    }
+
+    #endregion Settings
+
     #endregion private fields
 
     public SongPage()
