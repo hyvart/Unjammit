@@ -26,11 +26,44 @@ namespace Jammit.Forms
     private const string CultureKey = "culture_key";
     private static readonly string CultureDefault = System.Globalization.CultureInfo.CurrentUICulture.Name;
 
-    #endregion
+    #endregion Setting Constants
+
+    #region Settings Functions
+
+    private static string SelectedScoreKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Id}/SelectedScore";
+    }
+
+    private static string MixerCollapsedKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Id}/MixerCollapsed";
+    }
+
+    private static string TrackVolumeKey(Model.TrackInfo track)
+    {
+      return $"Track/{track.Identifier}/Volume";
+    }
+
+    private static string TrackMutedKey(Model.TrackInfo track)
+    {
+      return $"Track/{track.Identifier}/Muted";
+    }
+
+    private static string SoloTrackKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Instrument}/SoloTrack";
+    }
+
+    private static string PositionKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Id}/Position";
+    }
+
+    #endregion Settings Functions
 
     public static void Clear()
     {
-      //AppSettings.Clear();
       Preferences.Clear();
     }
 
@@ -97,5 +130,59 @@ namespace Jammit.Forms
         Preferences.Set(CultureKey, value);
       }
     }
+
+    #region Generic settings
+
+    public static bool Get(string key, bool defaultValue)
+    {
+      return Preferences.Get(key, defaultValue);
+    }
+
+    public static void Set(string key, bool value)
+    {
+      Preferences.Set(key, value);
+    }
+
+    public static int Get(string key, int defaultValue)
+    {
+      return Preferences.Get(key, defaultValue);
+    }
+
+    public static void Set(string key, int value)
+    {
+      Preferences.Set(key, value);
+    }
+
+    public static float Get(string key, float defaultValue)
+    {
+      return Preferences.Get(key, defaultValue);
+    }
+
+    public static void Set(string key, float value)
+    {
+      Preferences.Set(key, value);
+    }
+
+    public static string Get(string key, string defaultValue)
+    {
+      return Preferences.Get(key, defaultValue);
+    }
+
+    public static void Set(string key, string value)
+    {
+      Preferences.Set(key, value);
+    }
+
+    public static System.TimeSpan Get(string key, System.TimeSpan defaultValue)
+    {
+      return System.TimeSpan.FromMilliseconds(Preferences.Get(key, defaultValue.TotalMilliseconds));
+    }
+
+    public static void Set(string key, System.TimeSpan value)
+    {
+      Preferences.Set(key, value.TotalMilliseconds);
+    }
+
+    #endregion Generic settings
   }
 }
