@@ -58,7 +58,7 @@ namespace Jammit.Forms.Views
       //TODO: Replace with tow-way binding.
 
       Settings.ServiceUri = ServiceUriEntry.Text;
-      Settings.Culture = CultureInfo.CurrentUICulture.Name;
+      //Settings.Culture = CultureInfo.CurrentUICulture.Name;
     }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)
@@ -106,6 +106,8 @@ namespace Jammit.Forms.Views
         _localeSwitcher?.SwitchLocale("en");
 
         LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
+
+        Settings.Culture = "en";
       }
     }
 
@@ -117,6 +119,8 @@ namespace Jammit.Forms.Views
         _localeSwitcher?.SwitchLocale("es");
 
         LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
+
+        Settings.Culture = "es";
       }
     }
 
@@ -128,6 +132,8 @@ namespace Jammit.Forms.Views
         _localeSwitcher?.SwitchLocale("ru");
 
         LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
+
+        Settings.Culture = "ru";
       }
     }
   }
