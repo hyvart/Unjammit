@@ -24,7 +24,7 @@ For more, see the [Releases](https://github.com/hyvart/Unjammit/releases) sectio
 | | Minimum Version | Status |
 |:-:|:-:|:-:|
 | iOS | 9.3 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=iOS)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
-| macOS | 10.9 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=macOS)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
+| macOS | 10.13 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=macOS)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
 | Windows Universal | [10 1803](https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1803) | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=Windows)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
 | Windows Desktop | 7 SP1 | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=Windows%20Forms)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
 | Android | 4.1 Jelly Bean | [![Build Status](https://dev.azure.com/hyvart/Unjammit/_apis/build/status/Publish?branchName=master&jobName=Android)](https://dev.azure.com/hyvart/Unjammit/_build/latest?definitionId=63&branchName=master) |
