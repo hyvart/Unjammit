@@ -49,6 +49,12 @@ jobs:
           sudo xcode-select --switch /Applications/Xcode_${XCODE_VERSION}.app/Contents/Developer
         displayName: Select Xcode version $(Xcode.Version)
 
+      # TEMPORARY - force latest Xamarin.iOS version
+      - bash: |
+          dotnet tool update --global boots
+          boots --stable XamariniOS
+        displayName: Force latest Xamarin.iOS
+
       - task: DotNetCoreInstaller@1
         inputs:
           packageType: sdk
