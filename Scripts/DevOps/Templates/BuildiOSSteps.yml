@@ -25,6 +25,11 @@ steps:
     displayName: Set Xamarin Mono version to $(XamariniOS.MonoVersion)
 
   - bash: |
+      echo "Xcode version: [${XCODE_VERSION}]"
+      echo "Xcode location: {"
+      ls -ld /Applications/Xcode_${XCODE_VERSION}.app
+      echo "}"
+
       echo "##vso[task.setvariable variable=MD_APPLE_SDK_ROOT;]/Applications/Xcode_${XCODE_VERSION}.app"
       sudo xcode-select --switch /Applications/Xcode_${XCODE_VERSION}.app/Contents/Developer
     displayName: Select Xcode version $(Xcode.Version)
