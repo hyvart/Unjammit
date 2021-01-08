@@ -27,7 +27,6 @@ namespace Jammit
 		{
 			global::LibVLCSharp.Resource.String.app_name = global::Jammit.Resource.String.app_name;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Jammit.Resource.Attribute.alpha;
-			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::Jammit.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::Jammit.Resource.Attribute.font;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::Jammit.Resource.Attribute.fontProviderAuthority;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderCerts = global::Jammit.Resource.Attribute.fontProviderCerts;
@@ -38,23 +37,15 @@ namespace Jammit
 			global::Xamarin.Essentials.Resource.Attribute.fontStyle = global::Jammit.Resource.Attribute.fontStyle;
 			global::Xamarin.Essentials.Resource.Attribute.fontVariationSettings = global::Jammit.Resource.Attribute.fontVariationSettings;
 			global::Xamarin.Essentials.Resource.Attribute.fontWeight = global::Jammit.Resource.Attribute.fontWeight;
-			global::Xamarin.Essentials.Resource.Attribute.keylines = global::Jammit.Resource.Attribute.keylines;
-			global::Xamarin.Essentials.Resource.Attribute.layout_anchor = global::Jammit.Resource.Attribute.layout_anchor;
-			global::Xamarin.Essentials.Resource.Attribute.layout_anchorGravity = global::Jammit.Resource.Attribute.layout_anchorGravity;
-			global::Xamarin.Essentials.Resource.Attribute.layout_behavior = global::Jammit.Resource.Attribute.layout_behavior;
-			global::Xamarin.Essentials.Resource.Attribute.layout_dodgeInsetEdges = global::Jammit.Resource.Attribute.layout_dodgeInsetEdges;
-			global::Xamarin.Essentials.Resource.Attribute.layout_insetEdge = global::Jammit.Resource.Attribute.layout_insetEdge;
-			global::Xamarin.Essentials.Resource.Attribute.layout_keyline = global::Jammit.Resource.Attribute.layout_keyline;
-			global::Xamarin.Essentials.Resource.Attribute.statusBarBackground = global::Jammit.Resource.Attribute.statusBarBackground;
 			global::Xamarin.Essentials.Resource.Attribute.ttcIndex = global::Jammit.Resource.Attribute.ttcIndex;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_ripple_material_light = global::Jammit.Resource.Color.androidx_core_ripple_material_light;
+			global::Xamarin.Essentials.Resource.Color.androidx_core_secondary_text_default_material_light = global::Jammit.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_bg_grey = global::Jammit.Resource.Color.browser_actions_bg_grey;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_divider_color = global::Jammit.Resource.Color.browser_actions_divider_color;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_text_color = global::Jammit.Resource.Color.browser_actions_text_color;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_title_color = global::Jammit.Resource.Color.browser_actions_title_color;
 			global::Xamarin.Essentials.Resource.Color.notification_action_color_filter = global::Jammit.Resource.Color.notification_action_color_filter;
 			global::Xamarin.Essentials.Resource.Color.notification_icon_bg_color = global::Jammit.Resource.Color.notification_icon_bg_color;
-			global::Xamarin.Essentials.Resource.Color.ripple_material_light = global::Jammit.Resource.Color.ripple_material_light;
-			global::Xamarin.Essentials.Resource.Color.secondary_text_default_material_light = global::Jammit.Resource.Color.secondary_text_default_material_light;
 			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_max_width = global::Jammit.Resource.Dimension.browser_actions_context_menu_max_width;
 			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_min_padding = global::Jammit.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_horizontal_material = global::Jammit.Resource.Dimension.compat_button_inset_horizontal_material;
@@ -91,47 +82,71 @@ namespace Jammit
 			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::Jammit.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::Jammit.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::Jammit.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Essentials.Resource.Id.accessibility_action_clickable_span = global::Jammit.Resource.Id.accessibility_action_clickable_span;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_0 = global::Jammit.Resource.Id.accessibility_custom_action_0;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_1 = global::Jammit.Resource.Id.accessibility_custom_action_1;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_10 = global::Jammit.Resource.Id.accessibility_custom_action_10;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_11 = global::Jammit.Resource.Id.accessibility_custom_action_11;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_12 = global::Jammit.Resource.Id.accessibility_custom_action_12;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_13 = global::Jammit.Resource.Id.accessibility_custom_action_13;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_14 = global::Jammit.Resource.Id.accessibility_custom_action_14;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_15 = global::Jammit.Resource.Id.accessibility_custom_action_15;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_16 = global::Jammit.Resource.Id.accessibility_custom_action_16;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_17 = global::Jammit.Resource.Id.accessibility_custom_action_17;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_18 = global::Jammit.Resource.Id.accessibility_custom_action_18;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_19 = global::Jammit.Resource.Id.accessibility_custom_action_19;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_2 = global::Jammit.Resource.Id.accessibility_custom_action_2;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_20 = global::Jammit.Resource.Id.accessibility_custom_action_20;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_21 = global::Jammit.Resource.Id.accessibility_custom_action_21;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_22 = global::Jammit.Resource.Id.accessibility_custom_action_22;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_23 = global::Jammit.Resource.Id.accessibility_custom_action_23;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_24 = global::Jammit.Resource.Id.accessibility_custom_action_24;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_25 = global::Jammit.Resource.Id.accessibility_custom_action_25;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_26 = global::Jammit.Resource.Id.accessibility_custom_action_26;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_27 = global::Jammit.Resource.Id.accessibility_custom_action_27;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_28 = global::Jammit.Resource.Id.accessibility_custom_action_28;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_29 = global::Jammit.Resource.Id.accessibility_custom_action_29;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_3 = global::Jammit.Resource.Id.accessibility_custom_action_3;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_30 = global::Jammit.Resource.Id.accessibility_custom_action_30;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_31 = global::Jammit.Resource.Id.accessibility_custom_action_31;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_4 = global::Jammit.Resource.Id.accessibility_custom_action_4;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_5 = global::Jammit.Resource.Id.accessibility_custom_action_5;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_6 = global::Jammit.Resource.Id.accessibility_custom_action_6;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_7 = global::Jammit.Resource.Id.accessibility_custom_action_7;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_8 = global::Jammit.Resource.Id.accessibility_custom_action_8;
+			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_9 = global::Jammit.Resource.Id.accessibility_custom_action_9;
 			global::Xamarin.Essentials.Resource.Id.actions = global::Jammit.Resource.Id.actions;
 			global::Xamarin.Essentials.Resource.Id.action_container = global::Jammit.Resource.Id.action_container;
 			global::Xamarin.Essentials.Resource.Id.action_divider = global::Jammit.Resource.Id.action_divider;
 			global::Xamarin.Essentials.Resource.Id.action_image = global::Jammit.Resource.Id.action_image;
 			global::Xamarin.Essentials.Resource.Id.action_text = global::Jammit.Resource.Id.action_text;
-			global::Xamarin.Essentials.Resource.Id.all = global::Jammit.Resource.Id.all;
 			global::Xamarin.Essentials.Resource.Id.async = global::Jammit.Resource.Id.async;
 			global::Xamarin.Essentials.Resource.Id.blocking = global::Jammit.Resource.Id.blocking;
-			global::Xamarin.Essentials.Resource.Id.bottom = global::Jammit.Resource.Id.bottom;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::Jammit.Resource.Id.browser_actions_header_text;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::Jammit.Resource.Id.browser_actions_menu_items;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::Jammit.Resource.Id.browser_actions_menu_item_icon;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::Jammit.Resource.Id.browser_actions_menu_item_text;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::Jammit.Resource.Id.browser_actions_menu_view;
-			global::Xamarin.Essentials.Resource.Id.center = global::Jammit.Resource.Id.center;
-			global::Xamarin.Essentials.Resource.Id.center_horizontal = global::Jammit.Resource.Id.center_horizontal;
-			global::Xamarin.Essentials.Resource.Id.center_vertical = global::Jammit.Resource.Id.center_vertical;
 			global::Xamarin.Essentials.Resource.Id.chronometer = global::Jammit.Resource.Id.chronometer;
-			global::Xamarin.Essentials.Resource.Id.clip_horizontal = global::Jammit.Resource.Id.clip_horizontal;
-			global::Xamarin.Essentials.Resource.Id.clip_vertical = global::Jammit.Resource.Id.clip_vertical;
-			global::Xamarin.Essentials.Resource.Id.end = global::Jammit.Resource.Id.end;
-			global::Xamarin.Essentials.Resource.Id.fill = global::Jammit.Resource.Id.fill;
-			global::Xamarin.Essentials.Resource.Id.fill_horizontal = global::Jammit.Resource.Id.fill_horizontal;
-			global::Xamarin.Essentials.Resource.Id.fill_vertical = global::Jammit.Resource.Id.fill_vertical;
+			global::Xamarin.Essentials.Resource.Id.dialog_button = global::Jammit.Resource.Id.dialog_button;
 			global::Xamarin.Essentials.Resource.Id.forever = global::Jammit.Resource.Id.forever;
 			global::Xamarin.Essentials.Resource.Id.icon = global::Jammit.Resource.Id.icon;
 			global::Xamarin.Essentials.Resource.Id.icon_group = global::Jammit.Resource.Id.icon_group;
 			global::Xamarin.Essentials.Resource.Id.info = global::Jammit.Resource.Id.info;
 			global::Xamarin.Essentials.Resource.Id.italic = global::Jammit.Resource.Id.italic;
-			global::Xamarin.Essentials.Resource.Id.left = global::Jammit.Resource.Id.left;
 			global::Xamarin.Essentials.Resource.Id.line1 = global::Jammit.Resource.Id.line1;
 			global::Xamarin.Essentials.Resource.Id.line3 = global::Jammit.Resource.Id.line3;
-			global::Xamarin.Essentials.Resource.Id.none = global::Jammit.Resource.Id.none;
 			global::Xamarin.Essentials.Resource.Id.normal = global::Jammit.Resource.Id.normal;
 			global::Xamarin.Essentials.Resource.Id.notification_background = global::Jammit.Resource.Id.notification_background;
 			global::Xamarin.Essentials.Resource.Id.notification_main_column = global::Jammit.Resource.Id.notification_main_column;
 			global::Xamarin.Essentials.Resource.Id.notification_main_column_container = global::Jammit.Resource.Id.notification_main_column_container;
-			global::Xamarin.Essentials.Resource.Id.right = global::Jammit.Resource.Id.right;
 			global::Xamarin.Essentials.Resource.Id.right_icon = global::Jammit.Resource.Id.right_icon;
 			global::Xamarin.Essentials.Resource.Id.right_side = global::Jammit.Resource.Id.right_side;
-			global::Xamarin.Essentials.Resource.Id.start = global::Jammit.Resource.Id.start;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_actions = global::Jammit.Resource.Id.tag_accessibility_actions;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_clickable_spans = global::Jammit.Resource.Id.tag_accessibility_clickable_spans;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_heading = global::Jammit.Resource.Id.tag_accessibility_heading;
+			global::Xamarin.Essentials.Resource.Id.tag_accessibility_pane_title = global::Jammit.Resource.Id.tag_accessibility_pane_title;
+			global::Xamarin.Essentials.Resource.Id.tag_screen_reader_focusable = global::Jammit.Resource.Id.tag_screen_reader_focusable;
 			global::Xamarin.Essentials.Resource.Id.tag_transition_group = global::Jammit.Resource.Id.tag_transition_group;
 			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_event_manager = global::Jammit.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_listeners = global::Jammit.Resource.Id.tag_unhandled_key_listeners;
@@ -139,16 +154,20 @@ namespace Jammit
 			global::Xamarin.Essentials.Resource.Id.text2 = global::Jammit.Resource.Id.text2;
 			global::Xamarin.Essentials.Resource.Id.time = global::Jammit.Resource.Id.time;
 			global::Xamarin.Essentials.Resource.Id.title = global::Jammit.Resource.Id.title;
-			global::Xamarin.Essentials.Resource.Id.top = global::Jammit.Resource.Id.top;
 			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::Jammit.Resource.Integer.status_bar_notification_info_maxnum;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::Jammit.Resource.Layout.browser_actions_context_menu_page;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::Jammit.Resource.Layout.browser_actions_context_menu_row;
+			global::Xamarin.Essentials.Resource.Layout.custom_dialog = global::Jammit.Resource.Layout.custom_dialog;
 			global::Xamarin.Essentials.Resource.Layout.notification_action = global::Jammit.Resource.Layout.notification_action;
 			global::Xamarin.Essentials.Resource.Layout.notification_action_tombstone = global::Jammit.Resource.Layout.notification_action_tombstone;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_custom_big = global::Jammit.Resource.Layout.notification_template_custom_big;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_icon_group = global::Jammit.Resource.Layout.notification_template_icon_group;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_part_chronometer = global::Jammit.Resource.Layout.notification_template_part_chronometer;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_part_time = global::Jammit.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Essentials.Resource.String.copy_toast_msg = global::Jammit.Resource.String.copy_toast_msg;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_copy_link = global::Jammit.Resource.String.fallback_menu_item_copy_link;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_open_in_browser = global::Jammit.Resource.String.fallback_menu_item_open_in_browser;
+			global::Xamarin.Essentials.Resource.String.fallback_menu_item_share_link = global::Jammit.Resource.String.fallback_menu_item_share_link;
 			global::Xamarin.Essentials.Resource.String.status_bar_notification_info_overflow = global::Jammit.Resource.String.status_bar_notification_info_overflow;
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification = global::Jammit.Resource.Style.TextAppearance_Compat_Notification;
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Info = global::Jammit.Resource.Style.TextAppearance_Compat_Notification_Info;
@@ -157,22 +176,10 @@ namespace Jammit
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Title = global::Jammit.Resource.Style.TextAppearance_Compat_Notification_Title;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::Jammit.Resource.Style.Widget_Compat_NotificationActionContainer;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::Jammit.Resource.Style.Widget_Compat_NotificationActionText;
-			global::Xamarin.Essentials.Resource.Style.Widget_Support_CoordinatorLayout = global::Jammit.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::Jammit.Resource.Styleable.ColorStateListItem;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::Jammit.Resource.Styleable.ColorStateListItem_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::Jammit.Resource.Styleable.ColorStateListItem_android_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::Jammit.Resource.Styleable.ColorStateListItem_android_color;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout = global::Jammit.Resource.Styleable.CoordinatorLayout;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_keylines = global::Jammit.Resource.Styleable.CoordinatorLayout_keylines;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::Jammit.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::Jammit.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::Jammit.Resource.Styleable.FontFamily;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::Jammit.Resource.Styleable.FontFamilyFont;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::Jammit.Resource.Styleable.FontFamilyFont_android_font;
@@ -207,6 +214,7 @@ namespace Jammit
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::Jammit.Resource.Styleable.GradientColor_android_startY;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::Jammit.Resource.Styleable.GradientColor_android_tileMode;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::Jammit.Resource.Styleable.GradientColor_android_type;
+			global::Xamarin.Essentials.Resource.Xml.image_share_filepaths = global::Jammit.Resource.Xml.image_share_filepaths;
 			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::Jammit.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::Jammit.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::Jammit.Resource.Animation.abc_fade_out;
@@ -220,6 +228,18 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_top = global::Jammit.Resource.Animation.abc_slide_out_top;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_tooltip_enter = global::Jammit.Resource.Animation.abc_tooltip_enter;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_tooltip_exit = global::Jammit.Resource.Animation.abc_tooltip_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::Jammit.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::Jammit.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::Jammit.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::Jammit.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::Jammit.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::Jammit.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::Jammit.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::Jammit.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_in = global::Jammit.Resource.Animation.design_bottom_sheet_slide_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_out = global::Jammit.Resource.Animation.design_bottom_sheet_slide_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_in = global::Jammit.Resource.Animation.design_snackbar_in;
@@ -228,12 +248,27 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromRight = global::Jammit.Resource.Animation.EnterFromRight;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToLeft = global::Jammit.Resource.Animation.ExitToLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToRight = global::Jammit.Resource.Animation.ExitToRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.fragment_close_enter = global::Jammit.Resource.Animation.fragment_close_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.fragment_close_exit = global::Jammit.Resource.Animation.fragment_close_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.fragment_fade_enter = global::Jammit.Resource.Animation.fragment_fade_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.fragment_fade_exit = global::Jammit.Resource.Animation.fragment_fade_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.fragment_fast_out_extra_slow_in = global::Jammit.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.fragment_open_enter = global::Jammit.Resource.Animation.fragment_open_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.fragment_open_exit = global::Jammit.Resource.Animation.fragment_open_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.mtrl_bottom_sheet_slide_in = global::Jammit.Resource.Animation.mtrl_bottom_sheet_slide_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.mtrl_bottom_sheet_slide_out = global::Jammit.Resource.Animation.mtrl_bottom_sheet_slide_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.mtrl_card_lowers_interpolator = global::Jammit.Resource.Animation.mtrl_card_lowers_interpolator;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_appbar_state_list_animator = global::Jammit.Resource.Animator.design_appbar_state_list_animator;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_fab_hide_motion_spec = global::Jammit.Resource.Animator.design_fab_hide_motion_spec;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_fab_show_motion_spec = global::Jammit.Resource.Animator.design_fab_show_motion_spec;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_btn_state_list_anim = global::Jammit.Resource.Animator.mtrl_btn_state_list_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::Jammit.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_card_state_list_anim = global::Jammit.Resource.Animator.mtrl_card_state_list_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_chip_state_list_anim = global::Jammit.Resource.Animator.mtrl_chip_state_list_anim;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_extended_fab_change_size_motion_spec = global::Jammit.Resource.Animator.mtrl_extended_fab_change_size_motion_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_extended_fab_hide_motion_spec = global::Jammit.Resource.Animator.mtrl_extended_fab_hide_motion_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_extended_fab_show_motion_spec = global::Jammit.Resource.Animator.mtrl_extended_fab_show_motion_spec;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_extended_fab_state_list_animator = global::Jammit.Resource.Animator.mtrl_extended_fab_state_list_animator;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_fab_hide_motion_spec = global::Jammit.Resource.Animator.mtrl_fab_hide_motion_spec;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_fab_show_motion_spec = global::Jammit.Resource.Animator.mtrl_fab_show_motion_spec;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::Jammit.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
@@ -270,6 +305,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowButtonStyle = global::Jammit.Resource.Attribute.actionOverflowButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowMenuStyle = global::Jammit.Resource.Attribute.actionOverflowMenuStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionProviderClass = global::Jammit.Resource.Attribute.actionProviderClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionTextColorAlpha = global::Jammit.Resource.Attribute.actionTextColorAlpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionViewClass = global::Jammit.Resource.Attribute.actionViewClass;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.activityChooserViewStyle = global::Jammit.Resource.Attribute.activityChooserViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogButtonGroupStyle = global::Jammit.Resource.Attribute.alertDialogButtonGroupStyle;
@@ -279,6 +315,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.allowStacking = global::Jammit.Resource.Attribute.allowStacking;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alpha = global::Jammit.Resource.Attribute.alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alphabeticModifiers = global::Jammit.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.animationMode = global::Jammit.Resource.Attribute.animationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.appBarLayoutStyle = global::Jammit.Resource.Attribute.appBarLayoutStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowHeadLength = global::Jammit.Resource.Attribute.arrowHeadLength;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowShaftLength = global::Jammit.Resource.Attribute.arrowShaftLength;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoCompleteTextViewStyle = global::Jammit.Resource.Attribute.autoCompleteTextViewStyle;
@@ -288,16 +326,29 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeStepGranularity = global::Jammit.Resource.Attribute.autoSizeStepGranularity;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeTextType = global::Jammit.Resource.Attribute.autoSizeTextType;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.background = global::Jammit.Resource.Attribute.background;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundColor = global::Jammit.Resource.Attribute.backgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundInsetBottom = global::Jammit.Resource.Attribute.backgroundInsetBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundInsetEnd = global::Jammit.Resource.Attribute.backgroundInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundInsetStart = global::Jammit.Resource.Attribute.backgroundInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundInsetTop = global::Jammit.Resource.Attribute.backgroundInsetTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundOverlayColorAlpha = global::Jammit.Resource.Attribute.backgroundOverlayColorAlpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundSplit = global::Jammit.Resource.Attribute.backgroundSplit;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundStacked = global::Jammit.Resource.Attribute.backgroundStacked;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTint = global::Jammit.Resource.Attribute.backgroundTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTintMode = global::Jammit.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.badgeGravity = global::Jammit.Resource.Attribute.badgeGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.badgeStyle = global::Jammit.Resource.Attribute.badgeStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.badgeTextColor = global::Jammit.Resource.Attribute.badgeTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.barLength = global::Jammit.Resource.Attribute.barLength;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_autoHide = global::Jammit.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_autoShrink = global::Jammit.Resource.Attribute.behavior_autoShrink;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_expandedOffset = global::Jammit.Resource.Attribute.behavior_expandedOffset;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_fitToContents = global::Jammit.Resource.Attribute.behavior_fitToContents;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_halfExpandedRatio = global::Jammit.Resource.Attribute.behavior_halfExpandedRatio;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_hideable = global::Jammit.Resource.Attribute.behavior_hideable;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_overlapTop = global::Jammit.Resource.Attribute.behavior_overlapTop;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_peekHeight = global::Jammit.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_saveFlags = global::Jammit.Resource.Attribute.behavior_saveFlags;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_skipCollapsed = global::Jammit.Resource.Attribute.behavior_skipCollapsed;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderlessButtonStyle = global::Jammit.Resource.Attribute.borderlessButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderWidth = global::Jammit.Resource.Attribute.borderWidth;
@@ -314,11 +365,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxCornerRadiusTopStart = global::Jammit.Resource.Attribute.boxCornerRadiusTopStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxStrokeColor = global::Jammit.Resource.Attribute.boxStrokeColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxStrokeWidth = global::Jammit.Resource.Attribute.boxStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.boxStrokeWidthFocused = global::Jammit.Resource.Attribute.boxStrokeWidthFocused;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarButtonStyle = global::Jammit.Resource.Attribute.buttonBarButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNegativeButtonStyle = global::Jammit.Resource.Attribute.buttonBarNegativeButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNeutralButtonStyle = global::Jammit.Resource.Attribute.buttonBarNeutralButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarPositiveButtonStyle = global::Jammit.Resource.Attribute.buttonBarPositiveButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarStyle = global::Jammit.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonCompat = global::Jammit.Resource.Attribute.buttonCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonGravity = global::Jammit.Resource.Attribute.buttonGravity;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonIconDimen = global::Jammit.Resource.Attribute.buttonIconDimen;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonPanelSideLayout = global::Jammit.Resource.Attribute.buttonPanelSideLayout;
@@ -329,14 +382,17 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardBackgroundColor = global::Jammit.Resource.Attribute.cardBackgroundColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardCornerRadius = global::Jammit.Resource.Attribute.cardCornerRadius;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardElevation = global::Jammit.Resource.Attribute.cardElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardForegroundColor = global::Jammit.Resource.Attribute.cardForegroundColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardMaxElevation = global::Jammit.Resource.Attribute.cardMaxElevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardPreventCornerOverlap = global::Jammit.Resource.Attribute.cardPreventCornerOverlap;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardUseCompatPadding = global::Jammit.Resource.Attribute.cardUseCompatPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardViewStyle = global::Jammit.Resource.Attribute.cardViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkboxStyle = global::Jammit.Resource.Attribute.checkboxStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedButton = global::Jammit.Resource.Attribute.checkedButton;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedChip = global::Jammit.Resource.Attribute.checkedChip;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIcon = global::Jammit.Resource.Attribute.checkedIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIconEnabled = global::Jammit.Resource.Attribute.checkedIconEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIconTint = global::Jammit.Resource.Attribute.checkedIconTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedIconVisible = global::Jammit.Resource.Attribute.checkedIconVisible;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedTextViewStyle = global::Jammit.Resource.Attribute.checkedTextViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipBackgroundColor = global::Jammit.Resource.Attribute.chipBackgroundColor;
@@ -349,6 +405,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipIconTint = global::Jammit.Resource.Attribute.chipIconTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipIconVisible = global::Jammit.Resource.Attribute.chipIconVisible;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipMinHeight = global::Jammit.Resource.Attribute.chipMinHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipMinTouchTargetSize = global::Jammit.Resource.Attribute.chipMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipSpacing = global::Jammit.Resource.Attribute.chipSpacing;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipSpacingHorizontal = global::Jammit.Resource.Attribute.chipSpacingHorizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipSpacingVertical = global::Jammit.Resource.Attribute.chipSpacingVertical;
@@ -357,6 +414,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStrokeColor = global::Jammit.Resource.Attribute.chipStrokeColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStrokeWidth = global::Jammit.Resource.Attribute.chipStrokeWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipStyle = global::Jammit.Resource.Attribute.chipStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.chipSurfaceColor = global::Jammit.Resource.Attribute.chipSurfaceColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIcon = global::Jammit.Resource.Attribute.closeIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconEnabled = global::Jammit.Resource.Attribute.closeIconEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIconEndPadding = global::Jammit.Resource.Attribute.closeIconEndPadding;
@@ -378,9 +436,19 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlHighlight = global::Jammit.Resource.Attribute.colorControlHighlight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlNormal = global::Jammit.Resource.Attribute.colorControlNormal;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorError = global::Jammit.Resource.Attribute.colorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorOnBackground = global::Jammit.Resource.Attribute.colorOnBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorOnError = global::Jammit.Resource.Attribute.colorOnError;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorOnPrimary = global::Jammit.Resource.Attribute.colorOnPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorOnPrimarySurface = global::Jammit.Resource.Attribute.colorOnPrimarySurface;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorOnSecondary = global::Jammit.Resource.Attribute.colorOnSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorOnSurface = global::Jammit.Resource.Attribute.colorOnSurface;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimary = global::Jammit.Resource.Attribute.colorPrimary;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimaryDark = global::Jammit.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimarySurface = global::Jammit.Resource.Attribute.colorPrimarySurface;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimaryVariant = global::Jammit.Resource.Attribute.colorPrimaryVariant;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSecondary = global::Jammit.Resource.Attribute.colorSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSecondaryVariant = global::Jammit.Resource.Attribute.colorSecondaryVariant;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSurface = global::Jammit.Resource.Attribute.colorSurface;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSwitchThumbNormal = global::Jammit.Resource.Attribute.colorSwitchThumbNormal;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.commitIcon = global::Jammit.Resource.Attribute.commitIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentDescription = global::Jammit.Resource.Attribute.contentDescription;
@@ -398,12 +466,28 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentScrim = global::Jammit.Resource.Attribute.contentScrim;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.controlBackground = global::Jammit.Resource.Attribute.controlBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.coordinatorLayoutStyle = global::Jammit.Resource.Attribute.coordinatorLayoutStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerFamily = global::Jammit.Resource.Attribute.cornerFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerFamilyBottomLeft = global::Jammit.Resource.Attribute.cornerFamilyBottomLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerFamilyBottomRight = global::Jammit.Resource.Attribute.cornerFamilyBottomRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerFamilyTopLeft = global::Jammit.Resource.Attribute.cornerFamilyTopLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerFamilyTopRight = global::Jammit.Resource.Attribute.cornerFamilyTopRight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerRadius = global::Jammit.Resource.Attribute.cornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerSize = global::Jammit.Resource.Attribute.cornerSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerSizeBottomLeft = global::Jammit.Resource.Attribute.cornerSizeBottomLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerSizeBottomRight = global::Jammit.Resource.Attribute.cornerSizeBottomRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerSizeTopLeft = global::Jammit.Resource.Attribute.cornerSizeTopLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cornerSizeTopRight = global::Jammit.Resource.Attribute.cornerSizeTopRight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterEnabled = global::Jammit.Resource.Attribute.counterEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterMaxLength = global::Jammit.Resource.Attribute.counterMaxLength;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterOverflowTextAppearance = global::Jammit.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterOverflowTextColor = global::Jammit.Resource.Attribute.counterOverflowTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterTextAppearance = global::Jammit.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterTextColor = global::Jammit.Resource.Attribute.counterTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.customNavigationLayout = global::Jammit.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dayInvalidStyle = global::Jammit.Resource.Attribute.dayInvalidStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.daySelectedStyle = global::Jammit.Resource.Attribute.daySelectedStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dayStyle = global::Jammit.Resource.Attribute.dayStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dayTodayStyle = global::Jammit.Resource.Attribute.dayTodayStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.defaultQueryHint = global::Jammit.Resource.Attribute.defaultQueryHint;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogCornerRadius = global::Jammit.Resource.Attribute.dialogCornerRadius;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogPreferredPadding = global::Jammit.Resource.Attribute.dialogPreferredPadding;
@@ -413,18 +497,40 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerHorizontal = global::Jammit.Resource.Attribute.dividerHorizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerPadding = global::Jammit.Resource.Attribute.dividerPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerVertical = global::Jammit.Resource.Attribute.dividerVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableBottomCompat = global::Jammit.Resource.Attribute.drawableBottomCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableEndCompat = global::Jammit.Resource.Attribute.drawableEndCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableLeftCompat = global::Jammit.Resource.Attribute.drawableLeftCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableRightCompat = global::Jammit.Resource.Attribute.drawableRightCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableSize = global::Jammit.Resource.Attribute.drawableSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableStartCompat = global::Jammit.Resource.Attribute.drawableStartCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableTint = global::Jammit.Resource.Attribute.drawableTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableTintMode = global::Jammit.Resource.Attribute.drawableTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableTopCompat = global::Jammit.Resource.Attribute.drawableTopCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawerArrowStyle = global::Jammit.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawerLayoutStyle = global::Jammit.Resource.Attribute.drawerLayoutStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropdownListPreferredItemHeight = global::Jammit.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropDownListViewStyle = global::Jammit.Resource.Attribute.dropDownListViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextBackground = global::Jammit.Resource.Attribute.editTextBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextColor = global::Jammit.Resource.Attribute.editTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextStyle = global::Jammit.Resource.Attribute.editTextStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevation = global::Jammit.Resource.Attribute.elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevationOverlayColor = global::Jammit.Resource.Attribute.elevationOverlayColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevationOverlayEnabled = global::Jammit.Resource.Attribute.elevationOverlayEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconCheckable = global::Jammit.Resource.Attribute.endIconCheckable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconContentDescription = global::Jammit.Resource.Attribute.endIconContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconDrawable = global::Jammit.Resource.Attribute.endIconDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconMode = global::Jammit.Resource.Attribute.endIconMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconTint = global::Jammit.Resource.Attribute.endIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.endIconTintMode = global::Jammit.Resource.Attribute.endIconTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.enforceMaterialTheme = global::Jammit.Resource.Attribute.enforceMaterialTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.enforceTextAppearance = global::Jammit.Resource.Attribute.enforceTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ensureMinTouchTargetSize = global::Jammit.Resource.Attribute.ensureMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorEnabled = global::Jammit.Resource.Attribute.errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorIconDrawable = global::Jammit.Resource.Attribute.errorIconDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorIconTint = global::Jammit.Resource.Attribute.errorIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorIconTintMode = global::Jammit.Resource.Attribute.errorIconTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorTextAppearance = global::Jammit.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorTextColor = global::Jammit.Resource.Attribute.errorTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandActivityOverflowButtonDrawable = global::Jammit.Resource.Attribute.expandActivityOverflowButtonDrawable;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expanded = global::Jammit.Resource.Attribute.expanded;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleGravity = global::Jammit.Resource.Attribute.expandedTitleGravity;
@@ -434,7 +540,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginStart = global::Jammit.Resource.Attribute.expandedTitleMarginStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginTop = global::Jammit.Resource.Attribute.expandedTitleMarginTop;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleTextAppearance = global::Jammit.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.extendedFloatingActionButtonStyle = global::Jammit.Resource.Attribute.extendedFloatingActionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.extendMotionSpec = global::Jammit.Resource.Attribute.extendMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabAlignmentMode = global::Jammit.Resource.Attribute.fabAlignmentMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabAnimationMode = global::Jammit.Resource.Attribute.fabAnimationMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabCradleMargin = global::Jammit.Resource.Attribute.fabCradleMargin;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabCradleRoundedCornerRadius = global::Jammit.Resource.Attribute.fabCradleRoundedCornerRadius;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabCradleVerticalOffset = global::Jammit.Resource.Attribute.fabCradleVerticalOffset;
@@ -466,12 +575,14 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.helperText = global::Jammit.Resource.Attribute.helperText;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.helperTextEnabled = global::Jammit.Resource.Attribute.helperTextEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.helperTextTextAppearance = global::Jammit.Resource.Attribute.helperTextTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.helperTextTextColor = global::Jammit.Resource.Attribute.helperTextTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideMotionSpec = global::Jammit.Resource.Attribute.hideMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideOnContentScroll = global::Jammit.Resource.Attribute.hideOnContentScroll;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideOnScroll = global::Jammit.Resource.Attribute.hideOnScroll;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintAnimationEnabled = global::Jammit.Resource.Attribute.hintAnimationEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintEnabled = global::Jammit.Resource.Attribute.hintEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintTextAppearance = global::Jammit.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintTextColor = global::Jammit.Resource.Attribute.hintTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeAsUpIndicator = global::Jammit.Resource.Attribute.homeAsUpIndicator;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeLayout = global::Jammit.Resource.Attribute.homeLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hoveredFocusedTranslationZ = global::Jammit.Resource.Attribute.hoveredFocusedTranslationZ;
@@ -489,14 +600,27 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.initialActivityCount = global::Jammit.Resource.Attribute.initialActivityCount;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.insetForeground = global::Jammit.Resource.Attribute.insetForeground;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.isLightTheme = global::Jammit.Resource.Attribute.isLightTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.isMaterialTheme = global::Jammit.Resource.Attribute.isMaterialTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemBackground = global::Jammit.Resource.Attribute.itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemFillColor = global::Jammit.Resource.Attribute.itemFillColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemHorizontalPadding = global::Jammit.Resource.Attribute.itemHorizontalPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemHorizontalTranslationEnabled = global::Jammit.Resource.Attribute.itemHorizontalTranslationEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconPadding = global::Jammit.Resource.Attribute.itemIconPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconSize = global::Jammit.Resource.Attribute.itemIconSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconTint = global::Jammit.Resource.Attribute.itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemMaxLines = global::Jammit.Resource.Attribute.itemMaxLines;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemPadding = global::Jammit.Resource.Attribute.itemPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemRippleColor = global::Jammit.Resource.Attribute.itemRippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemShapeAppearance = global::Jammit.Resource.Attribute.itemShapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemShapeAppearanceOverlay = global::Jammit.Resource.Attribute.itemShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemShapeFillColor = global::Jammit.Resource.Attribute.itemShapeFillColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemShapeInsetBottom = global::Jammit.Resource.Attribute.itemShapeInsetBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemShapeInsetEnd = global::Jammit.Resource.Attribute.itemShapeInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemShapeInsetStart = global::Jammit.Resource.Attribute.itemShapeInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemShapeInsetTop = global::Jammit.Resource.Attribute.itemShapeInsetTop;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemSpacing = global::Jammit.Resource.Attribute.itemSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemStrokeColor = global::Jammit.Resource.Attribute.itemStrokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemStrokeWidth = global::Jammit.Resource.Attribute.itemStrokeWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearance = global::Jammit.Resource.Attribute.itemTextAppearance;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearanceActive = global::Jammit.Resource.Attribute.itemTextAppearanceActive;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearanceInactive = global::Jammit.Resource.Attribute.itemTextAppearanceInactive;
@@ -517,9 +641,12 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollFlags = global::Jammit.Resource.Attribute.layout_scrollFlags;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollInterpolator = global::Jammit.Resource.Attribute.layout_scrollInterpolator;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.liftOnScroll = global::Jammit.Resource.Attribute.liftOnScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.liftOnScrollTargetViewId = global::Jammit.Resource.Attribute.liftOnScrollTargetViewId;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lineHeight = global::Jammit.Resource.Attribute.lineHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lineSpacing = global::Jammit.Resource.Attribute.lineSpacing;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceBackgroundIndicator = global::Jammit.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::Jammit.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::Jammit.Resource.Attribute.listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listDividerAlertDialog = global::Jammit.Resource.Attribute.listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listItemLayout = global::Jammit.Resource.Attribute.listItemLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listLayout = global::Jammit.Resource.Attribute.listLayout;
@@ -528,22 +655,45 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeight = global::Jammit.Resource.Attribute.listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightLarge = global::Jammit.Resource.Attribute.listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightSmall = global::Jammit.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingEnd = global::Jammit.Resource.Attribute.listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingLeft = global::Jammit.Resource.Attribute.listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingRight = global::Jammit.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingStart = global::Jammit.Resource.Attribute.listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logo = global::Jammit.Resource.Attribute.logo;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logoDescription = global::Jammit.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogBodyTextStyle = global::Jammit.Resource.Attribute.materialAlertDialogBodyTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogTheme = global::Jammit.Resource.Attribute.materialAlertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogTitleIconStyle = global::Jammit.Resource.Attribute.materialAlertDialogTitleIconStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogTitlePanelStyle = global::Jammit.Resource.Attribute.materialAlertDialogTitlePanelStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialAlertDialogTitleTextStyle = global::Jammit.Resource.Attribute.materialAlertDialogTitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialButtonOutlinedStyle = global::Jammit.Resource.Attribute.materialButtonOutlinedStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialButtonStyle = global::Jammit.Resource.Attribute.materialButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialButtonToggleGroupStyle = global::Jammit.Resource.Attribute.materialButtonToggleGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarDay = global::Jammit.Resource.Attribute.materialCalendarDay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarFullscreenTheme = global::Jammit.Resource.Attribute.materialCalendarFullscreenTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarHeaderConfirmButton = global::Jammit.Resource.Attribute.materialCalendarHeaderConfirmButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarHeaderDivider = global::Jammit.Resource.Attribute.materialCalendarHeaderDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarHeaderLayout = global::Jammit.Resource.Attribute.materialCalendarHeaderLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarHeaderSelection = global::Jammit.Resource.Attribute.materialCalendarHeaderSelection;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarHeaderTitle = global::Jammit.Resource.Attribute.materialCalendarHeaderTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarHeaderToggleButton = global::Jammit.Resource.Attribute.materialCalendarHeaderToggleButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarStyle = global::Jammit.Resource.Attribute.materialCalendarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCalendarTheme = global::Jammit.Resource.Attribute.materialCalendarTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialCardViewStyle = global::Jammit.Resource.Attribute.materialCardViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialThemeOverlay = global::Jammit.Resource.Attribute.materialThemeOverlay;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxActionInlineWidth = global::Jammit.Resource.Attribute.maxActionInlineWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxButtonHeight = global::Jammit.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxCharacterCount = global::Jammit.Resource.Attribute.maxCharacterCount;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxImageSize = global::Jammit.Resource.Attribute.maxImageSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.measureWithLargestChild = global::Jammit.Resource.Attribute.measureWithLargestChild;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.menu = global::Jammit.Resource.Attribute.menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.minTouchTargetSize = global::Jammit.Resource.Attribute.minTouchTargetSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.multiChoiceItemLayout = global::Jammit.Resource.Attribute.multiChoiceItemLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationContentDescription = global::Jammit.Resource.Attribute.navigationContentDescription;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationIcon = global::Jammit.Resource.Attribute.navigationIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationMode = global::Jammit.Resource.Attribute.navigationMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationViewStyle = global::Jammit.Resource.Attribute.navigationViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.number = global::Jammit.Resource.Attribute.number;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.numericModifiers = global::Jammit.Resource.Attribute.numericModifiers;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.overlapAnchor = global::Jammit.Resource.Attribute.overlapAnchor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingBottomNoButtons = global::Jammit.Resource.Attribute.paddingBottomNoButtons;
@@ -558,6 +708,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleEnabled = global::Jammit.Resource.Attribute.passwordToggleEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTint = global::Jammit.Resource.Attribute.passwordToggleTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTintMode = global::Jammit.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupMenuBackground = global::Jammit.Resource.Attribute.popupMenuBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupMenuStyle = global::Jammit.Resource.Attribute.popupMenuStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupTheme = global::Jammit.Resource.Attribute.popupTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupWindowStyle = global::Jammit.Resource.Attribute.popupWindowStyle;
@@ -568,9 +719,11 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryBackground = global::Jammit.Resource.Attribute.queryBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryHint = global::Jammit.Resource.Attribute.queryHint;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.radioButtonStyle = global::Jammit.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.rangeFillColor = global::Jammit.Resource.Attribute.rangeFillColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyle = global::Jammit.Resource.Attribute.ratingBarStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleIndicator = global::Jammit.Resource.Attribute.ratingBarStyleIndicator;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleSmall = global::Jammit.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.recyclerViewStyle = global::Jammit.Resource.Attribute.recyclerViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.reverseLayout = global::Jammit.Resource.Attribute.reverseLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.rippleColor = global::Jammit.Resource.Attribute.rippleColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimAnimationDuration = global::Jammit.Resource.Attribute.scrimAnimationDuration;
@@ -583,11 +736,17 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.seekBarStyle = global::Jammit.Resource.Attribute.seekBarStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackground = global::Jammit.Resource.Attribute.selectableItemBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackgroundBorderless = global::Jammit.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.shapeAppearance = global::Jammit.Resource.Attribute.shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.shapeAppearanceLargeComponent = global::Jammit.Resource.Attribute.shapeAppearanceLargeComponent;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.shapeAppearanceMediumComponent = global::Jammit.Resource.Attribute.shapeAppearanceMediumComponent;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.shapeAppearanceOverlay = global::Jammit.Resource.Attribute.shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.shapeAppearanceSmallComponent = global::Jammit.Resource.Attribute.shapeAppearanceSmallComponent;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showAsAction = global::Jammit.Resource.Attribute.showAsAction;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showDividers = global::Jammit.Resource.Attribute.showDividers;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showMotionSpec = global::Jammit.Resource.Attribute.showMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showText = global::Jammit.Resource.Attribute.showText;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showTitle = global::Jammit.Resource.Attribute.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.shrinkMotionSpec = global::Jammit.Resource.Attribute.shrinkMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleChoiceItemLayout = global::Jammit.Resource.Attribute.singleChoiceItemLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleLine = global::Jammit.Resource.Attribute.singleLine;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleSelection = global::Jammit.Resource.Attribute.singleSelection;
@@ -600,12 +759,19 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.splitTrack = global::Jammit.Resource.Attribute.splitTrack;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.srcCompat = global::Jammit.Resource.Attribute.srcCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.stackFromEnd = global::Jammit.Resource.Attribute.stackFromEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.startIconCheckable = global::Jammit.Resource.Attribute.startIconCheckable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.startIconContentDescription = global::Jammit.Resource.Attribute.startIconContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.startIconDrawable = global::Jammit.Resource.Attribute.startIconDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.startIconTint = global::Jammit.Resource.Attribute.startIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.startIconTintMode = global::Jammit.Resource.Attribute.startIconTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_above_anchor = global::Jammit.Resource.Attribute.state_above_anchor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsed = global::Jammit.Resource.Attribute.state_collapsed;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsible = global::Jammit.Resource.Attribute.state_collapsible;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_dragged = global::Jammit.Resource.Attribute.state_dragged;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_liftable = global::Jammit.Resource.Attribute.state_liftable;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_lifted = global::Jammit.Resource.Attribute.state_lifted;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarBackground = global::Jammit.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarForeground = global::Jammit.Resource.Attribute.statusBarForeground;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarScrim = global::Jammit.Resource.Attribute.statusBarScrim;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.strokeColor = global::Jammit.Resource.Attribute.strokeColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.strokeWidth = global::Jammit.Resource.Attribute.strokeWidth;
@@ -658,6 +824,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline5 = global::Jammit.Resource.Attribute.textAppearanceHeadline5;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceHeadline6 = global::Jammit.Resource.Attribute.textAppearanceHeadline6;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceLargePopupMenu = global::Jammit.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceLineHeightEnabled = global::Jammit.Resource.Attribute.textAppearanceLineHeightEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItem = global::Jammit.Resource.Attribute.textAppearanceListItem;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSecondary = global::Jammit.Resource.Attribute.textAppearanceListItemSecondary;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSmall = global::Jammit.Resource.Attribute.textAppearanceListItemSmall;
@@ -672,8 +839,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorSearchUrl = global::Jammit.Resource.Attribute.textColorSearchUrl;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textEndPadding = global::Jammit.Resource.Attribute.textEndPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textInputStyle = global::Jammit.Resource.Attribute.textInputStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textLocale = global::Jammit.Resource.Attribute.textLocale;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textStartPadding = global::Jammit.Resource.Attribute.textStartPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.theme = global::Jammit.Resource.Attribute.theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.themeLineHeight = global::Jammit.Resource.Attribute.themeLineHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thickness = global::Jammit.Resource.Attribute.thickness;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTextPadding = global::Jammit.Resource.Attribute.thumbTextPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTint = global::Jammit.Resource.Attribute.thumbTint;
@@ -705,6 +874,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.trackTintMode = global::Jammit.Resource.Attribute.trackTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ttcIndex = global::Jammit.Resource.Attribute.ttcIndex;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.useCompatPadding = global::Jammit.Resource.Attribute.useCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.useMaterialThemeColors = global::Jammit.Resource.Attribute.useMaterialThemeColors;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.viewInflaterClass = global::Jammit.Resource.Attribute.viewInflaterClass;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.voiceIcon = global::Jammit.Resource.Attribute.voiceIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionBar = global::Jammit.Resource.Attribute.windowActionBar;
@@ -717,6 +887,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMajor = global::Jammit.Resource.Attribute.windowMinWidthMajor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMinor = global::Jammit.Resource.Attribute.windowMinWidthMinor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowNoTitle = global::Jammit.Resource.Attribute.windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.yearSelectedStyle = global::Jammit.Resource.Attribute.yearSelectedStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.yearStyle = global::Jammit.Resource.Attribute.yearStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.yearTodayStyle = global::Jammit.Resource.Attribute.yearTodayStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::Jammit.Resource.Boolean.abc_action_bar_embed_tabs;
 			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_allow_stacked_button_bar = global::Jammit.Resource.Boolean.abc_allow_stacked_button_bar;
 			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::Jammit.Resource.Boolean.abc_config_actionMenuItemAllCaps;
@@ -726,6 +899,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_borderless_text_material = global::Jammit.Resource.Color.abc_btn_colored_borderless_text_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_text_material = global::Jammit.Resource.Color.abc_btn_colored_text_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_color_highlight_material = global::Jammit.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_decor_view_status_guard = global::Jammit.Resource.Color.abc_decor_view_status_guard;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_decor_view_status_guard_light = global::Jammit.Resource.Color.abc_decor_view_status_guard_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_dark = global::Jammit.Resource.Color.abc_hint_foreground_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_light = global::Jammit.Resource.Color.abc_hint_foreground_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_disable_only_material_dark = global::Jammit.Resource.Color.abc_primary_text_disable_only_material_dark;
@@ -746,6 +921,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_switch_track = global::Jammit.Resource.Color.abc_tint_switch_track;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_dark = global::Jammit.Resource.Color.accent_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_light = global::Jammit.Resource.Color.accent_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.androidx_core_ripple_material_light = global::Jammit.Resource.Color.androidx_core_ripple_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.androidx_core_secondary_text_default_material_light = global::Jammit.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_dark = global::Jammit.Resource.Color.background_floating_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_light = global::Jammit.Resource.Color.background_floating_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.background_material_dark = global::Jammit.Resource.Color.background_material_dark;
@@ -762,9 +939,35 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_light_background = global::Jammit.Resource.Color.cardview_light_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_end_color = global::Jammit.Resource.Color.cardview_shadow_end_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_start_color = global::Jammit.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.checkbox_themeable_attribute_color = global::Jammit.Resource.Color.checkbox_themeable_attribute_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_bottom_navigation_shadow_color = global::Jammit.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_box_stroke_color = global::Jammit.Resource.Color.design_box_stroke_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_background = global::Jammit.Resource.Color.design_dark_default_color_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_error = global::Jammit.Resource.Color.design_dark_default_color_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_on_background = global::Jammit.Resource.Color.design_dark_default_color_on_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_on_error = global::Jammit.Resource.Color.design_dark_default_color_on_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_on_primary = global::Jammit.Resource.Color.design_dark_default_color_on_primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_on_secondary = global::Jammit.Resource.Color.design_dark_default_color_on_secondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_on_surface = global::Jammit.Resource.Color.design_dark_default_color_on_surface;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_primary = global::Jammit.Resource.Color.design_dark_default_color_primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_primary_dark = global::Jammit.Resource.Color.design_dark_default_color_primary_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_primary_variant = global::Jammit.Resource.Color.design_dark_default_color_primary_variant;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_secondary = global::Jammit.Resource.Color.design_dark_default_color_secondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_secondary_variant = global::Jammit.Resource.Color.design_dark_default_color_secondary_variant;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_dark_default_color_surface = global::Jammit.Resource.Color.design_dark_default_color_surface;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_background = global::Jammit.Resource.Color.design_default_color_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_error = global::Jammit.Resource.Color.design_default_color_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_on_background = global::Jammit.Resource.Color.design_default_color_on_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_on_error = global::Jammit.Resource.Color.design_default_color_on_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_on_primary = global::Jammit.Resource.Color.design_default_color_on_primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_on_secondary = global::Jammit.Resource.Color.design_default_color_on_secondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_on_surface = global::Jammit.Resource.Color.design_default_color_on_surface;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_primary = global::Jammit.Resource.Color.design_default_color_primary;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_primary_dark = global::Jammit.Resource.Color.design_default_color_primary_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_primary_variant = global::Jammit.Resource.Color.design_default_color_primary_variant;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_secondary = global::Jammit.Resource.Color.design_default_color_secondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_secondary_variant = global::Jammit.Resource.Color.design_default_color_secondary_variant;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_default_color_surface = global::Jammit.Resource.Color.design_default_color_surface;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_error = global::Jammit.Resource.Color.design_error;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_end_color = global::Jammit.Resource.Color.design_fab_shadow_end_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_mid_color = global::Jammit.Resource.Color.design_fab_shadow_mid_color;
@@ -773,6 +976,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_end_outer_color = global::Jammit.Resource.Color.design_fab_stroke_end_outer_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_inner_color = global::Jammit.Resource.Color.design_fab_stroke_top_inner_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_outer_color = global::Jammit.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_icon_tint = global::Jammit.Resource.Color.design_icon_tint;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.design_snackbar_background_color = global::Jammit.Resource.Color.design_snackbar_background_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_dark = global::Jammit.Resource.Color.dim_foreground_disabled_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_light = global::Jammit.Resource.Color.dim_foreground_disabled_material_light;
@@ -796,20 +1000,55 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_800 = global::Jammit.Resource.Color.material_grey_800;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_850 = global::Jammit.Resource.Color.material_grey_850;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_900 = global::Jammit.Resource.Color.material_grey_900;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_background_disabled = global::Jammit.Resource.Color.material_on_background_disabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_background_emphasis_high_type = global::Jammit.Resource.Color.material_on_background_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_background_emphasis_medium = global::Jammit.Resource.Color.material_on_background_emphasis_medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_primary_disabled = global::Jammit.Resource.Color.material_on_primary_disabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_primary_emphasis_high_type = global::Jammit.Resource.Color.material_on_primary_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_primary_emphasis_medium = global::Jammit.Resource.Color.material_on_primary_emphasis_medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_surface_disabled = global::Jammit.Resource.Color.material_on_surface_disabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_surface_emphasis_high_type = global::Jammit.Resource.Color.material_on_surface_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_on_surface_emphasis_medium = global::Jammit.Resource.Color.material_on_surface_emphasis_medium;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::Jammit.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_bottom_nav_colored_ripple_color = global::Jammit.Resource.Color.mtrl_bottom_nav_colored_ripple_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_bottom_nav_item_tint = global::Jammit.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_bottom_nav_ripple_color = global::Jammit.Resource.Color.mtrl_bottom_nav_ripple_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_bg_color_selector = global::Jammit.Resource.Color.mtrl_btn_bg_color_selector;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_ripple_color = global::Jammit.Resource.Color.mtrl_btn_ripple_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_stroke_color_selector = global::Jammit.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_text_btn_bg_color_selector = global::Jammit.Resource.Color.mtrl_btn_text_btn_bg_color_selector;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_text_btn_ripple_color = global::Jammit.Resource.Color.mtrl_btn_text_btn_ripple_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_text_color_disabled = global::Jammit.Resource.Color.mtrl_btn_text_color_disabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_text_color_selector = global::Jammit.Resource.Color.mtrl_btn_text_color_selector;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_btn_transparent_bg_color = global::Jammit.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_calendar_item_stroke_color = global::Jammit.Resource.Color.mtrl_calendar_item_stroke_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_calendar_selected_range = global::Jammit.Resource.Color.mtrl_calendar_selected_range;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_card_view_foreground = global::Jammit.Resource.Color.mtrl_card_view_foreground;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_card_view_ripple = global::Jammit.Resource.Color.mtrl_card_view_ripple;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_background_color = global::Jammit.Resource.Color.mtrl_chip_background_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_close_icon_tint = global::Jammit.Resource.Color.mtrl_chip_close_icon_tint;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_ripple_color = global::Jammit.Resource.Color.mtrl_chip_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_surface_color = global::Jammit.Resource.Color.mtrl_chip_surface_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_chip_text_color = global::Jammit.Resource.Color.mtrl_chip_text_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_choice_chip_background_color = global::Jammit.Resource.Color.mtrl_choice_chip_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_choice_chip_ripple_color = global::Jammit.Resource.Color.mtrl_choice_chip_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_choice_chip_text_color = global::Jammit.Resource.Color.mtrl_choice_chip_text_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_error = global::Jammit.Resource.Color.mtrl_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_extended_fab_bg_color_selector = global::Jammit.Resource.Color.mtrl_extended_fab_bg_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_extended_fab_ripple_color = global::Jammit.Resource.Color.mtrl_extended_fab_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_extended_fab_text_color_selector = global::Jammit.Resource.Color.mtrl_extended_fab_text_color_selector;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_fab_ripple_color = global::Jammit.Resource.Color.mtrl_fab_ripple_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_filled_background_color = global::Jammit.Resource.Color.mtrl_filled_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_filled_icon_tint = global::Jammit.Resource.Color.mtrl_filled_icon_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_filled_stroke_color = global::Jammit.Resource.Color.mtrl_filled_stroke_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_indicator_text_color = global::Jammit.Resource.Color.mtrl_indicator_text_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_navigation_item_background_color = global::Jammit.Resource.Color.mtrl_navigation_item_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_navigation_item_icon_tint = global::Jammit.Resource.Color.mtrl_navigation_item_icon_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_navigation_item_text_color = global::Jammit.Resource.Color.mtrl_navigation_item_text_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_on_primary_text_btn_text_color_selector = global::Jammit.Resource.Color.mtrl_on_primary_text_btn_text_color_selector;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_outlined_icon_tint = global::Jammit.Resource.Color.mtrl_outlined_icon_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_outlined_stroke_color = global::Jammit.Resource.Color.mtrl_outlined_stroke_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_popupmenu_overlay_color = global::Jammit.Resource.Color.mtrl_popupmenu_overlay_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_scrim_color = global::Jammit.Resource.Color.mtrl_scrim_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_tabs_colored_ripple_color = global::Jammit.Resource.Color.mtrl_tabs_colored_ripple_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_tabs_icon_color_selector = global::Jammit.Resource.Color.mtrl_tabs_icon_color_selector;
@@ -819,6 +1058,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_default_box_stroke_color = global::Jammit.Resource.Color.mtrl_textinput_default_box_stroke_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_disabled_color = global::Jammit.Resource.Color.mtrl_textinput_disabled_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::Jammit.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_focused_box_stroke_color = global::Jammit.Resource.Color.mtrl_textinput_focused_box_stroke_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::Jammit.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.mtrl_text_btn_text_color_selector = global::Jammit.Resource.Color.mtrl_text_btn_text_color_selector;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_action_color_filter = global::Jammit.Resource.Color.notification_action_color_filter;
@@ -844,6 +1084,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_light = global::Jammit.Resource.Color.switch_thumb_material_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_dark = global::Jammit.Resource.Color.switch_thumb_normal_material_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_light = global::Jammit.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.test_mtrl_calendar_day = global::Jammit.Resource.Color.test_mtrl_calendar_day;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.test_mtrl_calendar_day_selected = global::Jammit.Resource.Color.test_mtrl_calendar_day_selected;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_dark = global::Jammit.Resource.Color.tooltip_background_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_light = global::Jammit.Resource.Color.tooltip_background_light;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::Jammit.Resource.Dimension.abc_action_bar_content_inset_material;
@@ -894,6 +1136,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::Jammit.Resource.Dimension.abc_edit_text_inset_horizontal_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_top_material = global::Jammit.Resource.Dimension.abc_edit_text_inset_top_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_floating_window_z = global::Jammit.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_height_large_material = global::Jammit.Resource.Dimension.abc_list_item_height_large_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_height_material = global::Jammit.Resource.Dimension.abc_list_item_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_height_small_material = global::Jammit.Resource.Dimension.abc_list_item_height_small_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_padding_horizontal_material = global::Jammit.Resource.Dimension.abc_list_item_padding_horizontal_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_panel_menu_list_width = global::Jammit.Resource.Dimension.abc_panel_menu_list_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_progress_bar_height_material = global::Jammit.Resource.Dimension.abc_progress_bar_height_material;
@@ -921,6 +1166,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::Jammit.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material = global::Jammit.Resource.Dimension.abc_text_size_title_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material_toolbar = global::Jammit.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.action_bar_size = global::Jammit.Resource.Dimension.action_bar_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.appcompat_dialog_background_inset = global::Jammit.Resource.Dimension.appcompat_dialog_background_inset;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_compat_inset_shadow = global::Jammit.Resource.Dimension.cardview_compat_inset_shadow;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_elevation = global::Jammit.Resource.Dimension.cardview_default_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_radius = global::Jammit.Resource.Dimension.cardview_default_radius;
@@ -931,6 +1178,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_control_corner_material = global::Jammit.Resource.Dimension.compat_control_corner_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_notification_large_icon_max_height = global::Jammit.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_notification_large_icon_max_width = global::Jammit.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.default_dimension = global::Jammit.Resource.Dimension.default_dimension;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.def_drawer_elevation = global::Jammit.Resource.Dimension.def_drawer_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_appbar_elevation = global::Jammit.Resource.Dimension.design_appbar_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::Jammit.Resource.Dimension.design_bottom_navigation_active_item_max_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::Jammit.Resource.Dimension.design_bottom_navigation_active_item_min_width;
@@ -943,6 +1192,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_margin = global::Jammit.Resource.Dimension.design_bottom_navigation_margin;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_shadow_height = global::Jammit.Resource.Dimension.design_bottom_navigation_shadow_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_text_size = global::Jammit.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_elevation = global::Jammit.Resource.Dimension.design_bottom_sheet_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_modal_elevation = global::Jammit.Resource.Dimension.design_bottom_sheet_modal_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_peek_height_min = global::Jammit.Resource.Dimension.design_bottom_sheet_peek_height_min;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_border_width = global::Jammit.Resource.Dimension.design_fab_border_width;
@@ -961,6 +1211,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_padding_bottom = global::Jammit.Resource.Dimension.design_navigation_padding_bottom;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_separator_vertical_padding = global::Jammit.Resource.Dimension.design_navigation_separator_vertical_padding;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_action_inline_max_width = global::Jammit.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_action_text_color_alpha = global::Jammit.Resource.Dimension.design_snackbar_action_text_color_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_background_corner_radius = global::Jammit.Resource.Dimension.design_snackbar_background_corner_radius;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_elevation = global::Jammit.Resource.Dimension.design_snackbar_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::Jammit.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
@@ -990,7 +1241,24 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::Jammit.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::Jammit.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::Jammit.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_emphasis_disabled = global::Jammit.Resource.Dimension.material_emphasis_disabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_emphasis_high_type = global::Jammit.Resource.Dimension.material_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_emphasis_medium = global::Jammit.Resource.Dimension.material_emphasis_medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_text_view_test_line_height = global::Jammit.Resource.Dimension.material_text_view_test_line_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.material_text_view_test_line_height_override = global::Jammit.Resource.Dimension.material_text_view_test_line_height_override;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_alert_dialog_background_inset_end = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_end;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_alert_dialog_background_inset_start = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_start;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_alert_dialog_background_inset_top = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_alert_dialog_picker_background_inset = global::Jammit.Resource.Dimension.mtrl_alert_dialog_picker_background_inset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_badge_horizontal_edge_offset = global::Jammit.Resource.Dimension.mtrl_badge_horizontal_edge_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_badge_long_text_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_badge_long_text_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_badge_radius = global::Jammit.Resource.Dimension.mtrl_badge_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset = global::Jammit.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_badge_text_size = global::Jammit.Resource.Dimension.mtrl_badge_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_badge_with_text_radius = global::Jammit.Resource.Dimension.mtrl_badge_with_text_radius;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
@@ -1017,24 +1285,111 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::Jammit.Resource.Dimension.mtrl_btn_text_btn_padding_right;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_text_size = global::Jammit.Resource.Dimension.mtrl_btn_text_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_btn_z = global::Jammit.Resource.Dimension.mtrl_btn_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_action_height = global::Jammit.Resource.Dimension.mtrl_calendar_action_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_action_padding = global::Jammit.Resource.Dimension.mtrl_calendar_action_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_bottom_padding = global::Jammit.Resource.Dimension.mtrl_calendar_bottom_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_content_padding = global::Jammit.Resource.Dimension.mtrl_calendar_content_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_days_of_week_height = global::Jammit.Resource.Dimension.mtrl_calendar_days_of_week_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_day_corner = global::Jammit.Resource.Dimension.mtrl_calendar_day_corner;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_day_height = global::Jammit.Resource.Dimension.mtrl_calendar_day_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_day_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_calendar_day_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_day_today_stroke = global::Jammit.Resource.Dimension.mtrl_calendar_day_today_stroke;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_day_vertical_padding = global::Jammit.Resource.Dimension.mtrl_calendar_day_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_day_width = global::Jammit.Resource.Dimension.mtrl_calendar_day_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_dialog_background_inset = global::Jammit.Resource.Dimension.mtrl_calendar_dialog_background_inset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_content_padding = global::Jammit.Resource.Dimension.mtrl_calendar_header_content_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_divider_thickness = global::Jammit.Resource.Dimension.mtrl_calendar_header_divider_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_height = global::Jammit.Resource.Dimension.mtrl_calendar_header_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_height_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_header_height_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_selection_line_height = global::Jammit.Resource.Dimension.mtrl_calendar_header_selection_line_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_text_padding = global::Jammit.Resource.Dimension.mtrl_calendar_header_text_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom = global::Jammit.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_header_toggle_margin_top = global::Jammit.Resource.Dimension.mtrl_calendar_header_toggle_margin_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_landscape_header_width = global::Jammit.Resource.Dimension.mtrl_calendar_landscape_header_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis = global::Jammit.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_month_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_calendar_month_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_month_vertical_padding = global::Jammit.Resource.Dimension.mtrl_calendar_month_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_navigation_bottom_padding = global::Jammit.Resource.Dimension.mtrl_calendar_navigation_bottom_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_navigation_height = global::Jammit.Resource.Dimension.mtrl_calendar_navigation_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_navigation_top_padding = global::Jammit.Resource.Dimension.mtrl_calendar_navigation_top_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding = global::Jammit.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom = global::Jammit.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top = global::Jammit.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_text_input_padding_top = global::Jammit.Resource.Dimension.mtrl_calendar_text_input_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_title_baseline_to_top = global::Jammit.Resource.Dimension.mtrl_calendar_title_baseline_to_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_year_corner = global::Jammit.Resource.Dimension.mtrl_calendar_year_corner;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_year_height = global::Jammit.Resource.Dimension.mtrl_calendar_year_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_year_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_calendar_year_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_year_vertical_padding = global::Jammit.Resource.Dimension.mtrl_calendar_year_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_calendar_year_width = global::Jammit.Resource.Dimension.mtrl_calendar_year_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_checked_icon_margin = global::Jammit.Resource.Dimension.mtrl_card_checked_icon_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_checked_icon_size = global::Jammit.Resource.Dimension.mtrl_card_checked_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_corner_radius = global::Jammit.Resource.Dimension.mtrl_card_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_dragged_z = global::Jammit.Resource.Dimension.mtrl_card_dragged_z;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_elevation = global::Jammit.Resource.Dimension.mtrl_card_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_card_spacing = global::Jammit.Resource.Dimension.mtrl_card_spacing;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_chip_pressed_translation_z = global::Jammit.Resource.Dimension.mtrl_chip_pressed_translation_z;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_chip_text_size = global::Jammit.Resource.Dimension.mtrl_chip_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::Jammit.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::Jammit.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::Jammit.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_bottom_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_corner_radius = global::Jammit.Resource.Dimension.mtrl_extended_fab_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::Jammit.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::Jammit.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_elevation = global::Jammit.Resource.Dimension.mtrl_extended_fab_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_end_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_end_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_end_padding_icon = global::Jammit.Resource.Dimension.mtrl_extended_fab_end_padding_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_icon_size = global::Jammit.Resource.Dimension.mtrl_extended_fab_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_icon_text_spacing = global::Jammit.Resource.Dimension.mtrl_extended_fab_icon_text_spacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_min_height = global::Jammit.Resource.Dimension.mtrl_extended_fab_min_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_min_width = global::Jammit.Resource.Dimension.mtrl_extended_fab_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_start_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_start_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_start_padding_icon = global::Jammit.Resource.Dimension.mtrl_extended_fab_start_padding_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_top_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_top_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_translation_z_base = global::Jammit.Resource.Dimension.mtrl_extended_fab_translation_z_base;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused = global::Jammit.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_extended_fab_translation_z_pressed = global::Jammit.Resource.Dimension.mtrl_extended_fab_translation_z_pressed;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_fab_elevation = global::Jammit.Resource.Dimension.mtrl_fab_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_fab_min_touch_target = global::Jammit.Resource.Dimension.mtrl_fab_min_touch_target;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::Jammit.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_fab_translation_z_pressed = global::Jammit.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_high_ripple_default_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_default_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_focused_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_large_touch_target = global::Jammit.Resource.Dimension.mtrl_large_touch_target;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_low_ripple_default_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_default_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_focused_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_low_ripple_pressed_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_pressed_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_min_touch_target_size = global::Jammit.Resource.Dimension.mtrl_min_touch_target_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_elevation = global::Jammit.Resource.Dimension.mtrl_navigation_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_item_icon_padding = global::Jammit.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_item_icon_size = global::Jammit.Resource.Dimension.mtrl_navigation_item_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin = global::Jammit.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin = global::Jammit.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_shape_corner_size_large_component = global::Jammit.Resource.Dimension.mtrl_shape_corner_size_large_component;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_shape_corner_size_medium_component = global::Jammit.Resource.Dimension.mtrl_shape_corner_size_medium_component;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_shape_corner_size_small_component = global::Jammit.Resource.Dimension.mtrl_shape_corner_size_small_component;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::Jammit.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::Jammit.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha = global::Jammit.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_snackbar_margin = global::Jammit.Resource.Dimension.mtrl_snackbar_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_switch_thumb_elevation = global::Jammit.Resource.Dimension.mtrl_switch_thumb_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::Jammit.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::Jammit.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::Jammit.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::Jammit.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::Jammit.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_end_icon_margin_start = global::Jammit.Resource.Dimension.mtrl_textinput_end_icon_margin_start;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::Jammit.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_textinput_start_icon_margin_end = global::Jammit.Resource.Dimension.mtrl_textinput_start_icon_margin_end;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.mtrl_toolbar_default_height = global::Jammit.Resource.Dimension.mtrl_toolbar_default_height;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_icon_size = global::Jammit.Resource.Dimension.notification_action_icon_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_text_size = global::Jammit.Resource.Dimension.notification_action_text_size;
@@ -1051,6 +1406,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_subtext_size = global::Jammit.Resource.Dimension.notification_subtext_size;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad = global::Jammit.Resource.Dimension.notification_top_pad;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad_large_text = global::Jammit.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::Jammit.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_corner_radius = global::Jammit.Resource.Dimension.tooltip_corner_radius;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_horizontal_padding = global::Jammit.Resource.Dimension.tooltip_horizontal_padding;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_margin = global::Jammit.Resource.Dimension.tooltip_margin;
@@ -1063,11 +1419,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_action_bar_item_background_material = global::Jammit.Resource.Drawable.abc_action_bar_item_background_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_borderless_material = global::Jammit.Resource.Drawable.abc_btn_borderless_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_material = global::Jammit.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_material_anim = global::Jammit.Resource.Drawable.abc_btn_check_material_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::Jammit.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::Jammit.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_colored_material = global::Jammit.Resource.Drawable.abc_btn_colored_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_default_mtrl_shape = global::Jammit.Resource.Drawable.abc_btn_default_mtrl_shape;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_material = global::Jammit.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_material_anim = global::Jammit.Resource.Drawable.abc_btn_radio_material_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::Jammit.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::Jammit.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::Jammit.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
@@ -1145,15 +1503,39 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_vector_test = global::Jammit.Resource.Drawable.abc_vector_test;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password = global::Jammit.Resource.Drawable.avd_hide_password;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password = global::Jammit.Resource.Drawable.avd_show_password;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_checked_mtrl = global::Jammit.Resource.Drawable.btn_checkbox_checked_mtrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::Jammit.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::Jammit.Resource.Drawable.btn_checkbox_unchecked_mtrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::Jammit.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_off_mtrl = global::Jammit.Resource.Drawable.btn_radio_off_mtrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::Jammit.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_on_mtrl = global::Jammit.Resource.Drawable.btn_radio_on_mtrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::Jammit.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_bottom_navigation_item_background = global::Jammit.Resource.Drawable.design_bottom_navigation_item_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_fab_background = global::Jammit.Resource.Drawable.design_fab_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility = global::Jammit.Resource.Drawable.design_ic_visibility;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility_off = global::Jammit.Resource.Drawable.design_ic_visibility_off;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_password_eye = global::Jammit.Resource.Drawable.design_password_eye;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_snackbar_background = global::Jammit.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_calendar_black_24dp = global::Jammit.Resource.Drawable.ic_calendar_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_clear_black_24dp = global::Jammit.Resource.Drawable.ic_clear_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_edit_black_24dp = global::Jammit.Resource.Drawable.ic_edit_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_keyboard_arrow_left_black_24dp = global::Jammit.Resource.Drawable.ic_keyboard_arrow_left_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_keyboard_arrow_right_black_24dp = global::Jammit.Resource.Drawable.ic_keyboard_arrow_right_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_menu_arrow_down_black_24dp = global::Jammit.Resource.Drawable.ic_menu_arrow_down_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_menu_arrow_up_black_24dp = global::Jammit.Resource.Drawable.ic_menu_arrow_up_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_mtrl_checked_circle = global::Jammit.Resource.Drawable.ic_mtrl_checked_circle;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_mtrl_chip_checked_black = global::Jammit.Resource.Drawable.ic_mtrl_chip_checked_black;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_mtrl_chip_checked_circle = global::Jammit.Resource.Drawable.ic_mtrl_chip_checked_circle;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.ic_mtrl_chip_close_circle = global::Jammit.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_dialog_background = global::Jammit.Resource.Drawable.mtrl_dialog_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_dropdown_arrow = global::Jammit.Resource.Drawable.mtrl_dropdown_arrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_ic_arrow_drop_down = global::Jammit.Resource.Drawable.mtrl_ic_arrow_drop_down;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_ic_arrow_drop_up = global::Jammit.Resource.Drawable.mtrl_ic_arrow_drop_up;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_ic_cancel = global::Jammit.Resource.Drawable.mtrl_ic_cancel;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_ic_error = global::Jammit.Resource.Drawable.mtrl_ic_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_popupmenu_background = global::Jammit.Resource.Drawable.mtrl_popupmenu_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_popupmenu_background_dark = global::Jammit.Resource.Drawable.mtrl_popupmenu_background_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.mtrl_tabs_default_indicator = global::Jammit.Resource.Drawable.mtrl_tabs_default_indicator;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.navigation_empty_icon = global::Jammit.Resource.Drawable.navigation_empty_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_action_background = global::Jammit.Resource.Drawable.notification_action_background;
@@ -1168,8 +1550,42 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_low_bg = global::Jammit.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_tile_bg = global::Jammit.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::Jammit.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.test_custom_background = global::Jammit.Resource.Drawable.test_custom_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_dark = global::Jammit.Resource.Drawable.tooltip_frame_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_light = global::Jammit.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_action_clickable_span = global::Jammit.Resource.Id.accessibility_action_clickable_span;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_0 = global::Jammit.Resource.Id.accessibility_custom_action_0;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_1 = global::Jammit.Resource.Id.accessibility_custom_action_1;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_10 = global::Jammit.Resource.Id.accessibility_custom_action_10;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_11 = global::Jammit.Resource.Id.accessibility_custom_action_11;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_12 = global::Jammit.Resource.Id.accessibility_custom_action_12;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_13 = global::Jammit.Resource.Id.accessibility_custom_action_13;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_14 = global::Jammit.Resource.Id.accessibility_custom_action_14;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_15 = global::Jammit.Resource.Id.accessibility_custom_action_15;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_16 = global::Jammit.Resource.Id.accessibility_custom_action_16;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_17 = global::Jammit.Resource.Id.accessibility_custom_action_17;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_18 = global::Jammit.Resource.Id.accessibility_custom_action_18;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_19 = global::Jammit.Resource.Id.accessibility_custom_action_19;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_2 = global::Jammit.Resource.Id.accessibility_custom_action_2;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_20 = global::Jammit.Resource.Id.accessibility_custom_action_20;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_21 = global::Jammit.Resource.Id.accessibility_custom_action_21;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_22 = global::Jammit.Resource.Id.accessibility_custom_action_22;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_23 = global::Jammit.Resource.Id.accessibility_custom_action_23;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_24 = global::Jammit.Resource.Id.accessibility_custom_action_24;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_25 = global::Jammit.Resource.Id.accessibility_custom_action_25;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_26 = global::Jammit.Resource.Id.accessibility_custom_action_26;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_27 = global::Jammit.Resource.Id.accessibility_custom_action_27;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_28 = global::Jammit.Resource.Id.accessibility_custom_action_28;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_29 = global::Jammit.Resource.Id.accessibility_custom_action_29;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_3 = global::Jammit.Resource.Id.accessibility_custom_action_3;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_30 = global::Jammit.Resource.Id.accessibility_custom_action_30;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_31 = global::Jammit.Resource.Id.accessibility_custom_action_31;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_4 = global::Jammit.Resource.Id.accessibility_custom_action_4;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_5 = global::Jammit.Resource.Id.accessibility_custom_action_5;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_6 = global::Jammit.Resource.Id.accessibility_custom_action_6;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_7 = global::Jammit.Resource.Id.accessibility_custom_action_7;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_8 = global::Jammit.Resource.Id.accessibility_custom_action_8;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_9 = global::Jammit.Resource.Id.accessibility_custom_action_9;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.action0 = global::Jammit.Resource.Id.action0;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.actions = global::Jammit.Resource.Id.actions;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar = global::Jammit.Resource.Id.action_bar;
@@ -1202,16 +1618,24 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.bottom = global::Jammit.Resource.Id.bottom;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_navarea = global::Jammit.Resource.Id.bottomtab_navarea;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_tabbar = global::Jammit.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.BOTTOM_END = global::Jammit.Resource.Id.BOTTOM_END;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.BOTTOM_START = global::Jammit.Resource.Id.BOTTOM_START;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.buttonPanel = global::Jammit.Resource.Id.buttonPanel;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.cancel_action = global::Jammit.Resource.Id.cancel_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.cancel_button = global::Jammit.Resource.Id.cancel_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.center = global::Jammit.Resource.Id.center;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.center_horizontal = global::Jammit.Resource.Id.center_horizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.center_vertical = global::Jammit.Resource.Id.center_vertical;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.checkbox = global::Jammit.Resource.Id.checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.@checked = global::Jammit.Resource.Id.@checked;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.chip = global::Jammit.Resource.Id.chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.chip_group = global::Jammit.Resource.Id.chip_group;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.chronometer = global::Jammit.Resource.Id.chronometer;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.clear_text = global::Jammit.Resource.Id.clear_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_horizontal = global::Jammit.Resource.Id.clip_horizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_vertical = global::Jammit.Resource.Id.clip_vertical;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.collapseActionView = global::Jammit.Resource.Id.collapseActionView;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.confirm_button = global::Jammit.Resource.Id.confirm_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.container = global::Jammit.Resource.Id.container;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.content = global::Jammit.Resource.Id.content;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.contentPanel = global::Jammit.Resource.Id.contentPanel;
@@ -1219,6 +1643,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.CTRL = global::Jammit.Resource.Id.CTRL;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.custom = global::Jammit.Resource.Id.custom;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.customPanel = global::Jammit.Resource.Id.customPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.cut = global::Jammit.Resource.Id.cut;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.date_picker_actions = global::Jammit.Resource.Id.date_picker_actions;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.decor_content_parent = global::Jammit.Resource.Id.decor_content_parent;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.default_activity_button = global::Jammit.Resource.Id.default_activity_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.design_bottom_sheet = global::Jammit.Resource.Id.design_bottom_sheet;
@@ -1226,7 +1652,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area_stub = global::Jammit.Resource.Id.design_menu_item_action_area_stub;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_text = global::Jammit.Resource.Id.design_menu_item_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.design_navigation_view = global::Jammit.Resource.Id.design_navigation_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.dialog_button = global::Jammit.Resource.Id.dialog_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.disableHome = global::Jammit.Resource.Id.disableHome;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.dropdown_menu = global::Jammit.Resource.Id.dropdown_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.edit_query = global::Jammit.Resource.Id.edit_query;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.end = global::Jammit.Resource.Id.end;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.end_padder = global::Jammit.Resource.Id.end_padder;
@@ -1235,17 +1663,22 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.exitUntilCollapsed = global::Jammit.Resource.Id.exitUntilCollapsed;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.expanded_menu = global::Jammit.Resource.Id.expanded_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.expand_activities_button = global::Jammit.Resource.Id.expand_activities_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fade = global::Jammit.Resource.Id.fade;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.fill = global::Jammit.Resource.Id.fill;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.filled = global::Jammit.Resource.Id.filled;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_horizontal = global::Jammit.Resource.Id.fill_horizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_vertical = global::Jammit.Resource.Id.fill_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.filter_chip = global::Jammit.Resource.Id.filter_chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fitToContents = global::Jammit.Resource.Id.fitToContents;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.@fixed = global::Jammit.Resource.Id.@fixed;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_appbar = global::Jammit.Resource.Id.flyoutcontent_appbar;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_recycler = global::Jammit.Resource.Id.flyoutcontent_recycler;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.forever = global::Jammit.Resource.Id.forever;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fragment_container_view_tag = global::Jammit.Resource.Id.fragment_container_view_tag;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.FUNCTION = global::Jammit.Resource.Id.FUNCTION;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view = global::Jammit.Resource.Id.ghost_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view_holder = global::Jammit.Resource.Id.ghost_view_holder;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.group_divider = global::Jammit.Resource.Id.group_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.hideable = global::Jammit.Resource.Id.hideable;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.home = global::Jammit.Resource.Id.home;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.homeAsUp = global::Jammit.Resource.Id.homeAsUp;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.icon = global::Jammit.Resource.Id.icon;
@@ -1268,24 +1701,54 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.main_viewpager = global::Jammit.Resource.Id.main_viewpager;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.masked = global::Jammit.Resource.Id.masked;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.media_actions = global::Jammit.Resource.Id.media_actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.media_controller_compat_view_tag = global::Jammit.Resource.Id.media_controller_compat_view_tag;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.message = global::Jammit.Resource.Id.message;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.META = global::Jammit.Resource.Id.META;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.middle = global::Jammit.Resource.Id.middle;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.mini = global::Jammit.Resource.Id.mini;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.month_grid = global::Jammit.Resource.Id.month_grid;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.month_navigation_bar = global::Jammit.Resource.Id.month_navigation_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.month_navigation_fragment_toggle = global::Jammit.Resource.Id.month_navigation_fragment_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.month_navigation_next = global::Jammit.Resource.Id.month_navigation_next;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.month_navigation_previous = global::Jammit.Resource.Id.month_navigation_previous;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.month_title = global::Jammit.Resource.Id.month_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_days_of_week = global::Jammit.Resource.Id.mtrl_calendar_days_of_week;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_day_selector_frame = global::Jammit.Resource.Id.mtrl_calendar_day_selector_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_frame = global::Jammit.Resource.Id.mtrl_calendar_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_main_pane = global::Jammit.Resource.Id.mtrl_calendar_main_pane;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_months = global::Jammit.Resource.Id.mtrl_calendar_months;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_selection_frame = global::Jammit.Resource.Id.mtrl_calendar_selection_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_text_input_frame = global::Jammit.Resource.Id.mtrl_calendar_text_input_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_calendar_year_selector_frame = global::Jammit.Resource.Id.mtrl_calendar_year_selector_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_card_checked_layer_id = global::Jammit.Resource.Id.mtrl_card_checked_layer_id;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_child_content_container = global::Jammit.Resource.Id.mtrl_child_content_container;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_internal_children_alpha_tag = global::Jammit.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_fullscreen = global::Jammit.Resource.Id.mtrl_picker_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_header = global::Jammit.Resource.Id.mtrl_picker_header;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_header_selection_text = global::Jammit.Resource.Id.mtrl_picker_header_selection_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_header_title_and_selection = global::Jammit.Resource.Id.mtrl_picker_header_title_and_selection;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_header_toggle = global::Jammit.Resource.Id.mtrl_picker_header_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_text_input_date = global::Jammit.Resource.Id.mtrl_picker_text_input_date;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_text_input_range_end = global::Jammit.Resource.Id.mtrl_picker_text_input_range_end;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_text_input_range_start = global::Jammit.Resource.Id.mtrl_picker_text_input_range_start;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mtrl_picker_title_text = global::Jammit.Resource.Id.mtrl_picker_title_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.multiply = global::Jammit.Resource.Id.multiply;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.navigation_header_container = global::Jammit.Resource.Id.navigation_header_container;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.never = global::Jammit.Resource.Id.never;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.none = global::Jammit.Resource.Id.none;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.normal = global::Jammit.Resource.Id.normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.noScroll = global::Jammit.Resource.Id.noScroll;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_background = global::Jammit.Resource.Id.notification_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column = global::Jammit.Resource.Id.notification_main_column;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column_container = global::Jammit.Resource.Id.notification_main_column_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.off = global::Jammit.Resource.Id.off;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.on = global::Jammit.Resource.Id.on;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.outline = global::Jammit.Resource.Id.outline;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.parallax = global::Jammit.Resource.Id.parallax;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.parentPanel = global::Jammit.Resource.Id.parentPanel;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.parent_matrix = global::Jammit.Resource.Id.parent_matrix;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.password_toggle = global::Jammit.Resource.Id.password_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.peekHeight = global::Jammit.Resource.Id.peekHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.pin = global::Jammit.Resource.Id.pin;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_circular = global::Jammit.Resource.Id.progress_circular;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_horizontal = global::Jammit.Resource.Id.progress_horizontal;
@@ -1293,7 +1756,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.right = global::Jammit.Resource.Id.right;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.right_icon = global::Jammit.Resource.Id.right_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.right_side = global::Jammit.Resource.Id.right_side;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.rounded = global::Jammit.Resource.Id.rounded;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.save_non_transition_alpha = global::Jammit.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_overlay_view = global::Jammit.Resource.Id.save_overlay_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scale = global::Jammit.Resource.Id.scale;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.screen = global::Jammit.Resource.Id.screen;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.scroll = global::Jammit.Resource.Id.scroll;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollable = global::Jammit.Resource.Id.scrollable;
@@ -1319,6 +1785,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showCustom = global::Jammit.Resource.Id.showCustom;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showHome = global::Jammit.Resource.Id.showHome;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showTitle = global::Jammit.Resource.Id.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.skipCollapsed = global::Jammit.Resource.Id.skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.slide = global::Jammit.Resource.Id.slide;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.sliding_tabs = global::Jammit.Resource.Id.sliding_tabs;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.smallLabel = global::Jammit.Resource.Id.smallLabel;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_action = global::Jammit.Resource.Id.snackbar_action;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_text = global::Jammit.Resource.Id.snackbar_text;
@@ -1336,35 +1805,51 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Id.submit_area = global::Jammit.Resource.Id.submit_area;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.SYM = global::Jammit.Resource.Id.SYM;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tabMode = global::Jammit.Resource.Id.tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_actions = global::Jammit.Resource.Id.tag_accessibility_actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_clickable_spans = global::Jammit.Resource.Id.tag_accessibility_clickable_spans;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_heading = global::Jammit.Resource.Id.tag_accessibility_heading;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_pane_title = global::Jammit.Resource.Id.tag_accessibility_pane_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_screen_reader_focusable = global::Jammit.Resource.Id.tag_screen_reader_focusable;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_transition_group = global::Jammit.Resource.Id.tag_transition_group;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_event_manager = global::Jammit.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_listeners = global::Jammit.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.test_checkbox_android_button_tint = global::Jammit.Resource.Id.test_checkbox_android_button_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.test_checkbox_app_button_tint = global::Jammit.Resource.Id.test_checkbox_app_button_tint;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.text = global::Jammit.Resource.Id.text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.text2 = global::Jammit.Resource.Id.text2;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textEnd = global::Jammit.Resource.Id.textEnd;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_counter = global::Jammit.Resource.Id.textinput_counter;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_error = global::Jammit.Resource.Id.textinput_error;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_helper_text = global::Jammit.Resource.Id.textinput_helper_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoButtons = global::Jammit.Resource.Id.textSpacerNoButtons;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoTitle = global::Jammit.Resource.Id.textSpacerNoTitle;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.textStart = global::Jammit.Resource.Id.textStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text_input_end_icon = global::Jammit.Resource.Id.text_input_end_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text_input_start_icon = global::Jammit.Resource.Id.text_input_start_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.time = global::Jammit.Resource.Id.time;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.title = global::Jammit.Resource.Id.title;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.titleDividerNoCustom = global::Jammit.Resource.Id.titleDividerNoCustom;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.title_template = global::Jammit.Resource.Id.title_template;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.toolbar = global::Jammit.Resource.Id.toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.top = global::Jammit.Resource.Id.top;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.topPanel = global::Jammit.Resource.Id.topPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.TOP_END = global::Jammit.Resource.Id.TOP_END;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.TOP_START = global::Jammit.Resource.Id.TOP_START;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.touch_outside = global::Jammit.Resource.Id.touch_outside;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_current_scene = global::Jammit.Resource.Id.transition_current_scene;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_layout_save = global::Jammit.Resource.Id.transition_layout_save;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_position = global::Jammit.Resource.Id.transition_position;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_scene_layoutid_cache = global::Jammit.Resource.Id.transition_scene_layoutid_cache;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_transform = global::Jammit.Resource.Id.transition_transform;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.@unchecked = global::Jammit.Resource.Id.@unchecked;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.uniform = global::Jammit.Resource.Id.uniform;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.unlabeled = global::Jammit.Resource.Id.unlabeled;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.up = global::Jammit.Resource.Id.up;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.useLogo = global::Jammit.Resource.Id.useLogo;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.view_offset_helper = global::Jammit.Resource.Id.view_offset_helper;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.view_tree_saved_state_registry_owner = global::Jammit.Resource.Id.view_tree_saved_state_registry_owner;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.visible = global::Jammit.Resource.Id.visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.visible_removing_fragment_view_tag = global::Jammit.Resource.Id.visible_removing_fragment_view_tag;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.withText = global::Jammit.Resource.Id.withText;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.wrap_content = global::Jammit.Resource.Id.wrap_content;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityDefaultDur = global::Jammit.Resource.Integer.abc_config_activityDefaultDur;
@@ -1376,12 +1861,25 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.design_snackbar_text_max_lines = global::Jammit.Resource.Integer.design_snackbar_text_max_lines;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.design_tab_indicator_anim_duration_ms = global::Jammit.Resource.Integer.design_tab_indicator_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.hide_password_duration = global::Jammit.Resource.Integer.hide_password_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_badge_max_character_count = global::Jammit.Resource.Integer.mtrl_badge_max_character_count;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_btn_anim_delay_ms = global::Jammit.Resource.Integer.mtrl_btn_anim_delay_ms;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_btn_anim_duration_ms = global::Jammit.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_calendar_header_orientation = global::Jammit.Resource.Integer.mtrl_calendar_header_orientation;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_calendar_selection_text_lines = global::Jammit.Resource.Integer.mtrl_calendar_selection_text_lines;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_calendar_year_selector_span = global::Jammit.Resource.Integer.mtrl_calendar_year_selector_span;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_card_anim_delay_ms = global::Jammit.Resource.Integer.mtrl_card_anim_delay_ms;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_card_anim_duration_ms = global::Jammit.Resource.Integer.mtrl_card_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_chip_anim_duration = global::Jammit.Resource.Integer.mtrl_chip_anim_duration;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::Jammit.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.show_password_duration = global::Jammit.Resource.Integer.show_password_duration;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.status_bar_notification_info_maxnum = global::Jammit.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::Jammit.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::Jammit.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.fast_out_slow_in = global::Jammit.Resource.Interpolator.fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_fast_out_linear_in = global::Jammit.Resource.Interpolator.mtrl_fast_out_linear_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_fast_out_slow_in = global::Jammit.Resource.Interpolator.mtrl_fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_linear = global::Jammit.Resource.Interpolator.mtrl_linear;
@@ -1415,6 +1913,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_select_dialog_material = global::Jammit.Resource.Layout.abc_select_dialog_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_tooltip = global::Jammit.Resource.Layout.abc_tooltip;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.BottomTabLayout = global::Jammit.Resource.Layout.BottomTabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.custom_dialog = global::Jammit.Resource.Layout.custom_dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_navigation_item = global::Jammit.Resource.Layout.design_bottom_navigation_item;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_sheet_dialog = global::Jammit.Resource.Layout.design_bottom_sheet_dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar = global::Jammit.Resource.Layout.design_layout_snackbar;
@@ -1428,9 +1927,39 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_subheader = global::Jammit.Resource.Layout.design_navigation_item_subheader;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu = global::Jammit.Resource.Layout.design_navigation_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu_item = global::Jammit.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_text_input_end_icon = global::Jammit.Resource.Layout.design_text_input_end_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_text_input_start_icon = global::Jammit.Resource.Layout.design_text_input_start_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.FallbackTabbarDoNotUse = global::Jammit.Resource.Layout.FallbackTabbarDoNotUse;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.FallbackToolbarDoNotUse = global::Jammit.Resource.Layout.FallbackToolbarDoNotUse;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.FlyoutContent = global::Jammit.Resource.Layout.FlyoutContent;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_alert_dialog = global::Jammit.Resource.Layout.mtrl_alert_dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_alert_dialog_actions = global::Jammit.Resource.Layout.mtrl_alert_dialog_actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_alert_dialog_title = global::Jammit.Resource.Layout.mtrl_alert_dialog_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_alert_select_dialog_item = global::Jammit.Resource.Layout.mtrl_alert_select_dialog_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_alert_select_dialog_multichoice = global::Jammit.Resource.Layout.mtrl_alert_select_dialog_multichoice;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_alert_select_dialog_singlechoice = global::Jammit.Resource.Layout.mtrl_alert_select_dialog_singlechoice;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_day = global::Jammit.Resource.Layout.mtrl_calendar_day;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_days_of_week = global::Jammit.Resource.Layout.mtrl_calendar_days_of_week;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_day_of_week = global::Jammit.Resource.Layout.mtrl_calendar_day_of_week;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_horizontal = global::Jammit.Resource.Layout.mtrl_calendar_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_month = global::Jammit.Resource.Layout.mtrl_calendar_month;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_months = global::Jammit.Resource.Layout.mtrl_calendar_months;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_month_labeled = global::Jammit.Resource.Layout.mtrl_calendar_month_labeled;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_month_navigation = global::Jammit.Resource.Layout.mtrl_calendar_month_navigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_vertical = global::Jammit.Resource.Layout.mtrl_calendar_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_calendar_year = global::Jammit.Resource.Layout.mtrl_calendar_year;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_layout_snackbar = global::Jammit.Resource.Layout.mtrl_layout_snackbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_layout_snackbar_include = global::Jammit.Resource.Layout.mtrl_layout_snackbar_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_actions = global::Jammit.Resource.Layout.mtrl_picker_actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_dialog = global::Jammit.Resource.Layout.mtrl_picker_dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_fullscreen = global::Jammit.Resource.Layout.mtrl_picker_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_header_dialog = global::Jammit.Resource.Layout.mtrl_picker_header_dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_header_fullscreen = global::Jammit.Resource.Layout.mtrl_picker_header_fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_header_selection_text = global::Jammit.Resource.Layout.mtrl_picker_header_selection_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_header_title_text = global::Jammit.Resource.Layout.mtrl_picker_header_title_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_header_toggle = global::Jammit.Resource.Layout.mtrl_picker_header_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_text_input_date = global::Jammit.Resource.Layout.mtrl_picker_text_input_date;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_picker_text_input_date_range = global::Jammit.Resource.Layout.mtrl_picker_text_input_date_range;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action = global::Jammit.Resource.Layout.notification_action;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action_tombstone = global::Jammit.Resource.Layout.notification_action_tombstone;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_action = global::Jammit.Resource.Layout.notification_media_action;
@@ -1452,6 +1981,21 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_singlechoice_material = global::Jammit.Resource.Layout.select_dialog_singlechoice_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.ShellContent = global::Jammit.Resource.Layout.ShellContent;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::Jammit.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.Tabbar = global::Jammit.Resource.Layout.Tabbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_action_chip = global::Jammit.Resource.Layout.test_action_chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_design_checkbox = global::Jammit.Resource.Layout.test_design_checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_reflow_chipgroup = global::Jammit.Resource.Layout.test_reflow_chipgroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar = global::Jammit.Resource.Layout.test_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar_custom_background = global::Jammit.Resource.Layout.test_toolbar_custom_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar_elevation = global::Jammit.Resource.Layout.test_toolbar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.test_toolbar_surface = global::Jammit.Resource.Layout.test_toolbar_surface;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_without_line_height = global::Jammit.Resource.Layout.text_view_without_line_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_line_height_from_appearance = global::Jammit.Resource.Layout.text_view_with_line_height_from_appearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_line_height_from_layout = global::Jammit.Resource.Layout.text_view_with_line_height_from_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_line_height_from_style = global::Jammit.Resource.Layout.text_view_with_line_height_from_style;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.text_view_with_theme_line_height = global::Jammit.Resource.Layout.text_view_with_theme_line_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.Toolbar = global::Jammit.Resource.Layout.Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Plurals.mtrl_badge_content_description = global::Jammit.Resource.Plurals.mtrl_badge_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_home_description = global::Jammit.Resource.String.abc_action_bar_home_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_up_description = global::Jammit.Resource.String.abc_action_bar_up_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_menu_overflow_description = global::Jammit.Resource.String.abc_action_menu_overflow_description;
@@ -1482,11 +2026,50 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.String.appbar_scrolling_view_behavior = global::Jammit.Resource.String.appbar_scrolling_view_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.bottom_sheet_behavior = global::Jammit.Resource.String.bottom_sheet_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_content_description = global::Jammit.Resource.String.character_counter_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_overflowed_content_description = global::Jammit.Resource.String.character_counter_overflowed_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_pattern = global::Jammit.Resource.String.character_counter_pattern;
+			global::Xamarin.Forms.Platform.Android.Resource.String.chip_text = global::Jammit.Resource.String.chip_text;
+			global::Xamarin.Forms.Platform.Android.Resource.String.clear_text_end_icon_content_description = global::Jammit.Resource.String.clear_text_end_icon_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.error_icon_content_description = global::Jammit.Resource.String.error_icon_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.exposed_dropdown_menu_content_description = global::Jammit.Resource.String.exposed_dropdown_menu_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.fab_transformation_scrim_behavior = global::Jammit.Resource.String.fab_transformation_scrim_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.fab_transformation_sheet_behavior = global::Jammit.Resource.String.fab_transformation_sheet_behavior;
 			global::Xamarin.Forms.Platform.Android.Resource.String.hide_bottom_view_on_scroll_behavior = global::Jammit.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.icon_content_description = global::Jammit.Resource.String.icon_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_badge_numberless_content_description = global::Jammit.Resource.String.mtrl_badge_numberless_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_chip_close_icon_content_description = global::Jammit.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_exceed_max_badge_number_suffix = global::Jammit.Resource.String.mtrl_exceed_max_badge_number_suffix;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_a11y_next_month = global::Jammit.Resource.String.mtrl_picker_a11y_next_month;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_a11y_prev_month = global::Jammit.Resource.String.mtrl_picker_a11y_prev_month;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_announce_current_selection = global::Jammit.Resource.String.mtrl_picker_announce_current_selection;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_cancel = global::Jammit.Resource.String.mtrl_picker_cancel;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_confirm = global::Jammit.Resource.String.mtrl_picker_confirm;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_date_header_selected = global::Jammit.Resource.String.mtrl_picker_date_header_selected;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_date_header_title = global::Jammit.Resource.String.mtrl_picker_date_header_title;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_date_header_unselected = global::Jammit.Resource.String.mtrl_picker_date_header_unselected;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_day_of_week_column_header = global::Jammit.Resource.String.mtrl_picker_day_of_week_column_header;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_invalid_format = global::Jammit.Resource.String.mtrl_picker_invalid_format;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_invalid_format_example = global::Jammit.Resource.String.mtrl_picker_invalid_format_example;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_invalid_format_use = global::Jammit.Resource.String.mtrl_picker_invalid_format_use;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_invalid_range = global::Jammit.Resource.String.mtrl_picker_invalid_range;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_navigate_to_year_description = global::Jammit.Resource.String.mtrl_picker_navigate_to_year_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_out_of_range = global::Jammit.Resource.String.mtrl_picker_out_of_range;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_range_header_only_end_selected = global::Jammit.Resource.String.mtrl_picker_range_header_only_end_selected;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_range_header_only_start_selected = global::Jammit.Resource.String.mtrl_picker_range_header_only_start_selected;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_range_header_selected = global::Jammit.Resource.String.mtrl_picker_range_header_selected;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_range_header_title = global::Jammit.Resource.String.mtrl_picker_range_header_title;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_range_header_unselected = global::Jammit.Resource.String.mtrl_picker_range_header_unselected;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_save = global::Jammit.Resource.String.mtrl_picker_save;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_text_input_date_hint = global::Jammit.Resource.String.mtrl_picker_text_input_date_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_text_input_date_range_end_hint = global::Jammit.Resource.String.mtrl_picker_text_input_date_range_end_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_text_input_date_range_start_hint = global::Jammit.Resource.String.mtrl_picker_text_input_date_range_start_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_text_input_day_abbr = global::Jammit.Resource.String.mtrl_picker_text_input_day_abbr;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_text_input_month_abbr = global::Jammit.Resource.String.mtrl_picker_text_input_month_abbr;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_text_input_year_abbr = global::Jammit.Resource.String.mtrl_picker_text_input_year_abbr;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_toggle_to_calendar_input_mode = global::Jammit.Resource.String.mtrl_picker_toggle_to_calendar_input_mode;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_toggle_to_day_selection = global::Jammit.Resource.String.mtrl_picker_toggle_to_day_selection;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_toggle_to_text_input_mode = global::Jammit.Resource.String.mtrl_picker_toggle_to_text_input_mode;
+			global::Xamarin.Forms.Platform.Android.Resource.String.mtrl_picker_toggle_to_year_selection = global::Jammit.Resource.String.mtrl_picker_toggle_to_year_selection;
 			global::Xamarin.Forms.Platform.Android.Resource.String.overflow_tab_title = global::Jammit.Resource.String.overflow_tab_title;
 			global::Xamarin.Forms.Platform.Android.Resource.String.password_toggle_content_description = global::Jammit.Resource.String.password_toggle_content_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye = global::Jammit.Resource.String.path_password_eye;
@@ -1501,6 +2084,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_DropDownUp = global::Jammit.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Tooltip = global::Jammit.Resource.Style.Animation_AppCompat_Tooltip;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_Design_BottomSheetDialog = global::Jammit.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_MaterialComponents_BottomSheetDialog = global::Jammit.Resource.Style.Animation_MaterialComponents_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.AppCompatDialogStyle = global::Jammit.Resource.Style.AppCompatDialogStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat = global::Jammit.Resource.Style.Base_AlertDialog_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat_Light = global::Jammit.Resource.Style.Base_AlertDialog_AppCompat_Light;
@@ -1510,6 +2094,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_CardView = global::Jammit.Resource.Style.Base_CardView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::Jammit.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitle_AppCompat = global::Jammit.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon = global::Jammit.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel = global::Jammit.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text = global::Jammit.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Body1;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Body2;
@@ -1555,6 +2142,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_MaterialComponents_Badge = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Badge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_MaterialComponents_Button = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6 = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2 = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::Jammit.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::Jammit.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::Jammit.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
@@ -1567,6 +2158,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::Jammit.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::Jammit.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat = global::Jammit.Resource.Style.Base_Theme_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::Jammit.Resource.Style.Base_Theme_AppCompat_CompactMenu;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog = global::Jammit.Resource.Style.Base_Theme_AppCompat_Dialog;
@@ -1587,6 +2179,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light;
@@ -1596,17 +2189,21 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::Jammit.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::Jammit.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat = global::Jammit.Resource.Style.Base_V21_Theme_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::Jammit.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
@@ -1683,19 +2280,38 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::Jammit.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner = global::Jammit.Resource.Style.Base_Widget_AppCompat_Spinner;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::Jammit.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_TextView = global::Jammit.Resource.Style.Base_Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::Jammit.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::Jammit.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::Jammit.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_Design_TabLayout = global::Jammit.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_Chip = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_PopupMenu = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_MaterialComponents_TextView = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_TextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView = global::Jammit.Resource.Style.CardView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Dark = global::Jammit.Resource.Style.CardView_Dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Light = global::Jammit.Resource.Style.CardView_Light;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.collectionViewTheme = global::Jammit.Resource.Style.collectionViewTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.EmptyTheme = global::Jammit.Resource.Style.EmptyTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.MainTheme = global::Jammit.Resource.Style.MainTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.MainTheme_Base = global::Jammit.Resource.Style.MainTheme_Base;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat = global::Jammit.Resource.Style.Platform_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat_Light = global::Jammit.Resource.Style.Platform_AppCompat_Light;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_MaterialComponents = global::Jammit.Resource.Style.Platform_MaterialComponents;
@@ -1729,6 +2345,37 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::Jammit.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.scrollViewScrollBars = global::Jammit.Resource.Style.scrollViewScrollBars;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.scrollViewTheme = global::Jammit.Resource.Style.scrollViewTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay = global::Jammit.Resource.Style.ShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::Jammit.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::Jammit.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_Cut = global::Jammit.Resource.Style.ShapeAppearanceOverlay_Cut;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::Jammit.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::Jammit.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::Jammit.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_Test;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithLineHeight = global::Jammit.Resource.Style.TestStyleWithLineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithLineHeightAppearance = global::Jammit.Resource.Style.TestStyleWithLineHeightAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithoutLineHeight = global::Jammit.Resource.Style.TestStyleWithoutLineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::Jammit.Resource.Style.TestStyleWithThemeLineHeightAttribute;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TestThemeWithLineHeight = global::Jammit.Resource.Style.TestThemeWithLineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TestThemeWithLineHeightDisabled = global::Jammit.Resource.Style.TestThemeWithLineHeightDisabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::Jammit.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat = global::Jammit.Resource.Style.TextAppearance_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body1 = global::Jammit.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body2 = global::Jammit.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -1795,6 +2442,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Hint = global::Jammit.Resource.Style.TextAppearance_Design_Hint;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Snackbar_Message = global::Jammit.Resource.Style.TextAppearance_Design_Snackbar_Message;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Tab = global::Jammit.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Badge = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Badge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Body1;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Body2;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_MaterialComponents_Button = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Button;
@@ -1816,21 +2464,47 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_DayNight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Light = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_Design_TextInputEditText = global::Jammit.Resource.Style.ThemeOverlay_Design_TextInputEditText;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Light_BottomSheetDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat = global::Jammit.Resource.Style.Theme_AppCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_CompactMenu = global::Jammit.Resource.Style.Theme_AppCompat_CompactMenu;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight = global::Jammit.Resource.Style.Theme_AppCompat_DayNight;
@@ -1844,6 +2518,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::Jammit.Resource.Style.Theme_AppCompat_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_Alert = global::Jammit.Resource.Style.Theme_AppCompat_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Empty = global::Jammit.Resource.Style.Theme_AppCompat_Empty;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light = global::Jammit.Resource.Style.Theme_AppCompat_Light;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::Jammit.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog = global::Jammit.Resource.Style.Theme_AppCompat_Light_Dialog;
@@ -1862,11 +2537,33 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::Jammit.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_CompactMenu = global::Jammit.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::Jammit.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light = global::Jammit.Resource.Style.Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_BarSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
@@ -1874,7 +2571,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_MaterialComponents_NoActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_NoActionBar;
@@ -1948,6 +2651,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::Jammit.Resource.Style.Widget_AppCompat_Spinner_DropDown;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::Jammit.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::Jammit.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_TextView = global::Jammit.Resource.Style.Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::Jammit.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar = global::Jammit.Resource.Style.Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::Jammit.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
@@ -1963,10 +2667,25 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_Snackbar = global::Jammit.Resource.Style.Widget_Design_Snackbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TabLayout = global::Jammit.Resource.Style.Widget_Design_TabLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TextInputLayout = global::Jammit.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ActionBar_Primary = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_Primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ActionBar_Solid = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ActionBar_Surface = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_Surface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary = global::Jammit.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface = global::Jammit.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Badge = global::Jammit.Resource.Style.Widget_MaterialComponents_Badge;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomAppBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomSheet = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomSheet;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button = global::Jammit.Resource.Style.Widget_MaterialComponents_Button;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_Icon;
@@ -1974,31 +2693,72 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_CardView = global::Jammit.Resource.Style.Widget_MaterialComponents_CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_CheckedTextView = global::Jammit.Resource.Style.Widget_MaterialComponents_CheckedTextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ChipGroup = global::Jammit.Resource.Style.Widget_MaterialComponents_ChipGroup;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Action = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Action;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Choice;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Entry;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox = global::Jammit.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton = global::Jammit.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch = global::Jammit.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton = global::Jammit.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::Jammit.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid = global::Jammit.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_NavigationView = global::Jammit.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_PopupMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Snackbar = global::Jammit.Resource.Style.Widget_MaterialComponents_Snackbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::Jammit.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TabLayout = global::Jammit.Resource.Style.Widget_MaterialComponents_TabLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::Jammit.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_TextView = global::Jammit.Resource.Style.Widget_MaterialComponents_TextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Toolbar = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Toolbar_Primary = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar_Primary;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_MaterialComponents_Toolbar_Surface = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar_Surface;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Support_CoordinatorLayout = global::Jammit.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar = global::Jammit.Resource.Styleable.ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBarLayout = global::Jammit.Resource.Styleable.ActionBarLayout;
@@ -2084,6 +2844,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::Jammit.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::Jammit.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_liftOnScroll = global::Jammit.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::Jammit.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_statusBarForeground = global::Jammit.Resource.Styleable.AppBarLayout_statusBarForeground;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView = global::Jammit.Resource.Styleable.AppCompatImageView;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_android_src = global::Jammit.Resource.Styleable.AppCompatImageView_android_src;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_srcCompat = global::Jammit.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -2109,11 +2871,21 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::Jammit.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::Jammit.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::Jammit.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableEndCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableRightCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableStartCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTint = global::Jammit.Resource.Styleable.AppCompatTextView_drawableTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTintMode = global::Jammit.Resource.Styleable.AppCompatTextView_drawableTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableTopCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::Jammit.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontFamily = global::Jammit.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::Jammit.Resource.Styleable.AppCompatTextView_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::Jammit.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_lineHeight = global::Jammit.Resource.Styleable.AppCompatTextView_lineHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_textAllCaps = global::Jammit.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_textLocale = global::Jammit.Resource.Styleable.AppCompatTextView_textLocale;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme = global::Jammit.Resource.Styleable.AppCompatTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarDivider = global::Jammit.Resource.Styleable.AppCompatTheme_actionBarDivider;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::Jammit.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
@@ -2187,14 +2959,18 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::Jammit.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::Jammit.Resource.Styleable.AppCompatTheme_imageButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::Jammit.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::Jammit.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::Jammit.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::Jammit.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::Jammit.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::Jammit.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelBackground = global::Jammit.Resource.Styleable.AppCompatTheme_panelBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::Jammit.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::Jammit.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
@@ -2236,29 +3012,46 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::Jammit.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::Jammit.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowNoTitle = global::Jammit.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Badge = global::Jammit.Resource.Styleable.Badge;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Badge_backgroundColor = global::Jammit.Resource.Styleable.Badge_backgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Badge_badgeGravity = global::Jammit.Resource.Styleable.Badge_badgeGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Badge_badgeTextColor = global::Jammit.Resource.Styleable.Badge_badgeTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Badge_maxCharacterCount = global::Jammit.Resource.Styleable.Badge_maxCharacterCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Badge_number = global::Jammit.Resource.Styleable.Badge_number;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar = global::Jammit.Resource.Styleable.BottomAppBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_backgroundTint = global::Jammit.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_elevation = global::Jammit.Resource.Styleable.BottomAppBar_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::Jammit.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabAnimationMode = global::Jammit.Resource.Styleable.BottomAppBar_fabAnimationMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabCradleMargin = global::Jammit.Resource.Styleable.BottomAppBar_fabCradleMargin;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::Jammit.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::Jammit.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomAppBar_hideOnScroll = global::Jammit.Resource.Styleable.BottomAppBar_hideOnScroll;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView = global::Jammit.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_backgroundTint = global::Jammit.Resource.Styleable.BottomNavigationView_backgroundTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_elevation = global::Jammit.Resource.Styleable.BottomNavigationView_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemBackground = global::Jammit.Resource.Styleable.BottomNavigationView_itemBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::Jammit.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemIconSize = global::Jammit.Resource.Styleable.BottomNavigationView_itemIconSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemIconTint = global::Jammit.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemRippleColor = global::Jammit.Resource.Styleable.BottomNavigationView_itemRippleColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::Jammit.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::Jammit.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextColor = global::Jammit.Resource.Styleable.BottomNavigationView_itemTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::Jammit.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_menu = global::Jammit.Resource.Styleable.BottomNavigationView_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout = global::Jammit.Resource.Styleable.ButtonBarLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout_allowStacking = global::Jammit.Resource.Styleable.ButtonBarLayout_allowStacking;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView = global::Jammit.Resource.Styleable.CardView;
@@ -2288,6 +3081,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_maxWidth = global::Jammit.Resource.Styleable.Chip_android_maxWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_text = global::Jammit.Resource.Styleable.Chip_android_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_textAppearance = global::Jammit.Resource.Styleable.Chip_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_android_textColor = global::Jammit.Resource.Styleable.Chip_android_textColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_checkedIcon = global::Jammit.Resource.Styleable.Chip_checkedIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_checkedIconEnabled = global::Jammit.Resource.Styleable.Chip_checkedIconEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_checkedIconVisible = global::Jammit.Resource.Styleable.Chip_checkedIconVisible;
@@ -2300,9 +3094,11 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipIconTint = global::Jammit.Resource.Styleable.Chip_chipIconTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipIconVisible = global::Jammit.Resource.Styleable.Chip_chipIconVisible;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipMinHeight = global::Jammit.Resource.Styleable.Chip_chipMinHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipMinTouchTargetSize = global::Jammit.Resource.Styleable.Chip_chipMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipStartPadding = global::Jammit.Resource.Styleable.Chip_chipStartPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipStrokeColor = global::Jammit.Resource.Styleable.Chip_chipStrokeColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipStrokeWidth = global::Jammit.Resource.Styleable.Chip_chipStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_chipSurfaceColor = global::Jammit.Resource.Styleable.Chip_chipSurfaceColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIcon = global::Jammit.Resource.Styleable.Chip_closeIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconEnabled = global::Jammit.Resource.Styleable.Chip_closeIconEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconEndPadding = global::Jammit.Resource.Styleable.Chip_closeIconEndPadding;
@@ -2310,10 +3106,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconStartPadding = global::Jammit.Resource.Styleable.Chip_closeIconStartPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconTint = global::Jammit.Resource.Styleable.Chip_closeIconTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_closeIconVisible = global::Jammit.Resource.Styleable.Chip_closeIconVisible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_ensureMinTouchTargetSize = global::Jammit.Resource.Styleable.Chip_ensureMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_hideMotionSpec = global::Jammit.Resource.Styleable.Chip_hideMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_iconEndPadding = global::Jammit.Resource.Styleable.Chip_iconEndPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_iconStartPadding = global::Jammit.Resource.Styleable.Chip_iconStartPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_rippleColor = global::Jammit.Resource.Styleable.Chip_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_shapeAppearance = global::Jammit.Resource.Styleable.Chip_shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.Chip_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_showMotionSpec = global::Jammit.Resource.Styleable.Chip_showMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_textEndPadding = global::Jammit.Resource.Styleable.Chip_textEndPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Chip_textStartPadding = global::Jammit.Resource.Styleable.Chip_textStartPadding;
@@ -2343,6 +3142,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_color = global::Jammit.Resource.Styleable.ColorStateListItem_android_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton = global::Jammit.Resource.Styleable.CompoundButton;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_android_button = global::Jammit.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonCompat = global::Jammit.Resource.Styleable.CompoundButton_buttonCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTint = global::Jammit.Resource.Styleable.CompoundButton_buttonTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTintMode = global::Jammit.Resource.Styleable.CompoundButton_buttonTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout = global::Jammit.Resource.Styleable.CoordinatorLayout;
@@ -2365,6 +3165,17 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::Jammit.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_spinBars = global::Jammit.Resource.Styleable.DrawerArrowToggle_spinBars;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_thickness = global::Jammit.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerLayout = global::Jammit.Resource.Styleable.DrawerLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerLayout_elevation = global::Jammit.Resource.Styleable.DrawerLayout_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_elevation = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton = global::Jammit.Resource.Styleable.FloatingActionButton;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTint = global::Jammit.Resource.Styleable.FloatingActionButton_backgroundTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::Jammit.Resource.Styleable.FloatingActionButton_backgroundTintMode;
@@ -2372,6 +3183,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::Jammit.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_borderWidth = global::Jammit.Resource.Styleable.FloatingActionButton_borderWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_elevation = global::Jammit.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize = global::Jammit.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_fabCustomSize = global::Jammit.Resource.Styleable.FloatingActionButton_fabCustomSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_fabSize = global::Jammit.Resource.Styleable.FloatingActionButton_fabSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::Jammit.Resource.Styleable.FloatingActionButton_hideMotionSpec;
@@ -2379,6 +3191,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_maxImageSize = global::Jammit.Resource.Styleable.FloatingActionButton_maxImageSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::Jammit.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_rippleColor = global::Jammit.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_shapeAppearance = global::Jammit.Resource.Styleable.FloatingActionButton_shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_showMotionSpec = global::Jammit.Resource.Styleable.FloatingActionButton_showMotionSpec;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_useCompatPadding = global::Jammit.Resource.Styleable.FloatingActionButton_useCompatPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FlowLayout = global::Jammit.Resource.Styleable.FlowLayout;
@@ -2406,6 +3220,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::Jammit.Resource.Styleable.ForegroundLinearLayout_android_foreground;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::Jammit.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::Jammit.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Fragment = global::Jammit.Resource.Styleable.Fragment;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FragmentContainerView = global::Jammit.Resource.Styleable.FragmentContainerView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FragmentContainerView_android_name = global::Jammit.Resource.Styleable.FragmentContainerView_android_name;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FragmentContainerView_android_tag = global::Jammit.Resource.Styleable.FragmentContainerView_android_tag;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Fragment_android_id = global::Jammit.Resource.Styleable.Fragment_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Fragment_android_name = global::Jammit.Resource.Styleable.Fragment_android_name;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Fragment_android_tag = global::Jammit.Resource.Styleable.Fragment_android_tag;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColor = global::Jammit.Resource.Styleable.GradientColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColorItem = global::Jammit.Resource.Styleable.GradientColorItem;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.GradientColorItem_android_color = global::Jammit.Resource.Styleable.GradientColorItem_android_color;
@@ -2442,7 +3263,22 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow = global::Jammit.Resource.Styleable.ListPopupWindow;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::Jammit.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::Jammit.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialog = global::Jammit.Resource.Styleable.MaterialAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialogTheme = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton = global::Jammit.Resource.Styleable.MaterialButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButtonToggleGroup = global::Jammit.Resource.Styleable.MaterialButtonToggleGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButtonToggleGroup_checkedButton = global::Jammit.Resource.Styleable.MaterialButtonToggleGroup_checkedButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButtonToggleGroup_singleSelection = global::Jammit.Resource.Styleable.MaterialButtonToggleGroup_singleSelection;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_checkable = global::Jammit.Resource.Styleable.MaterialButton_android_checkable;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_insetBottom = global::Jammit.Resource.Styleable.MaterialButton_android_insetBottom;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_insetLeft = global::Jammit.Resource.Styleable.MaterialButton_android_insetLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_android_insetRight = global::Jammit.Resource.Styleable.MaterialButton_android_insetRight;
@@ -2450,6 +3286,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_backgroundTint = global::Jammit.Resource.Styleable.MaterialButton_backgroundTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_backgroundTintMode = global::Jammit.Resource.Styleable.MaterialButton_backgroundTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_cornerRadius = global::Jammit.Resource.Styleable.MaterialButton_cornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_elevation = global::Jammit.Resource.Styleable.MaterialButton_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_icon = global::Jammit.Resource.Styleable.MaterialButton_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconGravity = global::Jammit.Resource.Styleable.MaterialButton_iconGravity;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconPadding = global::Jammit.Resource.Styleable.MaterialButton_iconPadding;
@@ -2457,11 +3294,57 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconTint = global::Jammit.Resource.Styleable.MaterialButton_iconTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_iconTintMode = global::Jammit.Resource.Styleable.MaterialButton_iconTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_rippleColor = global::Jammit.Resource.Styleable.MaterialButton_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_shapeAppearance = global::Jammit.Resource.Styleable.MaterialButton_shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialButton_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_strokeColor = global::Jammit.Resource.Styleable.MaterialButton_strokeColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialButton_strokeWidth = global::Jammit.Resource.Styleable.MaterialButton_strokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar = global::Jammit.Resource.Styleable.MaterialCalendar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem = global::Jammit.Resource.Styleable.MaterialCalendarItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_android_insetBottom = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_android_insetLeft = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_android_insetRight = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_android_insetTop = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_itemFillColor = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemFillColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_itemStrokeColor = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemStrokeColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendarItem_itemTextColor = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_android_windowFullscreen = global::Jammit.Resource.Styleable.MaterialCalendar_android_windowFullscreen;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_dayInvalidStyle = global::Jammit.Resource.Styleable.MaterialCalendar_dayInvalidStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_daySelectedStyle = global::Jammit.Resource.Styleable.MaterialCalendar_daySelectedStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_dayStyle = global::Jammit.Resource.Styleable.MaterialCalendar_dayStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_dayTodayStyle = global::Jammit.Resource.Styleable.MaterialCalendar_dayTodayStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_rangeFillColor = global::Jammit.Resource.Styleable.MaterialCalendar_rangeFillColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_yearSelectedStyle = global::Jammit.Resource.Styleable.MaterialCalendar_yearSelectedStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_yearStyle = global::Jammit.Resource.Styleable.MaterialCalendar_yearStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCalendar_yearTodayStyle = global::Jammit.Resource.Styleable.MaterialCalendar_yearTodayStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView = global::Jammit.Resource.Styleable.MaterialCardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_android_checkable = global::Jammit.Resource.Styleable.MaterialCardView_android_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_cardForegroundColor = global::Jammit.Resource.Styleable.MaterialCardView_cardForegroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_checkedIcon = global::Jammit.Resource.Styleable.MaterialCardView_checkedIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_checkedIconTint = global::Jammit.Resource.Styleable.MaterialCardView_checkedIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_rippleColor = global::Jammit.Resource.Styleable.MaterialCardView_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_shapeAppearance = global::Jammit.Resource.Styleable.MaterialCardView_shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_state_dragged = global::Jammit.Resource.Styleable.MaterialCardView_state_dragged;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_strokeColor = global::Jammit.Resource.Styleable.MaterialCardView_strokeColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCardView_strokeWidth = global::Jammit.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCheckBox = global::Jammit.Resource.Styleable.MaterialCheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCheckBox_buttonTint = global::Jammit.Resource.Styleable.MaterialCheckBox_buttonTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors = global::Jammit.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialRadioButton = global::Jammit.Resource.Styleable.MaterialRadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors = global::Jammit.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialShape = global::Jammit.Resource.Styleable.MaterialShape;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialShape_shapeAppearance = global::Jammit.Resource.Styleable.MaterialShape_shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialShape_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialShape_shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialTextAppearance = global::Jammit.Resource.Styleable.MaterialTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialTextAppearance_android_lineHeight = global::Jammit.Resource.Styleable.MaterialTextAppearance_android_lineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialTextAppearance_lineHeight = global::Jammit.Resource.Styleable.MaterialTextAppearance_lineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialTextView = global::Jammit.Resource.Styleable.MaterialTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialTextView_android_lineHeight = global::Jammit.Resource.Styleable.MaterialTextView_android_lineHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialTextView_android_textAppearance = global::Jammit.Resource.Styleable.MaterialTextView_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MaterialTextView_lineHeight = global::Jammit.Resource.Styleable.MaterialTextView_lineHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup = global::Jammit.Resource.Styleable.MenuGroup;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_checkableBehavior = global::Jammit.Resource.Styleable.MenuGroup_android_checkableBehavior;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_enabled = global::Jammit.Resource.Styleable.MenuGroup_android_enabled;
@@ -2512,7 +3395,16 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemBackground = global::Jammit.Resource.Styleable.NavigationView_itemBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemHorizontalPadding = global::Jammit.Resource.Styleable.NavigationView_itemHorizontalPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemIconPadding = global::Jammit.Resource.Styleable.NavigationView_itemIconPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemIconSize = global::Jammit.Resource.Styleable.NavigationView_itemIconSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemIconTint = global::Jammit.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemMaxLines = global::Jammit.Resource.Styleable.NavigationView_itemMaxLines;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemShapeAppearance = global::Jammit.Resource.Styleable.NavigationView_itemShapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay = global::Jammit.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemShapeFillColor = global::Jammit.Resource.Styleable.NavigationView_itemShapeFillColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemShapeInsetBottom = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemShapeInsetEnd = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemShapeInsetStart = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemShapeInsetTop = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetTop;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextAppearance = global::Jammit.Resource.Styleable.NavigationView_itemTextAppearance;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextColor = global::Jammit.Resource.Styleable.NavigationView_itemTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_menu = global::Jammit.Resource.Styleable.NavigationView_menu;
@@ -2526,6 +3418,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::Jammit.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::Jammit.Resource.Styleable.RecycleListView_paddingTopNoTitle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView = global::Jammit.Resource.Styleable.RecyclerView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_clipToPadding = global::Jammit.Resource.Styleable.RecyclerView_android_clipToPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_descendantFocusability = global::Jammit.Resource.Styleable.RecyclerView_android_descendantFocusability;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_orientation = global::Jammit.Resource.Styleable.RecyclerView_android_orientation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollEnabled = global::Jammit.Resource.Styleable.RecyclerView_fastScrollEnabled;
@@ -2561,9 +3454,23 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_submitBackground = global::Jammit.Resource.Styleable.SearchView_submitBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_suggestionRowLayout = global::Jammit.Resource.Styleable.SearchView_suggestionRowLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_voiceIcon = global::Jammit.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance = global::Jammit.Resource.Styleable.ShapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerFamily = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerSize = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ShapeAppearance_cornerSizeTopRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeTopRight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Snackbar = global::Jammit.Resource.Styleable.Snackbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout = global::Jammit.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_actionTextColorAlpha = global::Jammit.Resource.Styleable.SnackbarLayout_actionTextColorAlpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_android_maxWidth = global::Jammit.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_animationMode = global::Jammit.Resource.Styleable.SnackbarLayout_animationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha = global::Jammit.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_elevation = global::Jammit.Resource.Styleable.SnackbarLayout_elevation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::Jammit.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Snackbar_snackbarButtonStyle = global::Jammit.Resource.Styleable.Snackbar_snackbarButtonStyle;
@@ -2598,6 +3505,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_track = global::Jammit.Resource.Styleable.SwitchCompat_track;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTint = global::Jammit.Resource.Styleable.SwitchCompat_trackTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTintMode = global::Jammit.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchMaterial = global::Jammit.Resource.Styleable.SwitchMaterial;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchMaterial_useMaterialThemeColors = global::Jammit.Resource.Styleable.SwitchMaterial_useMaterialThemeColors;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem = global::Jammit.Resource.Styleable.TabItem;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_icon = global::Jammit.Resource.Styleable.TabItem_android_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_layout = global::Jammit.Resource.Styleable.TabItem_android_layout;
@@ -2637,11 +3546,14 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColor = global::Jammit.Resource.Styleable.TextAppearance_android_textColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorHint = global::Jammit.Resource.Styleable.TextAppearance_android_textColorHint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorLink = global::Jammit.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textFontWeight = global::Jammit.Resource.Styleable.TextAppearance_android_textFontWeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textSize = global::Jammit.Resource.Styleable.TextAppearance_android_textSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textStyle = global::Jammit.Resource.Styleable.TextAppearance_android_textStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_typeface = global::Jammit.Resource.Styleable.TextAppearance_android_typeface;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_fontFamily = global::Jammit.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_fontVariationSettings = global::Jammit.Resource.Styleable.TextAppearance_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_textAllCaps = global::Jammit.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_textLocale = global::Jammit.Resource.Styleable.TextAppearance_textLocale;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout = global::Jammit.Resource.Styleable.TextInputLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_hint = global::Jammit.Resource.Styleable.TextInputLayout_android_hint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_textColorHint = global::Jammit.Resource.Styleable.TextInputLayout_android_textColorHint;
@@ -2654,23 +3566,45 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::Jammit.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxStrokeColor = global::Jammit.Resource.Styleable.TextInputLayout_boxStrokeColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::Jammit.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused = global::Jammit.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterEnabled = global::Jammit.Resource.Styleable.TextInputLayout_counterEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterMaxLength = global::Jammit.Resource.Styleable.TextInputLayout_counterMaxLength;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterOverflowTextColor = global::Jammit.Resource.Styleable.TextInputLayout_counterOverflowTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterTextColor = global::Jammit.Resource.Styleable.TextInputLayout_counterTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_endIconCheckable = global::Jammit.Resource.Styleable.TextInputLayout_endIconCheckable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_endIconContentDescription = global::Jammit.Resource.Styleable.TextInputLayout_endIconContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_endIconDrawable = global::Jammit.Resource.Styleable.TextInputLayout_endIconDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_endIconMode = global::Jammit.Resource.Styleable.TextInputLayout_endIconMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_endIconTint = global::Jammit.Resource.Styleable.TextInputLayout_endIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_endIconTintMode = global::Jammit.Resource.Styleable.TextInputLayout_endIconTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorEnabled = global::Jammit.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorIconDrawable = global::Jammit.Resource.Styleable.TextInputLayout_errorIconDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorIconTint = global::Jammit.Resource.Styleable.TextInputLayout_errorIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorIconTintMode = global::Jammit.Resource.Styleable.TextInputLayout_errorIconTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorTextColor = global::Jammit.Resource.Styleable.TextInputLayout_errorTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_helperText = global::Jammit.Resource.Styleable.TextInputLayout_helperText;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_helperTextEnabled = global::Jammit.Resource.Styleable.TextInputLayout_helperTextEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_helperTextTextColor = global::Jammit.Resource.Styleable.TextInputLayout_helperTextTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::Jammit.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintEnabled = global::Jammit.Resource.Styleable.TextInputLayout_hintEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintTextColor = global::Jammit.Resource.Styleable.TextInputLayout_hintTextColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTint = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_shapeAppearance = global::Jammit.Resource.Styleable.TextInputLayout_shapeAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_startIconCheckable = global::Jammit.Resource.Styleable.TextInputLayout_startIconCheckable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_startIconContentDescription = global::Jammit.Resource.Styleable.TextInputLayout_startIconContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_startIconDrawable = global::Jammit.Resource.Styleable.TextInputLayout_startIconDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_startIconTint = global::Jammit.Resource.Styleable.TextInputLayout_startIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_startIconTintMode = global::Jammit.Resource.Styleable.TextInputLayout_startIconTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ThemeEnforcement = global::Jammit.Resource.Styleable.ThemeEnforcement;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::Jammit.Resource.Styleable.ThemeEnforcement_android_textAppearance;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::Jammit.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
@@ -2690,6 +3624,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logo = global::Jammit.Resource.Styleable.Toolbar_logo;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logoDescription = global::Jammit.Resource.Styleable.Toolbar_logoDescription;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_maxButtonHeight = global::Jammit.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_menu = global::Jammit.Resource.Styleable.Toolbar_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationContentDescription = global::Jammit.Resource.Styleable.Toolbar_navigationContentDescription;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationIcon = global::Jammit.Resource.Styleable.Toolbar_navigationIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_popupTheme = global::Jammit.Resource.Styleable.Toolbar_popupTheme;
@@ -2710,6 +3645,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_android_background = global::Jammit.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::Jammit.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::Jammit.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewPager2 = global::Jammit.Resource.Styleable.ViewPager2;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewPager2_android_orientation = global::Jammit.Resource.Styleable.ViewPager2_android_orientation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat = global::Jammit.Resource.Styleable.ViewStubCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_id = global::Jammit.Resource.Styleable.ViewStubCompat_android_id;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Jammit.Resource.Styleable.ViewStubCompat_android_inflatedId;
@@ -2719,6 +3656,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingEnd = global::Jammit.Resource.Styleable.View_paddingEnd;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingStart = global::Jammit.Resource.Styleable.View_paddingStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_theme = global::Jammit.Resource.Styleable.View_theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge = global::Jammit.Resource.Xml.standalone_badge;
+			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge_gravity_bottom_end = global::Jammit.Resource.Xml.standalone_badge_gravity_bottom_end;
+			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge_gravity_bottom_start = global::Jammit.Resource.Xml.standalone_badge_gravity_bottom_start;
+			global::Xamarin.Forms.Platform.Android.Resource.Xml.standalone_badge_gravity_top_start = global::Jammit.Resource.Xml.standalone_badge_gravity_top_start;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_in = global::Jammit.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_out = global::Jammit.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_grow_fade_in_from_bottom = global::Jammit.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -2731,6 +3672,18 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_slide_out_top = global::Jammit.Resource.Animation.abc_slide_out_top;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_tooltip_enter = global::Jammit.Resource.Animation.abc_tooltip_enter;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_tooltip_exit = global::Jammit.Resource.Animation.abc_tooltip_exit;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::Jammit.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::Jammit.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::Jammit.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::Jammit.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::Jammit.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::Jammit.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::Jammit.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::Jammit.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
+			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::Jammit.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
 			global::Xamarin.Forms.Platform.Resource.Animation.design_bottom_sheet_slide_in = global::Jammit.Resource.Animation.design_bottom_sheet_slide_in;
 			global::Xamarin.Forms.Platform.Resource.Animation.design_bottom_sheet_slide_out = global::Jammit.Resource.Animation.design_bottom_sheet_slide_out;
 			global::Xamarin.Forms.Platform.Resource.Animation.design_snackbar_in = global::Jammit.Resource.Animation.design_snackbar_in;
@@ -2739,12 +3692,27 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Animation.EnterFromRight = global::Jammit.Resource.Animation.EnterFromRight;
 			global::Xamarin.Forms.Platform.Resource.Animation.ExitToLeft = global::Jammit.Resource.Animation.ExitToLeft;
 			global::Xamarin.Forms.Platform.Resource.Animation.ExitToRight = global::Jammit.Resource.Animation.ExitToRight;
+			global::Xamarin.Forms.Platform.Resource.Animation.fragment_close_enter = global::Jammit.Resource.Animation.fragment_close_enter;
+			global::Xamarin.Forms.Platform.Resource.Animation.fragment_close_exit = global::Jammit.Resource.Animation.fragment_close_exit;
+			global::Xamarin.Forms.Platform.Resource.Animation.fragment_fade_enter = global::Jammit.Resource.Animation.fragment_fade_enter;
+			global::Xamarin.Forms.Platform.Resource.Animation.fragment_fade_exit = global::Jammit.Resource.Animation.fragment_fade_exit;
+			global::Xamarin.Forms.Platform.Resource.Animation.fragment_fast_out_extra_slow_in = global::Jammit.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::Xamarin.Forms.Platform.Resource.Animation.fragment_open_enter = global::Jammit.Resource.Animation.fragment_open_enter;
+			global::Xamarin.Forms.Platform.Resource.Animation.fragment_open_exit = global::Jammit.Resource.Animation.fragment_open_exit;
+			global::Xamarin.Forms.Platform.Resource.Animation.mtrl_bottom_sheet_slide_in = global::Jammit.Resource.Animation.mtrl_bottom_sheet_slide_in;
+			global::Xamarin.Forms.Platform.Resource.Animation.mtrl_bottom_sheet_slide_out = global::Jammit.Resource.Animation.mtrl_bottom_sheet_slide_out;
+			global::Xamarin.Forms.Platform.Resource.Animation.mtrl_card_lowers_interpolator = global::Jammit.Resource.Animation.mtrl_card_lowers_interpolator;
 			global::Xamarin.Forms.Platform.Resource.Animator.design_appbar_state_list_animator = global::Jammit.Resource.Animator.design_appbar_state_list_animator;
 			global::Xamarin.Forms.Platform.Resource.Animator.design_fab_hide_motion_spec = global::Jammit.Resource.Animator.design_fab_hide_motion_spec;
 			global::Xamarin.Forms.Platform.Resource.Animator.design_fab_show_motion_spec = global::Jammit.Resource.Animator.design_fab_show_motion_spec;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_btn_state_list_anim = global::Jammit.Resource.Animator.mtrl_btn_state_list_anim;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_btn_unelevated_state_list_anim = global::Jammit.Resource.Animator.mtrl_btn_unelevated_state_list_anim;
+			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_card_state_list_anim = global::Jammit.Resource.Animator.mtrl_card_state_list_anim;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_chip_state_list_anim = global::Jammit.Resource.Animator.mtrl_chip_state_list_anim;
+			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_extended_fab_change_size_motion_spec = global::Jammit.Resource.Animator.mtrl_extended_fab_change_size_motion_spec;
+			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_extended_fab_hide_motion_spec = global::Jammit.Resource.Animator.mtrl_extended_fab_hide_motion_spec;
+			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_extended_fab_show_motion_spec = global::Jammit.Resource.Animator.mtrl_extended_fab_show_motion_spec;
+			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_extended_fab_state_list_animator = global::Jammit.Resource.Animator.mtrl_extended_fab_state_list_animator;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_fab_hide_motion_spec = global::Jammit.Resource.Animator.mtrl_fab_hide_motion_spec;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_fab_show_motion_spec = global::Jammit.Resource.Animator.mtrl_fab_show_motion_spec;
 			global::Xamarin.Forms.Platform.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec = global::Jammit.Resource.Animator.mtrl_fab_transformation_sheet_collapse_spec;
@@ -2781,6 +3749,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.actionOverflowButtonStyle = global::Jammit.Resource.Attribute.actionOverflowButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.actionOverflowMenuStyle = global::Jammit.Resource.Attribute.actionOverflowMenuStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.actionProviderClass = global::Jammit.Resource.Attribute.actionProviderClass;
+			global::Xamarin.Forms.Platform.Resource.Attribute.actionTextColorAlpha = global::Jammit.Resource.Attribute.actionTextColorAlpha;
 			global::Xamarin.Forms.Platform.Resource.Attribute.actionViewClass = global::Jammit.Resource.Attribute.actionViewClass;
 			global::Xamarin.Forms.Platform.Resource.Attribute.activityChooserViewStyle = global::Jammit.Resource.Attribute.activityChooserViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.alertDialogButtonGroupStyle = global::Jammit.Resource.Attribute.alertDialogButtonGroupStyle;
@@ -2790,6 +3759,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.allowStacking = global::Jammit.Resource.Attribute.allowStacking;
 			global::Xamarin.Forms.Platform.Resource.Attribute.alpha = global::Jammit.Resource.Attribute.alpha;
 			global::Xamarin.Forms.Platform.Resource.Attribute.alphabeticModifiers = global::Jammit.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Resource.Attribute.animationMode = global::Jammit.Resource.Attribute.animationMode;
+			global::Xamarin.Forms.Platform.Resource.Attribute.appBarLayoutStyle = global::Jammit.Resource.Attribute.appBarLayoutStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.arrowHeadLength = global::Jammit.Resource.Attribute.arrowHeadLength;
 			global::Xamarin.Forms.Platform.Resource.Attribute.arrowShaftLength = global::Jammit.Resource.Attribute.arrowShaftLength;
 			global::Xamarin.Forms.Platform.Resource.Attribute.autoCompleteTextViewStyle = global::Jammit.Resource.Attribute.autoCompleteTextViewStyle;
@@ -2799,16 +3770,29 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.autoSizeStepGranularity = global::Jammit.Resource.Attribute.autoSizeStepGranularity;
 			global::Xamarin.Forms.Platform.Resource.Attribute.autoSizeTextType = global::Jammit.Resource.Attribute.autoSizeTextType;
 			global::Xamarin.Forms.Platform.Resource.Attribute.background = global::Jammit.Resource.Attribute.background;
+			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundColor = global::Jammit.Resource.Attribute.backgroundColor;
+			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundInsetBottom = global::Jammit.Resource.Attribute.backgroundInsetBottom;
+			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundInsetEnd = global::Jammit.Resource.Attribute.backgroundInsetEnd;
+			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundInsetStart = global::Jammit.Resource.Attribute.backgroundInsetStart;
+			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundInsetTop = global::Jammit.Resource.Attribute.backgroundInsetTop;
+			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundOverlayColorAlpha = global::Jammit.Resource.Attribute.backgroundOverlayColorAlpha;
 			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundSplit = global::Jammit.Resource.Attribute.backgroundSplit;
 			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundStacked = global::Jammit.Resource.Attribute.backgroundStacked;
 			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundTint = global::Jammit.Resource.Attribute.backgroundTint;
 			global::Xamarin.Forms.Platform.Resource.Attribute.backgroundTintMode = global::Jammit.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.Forms.Platform.Resource.Attribute.badgeGravity = global::Jammit.Resource.Attribute.badgeGravity;
+			global::Xamarin.Forms.Platform.Resource.Attribute.badgeStyle = global::Jammit.Resource.Attribute.badgeStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.badgeTextColor = global::Jammit.Resource.Attribute.badgeTextColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.barLength = global::Jammit.Resource.Attribute.barLength;
 			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_autoHide = global::Jammit.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_autoShrink = global::Jammit.Resource.Attribute.behavior_autoShrink;
+			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_expandedOffset = global::Jammit.Resource.Attribute.behavior_expandedOffset;
 			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_fitToContents = global::Jammit.Resource.Attribute.behavior_fitToContents;
+			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_halfExpandedRatio = global::Jammit.Resource.Attribute.behavior_halfExpandedRatio;
 			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_hideable = global::Jammit.Resource.Attribute.behavior_hideable;
 			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_overlapTop = global::Jammit.Resource.Attribute.behavior_overlapTop;
 			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_peekHeight = global::Jammit.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_saveFlags = global::Jammit.Resource.Attribute.behavior_saveFlags;
 			global::Xamarin.Forms.Platform.Resource.Attribute.behavior_skipCollapsed = global::Jammit.Resource.Attribute.behavior_skipCollapsed;
 			global::Xamarin.Forms.Platform.Resource.Attribute.borderlessButtonStyle = global::Jammit.Resource.Attribute.borderlessButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.borderWidth = global::Jammit.Resource.Attribute.borderWidth;
@@ -2825,11 +3809,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.boxCornerRadiusTopStart = global::Jammit.Resource.Attribute.boxCornerRadiusTopStart;
 			global::Xamarin.Forms.Platform.Resource.Attribute.boxStrokeColor = global::Jammit.Resource.Attribute.boxStrokeColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.boxStrokeWidth = global::Jammit.Resource.Attribute.boxStrokeWidth;
+			global::Xamarin.Forms.Platform.Resource.Attribute.boxStrokeWidthFocused = global::Jammit.Resource.Attribute.boxStrokeWidthFocused;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarButtonStyle = global::Jammit.Resource.Attribute.buttonBarButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarNegativeButtonStyle = global::Jammit.Resource.Attribute.buttonBarNegativeButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarNeutralButtonStyle = global::Jammit.Resource.Attribute.buttonBarNeutralButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarPositiveButtonStyle = global::Jammit.Resource.Attribute.buttonBarPositiveButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarStyle = global::Jammit.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.buttonCompat = global::Jammit.Resource.Attribute.buttonCompat;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonGravity = global::Jammit.Resource.Attribute.buttonGravity;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonIconDimen = global::Jammit.Resource.Attribute.buttonIconDimen;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonPanelSideLayout = global::Jammit.Resource.Attribute.buttonPanelSideLayout;
@@ -2840,14 +3826,17 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.cardBackgroundColor = global::Jammit.Resource.Attribute.cardBackgroundColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.cardCornerRadius = global::Jammit.Resource.Attribute.cardCornerRadius;
 			global::Xamarin.Forms.Platform.Resource.Attribute.cardElevation = global::Jammit.Resource.Attribute.cardElevation;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cardForegroundColor = global::Jammit.Resource.Attribute.cardForegroundColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.cardMaxElevation = global::Jammit.Resource.Attribute.cardMaxElevation;
 			global::Xamarin.Forms.Platform.Resource.Attribute.cardPreventCornerOverlap = global::Jammit.Resource.Attribute.cardPreventCornerOverlap;
 			global::Xamarin.Forms.Platform.Resource.Attribute.cardUseCompatPadding = global::Jammit.Resource.Attribute.cardUseCompatPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.cardViewStyle = global::Jammit.Resource.Attribute.cardViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkboxStyle = global::Jammit.Resource.Attribute.checkboxStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.checkedButton = global::Jammit.Resource.Attribute.checkedButton;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedChip = global::Jammit.Resource.Attribute.checkedChip;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedIcon = global::Jammit.Resource.Attribute.checkedIcon;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedIconEnabled = global::Jammit.Resource.Attribute.checkedIconEnabled;
+			global::Xamarin.Forms.Platform.Resource.Attribute.checkedIconTint = global::Jammit.Resource.Attribute.checkedIconTint;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedIconVisible = global::Jammit.Resource.Attribute.checkedIconVisible;
 			global::Xamarin.Forms.Platform.Resource.Attribute.checkedTextViewStyle = global::Jammit.Resource.Attribute.checkedTextViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipBackgroundColor = global::Jammit.Resource.Attribute.chipBackgroundColor;
@@ -2860,6 +3849,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipIconTint = global::Jammit.Resource.Attribute.chipIconTint;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipIconVisible = global::Jammit.Resource.Attribute.chipIconVisible;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipMinHeight = global::Jammit.Resource.Attribute.chipMinHeight;
+			global::Xamarin.Forms.Platform.Resource.Attribute.chipMinTouchTargetSize = global::Jammit.Resource.Attribute.chipMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipSpacing = global::Jammit.Resource.Attribute.chipSpacing;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipSpacingHorizontal = global::Jammit.Resource.Attribute.chipSpacingHorizontal;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipSpacingVertical = global::Jammit.Resource.Attribute.chipSpacingVertical;
@@ -2868,6 +3858,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipStrokeColor = global::Jammit.Resource.Attribute.chipStrokeColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipStrokeWidth = global::Jammit.Resource.Attribute.chipStrokeWidth;
 			global::Xamarin.Forms.Platform.Resource.Attribute.chipStyle = global::Jammit.Resource.Attribute.chipStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.chipSurfaceColor = global::Jammit.Resource.Attribute.chipSurfaceColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.closeIcon = global::Jammit.Resource.Attribute.closeIcon;
 			global::Xamarin.Forms.Platform.Resource.Attribute.closeIconEnabled = global::Jammit.Resource.Attribute.closeIconEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.closeIconEndPadding = global::Jammit.Resource.Attribute.closeIconEndPadding;
@@ -2889,9 +3880,19 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorControlHighlight = global::Jammit.Resource.Attribute.colorControlHighlight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorControlNormal = global::Jammit.Resource.Attribute.colorControlNormal;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorError = global::Jammit.Resource.Attribute.colorError;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorOnBackground = global::Jammit.Resource.Attribute.colorOnBackground;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorOnError = global::Jammit.Resource.Attribute.colorOnError;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorOnPrimary = global::Jammit.Resource.Attribute.colorOnPrimary;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorOnPrimarySurface = global::Jammit.Resource.Attribute.colorOnPrimarySurface;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorOnSecondary = global::Jammit.Resource.Attribute.colorOnSecondary;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorOnSurface = global::Jammit.Resource.Attribute.colorOnSurface;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorPrimary = global::Jammit.Resource.Attribute.colorPrimary;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorPrimaryDark = global::Jammit.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorPrimarySurface = global::Jammit.Resource.Attribute.colorPrimarySurface;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorPrimaryVariant = global::Jammit.Resource.Attribute.colorPrimaryVariant;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorSecondary = global::Jammit.Resource.Attribute.colorSecondary;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorSecondaryVariant = global::Jammit.Resource.Attribute.colorSecondaryVariant;
+			global::Xamarin.Forms.Platform.Resource.Attribute.colorSurface = global::Jammit.Resource.Attribute.colorSurface;
 			global::Xamarin.Forms.Platform.Resource.Attribute.colorSwitchThumbNormal = global::Jammit.Resource.Attribute.colorSwitchThumbNormal;
 			global::Xamarin.Forms.Platform.Resource.Attribute.commitIcon = global::Jammit.Resource.Attribute.commitIcon;
 			global::Xamarin.Forms.Platform.Resource.Attribute.contentDescription = global::Jammit.Resource.Attribute.contentDescription;
@@ -2909,12 +3910,28 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.contentScrim = global::Jammit.Resource.Attribute.contentScrim;
 			global::Xamarin.Forms.Platform.Resource.Attribute.controlBackground = global::Jammit.Resource.Attribute.controlBackground;
 			global::Xamarin.Forms.Platform.Resource.Attribute.coordinatorLayoutStyle = global::Jammit.Resource.Attribute.coordinatorLayoutStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerFamily = global::Jammit.Resource.Attribute.cornerFamily;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerFamilyBottomLeft = global::Jammit.Resource.Attribute.cornerFamilyBottomLeft;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerFamilyBottomRight = global::Jammit.Resource.Attribute.cornerFamilyBottomRight;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerFamilyTopLeft = global::Jammit.Resource.Attribute.cornerFamilyTopLeft;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerFamilyTopRight = global::Jammit.Resource.Attribute.cornerFamilyTopRight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.cornerRadius = global::Jammit.Resource.Attribute.cornerRadius;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerSize = global::Jammit.Resource.Attribute.cornerSize;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerSizeBottomLeft = global::Jammit.Resource.Attribute.cornerSizeBottomLeft;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerSizeBottomRight = global::Jammit.Resource.Attribute.cornerSizeBottomRight;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerSizeTopLeft = global::Jammit.Resource.Attribute.cornerSizeTopLeft;
+			global::Xamarin.Forms.Platform.Resource.Attribute.cornerSizeTopRight = global::Jammit.Resource.Attribute.cornerSizeTopRight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.counterEnabled = global::Jammit.Resource.Attribute.counterEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.counterMaxLength = global::Jammit.Resource.Attribute.counterMaxLength;
 			global::Xamarin.Forms.Platform.Resource.Attribute.counterOverflowTextAppearance = global::Jammit.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.counterOverflowTextColor = global::Jammit.Resource.Attribute.counterOverflowTextColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.counterTextAppearance = global::Jammit.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.counterTextColor = global::Jammit.Resource.Attribute.counterTextColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.customNavigationLayout = global::Jammit.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.Forms.Platform.Resource.Attribute.dayInvalidStyle = global::Jammit.Resource.Attribute.dayInvalidStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.daySelectedStyle = global::Jammit.Resource.Attribute.daySelectedStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.dayStyle = global::Jammit.Resource.Attribute.dayStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.dayTodayStyle = global::Jammit.Resource.Attribute.dayTodayStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.defaultQueryHint = global::Jammit.Resource.Attribute.defaultQueryHint;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dialogCornerRadius = global::Jammit.Resource.Attribute.dialogCornerRadius;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dialogPreferredPadding = global::Jammit.Resource.Attribute.dialogPreferredPadding;
@@ -2924,18 +3941,40 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.dividerHorizontal = global::Jammit.Resource.Attribute.dividerHorizontal;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dividerPadding = global::Jammit.Resource.Attribute.dividerPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dividerVertical = global::Jammit.Resource.Attribute.dividerVertical;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableBottomCompat = global::Jammit.Resource.Attribute.drawableBottomCompat;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableEndCompat = global::Jammit.Resource.Attribute.drawableEndCompat;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableLeftCompat = global::Jammit.Resource.Attribute.drawableLeftCompat;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableRightCompat = global::Jammit.Resource.Attribute.drawableRightCompat;
 			global::Xamarin.Forms.Platform.Resource.Attribute.drawableSize = global::Jammit.Resource.Attribute.drawableSize;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableStartCompat = global::Jammit.Resource.Attribute.drawableStartCompat;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableTint = global::Jammit.Resource.Attribute.drawableTint;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableTintMode = global::Jammit.Resource.Attribute.drawableTintMode;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawableTopCompat = global::Jammit.Resource.Attribute.drawableTopCompat;
 			global::Xamarin.Forms.Platform.Resource.Attribute.drawerArrowStyle = global::Jammit.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.drawerLayoutStyle = global::Jammit.Resource.Attribute.drawerLayoutStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dropdownListPreferredItemHeight = global::Jammit.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dropDownListViewStyle = global::Jammit.Resource.Attribute.dropDownListViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.editTextBackground = global::Jammit.Resource.Attribute.editTextBackground;
 			global::Xamarin.Forms.Platform.Resource.Attribute.editTextColor = global::Jammit.Resource.Attribute.editTextColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.editTextStyle = global::Jammit.Resource.Attribute.editTextStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.elevation = global::Jammit.Resource.Attribute.elevation;
+			global::Xamarin.Forms.Platform.Resource.Attribute.elevationOverlayColor = global::Jammit.Resource.Attribute.elevationOverlayColor;
+			global::Xamarin.Forms.Platform.Resource.Attribute.elevationOverlayEnabled = global::Jammit.Resource.Attribute.elevationOverlayEnabled;
+			global::Xamarin.Forms.Platform.Resource.Attribute.endIconCheckable = global::Jammit.Resource.Attribute.endIconCheckable;
+			global::Xamarin.Forms.Platform.Resource.Attribute.endIconContentDescription = global::Jammit.Resource.Attribute.endIconContentDescription;
+			global::Xamarin.Forms.Platform.Resource.Attribute.endIconDrawable = global::Jammit.Resource.Attribute.endIconDrawable;
+			global::Xamarin.Forms.Platform.Resource.Attribute.endIconMode = global::Jammit.Resource.Attribute.endIconMode;
+			global::Xamarin.Forms.Platform.Resource.Attribute.endIconTint = global::Jammit.Resource.Attribute.endIconTint;
+			global::Xamarin.Forms.Platform.Resource.Attribute.endIconTintMode = global::Jammit.Resource.Attribute.endIconTintMode;
 			global::Xamarin.Forms.Platform.Resource.Attribute.enforceMaterialTheme = global::Jammit.Resource.Attribute.enforceMaterialTheme;
 			global::Xamarin.Forms.Platform.Resource.Attribute.enforceTextAppearance = global::Jammit.Resource.Attribute.enforceTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.ensureMinTouchTargetSize = global::Jammit.Resource.Attribute.ensureMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Resource.Attribute.errorEnabled = global::Jammit.Resource.Attribute.errorEnabled;
+			global::Xamarin.Forms.Platform.Resource.Attribute.errorIconDrawable = global::Jammit.Resource.Attribute.errorIconDrawable;
+			global::Xamarin.Forms.Platform.Resource.Attribute.errorIconTint = global::Jammit.Resource.Attribute.errorIconTint;
+			global::Xamarin.Forms.Platform.Resource.Attribute.errorIconTintMode = global::Jammit.Resource.Attribute.errorIconTintMode;
 			global::Xamarin.Forms.Platform.Resource.Attribute.errorTextAppearance = global::Jammit.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.errorTextColor = global::Jammit.Resource.Attribute.errorTextColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.expandActivityOverflowButtonDrawable = global::Jammit.Resource.Attribute.expandActivityOverflowButtonDrawable;
 			global::Xamarin.Forms.Platform.Resource.Attribute.expanded = global::Jammit.Resource.Attribute.expanded;
 			global::Xamarin.Forms.Platform.Resource.Attribute.expandedTitleGravity = global::Jammit.Resource.Attribute.expandedTitleGravity;
@@ -2945,7 +3984,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.expandedTitleMarginStart = global::Jammit.Resource.Attribute.expandedTitleMarginStart;
 			global::Xamarin.Forms.Platform.Resource.Attribute.expandedTitleMarginTop = global::Jammit.Resource.Attribute.expandedTitleMarginTop;
 			global::Xamarin.Forms.Platform.Resource.Attribute.expandedTitleTextAppearance = global::Jammit.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.extendedFloatingActionButtonStyle = global::Jammit.Resource.Attribute.extendedFloatingActionButtonStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.extendMotionSpec = global::Jammit.Resource.Attribute.extendMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Attribute.fabAlignmentMode = global::Jammit.Resource.Attribute.fabAlignmentMode;
+			global::Xamarin.Forms.Platform.Resource.Attribute.fabAnimationMode = global::Jammit.Resource.Attribute.fabAnimationMode;
 			global::Xamarin.Forms.Platform.Resource.Attribute.fabCradleMargin = global::Jammit.Resource.Attribute.fabCradleMargin;
 			global::Xamarin.Forms.Platform.Resource.Attribute.fabCradleRoundedCornerRadius = global::Jammit.Resource.Attribute.fabCradleRoundedCornerRadius;
 			global::Xamarin.Forms.Platform.Resource.Attribute.fabCradleVerticalOffset = global::Jammit.Resource.Attribute.fabCradleVerticalOffset;
@@ -2977,12 +4019,14 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.helperText = global::Jammit.Resource.Attribute.helperText;
 			global::Xamarin.Forms.Platform.Resource.Attribute.helperTextEnabled = global::Jammit.Resource.Attribute.helperTextEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.helperTextTextAppearance = global::Jammit.Resource.Attribute.helperTextTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.helperTextTextColor = global::Jammit.Resource.Attribute.helperTextTextColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.hideMotionSpec = global::Jammit.Resource.Attribute.hideMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Attribute.hideOnContentScroll = global::Jammit.Resource.Attribute.hideOnContentScroll;
 			global::Xamarin.Forms.Platform.Resource.Attribute.hideOnScroll = global::Jammit.Resource.Attribute.hideOnScroll;
 			global::Xamarin.Forms.Platform.Resource.Attribute.hintAnimationEnabled = global::Jammit.Resource.Attribute.hintAnimationEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.hintEnabled = global::Jammit.Resource.Attribute.hintEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.hintTextAppearance = global::Jammit.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.hintTextColor = global::Jammit.Resource.Attribute.hintTextColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.homeAsUpIndicator = global::Jammit.Resource.Attribute.homeAsUpIndicator;
 			global::Xamarin.Forms.Platform.Resource.Attribute.homeLayout = global::Jammit.Resource.Attribute.homeLayout;
 			global::Xamarin.Forms.Platform.Resource.Attribute.hoveredFocusedTranslationZ = global::Jammit.Resource.Attribute.hoveredFocusedTranslationZ;
@@ -3000,14 +4044,27 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.initialActivityCount = global::Jammit.Resource.Attribute.initialActivityCount;
 			global::Xamarin.Forms.Platform.Resource.Attribute.insetForeground = global::Jammit.Resource.Attribute.insetForeground;
 			global::Xamarin.Forms.Platform.Resource.Attribute.isLightTheme = global::Jammit.Resource.Attribute.isLightTheme;
+			global::Xamarin.Forms.Platform.Resource.Attribute.isMaterialTheme = global::Jammit.Resource.Attribute.isMaterialTheme;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemBackground = global::Jammit.Resource.Attribute.itemBackground;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemFillColor = global::Jammit.Resource.Attribute.itemFillColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemHorizontalPadding = global::Jammit.Resource.Attribute.itemHorizontalPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemHorizontalTranslationEnabled = global::Jammit.Resource.Attribute.itemHorizontalTranslationEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemIconPadding = global::Jammit.Resource.Attribute.itemIconPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemIconSize = global::Jammit.Resource.Attribute.itemIconSize;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemIconTint = global::Jammit.Resource.Attribute.itemIconTint;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemMaxLines = global::Jammit.Resource.Attribute.itemMaxLines;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemPadding = global::Jammit.Resource.Attribute.itemPadding;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemRippleColor = global::Jammit.Resource.Attribute.itemRippleColor;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemShapeAppearance = global::Jammit.Resource.Attribute.itemShapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemShapeAppearanceOverlay = global::Jammit.Resource.Attribute.itemShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemShapeFillColor = global::Jammit.Resource.Attribute.itemShapeFillColor;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemShapeInsetBottom = global::Jammit.Resource.Attribute.itemShapeInsetBottom;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemShapeInsetEnd = global::Jammit.Resource.Attribute.itemShapeInsetEnd;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemShapeInsetStart = global::Jammit.Resource.Attribute.itemShapeInsetStart;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemShapeInsetTop = global::Jammit.Resource.Attribute.itemShapeInsetTop;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemSpacing = global::Jammit.Resource.Attribute.itemSpacing;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemStrokeColor = global::Jammit.Resource.Attribute.itemStrokeColor;
+			global::Xamarin.Forms.Platform.Resource.Attribute.itemStrokeWidth = global::Jammit.Resource.Attribute.itemStrokeWidth;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemTextAppearance = global::Jammit.Resource.Attribute.itemTextAppearance;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemTextAppearanceActive = global::Jammit.Resource.Attribute.itemTextAppearanceActive;
 			global::Xamarin.Forms.Platform.Resource.Attribute.itemTextAppearanceInactive = global::Jammit.Resource.Attribute.itemTextAppearanceInactive;
@@ -3028,9 +4085,12 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.layout_scrollFlags = global::Jammit.Resource.Attribute.layout_scrollFlags;
 			global::Xamarin.Forms.Platform.Resource.Attribute.layout_scrollInterpolator = global::Jammit.Resource.Attribute.layout_scrollInterpolator;
 			global::Xamarin.Forms.Platform.Resource.Attribute.liftOnScroll = global::Jammit.Resource.Attribute.liftOnScroll;
+			global::Xamarin.Forms.Platform.Resource.Attribute.liftOnScrollTargetViewId = global::Jammit.Resource.Attribute.liftOnScrollTargetViewId;
 			global::Xamarin.Forms.Platform.Resource.Attribute.lineHeight = global::Jammit.Resource.Attribute.lineHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.lineSpacing = global::Jammit.Resource.Attribute.lineSpacing;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listChoiceBackgroundIndicator = global::Jammit.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::Jammit.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.Forms.Platform.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::Jammit.Resource.Attribute.listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listDividerAlertDialog = global::Jammit.Resource.Attribute.listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listItemLayout = global::Jammit.Resource.Attribute.listItemLayout;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listLayout = global::Jammit.Resource.Attribute.listLayout;
@@ -3039,22 +4099,45 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemHeight = global::Jammit.Resource.Attribute.listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemHeightLarge = global::Jammit.Resource.Attribute.listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemHeightSmall = global::Jammit.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingEnd = global::Jammit.Resource.Attribute.listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingLeft = global::Jammit.Resource.Attribute.listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingRight = global::Jammit.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingStart = global::Jammit.Resource.Attribute.listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Resource.Attribute.logo = global::Jammit.Resource.Attribute.logo;
 			global::Xamarin.Forms.Platform.Resource.Attribute.logoDescription = global::Jammit.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogBodyTextStyle = global::Jammit.Resource.Attribute.materialAlertDialogBodyTextStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogTheme = global::Jammit.Resource.Attribute.materialAlertDialogTheme;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogTitleIconStyle = global::Jammit.Resource.Attribute.materialAlertDialogTitleIconStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogTitlePanelStyle = global::Jammit.Resource.Attribute.materialAlertDialogTitlePanelStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialAlertDialogTitleTextStyle = global::Jammit.Resource.Attribute.materialAlertDialogTitleTextStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialButtonOutlinedStyle = global::Jammit.Resource.Attribute.materialButtonOutlinedStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.materialButtonStyle = global::Jammit.Resource.Attribute.materialButtonStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialButtonToggleGroupStyle = global::Jammit.Resource.Attribute.materialButtonToggleGroupStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarDay = global::Jammit.Resource.Attribute.materialCalendarDay;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarFullscreenTheme = global::Jammit.Resource.Attribute.materialCalendarFullscreenTheme;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarHeaderConfirmButton = global::Jammit.Resource.Attribute.materialCalendarHeaderConfirmButton;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarHeaderDivider = global::Jammit.Resource.Attribute.materialCalendarHeaderDivider;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarHeaderLayout = global::Jammit.Resource.Attribute.materialCalendarHeaderLayout;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarHeaderSelection = global::Jammit.Resource.Attribute.materialCalendarHeaderSelection;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarHeaderTitle = global::Jammit.Resource.Attribute.materialCalendarHeaderTitle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarHeaderToggleButton = global::Jammit.Resource.Attribute.materialCalendarHeaderToggleButton;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarStyle = global::Jammit.Resource.Attribute.materialCalendarStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialCalendarTheme = global::Jammit.Resource.Attribute.materialCalendarTheme;
 			global::Xamarin.Forms.Platform.Resource.Attribute.materialCardViewStyle = global::Jammit.Resource.Attribute.materialCardViewStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.materialThemeOverlay = global::Jammit.Resource.Attribute.materialThemeOverlay;
 			global::Xamarin.Forms.Platform.Resource.Attribute.maxActionInlineWidth = global::Jammit.Resource.Attribute.maxActionInlineWidth;
 			global::Xamarin.Forms.Platform.Resource.Attribute.maxButtonHeight = global::Jammit.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.Forms.Platform.Resource.Attribute.maxCharacterCount = global::Jammit.Resource.Attribute.maxCharacterCount;
 			global::Xamarin.Forms.Platform.Resource.Attribute.maxImageSize = global::Jammit.Resource.Attribute.maxImageSize;
 			global::Xamarin.Forms.Platform.Resource.Attribute.measureWithLargestChild = global::Jammit.Resource.Attribute.measureWithLargestChild;
 			global::Xamarin.Forms.Platform.Resource.Attribute.menu = global::Jammit.Resource.Attribute.menu;
+			global::Xamarin.Forms.Platform.Resource.Attribute.minTouchTargetSize = global::Jammit.Resource.Attribute.minTouchTargetSize;
 			global::Xamarin.Forms.Platform.Resource.Attribute.multiChoiceItemLayout = global::Jammit.Resource.Attribute.multiChoiceItemLayout;
 			global::Xamarin.Forms.Platform.Resource.Attribute.navigationContentDescription = global::Jammit.Resource.Attribute.navigationContentDescription;
 			global::Xamarin.Forms.Platform.Resource.Attribute.navigationIcon = global::Jammit.Resource.Attribute.navigationIcon;
 			global::Xamarin.Forms.Platform.Resource.Attribute.navigationMode = global::Jammit.Resource.Attribute.navigationMode;
 			global::Xamarin.Forms.Platform.Resource.Attribute.navigationViewStyle = global::Jammit.Resource.Attribute.navigationViewStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.number = global::Jammit.Resource.Attribute.number;
 			global::Xamarin.Forms.Platform.Resource.Attribute.numericModifiers = global::Jammit.Resource.Attribute.numericModifiers;
 			global::Xamarin.Forms.Platform.Resource.Attribute.overlapAnchor = global::Jammit.Resource.Attribute.overlapAnchor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.paddingBottomNoButtons = global::Jammit.Resource.Attribute.paddingBottomNoButtons;
@@ -3069,6 +4152,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.passwordToggleEnabled = global::Jammit.Resource.Attribute.passwordToggleEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.passwordToggleTint = global::Jammit.Resource.Attribute.passwordToggleTint;
 			global::Xamarin.Forms.Platform.Resource.Attribute.passwordToggleTintMode = global::Jammit.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Resource.Attribute.popupMenuBackground = global::Jammit.Resource.Attribute.popupMenuBackground;
 			global::Xamarin.Forms.Platform.Resource.Attribute.popupMenuStyle = global::Jammit.Resource.Attribute.popupMenuStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.popupTheme = global::Jammit.Resource.Attribute.popupTheme;
 			global::Xamarin.Forms.Platform.Resource.Attribute.popupWindowStyle = global::Jammit.Resource.Attribute.popupWindowStyle;
@@ -3079,9 +4163,11 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.queryBackground = global::Jammit.Resource.Attribute.queryBackground;
 			global::Xamarin.Forms.Platform.Resource.Attribute.queryHint = global::Jammit.Resource.Attribute.queryHint;
 			global::Xamarin.Forms.Platform.Resource.Attribute.radioButtonStyle = global::Jammit.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.rangeFillColor = global::Jammit.Resource.Attribute.rangeFillColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.ratingBarStyle = global::Jammit.Resource.Attribute.ratingBarStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.ratingBarStyleIndicator = global::Jammit.Resource.Attribute.ratingBarStyleIndicator;
 			global::Xamarin.Forms.Platform.Resource.Attribute.ratingBarStyleSmall = global::Jammit.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Resource.Attribute.recyclerViewStyle = global::Jammit.Resource.Attribute.recyclerViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.reverseLayout = global::Jammit.Resource.Attribute.reverseLayout;
 			global::Xamarin.Forms.Platform.Resource.Attribute.rippleColor = global::Jammit.Resource.Attribute.rippleColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.scrimAnimationDuration = global::Jammit.Resource.Attribute.scrimAnimationDuration;
@@ -3094,11 +4180,17 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.seekBarStyle = global::Jammit.Resource.Attribute.seekBarStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.selectableItemBackground = global::Jammit.Resource.Attribute.selectableItemBackground;
 			global::Xamarin.Forms.Platform.Resource.Attribute.selectableItemBackgroundBorderless = global::Jammit.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Resource.Attribute.shapeAppearance = global::Jammit.Resource.Attribute.shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Attribute.shapeAppearanceLargeComponent = global::Jammit.Resource.Attribute.shapeAppearanceLargeComponent;
+			global::Xamarin.Forms.Platform.Resource.Attribute.shapeAppearanceMediumComponent = global::Jammit.Resource.Attribute.shapeAppearanceMediumComponent;
+			global::Xamarin.Forms.Platform.Resource.Attribute.shapeAppearanceOverlay = global::Jammit.Resource.Attribute.shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Attribute.shapeAppearanceSmallComponent = global::Jammit.Resource.Attribute.shapeAppearanceSmallComponent;
 			global::Xamarin.Forms.Platform.Resource.Attribute.showAsAction = global::Jammit.Resource.Attribute.showAsAction;
 			global::Xamarin.Forms.Platform.Resource.Attribute.showDividers = global::Jammit.Resource.Attribute.showDividers;
 			global::Xamarin.Forms.Platform.Resource.Attribute.showMotionSpec = global::Jammit.Resource.Attribute.showMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Attribute.showText = global::Jammit.Resource.Attribute.showText;
 			global::Xamarin.Forms.Platform.Resource.Attribute.showTitle = global::Jammit.Resource.Attribute.showTitle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.shrinkMotionSpec = global::Jammit.Resource.Attribute.shrinkMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Attribute.singleChoiceItemLayout = global::Jammit.Resource.Attribute.singleChoiceItemLayout;
 			global::Xamarin.Forms.Platform.Resource.Attribute.singleLine = global::Jammit.Resource.Attribute.singleLine;
 			global::Xamarin.Forms.Platform.Resource.Attribute.singleSelection = global::Jammit.Resource.Attribute.singleSelection;
@@ -3111,12 +4203,19 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.splitTrack = global::Jammit.Resource.Attribute.splitTrack;
 			global::Xamarin.Forms.Platform.Resource.Attribute.srcCompat = global::Jammit.Resource.Attribute.srcCompat;
 			global::Xamarin.Forms.Platform.Resource.Attribute.stackFromEnd = global::Jammit.Resource.Attribute.stackFromEnd;
+			global::Xamarin.Forms.Platform.Resource.Attribute.startIconCheckable = global::Jammit.Resource.Attribute.startIconCheckable;
+			global::Xamarin.Forms.Platform.Resource.Attribute.startIconContentDescription = global::Jammit.Resource.Attribute.startIconContentDescription;
+			global::Xamarin.Forms.Platform.Resource.Attribute.startIconDrawable = global::Jammit.Resource.Attribute.startIconDrawable;
+			global::Xamarin.Forms.Platform.Resource.Attribute.startIconTint = global::Jammit.Resource.Attribute.startIconTint;
+			global::Xamarin.Forms.Platform.Resource.Attribute.startIconTintMode = global::Jammit.Resource.Attribute.startIconTintMode;
 			global::Xamarin.Forms.Platform.Resource.Attribute.state_above_anchor = global::Jammit.Resource.Attribute.state_above_anchor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.state_collapsed = global::Jammit.Resource.Attribute.state_collapsed;
 			global::Xamarin.Forms.Platform.Resource.Attribute.state_collapsible = global::Jammit.Resource.Attribute.state_collapsible;
+			global::Xamarin.Forms.Platform.Resource.Attribute.state_dragged = global::Jammit.Resource.Attribute.state_dragged;
 			global::Xamarin.Forms.Platform.Resource.Attribute.state_liftable = global::Jammit.Resource.Attribute.state_liftable;
 			global::Xamarin.Forms.Platform.Resource.Attribute.state_lifted = global::Jammit.Resource.Attribute.state_lifted;
 			global::Xamarin.Forms.Platform.Resource.Attribute.statusBarBackground = global::Jammit.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Forms.Platform.Resource.Attribute.statusBarForeground = global::Jammit.Resource.Attribute.statusBarForeground;
 			global::Xamarin.Forms.Platform.Resource.Attribute.statusBarScrim = global::Jammit.Resource.Attribute.statusBarScrim;
 			global::Xamarin.Forms.Platform.Resource.Attribute.strokeColor = global::Jammit.Resource.Attribute.strokeColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.strokeWidth = global::Jammit.Resource.Attribute.strokeWidth;
@@ -3169,6 +4268,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.textAppearanceHeadline5 = global::Jammit.Resource.Attribute.textAppearanceHeadline5;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textAppearanceHeadline6 = global::Jammit.Resource.Attribute.textAppearanceHeadline6;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textAppearanceLargePopupMenu = global::Jammit.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Resource.Attribute.textAppearanceLineHeightEnabled = global::Jammit.Resource.Attribute.textAppearanceLineHeightEnabled;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textAppearanceListItem = global::Jammit.Resource.Attribute.textAppearanceListItem;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textAppearanceListItemSecondary = global::Jammit.Resource.Attribute.textAppearanceListItemSecondary;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textAppearanceListItemSmall = global::Jammit.Resource.Attribute.textAppearanceListItemSmall;
@@ -3183,8 +4283,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.textColorSearchUrl = global::Jammit.Resource.Attribute.textColorSearchUrl;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textEndPadding = global::Jammit.Resource.Attribute.textEndPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textInputStyle = global::Jammit.Resource.Attribute.textInputStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.textLocale = global::Jammit.Resource.Attribute.textLocale;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textStartPadding = global::Jammit.Resource.Attribute.textStartPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.theme = global::Jammit.Resource.Attribute.theme;
+			global::Xamarin.Forms.Platform.Resource.Attribute.themeLineHeight = global::Jammit.Resource.Attribute.themeLineHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.thickness = global::Jammit.Resource.Attribute.thickness;
 			global::Xamarin.Forms.Platform.Resource.Attribute.thumbTextPadding = global::Jammit.Resource.Attribute.thumbTextPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.thumbTint = global::Jammit.Resource.Attribute.thumbTint;
@@ -3216,6 +4318,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.trackTintMode = global::Jammit.Resource.Attribute.trackTintMode;
 			global::Xamarin.Forms.Platform.Resource.Attribute.ttcIndex = global::Jammit.Resource.Attribute.ttcIndex;
 			global::Xamarin.Forms.Platform.Resource.Attribute.useCompatPadding = global::Jammit.Resource.Attribute.useCompatPadding;
+			global::Xamarin.Forms.Platform.Resource.Attribute.useMaterialThemeColors = global::Jammit.Resource.Attribute.useMaterialThemeColors;
 			global::Xamarin.Forms.Platform.Resource.Attribute.viewInflaterClass = global::Jammit.Resource.Attribute.viewInflaterClass;
 			global::Xamarin.Forms.Platform.Resource.Attribute.voiceIcon = global::Jammit.Resource.Attribute.voiceIcon;
 			global::Xamarin.Forms.Platform.Resource.Attribute.windowActionBar = global::Jammit.Resource.Attribute.windowActionBar;
@@ -3228,6 +4331,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Attribute.windowMinWidthMajor = global::Jammit.Resource.Attribute.windowMinWidthMajor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.windowMinWidthMinor = global::Jammit.Resource.Attribute.windowMinWidthMinor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.windowNoTitle = global::Jammit.Resource.Attribute.windowNoTitle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.yearSelectedStyle = global::Jammit.Resource.Attribute.yearSelectedStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.yearStyle = global::Jammit.Resource.Attribute.yearStyle;
+			global::Xamarin.Forms.Platform.Resource.Attribute.yearTodayStyle = global::Jammit.Resource.Attribute.yearTodayStyle;
 			global::Xamarin.Forms.Platform.Resource.Boolean.abc_action_bar_embed_tabs = global::Jammit.Resource.Boolean.abc_action_bar_embed_tabs;
 			global::Xamarin.Forms.Platform.Resource.Boolean.abc_allow_stacked_button_bar = global::Jammit.Resource.Boolean.abc_allow_stacked_button_bar;
 			global::Xamarin.Forms.Platform.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::Jammit.Resource.Boolean.abc_config_actionMenuItemAllCaps;
@@ -3237,6 +4343,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Color.abc_btn_colored_borderless_text_material = global::Jammit.Resource.Color.abc_btn_colored_borderless_text_material;
 			global::Xamarin.Forms.Platform.Resource.Color.abc_btn_colored_text_material = global::Jammit.Resource.Color.abc_btn_colored_text_material;
 			global::Xamarin.Forms.Platform.Resource.Color.abc_color_highlight_material = global::Jammit.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.Forms.Platform.Resource.Color.abc_decor_view_status_guard = global::Jammit.Resource.Color.abc_decor_view_status_guard;
+			global::Xamarin.Forms.Platform.Resource.Color.abc_decor_view_status_guard_light = global::Jammit.Resource.Color.abc_decor_view_status_guard_light;
 			global::Xamarin.Forms.Platform.Resource.Color.abc_hint_foreground_material_dark = global::Jammit.Resource.Color.abc_hint_foreground_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.abc_hint_foreground_material_light = global::Jammit.Resource.Color.abc_hint_foreground_material_light;
 			global::Xamarin.Forms.Platform.Resource.Color.abc_primary_text_disable_only_material_dark = global::Jammit.Resource.Color.abc_primary_text_disable_only_material_dark;
@@ -3257,6 +4365,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Color.abc_tint_switch_track = global::Jammit.Resource.Color.abc_tint_switch_track;
 			global::Xamarin.Forms.Platform.Resource.Color.accent_material_dark = global::Jammit.Resource.Color.accent_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.accent_material_light = global::Jammit.Resource.Color.accent_material_light;
+			global::Xamarin.Forms.Platform.Resource.Color.androidx_core_ripple_material_light = global::Jammit.Resource.Color.androidx_core_ripple_material_light;
+			global::Xamarin.Forms.Platform.Resource.Color.androidx_core_secondary_text_default_material_light = global::Jammit.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::Xamarin.Forms.Platform.Resource.Color.background_floating_material_dark = global::Jammit.Resource.Color.background_floating_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.background_floating_material_light = global::Jammit.Resource.Color.background_floating_material_light;
 			global::Xamarin.Forms.Platform.Resource.Color.background_material_dark = global::Jammit.Resource.Color.background_material_dark;
@@ -3273,9 +4383,35 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Color.cardview_light_background = global::Jammit.Resource.Color.cardview_light_background;
 			global::Xamarin.Forms.Platform.Resource.Color.cardview_shadow_end_color = global::Jammit.Resource.Color.cardview_shadow_end_color;
 			global::Xamarin.Forms.Platform.Resource.Color.cardview_shadow_start_color = global::Jammit.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.Forms.Platform.Resource.Color.checkbox_themeable_attribute_color = global::Jammit.Resource.Color.checkbox_themeable_attribute_color;
 			global::Xamarin.Forms.Platform.Resource.Color.design_bottom_navigation_shadow_color = global::Jammit.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.Forms.Platform.Resource.Color.design_box_stroke_color = global::Jammit.Resource.Color.design_box_stroke_color;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_background = global::Jammit.Resource.Color.design_dark_default_color_background;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_error = global::Jammit.Resource.Color.design_dark_default_color_error;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_on_background = global::Jammit.Resource.Color.design_dark_default_color_on_background;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_on_error = global::Jammit.Resource.Color.design_dark_default_color_on_error;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_on_primary = global::Jammit.Resource.Color.design_dark_default_color_on_primary;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_on_secondary = global::Jammit.Resource.Color.design_dark_default_color_on_secondary;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_on_surface = global::Jammit.Resource.Color.design_dark_default_color_on_surface;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_primary = global::Jammit.Resource.Color.design_dark_default_color_primary;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_primary_dark = global::Jammit.Resource.Color.design_dark_default_color_primary_dark;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_primary_variant = global::Jammit.Resource.Color.design_dark_default_color_primary_variant;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_secondary = global::Jammit.Resource.Color.design_dark_default_color_secondary;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_secondary_variant = global::Jammit.Resource.Color.design_dark_default_color_secondary_variant;
+			global::Xamarin.Forms.Platform.Resource.Color.design_dark_default_color_surface = global::Jammit.Resource.Color.design_dark_default_color_surface;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_background = global::Jammit.Resource.Color.design_default_color_background;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_error = global::Jammit.Resource.Color.design_default_color_error;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_on_background = global::Jammit.Resource.Color.design_default_color_on_background;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_on_error = global::Jammit.Resource.Color.design_default_color_on_error;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_on_primary = global::Jammit.Resource.Color.design_default_color_on_primary;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_on_secondary = global::Jammit.Resource.Color.design_default_color_on_secondary;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_on_surface = global::Jammit.Resource.Color.design_default_color_on_surface;
 			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_primary = global::Jammit.Resource.Color.design_default_color_primary;
 			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_primary_dark = global::Jammit.Resource.Color.design_default_color_primary_dark;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_primary_variant = global::Jammit.Resource.Color.design_default_color_primary_variant;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_secondary = global::Jammit.Resource.Color.design_default_color_secondary;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_secondary_variant = global::Jammit.Resource.Color.design_default_color_secondary_variant;
+			global::Xamarin.Forms.Platform.Resource.Color.design_default_color_surface = global::Jammit.Resource.Color.design_default_color_surface;
 			global::Xamarin.Forms.Platform.Resource.Color.design_error = global::Jammit.Resource.Color.design_error;
 			global::Xamarin.Forms.Platform.Resource.Color.design_fab_shadow_end_color = global::Jammit.Resource.Color.design_fab_shadow_end_color;
 			global::Xamarin.Forms.Platform.Resource.Color.design_fab_shadow_mid_color = global::Jammit.Resource.Color.design_fab_shadow_mid_color;
@@ -3284,6 +4420,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Color.design_fab_stroke_end_outer_color = global::Jammit.Resource.Color.design_fab_stroke_end_outer_color;
 			global::Xamarin.Forms.Platform.Resource.Color.design_fab_stroke_top_inner_color = global::Jammit.Resource.Color.design_fab_stroke_top_inner_color;
 			global::Xamarin.Forms.Platform.Resource.Color.design_fab_stroke_top_outer_color = global::Jammit.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.Forms.Platform.Resource.Color.design_icon_tint = global::Jammit.Resource.Color.design_icon_tint;
 			global::Xamarin.Forms.Platform.Resource.Color.design_snackbar_background_color = global::Jammit.Resource.Color.design_snackbar_background_color;
 			global::Xamarin.Forms.Platform.Resource.Color.dim_foreground_disabled_material_dark = global::Jammit.Resource.Color.dim_foreground_disabled_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.dim_foreground_disabled_material_light = global::Jammit.Resource.Color.dim_foreground_disabled_material_light;
@@ -3307,20 +4444,55 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Color.material_grey_800 = global::Jammit.Resource.Color.material_grey_800;
 			global::Xamarin.Forms.Platform.Resource.Color.material_grey_850 = global::Jammit.Resource.Color.material_grey_850;
 			global::Xamarin.Forms.Platform.Resource.Color.material_grey_900 = global::Jammit.Resource.Color.material_grey_900;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_background_disabled = global::Jammit.Resource.Color.material_on_background_disabled;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_background_emphasis_high_type = global::Jammit.Resource.Color.material_on_background_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_background_emphasis_medium = global::Jammit.Resource.Color.material_on_background_emphasis_medium;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_primary_disabled = global::Jammit.Resource.Color.material_on_primary_disabled;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_primary_emphasis_high_type = global::Jammit.Resource.Color.material_on_primary_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_primary_emphasis_medium = global::Jammit.Resource.Color.material_on_primary_emphasis_medium;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_surface_disabled = global::Jammit.Resource.Color.material_on_surface_disabled;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_surface_emphasis_high_type = global::Jammit.Resource.Color.material_on_surface_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Resource.Color.material_on_surface_emphasis_medium = global::Jammit.Resource.Color.material_on_surface_emphasis_medium;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_bottom_nav_colored_item_tint = global::Jammit.Resource.Color.mtrl_bottom_nav_colored_item_tint;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_bottom_nav_colored_ripple_color = global::Jammit.Resource.Color.mtrl_bottom_nav_colored_ripple_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_bottom_nav_item_tint = global::Jammit.Resource.Color.mtrl_bottom_nav_item_tint;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_bottom_nav_ripple_color = global::Jammit.Resource.Color.mtrl_bottom_nav_ripple_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_bg_color_selector = global::Jammit.Resource.Color.mtrl_btn_bg_color_selector;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_ripple_color = global::Jammit.Resource.Color.mtrl_btn_ripple_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_stroke_color_selector = global::Jammit.Resource.Color.mtrl_btn_stroke_color_selector;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_text_btn_bg_color_selector = global::Jammit.Resource.Color.mtrl_btn_text_btn_bg_color_selector;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_text_btn_ripple_color = global::Jammit.Resource.Color.mtrl_btn_text_btn_ripple_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_text_color_disabled = global::Jammit.Resource.Color.mtrl_btn_text_color_disabled;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_text_color_selector = global::Jammit.Resource.Color.mtrl_btn_text_color_selector;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_btn_transparent_bg_color = global::Jammit.Resource.Color.mtrl_btn_transparent_bg_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_calendar_item_stroke_color = global::Jammit.Resource.Color.mtrl_calendar_item_stroke_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_calendar_selected_range = global::Jammit.Resource.Color.mtrl_calendar_selected_range;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_card_view_foreground = global::Jammit.Resource.Color.mtrl_card_view_foreground;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_card_view_ripple = global::Jammit.Resource.Color.mtrl_card_view_ripple;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_chip_background_color = global::Jammit.Resource.Color.mtrl_chip_background_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_chip_close_icon_tint = global::Jammit.Resource.Color.mtrl_chip_close_icon_tint;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_chip_ripple_color = global::Jammit.Resource.Color.mtrl_chip_ripple_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_chip_surface_color = global::Jammit.Resource.Color.mtrl_chip_surface_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_chip_text_color = global::Jammit.Resource.Color.mtrl_chip_text_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_choice_chip_background_color = global::Jammit.Resource.Color.mtrl_choice_chip_background_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_choice_chip_ripple_color = global::Jammit.Resource.Color.mtrl_choice_chip_ripple_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_choice_chip_text_color = global::Jammit.Resource.Color.mtrl_choice_chip_text_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_error = global::Jammit.Resource.Color.mtrl_error;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_extended_fab_bg_color_selector = global::Jammit.Resource.Color.mtrl_extended_fab_bg_color_selector;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_extended_fab_ripple_color = global::Jammit.Resource.Color.mtrl_extended_fab_ripple_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_extended_fab_text_color_selector = global::Jammit.Resource.Color.mtrl_extended_fab_text_color_selector;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_fab_ripple_color = global::Jammit.Resource.Color.mtrl_fab_ripple_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_filled_background_color = global::Jammit.Resource.Color.mtrl_filled_background_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_filled_icon_tint = global::Jammit.Resource.Color.mtrl_filled_icon_tint;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_filled_stroke_color = global::Jammit.Resource.Color.mtrl_filled_stroke_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_indicator_text_color = global::Jammit.Resource.Color.mtrl_indicator_text_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_navigation_item_background_color = global::Jammit.Resource.Color.mtrl_navigation_item_background_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_navigation_item_icon_tint = global::Jammit.Resource.Color.mtrl_navigation_item_icon_tint;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_navigation_item_text_color = global::Jammit.Resource.Color.mtrl_navigation_item_text_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_on_primary_text_btn_text_color_selector = global::Jammit.Resource.Color.mtrl_on_primary_text_btn_text_color_selector;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_outlined_icon_tint = global::Jammit.Resource.Color.mtrl_outlined_icon_tint;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_outlined_stroke_color = global::Jammit.Resource.Color.mtrl_outlined_stroke_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_popupmenu_overlay_color = global::Jammit.Resource.Color.mtrl_popupmenu_overlay_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_scrim_color = global::Jammit.Resource.Color.mtrl_scrim_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_tabs_colored_ripple_color = global::Jammit.Resource.Color.mtrl_tabs_colored_ripple_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_tabs_icon_color_selector = global::Jammit.Resource.Color.mtrl_tabs_icon_color_selector;
@@ -3330,6 +4502,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_textinput_default_box_stroke_color = global::Jammit.Resource.Color.mtrl_textinput_default_box_stroke_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_textinput_disabled_color = global::Jammit.Resource.Color.mtrl_textinput_disabled_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::Jammit.Resource.Color.mtrl_textinput_filled_box_default_background_color;
+			global::Xamarin.Forms.Platform.Resource.Color.mtrl_textinput_focused_box_stroke_color = global::Jammit.Resource.Color.mtrl_textinput_focused_box_stroke_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::Jammit.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
 			global::Xamarin.Forms.Platform.Resource.Color.mtrl_text_btn_text_color_selector = global::Jammit.Resource.Color.mtrl_text_btn_text_color_selector;
 			global::Xamarin.Forms.Platform.Resource.Color.notification_action_color_filter = global::Jammit.Resource.Color.notification_action_color_filter;
@@ -3355,6 +4528,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Color.switch_thumb_material_light = global::Jammit.Resource.Color.switch_thumb_material_light;
 			global::Xamarin.Forms.Platform.Resource.Color.switch_thumb_normal_material_dark = global::Jammit.Resource.Color.switch_thumb_normal_material_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.switch_thumb_normal_material_light = global::Jammit.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.Forms.Platform.Resource.Color.test_mtrl_calendar_day = global::Jammit.Resource.Color.test_mtrl_calendar_day;
+			global::Xamarin.Forms.Platform.Resource.Color.test_mtrl_calendar_day_selected = global::Jammit.Resource.Color.test_mtrl_calendar_day_selected;
 			global::Xamarin.Forms.Platform.Resource.Color.tooltip_background_dark = global::Jammit.Resource.Color.tooltip_background_dark;
 			global::Xamarin.Forms.Platform.Resource.Color.tooltip_background_light = global::Jammit.Resource.Color.tooltip_background_light;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_action_bar_content_inset_material = global::Jammit.Resource.Dimension.abc_action_bar_content_inset_material;
@@ -3405,6 +4580,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::Jammit.Resource.Dimension.abc_edit_text_inset_horizontal_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_edit_text_inset_top_material = global::Jammit.Resource.Dimension.abc_edit_text_inset_top_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_floating_window_z = global::Jammit.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_height_large_material = global::Jammit.Resource.Dimension.abc_list_item_height_large_material;
+			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_height_material = global::Jammit.Resource.Dimension.abc_list_item_height_material;
+			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_height_small_material = global::Jammit.Resource.Dimension.abc_list_item_height_small_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_padding_horizontal_material = global::Jammit.Resource.Dimension.abc_list_item_padding_horizontal_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_panel_menu_list_width = global::Jammit.Resource.Dimension.abc_panel_menu_list_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_progress_bar_height_material = global::Jammit.Resource.Dimension.abc_progress_bar_height_material;
@@ -3432,6 +4610,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::Jammit.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_text_size_title_material = global::Jammit.Resource.Dimension.abc_text_size_title_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_text_size_title_material_toolbar = global::Jammit.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.Forms.Platform.Resource.Dimension.action_bar_size = global::Jammit.Resource.Dimension.action_bar_size;
+			global::Xamarin.Forms.Platform.Resource.Dimension.appcompat_dialog_background_inset = global::Jammit.Resource.Dimension.appcompat_dialog_background_inset;
 			global::Xamarin.Forms.Platform.Resource.Dimension.cardview_compat_inset_shadow = global::Jammit.Resource.Dimension.cardview_compat_inset_shadow;
 			global::Xamarin.Forms.Platform.Resource.Dimension.cardview_default_elevation = global::Jammit.Resource.Dimension.cardview_default_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.cardview_default_radius = global::Jammit.Resource.Dimension.cardview_default_radius;
@@ -3442,6 +4622,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.compat_control_corner_material = global::Jammit.Resource.Dimension.compat_control_corner_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.compat_notification_large_icon_max_height = global::Jammit.Resource.Dimension.compat_notification_large_icon_max_height;
 			global::Xamarin.Forms.Platform.Resource.Dimension.compat_notification_large_icon_max_width = global::Jammit.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Xamarin.Forms.Platform.Resource.Dimension.default_dimension = global::Jammit.Resource.Dimension.default_dimension;
+			global::Xamarin.Forms.Platform.Resource.Dimension.def_drawer_elevation = global::Jammit.Resource.Dimension.def_drawer_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_appbar_elevation = global::Jammit.Resource.Dimension.design_appbar_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::Jammit.Resource.Dimension.design_bottom_navigation_active_item_max_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_navigation_active_item_min_width = global::Jammit.Resource.Dimension.design_bottom_navigation_active_item_min_width;
@@ -3454,6 +4636,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_navigation_margin = global::Jammit.Resource.Dimension.design_bottom_navigation_margin;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_navigation_shadow_height = global::Jammit.Resource.Dimension.design_bottom_navigation_shadow_height;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_navigation_text_size = global::Jammit.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_sheet_elevation = global::Jammit.Resource.Dimension.design_bottom_sheet_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_sheet_modal_elevation = global::Jammit.Resource.Dimension.design_bottom_sheet_modal_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_bottom_sheet_peek_height_min = global::Jammit.Resource.Dimension.design_bottom_sheet_peek_height_min;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_fab_border_width = global::Jammit.Resource.Dimension.design_fab_border_width;
@@ -3472,6 +4655,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_navigation_padding_bottom = global::Jammit.Resource.Dimension.design_navigation_padding_bottom;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_navigation_separator_vertical_padding = global::Jammit.Resource.Dimension.design_navigation_separator_vertical_padding;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_snackbar_action_inline_max_width = global::Jammit.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.Forms.Platform.Resource.Dimension.design_snackbar_action_text_color_alpha = global::Jammit.Resource.Dimension.design_snackbar_action_text_color_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_snackbar_background_corner_radius = global::Jammit.Resource.Dimension.design_snackbar_background_corner_radius;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_snackbar_elevation = global::Jammit.Resource.Dimension.design_snackbar_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::Jammit.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
@@ -3501,7 +4685,24 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::Jammit.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
 			global::Xamarin.Forms.Platform.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::Jammit.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
 			global::Xamarin.Forms.Platform.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::Jammit.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.Forms.Platform.Resource.Dimension.material_emphasis_disabled = global::Jammit.Resource.Dimension.material_emphasis_disabled;
+			global::Xamarin.Forms.Platform.Resource.Dimension.material_emphasis_high_type = global::Jammit.Resource.Dimension.material_emphasis_high_type;
+			global::Xamarin.Forms.Platform.Resource.Dimension.material_emphasis_medium = global::Jammit.Resource.Dimension.material_emphasis_medium;
+			global::Xamarin.Forms.Platform.Resource.Dimension.material_text_view_test_line_height = global::Jammit.Resource.Dimension.material_text_view_test_line_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.material_text_view_test_line_height_override = global::Jammit.Resource.Dimension.material_text_view_test_line_height_override;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_bottom;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_alert_dialog_background_inset_end = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_end;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_alert_dialog_background_inset_start = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_start;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_alert_dialog_background_inset_top = global::Jammit.Resource.Dimension.mtrl_alert_dialog_background_inset_top;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_alert_dialog_picker_background_inset = global::Jammit.Resource.Dimension.mtrl_alert_dialog_picker_background_inset;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_badge_horizontal_edge_offset = global::Jammit.Resource.Dimension.mtrl_badge_horizontal_edge_offset;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_badge_long_text_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_badge_long_text_horizontal_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_badge_radius = global::Jammit.Resource.Dimension.mtrl_badge_radius;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset = global::Jammit.Resource.Dimension.mtrl_badge_text_horizontal_edge_offset;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_badge_text_size = global::Jammit.Resource.Dimension.mtrl_badge_text_size;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_badge_with_text_radius = global::Jammit.Resource.Dimension.mtrl_badge_with_text_radius;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fabOffsetEndMode;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_bottom_margin;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_cradle_margin;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_cradle_rounded_corner_radius;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset = global::Jammit.Resource.Dimension.mtrl_bottomappbar_fab_cradle_vertical_offset;
@@ -3528,24 +4729,111 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_btn_text_btn_padding_right = global::Jammit.Resource.Dimension.mtrl_btn_text_btn_padding_right;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_btn_text_size = global::Jammit.Resource.Dimension.mtrl_btn_text_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_btn_z = global::Jammit.Resource.Dimension.mtrl_btn_z;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_action_height = global::Jammit.Resource.Dimension.mtrl_calendar_action_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_action_padding = global::Jammit.Resource.Dimension.mtrl_calendar_action_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_bottom_padding = global::Jammit.Resource.Dimension.mtrl_calendar_bottom_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_content_padding = global::Jammit.Resource.Dimension.mtrl_calendar_content_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_days_of_week_height = global::Jammit.Resource.Dimension.mtrl_calendar_days_of_week_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_day_corner = global::Jammit.Resource.Dimension.mtrl_calendar_day_corner;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_day_height = global::Jammit.Resource.Dimension.mtrl_calendar_day_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_day_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_calendar_day_horizontal_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_day_today_stroke = global::Jammit.Resource.Dimension.mtrl_calendar_day_today_stroke;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_day_vertical_padding = global::Jammit.Resource.Dimension.mtrl_calendar_day_vertical_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_day_width = global::Jammit.Resource.Dimension.mtrl_calendar_day_width;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_dialog_background_inset = global::Jammit.Resource.Dimension.mtrl_calendar_dialog_background_inset;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_content_padding = global::Jammit.Resource.Dimension.mtrl_calendar_header_content_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_header_content_padding_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_divider_thickness = global::Jammit.Resource.Dimension.mtrl_calendar_header_divider_thickness;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_height = global::Jammit.Resource.Dimension.mtrl_calendar_header_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_height_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_header_height_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_selection_line_height = global::Jammit.Resource.Dimension.mtrl_calendar_header_selection_line_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_text_padding = global::Jammit.Resource.Dimension.mtrl_calendar_header_text_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom = global::Jammit.Resource.Dimension.mtrl_calendar_header_toggle_margin_bottom;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_header_toggle_margin_top = global::Jammit.Resource.Dimension.mtrl_calendar_header_toggle_margin_top;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_landscape_header_width = global::Jammit.Resource.Dimension.mtrl_calendar_landscape_header_width;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis = global::Jammit.Resource.Dimension.mtrl_calendar_maximum_default_fullscreen_minor_axis;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_month_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_calendar_month_horizontal_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_month_vertical_padding = global::Jammit.Resource.Dimension.mtrl_calendar_month_vertical_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_navigation_bottom_padding = global::Jammit.Resource.Dimension.mtrl_calendar_navigation_bottom_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_navigation_height = global::Jammit.Resource.Dimension.mtrl_calendar_navigation_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_navigation_top_padding = global::Jammit.Resource.Dimension.mtrl_calendar_navigation_top_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding = global::Jammit.Resource.Dimension.mtrl_calendar_pre_l_text_clip_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_selection_baseline_to_top_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom = global::Jammit.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_bottom_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top = global::Jammit.Resource.Dimension.mtrl_calendar_selection_text_baseline_to_top;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_text_input_padding_top = global::Jammit.Resource.Dimension.mtrl_calendar_text_input_padding_top;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_title_baseline_to_top = global::Jammit.Resource.Dimension.mtrl_calendar_title_baseline_to_top;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen = global::Jammit.Resource.Dimension.mtrl_calendar_title_baseline_to_top_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_year_corner = global::Jammit.Resource.Dimension.mtrl_calendar_year_corner;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_year_height = global::Jammit.Resource.Dimension.mtrl_calendar_year_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_year_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_calendar_year_horizontal_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_year_vertical_padding = global::Jammit.Resource.Dimension.mtrl_calendar_year_vertical_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_calendar_year_width = global::Jammit.Resource.Dimension.mtrl_calendar_year_width;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_card_checked_icon_margin = global::Jammit.Resource.Dimension.mtrl_card_checked_icon_margin;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_card_checked_icon_size = global::Jammit.Resource.Dimension.mtrl_card_checked_icon_size;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_card_corner_radius = global::Jammit.Resource.Dimension.mtrl_card_corner_radius;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_card_dragged_z = global::Jammit.Resource.Dimension.mtrl_card_dragged_z;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_card_elevation = global::Jammit.Resource.Dimension.mtrl_card_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_card_spacing = global::Jammit.Resource.Dimension.mtrl_card_spacing;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_chip_pressed_translation_z = global::Jammit.Resource.Dimension.mtrl_chip_pressed_translation_z;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_chip_text_size = global::Jammit.Resource.Dimension.mtrl_chip_text_size;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation = global::Jammit.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_elevation;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset = global::Jammit.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_offset;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding = global::Jammit.Resource.Dimension.mtrl_exposed_dropdown_menu_popup_vertical_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_bottom_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_bottom_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_corner_radius = global::Jammit.Resource.Dimension.mtrl_extended_fab_corner_radius;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_disabled_elevation = global::Jammit.Resource.Dimension.mtrl_extended_fab_disabled_elevation;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_disabled_translation_z = global::Jammit.Resource.Dimension.mtrl_extended_fab_disabled_translation_z;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_elevation = global::Jammit.Resource.Dimension.mtrl_extended_fab_elevation;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_end_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_end_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_end_padding_icon = global::Jammit.Resource.Dimension.mtrl_extended_fab_end_padding_icon;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_icon_size = global::Jammit.Resource.Dimension.mtrl_extended_fab_icon_size;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_icon_text_spacing = global::Jammit.Resource.Dimension.mtrl_extended_fab_icon_text_spacing;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_min_height = global::Jammit.Resource.Dimension.mtrl_extended_fab_min_height;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_min_width = global::Jammit.Resource.Dimension.mtrl_extended_fab_min_width;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_start_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_start_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_start_padding_icon = global::Jammit.Resource.Dimension.mtrl_extended_fab_start_padding_icon;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_top_padding = global::Jammit.Resource.Dimension.mtrl_extended_fab_top_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_translation_z_base = global::Jammit.Resource.Dimension.mtrl_extended_fab_translation_z_base;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused = global::Jammit.Resource.Dimension.mtrl_extended_fab_translation_z_hovered_focused;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_extended_fab_translation_z_pressed = global::Jammit.Resource.Dimension.mtrl_extended_fab_translation_z_pressed;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_fab_elevation = global::Jammit.Resource.Dimension.mtrl_fab_elevation;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_fab_min_touch_target = global::Jammit.Resource.Dimension.mtrl_fab_min_touch_target;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_fab_translation_z_hovered_focused = global::Jammit.Resource.Dimension.mtrl_fab_translation_z_hovered_focused;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_fab_translation_z_pressed = global::Jammit.Resource.Dimension.mtrl_fab_translation_z_pressed;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_high_ripple_default_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_default_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_high_ripple_focused_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_focused_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_high_ripple_hovered_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_hovered_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_high_ripple_pressed_alpha = global::Jammit.Resource.Dimension.mtrl_high_ripple_pressed_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_large_touch_target = global::Jammit.Resource.Dimension.mtrl_large_touch_target;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_low_ripple_default_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_default_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_low_ripple_focused_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_focused_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_low_ripple_hovered_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_hovered_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_low_ripple_pressed_alpha = global::Jammit.Resource.Dimension.mtrl_low_ripple_pressed_alpha;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_min_touch_target_size = global::Jammit.Resource.Dimension.mtrl_min_touch_target_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_navigation_elevation = global::Jammit.Resource.Dimension.mtrl_navigation_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_navigation_item_horizontal_padding = global::Jammit.Resource.Dimension.mtrl_navigation_item_horizontal_padding;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_navigation_item_icon_padding = global::Jammit.Resource.Dimension.mtrl_navigation_item_icon_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_navigation_item_icon_size = global::Jammit.Resource.Dimension.mtrl_navigation_item_icon_size;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin = global::Jammit.Resource.Dimension.mtrl_navigation_item_shape_horizontal_margin;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin = global::Jammit.Resource.Dimension.mtrl_navigation_item_shape_vertical_margin;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_shape_corner_size_large_component = global::Jammit.Resource.Dimension.mtrl_shape_corner_size_large_component;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_shape_corner_size_medium_component = global::Jammit.Resource.Dimension.mtrl_shape_corner_size_medium_component;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_shape_corner_size_small_component = global::Jammit.Resource.Dimension.mtrl_shape_corner_size_small_component;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_snackbar_action_text_color_alpha = global::Jammit.Resource.Dimension.mtrl_snackbar_action_text_color_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_snackbar_background_corner_radius = global::Jammit.Resource.Dimension.mtrl_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha = global::Jammit.Resource.Dimension.mtrl_snackbar_background_overlay_color_alpha;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_snackbar_margin = global::Jammit.Resource.Dimension.mtrl_snackbar_margin;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_switch_thumb_elevation = global::Jammit.Resource.Dimension.mtrl_switch_thumb_elevation;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_box_corner_radius_medium = global::Jammit.Resource.Dimension.mtrl_textinput_box_corner_radius_medium;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_box_corner_radius_small = global::Jammit.Resource.Dimension.mtrl_textinput_box_corner_radius_small;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_box_label_cutout_padding = global::Jammit.Resource.Dimension.mtrl_textinput_box_label_cutout_padding;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_box_stroke_width_default = global::Jammit.Resource.Dimension.mtrl_textinput_box_stroke_width_default;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_box_stroke_width_focused = global::Jammit.Resource.Dimension.mtrl_textinput_box_stroke_width_focused;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_end_icon_margin_start = global::Jammit.Resource.Dimension.mtrl_textinput_end_icon_margin_start;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding = global::Jammit.Resource.Dimension.mtrl_textinput_outline_box_expanded_padding;
+			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_textinput_start_icon_margin_end = global::Jammit.Resource.Dimension.mtrl_textinput_start_icon_margin_end;
 			global::Xamarin.Forms.Platform.Resource.Dimension.mtrl_toolbar_default_height = global::Jammit.Resource.Dimension.mtrl_toolbar_default_height;
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_action_icon_size = global::Jammit.Resource.Dimension.notification_action_icon_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_action_text_size = global::Jammit.Resource.Dimension.notification_action_text_size;
@@ -3562,6 +4850,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_subtext_size = global::Jammit.Resource.Dimension.notification_subtext_size;
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_top_pad = global::Jammit.Resource.Dimension.notification_top_pad;
 			global::Xamarin.Forms.Platform.Resource.Dimension.notification_top_pad_large_text = global::Jammit.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Forms.Platform.Resource.Dimension.test_mtrl_calendar_day_cornerSize = global::Jammit.Resource.Dimension.test_mtrl_calendar_day_cornerSize;
 			global::Xamarin.Forms.Platform.Resource.Dimension.tooltip_corner_radius = global::Jammit.Resource.Dimension.tooltip_corner_radius;
 			global::Xamarin.Forms.Platform.Resource.Dimension.tooltip_horizontal_padding = global::Jammit.Resource.Dimension.tooltip_horizontal_padding;
 			global::Xamarin.Forms.Platform.Resource.Dimension.tooltip_margin = global::Jammit.Resource.Dimension.tooltip_margin;
@@ -3574,11 +4863,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_action_bar_item_background_material = global::Jammit.Resource.Drawable.abc_action_bar_item_background_material;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_borderless_material = global::Jammit.Resource.Drawable.abc_btn_borderless_material;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_material = global::Jammit.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_material_anim = global::Jammit.Resource.Drawable.abc_btn_check_material_anim;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::Jammit.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::Jammit.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_colored_material = global::Jammit.Resource.Drawable.abc_btn_colored_material;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_default_mtrl_shape = global::Jammit.Resource.Drawable.abc_btn_default_mtrl_shape;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_material = global::Jammit.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_material_anim = global::Jammit.Resource.Drawable.abc_btn_radio_material_anim;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::Jammit.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::Jammit.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::Jammit.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
@@ -3656,15 +4947,39 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_vector_test = global::Jammit.Resource.Drawable.abc_vector_test;
 			global::Xamarin.Forms.Platform.Resource.Drawable.avd_hide_password = global::Jammit.Resource.Drawable.avd_hide_password;
 			global::Xamarin.Forms.Platform.Resource.Drawable.avd_show_password = global::Jammit.Resource.Drawable.avd_show_password;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_checked_mtrl = global::Jammit.Resource.Drawable.btn_checkbox_checked_mtrl;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::Jammit.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::Jammit.Resource.Drawable.btn_checkbox_unchecked_mtrl;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::Jammit.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_off_mtrl = global::Jammit.Resource.Drawable.btn_radio_off_mtrl;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::Jammit.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_on_mtrl = global::Jammit.Resource.Drawable.btn_radio_on_mtrl;
+			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::Jammit.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_bottom_navigation_item_background = global::Jammit.Resource.Drawable.design_bottom_navigation_item_background;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_fab_background = global::Jammit.Resource.Drawable.design_fab_background;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_ic_visibility = global::Jammit.Resource.Drawable.design_ic_visibility;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_ic_visibility_off = global::Jammit.Resource.Drawable.design_ic_visibility_off;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_password_eye = global::Jammit.Resource.Drawable.design_password_eye;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_snackbar_background = global::Jammit.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_calendar_black_24dp = global::Jammit.Resource.Drawable.ic_calendar_black_24dp;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_clear_black_24dp = global::Jammit.Resource.Drawable.ic_clear_black_24dp;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_edit_black_24dp = global::Jammit.Resource.Drawable.ic_edit_black_24dp;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_keyboard_arrow_left_black_24dp = global::Jammit.Resource.Drawable.ic_keyboard_arrow_left_black_24dp;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_keyboard_arrow_right_black_24dp = global::Jammit.Resource.Drawable.ic_keyboard_arrow_right_black_24dp;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_menu_arrow_down_black_24dp = global::Jammit.Resource.Drawable.ic_menu_arrow_down_black_24dp;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_menu_arrow_up_black_24dp = global::Jammit.Resource.Drawable.ic_menu_arrow_up_black_24dp;
+			global::Xamarin.Forms.Platform.Resource.Drawable.ic_mtrl_checked_circle = global::Jammit.Resource.Drawable.ic_mtrl_checked_circle;
 			global::Xamarin.Forms.Platform.Resource.Drawable.ic_mtrl_chip_checked_black = global::Jammit.Resource.Drawable.ic_mtrl_chip_checked_black;
 			global::Xamarin.Forms.Platform.Resource.Drawable.ic_mtrl_chip_checked_circle = global::Jammit.Resource.Drawable.ic_mtrl_chip_checked_circle;
 			global::Xamarin.Forms.Platform.Resource.Drawable.ic_mtrl_chip_close_circle = global::Jammit.Resource.Drawable.ic_mtrl_chip_close_circle;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_dialog_background = global::Jammit.Resource.Drawable.mtrl_dialog_background;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_dropdown_arrow = global::Jammit.Resource.Drawable.mtrl_dropdown_arrow;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_ic_arrow_drop_down = global::Jammit.Resource.Drawable.mtrl_ic_arrow_drop_down;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_ic_arrow_drop_up = global::Jammit.Resource.Drawable.mtrl_ic_arrow_drop_up;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_ic_cancel = global::Jammit.Resource.Drawable.mtrl_ic_cancel;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_ic_error = global::Jammit.Resource.Drawable.mtrl_ic_error;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_popupmenu_background = global::Jammit.Resource.Drawable.mtrl_popupmenu_background;
+			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_popupmenu_background_dark = global::Jammit.Resource.Drawable.mtrl_popupmenu_background_dark;
 			global::Xamarin.Forms.Platform.Resource.Drawable.mtrl_tabs_default_indicator = global::Jammit.Resource.Drawable.mtrl_tabs_default_indicator;
 			global::Xamarin.Forms.Platform.Resource.Drawable.navigation_empty_icon = global::Jammit.Resource.Drawable.navigation_empty_icon;
 			global::Xamarin.Forms.Platform.Resource.Drawable.notification_action_background = global::Jammit.Resource.Drawable.notification_action_background;
@@ -3679,8 +4994,42 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Drawable.notification_template_icon_low_bg = global::Jammit.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Forms.Platform.Resource.Drawable.notification_tile_bg = global::Jammit.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Forms.Platform.Resource.Drawable.notify_panel_notification_icon_bg = global::Jammit.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Forms.Platform.Resource.Drawable.test_custom_background = global::Jammit.Resource.Drawable.test_custom_background;
 			global::Xamarin.Forms.Platform.Resource.Drawable.tooltip_frame_dark = global::Jammit.Resource.Drawable.tooltip_frame_dark;
 			global::Xamarin.Forms.Platform.Resource.Drawable.tooltip_frame_light = global::Jammit.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_action_clickable_span = global::Jammit.Resource.Id.accessibility_action_clickable_span;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_0 = global::Jammit.Resource.Id.accessibility_custom_action_0;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_1 = global::Jammit.Resource.Id.accessibility_custom_action_1;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_10 = global::Jammit.Resource.Id.accessibility_custom_action_10;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_11 = global::Jammit.Resource.Id.accessibility_custom_action_11;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_12 = global::Jammit.Resource.Id.accessibility_custom_action_12;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_13 = global::Jammit.Resource.Id.accessibility_custom_action_13;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_14 = global::Jammit.Resource.Id.accessibility_custom_action_14;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_15 = global::Jammit.Resource.Id.accessibility_custom_action_15;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_16 = global::Jammit.Resource.Id.accessibility_custom_action_16;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_17 = global::Jammit.Resource.Id.accessibility_custom_action_17;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_18 = global::Jammit.Resource.Id.accessibility_custom_action_18;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_19 = global::Jammit.Resource.Id.accessibility_custom_action_19;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_2 = global::Jammit.Resource.Id.accessibility_custom_action_2;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_20 = global::Jammit.Resource.Id.accessibility_custom_action_20;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_21 = global::Jammit.Resource.Id.accessibility_custom_action_21;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_22 = global::Jammit.Resource.Id.accessibility_custom_action_22;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_23 = global::Jammit.Resource.Id.accessibility_custom_action_23;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_24 = global::Jammit.Resource.Id.accessibility_custom_action_24;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_25 = global::Jammit.Resource.Id.accessibility_custom_action_25;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_26 = global::Jammit.Resource.Id.accessibility_custom_action_26;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_27 = global::Jammit.Resource.Id.accessibility_custom_action_27;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_28 = global::Jammit.Resource.Id.accessibility_custom_action_28;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_29 = global::Jammit.Resource.Id.accessibility_custom_action_29;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_3 = global::Jammit.Resource.Id.accessibility_custom_action_3;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_30 = global::Jammit.Resource.Id.accessibility_custom_action_30;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_31 = global::Jammit.Resource.Id.accessibility_custom_action_31;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_4 = global::Jammit.Resource.Id.accessibility_custom_action_4;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_5 = global::Jammit.Resource.Id.accessibility_custom_action_5;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_6 = global::Jammit.Resource.Id.accessibility_custom_action_6;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_7 = global::Jammit.Resource.Id.accessibility_custom_action_7;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_8 = global::Jammit.Resource.Id.accessibility_custom_action_8;
+			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_9 = global::Jammit.Resource.Id.accessibility_custom_action_9;
 			global::Xamarin.Forms.Platform.Resource.Id.action0 = global::Jammit.Resource.Id.action0;
 			global::Xamarin.Forms.Platform.Resource.Id.actions = global::Jammit.Resource.Id.actions;
 			global::Xamarin.Forms.Platform.Resource.Id.action_bar = global::Jammit.Resource.Id.action_bar;
@@ -3713,16 +5062,24 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.bottom = global::Jammit.Resource.Id.bottom;
 			global::Xamarin.Forms.Platform.Resource.Id.bottomtab_navarea = global::Jammit.Resource.Id.bottomtab_navarea;
 			global::Xamarin.Forms.Platform.Resource.Id.bottomtab_tabbar = global::Jammit.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.Forms.Platform.Resource.Id.BOTTOM_END = global::Jammit.Resource.Id.BOTTOM_END;
+			global::Xamarin.Forms.Platform.Resource.Id.BOTTOM_START = global::Jammit.Resource.Id.BOTTOM_START;
 			global::Xamarin.Forms.Platform.Resource.Id.buttonPanel = global::Jammit.Resource.Id.buttonPanel;
 			global::Xamarin.Forms.Platform.Resource.Id.cancel_action = global::Jammit.Resource.Id.cancel_action;
+			global::Xamarin.Forms.Platform.Resource.Id.cancel_button = global::Jammit.Resource.Id.cancel_button;
 			global::Xamarin.Forms.Platform.Resource.Id.center = global::Jammit.Resource.Id.center;
 			global::Xamarin.Forms.Platform.Resource.Id.center_horizontal = global::Jammit.Resource.Id.center_horizontal;
 			global::Xamarin.Forms.Platform.Resource.Id.center_vertical = global::Jammit.Resource.Id.center_vertical;
 			global::Xamarin.Forms.Platform.Resource.Id.checkbox = global::Jammit.Resource.Id.checkbox;
+			global::Xamarin.Forms.Platform.Resource.Id.@checked = global::Jammit.Resource.Id.@checked;
+			global::Xamarin.Forms.Platform.Resource.Id.chip = global::Jammit.Resource.Id.chip;
+			global::Xamarin.Forms.Platform.Resource.Id.chip_group = global::Jammit.Resource.Id.chip_group;
 			global::Xamarin.Forms.Platform.Resource.Id.chronometer = global::Jammit.Resource.Id.chronometer;
+			global::Xamarin.Forms.Platform.Resource.Id.clear_text = global::Jammit.Resource.Id.clear_text;
 			global::Xamarin.Forms.Platform.Resource.Id.clip_horizontal = global::Jammit.Resource.Id.clip_horizontal;
 			global::Xamarin.Forms.Platform.Resource.Id.clip_vertical = global::Jammit.Resource.Id.clip_vertical;
 			global::Xamarin.Forms.Platform.Resource.Id.collapseActionView = global::Jammit.Resource.Id.collapseActionView;
+			global::Xamarin.Forms.Platform.Resource.Id.confirm_button = global::Jammit.Resource.Id.confirm_button;
 			global::Xamarin.Forms.Platform.Resource.Id.container = global::Jammit.Resource.Id.container;
 			global::Xamarin.Forms.Platform.Resource.Id.content = global::Jammit.Resource.Id.content;
 			global::Xamarin.Forms.Platform.Resource.Id.contentPanel = global::Jammit.Resource.Id.contentPanel;
@@ -3730,6 +5087,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.CTRL = global::Jammit.Resource.Id.CTRL;
 			global::Xamarin.Forms.Platform.Resource.Id.custom = global::Jammit.Resource.Id.custom;
 			global::Xamarin.Forms.Platform.Resource.Id.customPanel = global::Jammit.Resource.Id.customPanel;
+			global::Xamarin.Forms.Platform.Resource.Id.cut = global::Jammit.Resource.Id.cut;
+			global::Xamarin.Forms.Platform.Resource.Id.date_picker_actions = global::Jammit.Resource.Id.date_picker_actions;
 			global::Xamarin.Forms.Platform.Resource.Id.decor_content_parent = global::Jammit.Resource.Id.decor_content_parent;
 			global::Xamarin.Forms.Platform.Resource.Id.default_activity_button = global::Jammit.Resource.Id.default_activity_button;
 			global::Xamarin.Forms.Platform.Resource.Id.design_bottom_sheet = global::Jammit.Resource.Id.design_bottom_sheet;
@@ -3737,7 +5096,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.design_menu_item_action_area_stub = global::Jammit.Resource.Id.design_menu_item_action_area_stub;
 			global::Xamarin.Forms.Platform.Resource.Id.design_menu_item_text = global::Jammit.Resource.Id.design_menu_item_text;
 			global::Xamarin.Forms.Platform.Resource.Id.design_navigation_view = global::Jammit.Resource.Id.design_navigation_view;
+			global::Xamarin.Forms.Platform.Resource.Id.dialog_button = global::Jammit.Resource.Id.dialog_button;
 			global::Xamarin.Forms.Platform.Resource.Id.disableHome = global::Jammit.Resource.Id.disableHome;
+			global::Xamarin.Forms.Platform.Resource.Id.dropdown_menu = global::Jammit.Resource.Id.dropdown_menu;
 			global::Xamarin.Forms.Platform.Resource.Id.edit_query = global::Jammit.Resource.Id.edit_query;
 			global::Xamarin.Forms.Platform.Resource.Id.end = global::Jammit.Resource.Id.end;
 			global::Xamarin.Forms.Platform.Resource.Id.end_padder = global::Jammit.Resource.Id.end_padder;
@@ -3746,17 +5107,22 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.exitUntilCollapsed = global::Jammit.Resource.Id.exitUntilCollapsed;
 			global::Xamarin.Forms.Platform.Resource.Id.expanded_menu = global::Jammit.Resource.Id.expanded_menu;
 			global::Xamarin.Forms.Platform.Resource.Id.expand_activities_button = global::Jammit.Resource.Id.expand_activities_button;
+			global::Xamarin.Forms.Platform.Resource.Id.fade = global::Jammit.Resource.Id.fade;
 			global::Xamarin.Forms.Platform.Resource.Id.fill = global::Jammit.Resource.Id.fill;
 			global::Xamarin.Forms.Platform.Resource.Id.filled = global::Jammit.Resource.Id.filled;
 			global::Xamarin.Forms.Platform.Resource.Id.fill_horizontal = global::Jammit.Resource.Id.fill_horizontal;
 			global::Xamarin.Forms.Platform.Resource.Id.fill_vertical = global::Jammit.Resource.Id.fill_vertical;
+			global::Xamarin.Forms.Platform.Resource.Id.filter_chip = global::Jammit.Resource.Id.filter_chip;
+			global::Xamarin.Forms.Platform.Resource.Id.fitToContents = global::Jammit.Resource.Id.fitToContents;
 			global::Xamarin.Forms.Platform.Resource.Id.@fixed = global::Jammit.Resource.Id.@fixed;
 			global::Xamarin.Forms.Platform.Resource.Id.flyoutcontent_appbar = global::Jammit.Resource.Id.flyoutcontent_appbar;
-			global::Xamarin.Forms.Platform.Resource.Id.flyoutcontent_recycler = global::Jammit.Resource.Id.flyoutcontent_recycler;
 			global::Xamarin.Forms.Platform.Resource.Id.forever = global::Jammit.Resource.Id.forever;
+			global::Xamarin.Forms.Platform.Resource.Id.fragment_container_view_tag = global::Jammit.Resource.Id.fragment_container_view_tag;
 			global::Xamarin.Forms.Platform.Resource.Id.FUNCTION = global::Jammit.Resource.Id.FUNCTION;
 			global::Xamarin.Forms.Platform.Resource.Id.ghost_view = global::Jammit.Resource.Id.ghost_view;
+			global::Xamarin.Forms.Platform.Resource.Id.ghost_view_holder = global::Jammit.Resource.Id.ghost_view_holder;
 			global::Xamarin.Forms.Platform.Resource.Id.group_divider = global::Jammit.Resource.Id.group_divider;
+			global::Xamarin.Forms.Platform.Resource.Id.hideable = global::Jammit.Resource.Id.hideable;
 			global::Xamarin.Forms.Platform.Resource.Id.home = global::Jammit.Resource.Id.home;
 			global::Xamarin.Forms.Platform.Resource.Id.homeAsUp = global::Jammit.Resource.Id.homeAsUp;
 			global::Xamarin.Forms.Platform.Resource.Id.icon = global::Jammit.Resource.Id.icon;
@@ -3779,24 +5145,54 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.main_viewpager = global::Jammit.Resource.Id.main_viewpager;
 			global::Xamarin.Forms.Platform.Resource.Id.masked = global::Jammit.Resource.Id.masked;
 			global::Xamarin.Forms.Platform.Resource.Id.media_actions = global::Jammit.Resource.Id.media_actions;
+			global::Xamarin.Forms.Platform.Resource.Id.media_controller_compat_view_tag = global::Jammit.Resource.Id.media_controller_compat_view_tag;
 			global::Xamarin.Forms.Platform.Resource.Id.message = global::Jammit.Resource.Id.message;
 			global::Xamarin.Forms.Platform.Resource.Id.META = global::Jammit.Resource.Id.META;
 			global::Xamarin.Forms.Platform.Resource.Id.middle = global::Jammit.Resource.Id.middle;
 			global::Xamarin.Forms.Platform.Resource.Id.mini = global::Jammit.Resource.Id.mini;
+			global::Xamarin.Forms.Platform.Resource.Id.month_grid = global::Jammit.Resource.Id.month_grid;
+			global::Xamarin.Forms.Platform.Resource.Id.month_navigation_bar = global::Jammit.Resource.Id.month_navigation_bar;
+			global::Xamarin.Forms.Platform.Resource.Id.month_navigation_fragment_toggle = global::Jammit.Resource.Id.month_navigation_fragment_toggle;
+			global::Xamarin.Forms.Platform.Resource.Id.month_navigation_next = global::Jammit.Resource.Id.month_navigation_next;
+			global::Xamarin.Forms.Platform.Resource.Id.month_navigation_previous = global::Jammit.Resource.Id.month_navigation_previous;
+			global::Xamarin.Forms.Platform.Resource.Id.month_title = global::Jammit.Resource.Id.month_title;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_days_of_week = global::Jammit.Resource.Id.mtrl_calendar_days_of_week;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_day_selector_frame = global::Jammit.Resource.Id.mtrl_calendar_day_selector_frame;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_frame = global::Jammit.Resource.Id.mtrl_calendar_frame;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_main_pane = global::Jammit.Resource.Id.mtrl_calendar_main_pane;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_months = global::Jammit.Resource.Id.mtrl_calendar_months;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_selection_frame = global::Jammit.Resource.Id.mtrl_calendar_selection_frame;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_text_input_frame = global::Jammit.Resource.Id.mtrl_calendar_text_input_frame;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_calendar_year_selector_frame = global::Jammit.Resource.Id.mtrl_calendar_year_selector_frame;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_card_checked_layer_id = global::Jammit.Resource.Id.mtrl_card_checked_layer_id;
 			global::Xamarin.Forms.Platform.Resource.Id.mtrl_child_content_container = global::Jammit.Resource.Id.mtrl_child_content_container;
 			global::Xamarin.Forms.Platform.Resource.Id.mtrl_internal_children_alpha_tag = global::Jammit.Resource.Id.mtrl_internal_children_alpha_tag;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_fullscreen = global::Jammit.Resource.Id.mtrl_picker_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_header = global::Jammit.Resource.Id.mtrl_picker_header;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_header_selection_text = global::Jammit.Resource.Id.mtrl_picker_header_selection_text;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_header_title_and_selection = global::Jammit.Resource.Id.mtrl_picker_header_title_and_selection;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_header_toggle = global::Jammit.Resource.Id.mtrl_picker_header_toggle;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_text_input_date = global::Jammit.Resource.Id.mtrl_picker_text_input_date;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_text_input_range_end = global::Jammit.Resource.Id.mtrl_picker_text_input_range_end;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_text_input_range_start = global::Jammit.Resource.Id.mtrl_picker_text_input_range_start;
+			global::Xamarin.Forms.Platform.Resource.Id.mtrl_picker_title_text = global::Jammit.Resource.Id.mtrl_picker_title_text;
 			global::Xamarin.Forms.Platform.Resource.Id.multiply = global::Jammit.Resource.Id.multiply;
 			global::Xamarin.Forms.Platform.Resource.Id.navigation_header_container = global::Jammit.Resource.Id.navigation_header_container;
 			global::Xamarin.Forms.Platform.Resource.Id.never = global::Jammit.Resource.Id.never;
 			global::Xamarin.Forms.Platform.Resource.Id.none = global::Jammit.Resource.Id.none;
 			global::Xamarin.Forms.Platform.Resource.Id.normal = global::Jammit.Resource.Id.normal;
+			global::Xamarin.Forms.Platform.Resource.Id.noScroll = global::Jammit.Resource.Id.noScroll;
 			global::Xamarin.Forms.Platform.Resource.Id.notification_background = global::Jammit.Resource.Id.notification_background;
 			global::Xamarin.Forms.Platform.Resource.Id.notification_main_column = global::Jammit.Resource.Id.notification_main_column;
 			global::Xamarin.Forms.Platform.Resource.Id.notification_main_column_container = global::Jammit.Resource.Id.notification_main_column_container;
+			global::Xamarin.Forms.Platform.Resource.Id.off = global::Jammit.Resource.Id.off;
+			global::Xamarin.Forms.Platform.Resource.Id.on = global::Jammit.Resource.Id.on;
 			global::Xamarin.Forms.Platform.Resource.Id.outline = global::Jammit.Resource.Id.outline;
 			global::Xamarin.Forms.Platform.Resource.Id.parallax = global::Jammit.Resource.Id.parallax;
 			global::Xamarin.Forms.Platform.Resource.Id.parentPanel = global::Jammit.Resource.Id.parentPanel;
 			global::Xamarin.Forms.Platform.Resource.Id.parent_matrix = global::Jammit.Resource.Id.parent_matrix;
+			global::Xamarin.Forms.Platform.Resource.Id.password_toggle = global::Jammit.Resource.Id.password_toggle;
+			global::Xamarin.Forms.Platform.Resource.Id.peekHeight = global::Jammit.Resource.Id.peekHeight;
 			global::Xamarin.Forms.Platform.Resource.Id.pin = global::Jammit.Resource.Id.pin;
 			global::Xamarin.Forms.Platform.Resource.Id.progress_circular = global::Jammit.Resource.Id.progress_circular;
 			global::Xamarin.Forms.Platform.Resource.Id.progress_horizontal = global::Jammit.Resource.Id.progress_horizontal;
@@ -3804,7 +5200,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.right = global::Jammit.Resource.Id.right;
 			global::Xamarin.Forms.Platform.Resource.Id.right_icon = global::Jammit.Resource.Id.right_icon;
 			global::Xamarin.Forms.Platform.Resource.Id.right_side = global::Jammit.Resource.Id.right_side;
+			global::Xamarin.Forms.Platform.Resource.Id.rounded = global::Jammit.Resource.Id.rounded;
 			global::Xamarin.Forms.Platform.Resource.Id.save_non_transition_alpha = global::Jammit.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.Forms.Platform.Resource.Id.save_overlay_view = global::Jammit.Resource.Id.save_overlay_view;
+			global::Xamarin.Forms.Platform.Resource.Id.scale = global::Jammit.Resource.Id.scale;
 			global::Xamarin.Forms.Platform.Resource.Id.screen = global::Jammit.Resource.Id.screen;
 			global::Xamarin.Forms.Platform.Resource.Id.scroll = global::Jammit.Resource.Id.scroll;
 			global::Xamarin.Forms.Platform.Resource.Id.scrollable = global::Jammit.Resource.Id.scrollable;
@@ -3830,6 +5229,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.showCustom = global::Jammit.Resource.Id.showCustom;
 			global::Xamarin.Forms.Platform.Resource.Id.showHome = global::Jammit.Resource.Id.showHome;
 			global::Xamarin.Forms.Platform.Resource.Id.showTitle = global::Jammit.Resource.Id.showTitle;
+			global::Xamarin.Forms.Platform.Resource.Id.skipCollapsed = global::Jammit.Resource.Id.skipCollapsed;
+			global::Xamarin.Forms.Platform.Resource.Id.slide = global::Jammit.Resource.Id.slide;
+			global::Xamarin.Forms.Platform.Resource.Id.sliding_tabs = global::Jammit.Resource.Id.sliding_tabs;
 			global::Xamarin.Forms.Platform.Resource.Id.smallLabel = global::Jammit.Resource.Id.smallLabel;
 			global::Xamarin.Forms.Platform.Resource.Id.snackbar_action = global::Jammit.Resource.Id.snackbar_action;
 			global::Xamarin.Forms.Platform.Resource.Id.snackbar_text = global::Jammit.Resource.Id.snackbar_text;
@@ -3847,35 +5249,51 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Id.submit_area = global::Jammit.Resource.Id.submit_area;
 			global::Xamarin.Forms.Platform.Resource.Id.SYM = global::Jammit.Resource.Id.SYM;
 			global::Xamarin.Forms.Platform.Resource.Id.tabMode = global::Jammit.Resource.Id.tabMode;
+			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_actions = global::Jammit.Resource.Id.tag_accessibility_actions;
+			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_clickable_spans = global::Jammit.Resource.Id.tag_accessibility_clickable_spans;
+			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_heading = global::Jammit.Resource.Id.tag_accessibility_heading;
+			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_pane_title = global::Jammit.Resource.Id.tag_accessibility_pane_title;
+			global::Xamarin.Forms.Platform.Resource.Id.tag_screen_reader_focusable = global::Jammit.Resource.Id.tag_screen_reader_focusable;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_transition_group = global::Jammit.Resource.Id.tag_transition_group;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_unhandled_key_event_manager = global::Jammit.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_unhandled_key_listeners = global::Jammit.Resource.Id.tag_unhandled_key_listeners;
+			global::Xamarin.Forms.Platform.Resource.Id.test_checkbox_android_button_tint = global::Jammit.Resource.Id.test_checkbox_android_button_tint;
+			global::Xamarin.Forms.Platform.Resource.Id.test_checkbox_app_button_tint = global::Jammit.Resource.Id.test_checkbox_app_button_tint;
 			global::Xamarin.Forms.Platform.Resource.Id.text = global::Jammit.Resource.Id.text;
 			global::Xamarin.Forms.Platform.Resource.Id.text2 = global::Jammit.Resource.Id.text2;
+			global::Xamarin.Forms.Platform.Resource.Id.textEnd = global::Jammit.Resource.Id.textEnd;
 			global::Xamarin.Forms.Platform.Resource.Id.textinput_counter = global::Jammit.Resource.Id.textinput_counter;
 			global::Xamarin.Forms.Platform.Resource.Id.textinput_error = global::Jammit.Resource.Id.textinput_error;
 			global::Xamarin.Forms.Platform.Resource.Id.textinput_helper_text = global::Jammit.Resource.Id.textinput_helper_text;
 			global::Xamarin.Forms.Platform.Resource.Id.textSpacerNoButtons = global::Jammit.Resource.Id.textSpacerNoButtons;
 			global::Xamarin.Forms.Platform.Resource.Id.textSpacerNoTitle = global::Jammit.Resource.Id.textSpacerNoTitle;
 			global::Xamarin.Forms.Platform.Resource.Id.textStart = global::Jammit.Resource.Id.textStart;
+			global::Xamarin.Forms.Platform.Resource.Id.text_input_end_icon = global::Jammit.Resource.Id.text_input_end_icon;
+			global::Xamarin.Forms.Platform.Resource.Id.text_input_start_icon = global::Jammit.Resource.Id.text_input_start_icon;
 			global::Xamarin.Forms.Platform.Resource.Id.time = global::Jammit.Resource.Id.time;
 			global::Xamarin.Forms.Platform.Resource.Id.title = global::Jammit.Resource.Id.title;
 			global::Xamarin.Forms.Platform.Resource.Id.titleDividerNoCustom = global::Jammit.Resource.Id.titleDividerNoCustom;
 			global::Xamarin.Forms.Platform.Resource.Id.title_template = global::Jammit.Resource.Id.title_template;
+			global::Xamarin.Forms.Platform.Resource.Id.toolbar = global::Jammit.Resource.Id.toolbar;
 			global::Xamarin.Forms.Platform.Resource.Id.top = global::Jammit.Resource.Id.top;
 			global::Xamarin.Forms.Platform.Resource.Id.topPanel = global::Jammit.Resource.Id.topPanel;
+			global::Xamarin.Forms.Platform.Resource.Id.TOP_END = global::Jammit.Resource.Id.TOP_END;
+			global::Xamarin.Forms.Platform.Resource.Id.TOP_START = global::Jammit.Resource.Id.TOP_START;
 			global::Xamarin.Forms.Platform.Resource.Id.touch_outside = global::Jammit.Resource.Id.touch_outside;
 			global::Xamarin.Forms.Platform.Resource.Id.transition_current_scene = global::Jammit.Resource.Id.transition_current_scene;
 			global::Xamarin.Forms.Platform.Resource.Id.transition_layout_save = global::Jammit.Resource.Id.transition_layout_save;
 			global::Xamarin.Forms.Platform.Resource.Id.transition_position = global::Jammit.Resource.Id.transition_position;
 			global::Xamarin.Forms.Platform.Resource.Id.transition_scene_layoutid_cache = global::Jammit.Resource.Id.transition_scene_layoutid_cache;
 			global::Xamarin.Forms.Platform.Resource.Id.transition_transform = global::Jammit.Resource.Id.transition_transform;
+			global::Xamarin.Forms.Platform.Resource.Id.@unchecked = global::Jammit.Resource.Id.@unchecked;
 			global::Xamarin.Forms.Platform.Resource.Id.uniform = global::Jammit.Resource.Id.uniform;
 			global::Xamarin.Forms.Platform.Resource.Id.unlabeled = global::Jammit.Resource.Id.unlabeled;
 			global::Xamarin.Forms.Platform.Resource.Id.up = global::Jammit.Resource.Id.up;
 			global::Xamarin.Forms.Platform.Resource.Id.useLogo = global::Jammit.Resource.Id.useLogo;
 			global::Xamarin.Forms.Platform.Resource.Id.view_offset_helper = global::Jammit.Resource.Id.view_offset_helper;
+			global::Xamarin.Forms.Platform.Resource.Id.view_tree_saved_state_registry_owner = global::Jammit.Resource.Id.view_tree_saved_state_registry_owner;
 			global::Xamarin.Forms.Platform.Resource.Id.visible = global::Jammit.Resource.Id.visible;
+			global::Xamarin.Forms.Platform.Resource.Id.visible_removing_fragment_view_tag = global::Jammit.Resource.Id.visible_removing_fragment_view_tag;
 			global::Xamarin.Forms.Platform.Resource.Id.withText = global::Jammit.Resource.Id.withText;
 			global::Xamarin.Forms.Platform.Resource.Id.wrap_content = global::Jammit.Resource.Id.wrap_content;
 			global::Xamarin.Forms.Platform.Resource.Integer.abc_config_activityDefaultDur = global::Jammit.Resource.Integer.abc_config_activityDefaultDur;
@@ -3887,12 +5305,25 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Integer.design_snackbar_text_max_lines = global::Jammit.Resource.Integer.design_snackbar_text_max_lines;
 			global::Xamarin.Forms.Platform.Resource.Integer.design_tab_indicator_anim_duration_ms = global::Jammit.Resource.Integer.design_tab_indicator_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Resource.Integer.hide_password_duration = global::Jammit.Resource.Integer.hide_password_duration;
+			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_badge_max_character_count = global::Jammit.Resource.Integer.mtrl_badge_max_character_count;
 			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_btn_anim_delay_ms = global::Jammit.Resource.Integer.mtrl_btn_anim_delay_ms;
 			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_btn_anim_duration_ms = global::Jammit.Resource.Integer.mtrl_btn_anim_duration_ms;
+			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_calendar_header_orientation = global::Jammit.Resource.Integer.mtrl_calendar_header_orientation;
+			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_calendar_selection_text_lines = global::Jammit.Resource.Integer.mtrl_calendar_selection_text_lines;
+			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_calendar_year_selector_span = global::Jammit.Resource.Integer.mtrl_calendar_year_selector_span;
+			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_card_anim_delay_ms = global::Jammit.Resource.Integer.mtrl_card_anim_delay_ms;
+			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_card_anim_duration_ms = global::Jammit.Resource.Integer.mtrl_card_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_chip_anim_duration = global::Jammit.Resource.Integer.mtrl_chip_anim_duration;
 			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::Jammit.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Resource.Integer.show_password_duration = global::Jammit.Resource.Integer.show_password_duration;
 			global::Xamarin.Forms.Platform.Resource.Integer.status_bar_notification_info_maxnum = global::Jammit.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::Jammit.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
+			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::Jammit.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
+			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::Jammit.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
+			global::Xamarin.Forms.Platform.Resource.Interpolator.fast_out_slow_in = global::Jammit.Resource.Interpolator.fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Resource.Interpolator.mtrl_fast_out_linear_in = global::Jammit.Resource.Interpolator.mtrl_fast_out_linear_in;
 			global::Xamarin.Forms.Platform.Resource.Interpolator.mtrl_fast_out_slow_in = global::Jammit.Resource.Interpolator.mtrl_fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Resource.Interpolator.mtrl_linear = global::Jammit.Resource.Interpolator.mtrl_linear;
@@ -3926,6 +5357,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Layout.abc_select_dialog_material = global::Jammit.Resource.Layout.abc_select_dialog_material;
 			global::Xamarin.Forms.Platform.Resource.Layout.abc_tooltip = global::Jammit.Resource.Layout.abc_tooltip;
 			global::Xamarin.Forms.Platform.Resource.Layout.BottomTabLayout = global::Jammit.Resource.Layout.BottomTabLayout;
+			global::Xamarin.Forms.Platform.Resource.Layout.custom_dialog = global::Jammit.Resource.Layout.custom_dialog;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_bottom_navigation_item = global::Jammit.Resource.Layout.design_bottom_navigation_item;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_bottom_sheet_dialog = global::Jammit.Resource.Layout.design_bottom_sheet_dialog;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_layout_snackbar = global::Jammit.Resource.Layout.design_layout_snackbar;
@@ -3939,9 +5371,39 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Layout.design_navigation_item_subheader = global::Jammit.Resource.Layout.design_navigation_item_subheader;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_navigation_menu = global::Jammit.Resource.Layout.design_navigation_menu;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_navigation_menu_item = global::Jammit.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.Forms.Platform.Resource.Layout.design_text_input_end_icon = global::Jammit.Resource.Layout.design_text_input_end_icon;
+			global::Xamarin.Forms.Platform.Resource.Layout.design_text_input_start_icon = global::Jammit.Resource.Layout.design_text_input_start_icon;
+			global::Xamarin.Forms.Platform.Resource.Layout.FallbackTabbarDoNotUse = global::Jammit.Resource.Layout.FallbackTabbarDoNotUse;
+			global::Xamarin.Forms.Platform.Resource.Layout.FallbackToolbarDoNotUse = global::Jammit.Resource.Layout.FallbackToolbarDoNotUse;
 			global::Xamarin.Forms.Platform.Resource.Layout.FlyoutContent = global::Jammit.Resource.Layout.FlyoutContent;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_alert_dialog = global::Jammit.Resource.Layout.mtrl_alert_dialog;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_alert_dialog_actions = global::Jammit.Resource.Layout.mtrl_alert_dialog_actions;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_alert_dialog_title = global::Jammit.Resource.Layout.mtrl_alert_dialog_title;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_alert_select_dialog_item = global::Jammit.Resource.Layout.mtrl_alert_select_dialog_item;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_alert_select_dialog_multichoice = global::Jammit.Resource.Layout.mtrl_alert_select_dialog_multichoice;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_alert_select_dialog_singlechoice = global::Jammit.Resource.Layout.mtrl_alert_select_dialog_singlechoice;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_day = global::Jammit.Resource.Layout.mtrl_calendar_day;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_days_of_week = global::Jammit.Resource.Layout.mtrl_calendar_days_of_week;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_day_of_week = global::Jammit.Resource.Layout.mtrl_calendar_day_of_week;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_horizontal = global::Jammit.Resource.Layout.mtrl_calendar_horizontal;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_month = global::Jammit.Resource.Layout.mtrl_calendar_month;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_months = global::Jammit.Resource.Layout.mtrl_calendar_months;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_month_labeled = global::Jammit.Resource.Layout.mtrl_calendar_month_labeled;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_month_navigation = global::Jammit.Resource.Layout.mtrl_calendar_month_navigation;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_vertical = global::Jammit.Resource.Layout.mtrl_calendar_vertical;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_calendar_year = global::Jammit.Resource.Layout.mtrl_calendar_year;
 			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_layout_snackbar = global::Jammit.Resource.Layout.mtrl_layout_snackbar;
 			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_layout_snackbar_include = global::Jammit.Resource.Layout.mtrl_layout_snackbar_include;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_actions = global::Jammit.Resource.Layout.mtrl_picker_actions;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_dialog = global::Jammit.Resource.Layout.mtrl_picker_dialog;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_fullscreen = global::Jammit.Resource.Layout.mtrl_picker_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_header_dialog = global::Jammit.Resource.Layout.mtrl_picker_header_dialog;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_header_fullscreen = global::Jammit.Resource.Layout.mtrl_picker_header_fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_header_selection_text = global::Jammit.Resource.Layout.mtrl_picker_header_selection_text;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_header_title_text = global::Jammit.Resource.Layout.mtrl_picker_header_title_text;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_header_toggle = global::Jammit.Resource.Layout.mtrl_picker_header_toggle;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_text_input_date = global::Jammit.Resource.Layout.mtrl_picker_text_input_date;
+			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_picker_text_input_date_range = global::Jammit.Resource.Layout.mtrl_picker_text_input_date_range;
 			global::Xamarin.Forms.Platform.Resource.Layout.notification_action = global::Jammit.Resource.Layout.notification_action;
 			global::Xamarin.Forms.Platform.Resource.Layout.notification_action_tombstone = global::Jammit.Resource.Layout.notification_action_tombstone;
 			global::Xamarin.Forms.Platform.Resource.Layout.notification_media_action = global::Jammit.Resource.Layout.notification_media_action;
@@ -3963,6 +5425,21 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Layout.select_dialog_singlechoice_material = global::Jammit.Resource.Layout.select_dialog_singlechoice_material;
 			global::Xamarin.Forms.Platform.Resource.Layout.ShellContent = global::Jammit.Resource.Layout.ShellContent;
 			global::Xamarin.Forms.Platform.Resource.Layout.support_simple_spinner_dropdown_item = global::Jammit.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.Forms.Platform.Resource.Layout.Tabbar = global::Jammit.Resource.Layout.Tabbar;
+			global::Xamarin.Forms.Platform.Resource.Layout.test_action_chip = global::Jammit.Resource.Layout.test_action_chip;
+			global::Xamarin.Forms.Platform.Resource.Layout.test_design_checkbox = global::Jammit.Resource.Layout.test_design_checkbox;
+			global::Xamarin.Forms.Platform.Resource.Layout.test_reflow_chipgroup = global::Jammit.Resource.Layout.test_reflow_chipgroup;
+			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar = global::Jammit.Resource.Layout.test_toolbar;
+			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar_custom_background = global::Jammit.Resource.Layout.test_toolbar_custom_background;
+			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar_elevation = global::Jammit.Resource.Layout.test_toolbar_elevation;
+			global::Xamarin.Forms.Platform.Resource.Layout.test_toolbar_surface = global::Jammit.Resource.Layout.test_toolbar_surface;
+			global::Xamarin.Forms.Platform.Resource.Layout.text_view_without_line_height = global::Jammit.Resource.Layout.text_view_without_line_height;
+			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_line_height_from_appearance = global::Jammit.Resource.Layout.text_view_with_line_height_from_appearance;
+			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_line_height_from_layout = global::Jammit.Resource.Layout.text_view_with_line_height_from_layout;
+			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_line_height_from_style = global::Jammit.Resource.Layout.text_view_with_line_height_from_style;
+			global::Xamarin.Forms.Platform.Resource.Layout.text_view_with_theme_line_height = global::Jammit.Resource.Layout.text_view_with_theme_line_height;
+			global::Xamarin.Forms.Platform.Resource.Layout.Toolbar = global::Jammit.Resource.Layout.Toolbar;
+			global::Xamarin.Forms.Platform.Resource.Plurals.mtrl_badge_content_description = global::Jammit.Resource.Plurals.mtrl_badge_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.abc_action_bar_home_description = global::Jammit.Resource.String.abc_action_bar_home_description;
 			global::Xamarin.Forms.Platform.Resource.String.abc_action_bar_up_description = global::Jammit.Resource.String.abc_action_bar_up_description;
 			global::Xamarin.Forms.Platform.Resource.String.abc_action_menu_overflow_description = global::Jammit.Resource.String.abc_action_menu_overflow_description;
@@ -3993,11 +5470,50 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.String.appbar_scrolling_view_behavior = global::Jammit.Resource.String.appbar_scrolling_view_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.bottom_sheet_behavior = global::Jammit.Resource.String.bottom_sheet_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.character_counter_content_description = global::Jammit.Resource.String.character_counter_content_description;
+			global::Xamarin.Forms.Platform.Resource.String.character_counter_overflowed_content_description = global::Jammit.Resource.String.character_counter_overflowed_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.character_counter_pattern = global::Jammit.Resource.String.character_counter_pattern;
+			global::Xamarin.Forms.Platform.Resource.String.chip_text = global::Jammit.Resource.String.chip_text;
+			global::Xamarin.Forms.Platform.Resource.String.clear_text_end_icon_content_description = global::Jammit.Resource.String.clear_text_end_icon_content_description;
+			global::Xamarin.Forms.Platform.Resource.String.error_icon_content_description = global::Jammit.Resource.String.error_icon_content_description;
+			global::Xamarin.Forms.Platform.Resource.String.exposed_dropdown_menu_content_description = global::Jammit.Resource.String.exposed_dropdown_menu_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.fab_transformation_scrim_behavior = global::Jammit.Resource.String.fab_transformation_scrim_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.fab_transformation_sheet_behavior = global::Jammit.Resource.String.fab_transformation_sheet_behavior;
 			global::Xamarin.Forms.Platform.Resource.String.hide_bottom_view_on_scroll_behavior = global::Jammit.Resource.String.hide_bottom_view_on_scroll_behavior;
+			global::Xamarin.Forms.Platform.Resource.String.icon_content_description = global::Jammit.Resource.String.icon_content_description;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_badge_numberless_content_description = global::Jammit.Resource.String.mtrl_badge_numberless_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.mtrl_chip_close_icon_content_description = global::Jammit.Resource.String.mtrl_chip_close_icon_content_description;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_exceed_max_badge_number_suffix = global::Jammit.Resource.String.mtrl_exceed_max_badge_number_suffix;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_a11y_next_month = global::Jammit.Resource.String.mtrl_picker_a11y_next_month;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_a11y_prev_month = global::Jammit.Resource.String.mtrl_picker_a11y_prev_month;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_announce_current_selection = global::Jammit.Resource.String.mtrl_picker_announce_current_selection;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_cancel = global::Jammit.Resource.String.mtrl_picker_cancel;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_confirm = global::Jammit.Resource.String.mtrl_picker_confirm;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_date_header_selected = global::Jammit.Resource.String.mtrl_picker_date_header_selected;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_date_header_title = global::Jammit.Resource.String.mtrl_picker_date_header_title;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_date_header_unselected = global::Jammit.Resource.String.mtrl_picker_date_header_unselected;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_day_of_week_column_header = global::Jammit.Resource.String.mtrl_picker_day_of_week_column_header;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_invalid_format = global::Jammit.Resource.String.mtrl_picker_invalid_format;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_invalid_format_example = global::Jammit.Resource.String.mtrl_picker_invalid_format_example;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_invalid_format_use = global::Jammit.Resource.String.mtrl_picker_invalid_format_use;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_invalid_range = global::Jammit.Resource.String.mtrl_picker_invalid_range;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_navigate_to_year_description = global::Jammit.Resource.String.mtrl_picker_navigate_to_year_description;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_out_of_range = global::Jammit.Resource.String.mtrl_picker_out_of_range;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_range_header_only_end_selected = global::Jammit.Resource.String.mtrl_picker_range_header_only_end_selected;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_range_header_only_start_selected = global::Jammit.Resource.String.mtrl_picker_range_header_only_start_selected;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_range_header_selected = global::Jammit.Resource.String.mtrl_picker_range_header_selected;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_range_header_title = global::Jammit.Resource.String.mtrl_picker_range_header_title;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_range_header_unselected = global::Jammit.Resource.String.mtrl_picker_range_header_unselected;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_save = global::Jammit.Resource.String.mtrl_picker_save;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_text_input_date_hint = global::Jammit.Resource.String.mtrl_picker_text_input_date_hint;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_text_input_date_range_end_hint = global::Jammit.Resource.String.mtrl_picker_text_input_date_range_end_hint;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_text_input_date_range_start_hint = global::Jammit.Resource.String.mtrl_picker_text_input_date_range_start_hint;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_text_input_day_abbr = global::Jammit.Resource.String.mtrl_picker_text_input_day_abbr;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_text_input_month_abbr = global::Jammit.Resource.String.mtrl_picker_text_input_month_abbr;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_text_input_year_abbr = global::Jammit.Resource.String.mtrl_picker_text_input_year_abbr;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_toggle_to_calendar_input_mode = global::Jammit.Resource.String.mtrl_picker_toggle_to_calendar_input_mode;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_toggle_to_day_selection = global::Jammit.Resource.String.mtrl_picker_toggle_to_day_selection;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_toggle_to_text_input_mode = global::Jammit.Resource.String.mtrl_picker_toggle_to_text_input_mode;
+			global::Xamarin.Forms.Platform.Resource.String.mtrl_picker_toggle_to_year_selection = global::Jammit.Resource.String.mtrl_picker_toggle_to_year_selection;
 			global::Xamarin.Forms.Platform.Resource.String.overflow_tab_title = global::Jammit.Resource.String.overflow_tab_title;
 			global::Xamarin.Forms.Platform.Resource.String.password_toggle_content_description = global::Jammit.Resource.String.password_toggle_content_description;
 			global::Xamarin.Forms.Platform.Resource.String.path_password_eye = global::Jammit.Resource.String.path_password_eye;
@@ -4012,6 +5528,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Animation_AppCompat_DropDownUp = global::Jammit.Resource.Style.Animation_AppCompat_DropDownUp;
 			global::Xamarin.Forms.Platform.Resource.Style.Animation_AppCompat_Tooltip = global::Jammit.Resource.Style.Animation_AppCompat_Tooltip;
 			global::Xamarin.Forms.Platform.Resource.Style.Animation_Design_BottomSheetDialog = global::Jammit.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Resource.Style.Animation_MaterialComponents_BottomSheetDialog = global::Jammit.Resource.Style.Animation_MaterialComponents_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.AppCompatDialogStyle = global::Jammit.Resource.Style.AppCompatDialogStyle;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_AlertDialog_AppCompat = global::Jammit.Resource.Style.Base_AlertDialog_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_AlertDialog_AppCompat_Light = global::Jammit.Resource.Style.Base_AlertDialog_AppCompat_Light;
@@ -4021,6 +5538,9 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Base_CardView = global::Jammit.Resource.Style.Base_CardView;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::Jammit.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_DialogWindowTitle_AppCompat = global::Jammit.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon = global::Jammit.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel = global::Jammit.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text = global::Jammit.Resource.Style.Base_MaterialAlertDialog_MaterialComponents_Title_Text;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_AppCompat = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Body1;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Body2;
@@ -4066,6 +5586,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::Jammit.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_MaterialComponents_Badge = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Badge;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_MaterialComponents_Button = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Button;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6 = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Headline6;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2 = global::Jammit.Resource.Style.Base_TextAppearance_MaterialComponents_Subtitle2;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::Jammit.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::Jammit.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::Jammit.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
@@ -4078,6 +5602,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::Jammit.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::Jammit.Resource.Style.Base_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_AppCompat = global::Jammit.Resource.Style.Base_Theme_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::Jammit.Resource.Style.Base_Theme_AppCompat_CompactMenu;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_AppCompat_Dialog = global::Jammit.Resource.Style.Base_Theme_AppCompat_Dialog;
@@ -4098,6 +5623,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Light = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light;
@@ -4107,17 +5633,21 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::Jammit.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::Jammit.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_MaterialAlertDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Light = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge = global::Jammit.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::Jammit.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V21_Theme_AppCompat = global::Jammit.Resource.Style.Base_V21_Theme_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::Jammit.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
@@ -4194,19 +5724,38 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::Jammit.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Spinner = global::Jammit.Resource.Style.Base_Widget_AppCompat_Spinner;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::Jammit.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_TextView = global::Jammit.Resource.Style.Base_Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::Jammit.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Toolbar = global::Jammit.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::Jammit.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_Design_TabLayout = global::Jammit.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_CheckedTextView;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_Chip = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_Chip;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_PopupMenu = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_PopupMenu_Overflow;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_TextInputEditText;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_TextInputLayout;
+			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_MaterialComponents_TextView = global::Jammit.Resource.Style.Base_Widget_MaterialComponents_TextView;
 			global::Xamarin.Forms.Platform.Resource.Style.CardView = global::Jammit.Resource.Style.CardView;
 			global::Xamarin.Forms.Platform.Resource.Style.CardView_Dark = global::Jammit.Resource.Style.CardView_Dark;
 			global::Xamarin.Forms.Platform.Resource.Style.CardView_Light = global::Jammit.Resource.Style.CardView_Light;
 			global::Xamarin.Forms.Platform.Resource.Style.collectionViewTheme = global::Jammit.Resource.Style.collectionViewTheme;
+			global::Xamarin.Forms.Platform.Resource.Style.EmptyTheme = global::Jammit.Resource.Style.EmptyTheme;
 			global::Xamarin.Forms.Platform.Resource.Style.MainTheme = global::Jammit.Resource.Style.MainTheme;
 			global::Xamarin.Forms.Platform.Resource.Style.MainTheme_Base = global::Jammit.Resource.Style.MainTheme_Base;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Body_Text;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Picker_Date_Spinner;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Icon_CenterStacked;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text;
+			global::Xamarin.Forms.Platform.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked = global::Jammit.Resource.Style.MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked;
 			global::Xamarin.Forms.Platform.Resource.Style.Platform_AppCompat = global::Jammit.Resource.Style.Platform_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.Platform_AppCompat_Light = global::Jammit.Resource.Style.Platform_AppCompat_Light;
 			global::Xamarin.Forms.Platform.Resource.Style.Platform_MaterialComponents = global::Jammit.Resource.Style.Platform_MaterialComponents;
@@ -4240,6 +5789,37 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::Jammit.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
 			global::Xamarin.Forms.Platform.Resource.Style.scrollViewScrollBars = global::Jammit.Resource.Style.scrollViewScrollBars;
 			global::Xamarin.Forms.Platform.Resource.Style.scrollViewTheme = global::Jammit.Resource.Style.scrollViewTheme;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay = global::Jammit.Resource.Style.ShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize = global::Jammit.Resource.Style.ShapeAppearanceOverlay_BottomLeftDifferentCornerSize;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_BottomRightCut = global::Jammit.Resource.Style.ShapeAppearanceOverlay_BottomRightCut;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_Cut = global::Jammit.Resource.Style.ShapeAppearanceOverlay_Cut;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize = global::Jammit.Resource.Style.ShapeAppearanceOverlay_DifferentCornerSize;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_BottomSheet;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_Chip;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_ExtendedFloatingActionButton;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox = global::Jammit.Resource.Style.ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_TopLeftCut = global::Jammit.Resource.Style.ShapeAppearanceOverlay_TopLeftCut;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize = global::Jammit.Resource.Style.ShapeAppearanceOverlay_TopRightDifferentCornerSize;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_LargeComponent;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_MediumComponent;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_SmallComponent;
+			global::Xamarin.Forms.Platform.Resource.Style.ShapeAppearance_MaterialComponents_Test = global::Jammit.Resource.Style.ShapeAppearance_MaterialComponents_Test;
+			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithLineHeight = global::Jammit.Resource.Style.TestStyleWithLineHeight;
+			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithLineHeightAppearance = global::Jammit.Resource.Style.TestStyleWithLineHeightAppearance;
+			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithoutLineHeight = global::Jammit.Resource.Style.TestStyleWithoutLineHeight;
+			global::Xamarin.Forms.Platform.Resource.Style.TestStyleWithThemeLineHeightAttribute = global::Jammit.Resource.Style.TestStyleWithThemeLineHeightAttribute;
+			global::Xamarin.Forms.Platform.Resource.Style.TestThemeWithLineHeight = global::Jammit.Resource.Style.TestThemeWithLineHeight;
+			global::Xamarin.Forms.Platform.Resource.Style.TestThemeWithLineHeightDisabled = global::Jammit.Resource.Style.TestThemeWithLineHeightDisabled;
+			global::Xamarin.Forms.Platform.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.Test_Theme_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::Jammit.Resource.Style.Test_Widget_MaterialComponents_MaterialCalendar_Day_Selected;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_AppCompat = global::Jammit.Resource.Style.TextAppearance_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_AppCompat_Body1 = global::Jammit.Resource.Style.TextAppearance_AppCompat_Body1;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_AppCompat_Body2 = global::Jammit.Resource.Style.TextAppearance_AppCompat_Body2;
@@ -4306,6 +5886,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_Design_Hint = global::Jammit.Resource.Style.TextAppearance_Design_Hint;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_Design_Snackbar_Message = global::Jammit.Resource.Style.TextAppearance_Design_Snackbar_Message;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_Design_Tab = global::Jammit.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_MaterialComponents_Badge = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Badge;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_MaterialComponents_Body1 = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Body1;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_MaterialComponents_Body2 = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Body2;
 			global::Xamarin.Forms.Platform.Resource.Style.TextAppearance_MaterialComponents_Button = global::Jammit.Resource.Style.TextAppearance_MaterialComponents_Button;
@@ -4327,21 +5908,47 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dark = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dark;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_DayNight;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Light = global::Jammit.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_Design_TextInputEditText = global::Jammit.Resource.Style.ThemeOverlay_Design_TextInputEditText;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Primary;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_ActionBar_Surface;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Primary;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_BottomAppBar_Surface;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Dark = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dark;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_DayNight_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Dialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Light = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Light_BottomSheetDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Calendar;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Header_Text_Day;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Picker_Date_Spinner;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_MaterialCalendar_Fullscreen;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Primary;
+			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface = global::Jammit.Resource.Style.ThemeOverlay_MaterialComponents_Toolbar_Surface;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat = global::Jammit.Resource.Style.Theme_AppCompat;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_CompactMenu = global::Jammit.Resource.Style.Theme_AppCompat_CompactMenu;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_DayNight = global::Jammit.Resource.Style.Theme_AppCompat_DayNight;
@@ -4355,6 +5962,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::Jammit.Resource.Style.Theme_AppCompat_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_Dialog_Alert = global::Jammit.Resource.Style.Theme_AppCompat_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_Empty = global::Jammit.Resource.Style.Theme_AppCompat_Empty;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_Light = global::Jammit.Resource.Style.Theme_AppCompat_Light;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::Jammit.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_AppCompat_Light_Dialog = global::Jammit.Resource.Style.Theme_AppCompat_Light_Dialog;
@@ -4373,11 +5981,33 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::Jammit.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_CompactMenu = global::Jammit.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_DarkActionBar_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Alert_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_FixedSize_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_Dialog_MinWidth_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_DayNight_NoActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::Jammit.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_Alert_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_FixedSize_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light = global::Jammit.Resource.Style.Theme_MaterialComponents_Light;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_BarSize = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_BarSize;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
@@ -4385,7 +6015,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_FixedSize_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth_Bridge;
+			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_LargeTouch = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_LargeTouch;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::Jammit.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
 			global::Xamarin.Forms.Platform.Resource.Style.Theme_MaterialComponents_NoActionBar = global::Jammit.Resource.Style.Theme_MaterialComponents_NoActionBar;
@@ -4459,6 +6095,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::Jammit.Resource.Style.Widget_AppCompat_Spinner_DropDown;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::Jammit.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::Jammit.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_TextView = global::Jammit.Resource.Style.Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::Jammit.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Toolbar = global::Jammit.Resource.Style.Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::Jammit.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
@@ -4474,10 +6111,25 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_Design_Snackbar = global::Jammit.Resource.Style.Widget_Design_Snackbar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_Design_TabLayout = global::Jammit.Resource.Style.Widget_Design_TabLayout;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_Design_TextInputLayout = global::Jammit.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_ActionBar_Primary = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_Primary;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_PrimarySurface;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_ActionBar_Solid = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_ActionBar_Surface = global::Jammit.Resource.Style.Widget_MaterialComponents_ActionBar_Surface;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary = global::Jammit.Resource.Style.Widget_MaterialComponents_AppBarLayout_Primary;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_AppBarLayout_PrimarySurface;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface = global::Jammit.Resource.Style.Widget_MaterialComponents_AppBarLayout_Surface;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_AutoCompleteTextView_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Badge = global::Jammit.Resource.Style.Widget_MaterialComponents_Badge;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomAppBar = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomAppBar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomAppBar_Colored;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomAppBar_PrimarySurface;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomNavigationView = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomNavigationView;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomNavigationView_Colored;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomNavigationView_PrimarySurface;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomSheet = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomSheet;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal = global::Jammit.Resource.Style.Widget_MaterialComponents_BottomSheet_Modal;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button = global::Jammit.Resource.Style.Widget_MaterialComponents_Button;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_Icon;
@@ -4485,31 +6137,72 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_OutlinedButton_Icon;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_TextButton = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Flush;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Dialog_Icon;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Icon;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_TextButton_Snackbar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_CardView = global::Jammit.Resource.Style.Widget_MaterialComponents_CardView;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_CheckedTextView = global::Jammit.Resource.Style.Widget_MaterialComponents_CheckedTextView;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_ChipGroup = global::Jammit.Resource.Style.Widget_MaterialComponents_ChipGroup;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Chip_Action = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Action;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Choice;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Entry;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::Jammit.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox = global::Jammit.Resource.Style.Widget_MaterialComponents_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton = global::Jammit.Resource.Style.Widget_MaterialComponents_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch = global::Jammit.Resource.Style.Widget_MaterialComponents_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton = global::Jammit.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon = global::Jammit.Resource.Style.Widget_MaterialComponents_ExtendedFloatingActionButton_Icon;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::Jammit.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid = global::Jammit.Resource.Style.Widget_MaterialComponents_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialButtonToggleGroup;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_DayTextView;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Invalid;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Selected;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Day_Today;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderConfirmButton;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderDivider;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderLayout;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderSelection_Fullscreen;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderTitle;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_HeaderToggleButton;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Item;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Selected;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today = global::Jammit.Resource.Style.Widget_MaterialComponents_MaterialCalendar_Year_Today;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_NavigationView = global::Jammit.Resource.Style.Widget_MaterialComponents_NavigationView;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_PopupMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu_ContextMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow = global::Jammit.Resource.Style.Widget_MaterialComponents_PopupMenu_Overflow;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Snackbar = global::Jammit.Resource.Style.Widget_MaterialComponents_Snackbar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth = global::Jammit.Resource.Style.Widget_MaterialComponents_Snackbar_FullWidth;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TabLayout = global::Jammit.Resource.Style.Widget_MaterialComponents_TabLayout;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TabLayout_Colored = global::Jammit.Resource.Style.Widget_MaterialComponents_TabLayout_Colored;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_TabLayout_PrimarySurface;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_FilledBox_Dense;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_Dense_ExposedDropdownMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_FilledBox_ExposedDropdownMenu;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense_ExposedDropdownMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu = global::Jammit.Resource.Style.Widget_MaterialComponents_TextInputLayout_OutlinedBox_ExposedDropdownMenu;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_TextView = global::Jammit.Resource.Style.Widget_MaterialComponents_TextView;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Toolbar = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Toolbar_Primary = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar_Primary;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar_PrimarySurface;
+			global::Xamarin.Forms.Platform.Resource.Style.Widget_MaterialComponents_Toolbar_Surface = global::Jammit.Resource.Style.Widget_MaterialComponents_Toolbar_Surface;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_Support_CoordinatorLayout = global::Jammit.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ActionBar = global::Jammit.Resource.Styleable.ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ActionBarLayout = global::Jammit.Resource.Styleable.ActionBarLayout;
@@ -4595,6 +6288,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::Jammit.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::Jammit.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_liftOnScroll = global::Jammit.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId = global::Jammit.Resource.Styleable.AppBarLayout_liftOnScrollTargetViewId;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppBarLayout_statusBarForeground = global::Jammit.Resource.Styleable.AppBarLayout_statusBarForeground;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatImageView = global::Jammit.Resource.Styleable.AppCompatImageView;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatImageView_android_src = global::Jammit.Resource.Styleable.AppCompatImageView_android_src;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatImageView_srcCompat = global::Jammit.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -4620,11 +6315,21 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::Jammit.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::Jammit.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::Jammit.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableEndCompat;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableRightCompat;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableStartCompat;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTint = global::Jammit.Resource.Styleable.AppCompatTextView_drawableTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTintMode = global::Jammit.Resource.Styleable.AppCompatTextView_drawableTintMode;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::Jammit.Resource.Styleable.AppCompatTextView_drawableTopCompat;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::Jammit.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_fontFamily = global::Jammit.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::Jammit.Resource.Styleable.AppCompatTextView_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::Jammit.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_lineHeight = global::Jammit.Resource.Styleable.AppCompatTextView_lineHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_textAllCaps = global::Jammit.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_textLocale = global::Jammit.Resource.Styleable.AppCompatTextView_textLocale;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme = global::Jammit.Resource.Styleable.AppCompatTheme;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_actionBarDivider = global::Jammit.Resource.Styleable.AppCompatTheme_actionBarDivider;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::Jammit.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
@@ -4698,14 +6403,18 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::Jammit.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::Jammit.Resource.Styleable.AppCompatTheme_imageButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::Jammit.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::Jammit.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::Jammit.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::Jammit.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::Jammit.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::Jammit.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::Jammit.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_panelBackground = global::Jammit.Resource.Styleable.AppCompatTheme_panelBackground;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::Jammit.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::Jammit.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
@@ -4747,29 +6456,46 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::Jammit.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::Jammit.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_windowNoTitle = global::Jammit.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Badge = global::Jammit.Resource.Styleable.Badge;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Badge_backgroundColor = global::Jammit.Resource.Styleable.Badge_backgroundColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Badge_badgeGravity = global::Jammit.Resource.Styleable.Badge_badgeGravity;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Badge_badgeTextColor = global::Jammit.Resource.Styleable.Badge_badgeTextColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Badge_maxCharacterCount = global::Jammit.Resource.Styleable.Badge_maxCharacterCount;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Badge_number = global::Jammit.Resource.Styleable.Badge_number;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar = global::Jammit.Resource.Styleable.BottomAppBar;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_backgroundTint = global::Jammit.Resource.Styleable.BottomAppBar_backgroundTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_elevation = global::Jammit.Resource.Styleable.BottomAppBar_elevation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_fabAlignmentMode = global::Jammit.Resource.Styleable.BottomAppBar_fabAlignmentMode;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_fabAnimationMode = global::Jammit.Resource.Styleable.BottomAppBar_fabAnimationMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_fabCradleMargin = global::Jammit.Resource.Styleable.BottomAppBar_fabCradleMargin;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius = global::Jammit.Resource.Styleable.BottomAppBar_fabCradleRoundedCornerRadius;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset = global::Jammit.Resource.Styleable.BottomAppBar_fabCradleVerticalOffset;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomAppBar_hideOnScroll = global::Jammit.Resource.Styleable.BottomAppBar_hideOnScroll;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView = global::Jammit.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_backgroundTint = global::Jammit.Resource.Styleable.BottomNavigationView_backgroundTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_elevation = global::Jammit.Resource.Styleable.BottomNavigationView_elevation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemBackground = global::Jammit.Resource.Styleable.BottomNavigationView_itemBackground;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled = global::Jammit.Resource.Styleable.BottomNavigationView_itemHorizontalTranslationEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemIconSize = global::Jammit.Resource.Styleable.BottomNavigationView_itemIconSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemIconTint = global::Jammit.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemRippleColor = global::Jammit.Resource.Styleable.BottomNavigationView_itemRippleColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive = global::Jammit.Resource.Styleable.BottomNavigationView_itemTextAppearanceActive;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive = global::Jammit.Resource.Styleable.BottomNavigationView_itemTextAppearanceInactive;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_itemTextColor = global::Jammit.Resource.Styleable.BottomNavigationView_itemTextColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_labelVisibilityMode = global::Jammit.Resource.Styleable.BottomNavigationView_labelVisibilityMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomNavigationView_menu = global::Jammit.Resource.Styleable.BottomNavigationView_menu;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_android_elevation;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_backgroundTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_expandedOffset;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_fitToContents;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_halfExpandedRatio;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_saveFlags;
 			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.BottomSheetBehavior_Layout_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ButtonBarLayout = global::Jammit.Resource.Styleable.ButtonBarLayout;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ButtonBarLayout_allowStacking = global::Jammit.Resource.Styleable.ButtonBarLayout_allowStacking;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CardView = global::Jammit.Resource.Styleable.CardView;
@@ -4799,6 +6525,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_android_maxWidth = global::Jammit.Resource.Styleable.Chip_android_maxWidth;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_android_text = global::Jammit.Resource.Styleable.Chip_android_text;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_android_textAppearance = global::Jammit.Resource.Styleable.Chip_android_textAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_android_textColor = global::Jammit.Resource.Styleable.Chip_android_textColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_checkedIcon = global::Jammit.Resource.Styleable.Chip_checkedIcon;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_checkedIconEnabled = global::Jammit.Resource.Styleable.Chip_checkedIconEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_checkedIconVisible = global::Jammit.Resource.Styleable.Chip_checkedIconVisible;
@@ -4811,9 +6538,11 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipIconTint = global::Jammit.Resource.Styleable.Chip_chipIconTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipIconVisible = global::Jammit.Resource.Styleable.Chip_chipIconVisible;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipMinHeight = global::Jammit.Resource.Styleable.Chip_chipMinHeight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipMinTouchTargetSize = global::Jammit.Resource.Styleable.Chip_chipMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipStartPadding = global::Jammit.Resource.Styleable.Chip_chipStartPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipStrokeColor = global::Jammit.Resource.Styleable.Chip_chipStrokeColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipStrokeWidth = global::Jammit.Resource.Styleable.Chip_chipStrokeWidth;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_chipSurfaceColor = global::Jammit.Resource.Styleable.Chip_chipSurfaceColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_closeIcon = global::Jammit.Resource.Styleable.Chip_closeIcon;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_closeIconEnabled = global::Jammit.Resource.Styleable.Chip_closeIconEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_closeIconEndPadding = global::Jammit.Resource.Styleable.Chip_closeIconEndPadding;
@@ -4821,10 +6550,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_closeIconStartPadding = global::Jammit.Resource.Styleable.Chip_closeIconStartPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_closeIconTint = global::Jammit.Resource.Styleable.Chip_closeIconTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_closeIconVisible = global::Jammit.Resource.Styleable.Chip_closeIconVisible;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_ensureMinTouchTargetSize = global::Jammit.Resource.Styleable.Chip_ensureMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_hideMotionSpec = global::Jammit.Resource.Styleable.Chip_hideMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_iconEndPadding = global::Jammit.Resource.Styleable.Chip_iconEndPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_iconStartPadding = global::Jammit.Resource.Styleable.Chip_iconStartPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_rippleColor = global::Jammit.Resource.Styleable.Chip_rippleColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_shapeAppearance = global::Jammit.Resource.Styleable.Chip_shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.Chip_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_showMotionSpec = global::Jammit.Resource.Styleable.Chip_showMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_textEndPadding = global::Jammit.Resource.Styleable.Chip_textEndPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Chip_textStartPadding = global::Jammit.Resource.Styleable.Chip_textStartPadding;
@@ -4854,6 +6586,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.ColorStateListItem_android_color = global::Jammit.Resource.Styleable.ColorStateListItem_android_color;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton = global::Jammit.Resource.Styleable.CompoundButton;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_android_button = global::Jammit.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_buttonCompat = global::Jammit.Resource.Styleable.CompoundButton_buttonCompat;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_buttonTint = global::Jammit.Resource.Styleable.CompoundButton_buttonTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_buttonTintMode = global::Jammit.Resource.Styleable.CompoundButton_buttonTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CoordinatorLayout = global::Jammit.Resource.Styleable.CoordinatorLayout;
@@ -4876,6 +6609,17 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::Jammit.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
 			global::Xamarin.Forms.Platform.Resource.Styleable.DrawerArrowToggle_spinBars = global::Jammit.Resource.Styleable.DrawerArrowToggle_spinBars;
 			global::Xamarin.Forms.Platform.Resource.Styleable.DrawerArrowToggle_thickness = global::Jammit.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.Forms.Platform.Resource.Styleable.DrawerLayout = global::Jammit.Resource.Styleable.DrawerLayout;
+			global::Xamarin.Forms.Platform.Resource.Styleable.DrawerLayout_elevation = global::Jammit.Resource.Styleable.DrawerLayout_elevation;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_elevation = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_elevation;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_extendMotionSpec;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_hideMotionSpec;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_showMotionSpec;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec = global::Jammit.Resource.Styleable.ExtendedFloatingActionButton_shrinkMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton = global::Jammit.Resource.Styleable.FloatingActionButton;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_backgroundTint = global::Jammit.Resource.Styleable.FloatingActionButton_backgroundTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::Jammit.Resource.Styleable.FloatingActionButton_backgroundTintMode;
@@ -4883,6 +6627,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::Jammit.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_borderWidth = global::Jammit.Resource.Styleable.FloatingActionButton_borderWidth;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_elevation = global::Jammit.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize = global::Jammit.Resource.Styleable.FloatingActionButton_ensureMinTouchTargetSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_fabCustomSize = global::Jammit.Resource.Styleable.FloatingActionButton_fabCustomSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_fabSize = global::Jammit.Resource.Styleable.FloatingActionButton_fabSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_hideMotionSpec = global::Jammit.Resource.Styleable.FloatingActionButton_hideMotionSpec;
@@ -4890,6 +6635,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_maxImageSize = global::Jammit.Resource.Styleable.FloatingActionButton_maxImageSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::Jammit.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_rippleColor = global::Jammit.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_shapeAppearance = global::Jammit.Resource.Styleable.FloatingActionButton_shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.FloatingActionButton_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_showMotionSpec = global::Jammit.Resource.Styleable.FloatingActionButton_showMotionSpec;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FloatingActionButton_useCompatPadding = global::Jammit.Resource.Styleable.FloatingActionButton_useCompatPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.FlowLayout = global::Jammit.Resource.Styleable.FlowLayout;
@@ -4917,6 +6664,13 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::Jammit.Resource.Styleable.ForegroundLinearLayout_android_foreground;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::Jammit.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::Jammit.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Fragment = global::Jammit.Resource.Styleable.Fragment;
+			global::Xamarin.Forms.Platform.Resource.Styleable.FragmentContainerView = global::Jammit.Resource.Styleable.FragmentContainerView;
+			global::Xamarin.Forms.Platform.Resource.Styleable.FragmentContainerView_android_name = global::Jammit.Resource.Styleable.FragmentContainerView_android_name;
+			global::Xamarin.Forms.Platform.Resource.Styleable.FragmentContainerView_android_tag = global::Jammit.Resource.Styleable.FragmentContainerView_android_tag;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Fragment_android_id = global::Jammit.Resource.Styleable.Fragment_android_id;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Fragment_android_name = global::Jammit.Resource.Styleable.Fragment_android_name;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Fragment_android_tag = global::Jammit.Resource.Styleable.Fragment_android_tag;
 			global::Xamarin.Forms.Platform.Resource.Styleable.GradientColor = global::Jammit.Resource.Styleable.GradientColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.GradientColorItem = global::Jammit.Resource.Styleable.GradientColorItem;
 			global::Xamarin.Forms.Platform.Resource.Styleable.GradientColorItem_android_color = global::Jammit.Resource.Styleable.GradientColorItem_android_color;
@@ -4953,7 +6707,22 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.ListPopupWindow = global::Jammit.Resource.Styleable.ListPopupWindow;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::Jammit.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::Jammit.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialog = global::Jammit.Resource.Styleable.MaterialAlertDialog;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialogTheme = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogBodyTextStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTheme;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleIconStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitlePanelStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle = global::Jammit.Resource.Styleable.MaterialAlertDialogTheme_materialAlertDialogTitleTextStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetBottom;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetEnd;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetStart;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop = global::Jammit.Resource.Styleable.MaterialAlertDialog_backgroundInsetTop;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton = global::Jammit.Resource.Styleable.MaterialButton;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButtonToggleGroup = global::Jammit.Resource.Styleable.MaterialButtonToggleGroup;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButtonToggleGroup_checkedButton = global::Jammit.Resource.Styleable.MaterialButtonToggleGroup_checkedButton;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButtonToggleGroup_singleSelection = global::Jammit.Resource.Styleable.MaterialButtonToggleGroup_singleSelection;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_android_checkable = global::Jammit.Resource.Styleable.MaterialButton_android_checkable;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_android_insetBottom = global::Jammit.Resource.Styleable.MaterialButton_android_insetBottom;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_android_insetLeft = global::Jammit.Resource.Styleable.MaterialButton_android_insetLeft;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_android_insetRight = global::Jammit.Resource.Styleable.MaterialButton_android_insetRight;
@@ -4961,6 +6730,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_backgroundTint = global::Jammit.Resource.Styleable.MaterialButton_backgroundTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_backgroundTintMode = global::Jammit.Resource.Styleable.MaterialButton_backgroundTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_cornerRadius = global::Jammit.Resource.Styleable.MaterialButton_cornerRadius;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_elevation = global::Jammit.Resource.Styleable.MaterialButton_elevation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_icon = global::Jammit.Resource.Styleable.MaterialButton_icon;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_iconGravity = global::Jammit.Resource.Styleable.MaterialButton_iconGravity;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_iconPadding = global::Jammit.Resource.Styleable.MaterialButton_iconPadding;
@@ -4968,11 +6738,57 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_iconTint = global::Jammit.Resource.Styleable.MaterialButton_iconTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_iconTintMode = global::Jammit.Resource.Styleable.MaterialButton_iconTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_rippleColor = global::Jammit.Resource.Styleable.MaterialButton_rippleColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_shapeAppearance = global::Jammit.Resource.Styleable.MaterialButton_shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialButton_shapeAppearanceOverlay;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_strokeColor = global::Jammit.Resource.Styleable.MaterialButton_strokeColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialButton_strokeWidth = global::Jammit.Resource.Styleable.MaterialButton_strokeWidth;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar = global::Jammit.Resource.Styleable.MaterialCalendar;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem = global::Jammit.Resource.Styleable.MaterialCalendarItem;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_android_insetBottom = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetBottom;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_android_insetLeft = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetLeft;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_android_insetRight = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetRight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_android_insetTop = global::Jammit.Resource.Styleable.MaterialCalendarItem_android_insetTop;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_itemFillColor = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemFillColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemShapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_itemStrokeColor = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemStrokeColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemStrokeWidth;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendarItem_itemTextColor = global::Jammit.Resource.Styleable.MaterialCalendarItem_itemTextColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_android_windowFullscreen = global::Jammit.Resource.Styleable.MaterialCalendar_android_windowFullscreen;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_dayInvalidStyle = global::Jammit.Resource.Styleable.MaterialCalendar_dayInvalidStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_daySelectedStyle = global::Jammit.Resource.Styleable.MaterialCalendar_daySelectedStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_dayStyle = global::Jammit.Resource.Styleable.MaterialCalendar_dayStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_dayTodayStyle = global::Jammit.Resource.Styleable.MaterialCalendar_dayTodayStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_rangeFillColor = global::Jammit.Resource.Styleable.MaterialCalendar_rangeFillColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_yearSelectedStyle = global::Jammit.Resource.Styleable.MaterialCalendar_yearSelectedStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_yearStyle = global::Jammit.Resource.Styleable.MaterialCalendar_yearStyle;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCalendar_yearTodayStyle = global::Jammit.Resource.Styleable.MaterialCalendar_yearTodayStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView = global::Jammit.Resource.Styleable.MaterialCardView;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_android_checkable = global::Jammit.Resource.Styleable.MaterialCardView_android_checkable;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_cardForegroundColor = global::Jammit.Resource.Styleable.MaterialCardView_cardForegroundColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_checkedIcon = global::Jammit.Resource.Styleable.MaterialCardView_checkedIcon;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_checkedIconTint = global::Jammit.Resource.Styleable.MaterialCardView_checkedIconTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_rippleColor = global::Jammit.Resource.Styleable.MaterialCardView_rippleColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_shapeAppearance = global::Jammit.Resource.Styleable.MaterialCardView_shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialCardView_shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_state_dragged = global::Jammit.Resource.Styleable.MaterialCardView_state_dragged;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_strokeColor = global::Jammit.Resource.Styleable.MaterialCardView_strokeColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCardView_strokeWidth = global::Jammit.Resource.Styleable.MaterialCardView_strokeWidth;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCheckBox = global::Jammit.Resource.Styleable.MaterialCheckBox;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCheckBox_buttonTint = global::Jammit.Resource.Styleable.MaterialCheckBox_buttonTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors = global::Jammit.Resource.Styleable.MaterialCheckBox_useMaterialThemeColors;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialRadioButton = global::Jammit.Resource.Styleable.MaterialRadioButton;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors = global::Jammit.Resource.Styleable.MaterialRadioButton_useMaterialThemeColors;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialShape = global::Jammit.Resource.Styleable.MaterialShape;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialShape_shapeAppearance = global::Jammit.Resource.Styleable.MaterialShape_shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialShape_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.MaterialShape_shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialTextAppearance = global::Jammit.Resource.Styleable.MaterialTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialTextAppearance_android_lineHeight = global::Jammit.Resource.Styleable.MaterialTextAppearance_android_lineHeight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialTextAppearance_lineHeight = global::Jammit.Resource.Styleable.MaterialTextAppearance_lineHeight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialTextView = global::Jammit.Resource.Styleable.MaterialTextView;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialTextView_android_lineHeight = global::Jammit.Resource.Styleable.MaterialTextView_android_lineHeight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialTextView_android_textAppearance = global::Jammit.Resource.Styleable.MaterialTextView_android_textAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.MaterialTextView_lineHeight = global::Jammit.Resource.Styleable.MaterialTextView_lineHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MenuGroup = global::Jammit.Resource.Styleable.MenuGroup;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MenuGroup_android_checkableBehavior = global::Jammit.Resource.Styleable.MenuGroup_android_checkableBehavior;
 			global::Xamarin.Forms.Platform.Resource.Styleable.MenuGroup_android_enabled = global::Jammit.Resource.Styleable.MenuGroup_android_enabled;
@@ -5023,7 +6839,16 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemBackground = global::Jammit.Resource.Styleable.NavigationView_itemBackground;
 			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemHorizontalPadding = global::Jammit.Resource.Styleable.NavigationView_itemHorizontalPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemIconPadding = global::Jammit.Resource.Styleable.NavigationView_itemIconPadding;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemIconSize = global::Jammit.Resource.Styleable.NavigationView_itemIconSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemIconTint = global::Jammit.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemMaxLines = global::Jammit.Resource.Styleable.NavigationView_itemMaxLines;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemShapeAppearance = global::Jammit.Resource.Styleable.NavigationView_itemShapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay = global::Jammit.Resource.Styleable.NavigationView_itemShapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemShapeFillColor = global::Jammit.Resource.Styleable.NavigationView_itemShapeFillColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemShapeInsetBottom = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetBottom;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemShapeInsetEnd = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetEnd;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemShapeInsetStart = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetStart;
+			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemShapeInsetTop = global::Jammit.Resource.Styleable.NavigationView_itemShapeInsetTop;
 			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemTextAppearance = global::Jammit.Resource.Styleable.NavigationView_itemTextAppearance;
 			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_itemTextColor = global::Jammit.Resource.Styleable.NavigationView_itemTextColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.NavigationView_menu = global::Jammit.Resource.Styleable.NavigationView_menu;
@@ -5037,6 +6862,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::Jammit.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::Jammit.Resource.Styleable.RecycleListView_paddingTopNoTitle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView = global::Jammit.Resource.Styleable.RecyclerView;
+			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_android_clipToPadding = global::Jammit.Resource.Styleable.RecyclerView_android_clipToPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_android_descendantFocusability = global::Jammit.Resource.Styleable.RecyclerView_android_descendantFocusability;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_android_orientation = global::Jammit.Resource.Styleable.RecyclerView_android_orientation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_fastScrollEnabled = global::Jammit.Resource.Styleable.RecyclerView_fastScrollEnabled;
@@ -5072,9 +6898,23 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.SearchView_submitBackground = global::Jammit.Resource.Styleable.SearchView_submitBackground;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SearchView_suggestionRowLayout = global::Jammit.Resource.Styleable.SearchView_suggestionRowLayout;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SearchView_voiceIcon = global::Jammit.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance = global::Jammit.Resource.Styleable.ShapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerFamily = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamily;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyBottomLeft;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyBottomRight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyTopLeft;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerFamilyTopRight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerSize = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSize;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeBottomLeft;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeBottomRight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeTopLeft;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ShapeAppearance_cornerSizeTopRight = global::Jammit.Resource.Styleable.ShapeAppearance_cornerSizeTopRight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Snackbar = global::Jammit.Resource.Styleable.Snackbar;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SnackbarLayout = global::Jammit.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.Forms.Platform.Resource.Styleable.SnackbarLayout_actionTextColorAlpha = global::Jammit.Resource.Styleable.SnackbarLayout_actionTextColorAlpha;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SnackbarLayout_android_maxWidth = global::Jammit.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.Forms.Platform.Resource.Styleable.SnackbarLayout_animationMode = global::Jammit.Resource.Styleable.SnackbarLayout_animationMode;
+			global::Xamarin.Forms.Platform.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha = global::Jammit.Resource.Styleable.SnackbarLayout_backgroundOverlayColorAlpha;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SnackbarLayout_elevation = global::Jammit.Resource.Styleable.SnackbarLayout_elevation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::Jammit.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Snackbar_snackbarButtonStyle = global::Jammit.Resource.Styleable.Snackbar_snackbarButtonStyle;
@@ -5109,6 +6949,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.SwitchCompat_track = global::Jammit.Resource.Styleable.SwitchCompat_track;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SwitchCompat_trackTint = global::Jammit.Resource.Styleable.SwitchCompat_trackTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.SwitchCompat_trackTintMode = global::Jammit.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.Forms.Platform.Resource.Styleable.SwitchMaterial = global::Jammit.Resource.Styleable.SwitchMaterial;
+			global::Xamarin.Forms.Platform.Resource.Styleable.SwitchMaterial_useMaterialThemeColors = global::Jammit.Resource.Styleable.SwitchMaterial_useMaterialThemeColors;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TabItem = global::Jammit.Resource.Styleable.TabItem;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TabItem_android_icon = global::Jammit.Resource.Styleable.TabItem_android_icon;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TabItem_android_layout = global::Jammit.Resource.Styleable.TabItem_android_layout;
@@ -5148,11 +6990,14 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textColor = global::Jammit.Resource.Styleable.TextAppearance_android_textColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textColorHint = global::Jammit.Resource.Styleable.TextAppearance_android_textColorHint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textColorLink = global::Jammit.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textFontWeight = global::Jammit.Resource.Styleable.TextAppearance_android_textFontWeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textSize = global::Jammit.Resource.Styleable.TextAppearance_android_textSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textStyle = global::Jammit.Resource.Styleable.TextAppearance_android_textStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_typeface = global::Jammit.Resource.Styleable.TextAppearance_android_typeface;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_fontFamily = global::Jammit.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_fontVariationSettings = global::Jammit.Resource.Styleable.TextAppearance_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_textAllCaps = global::Jammit.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_textLocale = global::Jammit.Resource.Styleable.TextAppearance_textLocale;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout = global::Jammit.Resource.Styleable.TextInputLayout;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_android_hint = global::Jammit.Resource.Styleable.TextInputLayout_android_hint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_android_textColorHint = global::Jammit.Resource.Styleable.TextInputLayout_android_textColorHint;
@@ -5165,23 +7010,45 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart = global::Jammit.Resource.Styleable.TextInputLayout_boxCornerRadiusTopStart;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_boxStrokeColor = global::Jammit.Resource.Styleable.TextInputLayout_boxStrokeColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_boxStrokeWidth = global::Jammit.Resource.Styleable.TextInputLayout_boxStrokeWidth;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused = global::Jammit.Resource.Styleable.TextInputLayout_boxStrokeWidthFocused;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_counterEnabled = global::Jammit.Resource.Styleable.TextInputLayout_counterEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_counterMaxLength = global::Jammit.Resource.Styleable.TextInputLayout_counterMaxLength;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_counterOverflowTextColor = global::Jammit.Resource.Styleable.TextInputLayout_counterOverflowTextColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_counterTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_counterTextColor = global::Jammit.Resource.Styleable.TextInputLayout_counterTextColor;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_endIconCheckable = global::Jammit.Resource.Styleable.TextInputLayout_endIconCheckable;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_endIconContentDescription = global::Jammit.Resource.Styleable.TextInputLayout_endIconContentDescription;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_endIconDrawable = global::Jammit.Resource.Styleable.TextInputLayout_endIconDrawable;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_endIconMode = global::Jammit.Resource.Styleable.TextInputLayout_endIconMode;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_endIconTint = global::Jammit.Resource.Styleable.TextInputLayout_endIconTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_endIconTintMode = global::Jammit.Resource.Styleable.TextInputLayout_endIconTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_errorEnabled = global::Jammit.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_errorIconDrawable = global::Jammit.Resource.Styleable.TextInputLayout_errorIconDrawable;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_errorIconTint = global::Jammit.Resource.Styleable.TextInputLayout_errorIconTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_errorIconTintMode = global::Jammit.Resource.Styleable.TextInputLayout_errorIconTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_errorTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_errorTextColor = global::Jammit.Resource.Styleable.TextInputLayout_errorTextColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_helperText = global::Jammit.Resource.Styleable.TextInputLayout_helperText;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_helperTextEnabled = global::Jammit.Resource.Styleable.TextInputLayout_helperTextEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_helperTextTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_helperTextTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_helperTextTextColor = global::Jammit.Resource.Styleable.TextInputLayout_helperTextTextColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::Jammit.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_hintEnabled = global::Jammit.Resource.Styleable.TextInputLayout_hintEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_hintTextAppearance = global::Jammit.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_hintTextColor = global::Jammit.Resource.Styleable.TextInputLayout_hintTextColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_passwordToggleTint = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::Jammit.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_shapeAppearance = global::Jammit.Resource.Styleable.TextInputLayout_shapeAppearance;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay = global::Jammit.Resource.Styleable.TextInputLayout_shapeAppearanceOverlay;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_startIconCheckable = global::Jammit.Resource.Styleable.TextInputLayout_startIconCheckable;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_startIconContentDescription = global::Jammit.Resource.Styleable.TextInputLayout_startIconContentDescription;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_startIconDrawable = global::Jammit.Resource.Styleable.TextInputLayout_startIconDrawable;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_startIconTint = global::Jammit.Resource.Styleable.TextInputLayout_startIconTint;
+			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_startIconTintMode = global::Jammit.Resource.Styleable.TextInputLayout_startIconTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ThemeEnforcement = global::Jammit.Resource.Styleable.ThemeEnforcement;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ThemeEnforcement_android_textAppearance = global::Jammit.Resource.Styleable.ThemeEnforcement_android_textAppearance;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme = global::Jammit.Resource.Styleable.ThemeEnforcement_enforceMaterialTheme;
@@ -5201,6 +7068,7 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_logo = global::Jammit.Resource.Styleable.Toolbar_logo;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_logoDescription = global::Jammit.Resource.Styleable.Toolbar_logoDescription;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_maxButtonHeight = global::Jammit.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_menu = global::Jammit.Resource.Styleable.Toolbar_menu;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_navigationContentDescription = global::Jammit.Resource.Styleable.Toolbar_navigationContentDescription;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_navigationIcon = global::Jammit.Resource.Styleable.Toolbar_navigationIcon;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_popupTheme = global::Jammit.Resource.Styleable.Toolbar_popupTheme;
@@ -5221,6 +7089,8 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewBackgroundHelper_android_background = global::Jammit.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::Jammit.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::Jammit.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ViewPager2 = global::Jammit.Resource.Styleable.ViewPager2;
+			global::Xamarin.Forms.Platform.Resource.Styleable.ViewPager2_android_orientation = global::Jammit.Resource.Styleable.ViewPager2_android_orientation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat = global::Jammit.Resource.Styleable.ViewStubCompat;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_id = global::Jammit.Resource.Styleable.ViewStubCompat_android_id;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Jammit.Resource.Styleable.ViewStubCompat_android_inflatedId;
@@ -5230,6 +7100,10 @@ namespace Jammit
 			global::Xamarin.Forms.Platform.Resource.Styleable.View_paddingEnd = global::Jammit.Resource.Styleable.View_paddingEnd;
 			global::Xamarin.Forms.Platform.Resource.Styleable.View_paddingStart = global::Jammit.Resource.Styleable.View_paddingStart;
 			global::Xamarin.Forms.Platform.Resource.Styleable.View_theme = global::Jammit.Resource.Styleable.View_theme;
+			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge = global::Jammit.Resource.Xml.standalone_badge;
+			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_bottom_end = global::Jammit.Resource.Xml.standalone_badge_gravity_bottom_end;
+			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_bottom_start = global::Jammit.Resource.Xml.standalone_badge_gravity_bottom_start;
+			global::Xamarin.Forms.Platform.Resource.Xml.standalone_badge_gravity_top_start = global::Jammit.Resource.Xml.standalone_badge_gravity_top_start;
 		}
 		
 		public partial class Animation
@@ -10520,646 +12394,643 @@ namespace Jammit
 			public const int flyoutcontent_appbar = 2131230849;
 			
 			// aapt resource value: 0x7F080082
-			public const int flyoutcontent_recycler = 2131230850;
+			public const int forever = 2131230850;
 			
 			// aapt resource value: 0x7F080083
-			public const int forever = 2131230851;
-			
-			// aapt resource value: 0x7F080084
-			public const int fragment_container_view_tag = 2131230852;
+			public const int fragment_container_view_tag = 2131230851;
 			
 			// aapt resource value: 0x7F080004
 			public const int FUNCTION = 2131230724;
 			
+			// aapt resource value: 0x7F080084
+			public const int ghost_view = 2131230852;
+			
 			// aapt resource value: 0x7F080085
-			public const int ghost_view = 2131230853;
+			public const int ghost_view_holder = 2131230853;
 			
 			// aapt resource value: 0x7F080086
-			public const int ghost_view_holder = 2131230854;
+			public const int group_divider = 2131230854;
 			
 			// aapt resource value: 0x7F080087
-			public const int group_divider = 2131230855;
+			public const int hideable = 2131230855;
 			
 			// aapt resource value: 0x7F080088
-			public const int hideable = 2131230856;
+			public const int home = 2131230856;
 			
 			// aapt resource value: 0x7F080089
-			public const int home = 2131230857;
+			public const int homeAsUp = 2131230857;
 			
 			// aapt resource value: 0x7F08008A
-			public const int homeAsUp = 2131230858;
+			public const int icon = 2131230858;
 			
 			// aapt resource value: 0x7F08008B
-			public const int icon = 2131230859;
+			public const int icon_group = 2131230859;
 			
 			// aapt resource value: 0x7F08008C
-			public const int icon_group = 2131230860;
+			public const int ifRoom = 2131230860;
 			
 			// aapt resource value: 0x7F08008D
-			public const int ifRoom = 2131230861;
+			public const int image = 2131230861;
 			
 			// aapt resource value: 0x7F08008E
-			public const int image = 2131230862;
+			public const int info = 2131230862;
 			
 			// aapt resource value: 0x7F08008F
-			public const int info = 2131230863;
+			public const int italic = 2131230863;
 			
 			// aapt resource value: 0x7F080090
-			public const int italic = 2131230864;
+			public const int item_touch_helper_previous_elevation = 2131230864;
 			
 			// aapt resource value: 0x7F080091
-			public const int item_touch_helper_previous_elevation = 2131230865;
+			public const int labeled = 2131230865;
 			
 			// aapt resource value: 0x7F080092
-			public const int labeled = 2131230866;
+			public const int largeLabel = 2131230866;
 			
 			// aapt resource value: 0x7F080093
-			public const int largeLabel = 2131230867;
+			public const int left = 2131230867;
 			
 			// aapt resource value: 0x7F080094
-			public const int left = 2131230868;
+			public const int line1 = 2131230868;
 			
 			// aapt resource value: 0x7F080095
-			public const int line1 = 2131230869;
+			public const int line3 = 2131230869;
 			
 			// aapt resource value: 0x7F080096
-			public const int line3 = 2131230870;
+			public const int listMode = 2131230870;
 			
 			// aapt resource value: 0x7F080097
-			public const int listMode = 2131230871;
+			public const int list_item = 2131230871;
 			
 			// aapt resource value: 0x7F080098
-			public const int list_item = 2131230872;
+			public const int main_appbar = 2131230872;
 			
 			// aapt resource value: 0x7F080099
-			public const int main_appbar = 2131230873;
+			public const int main_tablayout = 2131230873;
 			
 			// aapt resource value: 0x7F08009A
-			public const int main_tablayout = 2131230874;
+			public const int main_toolbar = 2131230874;
 			
 			// aapt resource value: 0x7F08009B
-			public const int main_toolbar = 2131230875;
+			public const int main_viewpager = 2131230875;
 			
 			// aapt resource value: 0x7F08009C
-			public const int main_viewpager = 2131230876;
+			public const int masked = 2131230876;
 			
 			// aapt resource value: 0x7F08009D
-			public const int masked = 2131230877;
+			public const int media_actions = 2131230877;
 			
 			// aapt resource value: 0x7F08009E
-			public const int media_actions = 2131230878;
+			public const int media_controller_compat_view_tag = 2131230878;
 			
 			// aapt resource value: 0x7F08009F
-			public const int media_controller_compat_view_tag = 2131230879;
-			
-			// aapt resource value: 0x7F0800A0
-			public const int message = 2131230880;
+			public const int message = 2131230879;
 			
 			// aapt resource value: 0x7F080005
 			public const int META = 2131230725;
 			
+			// aapt resource value: 0x7F0800A0
+			public const int middle = 2131230880;
+			
 			// aapt resource value: 0x7F0800A1
-			public const int middle = 2131230881;
+			public const int mini = 2131230881;
 			
 			// aapt resource value: 0x7F0800A2
-			public const int mini = 2131230882;
+			public const int month_grid = 2131230882;
 			
 			// aapt resource value: 0x7F0800A3
-			public const int month_grid = 2131230883;
+			public const int month_navigation_bar = 2131230883;
 			
 			// aapt resource value: 0x7F0800A4
-			public const int month_navigation_bar = 2131230884;
+			public const int month_navigation_fragment_toggle = 2131230884;
 			
 			// aapt resource value: 0x7F0800A5
-			public const int month_navigation_fragment_toggle = 2131230885;
+			public const int month_navigation_next = 2131230885;
 			
 			// aapt resource value: 0x7F0800A6
-			public const int month_navigation_next = 2131230886;
+			public const int month_navigation_previous = 2131230886;
 			
 			// aapt resource value: 0x7F0800A7
-			public const int month_navigation_previous = 2131230887;
+			public const int month_title = 2131230887;
 			
 			// aapt resource value: 0x7F0800A8
-			public const int month_title = 2131230888;
+			public const int mr_art = 2131230888;
 			
 			// aapt resource value: 0x7F0800A9
-			public const int mr_art = 2131230889;
+			public const int mr_cast_checkbox = 2131230889;
 			
 			// aapt resource value: 0x7F0800AA
-			public const int mr_cast_checkbox = 2131230890;
+			public const int mr_cast_close_button = 2131230890;
 			
 			// aapt resource value: 0x7F0800AB
-			public const int mr_cast_close_button = 2131230891;
+			public const int mr_cast_divider = 2131230891;
 			
 			// aapt resource value: 0x7F0800AC
-			public const int mr_cast_divider = 2131230892;
+			public const int mr_cast_group_icon = 2131230892;
 			
 			// aapt resource value: 0x7F0800AD
-			public const int mr_cast_group_icon = 2131230893;
+			public const int mr_cast_group_name = 2131230893;
 			
 			// aapt resource value: 0x7F0800AE
-			public const int mr_cast_group_name = 2131230894;
+			public const int mr_cast_group_progress_bar = 2131230894;
 			
 			// aapt resource value: 0x7F0800AF
-			public const int mr_cast_group_progress_bar = 2131230895;
+			public const int mr_cast_header_name = 2131230895;
 			
 			// aapt resource value: 0x7F0800B0
-			public const int mr_cast_header_name = 2131230896;
+			public const int mr_cast_list = 2131230896;
 			
 			// aapt resource value: 0x7F0800B1
-			public const int mr_cast_list = 2131230897;
+			public const int mr_cast_meta_art = 2131230897;
 			
 			// aapt resource value: 0x7F0800B2
-			public const int mr_cast_meta_art = 2131230898;
+			public const int mr_cast_meta_background = 2131230898;
 			
 			// aapt resource value: 0x7F0800B3
-			public const int mr_cast_meta_background = 2131230899;
+			public const int mr_cast_meta_black_scrim = 2131230899;
 			
 			// aapt resource value: 0x7F0800B4
-			public const int mr_cast_meta_black_scrim = 2131230900;
+			public const int mr_cast_meta_subtitle = 2131230900;
 			
 			// aapt resource value: 0x7F0800B5
-			public const int mr_cast_meta_subtitle = 2131230901;
+			public const int mr_cast_meta_title = 2131230901;
 			
 			// aapt resource value: 0x7F0800B6
-			public const int mr_cast_meta_title = 2131230902;
+			public const int mr_cast_mute_button = 2131230902;
 			
 			// aapt resource value: 0x7F0800B7
-			public const int mr_cast_mute_button = 2131230903;
+			public const int mr_cast_route_icon = 2131230903;
 			
 			// aapt resource value: 0x7F0800B8
-			public const int mr_cast_route_icon = 2131230904;
+			public const int mr_cast_route_name = 2131230904;
 			
 			// aapt resource value: 0x7F0800B9
-			public const int mr_cast_route_name = 2131230905;
+			public const int mr_cast_route_progress_bar = 2131230905;
 			
 			// aapt resource value: 0x7F0800BA
-			public const int mr_cast_route_progress_bar = 2131230906;
+			public const int mr_cast_stop_button = 2131230906;
 			
 			// aapt resource value: 0x7F0800BB
-			public const int mr_cast_stop_button = 2131230907;
+			public const int mr_cast_volume_layout = 2131230907;
 			
 			// aapt resource value: 0x7F0800BC
-			public const int mr_cast_volume_layout = 2131230908;
+			public const int mr_cast_volume_slider = 2131230908;
 			
 			// aapt resource value: 0x7F0800BD
-			public const int mr_cast_volume_slider = 2131230909;
+			public const int mr_chooser_list = 2131230909;
 			
 			// aapt resource value: 0x7F0800BE
-			public const int mr_chooser_list = 2131230910;
+			public const int mr_chooser_route_desc = 2131230910;
 			
 			// aapt resource value: 0x7F0800BF
-			public const int mr_chooser_route_desc = 2131230911;
+			public const int mr_chooser_route_icon = 2131230911;
 			
 			// aapt resource value: 0x7F0800C0
-			public const int mr_chooser_route_icon = 2131230912;
+			public const int mr_chooser_route_name = 2131230912;
 			
 			// aapt resource value: 0x7F0800C1
-			public const int mr_chooser_route_name = 2131230913;
+			public const int mr_chooser_title = 2131230913;
 			
 			// aapt resource value: 0x7F0800C2
-			public const int mr_chooser_title = 2131230914;
+			public const int mr_close = 2131230914;
 			
 			// aapt resource value: 0x7F0800C3
-			public const int mr_close = 2131230915;
+			public const int mr_control_divider = 2131230915;
 			
 			// aapt resource value: 0x7F0800C4
-			public const int mr_control_divider = 2131230916;
+			public const int mr_control_playback_ctrl = 2131230916;
 			
 			// aapt resource value: 0x7F0800C5
-			public const int mr_control_playback_ctrl = 2131230917;
+			public const int mr_control_subtitle = 2131230917;
 			
 			// aapt resource value: 0x7F0800C6
-			public const int mr_control_subtitle = 2131230918;
+			public const int mr_control_title = 2131230918;
 			
 			// aapt resource value: 0x7F0800C7
-			public const int mr_control_title = 2131230919;
+			public const int mr_control_title_container = 2131230919;
 			
 			// aapt resource value: 0x7F0800C8
-			public const int mr_control_title_container = 2131230920;
+			public const int mr_custom_control = 2131230920;
 			
 			// aapt resource value: 0x7F0800C9
-			public const int mr_custom_control = 2131230921;
+			public const int mr_default_control = 2131230921;
 			
 			// aapt resource value: 0x7F0800CA
-			public const int mr_default_control = 2131230922;
+			public const int mr_dialog_area = 2131230922;
 			
 			// aapt resource value: 0x7F0800CB
-			public const int mr_dialog_area = 2131230923;
+			public const int mr_expandable_area = 2131230923;
 			
 			// aapt resource value: 0x7F0800CC
-			public const int mr_expandable_area = 2131230924;
+			public const int mr_group_expand_collapse = 2131230924;
 			
 			// aapt resource value: 0x7F0800CD
-			public const int mr_group_expand_collapse = 2131230925;
+			public const int mr_group_volume_route_name = 2131230925;
 			
 			// aapt resource value: 0x7F0800CE
-			public const int mr_group_volume_route_name = 2131230926;
+			public const int mr_media_main_control = 2131230926;
 			
 			// aapt resource value: 0x7F0800CF
-			public const int mr_media_main_control = 2131230927;
+			public const int mr_name = 2131230927;
 			
 			// aapt resource value: 0x7F0800D0
-			public const int mr_name = 2131230928;
+			public const int mr_picker_close_button = 2131230928;
 			
 			// aapt resource value: 0x7F0800D1
-			public const int mr_picker_close_button = 2131230929;
+			public const int mr_picker_header_name = 2131230929;
 			
 			// aapt resource value: 0x7F0800D2
-			public const int mr_picker_header_name = 2131230930;
+			public const int mr_picker_list = 2131230930;
 			
 			// aapt resource value: 0x7F0800D3
-			public const int mr_picker_list = 2131230931;
+			public const int mr_picker_route_icon = 2131230931;
 			
 			// aapt resource value: 0x7F0800D4
-			public const int mr_picker_route_icon = 2131230932;
+			public const int mr_picker_route_name = 2131230932;
 			
 			// aapt resource value: 0x7F0800D5
-			public const int mr_picker_route_name = 2131230933;
+			public const int mr_picker_route_progress_bar = 2131230933;
 			
 			// aapt resource value: 0x7F0800D6
-			public const int mr_picker_route_progress_bar = 2131230934;
+			public const int mr_playback_control = 2131230934;
 			
 			// aapt resource value: 0x7F0800D7
-			public const int mr_playback_control = 2131230935;
+			public const int mr_title_bar = 2131230935;
 			
 			// aapt resource value: 0x7F0800D8
-			public const int mr_title_bar = 2131230936;
+			public const int mr_volume_control = 2131230936;
 			
 			// aapt resource value: 0x7F0800D9
-			public const int mr_volume_control = 2131230937;
+			public const int mr_volume_group_list = 2131230937;
 			
 			// aapt resource value: 0x7F0800DA
-			public const int mr_volume_group_list = 2131230938;
+			public const int mr_volume_item_icon = 2131230938;
 			
 			// aapt resource value: 0x7F0800DB
-			public const int mr_volume_item_icon = 2131230939;
-			
-			// aapt resource value: 0x7F0800DC
-			public const int mr_volume_slider = 2131230940;
-			
-			// aapt resource value: 0x7F0800DE
-			public const int mtrl_calendar_days_of_week = 2131230942;
+			public const int mr_volume_slider = 2131230939;
 			
 			// aapt resource value: 0x7F0800DD
-			public const int mtrl_calendar_day_selector_frame = 2131230941;
+			public const int mtrl_calendar_days_of_week = 2131230941;
+			
+			// aapt resource value: 0x7F0800DC
+			public const int mtrl_calendar_day_selector_frame = 2131230940;
+			
+			// aapt resource value: 0x7F0800DE
+			public const int mtrl_calendar_frame = 2131230942;
 			
 			// aapt resource value: 0x7F0800DF
-			public const int mtrl_calendar_frame = 2131230943;
+			public const int mtrl_calendar_main_pane = 2131230943;
 			
 			// aapt resource value: 0x7F0800E0
-			public const int mtrl_calendar_main_pane = 2131230944;
+			public const int mtrl_calendar_months = 2131230944;
 			
 			// aapt resource value: 0x7F0800E1
-			public const int mtrl_calendar_months = 2131230945;
+			public const int mtrl_calendar_selection_frame = 2131230945;
 			
 			// aapt resource value: 0x7F0800E2
-			public const int mtrl_calendar_selection_frame = 2131230946;
+			public const int mtrl_calendar_text_input_frame = 2131230946;
 			
 			// aapt resource value: 0x7F0800E3
-			public const int mtrl_calendar_text_input_frame = 2131230947;
+			public const int mtrl_calendar_year_selector_frame = 2131230947;
 			
 			// aapt resource value: 0x7F0800E4
-			public const int mtrl_calendar_year_selector_frame = 2131230948;
+			public const int mtrl_card_checked_layer_id = 2131230948;
 			
 			// aapt resource value: 0x7F0800E5
-			public const int mtrl_card_checked_layer_id = 2131230949;
+			public const int mtrl_child_content_container = 2131230949;
 			
 			// aapt resource value: 0x7F0800E6
-			public const int mtrl_child_content_container = 2131230950;
+			public const int mtrl_internal_children_alpha_tag = 2131230950;
 			
 			// aapt resource value: 0x7F0800E7
-			public const int mtrl_internal_children_alpha_tag = 2131230951;
+			public const int mtrl_picker_fullscreen = 2131230951;
 			
 			// aapt resource value: 0x7F0800E8
-			public const int mtrl_picker_fullscreen = 2131230952;
+			public const int mtrl_picker_header = 2131230952;
 			
 			// aapt resource value: 0x7F0800E9
-			public const int mtrl_picker_header = 2131230953;
+			public const int mtrl_picker_header_selection_text = 2131230953;
 			
 			// aapt resource value: 0x7F0800EA
-			public const int mtrl_picker_header_selection_text = 2131230954;
+			public const int mtrl_picker_header_title_and_selection = 2131230954;
 			
 			// aapt resource value: 0x7F0800EB
-			public const int mtrl_picker_header_title_and_selection = 2131230955;
+			public const int mtrl_picker_header_toggle = 2131230955;
 			
 			// aapt resource value: 0x7F0800EC
-			public const int mtrl_picker_header_toggle = 2131230956;
+			public const int mtrl_picker_text_input_date = 2131230956;
 			
 			// aapt resource value: 0x7F0800ED
-			public const int mtrl_picker_text_input_date = 2131230957;
+			public const int mtrl_picker_text_input_range_end = 2131230957;
 			
 			// aapt resource value: 0x7F0800EE
-			public const int mtrl_picker_text_input_range_end = 2131230958;
+			public const int mtrl_picker_text_input_range_start = 2131230958;
 			
 			// aapt resource value: 0x7F0800EF
-			public const int mtrl_picker_text_input_range_start = 2131230959;
+			public const int mtrl_picker_title_text = 2131230959;
 			
 			// aapt resource value: 0x7F0800F0
-			public const int mtrl_picker_title_text = 2131230960;
+			public const int multiply = 2131230960;
 			
 			// aapt resource value: 0x7F0800F1
-			public const int multiply = 2131230961;
+			public const int navigation_header_container = 2131230961;
 			
 			// aapt resource value: 0x7F0800F2
-			public const int navigation_header_container = 2131230962;
-			
-			// aapt resource value: 0x7F0800F3
-			public const int never = 2131230963;
-			
-			// aapt resource value: 0x7F0800F5
-			public const int none = 2131230965;
-			
-			// aapt resource value: 0x7F0800F6
-			public const int normal = 2131230966;
+			public const int never = 2131230962;
 			
 			// aapt resource value: 0x7F0800F4
-			public const int noScroll = 2131230964;
+			public const int none = 2131230964;
+			
+			// aapt resource value: 0x7F0800F5
+			public const int normal = 2131230965;
+			
+			// aapt resource value: 0x7F0800F3
+			public const int noScroll = 2131230963;
+			
+			// aapt resource value: 0x7F0800F6
+			public const int notification_background = 2131230966;
 			
 			// aapt resource value: 0x7F0800F7
-			public const int notification_background = 2131230967;
+			public const int notification_main_column = 2131230967;
 			
 			// aapt resource value: 0x7F0800F8
-			public const int notification_main_column = 2131230968;
+			public const int notification_main_column_container = 2131230968;
 			
 			// aapt resource value: 0x7F0800F9
-			public const int notification_main_column_container = 2131230969;
+			public const int off = 2131230969;
 			
 			// aapt resource value: 0x7F0800FA
-			public const int off = 2131230970;
+			public const int on = 2131230970;
 			
 			// aapt resource value: 0x7F0800FB
-			public const int on = 2131230971;
+			public const int outline = 2131230971;
 			
 			// aapt resource value: 0x7F0800FC
-			public const int outline = 2131230972;
+			public const int parallax = 2131230972;
 			
 			// aapt resource value: 0x7F0800FD
-			public const int parallax = 2131230973;
+			public const int parentPanel = 2131230973;
 			
 			// aapt resource value: 0x7F0800FE
-			public const int parentPanel = 2131230974;
+			public const int parent_matrix = 2131230974;
 			
 			// aapt resource value: 0x7F0800FF
-			public const int parent_matrix = 2131230975;
+			public const int password_toggle = 2131230975;
 			
 			// aapt resource value: 0x7F080100
-			public const int password_toggle = 2131230976;
+			public const int peekHeight = 2131230976;
 			
 			// aapt resource value: 0x7F080101
-			public const int peekHeight = 2131230977;
+			public const int pin = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int pin = 2131230978;
+			public const int progress_circular = 2131230978;
 			
 			// aapt resource value: 0x7F080103
-			public const int progress_circular = 2131230979;
+			public const int progress_horizontal = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int progress_horizontal = 2131230980;
+			public const int radio = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int radio = 2131230981;
+			public const int right = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int right = 2131230982;
+			public const int right_icon = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int right_icon = 2131230983;
+			public const int right_side = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int right_side = 2131230984;
+			public const int rounded = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int rounded = 2131230985;
+			public const int save_non_transition_alpha = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int save_non_transition_alpha = 2131230986;
+			public const int save_overlay_view = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int save_overlay_view = 2131230987;
+			public const int scale = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int scale = 2131230988;
+			public const int screen = 2131230988;
 			
 			// aapt resource value: 0x7F08010D
-			public const int screen = 2131230989;
-			
-			// aapt resource value: 0x7F08010E
-			public const int scroll = 2131230990;
-			
-			// aapt resource value: 0x7F080112
-			public const int scrollable = 2131230994;
-			
-			// aapt resource value: 0x7F08010F
-			public const int scrollIndicatorDown = 2131230991;
-			
-			// aapt resource value: 0x7F080110
-			public const int scrollIndicatorUp = 2131230992;
+			public const int scroll = 2131230989;
 			
 			// aapt resource value: 0x7F080111
-			public const int scrollView = 2131230993;
+			public const int scrollable = 2131230993;
+			
+			// aapt resource value: 0x7F08010E
+			public const int scrollIndicatorDown = 2131230990;
+			
+			// aapt resource value: 0x7F08010F
+			public const int scrollIndicatorUp = 2131230991;
+			
+			// aapt resource value: 0x7F080110
+			public const int scrollView = 2131230992;
+			
+			// aapt resource value: 0x7F080112
+			public const int search_badge = 2131230994;
 			
 			// aapt resource value: 0x7F080113
-			public const int search_badge = 2131230995;
+			public const int search_bar = 2131230995;
 			
 			// aapt resource value: 0x7F080114
-			public const int search_bar = 2131230996;
+			public const int search_button = 2131230996;
 			
 			// aapt resource value: 0x7F080115
-			public const int search_button = 2131230997;
+			public const int search_close_btn = 2131230997;
 			
 			// aapt resource value: 0x7F080116
-			public const int search_close_btn = 2131230998;
+			public const int search_edit_frame = 2131230998;
 			
 			// aapt resource value: 0x7F080117
-			public const int search_edit_frame = 2131230999;
+			public const int search_go_btn = 2131230999;
 			
 			// aapt resource value: 0x7F080118
-			public const int search_go_btn = 2131231000;
+			public const int search_mag_icon = 2131231000;
 			
 			// aapt resource value: 0x7F080119
-			public const int search_mag_icon = 2131231001;
+			public const int search_plate = 2131231001;
 			
 			// aapt resource value: 0x7F08011A
-			public const int search_plate = 2131231002;
+			public const int search_src_text = 2131231002;
 			
 			// aapt resource value: 0x7F08011B
-			public const int search_src_text = 2131231003;
-			
-			// aapt resource value: 0x7F08011C
-			public const int search_voice_btn = 2131231004;
-			
-			// aapt resource value: 0x7F08011E
-			public const int selected = 2131231006;
+			public const int search_voice_btn = 2131231003;
 			
 			// aapt resource value: 0x7F08011D
-			public const int select_dialog_listview = 2131231005;
+			public const int selected = 2131231005;
+			
+			// aapt resource value: 0x7F08011C
+			public const int select_dialog_listview = 2131231004;
+			
+			// aapt resource value: 0x7F08011E
+			public const int shellcontent_appbar = 2131231006;
 			
 			// aapt resource value: 0x7F08011F
-			public const int shellcontent_appbar = 2131231007;
-			
-			// aapt resource value: 0x7F080120
-			public const int shellcontent_toolbar = 2131231008;
+			public const int shellcontent_toolbar = 2131231007;
 			
 			// aapt resource value: 0x7F080006
 			public const int SHIFT = 2131230726;
 			
+			// aapt resource value: 0x7F080120
+			public const int shortcut = 2131231008;
+			
 			// aapt resource value: 0x7F080121
-			public const int shortcut = 2131231009;
+			public const int showCustom = 2131231009;
 			
 			// aapt resource value: 0x7F080122
-			public const int showCustom = 2131231010;
+			public const int showHome = 2131231010;
 			
 			// aapt resource value: 0x7F080123
-			public const int showHome = 2131231011;
+			public const int showTitle = 2131231011;
 			
 			// aapt resource value: 0x7F080124
-			public const int showTitle = 2131231012;
+			public const int skipCollapsed = 2131231012;
 			
 			// aapt resource value: 0x7F080125
-			public const int skipCollapsed = 2131231013;
+			public const int slide = 2131231013;
 			
 			// aapt resource value: 0x7F080126
-			public const int slide = 2131231014;
+			public const int sliding_tabs = 2131231014;
 			
 			// aapt resource value: 0x7F080127
-			public const int sliding_tabs = 2131231015;
+			public const int smallLabel = 2131231015;
 			
 			// aapt resource value: 0x7F080128
-			public const int smallLabel = 2131231016;
+			public const int snackbar_action = 2131231016;
 			
 			// aapt resource value: 0x7F080129
-			public const int snackbar_action = 2131231017;
+			public const int snackbar_text = 2131231017;
 			
 			// aapt resource value: 0x7F08012A
-			public const int snackbar_text = 2131231018;
+			public const int snap = 2131231018;
 			
 			// aapt resource value: 0x7F08012B
-			public const int snap = 2131231019;
+			public const int snapMargins = 2131231019;
 			
 			// aapt resource value: 0x7F08012C
-			public const int snapMargins = 2131231020;
+			public const int spacer = 2131231020;
 			
 			// aapt resource value: 0x7F08012D
-			public const int spacer = 2131231021;
+			public const int split_action_bar = 2131231021;
 			
 			// aapt resource value: 0x7F08012E
-			public const int split_action_bar = 2131231022;
+			public const int src_atop = 2131231022;
 			
 			// aapt resource value: 0x7F08012F
-			public const int src_atop = 2131231023;
+			public const int src_in = 2131231023;
 			
 			// aapt resource value: 0x7F080130
-			public const int src_in = 2131231024;
+			public const int src_over = 2131231024;
 			
 			// aapt resource value: 0x7F080131
-			public const int src_over = 2131231025;
+			public const int start = 2131231025;
 			
 			// aapt resource value: 0x7F080132
-			public const int start = 2131231026;
+			public const int status_bar_latest_event_content = 2131231026;
 			
 			// aapt resource value: 0x7F080133
-			public const int status_bar_latest_event_content = 2131231027;
+			public const int stretch = 2131231027;
 			
 			// aapt resource value: 0x7F080134
-			public const int stretch = 2131231028;
+			public const int submenuarrow = 2131231028;
 			
 			// aapt resource value: 0x7F080135
-			public const int submenuarrow = 2131231029;
-			
-			// aapt resource value: 0x7F080136
-			public const int submit_area = 2131231030;
+			public const int submit_area = 2131231029;
 			
 			// aapt resource value: 0x7F080007
 			public const int SYM = 2131230727;
 			
+			// aapt resource value: 0x7F080136
+			public const int tabMode = 2131231030;
+			
 			// aapt resource value: 0x7F080137
-			public const int tabMode = 2131231031;
+			public const int tag_accessibility_actions = 2131231031;
 			
 			// aapt resource value: 0x7F080138
-			public const int tag_accessibility_actions = 2131231032;
+			public const int tag_accessibility_clickable_spans = 2131231032;
 			
 			// aapt resource value: 0x7F080139
-			public const int tag_accessibility_clickable_spans = 2131231033;
+			public const int tag_accessibility_heading = 2131231033;
 			
 			// aapt resource value: 0x7F08013A
-			public const int tag_accessibility_heading = 2131231034;
+			public const int tag_accessibility_pane_title = 2131231034;
 			
 			// aapt resource value: 0x7F08013B
-			public const int tag_accessibility_pane_title = 2131231035;
+			public const int tag_screen_reader_focusable = 2131231035;
 			
 			// aapt resource value: 0x7F08013C
-			public const int tag_screen_reader_focusable = 2131231036;
+			public const int tag_transition_group = 2131231036;
 			
 			// aapt resource value: 0x7F08013D
-			public const int tag_transition_group = 2131231037;
+			public const int tag_unhandled_key_event_manager = 2131231037;
 			
 			// aapt resource value: 0x7F08013E
-			public const int tag_unhandled_key_event_manager = 2131231038;
+			public const int tag_unhandled_key_listeners = 2131231038;
 			
 			// aapt resource value: 0x7F08013F
-			public const int tag_unhandled_key_listeners = 2131231039;
+			public const int test_checkbox_android_button_tint = 2131231039;
 			
 			// aapt resource value: 0x7F080140
-			public const int test_checkbox_android_button_tint = 2131231040;
+			public const int test_checkbox_app_button_tint = 2131231040;
 			
 			// aapt resource value: 0x7F080141
-			public const int test_checkbox_app_button_tint = 2131231041;
+			public const int text = 2131231041;
 			
 			// aapt resource value: 0x7F080142
-			public const int text = 2131231042;
+			public const int text2 = 2131231042;
 			
 			// aapt resource value: 0x7F080143
-			public const int text2 = 2131231043;
-			
-			// aapt resource value: 0x7F080144
-			public const int textEnd = 2131231044;
-			
-			// aapt resource value: 0x7F08014A
-			public const int textinput_counter = 2131231050;
-			
-			// aapt resource value: 0x7F08014B
-			public const int textinput_error = 2131231051;
-			
-			// aapt resource value: 0x7F08014C
-			public const int textinput_helper_text = 2131231052;
-			
-			// aapt resource value: 0x7F080145
-			public const int textSpacerNoButtons = 2131231045;
-			
-			// aapt resource value: 0x7F080146
-			public const int textSpacerNoTitle = 2131231046;
-			
-			// aapt resource value: 0x7F080147
-			public const int textStart = 2131231047;
-			
-			// aapt resource value: 0x7F080148
-			public const int text_input_end_icon = 2131231048;
+			public const int textEnd = 2131231043;
 			
 			// aapt resource value: 0x7F080149
-			public const int text_input_start_icon = 2131231049;
+			public const int textinput_counter = 2131231049;
+			
+			// aapt resource value: 0x7F08014A
+			public const int textinput_error = 2131231050;
+			
+			// aapt resource value: 0x7F08014B
+			public const int textinput_helper_text = 2131231051;
+			
+			// aapt resource value: 0x7F080144
+			public const int textSpacerNoButtons = 2131231044;
+			
+			// aapt resource value: 0x7F080145
+			public const int textSpacerNoTitle = 2131231045;
+			
+			// aapt resource value: 0x7F080146
+			public const int textStart = 2131231046;
+			
+			// aapt resource value: 0x7F080147
+			public const int text_input_end_icon = 2131231047;
+			
+			// aapt resource value: 0x7F080148
+			public const int text_input_start_icon = 2131231048;
+			
+			// aapt resource value: 0x7F08014C
+			public const int time = 2131231052;
 			
 			// aapt resource value: 0x7F08014D
-			public const int time = 2131231053;
+			public const int title = 2131231053;
 			
 			// aapt resource value: 0x7F08014E
-			public const int title = 2131231054;
+			public const int titleDividerNoCustom = 2131231054;
 			
 			// aapt resource value: 0x7F08014F
-			public const int titleDividerNoCustom = 2131231055;
+			public const int title_template = 2131231055;
 			
 			// aapt resource value: 0x7F080150
-			public const int title_template = 2131231056;
+			public const int toolbar = 2131231056;
 			
 			// aapt resource value: 0x7F080151
-			public const int toolbar = 2131231057;
+			public const int top = 2131231057;
 			
 			// aapt resource value: 0x7F080152
-			public const int top = 2131231058;
-			
-			// aapt resource value: 0x7F080153
-			public const int topPanel = 2131231059;
+			public const int topPanel = 2131231058;
 			
 			// aapt resource value: 0x7F080008
 			public const int TOP_END = 2131230728;
@@ -11167,59 +13038,59 @@ namespace Jammit
 			// aapt resource value: 0x7F080009
 			public const int TOP_START = 2131230729;
 			
+			// aapt resource value: 0x7F080153
+			public const int touch_outside = 2131231059;
+			
 			// aapt resource value: 0x7F080154
-			public const int touch_outside = 2131231060;
+			public const int transition_current_scene = 2131231060;
 			
 			// aapt resource value: 0x7F080155
-			public const int transition_current_scene = 2131231061;
+			public const int transition_layout_save = 2131231061;
 			
 			// aapt resource value: 0x7F080156
-			public const int transition_layout_save = 2131231062;
+			public const int transition_position = 2131231062;
 			
 			// aapt resource value: 0x7F080157
-			public const int transition_position = 2131231063;
+			public const int transition_scene_layoutid_cache = 2131231063;
 			
 			// aapt resource value: 0x7F080158
-			public const int transition_scene_layoutid_cache = 2131231064;
+			public const int transition_transform = 2131231064;
 			
 			// aapt resource value: 0x7F080159
-			public const int transition_transform = 2131231065;
+			public const int @unchecked = 2131231065;
 			
 			// aapt resource value: 0x7F08015A
-			public const int @unchecked = 2131231066;
+			public const int uniform = 2131231066;
 			
 			// aapt resource value: 0x7F08015B
-			public const int uniform = 2131231067;
+			public const int unlabeled = 2131231067;
 			
 			// aapt resource value: 0x7F08015C
-			public const int unlabeled = 2131231068;
+			public const int up = 2131231068;
 			
 			// aapt resource value: 0x7F08015D
-			public const int up = 2131231069;
+			public const int useLogo = 2131231069;
 			
 			// aapt resource value: 0x7F08015E
-			public const int useLogo = 2131231070;
+			public const int view_offset_helper = 2131231070;
 			
 			// aapt resource value: 0x7F08015F
-			public const int view_offset_helper = 2131231071;
+			public const int view_tree_saved_state_registry_owner = 2131231071;
 			
 			// aapt resource value: 0x7F080160
-			public const int view_tree_saved_state_registry_owner = 2131231072;
+			public const int visible = 2131231072;
 			
 			// aapt resource value: 0x7F080161
-			public const int visible = 2131231073;
+			public const int visible_removing_fragment_view_tag = 2131231073;
 			
 			// aapt resource value: 0x7F080162
-			public const int visible_removing_fragment_view_tag = 2131231074;
+			public const int volume_item_container = 2131231074;
 			
 			// aapt resource value: 0x7F080163
-			public const int volume_item_container = 2131231075;
+			public const int withText = 2131231075;
 			
 			// aapt resource value: 0x7F080164
-			public const int withText = 2131231076;
-			
-			// aapt resource value: 0x7F080165
-			public const int wrap_content = 2131231077;
+			public const int wrap_content = 2131231076;
 			
 			static Id()
 			{
@@ -11519,241 +13390,247 @@ namespace Jammit
 			public const int design_text_input_start_icon = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int FlyoutContent = 2131427375;
+			public const int FallbackTabbarDoNotUse = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int mr_cast_dialog = 2131427376;
+			public const int FallbackToolbarDoNotUse = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int mr_cast_group_item = 2131427377;
+			public const int FlyoutContent = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int mr_cast_group_volume_item = 2131427378;
+			public const int mr_cast_dialog = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int mr_cast_header_item = 2131427379;
+			public const int mr_cast_group_item = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int mr_cast_media_metadata = 2131427380;
+			public const int mr_cast_group_volume_item = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int mr_cast_route_item = 2131427381;
+			public const int mr_cast_header_item = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int mr_chooser_dialog = 2131427382;
+			public const int mr_cast_media_metadata = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int mr_chooser_list_item = 2131427383;
+			public const int mr_cast_route_item = 2131427383;
 			
 			// aapt resource value: 0x7F0B0038
-			public const int mr_controller_material_dialog_b = 2131427384;
+			public const int mr_chooser_dialog = 2131427384;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int mr_controller_volume_item = 2131427385;
+			public const int mr_chooser_list_item = 2131427385;
 			
 			// aapt resource value: 0x7F0B003A
-			public const int mr_picker_dialog = 2131427386;
+			public const int mr_controller_material_dialog_b = 2131427386;
 			
 			// aapt resource value: 0x7F0B003B
-			public const int mr_picker_header_item = 2131427387;
+			public const int mr_controller_volume_item = 2131427387;
 			
 			// aapt resource value: 0x7F0B003C
-			public const int mr_picker_route_item = 2131427388;
+			public const int mr_picker_dialog = 2131427388;
 			
 			// aapt resource value: 0x7F0B003D
-			public const int mr_playback_control = 2131427389;
+			public const int mr_picker_header_item = 2131427389;
 			
 			// aapt resource value: 0x7F0B003E
-			public const int mr_volume_control = 2131427390;
+			public const int mr_picker_route_item = 2131427390;
 			
 			// aapt resource value: 0x7F0B003F
-			public const int mtrl_alert_dialog = 2131427391;
+			public const int mr_playback_control = 2131427391;
 			
 			// aapt resource value: 0x7F0B0040
-			public const int mtrl_alert_dialog_actions = 2131427392;
+			public const int mr_volume_control = 2131427392;
 			
 			// aapt resource value: 0x7F0B0041
-			public const int mtrl_alert_dialog_title = 2131427393;
+			public const int mtrl_alert_dialog = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int mtrl_alert_select_dialog_item = 2131427394;
+			public const int mtrl_alert_dialog_actions = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int mtrl_alert_select_dialog_multichoice = 2131427395;
+			public const int mtrl_alert_dialog_title = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int mtrl_alert_select_dialog_singlechoice = 2131427396;
+			public const int mtrl_alert_select_dialog_item = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int mtrl_calendar_day = 2131427397;
-			
-			// aapt resource value: 0x7F0B0047
-			public const int mtrl_calendar_days_of_week = 2131427399;
+			public const int mtrl_alert_select_dialog_multichoice = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int mtrl_calendar_day_of_week = 2131427398;
+			public const int mtrl_alert_select_dialog_singlechoice = 2131427398;
 			
-			// aapt resource value: 0x7F0B0048
-			public const int mtrl_calendar_horizontal = 2131427400;
+			// aapt resource value: 0x7F0B0047
+			public const int mtrl_calendar_day = 2131427399;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int mtrl_calendar_month = 2131427401;
+			public const int mtrl_calendar_days_of_week = 2131427401;
 			
-			// aapt resource value: 0x7F0B004C
-			public const int mtrl_calendar_months = 2131427404;
+			// aapt resource value: 0x7F0B0048
+			public const int mtrl_calendar_day_of_week = 2131427400;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int mtrl_calendar_month_labeled = 2131427402;
+			public const int mtrl_calendar_horizontal = 2131427402;
 			
 			// aapt resource value: 0x7F0B004B
-			public const int mtrl_calendar_month_navigation = 2131427403;
-			
-			// aapt resource value: 0x7F0B004D
-			public const int mtrl_calendar_vertical = 2131427405;
+			public const int mtrl_calendar_month = 2131427403;
 			
 			// aapt resource value: 0x7F0B004E
-			public const int mtrl_calendar_year = 2131427406;
+			public const int mtrl_calendar_months = 2131427406;
+			
+			// aapt resource value: 0x7F0B004C
+			public const int mtrl_calendar_month_labeled = 2131427404;
+			
+			// aapt resource value: 0x7F0B004D
+			public const int mtrl_calendar_month_navigation = 2131427405;
 			
 			// aapt resource value: 0x7F0B004F
-			public const int mtrl_layout_snackbar = 2131427407;
+			public const int mtrl_calendar_vertical = 2131427407;
 			
 			// aapt resource value: 0x7F0B0050
-			public const int mtrl_layout_snackbar_include = 2131427408;
+			public const int mtrl_calendar_year = 2131427408;
 			
 			// aapt resource value: 0x7F0B0051
-			public const int mtrl_picker_actions = 2131427409;
+			public const int mtrl_layout_snackbar = 2131427409;
 			
 			// aapt resource value: 0x7F0B0052
-			public const int mtrl_picker_dialog = 2131427410;
+			public const int mtrl_layout_snackbar_include = 2131427410;
 			
 			// aapt resource value: 0x7F0B0053
-			public const int mtrl_picker_fullscreen = 2131427411;
+			public const int mtrl_picker_actions = 2131427411;
 			
 			// aapt resource value: 0x7F0B0054
-			public const int mtrl_picker_header_dialog = 2131427412;
+			public const int mtrl_picker_dialog = 2131427412;
 			
 			// aapt resource value: 0x7F0B0055
-			public const int mtrl_picker_header_fullscreen = 2131427413;
+			public const int mtrl_picker_fullscreen = 2131427413;
 			
 			// aapt resource value: 0x7F0B0056
-			public const int mtrl_picker_header_selection_text = 2131427414;
+			public const int mtrl_picker_header_dialog = 2131427414;
 			
 			// aapt resource value: 0x7F0B0057
-			public const int mtrl_picker_header_title_text = 2131427415;
+			public const int mtrl_picker_header_fullscreen = 2131427415;
 			
 			// aapt resource value: 0x7F0B0058
-			public const int mtrl_picker_header_toggle = 2131427416;
+			public const int mtrl_picker_header_selection_text = 2131427416;
 			
 			// aapt resource value: 0x7F0B0059
-			public const int mtrl_picker_text_input_date = 2131427417;
+			public const int mtrl_picker_header_title_text = 2131427417;
 			
 			// aapt resource value: 0x7F0B005A
-			public const int mtrl_picker_text_input_date_range = 2131427418;
+			public const int mtrl_picker_header_toggle = 2131427418;
 			
 			// aapt resource value: 0x7F0B005B
-			public const int notification_action = 2131427419;
+			public const int mtrl_picker_text_input_date = 2131427419;
 			
 			// aapt resource value: 0x7F0B005C
-			public const int notification_action_tombstone = 2131427420;
+			public const int mtrl_picker_text_input_date_range = 2131427420;
 			
 			// aapt resource value: 0x7F0B005D
-			public const int notification_media_action = 2131427421;
+			public const int notification_action = 2131427421;
 			
 			// aapt resource value: 0x7F0B005E
-			public const int notification_media_cancel_action = 2131427422;
+			public const int notification_action_tombstone = 2131427422;
 			
 			// aapt resource value: 0x7F0B005F
-			public const int notification_template_big_media = 2131427423;
+			public const int notification_media_action = 2131427423;
 			
 			// aapt resource value: 0x7F0B0060
-			public const int notification_template_big_media_custom = 2131427424;
+			public const int notification_media_cancel_action = 2131427424;
 			
 			// aapt resource value: 0x7F0B0061
-			public const int notification_template_big_media_narrow = 2131427425;
+			public const int notification_template_big_media = 2131427425;
 			
 			// aapt resource value: 0x7F0B0062
-			public const int notification_template_big_media_narrow_custom = 2131427426;
+			public const int notification_template_big_media_custom = 2131427426;
 			
 			// aapt resource value: 0x7F0B0063
-			public const int notification_template_custom_big = 2131427427;
+			public const int notification_template_big_media_narrow = 2131427427;
 			
 			// aapt resource value: 0x7F0B0064
-			public const int notification_template_icon_group = 2131427428;
+			public const int notification_template_big_media_narrow_custom = 2131427428;
 			
 			// aapt resource value: 0x7F0B0065
-			public const int notification_template_lines_media = 2131427429;
+			public const int notification_template_custom_big = 2131427429;
 			
 			// aapt resource value: 0x7F0B0066
-			public const int notification_template_media = 2131427430;
+			public const int notification_template_icon_group = 2131427430;
 			
 			// aapt resource value: 0x7F0B0067
-			public const int notification_template_media_custom = 2131427431;
+			public const int notification_template_lines_media = 2131427431;
 			
 			// aapt resource value: 0x7F0B0068
-			public const int notification_template_part_chronometer = 2131427432;
+			public const int notification_template_media = 2131427432;
 			
 			// aapt resource value: 0x7F0B0069
-			public const int notification_template_part_time = 2131427433;
+			public const int notification_template_media_custom = 2131427433;
 			
 			// aapt resource value: 0x7F0B006A
-			public const int RootLayout = 2131427434;
+			public const int notification_template_part_chronometer = 2131427434;
 			
 			// aapt resource value: 0x7F0B006B
-			public const int select_dialog_item_material = 2131427435;
+			public const int notification_template_part_time = 2131427435;
 			
 			// aapt resource value: 0x7F0B006C
-			public const int select_dialog_multichoice_material = 2131427436;
+			public const int RootLayout = 2131427436;
 			
 			// aapt resource value: 0x7F0B006D
-			public const int select_dialog_singlechoice_material = 2131427437;
+			public const int select_dialog_item_material = 2131427437;
 			
 			// aapt resource value: 0x7F0B006E
-			public const int ShellContent = 2131427438;
+			public const int select_dialog_multichoice_material = 2131427438;
 			
 			// aapt resource value: 0x7F0B006F
-			public const int support_simple_spinner_dropdown_item = 2131427439;
+			public const int select_dialog_singlechoice_material = 2131427439;
 			
 			// aapt resource value: 0x7F0B0070
-			public const int Tabbar = 2131427440;
+			public const int ShellContent = 2131427440;
 			
 			// aapt resource value: 0x7F0B0071
-			public const int test_action_chip = 2131427441;
+			public const int support_simple_spinner_dropdown_item = 2131427441;
 			
 			// aapt resource value: 0x7F0B0072
-			public const int test_design_checkbox = 2131427442;
+			public const int Tabbar = 2131427442;
 			
 			// aapt resource value: 0x7F0B0073
-			public const int test_reflow_chipgroup = 2131427443;
+			public const int test_action_chip = 2131427443;
 			
 			// aapt resource value: 0x7F0B0074
-			public const int test_toolbar = 2131427444;
+			public const int test_design_checkbox = 2131427444;
 			
 			// aapt resource value: 0x7F0B0075
-			public const int test_toolbar_custom_background = 2131427445;
+			public const int test_reflow_chipgroup = 2131427445;
 			
 			// aapt resource value: 0x7F0B0076
-			public const int test_toolbar_elevation = 2131427446;
+			public const int test_toolbar = 2131427446;
 			
 			// aapt resource value: 0x7F0B0077
-			public const int test_toolbar_surface = 2131427447;
-			
-			// aapt resource value: 0x7F0B007C
-			public const int text_view_without_line_height = 2131427452;
+			public const int test_toolbar_custom_background = 2131427447;
 			
 			// aapt resource value: 0x7F0B0078
-			public const int text_view_with_line_height_from_appearance = 2131427448;
+			public const int test_toolbar_elevation = 2131427448;
 			
 			// aapt resource value: 0x7F0B0079
-			public const int text_view_with_line_height_from_layout = 2131427449;
+			public const int test_toolbar_surface = 2131427449;
+			
+			// aapt resource value: 0x7F0B007E
+			public const int text_view_without_line_height = 2131427454;
 			
 			// aapt resource value: 0x7F0B007A
-			public const int text_view_with_line_height_from_style = 2131427450;
+			public const int text_view_with_line_height_from_appearance = 2131427450;
 			
 			// aapt resource value: 0x7F0B007B
-			public const int text_view_with_theme_line_height = 2131427451;
+			public const int text_view_with_line_height_from_layout = 2131427451;
+			
+			// aapt resource value: 0x7F0B007C
+			public const int text_view_with_line_height_from_style = 2131427452;
 			
 			// aapt resource value: 0x7F0B007D
-			public const int Toolbar = 2131427453;
+			public const int text_view_with_theme_line_height = 2131427453;
+			
+			// aapt resource value: 0x7F0B007F
+			public const int Toolbar = 2131427455;
 			
 			static Layout()
 			{
