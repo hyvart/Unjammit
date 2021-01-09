@@ -75,10 +75,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms.Platform.GTK">
-      <Version>4.8.0.1687</Version>
+      <Version>5.0.0.1874</Version>
     </PackageReference>
     <PackageReference Include="LibVLCSharp.Forms.GTK">
-      <Version>3.4.8</Version>
+      <Version>3.4.9</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

@@ -33,9 +33,6 @@ namespace Jammit.macOS
 
     public override void DidFinishLaunching(NSNotification notification)
     {
-      //TODO: Remove once RadioButton is promoted from Experimental.
-      Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
-
       Xamarin.Forms.Forms.Init();
 
       // Xamarin.Essentials.FileSystem.AppDataDirectory yields '/Users/<user name>/Library' on macOS
