@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,20 +30,31 @@ namespace Jammit.Forms.Views
 
     private async void OpenButton_Clicked(object sender, EventArgs e)
     {
-      Plugin.FilePicker.Abstractions.FileData picked = null;
+      FileResult picked = null;
       try
       {
-        picked = await Plugin.FilePicker.CrossFilePicker.Current.PickFile(App.AllowedFileTypes);
+        picked = await FilePicker.PickAsync(new PickOptions
+        {
+          PickerTitle = "Select JCF archive",
+          FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
+          {
+            { DevicePlatform.Android, new[] { "application/zip" } },
+            { DevicePlatform.iOS, new[] { "com.pkware.zip-archive" } },
+            { DevicePlatform.macOS, new[] { "zip" } },
+            { DevicePlatform.UWP, new[] { ".zip" } },
+            { DevicePlatform.Unknown, new[] { ".zip" } }
+          })
+        });
         if (picked == null)
           return;
 
-        var song = App.Library.AddSong(picked.GetStream());
+        var song = App.Library.AddSong(await picked.OpenReadAsync());
 
         await DisplayAlert(Localized.MenuPage_Import, song.ToString(), "OK");
       }
       catch (Exception)
       {
-        await DisplayAlert(Localized.MenuPage_ImportCatchTitle, string.Format(Localized.MenuPage_ImportCatch, picked.FilePath), "OK");
+        await DisplayAlert(Localized.MenuPage_ImportCatchTitle, string.Format(Localized.MenuPage_ImportCatch, picked.FullPath), "OK");
       }
     }
 
