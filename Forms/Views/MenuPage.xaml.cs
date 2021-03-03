@@ -40,7 +40,7 @@ namespace Jammit.Forms.Views
           {
             { DevicePlatform.Android, new[] { "application/zip" } },
             { DevicePlatform.iOS, new[] { "com.pkware.zip-archive" } },
-            { DevicePlatform.macOS, new[] { "zip" } },
+            { DevicePlatform.macOS, new[] { "com.pkware.zip-archive", "zip" } },
             { DevicePlatform.UWP, new[] { ".zip" } },
             { DevicePlatform.Unknown, new[] { ".zip" } }
           })
@@ -54,7 +54,8 @@ namespace Jammit.Forms.Views
       }
       catch (Exception)
       {
-        await DisplayAlert(Localized.MenuPage_ImportCatchTitle, string.Format(Localized.MenuPage_ImportCatch, picked.FullPath), "OK");
+        var path = picked == null ? string.Empty : picked.FullPath;
+        await DisplayAlert(Localized.MenuPage_ImportCatchTitle, string.Format(Localized.MenuPage_ImportCatch, path), "OK");
       }
     }
 

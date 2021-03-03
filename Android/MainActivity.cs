@@ -36,6 +36,8 @@ namespace Jammit.Android
 
       global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+      global::Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
       global::Xamarin.Forms.MessagingCenter.Subscribe<Jammit.Forms.Views.SongPage>(this, "PreventPortrait", sender =>
       {
         RequestedOrientation = ScreenOrientation.Landscape;
