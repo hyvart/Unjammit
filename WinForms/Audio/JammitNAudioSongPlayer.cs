@@ -32,7 +32,7 @@ namespace Jam.NET.Audio
         if (t.ClassName == "JMFileTrack")
         {
           var stream = s.GetSeekableContentStream($"{t.Id}_jcfx");
-          _channels.Add(new WaveChannel32(new ImaWaveStream(stream)));
+          _channels.Add(new WaveChannel32(new Jammit.Audio.ImaWaveStream(stream)));
           _chanNames.Add(t.Title);
         }
         else if (t.ClassName == "JMClickTrack")

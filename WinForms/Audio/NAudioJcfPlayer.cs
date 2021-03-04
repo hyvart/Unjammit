@@ -32,11 +32,11 @@ namespace Jam.NET.Audio
       foreach (var track in media.InstrumentTracks)
       {
         var stream = File.OpenRead(Path.Combine(songPath, $"{track.Identifier}_jcfx"));
-        _channels[track] = new WaveChannel32(new ImaWaveStream(stream));
+        _channels[track] = new WaveChannel32(new Jammit.Audio.ImaWaveStream(stream));
       }
 
       var backingStream = File.OpenRead(Path.Combine(Jam.NET.Properties.Settings.Default.TrackPath, $"{media.Song.Id}.jcf"));
-      _channels[media.BackingTrack] = new WaveChannel32(new ImaWaveStream(backingStream));
+      _channels[media.BackingTrack] = new WaveChannel32(new Jammit.Audio.ImaWaveStream(backingStream));
 
       _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats));
 
