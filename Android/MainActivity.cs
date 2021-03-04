@@ -35,9 +35,9 @@ namespace Jammit.Android
         new Audio.VlcJcfPlayer(media, new MediaConfiguration[] { config }, new string[] { }));
 #else
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-        new Audio.NAudioJcfPlayer<Audio.AndroidWavePositionPlayer>(
+        new Audio.NAudioJcfPlayer(
           media,
-          new Audio.AndroidWavePositionPlayer { DesiredLatency = 60, NumberOfBuffers = 2 },
+          new Audio.AndroidWavePlayer { DesiredLatency = 60, NumberOfBuffers = 2 },
           System.IO.Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "Tracks"),
           new byte[] {}));
 #endif

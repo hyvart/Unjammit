@@ -7,20 +7,19 @@ using NAudio.Wave;
 
 namespace Jammit.Audio
 {
-  public class NAudioJcfPlayer<TWaveOutEvent> : IJcfPlayer
-    where TWaveOutEvent : IWavePlayer, IWavePosition
+  public class NAudioJcfPlayer : IJcfPlayer
   {
     #region private members
 
     JcfMedia _media;
     readonly IDictionary<TrackInfo, WaveChannel32> _channels;
     readonly WaveMixerStream32 _mixer;
-    readonly TWaveOutEvent _waveOut;
+    readonly IWavePlayer _waveOut;
 
     #endregion  private members
 
     //Jam.NET.Properties.Settings.Default.TrackPath
-    public NAudioJcfPlayer(JcfMedia media, TWaveOutEvent waveOut, string tracksPath, byte[] stick)
+    public NAudioJcfPlayer(JcfMedia media, IWavePlayer waveOut, string tracksPath, byte[] stick)
     {
       _media = media;
       _waveOut = waveOut;

@@ -9,7 +9,7 @@ namespace Jammit.Audio
   /// <summary>
   /// Represents an Android wave player implemented using <see cref="AudioTrack"/>.
   /// </summary>
-  public class AndroidWavePositionPlayer : IWavePlayer, IWavePosition
+  public class AndroidWavePlayer : IWavePlayer
   {
     #region Fields
 
@@ -80,9 +80,9 @@ namespace Jammit.Audio
     #region Constructors
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="AndroidWavePositionPlayer"/> class.
+    /// Initializes a new instance of the <see cref="AndroidWavePlayer"/> class.
     /// </summary>
-    public AndroidWavePositionPlayer()
+    public AndroidWavePlayer()
     {
       //Initialize the fields and properties
       m_WaveProvider = null;
@@ -99,9 +99,9 @@ namespace Jammit.Audio
     }
 
     /// <summary>
-    /// Releases the unmanaged resources used by the current instance of the <see cref="AndroidWavePositionPlayer"/> class.
+    /// Releases the unmanaged resources used by the current instance of the <see cref="AndroidWavePlayer"/> class.
     /// </summary>
-    ~AndroidWavePositionPlayer()
+    ~AndroidWavePlayer()
     {
       //Dispose of this object
       Dispose(false);
@@ -250,7 +250,7 @@ namespace Jammit.Audio
     }
 
     /// <summary>
-    /// Releases all resources used by the current instance of the <see cref="AndroidWavePositionPlayer"/> class.
+    /// Releases all resources used by the current instance of the <see cref="AndroidWavePlayer"/> class.
     /// </summary>
     public void Dispose()
     {
@@ -274,7 +274,7 @@ namespace Jammit.Audio
     }
 
     /// <summary>
-    /// Releases the unmanaged resources used by the <see cref="AndroidWavePositionPlayer"/>, and optionally releases the managed resources.
+    /// Releases the unmanaged resources used by the <see cref="AndroidWavePlayer"/>, and optionally releases the managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)
@@ -400,16 +400,5 @@ namespace Jammit.Audio
     }
 
     #endregion
-
-    #region IWavePosition
-
-    public WaveFormat OutputWaveFormat => m_WaveProvider.WaveFormat;
-
-    public long GetPosition()
-    {
-      throw new NotImplementedException();
-    }
-
-    #endregion IWavePosition
   }
 }
