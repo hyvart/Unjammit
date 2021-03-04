@@ -403,7 +403,7 @@ namespace Jammit.Audio
 
     #region IWavePosition
 
-    public WaveFormat OutputWaveFormat => throw new NotImplementedException();
+    public WaveFormat OutputWaveFormat => m_WaveProvider.WaveFormat;
 
     public long GetPosition()
     {
