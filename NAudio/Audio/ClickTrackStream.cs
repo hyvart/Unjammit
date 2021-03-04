@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using NAudio.Wave;
 
-namespace Jam.NET.Audio
+namespace Jammit.Audio
 {
   public class ClickTrackStream : WaveStream
   {
-    private readonly IReadOnlyList<Jammit.Model.Beat> _beats;
+    private readonly IReadOnlyList<Model.Beat> _beats;
 
     private readonly short[] _click;
 
-    public ClickTrackStream(IReadOnlyList<Jammit.Model.Beat> beats)
+    //var stick = Properties.Resources.stick;
+    public ClickTrackStream(IReadOnlyList<Model.Beat> beats, byte[] stick)
     {
       _beats = beats;
       WaveFormat = new WaveFormat(44100, 16, 2);
       Length = (long)(_beats[_beats.Count - 1].Time*44100*4);
-      var stick = Properties.Resources.stick;
       _click = new short[stick.Length/2];
       Buffer.BlockCopy(stick, 0, _click, 0, stick.Length);
     }

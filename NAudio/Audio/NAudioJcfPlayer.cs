@@ -1,54 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
 
 using Jammit.Model;
 using NAudio.Wave;
 
-namespace Jam.NET.Audio
+namespace Jammit.Audio
 {
-  public class NAudioJcfPlayer : Jammit.Audio.IJcfPlayer
+  public class NAudioJcfPlayer<TWaveOutEvent> : IJcfPlayer
+    where TWaveOutEvent : IWavePlayer, IWavePosition
   {
     #region private members
 
     JcfMedia _media;
     readonly IDictionary<TrackInfo, WaveChannel32> _channels;
     readonly WaveMixerStream32 _mixer;
-    readonly WaveOutEvent _waveOut;
+    readonly TWaveOutEvent _waveOut;
 
     #endregion  private members
 
-    public NAudioJcfPlayer(JcfMedia media)
+    //Jam.NET.Properties.Settings.Default.TrackPath
+    public NAudioJcfPlayer(JcfMedia media, TWaveOutEvent waveOut, string tracksPath, byte[] stick)
     {
       _media = media;
-      _waveOut = new WaveOutEvent();
+      _waveOut = waveOut;
       _mixer = new WaveMixerStream32();
       _channels = new Dictionary<TrackInfo, WaveChannel32>(media.InstrumentTracks.Count + 1 + 1);
 
-      var songPath = Path.Combine(Jam.NET.Properties.Settings.Default.TrackPath, $"{media.Song.Id}.jcf");
+      var songPath = Path.Combine(tracksPath, $"{media.Song.Id.ToString().ToUpper()}.jcf");
       foreach (var track in media.InstrumentTracks)
       {
-        var stream = File.OpenRead(Path.Combine(songPath, $"{track.Identifier}_jcfx"));
-        _channels[track] = new WaveChannel32(new Jammit.Audio.ImaWaveStream(stream));
+        var stream = File.OpenRead(Path.Combine(songPath, $"{track.Identifier.ToString().ToUpper()}_jcfx"));
+        _channels[track] = new WaveChannel32(new ImaWaveStream(stream));
       }
 
-      var backingStream = File.OpenRead(Path.Combine(Jam.NET.Properties.Settings.Default.TrackPath, $"{media.Song.Id}.jcf"));
-      _channels[media.BackingTrack] = new WaveChannel32(new Jammit.Audio.ImaWaveStream(backingStream));
+      var backingStream = File.OpenRead(Path.Combine(songPath, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx"));
+      _channels[media.BackingTrack] = new WaveChannel32(new ImaWaveStream(backingStream));
 
-      _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats));
+      _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats, stick));
 
       foreach (var channel in _channels.Values)
       {
         _mixer.AddInputStream(channel);
-        channel.Volume = 0.75f;//TODO: bind?
+        channel.Volume = 1.00f;//TODO: bind?
       }
 
       _waveOut.PlaybackStopped += (sender, args) => { Position = TimeSpan.Zero; };
-      _waveOut.DesiredLatency = 60;//TODO: Why?
-      _waveOut.NumberOfBuffers = 2;
+      //_waveOut.DesiredLatency = 60;//TODO: Why?
+      //_waveOut.NumberOfBuffers = 2;
       _waveOut.Init(_mixer);
     }
 
@@ -103,18 +102,18 @@ namespace Jam.NET.Audio
       }
     }
 
-    public Jammit.Audio.PlaybackStatus State
+    public PlaybackStatus State
     {
       get
       {
         switch (_waveOut.PlaybackState)
         {
           case PlaybackState.Stopped:
-            return Jammit.Audio.PlaybackStatus.Stopped;
+            return PlaybackStatus.Stopped;
           case PlaybackState.Playing:
-            return Jammit.Audio.PlaybackStatus.Playing;
+            return PlaybackStatus.Playing;
           case PlaybackState.Paused:
-            return Jammit.Audio.PlaybackStatus.Paused;
+            return PlaybackStatus.Paused;
           default:
             throw new NotImplementedException("Unrecognized PlaybackStatus value.");
         }

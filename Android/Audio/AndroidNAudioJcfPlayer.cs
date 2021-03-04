@@ -14,14 +14,14 @@ namespace Jammit.Audio
     JcfMedia _media;
     readonly IDictionary<TrackInfo, WaveChannel32> _channels;
     readonly WaveMixerStream32 _mixer;
-    readonly AudioTrackOut _waveOut;
+    readonly AndroidWavePositionPlayer _waveOut;
 
     #endregion private members
 
     public AndroidNAudioJcfPlayer(JcfMedia media)
     {
       _media = media;
-      _waveOut = new AudioTrackOut();
+      _waveOut = new AndroidWavePositionPlayer();
       _mixer = new WaveMixerStream32();
       _channels = new Dictionary<TrackInfo, WaveChannel32>(media.InstrumentTracks.Count + 1 + 1);
 
