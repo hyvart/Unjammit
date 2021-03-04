@@ -8,11 +8,6 @@ using Path = System.IO.Path;
 
 namespace Jammit.Audio
 {
-  /// <summary>
-  /// 
-  /// To prevent audo desync, use SoXR resampler.
-  /// See https://code.videolan.org/videolan/LibVLCSharp/issues/263#note_48330
-  /// </summary>
   public class VlcJcfPlayer : IJcfPlayer
   {
     #region private members

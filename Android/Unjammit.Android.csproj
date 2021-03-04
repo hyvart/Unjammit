@@ -123,6 +123,10 @@
       <Project>{8e64e741-b2bb-443d-89a3-bec67891bb93}</Project>
       <Name>Unjammit.NAudio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Vlc\Unjammit.Vlc.csproj">
+      <Project>{c1e423f3-95c1-4807-8db8-6d07979623c7}</Project>
+      <Name>Unjammit.Vlc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
