@@ -72,9 +72,10 @@
     <PackageReference Include="Xamarin.AndroidX.Migration" Version="1.0.8" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audio\AndroidImaWaveStream.cs" />
     <Compile Include="Audio\AndroidMediaJcfPlayer.cs" />
     <Compile Include="Audio\AndroidNAudioJcfPlayer.cs" />
-    <Compile Include="Audio\AndroidWaveOut.cs" />
+    <Compile Include="Audio\AudioTrackOut.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
