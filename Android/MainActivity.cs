@@ -7,8 +7,6 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-using LibVLCSharp.Shared;
-
 namespace Jammit.Android
 {
   [Activity(Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -20,27 +18,15 @@ namespace Jammit.Android
       ToolbarResource = Resource.Layout.Toolbar;
 
       base.OnCreate(savedInstanceState);
-      global::LibVLCSharp.Shared.Core.Initialize();
-
-      var config = new MediaConfiguration();
-      config.EnableHardwareDecoding = true;
 
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
 
-#if false
-
-      // To prevent audo desync, use SoXR resampler.
-      // See https://code.videolan.org/videolan/LibVLCSharp/issues/263#note_48330
-      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-        new Audio.VlcJcfPlayer(media, new MediaConfiguration[] { config }, new string[] { }));
-#else
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
         new Audio.NAudioJcfPlayer<Audio.AndroidWavePositionPlayer>(
           media,
           new Audio.AndroidWavePositionPlayer { DesiredLatency = 60, NumberOfBuffers = 2 },
           System.IO.Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "Tracks"),
           new byte[] {}));
-#endif
 
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
 
