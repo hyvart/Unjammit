@@ -270,9 +270,12 @@ namespace Jammit.Forms.Views
 
     private void Player_PositionChanged(object sender, EventArgs e)
     {
-      var newPosition = (sender as Audio.IJcfPlayer).Position;
-      if (newPosition.TotalSeconds != PositionSlider.Value)
-        PositionSlider.Value = newPosition.TotalSeconds;
+      Device.BeginInvokeOnMainThread(() =>
+      {
+        var newPosition = (sender as Audio.IJcfPlayer).Position;
+        if (newPosition.TotalSeconds != PositionSlider.Value)
+          PositionSlider.Value = newPosition.TotalSeconds;
+      });
     }
 
     private void PlayButton_Clicked(object sender, EventArgs e)

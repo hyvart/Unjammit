@@ -44,6 +44,8 @@ namespace Jammit.macOS
 
       Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
       Jammit.Forms.App.DataDirectory = dataDir;
+
+#if false
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
       {
         return new Audio.AppleJcfPlayer(media, (track, stream) =>
@@ -51,6 +53,29 @@ namespace Jammit.macOS
           return new Audio.MacOSAVAudioPlayer(track, stream);
         });
       });
+#else
+      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
+      {
+        var player = new Audio.NAudioJcfPlayer(
+          media,
+          new Audio.AVAudioEngineOut() { DesiredLatency = 60, NumberOfBuffers = 2 },
+          System.IO.Path.Combine(dataDir, "Tracks"),
+          Forms.Resources.Assets.Stick);
+
+        player.TimerAction = () =>
+        {
+          Xamarin.Forms.Device.StartTimer(new System.TimeSpan(0, 0, 1), () =>
+          {
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(() => player.NotifyPositionChanged());
+
+            return player.State == Audio.PlaybackStatus.Playing;
+          });
+        };
+
+        return player;
+      });
+#endif
+
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
 
       LoadApplication(new Jammit.Forms.App());
