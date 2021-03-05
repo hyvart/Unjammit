@@ -39,7 +39,7 @@ namespace Jammit.Android
           media,
           new Audio.AndroidWavePlayer { DesiredLatency = 60, NumberOfBuffers = 2 },
           System.IO.Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "Tracks"),
-          new byte[] {}));
+          Forms.Resources.Assets.Stick));
 #endif
 
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
@@ -59,7 +59,6 @@ namespace Jammit.Android
       });
 
       LoadApplication(new Jammit.Forms.App());
-
     }
   }
 }

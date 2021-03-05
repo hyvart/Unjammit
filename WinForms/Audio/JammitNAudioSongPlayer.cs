@@ -37,7 +37,7 @@ namespace Jam.NET.Audio
         }
         else if (t.ClassName == "JMClickTrack")
         {
-          _channels.Add(new WaveChannel32(new Jammit.Audio.ClickTrackStream(s.Beats, new byte[] { }/*TODO*/)));
+          _channels.Add(new WaveChannel32(new Jammit.Audio.ClickTrackStream(s.Beats, Properties.Resources.stick)));
           _chanNames.Add(t.Title);
         }
       }
