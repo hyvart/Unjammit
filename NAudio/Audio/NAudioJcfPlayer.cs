@@ -65,6 +65,8 @@ namespace Jammit.Audio
     public void Play()
     {
       _waveOut.Play();
+
+      TimerAction();
     }
 
     public void Pause()
@@ -85,7 +87,6 @@ namespace Jammit.Audio
     }
 
     public TimeSpan Length => _media.Length;
-
 
     public TimeSpan Position
     {
@@ -120,5 +121,12 @@ namespace Jammit.Audio
     }
 
     #endregion  IJcfPlayer members
+
+    public void NotifyPositionChanged()
+    {
+      PositionChanged?.Invoke(this, new EventArgs());
+    }
+
+    public Action TimerAction { get; set; }
   }
 }
