@@ -34,6 +34,9 @@
     <HttpClientHandler>
     </HttpClientHandler>
     <UseHardenedRuntime>true</UseHardenedRuntime>
+    <!-- <LinkMode>None</LinkMode> WHY? -->
+    <!-- Allows NAudio wave player buffer copying -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -56,6 +59,7 @@
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <UseHardenedRuntime>true</UseHardenedRuntime>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
@@ -96,13 +100,13 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Audio\MacOSAVAudioPlayer.cs" />
     <Compile Include="AppDelegate.designer.cs">
       <DependentUpon>AppDelegate.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Renderers\MacOSVerticalSliderRenderer.cs" />
     <Compile Include="Forms\Renderers\MacOSDisabledScrollViewRenderer.cs" />
     <Compile Include="Forms\MacOSLocaleSwitcher.cs" />
+    <Compile Include="Audio\MacOSAVAudioPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">
@@ -113,14 +117,20 @@
       <Project>{33FE7079-B3CF-49B3-89C1-165EF78457B4}</Project>
       <Name>Unjammit.Forms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Apple\Unjammit.Apple.csproj">
-      <Project>{48D9D038-DA23-4BDF-8A71-F19078A2C94A}</Project>
-      <Name>Unjammit.Apple</Name>
+    <ProjectReference Include="..\NAudio\Unjammit.NAudio.csproj">
+      <Project>{8E64E741-B2BB-443D-89A3-BEC67891BB93}</Project>
+      <Name>Unjammit.NAudio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainMenu.xib" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NAudio.Core">
+      <Version>2.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="..\Apple\Unjammit.Apple.projitems" Label="Shared" Condition="Exists('..\Apple\Unjammit.Apple.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 
   <!-- Override -->

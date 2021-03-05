@@ -13,7 +13,7 @@ namespace Jam.NET.Audio
     public MockSongPlayer(ISong s)
     {
       _mixer = new WaveMixerStream32();
-      _mixer.AddInputStream(new WaveChannel32(new ClickTrackStream(s.Beats)));
+      _mixer.AddInputStream(new WaveChannel32(new Jammit.Audio.ClickTrackStream(s.Beats, Properties.Resources.stick)));
     }
 
     #region ISongPlayer members

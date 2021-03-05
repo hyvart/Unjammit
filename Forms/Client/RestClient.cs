@@ -148,7 +148,9 @@ namespace Jammit.Forms.Client
 
         var json = new JObject();
         // See https://montemagno.com/unique-device-id-for-mobile-apps/
-        //json.Add("id", Plugin.DeviceInfo.CrossDeviceInfo.Current.Id); //TODO: Implement locally or remove.
+        // Disabled. Full dependency was required only for the line below.
+        //json.Add("id", Plugin.DeviceInfo.CrossDeviceInfo.Current.Id);
+
         json.Add("platform", Xamarin.Forms.Device.RuntimePlatform);
         var content = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
 

@@ -15,6 +15,7 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <!-- <ProvisioningType>manual</ProvisioningType> -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <ErrorReport>prompt</ErrorReport>
@@ -92,7 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <!-- Explicit reference to enable Hot Restart. -->
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="NAudio.Core">
+      <Version>2.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
@@ -103,9 +107,9 @@
       <Project>{C99DB4A0-9987-45E2-9F9E-D27D09F743CF}</Project>
       <Name>Unjammit.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Apple\Unjammit.Apple.csproj">
-      <Project>{48D9D038-DA23-4BDF-8A71-F19078A2C94A}</Project>
-      <Name>Unjammit.Apple</Name>
+    <ProjectReference Include="..\NAudio\Unjammit.NAudio.csproj">
+      <Project>{8E64E741-B2BB-443D-89A3-BEC67891BB93}</Project>
+      <Name>Unjammit.NAudio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -158,5 +162,6 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
+  <Import Project="..\Apple\Unjammit.Apple.projitems" Label="Shared" Condition="Exists('..\Apple\Unjammit.Apple.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
