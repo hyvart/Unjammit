@@ -100,14 +100,13 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Audio\MacOSAVAudioPlayer.cs" />
     <Compile Include="AppDelegate.designer.cs">
       <DependentUpon>AppDelegate.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Renderers\MacOSVerticalSliderRenderer.cs" />
     <Compile Include="Forms\Renderers\MacOSDisabledScrollViewRenderer.cs" />
     <Compile Include="Forms\MacOSLocaleSwitcher.cs" />
-    <Compile Include="Audio\MacOSWavePlayer.cs" />
+    <Compile Include="Audio\MacOSAVAudioPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">

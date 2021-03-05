@@ -4,12 +4,15 @@ using NAudio.Wave;
 using System;
 using System.Threading;
 
+/// <summary>
+/// Forked from https://gist.github.com/neilt6/287cc804a42b20f1973c9435ceec2686
+/// </summary>
 namespace Jammit.Audio
 {
   /// <summary>
   /// Represents an iOS wave player implemented using <see cref="AVAudioEngine"/>.
   /// </summary>
-  public class AVAudioEngineOut : IWavePlayer
+  public class AVAudioWavePlayer : IWavePlayer
   {
     #region Fields
 
@@ -74,9 +77,9 @@ namespace Jammit.Audio
     #region Constructors
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="AVAudioEngineOut"/> class.
+    /// Initializes a new instance of the <see cref="AVAudioWavePlayer"/> class.
     /// </summary>
-    public AVAudioEngineOut()
+    public AVAudioWavePlayer()
     {
       //Initialize the fields and properties
       m_WaveProvider = null;
@@ -96,9 +99,9 @@ namespace Jammit.Audio
     }
 
     /// <summary>
-    /// Releases the unmanaged resources used by the current instance of the <see cref="AVAudioEngineOut"/> class.
+    /// Releases the unmanaged resources used by the current instance of the <see cref="AVAudioWavePlayer"/> class.
     /// </summary>
-    ~AVAudioEngineOut()
+    ~AVAudioWavePlayer()
     {
       //Dispose of this object
       Dispose(false);
@@ -233,7 +236,7 @@ namespace Jammit.Audio
     }
 
     /// <summary>
-    /// Releases all resources used by the current instance of the <see cref="AVAudioEngineOut"/> class.
+    /// Releases all resources used by the current instance of the <see cref="AVAudioWavePlayer"/> class.
     /// </summary>
     public void Dispose()
     {
@@ -257,7 +260,7 @@ namespace Jammit.Audio
     }
 
     /// <summary>
-    /// Releases the unmanaged resources used by the <see cref="AVAudioEngineOut"/>, and optionally releases the managed resources.
+    /// Releases the unmanaged resources used by the <see cref="AVAudioWavePlayer"/>, and optionally releases the managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

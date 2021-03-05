@@ -58,7 +58,7 @@ namespace Jammit.macOS
       {
         var player = new Audio.NAudioJcfPlayer(
           media,
-          new Audio.AVAudioEngineOut() { DesiredLatency = 60, NumberOfBuffers = 2 },
+          new Audio.AVAudioWavePlayer() { DesiredLatency = 60, NumberOfBuffers = 2 },
           System.IO.Path.Combine(dataDir, "Tracks"),
           Forms.Resources.Assets.Stick);
 
