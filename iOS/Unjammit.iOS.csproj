@@ -15,6 +15,7 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <!-- <ProvisioningType>manual</ProvisioningType> -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <ErrorReport>prompt</ErrorReport>
@@ -93,6 +94,9 @@
   <ItemGroup>
     <!-- Explicit reference to enable Hot Restart. -->
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="NAudio.Core">
+      <Version>2.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
@@ -102,6 +106,10 @@
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">
       <Project>{C99DB4A0-9987-45E2-9F9E-D27D09F743CF}</Project>
       <Name>Unjammit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAudio\Unjammit.NAudio.csproj">
+      <Project>{8E64E741-B2BB-443D-89A3-BEC67891BB93}</Project>
+      <Name>Unjammit.NAudio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
