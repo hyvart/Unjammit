@@ -7,8 +7,8 @@
   <StackLayout x:Name="ControlsLayout" Orientation="Horizontal">
     <local:TrackSlider Player="{Binding Player}" Track="{Binding Media.BackingTrack}" />
     <local:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}"
-                       IsEnabled="{OnPlatform Android=true, macOS=true, Default=false}"
-                       IsVisible="{OnPlatform macOS=true, Default=true}" />
+                       IsEnabled="{OnPlatform Android=true, iOS=true, macOS=true, Default=false}"
+                       IsVisible="true" />
   </StackLayout>
 
 </ContentView>
