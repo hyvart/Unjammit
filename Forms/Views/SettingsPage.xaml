@@ -6,7 +6,7 @@
              x:Class="Jammit.Forms.Views.SettingsPage">
 
   <StackLayout BackgroundColor="DimGray">
-    <Grid BackgroundColor="WhiteSmoke">
+    <Grid>
       <Label Grid.Row="0" Grid.Column="0" Text="{xaml:TranslateText SettingsPage_ServiceUriLabel}" />
       <Entry
         Grid.Row="0"

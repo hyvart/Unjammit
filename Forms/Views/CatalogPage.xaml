@@ -21,8 +21,7 @@
     <ListView
       x:Name="CatalogView"
       HorizontalOptions="FillAndExpand"
-      VerticalOptions="FillAndExpand"
-      BackgroundColor="WhiteSmoke">
+      VerticalOptions="FillAndExpand">
       <ListView.Header>
         <Grid>
           <Label Grid.Column="0" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Artist}" />
