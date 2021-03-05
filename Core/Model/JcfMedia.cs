@@ -23,7 +23,7 @@ namespace Jammit.Model
 
     public FileTrackInfo BackingTrack { get; set; }
 
-    public TrackInfo ClickTrack { get; set; }
+    public PlayableTrackInfo ClickTrack { get; set; }
 
     public TimeSpan Length { get; set; }
 

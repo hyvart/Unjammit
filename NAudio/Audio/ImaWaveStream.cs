@@ -1,9 +1,8 @@
 ﻿using System;
 using System.IO;
 using NAudio.Wave;
-using Jammit.Audio;
 
-namespace Jam.NET.Audio
+namespace Jammit.Audio
 {
   public class ImaWaveStream : WaveStream
   {

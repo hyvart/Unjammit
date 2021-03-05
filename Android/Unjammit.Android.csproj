@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="NAudio.Core">
+      <Version>2.0.0</Version>
+    </PackageReference>
     <PackageReference Include="VideoLAN.LibVLC.Android">
       <Version>3.2.0</Version>
     </PackageReference>
@@ -70,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audio\AndroidMediaJcfPlayer.cs" />
+    <Compile Include="Audio\AndroidWavePlayer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,6 +118,10 @@
     <ProjectReference Include="..\Forms\Unjammit.Forms.csproj">
       <Project>{33fe7079-b3cf-49b3-89c1-165ef78457b4}</Project>
       <Name>Unjammit.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAudio\Unjammit.NAudio.csproj">
+      <Project>{8e64e741-b2bb-443d-89a3-bec67891bb93}</Project>
+      <Name>Unjammit.NAudio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Vlc\Unjammit.Vlc.csproj">
       <Project>{c1e423f3-95c1-4807-8db8-6d07979623c7}</Project>
