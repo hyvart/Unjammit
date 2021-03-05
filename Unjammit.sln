@@ -25,8 +25,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unjammit.UWP", "UWP\Unjammi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jam.NET", "WinForms\Jam.NET.csproj", "{7E49A4EB-9AB9-4FE2-BCEC-A9C41A22B575}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unjammit.Apple", "Apple\Unjammit.Apple.csproj", "{48D9D038-DA23-4BDF-8A71-F19078A2C94A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unjammit.Android", "Android\Unjammit.Android.csproj", "{0AD02789-FF75-4D78-86F7-805321922CD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unjammit.Gtk", "Gtk\Unjammit.Gtk.csproj", "{6F7F48F5-3D84-4B6D-BF83-FFF623B89BFE}"
@@ -34,6 +32,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unjammit.Vlc", "Vlc\Unjammit.Vlc.csproj", "{C1E423F3-95C1-4807-8DB8-6D07979623C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unjammit.NAudio", "NAudio\Unjammit.NAudio.csproj", "{8E64E741-B2BB-443D-89A3-BEC67891BB93}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Unjammit.Apple", "Apple\Unjammit.Apple.shproj", "{EB7DE527-9A79-4E97-8D9E-2CB6366D54E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -217,34 +217,6 @@ Global
 		{7E49A4EB-9AB9-4FE2-BCEC-A9C41A22B575}.Release|x64.Build.0 = Release|Any CPU
 		{7E49A4EB-9AB9-4FE2-BCEC-A9C41A22B575}.Release|x86.ActiveCfg = Release|Any CPU
 		{7E49A4EB-9AB9-4FE2-BCEC-A9C41A22B575}.Release|x86.Build.0 = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|ARM.Build.0 = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|x64.Build.0 = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Debug|x86.Build.0 = Debug|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|ARM.ActiveCfg = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|ARM.Build.0 = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|ARM64.Build.0 = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|iPhone.Build.0 = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|x64.ActiveCfg = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|x64.Build.0 = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|x86.ActiveCfg = Release|Any CPU
-		{48D9D038-DA23-4BDF-8A71-F19078A2C94A}.Release|x86.Build.0 = Release|Any CPU
 		{0AD02789-FF75-4D78-86F7-805321922CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0AD02789-FF75-4D78-86F7-805321922CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AD02789-FF75-4D78-86F7-805321922CD1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

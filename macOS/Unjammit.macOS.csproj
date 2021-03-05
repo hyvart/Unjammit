@@ -118,10 +118,6 @@
       <Project>{33FE7079-B3CF-49B3-89C1-165EF78457B4}</Project>
       <Name>Unjammit.Forms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Apple\Unjammit.Apple.csproj">
-      <Project>{48D9D038-DA23-4BDF-8A71-F19078A2C94A}</Project>
-      <Name>Unjammit.Apple</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NAudio\Unjammit.NAudio.csproj">
       <Project>{8E64E741-B2BB-443D-89A3-BEC67891BB93}</Project>
       <Name>Unjammit.NAudio</Name>
@@ -135,6 +131,7 @@
       <Version>2.0.0</Version>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\Apple\Unjammit.Apple.projitems" Label="Shared" Condition="Exists('..\Apple\Unjammit.Apple.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 
   <!-- Override -->
