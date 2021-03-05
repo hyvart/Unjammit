@@ -3,7 +3,9 @@ using NAudio.Wave;
 using System;
 using System.Threading;
 
-/// See https://gist.github.com/neilt6/6d07322070470536ea0ba409c343c2a5
+/// <summary>
+/// Forked from https://gist.github.com/neilt6/6d07322070470536ea0ba409c343c2a5
+/// </summary>
 namespace Jammit.Audio
 {
   /// <summary>

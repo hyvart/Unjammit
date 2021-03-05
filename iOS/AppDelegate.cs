@@ -28,6 +28,8 @@ namespace Jammit.iOS
       NSError error = AVFoundation.AVAudioSession.SharedInstance().SetCategory(AVFoundation.AVAudioSessionCategory.Playback);
       Jammit.Forms.App.AllowedFileTypes = new string[] { "com.pkware.zip-archive" };
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
+
+#if false
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
       {
         return new Audio.AppleJcfPlayer(media, (track, stream) =>
@@ -35,6 +37,29 @@ namespace Jammit.iOS
           return new Audio.IOSAVAudioPlayer(track, stream);
         });
       });
+#else
+      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
+      {
+        var player = new Audio.NAudioJcfPlayer(
+          media,
+          new Audio.AVAudioWavePlayer() { DesiredLatency = 60, NumberOfBuffers = 2 },
+          System.IO.Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "Tracks"),
+          Forms.Resources.Assets.Stick);
+
+        player.TimerAction = () =>
+        {
+          Xamarin.Forms.Device.StartTimer(new System.TimeSpan(0, 0, 1), () =>
+          {
+            Xamarin.Forms.Device.BeginInvokeOnMainThread(() => player.NotifyPositionChanged());
+
+            return player.State == Audio.PlaybackStatus.Playing;
+          });
+        };
+
+        return player;
+      });
+#endif
+
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(Xamarin.Essentials.FileSystem.AppDataDirectory);
 
       LoadApplication(new Jammit.Forms.App());
