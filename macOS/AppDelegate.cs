@@ -46,13 +46,8 @@ namespace Jammit.macOS
       Jammit.Forms.App.DataDirectory = dataDir;
 
 #if false
-      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-      {
-        return new Audio.AppleJcfPlayer(media, (track, stream) =>
-        {
-          return new Audio.MacOSAVAudioPlayer(track, stream);
-        });
-      });
+      Jammit.Forms.App.PlayerFactory =
+        async (media) => await System.Threading.Tasks.Task.Run(() => new Audio.AppleJcfPlayer(media));
 #else
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
       {
