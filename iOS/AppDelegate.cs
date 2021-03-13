@@ -30,13 +30,8 @@ namespace Jammit.iOS
       Jammit.Forms.App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
 
 #if false
-      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-      {
-        return new Audio.AppleJcfPlayer(media, (track, stream) =>
-        {
-          return new Audio.IOSAVAudioPlayer(track, stream);
-        });
-      });
+      Jammit.Forms.App.PlayerFactory =
+        async (media) => await System.Threading.Tasks.Task.Run(() => new Audio.AppleJcfPlayer(media));
 #else
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
       {

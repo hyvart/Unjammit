@@ -35,8 +35,8 @@ namespace Jammit.macOS
     {
       Xamarin.Forms.Forms.Init();
 
-      // Xamarin.Essentials.FileSystem.AppDataDirectory yields '/Users/<user name>/Library' on macOS
-      string dataDir = System.IO.Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, "Application Support", "Unjammit");
+      //TODO: Replace with Xamarin.Essentials API.
+      string dataDir = NSSearchPath.GetDirectories(NSSearchPathDirectory.ApplicationSupportDirectory, NSSearchPathDomain.User)[0];
       dataDir = System.IO.Path.Combine(dataDir, "Unjammit");
       // Create dataDir, if it doesnt' exist.
       if (!System.IO.Directory.Exists(dataDir))
@@ -46,13 +46,8 @@ namespace Jammit.macOS
       Jammit.Forms.App.DataDirectory = dataDir;
 
 #if false
-      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-      {
-        return new Audio.AppleJcfPlayer(media, (track, stream) =>
-        {
-          return new Audio.MacOSAVAudioPlayer(track, stream);
-        });
-      });
+      Jammit.Forms.App.PlayerFactory =
+        async (media) => await System.Threading.Tasks.Task.Run(() => new Audio.AppleJcfPlayer(media));
 #else
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
       {

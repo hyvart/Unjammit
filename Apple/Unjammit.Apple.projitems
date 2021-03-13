@@ -10,7 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Audio\AppleJcfPlayer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Audio\IAVAudioPlayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Audio\AVAudioWavePlayer.cs" />
   </ItemGroup>
 </Project>

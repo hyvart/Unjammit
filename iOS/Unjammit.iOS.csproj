@@ -67,7 +67,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
-    <Compile Include="Audio\IOSAVAudioPlayer.cs" />
     <Compile Include="Forms\Renderers\IOSVerticalSliderRenderer.cs" />
     <Compile Include="Forms\Renderers\IOSDisabledScrollViewRenderer.cs" />
     <Compile Include="Forms\IOSLocaleSwitcher.cs" />
