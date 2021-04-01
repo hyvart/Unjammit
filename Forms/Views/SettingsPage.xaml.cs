@@ -36,7 +36,7 @@ namespace Jammit.Forms.Views
 
     protected override void OnAppearing()
     {
-      switch(CultureInfo.CurrentUICulture.Name)
+      switch (CultureInfo.CurrentUICulture.Name)
       {
         case "en":
           LocaleRadioButtonEn.IsChecked = true;
@@ -46,6 +46,26 @@ namespace Jammit.Forms.Views
           break;
         case "ru":
           LocaleRadioButtonRu.IsChecked = true;
+          break;
+
+        default:
+          if (CultureInfo.CurrentUICulture.Name.StartsWith("en-"))
+          {
+            LocaleRadioButtonEn.IsChecked = true;
+          }
+          else if (CultureInfo.CurrentUICulture.Name.StartsWith("es-"))
+          {
+            LocaleRadioButtonEs.IsChecked = true;
+          }
+          else if (CultureInfo.CurrentUICulture.Name.StartsWith("ru-"))
+          {
+            LocaleRadioButtonRu.IsChecked = true;
+          }
+          else
+          {
+            // Unrecognized locale. Use "en".
+            LocaleRadioButtonEn.IsChecked = true;
+          }
           break;
       }
     }

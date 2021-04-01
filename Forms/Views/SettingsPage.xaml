@@ -28,16 +28,17 @@
                    Orientation="Horizontal"
                    HorizontalOptions="Start"
                    BackgroundColor="DarkGoldenrod">
+        <RadioButtonGroup.GroupName>Locale</RadioButtonGroup.GroupName>
         <StackLayout Orientation="Horizontal" BackgroundColor="Pink">
-          <RadioButton x:Name="LocaleRadioButtonEn" GroupName="Locale" Content="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
+          <RadioButton x:Name="LocaleRadioButtonEn" Content="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
           <Image x:Name="LocaleImageEn" />
         </StackLayout>
         <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
-          <RadioButton x:Name="LocaleRadioButtonEs" GroupName="Locale" Content="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
+          <RadioButton x:Name="LocaleRadioButtonEs" Content="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
           <Image x:Name="LocaleImageEs" />
         </StackLayout>
         <StackLayout Orientation="Horizontal" Background="LightBlue">
-          <RadioButton x:Name="LocaleRadioButtonRu" GroupName="Locale" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
+          <RadioButton x:Name="LocaleRadioButtonRu" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
           <Image x:Name="LocaleImageRu" />
         </StackLayout>
       </StackLayout>
