@@ -28,7 +28,7 @@
                    Orientation="Horizontal"
                    HorizontalOptions="Start"
                    BackgroundColor="DarkGoldenrod">
-        <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
+        <StackLayout Orientation="Horizontal" BackgroundColor="Pink">
           <RadioButton x:Name="LocaleRadioButtonEn" GroupName="Locale" Content="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
           <Image x:Name="LocaleImageEn" />
         </StackLayout>
