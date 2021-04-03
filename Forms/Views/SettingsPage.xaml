@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
-             x:Class="Jammit.Forms.Views.SettingsPage">
+             x:Class="Jammit.Forms.Views.SettingsPage"
+             Disappearing="ContentPage_Disappearing"
+             >
 
   <StackLayout BackgroundColor="DimGray">
     <Grid>
@@ -15,7 +17,9 @@
         Placeholder="{xaml:TranslateText SettingsPage_ServiceUriEntryPlaceholder}"
         x:Name="ServiceUriEntry"
         Keyboard="Url"
-        Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
+        Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}"
+        Unfocused="ServiceUriEntry_Unfocused"
+        />
 
       <Label Grid.Row="1" Grid.Column="0" Text="{xaml:TranslateText Client_AuthStatusLabel}" />
       <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />

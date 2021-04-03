@@ -36,6 +36,8 @@ namespace Jammit.Forms.Views
 
     protected override void OnAppearing()
     {
+      base.OnAppearing();
+
       switch (CultureInfo.CurrentUICulture.Name)
       {
         case "en":
@@ -155,6 +157,16 @@ namespace Jammit.Forms.Views
 
         Settings.Culture = "ru";
       }
+    }
+
+    private void ServiceUriEntry_Unfocused(object sender, FocusEventArgs e)
+    {
+      Settings.ServiceUri = ServiceUriEntry.Text;
+    }
+
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+      Settings.ServiceUri = ServiceUriEntry.Text;
     }
   }
 }
