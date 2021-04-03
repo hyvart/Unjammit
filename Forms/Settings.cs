@@ -30,32 +30,32 @@ namespace Jammit.Forms
 
     #region Settings Functions
 
-    private static string SelectedScoreKey(Model.SongInfo song)
+    public static string SelectedScoreKey(Model.SongInfo song)
     {
       return $"Song/{song.Id}/SelectedScore";
     }
 
-    private static string MixerCollapsedKey(Model.SongInfo song)
+    public static string MixerCollapsedKey(Model.SongInfo song)
     {
       return $"Song/{song.Id}/MixerCollapsed";
     }
 
-    private static string TrackVolumeKey(Model.TrackInfo track)
+    public static string TrackVolumeKey(Model.TrackInfo track)
     {
       return $"Track/{track.Identifier}/Volume";
     }
 
-    private static string TrackMutedKey(Model.TrackInfo track)
+    public static string TrackMutedKey(Model.TrackInfo track)
     {
       return $"Track/{track.Identifier}/Muted";
     }
 
-    private static string SoloTrackKey(Model.SongInfo song)
+    public static string SoloTrackKey(Model.SongInfo song)
     {
       return $"Song/{song.Instrument}/SoloTrack";
     }
 
-    private static string PositionKey(Model.SongInfo song)
+    public static string PositionKey(Model.SongInfo song)
     {
       return $"Song/{song.Id}/Position";
     }
