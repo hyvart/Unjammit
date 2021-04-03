@@ -74,15 +74,6 @@ namespace Jammit.Forms.Views
 
     #endregion  Page overrides
 
-    private void SaveButton_Clicked(object sender, EventArgs e)
-    {
-      //Hack: Manually flushing settings.
-      //TODO: Replace with tow-way binding.
-
-      Settings.ServiceUri = ServiceUriEntry.Text;
-      //Settings.Culture = CultureInfo.CurrentUICulture.Name;
-    }
-
     private void AuthorizeButton_Clicked(object sender, EventArgs e)
     {
       App.Client.RequestAuthorization().Wait();
