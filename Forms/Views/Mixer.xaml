@@ -5,10 +5,14 @@
              x:Class="Jammit.Forms.Views.Mixer">
 
   <StackLayout x:Name="ControlsLayout" Orientation="Horizontal">
-    <local:TrackSlider Player="{Binding Player}" Track="{Binding Media.BackingTrack}" />
-    <local:TrackSlider Player="{Binding Player}" Track="{Binding Media.ClickTrack}"
+    <local:TrackSlider x:Name="BackingTrackSlider" Player="{Binding Player}" Track="{Binding Media.BackingTrack}"
+                       PropertyChanged="TrackSlider_PropertyChanged"
+                       />
+    <local:TrackSlider x:Name="ClickTrackSlider" Player="{Binding Player}" Track="{Binding Media.ClickTrack}"
                        IsEnabled="{OnPlatform Android=true, iOS=true, macOS=true, Default=false}"
-                       IsVisible="true" />
+                       IsVisible="true"
+                       PropertyChanged="TrackSlider_PropertyChanged"
+                       />
   </StackLayout>
 
 </ContentView>

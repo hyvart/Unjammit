@@ -43,9 +43,6 @@ namespace Jammit.Forms.Views
 
       NormalButtonBackgroundColor = MuteButton.BackgroundColor;
       NormalButtonTextColor = MuteButton.TextColor;
-
-      //TODO: Inject by property only
-      VolumeSlider.Value = VolumeSlider.Maximum;
     }
 
     #region Bindable properties
@@ -58,7 +55,7 @@ namespace Jammit.Forms.Views
       BindableProperty.Create("Track", typeof(Model.PlayableTrackInfo), typeof(Model.PlayableTrackInfo));
 
     public static readonly BindableProperty VolumeProperty =
-      BindableProperty.Create("Volume", typeof(uint), typeof(uint), (uint)100);
+      BindableProperty.Create("Volume", typeof(double), typeof(double), (double)100);
 
     #endregion Bindable properties
 
@@ -77,11 +74,11 @@ namespace Jammit.Forms.Views
       }
     }
 
-    public uint Volume
+    public double Volume
     {
       get
       {
-        return (uint)GetValue(VolumeProperty);
+        return (double)GetValue(VolumeProperty);
       }
 
       set
@@ -119,7 +116,7 @@ namespace Jammit.Forms.Views
       }
       else if (VolumeProperty.PropertyName == propertyName)
       {
-        Player.SetVolume(Track, Volume);
+        VolumeSlider.Value = Volume;
       }
     }
 
@@ -129,7 +126,14 @@ namespace Jammit.Forms.Views
     {
       //TODO: How about setting the track volume right here and drop the Volume property?
       if (State.Muted != _state)
-        Volume = (uint)e.NewValue;
+      {
+        if (Track != null)
+        {
+          Player.SetVolume(Track, (uint)e.NewValue);
+
+          Settings.Set(Settings.TrackVolumeKey(Track), (uint)e.NewValue);
+        }
+      }
     }
 
     private void MuteButton_Clicked(object sender, EventArgs e)
