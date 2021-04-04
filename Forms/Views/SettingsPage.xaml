@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms"
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
-             x:Class="Jammit.Forms.Views.SettingsPage">
+             x:Class="Jammit.Forms.Views.SettingsPage"
+             Disappearing="ContentPage_Disappearing"
+             >
 
   <StackLayout BackgroundColor="DimGray">
     <Grid>
@@ -15,7 +17,9 @@
         Placeholder="{xaml:TranslateText SettingsPage_ServiceUriEntryPlaceholder}"
         x:Name="ServiceUriEntry"
         Keyboard="Url"
-        Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}" />
+        Text="{Binding Mode=TwoWay, Source={x:Static local:Settings.ServiceUri}}"
+        Unfocused="ServiceUriEntry_Unfocused"
+        />
 
       <Label Grid.Row="1" Grid.Column="0" Text="{xaml:TranslateText Client_AuthStatusLabel}" />
       <Entry Grid.Row="1" Grid.Column="1" IsEnabled="False" BindingContext="{x:Static local:App.Client}" Text="{Binding AuthStatus}" />
@@ -26,25 +30,22 @@
                    Grid.Column="1"
                    Grid.ColumnSpan="2"
                    Orientation="Horizontal"
-                   HorizontalOptions="Start"
-                   BackgroundColor="DarkGoldenrod">
-        <StackLayout Orientation="Horizontal" BackgroundColor="LightYellow">
-          <RadioButton x:Name="LocaleRadioButtonEn" GroupName="Locale" Content="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
+                   HorizontalOptions="Start">
+        <RadioButtonGroup.GroupName>Locale</RadioButtonGroup.GroupName>
+        <StackLayout Orientation="Horizontal">
+          <RadioButton x:Name="LocaleRadioButtonEn" Content="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
           <Image x:Name="LocaleImageEn" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
-          <RadioButton x:Name="LocaleRadioButtonEs" GroupName="Locale" Content="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
+        <StackLayout Orientation="Horizontal">
+          <RadioButton x:Name="LocaleRadioButtonEs" Content="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
           <Image x:Name="LocaleImageEs" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal" Background="LightBlue">
-          <RadioButton x:Name="LocaleRadioButtonRu" GroupName="Locale" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
+        <StackLayout Orientation="Horizontal">
+          <RadioButton x:Name="LocaleRadioButtonRu" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
           <Image x:Name="LocaleImageRu" />
         </StackLayout>
       </StackLayout>
-
-      <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LocaleLabel" />
     </Grid>
-    <Button x:Name="SaveButton" Text="{xaml:TranslateText SettingsPage_SaveButton}" Clicked="SaveButton_Clicked" />
     <Button x:Name="DeleteDataButton" Text="{xaml:TranslateText SettingsPage_DeleteDataButton}" Clicked="DeleteDataButton_Clicked" />
   </StackLayout>
 

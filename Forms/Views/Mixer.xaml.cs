@@ -72,12 +72,21 @@ namespace Jammit.Forms.Views
           {
             Track = track,
             Player = this.Player,//KEEP?
-            Volume = 50
+            Volume = Settings.Get(Settings.TrackVolumeKey(track), 100)
           });
         }
       }
       else if (PlayerProperty.PropertyName == propertyName)
       {
+      }
+    }
+
+    void TrackSlider_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+      if (e.PropertyName == TrackSlider.TrackProperty.PropertyName)
+      {
+        var slider = sender as TrackSlider;
+        slider.Volume = Settings.Get(Settings.TrackVolumeKey(slider.Track), 100);
       }
     }
 

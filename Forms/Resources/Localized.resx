@@ -177,15 +177,24 @@
   <data name="SettingsPage_DeleteDataButton" xml:space="preserve">
     <value />
   </data>
+  <data name="SettingsPage_DeleteDataConfirm" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsPage_DeleteDataNo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsPage_DeleteDataText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsPage_DeleteDataYes" xml:space="preserve">
+    <value />
+  </data>
   <data name="SettingsPage_LanguageLabel" xml:space="preserve">
     <value />
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SettingsPage_LocaleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SettingsPage_LocaleImage.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SettingsPage_LocaleLabel" xml:space="preserve">
-    <value />
   </data>
   <data name="SettingsPage_SaveButton" xml:space="preserve">
     <value />

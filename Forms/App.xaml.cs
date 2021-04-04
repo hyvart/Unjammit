@@ -12,23 +12,15 @@ namespace Jammit.Forms
 {
   public partial class App : Application
   {
-    [Obsolete("Use parameter-less constructor.")]
-    public App(string dataDirectory, Func<JcfMedia, Task<IJcfPlayer>> playerFactory, IJcfLoader loader)
-    {
-      App.Client = new Jammit.Forms.Client.RestClient();
-      App.DataDirectory = dataDirectory;
-      App.Library = new FolderLibrary(dataDirectory, Client);
-      App.PlayerFactory = playerFactory;
-      App.MediaLoader = loader;
-
-      MainPage = new Jammit.Forms.Views.MainPage();
-    }
-
     public App()
     {
       InitializeComponent();
 
-      App.Client = new Jammit.Forms.Client.BasicHttpClient();
+      App.Client = new Client.BasicHttpClient();
+
+      if (string.IsNullOrEmpty(App.DataDirectory))
+        App.DataDirectory = Xamarin.Essentials.FileSystem.AppDataDirectory;
+
       App.Library = new FolderLibrary(DataDirectory, Client);
 
       LocalizationResourceManager.Instance.SetCulture(System.Globalization.CultureInfo.GetCultureInfo(Settings.Culture));
@@ -42,7 +34,6 @@ namespace Jammit.Forms
 
     public static ILibrary Library { get; /*private*/ set; }
 
-    [Obsolete("Remove when Xamarin.Essentials supports all platforms.")]
     public static string DataDirectory { get; /*private*/ set; }
 
     public static Func<JcfMedia, Task<IJcfPlayer>> PlayerFactory { get; /*private*/ set; }

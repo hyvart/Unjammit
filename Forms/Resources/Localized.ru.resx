@@ -184,9 +184,6 @@
   <data name="SettingsPage_LocaleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SettingsPage_LocaleImage.ru.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SettingsPage_LocaleLabel" xml:space="preserve">
-    <value>Нажмите "Сохранить", чтобы сохранить выбор языка приложения.</value>
-  </data>
   <data name="SettingsPage_SaveButton" xml:space="preserve">
     <value>Сохранить</value>
   </data>

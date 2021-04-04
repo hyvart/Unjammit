@@ -45,6 +45,12 @@ namespace Jammit.Forms.Views
     private int _beatIndex;
     int _sectionIndex;
 
+    /// <summary>
+    /// Platforms can vary their Player/Tracker uninitializing order.
+    /// Tracking this will ensure the correct non-zero value is persisted when disappearing/closing.
+    /// </summary>
+    TimeSpan _lastPosition = TimeSpan.MinValue;
+
     #endregion private fields
 
     public SongPage()
@@ -95,10 +101,10 @@ namespace Jammit.Forms.Views
 
     protected override void OnDisappearing()
     {
-      base.OnDisappearing();
-
       if (Device.Android == Device.RuntimePlatform && TargetIdiom.Phone == Device.Idiom)
         MessagingCenter.Send(this, "AllowLandScapePortrait");
+
+      base.OnDisappearing();
     }
 
     #endregion Page overrides
@@ -274,7 +280,17 @@ namespace Jammit.Forms.Views
       {
         var newPosition = (sender as Audio.IJcfPlayer).Position;
         if (newPosition.TotalSeconds != PositionSlider.Value)
+        {
+          if (newPosition == TimeSpan.Zero && _lastPosition != TimeSpan.Zero)
+          {
+            _lastPosition = TimeSpan.FromSeconds(PositionSlider.Value);
+          }
+          else
+          {
+            _lastPosition = TimeSpan.MinValue;
+          }
           PositionSlider.Value = newPosition.TotalSeconds;
+        }
       });
     }
 
@@ -308,6 +324,9 @@ namespace Jammit.Forms.Views
     private void StopButton_Clicked(object sender, EventArgs e)
     {
       Player.Stop();
+
+      // If Stop explicitly requested, ensure position is reset.
+      _lastPosition = TimeSpan.Zero;
 
       PlayButton.BackgroundColor = NormalButtonBackgroundColor;
       PlayButton.TextColor = NormalButtonTextColor;
@@ -388,6 +407,25 @@ namespace Jammit.Forms.Views
         ScoreHiddenLabel.IsVisible = false;
         ScoreView.IsVisible = true;
       }
+    }
+
+    private void ContentPage_Appearing(object sender, EventArgs e)
+    {
+      ScorePicker.SelectedIndex = (int)Settings.Get(Settings.SelectedScoreKey(Song), 0);
+      ControlsLayout.IsVisible = Settings.Get(Settings.MixerCollapsedKey(Song), true);
+      PositionSlider.Value = Settings.Get(Settings.PositionKey(Song), TimeSpan.Zero).TotalSeconds;
+    }
+
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+      Settings.Set(Settings.SelectedScoreKey(Song), (uint)ScorePicker.SelectedIndex);
+      Settings.Set(Settings.MixerCollapsedKey(Song), ControlsLayout.IsVisible);
+
+      if (_lastPosition > TimeSpan.Zero)
+        Settings.Set(Settings.PositionKey(Song), _lastPosition);
+      else
+        Settings.Set(Settings.PositionKey(Song), TimeSpan.FromSeconds(PositionSlider.Value));
+      //TODO: TrackMuted, SoloTrack
     }
   }
 }

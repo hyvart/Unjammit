@@ -140,6 +140,10 @@ namespace Jammit.Audio
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
+      // Click track not implemented here (yet).
+      if (track.Class == "JMClickTrack")
+        return;
+
       _players[track].Player.Volume = volume / 100.0;
     }
 

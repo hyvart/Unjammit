@@ -1,5 +1,4 @@
-﻿using Jammit.Forms.Resources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,6 +8,8 @@ using System.Text;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using Jammit.Forms.Resources;
 
 namespace Jammit.Forms.Views
 {
@@ -35,7 +36,9 @@ namespace Jammit.Forms.Views
 
     protected override void OnAppearing()
     {
-      switch(CultureInfo.CurrentUICulture.Name)
+      base.OnAppearing();
+
+      switch (CultureInfo.CurrentUICulture.Name)
       {
         case "en":
           LocaleRadioButtonEn.IsChecked = true;
@@ -46,35 +49,95 @@ namespace Jammit.Forms.Views
         case "ru":
           LocaleRadioButtonRu.IsChecked = true;
           break;
+
+        default:
+          if (CultureInfo.CurrentUICulture.Name.StartsWith("en-"))
+          {
+            LocaleRadioButtonEn.IsChecked = true;
+          }
+          else if (CultureInfo.CurrentUICulture.Name.StartsWith("es-"))
+          {
+            LocaleRadioButtonEs.IsChecked = true;
+          }
+          else if (CultureInfo.CurrentUICulture.Name.StartsWith("ru-"))
+          {
+            LocaleRadioButtonRu.IsChecked = true;
+          }
+          else
+          {
+            // Unrecognized locale. Use "en".
+            LocaleRadioButtonEn.IsChecked = true;
+          }
+          break;
       }
     }
 
     #endregion  Page overrides
-
-    private void SaveButton_Clicked(object sender, EventArgs e)
-    {
-      //Hack: Manually flushing settings.
-      //TODO: Replace with tow-way binding.
-
-      Settings.ServiceUri = ServiceUriEntry.Text;
-      Settings.Culture = CultureInfo.CurrentUICulture.Name;
-    }
 
     private void AuthorizeButton_Clicked(object sender, EventArgs e)
     {
       App.Client.RequestAuthorization().Wait();
     }
 
-    private async void DeleteDataButton_Clicked(object sender, System.EventArgs e)
+    //TODO: Make Settings-level or App-level static member.
+    ILocaleSwitcher _localeSwitcher = DependencyService.Get<ILocaleSwitcher>();
+    private void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-      if (await DisplayAlert("Please confirm", "Your local library and service credentials will be completely deleted.\nThis can not be undone.", "Yes", "No"))
+      if (e.Value)
+      {
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("en"));
+        _localeSwitcher?.SwitchLocale("en");
+
+        Settings.Culture = "en";
+      }
+    }
+
+    private void LocaleRadioButtonEs_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+      if (e.Value)
+      {
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("es"));
+        _localeSwitcher?.SwitchLocale("es");
+
+        Settings.Culture = "es";
+      }
+    }
+
+    private void LocaleRadioButtonRu_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+      if (e.Value)
+      {
+        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("ru"));
+        _localeSwitcher?.SwitchLocale("ru");
+
+        Settings.Culture = "ru";
+      }
+    }
+
+    private void ServiceUriEntry_Unfocused(object sender, FocusEventArgs e)
+    {
+      Settings.ServiceUri = ServiceUriEntry.Text;
+    }
+
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+      Settings.ServiceUri = ServiceUriEntry.Text;
+    }
+
+    private async void DeleteDataButton_Clicked(object sender, EventArgs e)
+    {
+      if (await DisplayAlert(
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataConfirm"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataText"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataYes"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataNo"]))
       {
         foreach (var song in App.Library.Songs)
         {
           App.Library.RemoveSong(song);
         }
 
-        foreach(var userDir in new string[] { "Downloads", "Tracks" })
+        foreach (var userDir in new string[] { "Downloads", "Tracks" })
         {
           var userDirPath = System.IO.Path.Combine(App.DataDirectory, userDir);
           if (System.IO.Directory.Exists(userDirPath))
@@ -87,43 +150,7 @@ namespace Jammit.Forms.Views
           }
         }
 
-        Settings.Credentials = default;
-        Settings.ServiceUri = default;
-      }
-    }
-
-    //TODO: Make Settings-level or App-level static member.
-    ILocaleSwitcher _localeSwitcher = DependencyService.Get<ILocaleSwitcher>();
-    private void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
-    {
-      if (e.Value)
-      {
-        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("en"));
-        _localeSwitcher?.SwitchLocale("en");
-
-        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
-      }
-    }
-
-    private void LocaleRadioButtonEs_CheckedChanged(object sender, CheckedChangedEventArgs e)
-    {
-      if (e.Value)
-      {
-        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("es"));
-        _localeSwitcher?.SwitchLocale("es");
-
-        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
-      }
-    }
-
-    private void LocaleRadioButtonRu_CheckedChanged(object sender, CheckedChangedEventArgs e)
-    {
-      if (e.Value)
-      {
-        LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("ru"));
-        _localeSwitcher?.SwitchLocale("ru");
-
-        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
+        Settings.Clear();
       }
     }
   }

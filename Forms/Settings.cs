@@ -1,5 +1,4 @@
-﻿using Plugin.Settings;
-using Plugin.Settings.Abstractions;
+﻿using Xamarin.Essentials;
 
 namespace Jammit.Forms
 {
@@ -10,14 +9,6 @@ namespace Jammit.Forms
   /// </summary>
   public static class Settings
   {
-    private static ISettings AppSettings
-    {
-      get
-      {
-        return CrossSettings.Current;
-      }
-    }
-
     #region Setting Constants
 
     private const string SettingsKey = "settings_key";
@@ -35,42 +26,163 @@ namespace Jammit.Forms
     private const string CultureKey = "culture_key";
     private static readonly string CultureDefault = System.Globalization.CultureInfo.CurrentUICulture.Name;
 
-    #endregion
+    #endregion Setting Constants
+
+    #region Settings Functions
+
+    public static string SelectedScoreKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Id}/SelectedScore";
+    }
+
+    public static string MixerCollapsedKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Id}/MixerCollapsed";
+    }
+
+    public static string TrackVolumeKey(Model.TrackInfo track)
+    {
+      return $"Track/{track.Identifier}/Volume";
+    }
+
+    public static string TrackMutedKey(Model.TrackInfo track)
+    {
+      return $"Track/{track.Identifier}/Muted";
+    }
+
+    public static string SoloTrackKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Instrument}/SoloTrack";
+    }
+
+    public static string PositionKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Id}/Position";
+    }
+
+    #endregion Settings Functions
+
+    public static void Clear()
+    {
+      Preferences.Clear();
+    }
 
     public static string GeneralSettings
     {
       get
       {
-        return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
+        return Preferences.Get(SettingsKey, SettingsDefault);
       }
       set
       {
-        AppSettings.AddOrUpdateValue(SettingsKey, value);
+        Preferences.Set(SettingsKey, value);
       }
     }
 
     public static string TrackPath
     {
-      get { return AppSettings.GetValueOrDefault(TrackPathKey, TrackPathDefault); }
-      set { AppSettings.AddOrUpdateValue(TrackPathKey, value); }
+      get
+      {
+        return Preferences.Get(TrackPathKey, TrackPathDefault);
+      }
+
+      set
+      {
+        Preferences.Set(TrackPathKey, value);
+      }
     }
 
     public static string ServiceUri
     {
-      get { return AppSettings.GetValueOrDefault(ServiceUriKey, ServiceUriDefault); }
-      set { AppSettings.AddOrUpdateValue(ServiceUriKey, value); }
+      get
+      {
+        return Preferences.Get(ServiceUriKey, ServiceUriDefault);
+      }
+
+      set
+      {
+        Preferences.Set(ServiceUriKey, value);
+      }
     }
 
     public static string Credentials
     {
-      get { return AppSettings.GetValueOrDefault(CredentialsKey, CredentialsDefault); }
-      set { AppSettings.AddOrUpdateValue(CredentialsKey, value); }
+      get
+      {
+        return Preferences.Get(CredentialsKey, CredentialsDefault);
+      }
+
+      set
+      {
+        Preferences.Set(CredentialsKey, value);
+      }
     }
 
     public static string Culture
     {
-      get { return AppSettings.GetValueOrDefault(CultureKey, CultureDefault); }
-      set { AppSettings.AddOrUpdateValue(CultureKey, value); }
+      get
+      {
+        return Preferences.Get(CultureKey, CultureDefault);
+      }
+
+      set
+      {
+        Preferences.Set(CultureKey, value);
+      }
     }
+
+    #region Generic settings
+
+    public static bool Get(string key, bool defaultValue)
+    {
+      return Preferences.Get(key, defaultValue);
+    }
+
+    public static void Set(string key, bool value)
+    {
+      Preferences.Set(key, value);
+    }
+
+    public static uint Get(string key, uint defaultValue)
+    {
+      return (uint)Preferences.Get(key, (long)defaultValue);
+    }
+
+    public static void Set(string key, uint value)
+    {
+      Preferences.Set(key, (long)value);
+    }
+
+    public static float Get(string key, float defaultValue)
+    {
+      return Preferences.Get(key, defaultValue);
+    }
+
+    public static void Set(string key, float value)
+    {
+      Preferences.Set(key, value);
+    }
+
+    public static string Get(string key, string defaultValue)
+    {
+      return Preferences.Get(key, defaultValue);
+    }
+
+    public static void Set(string key, string value)
+    {
+      Preferences.Set(key, value);
+    }
+
+    public static System.TimeSpan Get(string key, System.TimeSpan defaultValue)
+    {
+      return System.TimeSpan.FromMilliseconds(Preferences.Get(key, defaultValue.TotalMilliseconds));
+    }
+
+    public static void Set(string key, System.TimeSpan value)
+    {
+      Preferences.Set(key, value.TotalMilliseconds);
+    }
+
+    #endregion Generic settings
   }
 }

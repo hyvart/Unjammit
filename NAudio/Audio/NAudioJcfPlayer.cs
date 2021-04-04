@@ -77,6 +77,8 @@ namespace Jammit.Audio
     public void Stop()
     {
       _waveOut.Stop();
+
+      Position = TimeSpan.Zero;
     }
 
     public uint GetVolume(PlayableTrackInfo track) => (uint)_channels[track].Volume;
