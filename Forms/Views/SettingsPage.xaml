@@ -30,24 +30,21 @@
                    Grid.Column="1"
                    Grid.ColumnSpan="2"
                    Orientation="Horizontal"
-                   HorizontalOptions="Start"
-                   BackgroundColor="DarkGoldenrod">
+                   HorizontalOptions="Start">
         <RadioButtonGroup.GroupName>Locale</RadioButtonGroup.GroupName>
-        <StackLayout Orientation="Horizontal" BackgroundColor="Pink">
+        <StackLayout Orientation="Horizontal">
           <RadioButton x:Name="LocaleRadioButtonEn" Content="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
           <Image x:Name="LocaleImageEn" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal" BackgroundColor="LightGreen">
+        <StackLayout Orientation="Horizontal">
           <RadioButton x:Name="LocaleRadioButtonEs" Content="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
           <Image x:Name="LocaleImageEs" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal" Background="LightBlue">
+        <StackLayout Orientation="Horizontal">
           <RadioButton x:Name="LocaleRadioButtonRu" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
           <Image x:Name="LocaleImageRu" />
         </StackLayout>
       </StackLayout>
-
-      <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LocaleLabel" />
     </Grid>
     <Button x:Name="DeleteDataButton" Text="{xaml:TranslateText SettingsPage_DeleteDataButton}" Clicked="DeleteDataButton_Clicked" />
   </StackLayout>

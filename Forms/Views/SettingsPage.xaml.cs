@@ -88,8 +88,6 @@ namespace Jammit.Forms.Views
         LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("en"));
         _localeSwitcher?.SwitchLocale("en");
 
-        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
-
         Settings.Culture = "en";
       }
     }
@@ -101,8 +99,6 @@ namespace Jammit.Forms.Views
         LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("es"));
         _localeSwitcher?.SwitchLocale("es");
 
-        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
-
         Settings.Culture = "es";
       }
     }
@@ -113,8 +109,6 @@ namespace Jammit.Forms.Views
       {
         LocalizationResourceManager.Instance.SetCulture(CultureInfo.GetCultureInfo("ru"));
         _localeSwitcher?.SwitchLocale("ru");
-
-        LocaleLabel.Text = Localized.SettingsPage_LocaleLabel;
 
         Settings.Culture = "ru";
       }

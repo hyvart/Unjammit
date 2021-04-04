@@ -197,9 +197,6 @@ This can not be undone.</value>
   <data name="SettingsPage_LocaleImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SettingsPage_LocaleImage.en.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SettingsPage_LocaleLabel" xml:space="preserve">
-    <value>Language settings will take effect after the app is restarted.</value>
-  </data>
   <data name="SettingsPage_SaveButton" xml:space="preserve">
     <value>Save</value>
   </data>
