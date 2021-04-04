@@ -130,11 +130,6 @@ namespace Jammit.Forms.Views
       Settings.ServiceUri = ServiceUriEntry.Text;
     }
 
-    void ClearSettingsButton_Clicked(System.Object sender, System.EventArgs e)
-    {
-      Settings.Clear();
-    }
-
     private async void DeleteDataButton_Clicked(object sender, EventArgs e)
     {
       if (await DisplayAlert(
