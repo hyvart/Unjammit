@@ -406,7 +406,7 @@ namespace Jammit.Forms.Views
       Settings.Set(Settings.SelectedScoreKey(Song), (uint)ScorePicker.SelectedIndex);
       Settings.Set(Settings.MixerCollapsedKey(Song), ControlsLayout.IsVisible);
       Settings.Set(Settings.PositionKey(Song), TimeSpan.FromSeconds(PositionSlider.Value));
-      //TODO: TrackVolume, TrackMuted, SoloTrack, Position
+      //TODO: TrackMuted, SoloTrack
     }
   }
 }
