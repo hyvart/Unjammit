@@ -45,9 +45,11 @@ namespace Jammit.Forms.Views
     private int _beatIndex;
     int _sectionIndex;
 
-    #region Settings
-
-    #endregion Settings
+    /// <summary>
+    /// Platforms can vary their Player/Tracker uninitializing order.
+    /// Tracking this will ensure the correct non-zero value is persisted when disappearing/closing.
+    /// </summary>
+    TimeSpan _lastPosition = TimeSpan.MinValue;
 
     #endregion private fields
 
@@ -278,7 +280,17 @@ namespace Jammit.Forms.Views
       {
         var newPosition = (sender as Audio.IJcfPlayer).Position;
         if (newPosition.TotalSeconds != PositionSlider.Value)
+        {
+          if (newPosition == TimeSpan.Zero && _lastPosition != TimeSpan.Zero)
+          {
+            _lastPosition = TimeSpan.FromSeconds(PositionSlider.Value);
+          }
+          else
+          {
+            _lastPosition = TimeSpan.MinValue;
+          }
           PositionSlider.Value = newPosition.TotalSeconds;
+        }
       });
     }
 
@@ -312,6 +324,9 @@ namespace Jammit.Forms.Views
     private void StopButton_Clicked(object sender, EventArgs e)
     {
       Player.Stop();
+
+      // If Stop explicitly requested, ensure position is reset.
+      _lastPosition = TimeSpan.Zero;
 
       PlayButton.BackgroundColor = NormalButtonBackgroundColor;
       PlayButton.TextColor = NormalButtonTextColor;
@@ -405,7 +420,11 @@ namespace Jammit.Forms.Views
     {
       Settings.Set(Settings.SelectedScoreKey(Song), (uint)ScorePicker.SelectedIndex);
       Settings.Set(Settings.MixerCollapsedKey(Song), ControlsLayout.IsVisible);
-      Settings.Set(Settings.PositionKey(Song), TimeSpan.FromSeconds(PositionSlider.Value));
+
+      if (_lastPosition > TimeSpan.Zero)
+        Settings.Set(Settings.PositionKey(Song), _lastPosition);
+      else
+        Settings.Set(Settings.PositionKey(Song), TimeSpan.FromSeconds(PositionSlider.Value));
       //TODO: TrackMuted, SoloTrack
     }
   }
