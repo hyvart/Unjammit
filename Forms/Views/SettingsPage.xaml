@@ -49,6 +49,7 @@
 
       <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="LocaleLabel" />
     </Grid>
+    <Button x:Name="ClearSettingsButton" Text="SettingsPage_ClearSettingsButton" Clicked="ClearSettingsButton_Clicked" />
     <Button x:Name="DeleteDataButton" Text="{xaml:TranslateText SettingsPage_DeleteDataButton}" Clicked="DeleteDataButton_Clicked" />
   </StackLayout>
 

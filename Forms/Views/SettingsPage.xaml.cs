@@ -79,36 +79,6 @@ namespace Jammit.Forms.Views
       App.Client.RequestAuthorization().Wait();
     }
 
-    private async void DeleteDataButton_Clicked(object sender, EventArgs e)
-    {
-      if (await DisplayAlert(
-        LocalizationResourceManager.Instance["SettingsPage_DeleteDataConfirm"],
-        LocalizationResourceManager.Instance["SettingsPage_DeleteDataText"],
-        LocalizationResourceManager.Instance["SettingsPage_DeleteDataYes"],
-        LocalizationResourceManager.Instance["SettingsPage_DeleteDataNo"]))
-      {
-        foreach (var song in App.Library.Songs)
-        {
-          App.Library.RemoveSong(song);
-        }
-
-        foreach(var userDir in new string[] { "Downloads", "Tracks" })
-        {
-          var userDirPath = System.IO.Path.Combine(App.DataDirectory, userDir);
-          if (System.IO.Directory.Exists(userDirPath))
-          {
-            var userDirInfo = new System.IO.DirectoryInfo(userDirPath);
-            foreach (var file in userDirInfo.GetFiles())
-              file.Delete();
-            foreach (var dir in userDirInfo.GetDirectories())
-              dir.Delete(true);
-          }
-        }
-
-        Settings.Clear();
-      }
-    }
-
     //TODO: Make Settings-level or App-level static member.
     ILocaleSwitcher _localeSwitcher = DependencyService.Get<ILocaleSwitcher>();
     private void LocaleRadioButtonEn_CheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -158,6 +128,41 @@ namespace Jammit.Forms.Views
     private void ContentPage_Disappearing(object sender, EventArgs e)
     {
       Settings.ServiceUri = ServiceUriEntry.Text;
+    }
+
+    void ClearSettingsButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+      Settings.Clear();
+    }
+
+    private async void DeleteDataButton_Clicked(object sender, EventArgs e)
+    {
+      if (await DisplayAlert(
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataConfirm"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataText"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataYes"],
+        LocalizationResourceManager.Instance["SettingsPage_DeleteDataNo"]))
+      {
+        foreach (var song in App.Library.Songs)
+        {
+          App.Library.RemoveSong(song);
+        }
+
+        foreach (var userDir in new string[] { "Downloads", "Tracks" })
+        {
+          var userDirPath = System.IO.Path.Combine(App.DataDirectory, userDir);
+          if (System.IO.Directory.Exists(userDirPath))
+          {
+            var userDirInfo = new System.IO.DirectoryInfo(userDirPath);
+            foreach (var file in userDirInfo.GetFiles())
+              file.Delete();
+            foreach (var dir in userDirInfo.GetDirectories())
+              dir.Delete(true);
+          }
+        }
+
+        Settings.Clear();
+      }
     }
   }
 }

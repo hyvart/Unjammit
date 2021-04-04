@@ -54,9 +54,6 @@ namespace Jammit.Forms.Views
     public static readonly BindableProperty TrackProperty =
       BindableProperty.Create("Track", typeof(Model.PlayableTrackInfo), typeof(Model.PlayableTrackInfo));
 
-    public static readonly BindableProperty VolumeProperty =
-      BindableProperty.Create("Volume", typeof(double), typeof(double), (double)100);
-
     #endregion Bindable properties
 
     #region Properties
@@ -76,14 +73,10 @@ namespace Jammit.Forms.Views
 
     public double Volume
     {
-      get
-      {
-        return (double)GetValue(VolumeProperty);
-      }
-
+      get => VolumeSlider.Value;
       set
       {
-        SetValue(VolumeProperty, value);
+        VolumeSlider.Value = value;
       }
     }
 
@@ -113,10 +106,6 @@ namespace Jammit.Forms.Views
       {
         //TODO: Bind!
         TitleLabel.Text = Track.Title;
-      }
-      else if (VolumeProperty.PropertyName == propertyName)
-      {
-        VolumeSlider.Value = Volume;
       }
     }
 
