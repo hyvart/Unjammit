@@ -33,6 +33,28 @@ namespace Jammit.Forms.Views
 
     State _state;
 
+    bool _canReadMutedSetting = true;
+
+    void Mute()
+    {
+      Player.SetVolume(Track, 0);
+      _state = State.Muted;
+
+      //TODO: Ewww! Use styles and binding instead.
+      MuteButton.TextColor = MutedButtonTextColor;
+      MuteButton.BackgroundColor = MutedButtonBackgroundColor;
+    }
+
+    void Unmute()
+    {
+      Player.SetVolume(Track, (uint)Volume);
+      _state = State.Normal;
+
+      //TODO: Ewww! Use styles and binding instead.
+      MuteButton.TextColor = NormalButtonTextColor;
+      MuteButton.BackgroundColor = NormalButtonBackgroundColor;
+    }
+
     #endregion private members
 
     public TrackSlider()
@@ -96,7 +118,7 @@ namespace Jammit.Forms.Views
 
     #endregion Properties
 
-    #region Events
+    #region base overrides
 
     protected override void OnPropertyChanged(string propertyName = null)
     {
@@ -106,22 +128,35 @@ namespace Jammit.Forms.Views
       {
         //TODO: Bind!
         TitleLabel.Text = Track.Title;
+
+        if (_canReadMutedSetting && Player != null && Settings.IsTrackMuted(Track))
+        {
+          _canReadMutedSetting = false;
+          Mute();
+        }
+      }
+      else if (PlayerProperty.PropertyName == propertyName)
+      {
+        if (_canReadMutedSetting && Track != null && Settings.IsTrackMuted(Track))
+        {
+          _canReadMutedSetting = false;
+          Mute();
+        }
       }
     }
 
-    #endregion Events
+    #endregion base overrides
+
+    #region Events
 
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
       //TODO: How about setting the track volume right here and drop the Volume property?
       if (State.Muted != _state)
       {
-        if (Track != null)
-        {
-          Player.SetVolume(Track, (uint)e.NewValue);
+        Player.SetVolume(Track, (uint)e.NewValue);
 
-          Settings.Set(Settings.TrackVolumeKey(Track), (uint)e.NewValue);
-        }
+        Settings.Set(Settings.TrackVolumeKey(Track), (uint)e.NewValue);
       }
     }
 
@@ -129,24 +164,18 @@ namespace Jammit.Forms.Views
     {
       if (State.Muted == _state)
       {
-        Volume = (uint)VolumeSlider.Value;
-        _state = State.Normal;
+        Unmute();
 
-        //TODO: Ewww! Use styles and binding instead.
-        MuteButton.TextColor = NormalButtonTextColor;
-        MuteButton.BackgroundColor = NormalButtonBackgroundColor;
+        Settings.SetTrackMuted(Track, false);
       }
       else
       {
-        Volume = 0;
-        _state = State.Muted;
+        Mute();
 
         Settings.SetTrackMuted(Track, true);
-
-        //TODO: Ewww! Use styles and binding instead.
-        MuteButton.TextColor = MutedButtonTextColor;
-        MuteButton.BackgroundColor = MutedButtonBackgroundColor;
       }
     }
+
+    #endregion Events
   }
 }
