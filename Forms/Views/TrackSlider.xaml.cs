@@ -141,6 +141,8 @@ namespace Jammit.Forms.Views
         Volume = 0;
         _state = State.Muted;
 
+        Settings.SetTrackMuted(Track, true);
+
         //TODO: Ewww! Use styles and binding instead.
         MuteButton.TextColor = MutedButtonTextColor;
         MuteButton.BackgroundColor = MutedButtonBackgroundColor;

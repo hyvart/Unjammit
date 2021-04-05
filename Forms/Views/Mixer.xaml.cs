@@ -76,9 +76,6 @@ namespace Jammit.Forms.Views
           });
         }
       }
-      else if (PlayerProperty.PropertyName == propertyName)
-      {
-      }
     }
 
     void TrackSlider_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
