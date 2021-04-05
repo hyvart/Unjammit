@@ -26,8 +26,8 @@ namespace Jammit.Forms.Views
     public static readonly BindableProperty PlayerProperty =
       BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
 
-    public static readonly BindableProperty SoloTrackProperty =
-      BindableProperty.Create("SoloTrack", typeof(Model.TrackInfo), typeof(Model.TrackInfo));
+    public static readonly BindableProperty SoloTrackSliderProperty =
+      BindableProperty.Create("SoloTrackSlider", typeof(TrackSlider), typeof(TrackSlider));
 
     #endregion  Bindable Properties
 
@@ -59,17 +59,11 @@ namespace Jammit.Forms.Views
       }
     }
 
-    public Model.TrackInfo SoloTrack
+    public TrackSlider SoloTrackSlider
     {
-      get
-      {
-        return GetValue(SoloTrackProperty) as Model.TrackInfo;
-      }
+      get => GetValue(SoloTrackSliderProperty) as TrackSlider;
 
-      set
-      {
-        SetValue(SoloTrackProperty, value);
-      }
+      set => SetValue(SoloTrackSliderProperty, value);
     }
 
     #endregion Properties
@@ -92,10 +86,6 @@ namespace Jammit.Forms.Views
           });
         }
       }
-      else if(SoloTrackProperty.PropertyName == propertyName)
-      {
-        //TODO
-      }
     }
 
     #endregion Element overrides
@@ -108,6 +98,20 @@ namespace Jammit.Forms.Views
       {
         var slider = sender as TrackSlider;
         slider.Volume = Settings.Get(Settings.TrackVolumeKey(slider.Track), 100);
+      }
+    }
+
+    void TrackSlider_SoloEnabled(object sender, EventArgs e)
+    {
+      SoloTrackSlider = sender as TrackSlider;
+
+      var otherSliders = new TrackSlider[] { BackingTrackSlider, ClickTrackSlider }
+        .Concat(ControlsLayout.Children.Where((view) => view is TrackSlider).Cast<TrackSlider>())
+        .Where((slider) => slider != SoloTrackSlider && slider.IsEnabled);//TODO: Drop IsEnabled when UWP click works.
+
+      foreach (var slider in otherSliders)
+      {
+        slider.Suspend();
       }
     }
 

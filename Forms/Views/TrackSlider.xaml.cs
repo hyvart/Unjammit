@@ -19,6 +19,8 @@ namespace Jammit.Forms.Views
     static Color NormalButtonBackgroundColor;
     static Color MutedButtonTextColor = Color.DarkRed;
     static Color MutedButtonBackgroundColor = Color.LightPink;
+    static Color SoloButtonTextColor = Color.DarkGoldenrod;
+    static Color SoloButtonBackgroundColor = Color.Goldenrod;
 
     #endregion static members
 
@@ -34,6 +36,7 @@ namespace Jammit.Forms.Views
     State _state;
 
     bool _canReadMutedSetting = true;
+    bool _mutedBySolo;
 
     void Mute()
     {
@@ -67,6 +70,26 @@ namespace Jammit.Forms.Views
       NormalButtonTextColor = MuteButton.TextColor;
     }
 
+    public void Suspend()
+    {
+      if (_mutedBySolo)
+        return;
+
+      _mutedBySolo = true;
+      Player.SetVolume(Track, 0);
+    }
+
+    public void Unsuspend()
+    {
+      if (!_mutedBySolo)
+        return;
+
+      _mutedBySolo = false;
+      Player.SetVolume(Track, (uint)Volume);
+    }
+
+    public event EventHandler SoloEnabled;
+
     #region Bindable properties
 
     //TODO: Analize keeping here.
@@ -96,6 +119,7 @@ namespace Jammit.Forms.Views
     public double Volume
     {
       get => VolumeSlider.Value;
+
       set
       {
         VolumeSlider.Value = value;
@@ -151,13 +175,11 @@ namespace Jammit.Forms.Views
 
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
-      //TODO: How about setting the track volume right here and drop the Volume property?
-      if (State.Muted != _state)
+      if (State.Muted != _state && !_mutedBySolo)
       {
         Player.SetVolume(Track, (uint)e.NewValue);
-
-        Settings.Set(Settings.TrackVolumeKey(Track), (uint)e.NewValue);
       }
+      Settings.Set(Settings.TrackVolumeKey(Track), (uint)e.NewValue);
     }
 
     private void MuteButton_Clicked(object sender, EventArgs e)
@@ -177,5 +199,21 @@ namespace Jammit.Forms.Views
     }
 
     #endregion Events
+
+    private void SoloButton_Clicked(object sender, EventArgs e)
+    {
+      if (SoloButtonTextColor != SoloButton.TextColor)//TODO: Seriously!
+      {
+        SoloButton.TextColor = SoloButtonTextColor;
+        SoloButton.BackgroundColor = SoloButtonBackgroundColor;
+
+        SoloEnabled?.Invoke(this, new EventArgs());
+      }
+      else
+      {
+        SoloButton.TextColor = NormalButtonTextColor;
+        SoloButton.BackgroundColor = NormalButtonBackgroundColor;
+      }
+    }
   }
 }
