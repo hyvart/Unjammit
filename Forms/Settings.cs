@@ -1,4 +1,6 @@
-﻿using Xamarin.Essentials;
+﻿using System.Collections.Generic;
+
+using Xamarin.Essentials;
 
 namespace Jammit.Forms
 {
@@ -9,6 +11,8 @@ namespace Jammit.Forms
   /// </summary>
   public static class Settings
   {
+    private static Dictionary<string, object> _prefMap = new Dictionary<string, object>();
+
     #region Setting Constants
 
     private const string SettingsKey = "settings_key";
@@ -64,7 +68,14 @@ namespace Jammit.Forms
 
     public static void Clear()
     {
-      Preferences.Clear();
+      try
+      {
+        Preferences.Clear();
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+        _prefMap.Clear();
+      }
     }
 
     public static string GeneralSettings
@@ -83,12 +94,32 @@ namespace Jammit.Forms
     {
       get
       {
-        return Preferences.Get(TrackPathKey, TrackPathDefault);
+        try
+        {
+          return Preferences.Get(TrackPathKey, TrackPathDefault);
+        }
+        catch(NotImplementedInReferenceAssemblyException)
+        {
+          object result;
+          if (_prefMap.TryGetValue(TrackPathKey, out result))
+          {
+            return result as string;
+          }
+
+          return TrackPathDefault;
+        }
       }
 
       set
       {
-        Preferences.Set(TrackPathKey, value);
+        try
+        {
+          Preferences.Set(TrackPathKey, value);
+        }
+        catch(NotImplementedInReferenceAssemblyException)
+        {
+          _prefMap[TrackPathKey] = value;
+        }
       }
     }
 
@@ -96,12 +127,32 @@ namespace Jammit.Forms
     {
       get
       {
-        return Preferences.Get(ServiceUriKey, ServiceUriDefault);
+        try
+        {
+          return Preferences.Get(ServiceUriKey, ServiceUriDefault);
+        }
+        catch(NotImplementedInReferenceAssemblyException)
+        {
+          object result;
+          if (_prefMap.TryGetValue(ServiceUriKey, out result))
+          {
+            return result as string;
+          }
+
+          return ServiceUriDefault;
+        }
       }
 
       set
       {
-        Preferences.Set(ServiceUriKey, value);
+        try
+        {
+          Preferences.Set(ServiceUriKey, value);
+        }
+        catch (NotImplementedInReferenceAssemblyException)
+        {
+          _prefMap[ServiceUriKey] = value;
+        }
       }
     }
 
@@ -109,12 +160,30 @@ namespace Jammit.Forms
     {
       get
       {
-        return Preferences.Get(CredentialsKey, CredentialsDefault);
+        try
+        {
+          return Preferences.Get(CredentialsKey, CredentialsDefault);
+        }
+        catch (NotImplementedInReferenceAssemblyException)
+        {
+          object result;
+          if (_prefMap.TryGetValue(CredentialsKey, out result))
+            return result as string;
+
+          return CredentialsDefault;
+        }
       }
 
       set
       {
-        Preferences.Set(CredentialsKey, value);
+        try
+        {
+          Preferences.Set(CredentialsKey, value);
+        }
+        catch (NotImplementedInReferenceAssemblyException)
+        {
+          _prefMap[CredentialsKey] = value;
+        }
       }
     }
 
@@ -122,12 +191,26 @@ namespace Jammit.Forms
     {
       get
       {
-        return Preferences.Get(CultureKey, CultureDefault);
+        try
+        {
+          return Preferences.Get(CultureKey, CultureDefault);
+        }
+        catch (NotImplementedInReferenceAssemblyException)
+        {
+          return CultureDefault;
+        }
       }
 
       set
       {
-        Preferences.Set(CultureKey, value);
+        try
+        {
+          Preferences.Set(CultureKey, value);
+        }
+        catch (NotImplementedInReferenceAssemblyException)
+        {
+          _prefMap[CultureKey] = value;
+        }
       }
     }
 
@@ -135,52 +218,120 @@ namespace Jammit.Forms
 
     public static bool Get(string key, bool defaultValue)
     {
-      return Preferences.Get(key, defaultValue);
+      try
+      {
+        return Preferences.Get(key, defaultValue);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+        return defaultValue;
+      }
     }
 
     public static void Set(string key, bool value)
     {
-      Preferences.Set(key, value);
+      try
+      {
+        Preferences.Set(key, value);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+      }
     }
 
     public static uint Get(string key, uint defaultValue)
     {
-      return (uint)Preferences.Get(key, (long)defaultValue);
+      try
+      {
+        return (uint)Preferences.Get(key, (long)defaultValue);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+        return defaultValue;
+      }
     }
 
     public static void Set(string key, uint value)
     {
-      Preferences.Set(key, (long)value);
+      try
+      {
+        Preferences.Set(key, (long)value);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+
+      }
     }
 
     public static float Get(string key, float defaultValue)
     {
-      return Preferences.Get(key, defaultValue);
+      try
+      {
+        return Preferences.Get(key, defaultValue);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+        return defaultValue;
+      }
     }
 
     public static void Set(string key, float value)
     {
-      Preferences.Set(key, value);
+      try
+      {
+        Preferences.Set(key, value);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+
+      }
     }
 
     public static string Get(string key, string defaultValue)
     {
-      return Preferences.Get(key, defaultValue);
+      try
+      {
+        return Preferences.Get(key, defaultValue);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+        return defaultValue;
+      }
     }
 
     public static void Set(string key, string value)
     {
-      Preferences.Set(key, value);
+      try
+      {
+        Preferences.Set(key, value);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+
+      }
     }
 
     public static System.TimeSpan Get(string key, System.TimeSpan defaultValue)
     {
-      return System.TimeSpan.FromMilliseconds(Preferences.Get(key, defaultValue.TotalMilliseconds));
+      try
+      {
+        return System.TimeSpan.FromMilliseconds(Preferences.Get(key, defaultValue.TotalMilliseconds));
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+        return defaultValue;
+      }
     }
 
     public static void Set(string key, System.TimeSpan value)
     {
-      Preferences.Set(key, value.TotalMilliseconds);
+      try
+      {
+        Preferences.Set(key, value.TotalMilliseconds);
+      }
+      catch(NotImplementedInReferenceAssemblyException)
+      {
+      }
     }
 
     #endregion Generic settings
