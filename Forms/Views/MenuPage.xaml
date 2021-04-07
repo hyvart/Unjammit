@@ -5,7 +5,7 @@
              xmlns:models="clr-namespace:Jammit.Forms.Models"
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
              x:Class="Jammit.Forms.Views.MenuPage"
-             Title="{xaml:TranslateTitle MenuPage_Title}">
+             Title="{OnPlatform Default={xaml:TranslateTitle MenuPage_Title}}">
   <StackLayout VerticalOptions="FillAndExpand">
     <ListView x:Name="MenuListView" x:FieldModifier="public">
       <ListView.ItemsSource>
