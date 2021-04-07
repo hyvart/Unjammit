@@ -46,6 +46,9 @@
         </StackLayout>
       </StackLayout>
     </Grid>
+    <Button x:Name="SaveSettingsButton" Text="Save Settings"
+            IsVisible="{OnPlatform GTK=true, Default=false}"
+            Clicked="SaveSettingsButton_Clicked" />
     <Button x:Name="DeleteDataButton" Text="{xaml:TranslateText SettingsPage_DeleteDataButton}" Clicked="DeleteDataButton_Clicked" />
   </StackLayout>
 

@@ -6,6 +6,7 @@
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
              x:Class="Jammit.Forms.Views.MenuPage"
              Title="{OnPlatform Default={xaml:TranslateTitle MenuPage_Title}}">
+             <!--TODO: OnPlatform Default helps non-supported platforms set the value (i.e. GTK).-->
   <StackLayout VerticalOptions="FillAndExpand">
     <ListView x:Name="MenuListView" x:FieldModifier="public">
       <ListView.ItemsSource>

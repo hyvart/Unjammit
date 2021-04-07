@@ -153,5 +153,17 @@ namespace Jammit.Forms.Views
         Settings.Clear();
       }
     }
+
+    /// <summary>
+    /// Excplicitly saves settings.
+    /// 
+    /// TODO: Remove when GTK focus/unfocus events are supported.
+    /// </summary>
+    /// <param name="sender">Save button</param>
+    /// <param name="e">No purpose</param>
+    private void SaveSettingsButton_Clicked(object sender, EventArgs e)
+    {
+      Settings.ServiceUri = ServiceUriEntry.Text;
+    }
   }
 }
