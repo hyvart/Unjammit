@@ -30,6 +30,11 @@ steps:
       packageType: sdk
       version: $(DotNetCoreSdk.Version)
 
+  - task: NuGetCommand@2
+    inputs:
+      command: custom
+      arguments: sources Add -Name "nuget.org" -Source https://api.nuget.org/v3/index.json
+
   - task: MSBuild@1
     displayName: Restore Packages
     inputs:
