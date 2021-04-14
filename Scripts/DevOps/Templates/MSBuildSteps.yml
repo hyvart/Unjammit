@@ -33,7 +33,7 @@ steps:
   - task: NuGetCommand@2
     inputs:
       command: custom
-      arguments: sources Add -Name "nuget.org" -Source https://api.nuget.org/v3/index.json
+      arguments: sources Enable -Name "nuget.org"
 
   - task: MSBuild@1
     displayName: Restore Packages
