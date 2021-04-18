@@ -13,7 +13,7 @@
     <local:TrackSlider x:Name="ClickTrackSlider"
                        Player="{Binding Player}"
                        Track="{Binding Media.ClickTrack}"
-                       IsEnabled="{OnPlatform UWP=false, Default=true}"
+                       IsEnabled="{OnPlatform UWP=false, GTK=false, Default=true}"
                        PropertyChanged="TrackSlider_PropertyChanged"
                        />
   </StackLayout>

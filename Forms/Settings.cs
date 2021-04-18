@@ -218,12 +218,30 @@ namespace Jammit.Forms
 
     public static bool IsTrackMuted(Model.TrackInfo track)
     {
-      return Preferences.Get(TrackMutedKey(track), false);
+      try
+      {
+        return Preferences.Get(TrackMutedKey(track), false);
+      }
+      catch (NotImplementedInReferenceAssemblyException)
+      {
+        object result;
+        if (_prefMap.TryGetValue(TrackMutedKey(track), out result))
+          return bool.Parse(result as string);
+
+        return false;
+      }
     }
 
     public static void SetTrackMuted(Model.TrackInfo track, bool value)
     {
-      Preferences.Set(TrackMutedKey(track), value);
+      try
+      {
+        Preferences.Set(TrackMutedKey(track), value);
+      }
+      catch (NotImplementedInReferenceAssemblyException)
+      {
+        _prefMap[TrackMutedKey(track)] = value;
+      }
     }
 
     #endregion Track settings
