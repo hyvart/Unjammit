@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,17 +9,6 @@ namespace Jammit.Forms.Views
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class TrackSlider : ContentView
   {
-    #region static members
-
-    static Color NormalButtonTextColor;
-    static Color NormalButtonBackgroundColor;
-    static Color MutedButtonTextColor = Color.DarkRed;
-    static Color MutedButtonBackgroundColor = Color.LightPink;
-    static Color SoloButtonTextColor = Color.DarkGoldenrod;
-    static Color SoloButtonBackgroundColor = Color.Goldenrod;
-
-    #endregion static members
-
     #region private members
 
     enum State
@@ -34,18 +19,22 @@ namespace Jammit.Forms.Views
     }
 
     State _state;
+    VisualStateGroup _soundStateGroup;
+    VisualState _previousSoundState;
 
     bool _canReadMutedSetting = true;
-    bool _mutedBySolo;
+    
+    void SetSoundState(string name, bool restore)
+    {
+      VisualStateManager.GoToState(Root, name);
+    }
 
     void Mute()
     {
       Player.SetVolume(Track, 0);
       _state = State.Muted;
 
-      //TODO: Ewww! Use styles and binding instead.
-      MuteButton.TextColor = MutedButtonTextColor;
-      MuteButton.BackgroundColor = MutedButtonBackgroundColor;
+      SetSoundState("Muted", false);
     }
 
     void Unmute()
@@ -53,9 +42,7 @@ namespace Jammit.Forms.Views
       Player.SetVolume(Track, (uint)Volume);
       _state = State.Normal;
 
-      //TODO: Ewww! Use styles and binding instead.
-      MuteButton.TextColor = NormalButtonTextColor;
-      MuteButton.BackgroundColor = NormalButtonBackgroundColor;
+      SetSoundState("Active", true);
     }
 
     #endregion private members
@@ -63,29 +50,12 @@ namespace Jammit.Forms.Views
     public TrackSlider()
     {
       _state = State.Normal;
+      _previousSoundState = null;
 
       InitializeComponent();
 
-      NormalButtonBackgroundColor = MuteButton.BackgroundColor;
-      NormalButtonTextColor = MuteButton.TextColor;
-    }
-
-    public void Suspend()
-    {
-      if (_mutedBySolo)
-        return;
-
-      _mutedBySolo = true;
-      Player.SetVolume(Track, 0);
-    }
-
-    public void Unsuspend()
-    {
-      if (!_mutedBySolo)
-        return;
-
-      _mutedBySolo = false;
-      Player.SetVolume(Track, (uint)Volume);
+      VisualStateManager.GoToState(Root, "Active");
+      _soundStateGroup = VisualStateManager.GetVisualStateGroups(Root).First((group) => group.Name == "SoundState");
     }
 
     public event EventHandler SoloEnabled;
@@ -175,7 +145,7 @@ namespace Jammit.Forms.Views
 
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
-      if (State.Muted != _state && !_mutedBySolo)
+      if (State.Muted != _state)
       {
         Player.SetVolume(Track, (uint)e.NewValue);
       }
@@ -199,21 +169,5 @@ namespace Jammit.Forms.Views
     }
 
     #endregion Events
-
-    private void SoloButton_Clicked(object sender, EventArgs e)
-    {
-      if (SoloButtonTextColor != SoloButton.TextColor)//TODO: Seriously!
-      {
-        SoloButton.TextColor = SoloButtonTextColor;
-        SoloButton.BackgroundColor = SoloButtonBackgroundColor;
-
-        SoloEnabled?.Invoke(this, new EventArgs());
-      }
-      else
-      {
-        SoloButton.TextColor = NormalButtonTextColor;
-        SoloButton.BackgroundColor = NormalButtonBackgroundColor;
-      }
-    }
   }
 }

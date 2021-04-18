@@ -101,20 +101,6 @@ namespace Jammit.Forms.Views
       }
     }
 
-    void TrackSlider_SoloEnabled(object sender, EventArgs e)
-    {
-      SoloTrackSlider = sender as TrackSlider;
-
-      var otherSliders = new TrackSlider[] { BackingTrackSlider, ClickTrackSlider }
-        .Concat(ControlsLayout.Children.Where((view) => view is TrackSlider).Cast<TrackSlider>())
-        .Where((slider) => slider != SoloTrackSlider && slider.IsEnabled);//TODO: Drop IsEnabled when UWP click works.
-
-      foreach (var slider in otherSliders)
-      {
-        slider.Suspend();
-      }
-    }
-
     #endregion  Events
   }
 }
