@@ -145,6 +145,10 @@ namespace Jammit.Forms.Views
 
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
+      if (!IsEnabled)
+        return;
+
+      //TODO: How about setting the track volume right here and drop the Volume property?
       if (State.Muted != _state)
       {
         Player.SetVolume(Track, (uint)e.NewValue);
