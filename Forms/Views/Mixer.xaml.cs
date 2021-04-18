@@ -26,6 +26,9 @@ namespace Jammit.Forms.Views
     public static readonly BindableProperty PlayerProperty =
       BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
 
+    public static readonly BindableProperty SoloTrackSliderProperty =
+      BindableProperty.Create("SoloTrackSlider", typeof(TrackSlider), typeof(TrackSlider));
+
     #endregion  Bindable Properties
 
     #region Properties
@@ -56,9 +59,16 @@ namespace Jammit.Forms.Views
       }
     }
 
+    public TrackSlider SoloTrackSlider
+    {
+      get => GetValue(SoloTrackSliderProperty) as TrackSlider;
+
+      set => SetValue(SoloTrackSliderProperty, value);
+    }
+
     #endregion Properties
 
-    #region Events
+    #region Element overrides
 
     protected override void OnPropertyChanged(string propertyName = null)
     {
@@ -76,10 +86,11 @@ namespace Jammit.Forms.Views
           });
         }
       }
-      else if (PlayerProperty.PropertyName == propertyName)
-      {
-      }
     }
+
+    #endregion Element overrides
+
+    #region Events
 
     void TrackSlider_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {

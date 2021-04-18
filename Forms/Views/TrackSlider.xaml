@@ -6,7 +6,35 @@
              BackgroundColor="DarkGray">
 
   <!--WidthRequest: 2 x Mute|Solo WidthRequest-->
-  <StackLayout Orientation="Vertical" WidthRequest="{OnPlatform iOS=52}">
+  <StackLayout x:Name="Root" Orientation="Vertical" WidthRequest="{OnPlatform iOS=52}">
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup Name="SoundState">
+        <VisualState Name="Active">
+          <VisualState.Setters>
+            <Setter TargetName="MuteButton"
+                    Property="Button.TextColor"
+                    Value="DimGray"
+                    />
+            <Setter TargetName="MuteButton"
+                    Property="Button.BackgroundColor"
+                    Value="LightGray"
+                    />
+          </VisualState.Setters>
+        </VisualState>
+        <VisualState Name="Muted">
+          <VisualState.Setters>
+            <Setter TargetName="MuteButton"
+                    Property="Button.TextColor"
+                    Value="DarkRed"
+                    />
+            <Setter TargetName="MuteButton"
+                    Property="Button.BackgroundColor"
+                    Value="LightPink"
+                    />
+          </VisualState.Setters>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
     <Label x:Name="TitleLabel"
            Text="{Binding Track.Title}"
            MaxLines="2"
@@ -29,8 +57,11 @@
               />
     </StackLayout>
     <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="0">
-      <Button x:Name="MuteButton" Text="M" BackgroundColor="LightGray" FontSize="12" BorderWidth="0" WidthRequest="26" HeightRequest="26" Clicked="MuteButton_Clicked" />
-      <Button x:Name="SoloButton" Text="S" BackgroundColor="LightGray" FontSize="12" BorderWidth="0" WidthRequest="26" HeightRequest="26" IsEnabled="False" />
+      <Button
+        x:Name="MuteButton" Text="M"
+        FontSize="12" BorderWidth="0" WidthRequest="26" HeightRequest="26"
+        HorizontalOptions="CenterAndExpand"
+        Clicked="MuteButton_Clicked" />
     </StackLayout>
   </StackLayout>
 
