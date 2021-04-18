@@ -125,9 +125,10 @@
 
       <StackLayout x:Name="MixerLayout"
                    Orientation="Horizontal">
-        <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <AbsoluteLayout x:Name="AlbumImageLayout"
+                        HorizontalOptions="Center" VerticalOptions="Center"
+                        >
           <Image x:Name="AlbumImage"
-                 AbsoluteLayout.LayoutBounds="0,0"
                  HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
                  WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
           <Button

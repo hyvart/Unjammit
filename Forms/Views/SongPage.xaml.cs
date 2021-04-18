@@ -90,8 +90,7 @@ namespace Jammit.Forms.Views
       base.OnSizeAllocated(width, height);
 
       // Page Width shoud be greater or equal. Else, there is children overflow.
-      if (Width < MixerLayout.Width + ProgressLayout.Width)
-        AlbumImage.IsVisible = false;
+      AlbumImageLayout.IsVisible = Width >= MixerLayout.Width + ProgressLayout.Width;
 
       // Adjust ScoreView, if needed.
       ScoreLayout_SizeChanged(null, null);
