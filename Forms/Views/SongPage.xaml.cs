@@ -32,6 +32,8 @@ namespace Jammit.Forms.Views
       NormalButtonBackgroundColor = instance.PlayButton.BackgroundColor;
       NormalButtonTextColor = instance.PlayButton.TextColor;
 
+
+
       return instance;
     }
 
@@ -425,7 +427,35 @@ namespace Jammit.Forms.Views
         Settings.Set(Settings.PositionKey(Song), _lastPosition);
       else
         Settings.Set(Settings.PositionKey(Song), TimeSpan.FromSeconds(PositionSlider.Value));
-      //TODO: TrackMuted, SoloTrack
+      //TODO: TrackMuted
+    }
+
+    //TODO: Translate
+    async void AlbumImage_Clicked(object sender, EventArgs e)
+    {
+      if (string.IsNullOrEmpty(Song.Tempo))
+        App.MediaLoader.LoadFullSongInfo(Song, Media.Path);
+
+      var info = $"Song: {Song.Title}\n" +
+        $"Performed by: {Song.Artist}\n" +
+        $"Album: {Song.Album}\n";
+
+      if (Song.Tunings != null && Song.Tunings.Count > 0)
+      {
+        info += "Tuning:\n";
+        foreach (var tuning in Song.Tunings)
+        {
+          info += $"{tuning}\n";
+        }
+      }
+
+      info +=
+        $"Tempo: {Song.Tempo} BPM\n" +
+        $"Written by: {Song.WrittenBy}\n" +
+        $"Published by: {Song.PublishedBy}\n" +
+        $"Used courtesy of: {Song.CourtesyOf}\n";
+
+      await DisplayAlert("Song Info", info, "OK");
     }
   }
 }

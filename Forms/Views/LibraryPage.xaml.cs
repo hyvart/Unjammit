@@ -16,15 +16,6 @@ namespace Jammit.Forms.Views
       InitializeComponent();
     }
 
-    #region Events
-
-    protected override void OnAppearing()
-    {
-      base.OnAppearing();
-    }
-
-    #endregion  Events
-
     private async void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
       await Navigation.PushModalAsync(await SongPage.CreateAsync(e.Item as SongInfo));
