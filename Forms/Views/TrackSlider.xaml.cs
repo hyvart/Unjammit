@@ -19,8 +19,6 @@ namespace Jammit.Forms.Views
     }
 
     State _state;
-    VisualStateGroup _soundStateGroup;
-    VisualState _previousSoundState;
 
     bool _canReadMutedSetting = true;
     
@@ -50,12 +48,10 @@ namespace Jammit.Forms.Views
     public TrackSlider()
     {
       _state = State.Normal;
-      _previousSoundState = null;
 
       InitializeComponent();
 
       VisualStateManager.GoToState(Root, "Active");
-      _soundStateGroup = VisualStateManager.GetVisualStateGroups(Root).First((group) => group.Name == "SoundState");
     }
 
     public event EventHandler SoloEnabled;
@@ -148,7 +144,6 @@ namespace Jammit.Forms.Views
       if (!IsEnabled)
         return;
 
-      //TODO: How about setting the track volume right here and drop the Volume property?
       if (State.Muted != _state)
       {
         Player.SetVolume(Track, (uint)e.NewValue);
