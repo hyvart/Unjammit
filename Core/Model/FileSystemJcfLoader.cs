@@ -61,6 +61,21 @@ namespace Jammit.Model
       return File.OpenRead(path);
     }
 
+    public void LoadFullSongInfo(SongInfo song, string songPath)
+    {
+      var infoDict = PropertyListParser.Parse(Path.Combine(songPath, "info.plist")) as NSDictionary;
+      song.Tempo = infoDict.String("bpm");
+      song.WrittenBy = infoDict.String("writtenBy");
+      song.PublishedBy = infoDict.String("publishedBy");
+      song.CourtesyOf = infoDict.String("courtesyOf");
+
+      if (!File.Exists(Path.Combine(songPath, "tuning.plist")))
+        return;
+
+      //var tuningDict = PropertyListParser.Parse(Path.Combine(songPath, "tuning.plist")) as NSDictionary;
+
+    }
+
     #endregion  IJcfLoader members
 
     private void LoadTracks(JcfMedia media, string songPath)

@@ -125,10 +125,17 @@
 
       <StackLayout x:Name="MixerLayout"
                    Orientation="Horizontal">
-        <Image x:Name="AlbumImage"
-               BackgroundColor="DarkGray"
-               HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
-               WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
+        <AbsoluteLayout HorizontalOptions="Center" VerticalOptions="Center">
+          <Image x:Name="AlbumImage"
+                 AbsoluteLayout.LayoutBounds="0,0"
+                 HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
+                 WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
+          <Button
+            BackgroundColor="Transparent"
+            Clicked="AlbumImage_Clicked"
+            HeightRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}"
+            WidthRequest="{Binding Source={x:Reference ControlsLayout}, Path=MinimumWidthRequest}" />
+        </AbsoluteLayout>
         <local:Mixer Player="{Binding Player}" Media="{Binding Media}" />
       </StackLayout>
       <StackLayout x:Name="ProgressLayout"
