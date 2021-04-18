@@ -440,8 +440,14 @@ namespace Jammit.Forms.Views
         $"Performed by: {Song.Artist}\n" +
         $"Album: {Song.Album}\n";
 
-      if (!string.IsNullOrEmpty(Song.Tuning))
-        info += $"Tuning: {Song.Tuning}\n";
+      if (Song.Tunings != null && Song.Tunings.Count > 0)
+      {
+        info += "Tuning:\n";
+        foreach (var tuning in Song.Tunings)
+        {
+          info += $"{tuning}\n";
+        }
+      }
 
       info +=
         $"Tempo: {Song.Tempo} BPM\n" +

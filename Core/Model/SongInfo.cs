@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Jammit.Model
 {
@@ -29,11 +26,11 @@ namespace Jammit.Model
     public string Genre { get; set; }
 
     // Other properties
-    public string Tuning { get; set; }
     public string Tempo { get; set; }
     public string WrittenBy { get; set; }
     public string PublishedBy { get; set; }
     public string CourtesyOf { get; set; }
+    public List<string> Tunings { get; set; }
 
     public override string ToString()
     {
