@@ -7,16 +7,6 @@ namespace Jammit.Model
   {
     public SongInfo() { }
 
-    public SongInfo(Guid id, string artist, string album, string title, string instrument, string genre)
-    {
-      Id = id;
-      Artist = artist;
-      Album = album;
-      Title = title;
-      Instrument = instrument;
-      Genre = genre;
-    }
-
     public Guid Id { get; set; }
     public string Sku { get; set; }
     public string Artist { get; set; }
