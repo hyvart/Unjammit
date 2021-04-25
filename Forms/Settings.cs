@@ -36,12 +36,12 @@ namespace Jammit.Forms
 
     public static string SelectedScoreKey(Model.SongInfo song)
     {
-      return $"Song/{song.Id}/SelectedScore";
+      return $"Song/{song.Sku}/SelectedScore";
     }
 
     public static string MixerCollapsedKey(Model.SongInfo song)
     {
-      return $"Song/{song.Id}/MixerCollapsed";
+      return $"Song/{song.Sku}/MixerCollapsed";
     }
 
     public static string TrackVolumeKey(Model.TrackInfo track)
@@ -61,7 +61,7 @@ namespace Jammit.Forms
 
     public static string PositionKey(Model.SongInfo song)
     {
-      return $"Song/{song.Id}/Position";
+      return $"Song/{song.Sku}/Position";
     }
 
     #endregion Settings Functions

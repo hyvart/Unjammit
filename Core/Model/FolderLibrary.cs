@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Jammit.Model
@@ -47,8 +46,7 @@ namespace Jammit.Model
     {
       return new SongInfo
       {
-        Id = Guid.Parse(xe.Attribute("id").Value),
-        Sku = xe.Element("sku").Value,
+        Sku = xe.Attribute("sku").Value,
         Artist = xe.Element("artist").Value,
         Album = xe.Element("album").Value,
         Title = xe.Element("title").Value,
@@ -92,7 +90,6 @@ namespace Jammit.Model
     public XElement ToXml(SongInfo song)
     {
       return new XElement("song",
-        new XAttribute("id", song.Id),
         new XElement("sku", song.Sku),
         new XElement("artist", song.Artist),
         new XElement("album", song.Album),
@@ -109,68 +106,16 @@ namespace Jammit.Model
 
     #region ILibrary members
 
-    public async Task AddSong(SongInfo song)
-    {
-      if (!/*Forms.Settings.SkipDownload*/ false)
-      {
-        // Make sure Tracks and Downloads dirs exist.
-        var downloadsDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Downloads"));
-        var tracksDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Tracks"));
-        var zipPath = Path.Combine(downloadsDir.FullName, $"{song.Id.ToString().ToUpper()}.zip");
-
-        await _client.DownloadSong(song, zipPath);
-
-        // Extract downloaded ZIP contents.
-        ZipFile.ExtractToDirectory(zipPath, tracksDir.FullName);
-
-        _cache[song] = song;
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
-
-        Save();
-
-        // Cleanup
-        if (!/*Forms.Settings.SkipDownload*/ false)
-          File.Delete(zipPath);
-      }
-      else
-      {
-        _cache[song] = song;
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
-
-        Save();
-      }
-    }
-
     public SongInfo AddSong(Stream contentStream)
     {
       using (var archive = new ZipArchive(contentStream, ZipArchiveMode.Read))
       {
         //TODO: Throw explicitly if non-compliant.
 
-        var jcfEntry = archive.Entries.Where(e => e.FullName.EndsWith(".jcf/")).FirstOrDefault();
-        var jcfName = jcfEntry.FullName.Remove(jcfEntry.FullName.IndexOf(".jcf/"));
-        Guid id;
-        string idString;
-        try
-        {
-          id = Guid.Parse(jcfName);
-        }
-        catch (Exception)
-        {
-          id = Guid.NewGuid();
-
-        }
-        finally
-        {
-          idString = id.ToString().ToUpper();
-        }
-
-        var infoEntry = archive.Entries.Where(e => e.Name == "info.plist").FirstOrDefault();
+        var infoEntry = archive.Entries.First(e => e.Name == "info.plist");
         var dict = Claunia.PropertyList.PropertyListParser.Parse(infoEntry.Open()) as Claunia.PropertyList.NSDictionary;
-
         var song = new SongInfo()
         {
-          Id = id,
           Sku = dict.String("sku"),
           Artist = dict.String("artist"),
           Album = dict.String("album"),
@@ -191,22 +136,23 @@ namespace Jammit.Model
             song.Instrument = "Vocals"; break;
         }
 
-        var tracksDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Tracks"));
+        var songDir = Directory.CreateDirectory(Path.Combine(_storagePath, "Tracks", $"{song.Sku}.jcf"));
 
         // Delete target directory if exists, then add again.
         if (_cache.ContainsKey(song))
         {
           _cache.Remove(song);
-          tracksDir.GetDirectories(song.Id.ToString().ToUpper() + "*", SearchOption.TopDirectoryOnly).All(d =>
+          songDir.GetDirectories(song.Sku + "*", SearchOption.TopDirectoryOnly).All(d =>
           {
             d.Delete(true); return true;
           });
         }
-        archive.ExtractToDirectory(tracksDir.FullName);
 
-        // Rename the extracted JCF to a GUID, if needed.
-        if (idString != jcfName)
-          Directory.Move(Path.Combine(tracksDir.FullName, jcfName + ".jcf"), Path.Combine(tracksDir.FullName, idString + ".jcf"));
+        var entryPath = infoEntry.FullName.Remove(infoEntry.FullName.IndexOf("info.plist"));
+        foreach (var entry in archive.Entries.Where(e => e.FullName.StartsWith(entryPath)))
+        {
+          entry.ExtractToFile(Path.Combine(songDir.FullName, entry.Name));
+        }
 
         _cache[song] = song;
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Songs"));
@@ -228,7 +174,7 @@ namespace Jammit.Model
     {
       try
       {
-        var songPath = Path.Combine(_storagePath, "Tracks", $"{song.Id.ToString().ToUpper()}.jcf");
+        var songPath = Path.Combine(_storagePath, "Tracks", $"{song.Sku}.jcf");
         Directory.Delete(songPath, true);
       }
       catch (Exception)
