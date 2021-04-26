@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -73,12 +73,11 @@ namespace Jammit.Forms.Views
 
       // Download song
       var selectedSong = CatalogView.SelectedItem as SongInfo;
+      // Make sure Downloads directory exists.
+      var downloadsDir = System.IO.Directory.CreateDirectory(System.IO.Path.Combine(App.DataDirectory, "Downloads"));
+      var zipPath = System.IO.Path.Combine(downloadsDir.FullName, selectedSong.Sku + ".zip");
       try
       {
-        // Make sure Downloads directory exists.
-        var downloadsDir = System.IO.Directory.CreateDirectory(System.IO.Path.Combine(App.DataDirectory, "Downloads"));
-        var zipPath = System.IO.Path.Combine(downloadsDir.FullName, selectedSong.Sku + ".zip");
-
         await App.Client.DownloadSong(selectedSong, zipPath);
         var downloadedStream = System.IO.File.OpenRead(zipPath);
         var song = App.Library.AddSong(downloadedStream);
@@ -96,6 +95,9 @@ namespace Jammit.Forms.Views
           Localized.CatalogPage_DownloadButtonClicked_CatchTitle,
           string.Format(Localized.CatalogPage_DownloadButtonClicked_CatchMessage, selectedSong.Sku),
           "OK");
+
+        if (System.IO.File.Exists(zipPath))
+          System.IO.File.Delete(zipPath);
       }
     }
 

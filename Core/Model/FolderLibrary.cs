@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -46,7 +46,7 @@ namespace Jammit.Model
     {
       return new SongInfo
       {
-        Sku = xe.Attribute("sku").Value,
+        Sku = xe.Element("sku").Value,
         Artist = xe.Element("artist").Value,
         Album = xe.Element("album").Value,
         Title = xe.Element("title").Value,
@@ -148,8 +148,9 @@ namespace Jammit.Model
           });
         }
 
-        var entryPath = infoEntry.FullName.Remove(infoEntry.FullName.IndexOf("info.plist"));
-        foreach (var entry in archive.Entries.Where(e => e.FullName.StartsWith(entryPath)))
+        var entryPath = infoEntry.FullName.Remove(infoEntry.FullName.IndexOf("info.plist", StringComparison.Ordinal));
+        foreach (var entry in archive.Entries.Where(e =>
+          e.FullName.StartsWith(entryPath, StringComparison.Ordinal) &! e.FullName.EndsWith("/", StringComparison.Ordinal)))
         {
           entry.ExtractToFile(Path.Combine(songDir.FullName, entry.Name));
         }
