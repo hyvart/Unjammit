@@ -44,7 +44,7 @@ namespace Jammit.Model
 
     public int CompareTo(JcfMedia other)
     {
-      return Song.Id.CompareTo(other.Song.Id);
+      return Song.Sku.CompareTo(other.Song.Sku);
     }
 
     #endregion

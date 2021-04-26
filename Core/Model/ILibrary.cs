@@ -10,9 +10,6 @@ namespace Jammit.Model
   {
     List<SongInfo> Songs { get; }
 
-    [Obsolete("Use AddSong(System.IO.Stream) instead.")]
-    Task AddSong(SongInfo song);
-
     SongInfo AddSong(System.IO.Stream conentStream);
 
     void RemoveSong(SongInfo song);

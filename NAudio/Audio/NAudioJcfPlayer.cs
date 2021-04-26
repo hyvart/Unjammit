@@ -26,7 +26,7 @@ namespace Jammit.Audio
       _mixer = new WaveMixerStream32();
       _channels = new Dictionary<TrackInfo, WaveChannel32>(media.InstrumentTracks.Count + 1 + 1);
 
-      var songPath = Path.Combine(tracksPath, $"{media.Song.Id.ToString().ToUpper()}.jcf");
+      var songPath = Path.Combine(tracksPath, $"{media.Song.Sku}.jcf");
       foreach (var track in media.InstrumentTracks)
       {
         var stream = File.OpenRead(Path.Combine(songPath, $"{track.Identifier.ToString().ToUpper()}_jcfx"));
@@ -35,7 +35,6 @@ namespace Jammit.Audio
 
       var backingStream = File.OpenRead(Path.Combine(songPath, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx"));
       _channels[media.BackingTrack] = new WaveChannel32(new ImaWaveStream(backingStream));
-
       _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats, stick));
 
       foreach (var channel in _channels.Values)

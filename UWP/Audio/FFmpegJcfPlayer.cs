@@ -25,7 +25,7 @@ namespace Jammit.Audio
       instance._mediaTimelineController.StateChanged += instance.MediaTimelineController_StateChanged;
       instance._mediaTimelineController.Ended += instance.MediaTimelineController_Ended;
 
-      var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Id.ToString().ToUpper()}.jcf";
+      var mediaPath = $"ms-appdata:///local/Tracks/{media.Song.Sku}.jcf";
       foreach (var track in media.InstrumentTracks)
       {
         await instance.InitPlayer(track, mediaPath);

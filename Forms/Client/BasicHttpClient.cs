@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -101,7 +101,7 @@ namespace Jammit.Forms.Client
           //TODO
         };
 
-        var uri = new Uri($"{Settings.ServiceUri}/{song.Id.ToString().ToUpper()}.zip");
+        var uri = new Uri($"{Settings.ServiceUri}/jcf/{song.Sku}");
         await client.DownloadFileTaskAsync(uri, path);
       }
     }
@@ -137,7 +137,6 @@ namespace Jammit.Forms.Client
           {
             result.Add(new SongInfo()
             {
-              Id = Guid.Parse(song["id"].ToString()),
               Sku = song["sku"].ToString(),
               Artist = song["artist"].ToString(),
               Album = song["album"].ToString(),
