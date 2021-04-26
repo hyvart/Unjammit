@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 using Xamarin.Forms;
@@ -53,8 +53,6 @@ namespace Jammit.Forms.Views
 
       VisualStateManager.GoToState(Root, "Active");
     }
-
-    public event EventHandler SoloEnabled;
 
     #region Bindable properties
 
