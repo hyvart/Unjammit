@@ -32,7 +32,7 @@ namespace Jammit.Forms.Views
       NormalButtonBackgroundColor = instance.PlayButton.BackgroundColor;
       NormalButtonTextColor = instance.PlayButton.TextColor;
 
-
+      instance.CloseButton.Text = "⬅️" + instance.CloseButton.Text;
 
       return instance;
     }
@@ -243,8 +243,7 @@ namespace Jammit.Forms.Views
       //  $"HLO.H {HeaderLayout.Height}\n" +
       //  $"SVW.H {ScoreView.Height}\n" +
       //  $"HCB.H {HideControlsButton.Height}\n" +
-      //  $"CLO.H {ControlsLayout.Height}\n" +
-      //  $"FLO.H {FooterLayout.Height}";
+      //  $"CLO.H {ControlsLayout.Height}\n";
 #else
       TimelineImage.Text = $"{Media.Sections[_sectionIndex].Name}\n\n\n\n\n";
 #endif
@@ -391,7 +390,7 @@ namespace Jammit.Forms.Views
     private void HideControlsButton_Clicked(object sender, EventArgs e)
     {
       ControlsLayout.IsVisible = !ControlsLayout.IsVisible;
-      HideControlsButton.Text = ControlsLayout.IsVisible? "▼" : "▲";
+      HideControlsButton.Text = ControlsLayout.IsVisible? "⬇️" : "⬆️";
     }
 
     private void ScoreLayout_SizeChanged(object sender, EventArgs e)
