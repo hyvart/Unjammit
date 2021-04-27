@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 using Jammit.Client;
@@ -102,7 +101,19 @@ namespace Jammit.Forms.Client
         };
 
         var uri = new Uri($"{Settings.ServiceUri}/jcf/{song.Sku}");
-        await client.DownloadFileTaskAsync(uri, path);
+        try
+        {
+          await client.DownloadFileTaskAsync(uri, path);
+        }
+        catch(System.Net.WebException e)
+        {
+          // Windows does not properly follow redirects.
+          // See https://github.com/lukesampson/scoop/pull/3902
+          if (!e.Message.Contains("302") || string.IsNullOrEmpty(e.Response.Headers["Location"]))
+            throw;
+
+          await client.DownloadFileTaskAsync(new Uri(e.Response.Headers["Location"]), path);
+        }
       }
     }
 
