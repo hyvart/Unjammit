@@ -41,10 +41,8 @@
               Text="{xaml:TranslateText SongPage_CloseButton}"
               Clicked="CloseButton_Clicked" />
       <Label Text="{Binding Song.Title}" />
-      <Picker x:Name="ScorePicker"
-              ItemsSource="{Binding Media.Scores}"
-              SelectedIndexChanged="ScorePicker_SelectedIndexChanged"
-              HorizontalOptions="FillAndExpand" />
+      <local:ScoreSelector x:Name="ScoreSelector"
+                           SelectedScoreChanged="ScoreSelector_SelectedScoreChanged" />
     </StackLayout>
 
     <StackLayout x:Name="ScoreLayout"
