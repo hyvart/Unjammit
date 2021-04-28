@@ -39,9 +39,12 @@
     <StackLayout x:Name="HeaderLayout" Orientation="Horizontal">
       <Button x:Name="CloseButton"
               Text="{xaml:TranslateText SongPage_CloseButton}"
+              FontAttributes="Bold"
               Clicked="CloseButton_Clicked" />
       <Label Text="{Binding Song.Title}" />
+      <StackLayout HorizontalOptions="FillAndExpand" />
       <local:ScoreSelector x:Name="ScoreSelector"
+                           HorizontalOptions="End"
                            SelectedScoreChanged="ScoreSelector_SelectedScoreChanged" />
     </StackLayout>
 

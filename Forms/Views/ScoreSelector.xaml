@@ -4,7 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Jammit.Forms.Views.ScoreSelector">
 
-  <StackLayout x:Name="SelectorsLayout" Orientation="Horizontal">
+  <StackLayout Orientation="Horizontal">
+
+    <StackLayout x:Name="InstrumentsLayout" Orientation="Horizontal" />
+
+    <StackLayout x:Name="TypesLayout" Orientation="Horizontal" />
 
   </StackLayout>
 

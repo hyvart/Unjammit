@@ -9,6 +9,11 @@ namespace Jammit.Forms.Views
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class ScoreSelector : ContentView
   {
+    private SortedSet<string> _instrumentsSet = new SortedSet<string>();
+    private SortedSet<string> _typesSet = new SortedSet<string>();
+    private IDictionary<string, Model.ScoreInfo> _scores = new Dictionary<string, Model.ScoreInfo>(4);
+    private string _selectedInstrument;
+    private string _selectedType;
     private Model.ScoreInfo _selectedScore;
 
     public ScoreSelector()
@@ -37,29 +42,69 @@ namespace Jammit.Forms.Views
       {
         foreach (var score in value)
         {
-          var rb = new RadioButton
+          _scores[score.ToString()] = score;
+
+          if (_instrumentsSet.Add(score.Track.Title))
           {
-            GroupName = "ScoreSelector",
-            Content = score.ToString(),
-            Value = score,
-          };
-          rb.CheckedChanged += Items_CheckedChanged;
+            var rb = new RadioButton
+            {
+              GroupName = "Instruments",
+              Content = score.Track.Title,
+            };
+            rb.CheckedChanged += Instrument_CheckedChanged;
+            if (Device.RuntimePlatform == Device.iOS)
+              rb.FontSize = 14; // Small
 
-          SelectorsLayout.Children.Add(rb);
+            InstrumentsLayout.Children.Add(rb);
+
+            if (InstrumentsLayout.Children.Count == 1)
+              rb.IsChecked = true;//TODO: Override via settings
+          }
+
+          if (_typesSet.Add(score.Type))
+          {
+            var rb = new RadioButton
+            {
+              GroupName = "Scores",
+              Content = score.Type
+            };
+            rb.CheckedChanged += Types_CheckedChanged;
+            if (Device.RuntimePlatform == Device.iOS)
+              rb.FontSize = 14; // Small
+
+            TypesLayout.Children.Add(rb);
+
+            if (TypesLayout.Children.Count == 1)
+              rb.IsChecked = true;//TODO: Override via settings
+          }
         }
+      }
+    }
 
-        SelectedScore = value[0];
+    private void Instrument_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+      var rb = sender as RadioButton;
+      if (rb.IsChecked)
+      {
+        _selectedInstrument = rb.Content.ToString();
+
+        if (!string.IsNullOrEmpty(_selectedType))
+          SelectedScore = _scores[$"{_selectedInstrument} - {_selectedType}"];
+      }
+    }
+
+    private void Types_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+      var rb = sender as RadioButton;
+      if (rb.IsChecked)
+      {
+        _selectedType = rb.Content.ToString();
+
+        if (!string.IsNullOrEmpty(_selectedInstrument))
+          SelectedScore = _scores[$"{_selectedInstrument} - {_selectedType}"];
       }
     }
 
     public event EventHandler SelectedScoreChanged;
-
-    private void Items_CheckedChanged(object sender, CheckedChangedEventArgs e)
-    {
-      var button = (sender as RadioButton);
-
-      if (button.IsChecked)
-        SelectedScore = button.Value as Model.ScoreInfo;
-    }
   }
 }
