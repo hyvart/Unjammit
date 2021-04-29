@@ -42,8 +42,7 @@
               TextColor="White"
               FontAttributes="Bold"
               Clicked="CloseButton_Clicked" />
-      <Label Text="{Binding Song.Title}" />
-      <StackLayout HorizontalOptions="FillAndExpand" />
+      <Label Text="{Binding Song.Title}" HorizontalOptions="FillAndExpand" />
       <local:ScoreSelector x:Name="ScoreSelector"
                            HorizontalOptions="End"
                            SelectedScoreChanged="ScoreSelector_SelectedScoreChanged" />

@@ -57,7 +57,7 @@ namespace Jammit.Forms.Views
               GroupName = "Instruments",
               Content = score.Track.Title,
               Value = instruments[score.Track.Title],
-              ControlTemplate = ScoreSelectorTemplate,
+              ControlTemplate = Device.macOS != Device.RuntimePlatform ? ScoreSelectorTemplate : null,
               TextColor = Color.White
             };
             rb.CheckedChanged += Instrument_CheckedChanged;
@@ -76,7 +76,7 @@ namespace Jammit.Forms.Views
               GroupName = "Scores",
               Content = score.Type,
               Value = types[score.Type],
-              ControlTemplate = ScoreSelectorTemplate,
+              ControlTemplate = Device.macOS != Device.RuntimePlatform ? ScoreSelectorTemplate : null,
               TextColor = Color.White
             };
             rb.CheckedChanged += Instrument_CheckedChanged;
