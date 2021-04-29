@@ -72,6 +72,24 @@ namespace Jammit.Model
         return;
 
       var tuningDict = PropertyListParser.Parse(Path.Combine(songPath, "tuning.plist")) as NSDictionary;
+
+      //TODO: Support Array tunnings.
+      /*
+       <dict>
+        <key>notes</key>
+        <array>
+                <integer>40</integer>
+                <integer>45</integer>
+                <integer>50</integer>
+                <integer>55</integer>
+        </array>
+        <key>offset</key>
+        <real>0.0</real>
+        </dict>
+      */
+      if (!(tuningDict["notes"] is NSDictionary))
+        return;
+
       var notesDict = tuningDict["notes"] as NSDictionary;
       song.Tunings = new List<string>();
       foreach(var instrumentKey in notesDict.Keys)
