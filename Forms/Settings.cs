@@ -78,18 +78,6 @@ namespace Jammit.Forms
       }
     }
 
-    public static string GeneralSettings
-    {
-      get
-      {
-        return Preferences.Get(SettingsKey, SettingsDefault);
-      }
-      set
-      {
-        Preferences.Set(SettingsKey, value);
-      }
-    }
-
     public static string TrackPath
     {
       get

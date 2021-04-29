@@ -34,14 +34,18 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <StackLayout BackgroundColor="DimGray">
+  <StackLayout BackgroundColor="Gray">
 
     <StackLayout x:Name="HeaderLayout" Orientation="Horizontal">
-      <Label Text="{Binding Song.Title}" />
-      <Picker x:Name="ScorePicker"
-              ItemsSource="{Binding Media.Scores}"
-              SelectedIndexChanged="ScorePicker_SelectedIndexChanged"
-              HorizontalOptions="FillAndExpand" />
+      <Button x:Name="CloseButton"
+              Text="{xaml:TranslateText SongPage_CloseButton}"
+              TextColor="White"
+              FontAttributes="Bold"
+              Clicked="CloseButton_Clicked" />
+      <Label Text="{Binding Song.Title}" HorizontalOptions="FillAndExpand" />
+      <local:ScoreSelector x:Name="ScoreSelector"
+                           HorizontalOptions="End"
+                           SelectedScoreChanged="ScoreSelector_SelectedScoreChanged" />
     </StackLayout>
 
     <StackLayout x:Name="ScoreLayout"
@@ -107,11 +111,12 @@
     </StackLayout>
 
     <Button x:Name="HideControlsButton"
-            HeightRequest="10"
+            HeightRequest="15"
             BorderWidth="0"
             Padding="0"
             Margin="0"
-            Text="▼"
+            Text="&#x2B07;"
+            FontSize="Micro"
             BackgroundColor="DarkGray"
             Clicked="HideControlsButton_Clicked"
             />
@@ -120,7 +125,7 @@
                  Orientation="Horizontal"
                  HorizontalOptions="FillAndExpand"
                  Margin="0"
-                 Padding="6,0,6,0"
+                 Padding="6,0,6,6"
                  MinimumWidthRequest="{OnIdiom Phone=150, Default=200}">
 
       <StackLayout x:Name="MixerLayout"
@@ -184,10 +189,6 @@
           <Button x:Name="EndButton"     Text="⏫" Style="{StaticResource Key=PlaybackButtonStyle}" Clicked="EndButton_Clicked" />
         </StackLayout>
       </StackLayout>
-    </StackLayout>
-
-    <StackLayout x:Name="FooterLayout" Orientation="Horizontal" Padding="0" Margin="0" VerticalOptions="End">
-      <Button x:Name="CloseButton" Text="{xaml:TranslateText SongPage_CloseButton}" HorizontalOptions="FillAndExpand" Clicked="CloseButton_Clicked" />
     </StackLayout>
 
   </StackLayout>
