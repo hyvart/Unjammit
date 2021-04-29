@@ -7,46 +7,18 @@
   <ContentView.Resources>
     <ResourceDictionary>
 
-      <Color x:Key="LightRadioButtonColor">#F3F2F1</Color>
-      <Color x:Key="DarkRadioButtonColor">#9B9A99</Color>
+      <!--See https://www.99colors.net/dot-net-colors-->
+      <Color x:Key="DarkButtonBackgroundColor">DimGray</Color>
+      <Color x:Key="LightButtonBackgroundColor">DarkGray</Color>
 
-      <ControlTemplate x:Key="ThemeRadioTemplate">
+      <ControlTemplate x:Name="ScoreSelectorTemplate" x:Key="ScoreSelectorTemplate">
         <Frame
-                    Padding="0"
-                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
-                                                      Light={StaticResource LightRadioButtonColor}}"
-                    BorderColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
-                                                  Light={StaticResource LightRadioButtonColor}}"
-                    HasShadow="False"
-                    HeightRequest="80"
-                    HorizontalOptions="Start"
-                    VerticalOptions="Start"
-                    WidthRequest="80">
-          <Grid Margin="4" WidthRequest="80">
-            <Grid
-                            HeightRequest="20"
-                            HorizontalOptions="End"
-                            VerticalOptions="Start"
-                            WidthRequest="20">
-              <Ellipse
-                                Fill="White"
-                                HeightRequest="18"
-                                HorizontalOptions="Center"
-                                Stroke="#2E2545"
-                                StrokeThickness="1"
-                                VerticalOptions="Center"
-                                WidthRequest="18" />
-              <Ellipse
-                                x:Name="Check"
-                                BackgroundColor="Transparent"
-                                Fill="#df6e57"
-                                HeightRequest="10"
-                                HorizontalOptions="Center"
-                                Stroke="#df6e57"
-                                StrokeThickness="0"
-                                VerticalOptions="Center"
-                                WidthRequest="10" />
-            </Grid>
+                Padding="0"
+                HasShadow="False"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="90">
+          <Grid Margin="6">
             <!-- This enables us to put in dynamic content -->
             <ContentPresenter />
           </Grid>
@@ -55,14 +27,12 @@
               <VisualStateGroup x:Name="CheckedStates">
                 <VisualState x:Name="Checked">
                   <VisualState.Setters>
-                    <Setter Property="BorderColor" Value="#df6e57" />
-                    <Setter TargetName="Check" Property="Opacity" Value="1" />
+                    <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackgroundColor}" />
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Unchecked">
                   <VisualState.Setters>
-                    <Setter Property="BorderColor" Value="#F3F2F1" />
-                    <Setter TargetName="Check" Property="Opacity" Value="0" />
+                    <Setter Property="BackgroundColor" Value="{StaticResource LightButtonBackgroundColor}" />
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
@@ -70,20 +40,17 @@
           </VisualStateManager.VisualStateGroups>
         </Frame>
       </ControlTemplate>
+
     </ResourceDictionary>
   </ContentView.Resources>
 
   <StackLayout Orientation="Horizontal">
 
-    <StackLayout x:Name="InstrumentsLayout" Orientation="Horizontal" />
+    <StackLayout x:Name="InstrumentsLayout" Spacing="0" Orientation="Horizontal" />
 
     <!--RadioButtons go here.-->
-    <StackLayout>
-      <RadioButton ControlTemplate="{StaticResource ThemeRadioTemplate}" Content="CHALE" />
-      <!--<RadioButton Content="CHALE" />-->
-    </StackLayout>
 
-    <StackLayout x:Name="TypesLayout" Orientation="Horizontal" />
+    <StackLayout x:Name="TypesLayout" Spacing="0" Orientation="Horizontal" />
 
   </StackLayout>
 

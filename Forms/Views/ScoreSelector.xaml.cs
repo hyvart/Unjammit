@@ -40,10 +40,10 @@ namespace Jammit.Forms.Views
     {
       set
       {
+        SelectedScore = value[0];
+
         var instruments = new Dictionary<string, int>(2);
         var types = new Dictionary<string, int>(2);
-
-        SelectedScore = value[0];
         foreach (var score in value)
         {
           if (!instruments.ContainsKey(score.Track.Title))
@@ -56,7 +56,9 @@ namespace Jammit.Forms.Views
             {
               GroupName = "Instruments",
               Content = score.Track.Title,
-              Value = instruments[score.Track.Title]
+              Value = instruments[score.Track.Title],
+              ControlTemplate = ScoreSelectorTemplate,
+              TextColor = Color.White
             };
             rb.CheckedChanged += Instrument_CheckedChanged;
             if (InstrumentsLayout.Children.Count == 0)
@@ -73,7 +75,9 @@ namespace Jammit.Forms.Views
             {
               GroupName = "Scores",
               Content = score.Type,
-              Value = types[score.Type]
+              Value = types[score.Type],
+              ControlTemplate = ScoreSelectorTemplate,
+              TextColor = Color.White
             };
             rb.CheckedChanged += Instrument_CheckedChanged;
             if (TypesLayout.Children.Count == 0)

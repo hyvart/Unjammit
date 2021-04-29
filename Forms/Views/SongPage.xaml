@@ -34,11 +34,12 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <StackLayout BackgroundColor="DimGray">
+  <StackLayout BackgroundColor="Gray">
 
     <StackLayout x:Name="HeaderLayout" Orientation="Horizontal">
       <Button x:Name="CloseButton"
               Text="{xaml:TranslateText SongPage_CloseButton}"
+              TextColor="White"
               FontAttributes="Bold"
               Clicked="CloseButton_Clicked" />
       <Label Text="{Binding Song.Title}" />
@@ -125,7 +126,7 @@
                  Orientation="Horizontal"
                  HorizontalOptions="FillAndExpand"
                  Margin="0"
-                 Padding="6,0,6,0"
+                 Padding="6,0,6,6"
                  MinimumWidthRequest="{OnIdiom Phone=150, Default=200}">
 
       <StackLayout x:Name="MixerLayout"

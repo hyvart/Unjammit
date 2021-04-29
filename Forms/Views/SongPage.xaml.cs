@@ -32,7 +32,7 @@ namespace Jammit.Forms.Views
       NormalButtonBackgroundColor = instance.PlayButton.BackgroundColor;
       NormalButtonTextColor = instance.PlayButton.TextColor;
 
-      instance.CloseButton.Text = "⬅️" + instance.CloseButton.Text;
+      instance.CloseButton.Text = "⬅️ " + instance.CloseButton.Text;
 
       return instance;
     }
