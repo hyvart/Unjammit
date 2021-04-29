@@ -6,6 +6,8 @@ using Android.OS;
 
 using LibVLCSharp.Shared;
 
+using WindowManagerFlags = Android.Views.WindowManagerFlags;
+
 namespace Jammit.Android
 {
   [Activity(Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -17,6 +19,16 @@ namespace Jammit.Android
       ToolbarResource = Resource.Layout.Toolbar;
 
       base.OnCreate(savedInstanceState);
+
+      // Keep screen on
+      Window.AddFlags(
+        WindowManagerFlags.KeepScreenOn     |
+        WindowManagerFlags.DismissKeyguard  |
+        WindowManagerFlags.ShowWhenLocked   |
+        WindowManagerFlags.TurnScreenOn
+      );
+
+      // Initialize LibVLCSharp
       global::LibVLCSharp.Shared.Core.Initialize();
 
       var config = new MediaConfiguration();
