@@ -4,11 +4,84 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Jammit.Forms.Views.ScoreSelector">
 
+  <ContentView.Resources>
+    <ResourceDictionary>
+
+      <Color x:Key="LightRadioButtonColor">#F3F2F1</Color>
+      <Color x:Key="DarkRadioButtonColor">#9B9A99</Color>
+
+      <ControlTemplate x:Key="ThemeRadioTemplate">
+        <Frame
+                    Padding="0"
+                    BackgroundColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
+                                                      Light={StaticResource LightRadioButtonColor}}"
+                    BorderColor="{AppThemeBinding Dark={StaticResource DarkRadioButtonColor},
+                                                  Light={StaticResource LightRadioButtonColor}}"
+                    HasShadow="False"
+                    HeightRequest="80"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    WidthRequest="80">
+          <Grid Margin="4" WidthRequest="80">
+            <Grid
+                            HeightRequest="20"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start"
+                            WidthRequest="20">
+              <Ellipse
+                                Fill="White"
+                                HeightRequest="18"
+                                HorizontalOptions="Center"
+                                Stroke="#2E2545"
+                                StrokeThickness="1"
+                                VerticalOptions="Center"
+                                WidthRequest="18" />
+              <Ellipse
+                                x:Name="Check"
+                                BackgroundColor="Transparent"
+                                Fill="#df6e57"
+                                HeightRequest="10"
+                                HorizontalOptions="Center"
+                                Stroke="#df6e57"
+                                StrokeThickness="0"
+                                VerticalOptions="Center"
+                                WidthRequest="10" />
+            </Grid>
+            <!-- This enables us to put in dynamic content -->
+            <ContentPresenter />
+          </Grid>
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+              <VisualStateGroup x:Name="CheckedStates">
+                <VisualState x:Name="Checked">
+                  <VisualState.Setters>
+                    <Setter Property="BorderColor" Value="#df6e57" />
+                    <Setter TargetName="Check" Property="Opacity" Value="1" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Unchecked">
+                  <VisualState.Setters>
+                    <Setter Property="BorderColor" Value="#F3F2F1" />
+                    <Setter TargetName="Check" Property="Opacity" Value="0" />
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateGroupList>
+          </VisualStateManager.VisualStateGroups>
+        </Frame>
+      </ControlTemplate>
+    </ResourceDictionary>
+  </ContentView.Resources>
+
   <StackLayout Orientation="Horizontal">
 
     <StackLayout x:Name="InstrumentsLayout" Orientation="Horizontal" />
 
     <!--RadioButtons go here.-->
+    <StackLayout>
+      <RadioButton ControlTemplate="{StaticResource ThemeRadioTemplate}" Content="CHALE" />
+      <!--<RadioButton Content="CHALE" />-->
+    </StackLayout>
 
     <StackLayout x:Name="TypesLayout" Orientation="Horizontal" />
 
