@@ -8,6 +8,8 @@
 
     <StackLayout x:Name="InstrumentsLayout" Orientation="Horizontal" />
 
+    <!--RadioButtons go here.-->
+
     <StackLayout x:Name="TypesLayout" Orientation="Horizontal" />
 
   </StackLayout>

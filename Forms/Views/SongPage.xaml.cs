@@ -26,7 +26,7 @@ namespace Jammit.Forms.Views
       instance.InitializeComponent();
 
       //TODO: Maybe set in binding.
-      instance.ScoreSelector.Items = instance.Media.Scores;
+      instance.ScoreSelector.Scores = instance.Media.Scores;
 
       //TODO: Use themes!
       NormalButtonBackgroundColor = instance.PlayButton.BackgroundColor;

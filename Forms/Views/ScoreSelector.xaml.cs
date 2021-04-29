@@ -4,24 +4,24 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using ScoreInfo = Jammit.Model.ScoreInfo;
+
 namespace Jammit.Forms.Views
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class ScoreSelector : ContentView
   {
-    private SortedSet<string> _instrumentsSet = new SortedSet<string>();
-    private SortedSet<string> _typesSet = new SortedSet<string>();
-    private IDictionary<string, Model.ScoreInfo> _scores = new Dictionary<string, Model.ScoreInfo>(4);
-    private string _selectedInstrument;
-    private string _selectedType;
-    private Model.ScoreInfo _selectedScore;
+    private ScoreInfo _selectedScore;
+    private ScoreInfo[] _scoreInfos = new ScoreInfo[4];
+    private int _selectedInstrumentIndex = 0;
+    private int _selectedTypeIndex = 0;
 
     public ScoreSelector()
     {
       InitializeComponent();
     }
 
-    public Model.ScoreInfo SelectedScore
+    public ScoreInfo SelectedScore
     {
       get
       {
@@ -36,60 +36,67 @@ namespace Jammit.Forms.Views
       }
     }
 
-    public IList<Model.ScoreInfo> Items
+    public IList<ScoreInfo> Scores
     {
       set
       {
+        var instruments = new Dictionary<string, int>(2);
+        var types = new Dictionary<string, int>(2);
+
+        SelectedScore = value[0];
         foreach (var score in value)
         {
-          _scores[score.ToString()] = score;
-
-          if (_instrumentsSet.Add(score.Track.Title))
+          if (!instruments.ContainsKey(score.Track.Title))
           {
+            // This assumes there is at most 2 instruments and at most 2 types.
+            // Should this constraint change, a second pass may be needed to determine the size, ergo, number of bits.
+            instruments[score.Track.Title] = instruments.Count << 1;
+
             var rb = new RadioButton
             {
               GroupName = "Instruments",
               Content = score.Track.Title,
+              Value = instruments[score.Track.Title]
             };
             rb.CheckedChanged += Instrument_CheckedChanged;
-            if (Device.RuntimePlatform == Device.iOS)
-              rb.FontSize = 14; // Small
+            if (InstrumentsLayout.Children.Count == 0)
+              rb.IsChecked = true;//TODO: Override via settings
 
             InstrumentsLayout.Children.Add(rb);
-
-            if (InstrumentsLayout.Children.Count == 1)
-              rb.IsChecked = true;//TODO: Override via settings
           }
 
-          if (_typesSet.Add(score.Type))
+          if (!types.ContainsKey(score.Type))
           {
+            types[score.Type] = types.Count << 0;
+
             var rb = new RadioButton
             {
               GroupName = "Scores",
-              Content = score.Type
+              Content = score.Type,
+              Value = types[score.Type]
             };
-            rb.CheckedChanged += Types_CheckedChanged;
-            if (Device.RuntimePlatform == Device.iOS)
-              rb.FontSize = 14; // Small
+            rb.CheckedChanged += Instrument_CheckedChanged;
+            if (TypesLayout.Children.Count == 0)
+              rb.IsChecked = true;//TODO: Override via settings
 
             TypesLayout.Children.Add(rb);
-
-            if (TypesLayout.Children.Count == 1)
-              rb.IsChecked = true;//TODO: Override via settings
           }
+
+          _scoreInfos[instruments[score.Track.Title] | types[score.Type]] = score;
         }
       }
     }
+
+    public event EventHandler SelectedScoreChanged;
 
     private void Instrument_CheckedChanged(object sender, CheckedChangedEventArgs e)
     {
       var rb = sender as RadioButton;
       if (rb.IsChecked)
       {
-        _selectedInstrument = rb.Content.ToString();
-
-        if (!string.IsNullOrEmpty(_selectedType))
-          SelectedScore = _scores[$"{_selectedInstrument} - {_selectedType}"];
+        _selectedInstrumentIndex = (int)rb.Value;
+        if (_scoreInfos[_selectedInstrumentIndex | _selectedTypeIndex] != null)
+          SelectedScore = _scoreInfos[_selectedInstrumentIndex | _selectedTypeIndex];
       }
     }
 
@@ -98,13 +105,10 @@ namespace Jammit.Forms.Views
       var rb = sender as RadioButton;
       if (rb.IsChecked)
       {
-        _selectedType = rb.Content.ToString();
-
-        if (!string.IsNullOrEmpty(_selectedInstrument))
-          SelectedScore = _scores[$"{_selectedInstrument} - {_selectedType}"];
+        _selectedTypeIndex = (int)rb.Value;
+        if (_scoreInfos[_selectedInstrumentIndex | _selectedTypeIndex] != null)
+          SelectedScore = _scoreInfos[_selectedInstrumentIndex | _selectedTypeIndex];
       }
     }
-
-    public event EventHandler SelectedScoreChanged;
   }
 }
