@@ -79,7 +79,7 @@ namespace Jammit.Forms.Views
               ControlTemplate = Device.macOS != Device.RuntimePlatform ? ScoreSelectorTemplate : null,
               TextColor = Color.White
             };
-            rb.CheckedChanged += Instrument_CheckedChanged;
+            rb.CheckedChanged += Types_CheckedChanged;
             if (TypesLayout.Children.Count == 0)
               rb.IsChecked = true;//TODO: Override via settings
 

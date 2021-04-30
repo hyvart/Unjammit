@@ -27,12 +27,12 @@
               <VisualStateGroup x:Name="CheckedStates">
                 <VisualState x:Name="Checked">
                   <VisualState.Setters>
-                    <Setter Property="BackgroundColor" Value="{StaticResource DarkButtonBackgroundColor}" />
+                    <Setter Property="Style" Value="{StaticResource CheckedStyle}" />
                   </VisualState.Setters>
                 </VisualState>
                 <VisualState x:Name="Unchecked">
                   <VisualState.Setters>
-                    <Setter Property="BackgroundColor" Value="{StaticResource LightButtonBackgroundColor}" />
+                    <Setter Property="Style" Value="{StaticResource UncheckedStyle}" />
                   </VisualState.Setters>
                 </VisualState>
               </VisualStateGroup>
@@ -40,6 +40,15 @@
           </VisualStateManager.VisualStateGroups>
         </Frame>
       </ControlTemplate>
+
+      <Style x:Key="CheckedStyle" TargetType="RadioButton">
+        <Setter Property="BackgroundColor" Value="DimGray" />
+        <Setter Property="BorderColor" Value="Cyan" />
+      </Style>
+
+      <Style x:Key="UncheckedStyle" TargetType="RadioButton">
+        <Setter Property="BorderColor" Value="DarkGray" />
+      </Style>
 
     </ResourceDictionary>
   </ContentView.Resources>
