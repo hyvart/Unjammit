@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -18,15 +15,10 @@ namespace Jammit.Forms.Views
     public MenuPage()
     {
       InitializeComponent();
+
+      //TODO: Bind (fails on Gtk, prints "Binding" on other platforms.
+      Title = Localized.MenuPage_Title;
     }
-
-    #region Page overrides
-
-    protected override void OnAppearing()
-    {
-    }
-
-    #endregion  Page overrides
 
     private async void OpenButton_Clicked(object sender, EventArgs e)
     {

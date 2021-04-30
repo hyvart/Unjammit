@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Jammit.Forms.Views.ScoreSelector">
+
+  <ContentView.Resources>
+    <ResourceDictionary>
+
+      <!--See https://www.99colors.net/dot-net-colors-->
+      <Color x:Key="DarkButtonBackgroundColor">DimGray</Color>
+      <Color x:Key="LightButtonBackgroundColor">DarkGray</Color>
+
+      <ControlTemplate x:Name="ScoreSelectorTemplate" x:Key="ScoreSelectorTemplate">
+        <Frame
+                Padding="0"
+                HasShadow="False"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="90">
+          <Grid Margin="6">
+            <!-- This enables us to put in dynamic content -->
+            <ContentPresenter />
+          </Grid>
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+              <VisualStateGroup x:Name="CheckedStates">
+                <VisualState x:Name="Checked">
+                  <VisualState.Setters>
+                    <Setter Property="Style" Value="{StaticResource CheckedStyle}" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Unchecked">
+                  <VisualState.Setters>
+                    <Setter Property="Style" Value="{StaticResource UncheckedStyle}" />
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateGroupList>
+          </VisualStateManager.VisualStateGroups>
+        </Frame>
+      </ControlTemplate>
+
+      <Style x:Key="CheckedStyle" TargetType="RadioButton">
+        <Setter Property="BackgroundColor" Value="DimGray" />
+        <Setter Property="BorderColor" Value="Cyan" />
+      </Style>
+
+      <Style x:Key="UncheckedStyle" TargetType="RadioButton">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="DarkGray" />
+      </Style>
+
+    </ResourceDictionary>
+  </ContentView.Resources>
+
+  <StackLayout Orientation="Horizontal">
+
+    <StackLayout x:Name="InstrumentsLayout" Spacing="0" Orientation="Horizontal" />
+
+    <StackLayout x:Name="TypesLayout" Spacing="0" Orientation="Horizontal" />
+
+  </StackLayout>
+
+</ContentView>

@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 using Jammit.Client;
@@ -101,8 +100,20 @@ namespace Jammit.Forms.Client
           //TODO
         };
 
-        var uri = new Uri($"{Settings.ServiceUri}/{song.Id.ToString().ToUpper()}.zip");
-        await client.DownloadFileTaskAsync(uri, path);
+        var uri = new Uri($"{Settings.ServiceUri}/jcf/{song.Sku}");
+        try
+        {
+          await client.DownloadFileTaskAsync(uri, path);
+        }
+        catch(System.Net.WebException e)
+        {
+          // Windows does not properly follow redirects.
+          // See https://github.com/lukesampson/scoop/pull/3902
+          if (!e.Message.Contains("302") || string.IsNullOrEmpty(e.Response.Headers["Location"]))
+            throw;
+
+          await client.DownloadFileTaskAsync(new Uri(e.Response.Headers["Location"]), path);
+        }
       }
     }
 
@@ -137,7 +148,6 @@ namespace Jammit.Forms.Client
           {
             result.Add(new SongInfo()
             {
-              Id = Guid.Parse(song["id"].ToString()),
               Sku = song["sku"].ToString(),
               Artist = song["artist"].ToString(),
               Album = song["album"].ToString(),

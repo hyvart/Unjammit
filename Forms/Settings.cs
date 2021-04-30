@@ -36,12 +36,12 @@ namespace Jammit.Forms
 
     public static string SelectedScoreKey(Model.SongInfo song)
     {
-      return $"Song/{song.Id}/SelectedScore";
+      return $"Song/{song.Sku}/SelectedScore";
     }
 
     public static string MixerCollapsedKey(Model.SongInfo song)
     {
-      return $"Song/{song.Id}/MixerCollapsed";
+      return $"Song/{song.Sku}/MixerCollapsed";
     }
 
     public static string TrackVolumeKey(Model.TrackInfo track)
@@ -61,7 +61,7 @@ namespace Jammit.Forms
 
     public static string PositionKey(Model.SongInfo song)
     {
-      return $"Song/{song.Id}/Position";
+      return $"Song/{song.Sku}/Position";
     }
 
     #endregion Settings Functions
@@ -75,18 +75,6 @@ namespace Jammit.Forms
       catch(NotImplementedInReferenceAssemblyException)
       {
         _prefMap.Clear();
-      }
-    }
-
-    public static string GeneralSettings
-    {
-      get
-      {
-        return Preferences.Get(SettingsKey, SettingsDefault);
-      }
-      set
-      {
-        Preferences.Set(SettingsKey, value);
       }
     }
 
@@ -213,6 +201,38 @@ namespace Jammit.Forms
         }
       }
     }
+
+    #region Track settings
+
+    public static bool IsTrackMuted(Model.TrackInfo track)
+    {
+      try
+      {
+        return Preferences.Get(TrackMutedKey(track), false);
+      }
+      catch (NotImplementedInReferenceAssemblyException)
+      {
+        object result;
+        if (_prefMap.TryGetValue(TrackMutedKey(track), out result))
+          return bool.Parse(result as string);
+
+        return false;
+      }
+    }
+
+    public static void SetTrackMuted(Model.TrackInfo track, bool value)
+    {
+      try
+      {
+        Preferences.Set(TrackMutedKey(track), value);
+      }
+      catch (NotImplementedInReferenceAssemblyException)
+      {
+        _prefMap[TrackMutedKey(track)] = value;
+      }
+    }
+
+    #endregion Track settings
 
     #region Generic settings
 

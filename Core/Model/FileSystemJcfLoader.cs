@@ -18,10 +18,9 @@ namespace Jammit.Model
 
     #region IJcfLoader members
 
-    public JcfMedia LoadMedia(Model.SongInfo song)
+    public JcfMedia LoadMedia(SongInfo song)
     {
-      string tracksPath = Path.Combine(dataDirectory, "Tracks");
-      string songPath = Path.Combine(dataDirectory, "Tracks", $"{song.Id}".ToUpper() + ".jcf");
+      string songPath = Path.Combine(dataDirectory, "Tracks", $"{song.Sku}" + ".jcf");
 
       var result = new JcfMedia(song, songPath);
 
@@ -59,6 +58,55 @@ namespace Jammit.Model
       path += string.Format("{0:D2}", index);
 
       return File.OpenRead(path);
+    }
+
+    public void LoadFullSongInfo(SongInfo song, string songPath)
+    {
+      var infoDict = PropertyListParser.Parse(Path.Combine(songPath, "info.plist")) as NSDictionary;
+      song.Tempo = infoDict.String("bpm");
+      song.WrittenBy = infoDict.String("writtenBy");
+      song.PublishedBy = infoDict.String("publishedBy");
+      song.CourtesyOf = infoDict.String("courtesyOf");
+
+      if (!File.Exists(Path.Combine(songPath, "tuning.plist")))
+        return;
+
+      var tuningDict = PropertyListParser.Parse(Path.Combine(songPath, "tuning.plist")) as NSDictionary;
+
+      //TODO: Support Array tunnings.
+      /*
+       <dict>
+        <key>notes</key>
+        <array>
+                <integer>40</integer>
+                <integer>45</integer>
+                <integer>50</integer>
+                <integer>55</integer>
+        </array>
+        <key>offset</key>
+        <real>0.0</real>
+        </dict>
+      */
+      if (!(tuningDict["notes"] is NSDictionary))
+        return;
+
+      var notesDict = tuningDict["notes"] as NSDictionary;
+      song.Tunings = new List<string>();
+      foreach(var instrumentKey in notesDict.Keys)
+      {
+        var instrumentDict = notesDict[instrumentKey] as NSDictionary;
+        var tunings = instrumentDict.Where((p) => p.Value is NSArray);
+
+        foreach (var tuning in tunings)
+        {
+          string songTuning = string.Empty;
+          foreach (var tuningEntry in tuning.Value as NSArray)
+          {
+            songTuning += tuningEntry.ToString() + " ";
+          }
+          song.Tunings.Add(songTuning);
+        }
+      }
     }
 
     #endregion  IJcfLoader members

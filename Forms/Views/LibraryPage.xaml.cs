@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 using Jammit.Model;
@@ -15,15 +12,6 @@ namespace Jammit.Forms.Views
     {
       InitializeComponent();
     }
-
-    #region Events
-
-    protected override void OnAppearing()
-    {
-      base.OnAppearing();
-    }
-
-    #endregion  Events
 
     private async void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {

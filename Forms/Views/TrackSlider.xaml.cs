@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,15 +9,6 @@ namespace Jammit.Forms.Views
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class TrackSlider : ContentView
   {
-    #region static members
-
-    static Color NormalButtonTextColor;
-    static Color NormalButtonBackgroundColor;
-    static Color MutedButtonTextColor = Color.DarkRed;
-    static Color MutedButtonBackgroundColor = Color.LightPink;
-
-    #endregion static members
-
     #region private members
 
     enum State
@@ -33,6 +20,29 @@ namespace Jammit.Forms.Views
 
     State _state;
 
+    bool _canReadMutedSetting = true;
+    
+    void SetSoundState(string name, bool restore)
+    {
+      VisualStateManager.GoToState(Root, name);
+    }
+
+    void Mute()
+    {
+      Player.SetVolume(Track, 0);
+      _state = State.Muted;
+
+      SetSoundState("Muted", false);
+    }
+
+    void Unmute()
+    {
+      Player.SetVolume(Track, (uint)Volume);
+      _state = State.Normal;
+
+      SetSoundState("Active", true);
+    }
+
     #endregion private members
 
     public TrackSlider()
@@ -41,8 +51,7 @@ namespace Jammit.Forms.Views
 
       InitializeComponent();
 
-      NormalButtonBackgroundColor = MuteButton.BackgroundColor;
-      NormalButtonTextColor = MuteButton.TextColor;
+      VisualStateManager.GoToState(Root, "Active");
     }
 
     #region Bindable properties
@@ -74,6 +83,7 @@ namespace Jammit.Forms.Views
     public double Volume
     {
       get => VolumeSlider.Value;
+
       set
       {
         VolumeSlider.Value = value;
@@ -96,7 +106,7 @@ namespace Jammit.Forms.Views
 
     #endregion Properties
 
-    #region Events
+    #region base overrides
 
     protected override void OnPropertyChanged(string propertyName = null)
     {
@@ -106,48 +116,55 @@ namespace Jammit.Forms.Views
       {
         //TODO: Bind!
         TitleLabel.Text = Track.Title;
+
+        if (_canReadMutedSetting && Player != null && Settings.IsTrackMuted(Track))
+        {
+          _canReadMutedSetting = false;
+          Mute();
+        }
+      }
+      else if (PlayerProperty.PropertyName == propertyName)
+      {
+        if (_canReadMutedSetting && Track != null && Settings.IsTrackMuted(Track))
+        {
+          _canReadMutedSetting = false;
+          Mute();
+        }
       }
     }
 
-    #endregion Events
+    #endregion base overrides
+
+    #region Events
 
     private void VolumeSlider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
       if (!IsEnabled)
         return;
 
-      //TODO: How about setting the track volume right here and drop the Volume property?
       if (State.Muted != _state)
       {
-        if (Track != null)
-        {
-          Player.SetVolume(Track, (uint)e.NewValue);
-
-          Settings.Set(Settings.TrackVolumeKey(Track), (uint)e.NewValue);
-        }
+        Player.SetVolume(Track, (uint)e.NewValue);
       }
+      Settings.Set(Settings.TrackVolumeKey(Track), (uint)e.NewValue);
     }
 
     private void MuteButton_Clicked(object sender, EventArgs e)
     {
       if (State.Muted == _state)
       {
-        Volume = (uint)VolumeSlider.Value;
-        _state = State.Normal;
+        Unmute();
 
-        //TODO: Ewww! Use styles and binding instead.
-        MuteButton.TextColor = NormalButtonTextColor;
-        MuteButton.BackgroundColor = NormalButtonBackgroundColor;
+        Settings.SetTrackMuted(Track, false);
       }
       else
       {
-        Volume = 0;
-        _state = State.Muted;
+        Mute();
 
-        //TODO: Ewww! Use styles and binding instead.
-        MuteButton.TextColor = MutedButtonTextColor;
-        MuteButton.BackgroundColor = MutedButtonBackgroundColor;
+        Settings.SetTrackMuted(Track, true);
       }
     }
+
+    #endregion Events
   }
 }

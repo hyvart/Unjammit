@@ -30,7 +30,6 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      # secureFile: com.unjammit.generic.p12
       secureFile: $(SigningCertificate)
 
   - template: MSBuildSteps.yml
@@ -46,3 +45,4 @@ steps:
         /p:PackageCertificateThumbprint=$(SigningCertificateThumbprint)
         /p:PackageCertificatePassword=$(SigningKeyPassword)
         /p:EnableSigningChecks=True
+        /p:BuildAppxUploadPackageForUap=False

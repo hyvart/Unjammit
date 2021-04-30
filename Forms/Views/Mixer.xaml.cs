@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Jammit.Forms.Views
@@ -25,6 +18,9 @@ namespace Jammit.Forms.Views
 
     public static readonly BindableProperty PlayerProperty =
       BindableProperty.Create("Player", typeof(Audio.IJcfPlayer), typeof(Audio.IJcfPlayer));
+
+    public static readonly BindableProperty SoloTrackSliderProperty =
+      BindableProperty.Create("SoloTrackSlider", typeof(TrackSlider), typeof(TrackSlider));
 
     #endregion  Bindable Properties
 
@@ -56,9 +52,16 @@ namespace Jammit.Forms.Views
       }
     }
 
+    public TrackSlider SoloTrackSlider
+    {
+      get => GetValue(SoloTrackSliderProperty) as TrackSlider;
+
+      set => SetValue(SoloTrackSliderProperty, value);
+    }
+
     #endregion Properties
 
-    #region Events
+    #region Element overrides
 
     protected override void OnPropertyChanged(string propertyName = null)
     {
@@ -76,10 +79,11 @@ namespace Jammit.Forms.Views
           });
         }
       }
-      else if (PlayerProperty.PropertyName == propertyName)
-      {
-      }
     }
+
+    #endregion Element overrides
+
+    #region Events
 
     void TrackSlider_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
