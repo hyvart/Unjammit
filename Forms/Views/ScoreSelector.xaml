@@ -47,6 +47,7 @@
       </Style>
 
       <Style x:Key="UncheckedStyle" TargetType="RadioButton">
+        <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="BorderColor" Value="DarkGray" />
       </Style>
 

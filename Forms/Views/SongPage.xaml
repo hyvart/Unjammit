@@ -41,6 +41,7 @@
               Text="{xaml:TranslateText SongPage_CloseButton}"
               TextColor="White"
               FontAttributes="Bold"
+              BackgroundColor="DimGray"
               Clicked="CloseButton_Clicked" />
       <Label Text="{Binding Song.Title}" HorizontalOptions="FillAndExpand" />
       <local:ScoreSelector x:Name="ScoreSelector"
