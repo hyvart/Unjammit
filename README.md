@@ -48,5 +48,6 @@ Submit [Pull Requests](https://github.com/hyvart/Unjammit/compare) against the r
 
 ## Screenshots
 
-![Controlling playback in Windows](https://i.imgur.com/JTKk72o.png)
-![Selecting the song in iOS](https://i.imgur.com/7eVtvqX.png)
+![Controlling playback on Windows](https://i.imgur.com/JTKk72o.png)
+![Selecting the song on iOS](https://i.imgur.com/j60Fpga.png)
+![Adjusting settings on Android](https://i.imgur.com/xBOr20Q.png)
