@@ -4,9 +4,8 @@
              xmlns:local="clr-namespace:Jammit.Forms.Views"
              xmlns:models="clr-namespace:Jammit.Forms.Models"
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
-             x:Class="Jammit.Forms.Views.MenuPage"
-             >
-             <!--TODO: GTK does not acknowledge XAML Title binding-->
+             x:Class="Jammit.Forms.Views.MenuPage">
+             <!--TODO: OnPlatform Default helps non-supported platforms set the value (i.e. GTK).-->
   <StackLayout VerticalOptions="FillAndExpand">
     <ListView x:Name="MenuListView" x:FieldModifier="public">
       <ListView.ItemsSource>

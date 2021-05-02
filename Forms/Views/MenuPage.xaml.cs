@@ -17,7 +17,10 @@ namespace Jammit.Forms.Views
       InitializeComponent();
 
       //TODO: Bind (fails on Gtk, prints "Binding" on other platforms.
-      Title = Localized.MenuPage_Title;
+      if (Device.GTK == Device.RuntimePlatform)
+        Title = "Menu";
+      else
+        Title = Localized.MenuPage_Title;
     }
 
     private async void OpenButton_Clicked(object sender, EventArgs e)
