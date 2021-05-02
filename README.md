@@ -16,7 +16,7 @@ For more, see the [Releases](https://github.com/hyvart/Unjammit/releases) sectio
 ## Features (current)
 
 - Play isolated tracks for each instrument.
-- Set the volume for the instrument or backing track.
+- Set the volume for the instrument, metronome, or backing track.
 - Display music score or tablature.
 
 ## Supported Platforms
