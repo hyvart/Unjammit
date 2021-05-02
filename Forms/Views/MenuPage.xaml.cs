@@ -56,15 +56,22 @@ namespace Jammit.Forms.Views
 
     private async void AboutButton_Clicked(object sender, EventArgs e)
     {
-      string mdi = "Unknown";
-      string version = "Unknown";
+      string mdi;
+      string version;
       if (Device.GTK != Device.RuntimePlatform)
       {
         //TODO: Log bug against Xamarin.Essentials (iOS 9.3.x)
-        if (Device.RuntimePlatform == Device.iOS && DeviceInfo.Version.Major > 9)
+        if (Device.RuntimePlatform == Device.iOS && DeviceInfo.Version.Major < 10)
+          mdi = "Unknown";
+        else
           mdi = DeviceDisplay.MainDisplayInfo.ToString();
 
         version = VersionTracking.CurrentVersion;
+      }
+      else
+      {
+        mdi = "Unknown";
+        version = "Unknown";
       }
 
       await DisplayAlert("Info", $"Unjammit! Version [{version}]\nDisplayInfo: [{mdi}]", "OK");
