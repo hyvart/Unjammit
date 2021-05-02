@@ -35,7 +35,7 @@ For more, see the [Releases](https://github.com/hyvart/Unjammit/releases) sectio
 
 ## Contributing
 
-[![Gitter chat](https://badges.gitter.im/Unjammit/community.png)](https://gitter.im/Unjammit/community)
+[![Discord](https://img.shields.io/discord/808610688707592222.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/eRQdQMEA)
 
 Submit [Pull Requests](https://github.com/hyvart/Unjammit/compare) against the repository's [`master`](https://github.com/hyvart/Unjammit/tree/master) branch.
 
