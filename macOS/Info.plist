@@ -4,10 +4,18 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>UnjammitDev!</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.unjammit.player.macos.dev</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>es</string>
+		<string>ru</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>UnjammitDev!</string>
 	<key>CFBundlePackageType</key>
@@ -21,22 +29,14 @@
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.9</string>
+	<string>10.13</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2019 Hyvart Software</string>
+	<string>Copyright © 2021 Hyvart Software</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>NSRequiresAquaSystemAppearance</key>
 	<false/>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>es</string>
-		<string>ru</string>
-	</array>
-	<key>CFBundleDisplayName</key>
-	<string>UnjammitDev!</string>
 </dict>
 </plist>
