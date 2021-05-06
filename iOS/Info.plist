@@ -2,16 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>UnjammitDev!</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.unjammit.player.ios.dev</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>es</string>
+		<string>ru</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>UnjammitDev!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.0</string>
+	<string>0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>0.0.0</string>
 	<key>MinimumOSVersion</key>
 	<string>9.1</string>
 	<key>NSAppleMusicUsageDescription</key>
@@ -20,10 +28,6 @@
 	<string>This app does not require Calendar access.</string>
 	<key>NSContactsUsageDescription</key>
 	<string>This app does not require Contacts access.</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>This app does not access or share any health information.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>This app does not access or share any health information.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This app does not require Location access.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -59,19 +63,11 @@
 	</array>
 	<key>UISupportsDocumentBrowser</key>
 	<true/>
+	<key>UIUserInterfaceStyle</key>
+	<integer>0</integer>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
-	<key>UIUserInterfaceStyle</key>
-	<integer>0</integer>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>es</string>
-		<string>ru</string>
-	</array>
 </dict>
 </plist>
