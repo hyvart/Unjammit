@@ -22,37 +22,6 @@
         <Setter Property="BorderColor" Value="DarkGray" />
       </Style>
 
-      <!--Control Templates-->
-      <ControlTemplate x:Name="SelectorTemplate" x:Key="SelectorTemplate">
-        <Frame
-                Padding="0"
-                HasShadow="False"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                WidthRequest="90">
-          <Grid Margin="6">
-            <!-- This enables us to put in dynamic content -->
-            <ContentPresenter />
-          </Grid>
-          <VisualStateManager.VisualStateGroups>
-            <VisualStateGroupList>
-              <VisualStateGroup x:Name="CheckedStates">
-                <VisualState x:Name="Checked">
-                  <VisualState.Setters>
-                    <Setter Property="Style" Value="{StaticResource CheckedStyle}" />
-                  </VisualState.Setters>
-                </VisualState>
-                <VisualState x:Name="Unchecked">
-                  <VisualState.Setters>
-                    <Setter Property="Style" Value="{StaticResource UncheckedStyle}" />
-                  </VisualState.Setters>
-                </VisualState>
-              </VisualStateGroup>
-            </VisualStateGroupList>
-          </VisualStateManager.VisualStateGroups>
-        </Frame>
-      </ControlTemplate>
-
     </ResourceDictionary>
 
   </Application.Resources>

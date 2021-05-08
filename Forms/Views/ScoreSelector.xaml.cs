@@ -52,15 +52,12 @@ namespace Jammit.Forms.Views
             // Should this constraint change, a second pass may be needed to determine the size, ergo, number of bits.
             instruments[score.Track.Title] = instruments.Count << 1;
 
-            //var x = Application.Current.Resources["ScoreSelectorTemplate"] as Xamarin.Forms.ControlTemplate;
-
             var rb = new RadioButton
             {
               GroupName = "Instruments",
               Content = score.Track.Title,
               Value = instruments[score.Track.Title],
-              ControlTemplate = Device.macOS != Device.RuntimePlatform ?
-                ScoreSelectorTemplate : null,
+              ControlTemplate = Device.macOS != Device.RuntimePlatform ? SelectorTemplate : null,
               TextColor = Color.White
             };
             rb.CheckedChanged += Instrument_CheckedChanged;
@@ -79,8 +76,7 @@ namespace Jammit.Forms.Views
               GroupName = "Scores",
               Content = score.Type,
               Value = types[score.Type],
-              ControlTemplate = Device.macOS != Device.RuntimePlatform ?
-                ScoreSelectorTemplate : null,
+              ControlTemplate = Device.macOS != Device.RuntimePlatform ? SelectorTemplate : null,
               TextColor = Color.White
             };
             rb.CheckedChanged += Types_CheckedChanged;

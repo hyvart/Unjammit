@@ -7,7 +7,8 @@
   <ContentView.Resources>
     <ResourceDictionary>
 
-      <ControlTemplate x:Name="ScoreSelectorTemplate" x:Key="ScoreSelectorTemplate">
+      <!--TODO: Centralize-->
+      <ControlTemplate x:Name="SelectorTemplate" x:Key="SelectorTemplate">
         <Frame
                 Padding="0"
                 HasShadow="False"
@@ -15,7 +16,7 @@
                 VerticalOptions="Start"
                 WidthRequest="90">
           <Grid Margin="6">
-            <!-- This enables us to put in dynamic content -->
+             <!-- This enables us to put in dynamic content --> 
             <ContentPresenter />
           </Grid>
           <VisualStateManager.VisualStateGroups>
