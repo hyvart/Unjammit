@@ -7,6 +7,43 @@
              Disappearing="ContentPage_Disappearing"
              >
 
+  <ContentPage.Resources>
+    <ResourceDictionary>
+
+      <!--TODO: Centralize-->
+      <ControlTemplate x:Name="SelectorTemplate" x:Key="SelectorTemplate">
+        <Frame
+                Padding="0"
+                HasShadow="False"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="90">
+          <Grid Margin="6">
+            <!-- This enables us to put in dynamic content -->
+            <ContentPresenter />
+          </Grid>
+          <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+              <VisualStateGroup x:Name="CheckedStates">
+                <VisualState x:Name="Checked">
+                  <VisualState.Setters>
+                    <Setter Property="Style" Value="{StaticResource CheckedStyle}" />
+                  </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Unchecked">
+                  <VisualState.Setters>
+                    <Setter Property="Style" Value="{StaticResource UncheckedStyle}" />
+                  </VisualState.Setters>
+                </VisualState>
+              </VisualStateGroup>
+            </VisualStateGroupList>
+          </VisualStateManager.VisualStateGroups>
+        </Frame>
+      </ControlTemplate>
+
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
   <StackLayout BackgroundColor="DimGray">
     <Grid>
       <Label Grid.Row="0" Grid.Column="0" Text="{xaml:TranslateText SettingsPage_ServiceUriLabel}" />
@@ -33,15 +70,21 @@
                    HorizontalOptions="Start">
         <RadioButtonGroup.GroupName>Locale</RadioButtonGroup.GroupName>
         <StackLayout Orientation="Vertical">
-          <RadioButton x:Name="LocaleRadioButtonEn" Content="English" CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
+          <RadioButton x:Name="LocaleRadioButtonEn" Content="English"
+                       ControlTemplate="{StaticResource Key=SelectorTemplate}"
+                       CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
           <Image x:Name="LocaleImageEn" />
         </StackLayout>
         <StackLayout Orientation="Vertical">
-          <RadioButton x:Name="LocaleRadioButtonEs" Content="Espa&#xf1;ol" CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
+          <RadioButton x:Name="LocaleRadioButtonEs" Content="Espa&#xf1;ol"
+                       ControlTemplate="{StaticResource Key=SelectorTemplate}"
+                       CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
           <Image x:Name="LocaleImageEs" />
         </StackLayout>
         <StackLayout Orientation="Vertical">
-          <RadioButton x:Name="LocaleRadioButtonRu" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;" CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
+          <RadioButton x:Name="LocaleRadioButtonRu" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;"
+                       ControlTemplate="{StaticResource Key=SelectorTemplate}"
+                       CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
           <Image x:Name="LocaleImageRu" />
         </StackLayout>
       </StackLayout>
