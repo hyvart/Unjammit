@@ -71,19 +71,19 @@
         <RadioButtonGroup.GroupName>Locale</RadioButtonGroup.GroupName>
         <StackLayout Orientation="Vertical">
           <RadioButton x:Name="LocaleRadioButtonEn" Content="English"
-                       ControlTemplate="{StaticResource Key=SelectorTemplate}"
+                       ControlTemplate="{OnPlatform macOS=null, Default={StaticResource Key=SelectorTemplate}}"
                        CheckedChanged="LocaleRadioButtonEn_CheckedChanged" />
           <Image x:Name="LocaleImageEn" />
         </StackLayout>
         <StackLayout Orientation="Vertical">
           <RadioButton x:Name="LocaleRadioButtonEs" Content="Espa&#xf1;ol"
-                       ControlTemplate="{StaticResource Key=SelectorTemplate}"
+                       ControlTemplate="{OnPlatform macOS=null, Default={StaticResource Key=SelectorTemplate}}"
                        CheckedChanged="LocaleRadioButtonEs_CheckedChanged" />
           <Image x:Name="LocaleImageEs" />
         </StackLayout>
         <StackLayout Orientation="Vertical">
           <RadioButton x:Name="LocaleRadioButtonRu" Content="&#x0420;&#x0443;&#x0441;&#x0441;&#x043a;&#x0438;&#x0439;"
-                       ControlTemplate="{StaticResource Key=SelectorTemplate}"
+                       ControlTemplate="{OnPlatform macOS=null, Default={StaticResource Key=SelectorTemplate}}"
                        CheckedChanged="LocaleRadioButtonRu_CheckedChanged" />
           <Image x:Name="LocaleImageRu" />
         </StackLayout>
