@@ -7,10 +7,6 @@
   <ContentView.Resources>
     <ResourceDictionary>
 
-      <!--See https://www.99colors.net/dot-net-colors-->
-      <Color x:Key="DarkButtonBackgroundColor">DimGray</Color>
-      <Color x:Key="LightButtonBackgroundColor">DarkGray</Color>
-
       <ControlTemplate x:Name="ScoreSelectorTemplate" x:Key="ScoreSelectorTemplate">
         <Frame
                 Padding="0"
@@ -40,16 +36,6 @@
           </VisualStateManager.VisualStateGroups>
         </Frame>
       </ControlTemplate>
-
-      <Style x:Key="CheckedStyle" TargetType="RadioButton">
-        <Setter Property="BackgroundColor" Value="DimGray" />
-        <Setter Property="BorderColor" Value="Cyan" />
-      </Style>
-
-      <Style x:Key="UncheckedStyle" TargetType="RadioButton">
-        <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="BorderColor" Value="DarkGray" />
-      </Style>
 
     </ResourceDictionary>
   </ContentView.Resources>
