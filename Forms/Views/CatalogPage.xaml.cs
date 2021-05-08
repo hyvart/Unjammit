@@ -27,6 +27,8 @@ namespace Jammit.Forms.Views
     {
       base.OnAppearing();
 
+      VisualStateManager.GoToState(this, "CatalogLoading");
+
       Device.BeginInvokeOnMainThread(async () => await LoadCatalog());
     }
 
@@ -39,6 +41,8 @@ namespace Jammit.Forms.Views
         Catalog = await App.Client.LoadCatalog();
 
         AuthPopup.IsVisible = false;
+
+        VisualStateManager.GoToState(this, "CatalogLoaded");
       }
       catch (System.Net.Http.HttpRequestException ex)
       {
@@ -50,10 +54,14 @@ namespace Jammit.Forms.Views
           Settings.Credentials = default;
           AuthPopup.IsVisible = true;
         }
+
+        VisualStateManager.GoToState(this, "CatalogFailed");
       }
       catch (Exception ex)
       {
         Catalog = default;
+        VisualStateManager.GoToState(this, "CatalogFailed");
+
         await DisplayAlert(Localized.CatalogPage_LoadCatalogCatchTitle, ex.Message, Localized.CatalogPage_LoadCatalogCatchCancel);
       }
 
