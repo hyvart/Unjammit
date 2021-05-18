@@ -30,15 +30,15 @@ $plist = Get-ChildItem -Path $InfoPlist
 
 if ($UsePlistCil) {
 	# Install plist-cil
-	if (! (Test-Path "$DownloadDir\plist-cil.2.0.0\lib\netstandard2.0\plist-cil.dll")) {
+	if (! (Test-Path "$DownloadDir\plist-cil.2.2.0\lib\netstandard2.0\plist-cil.dll")) {
 		if (! (Test-Path $DownloadDir)) {
 			New-Item -ItemType Directory $DownloadDir
 		}
 
-		nuget install plist-cil -Version 2.0.0 -OutputDirectory $DownloadDir
+		nuget install plist-cil -Version 2.2.0 -OutputDirectory $DownloadDir
 	}
 
-	Add-Type -Path "$DownloadDir\plist-cil.2.0.0\lib\netstandard2.0\plist-cil.dll"
+	Add-Type -Path "$DownloadDir\plist-cil.2.2.0\lib\netstandard2.0\plist-cil.dll"
 
 	$dict = [Claunia.PropertyList.PropertyListParser]::Parse($plist)
 
