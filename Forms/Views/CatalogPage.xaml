@@ -5,6 +5,40 @@
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
              x:Class="Jammit.Forms.Views.CatalogPage">
 
+  <VisualStateManager.VisualStateGroups>
+    <VisualStateGroupList>
+      <VisualStateGroup x:Name="CatalogLoad">
+        <VisualState x:Name="CatalogLoading">
+          <VisualState.Setters>
+            <Setter Property="IsEnabled" Value="False" TargetName="DownloadButton" />
+            <Setter Property="IsEnabled" Value="False" TargetName="ReloadButton" />
+            <Setter Property="IsEnabled" Value="False" TargetName="Search" />
+            <Setter Property="IsVisible" Value="True" TargetName="IndicatorLayout" />
+            <Setter Property="IsVisible" Value="False" TargetName="CatalogView" />
+          </VisualState.Setters>
+        </VisualState>
+        <VisualState x:Name="CatalogLoaded">
+          <VisualState.Setters>
+            <Setter Property="IsEnabled" Value="True" TargetName="DownloadButton" />
+            <Setter Property="IsEnabled" Value="True" TargetName="ReloadButton" />
+            <Setter Property="IsEnabled" Value="True" TargetName="Search" />
+            <Setter Property="IsVisible" Value="False" TargetName="IndicatorLayout" />
+            <Setter Property="IsVisible" Value="True" TargetName="CatalogView" />
+          </VisualState.Setters>
+        </VisualState>
+        <VisualState x:Name="CatalogFailed">
+          <VisualState.Setters>
+            <Setter Property="IsEnabled" Value="False" TargetName="DownloadButton" />
+            <Setter Property="IsEnabled" Value="True" TargetName="ReloadButton" />
+            <Setter Property="IsEnabled" Value="False" TargetName="Search" />
+            <Setter Property="IsVisible" Value="False" TargetName="IndicatorLayout" />
+            <Setter Property="IsVisible" Value="False" TargetName="CatalogView" />
+          </VisualState.Setters>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateGroupList>
+  </VisualStateManager.VisualStateGroups>
+
   <!--TODO: Put back in CatalogView attributes.-->
   <!--ListView: ItemsSource="{x:Static local:CatalogPage.Catalog}"-->
   <StackLayout BackgroundColor="DimGray">
@@ -17,7 +51,13 @@
         </StackLayout>
       </StackLayout>
     </ContentView>
-    <SearchBar Placeholder="{xaml:TranslateText SongSearch_Placeholder}" TextChanged="SearchBar_TextChanged" />
+    <SearchBar x:Name="Search" Placeholder="{xaml:TranslateText SongSearch_Placeholder}" TextChanged="SearchBar_TextChanged" />
+    <StackLayout x:Name="IndicatorLayout" VerticalOptions="FillAndExpand">
+      <!--TODO: Translate -->
+      <Label Text="Loading catalog..." HorizontalTextAlignment="Center" />
+      <ActivityIndicator IsRunning="{Binding Source={Reference IndicatorLayout}, Path=IsVisible}"
+                         HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+    </StackLayout>
     <ListView
       x:Name="CatalogView"
       HorizontalOptions="FillAndExpand"
@@ -45,7 +85,7 @@
     </ListView>
     <Button x:Name="DownloadButton" Text="{xaml:TranslateText CatalogPage_DownloadButton}" Clicked="DownloadButton_Clicked" />
     <ProgressBar x:Name="DownloadProgressBar" Progress="{Binding Source={x:Static local:App.Client}, Path=SongDownloadProgress, Mode=TwoWay}" />
-    <Button x:Name="LoadButton" Text="{xaml:TranslateText CatalogPage_LoadButton}" Clicked="LoadButton_Clicked" />
+    <Button x:Name="ReloadButton" Text="{xaml:TranslateText CatalogPage_LoadButton}" Clicked="ReloadButton_Clicked" />
   </StackLayout>
 
 </ContentPage>
