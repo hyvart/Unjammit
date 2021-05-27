@@ -11,6 +11,7 @@
         <VisualState x:Name="CatalogLoading">
           <VisualState.Setters>
             <Setter Property="IsEnabled" Value="False" TargetName="DownloadButton" />
+            <Setter Property="IsEnabled" Value="False" TargetName="ReloadButton" />
             <Setter Property="IsEnabled" Value="False" TargetName="Search" />
             <Setter Property="IsVisible" Value="True" TargetName="IndicatorLayout" />
             <Setter Property="IsVisible" Value="False" TargetName="CatalogView" />
@@ -19,13 +20,20 @@
         <VisualState x:Name="CatalogLoaded">
           <VisualState.Setters>
             <Setter Property="IsEnabled" Value="True" TargetName="DownloadButton" />
+            <Setter Property="IsEnabled" Value="True" TargetName="ReloadButton" />
             <Setter Property="IsEnabled" Value="True" TargetName="Search" />
             <Setter Property="IsVisible" Value="False" TargetName="IndicatorLayout" />
             <Setter Property="IsVisible" Value="True" TargetName="CatalogView" />
           </VisualState.Setters>
         </VisualState>
         <VisualState x:Name="CatalogFailed">
-          <!--TODO-->
+          <VisualState.Setters>
+            <Setter Property="IsEnabled" Value="False" TargetName="DownloadButton" />
+            <Setter Property="IsEnabled" Value="True" TargetName="ReloadButton" />
+            <Setter Property="IsEnabled" Value="False" TargetName="Search" />
+            <Setter Property="IsVisible" Value="False" TargetName="IndicatorLayout" />
+            <Setter Property="IsVisible" Value="False" TargetName="CatalogView" />
+          </VisualState.Setters>
         </VisualState>
       </VisualStateGroup>
     </VisualStateGroupList>
@@ -77,7 +85,7 @@
     </ListView>
     <Button x:Name="DownloadButton" Text="{xaml:TranslateText CatalogPage_DownloadButton}" Clicked="DownloadButton_Clicked" />
     <ProgressBar x:Name="DownloadProgressBar" Progress="{Binding Source={x:Static local:App.Client}, Path=SongDownloadProgress, Mode=TwoWay}" />
-    <Button x:Name="LoadButton" Text="{xaml:TranslateText CatalogPage_LoadButton}" Clicked="LoadButton_Clicked" />
+    <Button x:Name="ReloadButton" Text="{xaml:TranslateText CatalogPage_LoadButton}" Clicked="ReloadButton_Clicked" />
   </StackLayout>
 
 </ContentPage>

@@ -69,7 +69,7 @@ namespace Jammit.Forms.Views
       CatalogView.ItemsSource = Catalog;
     }
 
-    private async void LoadButton_Clicked(object sender, EventArgs e)
+    private async void ReloadButton_Clicked(object sender, EventArgs e)
     {
       await LoadCatalog();
     }
