@@ -11,7 +11,7 @@ param(
 	$OutFile = $(Join-Path -Path $Path -ChildPath 'catalog.json'),
 
 	[version]
-	$PlistCilVersion = '2.1.0'
+	$PlistCilVersion = '2.2.0'
 )
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem

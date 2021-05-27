@@ -16,7 +16,7 @@ param(
 	$NugetExe = $(Get-Command nuget).Source,
 
 	[version]
-	$PlistCilVersion = '2.1.0'
+	$PlistCilVersion = '2.2.0'
 )
 
 $packagesFolder = $(& $NugetExe config globalPackagesFolder)
