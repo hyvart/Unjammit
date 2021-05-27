@@ -32,29 +32,22 @@ namespace Jammit.Gtk
         }
         catch (LibVLCSharp.Shared.VLCException)
         {
-          try
+          player = new Audio.NAudioJcfPlayer(
+            media,
+            new Audio.StubWavePlayer(),
+            System.IO.Path.Combine(Jammit.Forms.App.DataDirectory, "Tracks"),
+            Forms.Resources.Assets.Stick)
           {
-            player = new Audio.NAudioJcfPlayer(
-              media,
-              new Audio.StubWavePlayer(),
-              System.IO.Path.Combine(Jammit.Forms.App.DataDirectory, "Tracks"),
-              Forms.Resources.Assets.Stick)
+            TimerAction = () =>
             {
-              TimerAction = () =>
+              Xamarin.Forms.Device.StartTimer(new TimeSpan(0, 0, 1), () =>
               {
-                Xamarin.Forms.Device.StartTimer(new TimeSpan(0, 0, 1), () =>
-                {
-                  Xamarin.Forms.Device.BeginInvokeOnMainThread(() => (player as Audio.NAudioJcfPlayer).NotifyPositionChanged());
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(() => (player as Audio.NAudioJcfPlayer).NotifyPositionChanged());
 
-                  return player.State == Audio.PlaybackStatus.Playing;
-                });
-              }
-            };
-          }
-          catch (Exception ex)
-          {
-            throw ex;
-          }
+                return player.State == Audio.PlaybackStatus.Playing;
+              });
+            }
+          };
         }
 
         return player;
@@ -66,15 +59,22 @@ namespace Jammit.Gtk
       window.SetApplicationTitle("Unjammit!");
       window.Show();
 
-      global::Gtk.Application.Run();
+      try
+      {
+        // Best-effort load VLC core.
+        // See runtime requirements at:
+        // https://github.com/videolan/libvlcsharp/blob/3.x/docs/linux-setup.md
+        // NOTE: Major Linux distros (Ubuntu 20.04 just released) ship libVLC 3.
+        // LibVLCSharp expects libVLC 4.
+        // TODO: Ship with LibVLC 4 nightly build binaries: https://nightlies.videolan.org/
+        // TODO: Write a GitHub issue!
+        global::LibVLCSharp.Shared.Core.Initialize();
+      }
+      finally
+      {
+        global::Gtk.Application.Run();
 
-      // See runtime requirements at:
-      // https://github.com/videolan/libvlcsharp/blob/3.x/docs/linux-setup.md
-      // NOTE: Major Linux distros (Ubuntu 20.04 just released) ship libVLC 3.
-      // LibVLCSharp expects libVLC 4.
-      // TODO: Ship with LibVLC 4 nightly build binaries: https://nightlies.videolan.org/
-      // TODO: Write a GitHub issue!
-      global::LibVLCSharp.Shared.Core.Initialize();
+      }
     }
   }
 }
