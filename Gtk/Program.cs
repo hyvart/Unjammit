@@ -68,12 +68,13 @@ namespace Jammit.Gtk
         // LibVLCSharp expects libVLC 4.
         // TODO: Ship with LibVLC 4 nightly build binaries: https://nightlies.videolan.org/
         // TODO: Write a GitHub issue!
-        global::LibVLCSharp.Shared.Core.Initialize();
+        // UWP: Don't even try. This crashes the process irrevocably.
+        if (Xamarin.Essentials.DeviceInfo.Platform != Xamarin.Essentials.DevicePlatform.Unknown)
+          global::LibVLCSharp.Shared.Core.Initialize();
       }
       finally
       {
         global::Gtk.Application.Run();
-
       }
     }
   }
