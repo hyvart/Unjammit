@@ -21,7 +21,7 @@ steps:
   #     version: $(XamarinAndroid.Version)
 
   - bash: |
-      /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_8_0"
+      /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh ${XAMARINANDROID_MONOVERSION}"
 
   - task: DotNetCoreInstaller@1
     inputs:
