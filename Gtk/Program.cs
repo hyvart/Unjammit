@@ -21,8 +21,44 @@ namespace Jammit.Gtk
       Jammit.Forms.App.DataDirectory = dataDir;
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-        new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] {}, new string[] {})
+        new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] { }, new string[] { })
       );
+      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
+      {
+        Audio.IJcfPlayer player = null;
+        try
+        {
+          player = new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] { }, new string[] { });
+        }
+        catch (LibVLCSharp.Shared.VLCException)
+        {
+          try
+          {
+            player = new Audio.NAudioJcfPlayer(
+              media,
+              new Audio.StubWavePlayer(),
+              System.IO.Path.Combine(Jammit.Forms.App.DataDirectory, "Tracks"),
+              Forms.Resources.Assets.Stick)
+            {
+              TimerAction = () =>
+              {
+                Xamarin.Forms.Device.StartTimer(new TimeSpan(0, 0, 1), () =>
+                {
+                  Xamarin.Forms.Device.BeginInvokeOnMainThread(() => (player as Audio.NAudioJcfPlayer).NotifyPositionChanged());
+
+                  return player.State == Audio.PlaybackStatus.Playing;
+                });
+              }
+            };
+          }
+          catch (Exception ex)
+          {
+            throw ex;
+          }
+        }
+
+        return player;
+      });
 
       var app = new Jammit.Forms.App();
       var window = new FormsWindow();
