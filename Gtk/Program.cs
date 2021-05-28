@@ -21,8 +21,37 @@ namespace Jammit.Gtk
       Jammit.Forms.App.DataDirectory = dataDir;
       Jammit.Forms.App.MediaLoader = new Model.FileSystemJcfLoader(dataDir);
       Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
-        new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] {}, new string[] {})
+        new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] { }, new string[] { })
       );
+      Jammit.Forms.App.PlayerFactory = async (media) => await System.Threading.Tasks.Task.Run(() =>
+      {
+        Audio.IJcfPlayer player = null;
+        try
+        {
+          player = new Audio.VlcJcfPlayer(media, new LibVLCSharp.Shared.MediaConfiguration[] { }, new string[] { });
+        }
+        catch (LibVLCSharp.Shared.VLCException)
+        {
+          player = new Audio.NAudioJcfPlayer(
+            media,
+            new Audio.StubWavePlayer(),
+            System.IO.Path.Combine(Jammit.Forms.App.DataDirectory, "Tracks"),
+            Forms.Resources.Assets.Stick)
+          {
+            TimerAction = () =>
+            {
+              Xamarin.Forms.Device.StartTimer(new TimeSpan(0, 0, 1), () =>
+              {
+                Xamarin.Forms.Device.BeginInvokeOnMainThread(() => (player as Audio.NAudioJcfPlayer).NotifyPositionChanged());
+
+                return player.State == Audio.PlaybackStatus.Playing;
+              });
+            }
+          };
+        }
+
+        return player;
+      });
 
       var app = new Jammit.Forms.App();
       var window = new FormsWindow();
@@ -30,15 +59,23 @@ namespace Jammit.Gtk
       window.SetApplicationTitle("Unjammit!");
       window.Show();
 
-      global::Gtk.Application.Run();
-
-      // See runtime requirements at:
-      // https://github.com/videolan/libvlcsharp/blob/3.x/docs/linux-setup.md
-      // NOTE: Major Linux distros (Ubuntu 20.04 just released) ship libVLC 3.
-      // LibVLCSharp expects libVLC 4.
-      // TODO: Ship with LibVLC 4 nightly build binaries: https://nightlies.videolan.org/
-      // TODO: Write a GitHub issue!
-      global::LibVLCSharp.Shared.Core.Initialize();
+      try
+      {
+        // Best-effort load VLC core.
+        // See runtime requirements at:
+        // https://github.com/videolan/libvlcsharp/blob/3.x/docs/linux-setup.md
+        // NOTE: Major Linux distros (Ubuntu 20.04 just released) ship libVLC 3.
+        // LibVLCSharp expects libVLC 4.
+        // TODO: Ship with LibVLC 4 nightly build binaries: https://nightlies.videolan.org/
+        // TODO: Write a GitHub issue!
+        // UWP: Don't even try. This crashes the process irrevocably.
+        if (Xamarin.Essentials.DeviceInfo.Platform != Xamarin.Essentials.DevicePlatform.Unknown)
+          global::LibVLCSharp.Shared.Core.Initialize();
+      }
+      finally
+      {
+        global::Gtk.Application.Run();
+      }
     }
   }
 }
