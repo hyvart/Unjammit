@@ -17,7 +17,8 @@
 
   <ContentPage.Resources>
     <ResourceDictionary>
-      <converters:DigitalTimeConverter x:Key="floatToTimeSpan" />
+      <converters:DoubleToTimeStampConverter x:Key="doubleToTime" />
+      <converters:DoubleToTimeStampBackConverter x:Key="doubleToTimeBack" />
       <Style x:Key="ProgressStyle" TargetType="Label">
         <Setter Property="FontFamily" Value="{OnPlatform UWP=Consolas, iOS=Courier, macOS=Courier}" />
       </Style>
@@ -88,14 +89,17 @@
                BorderColor="Green"
                BackgroundColor="Transparent"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=WidthRequest, Constant=-20}"
-               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant={StaticResource Key=ScoreCursorOffset}}">
+               RelativeLayout.XConstraint=
+                 "{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5,
+                   Constant={StaticResource Key=ScoreCursorOffset}}">
           </Frame>
 
           <Frame x:Name="CursorBar"
                BorderColor="Green"
                BackgroundColor="Green"
                RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant, Constant=2}"
-               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
+               RelativeLayout.XConstraint=
+                 "{ConstraintExpression Type=RelativeToView, ElementName=CursorFrame, Property=X, Constant=0}"
                />
         </RelativeLayout>
       </ScrollView>
@@ -148,7 +152,7 @@
       <StackLayout x:Name="ProgressLayout"
                    HorizontalOptions="FillAndExpand">
         <FlexLayout VerticalOptions="Start" AlignItems="Center" HeightRequest="36">
-          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource floatToTimeSpan}}"
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Value, Converter={StaticResource doubleToTime}}"
                  BackgroundColor="LightGray"
                  HorizontalOptions="Start"
                  Style="{StaticResource Key=ProgressStyle}"
@@ -158,12 +162,12 @@
                   MaximumTrackColor="LightCyan"
                   Minimum="0"
                   Maximum="{Binding Player.Length.TotalSeconds}"
-                  Value="{Binding Player.Position, Mode=TwoWay}"
+                  Value="{Binding Player.Position, Mode=TwoWay, Converter={StaticResource doubleToTimeBack}}"
                   ValueChanged="PositionSlider_ValueChanged"
                   FlexLayout.Grow="1"
                   Margin="6,0,6,0"
                   />
-          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, Converter={StaticResource floatToTimeSpan}}"
+          <Label Text="{Binding Source={x:Reference PositionSlider}, Path=Maximum, Converter={StaticResource doubleToTime}}"
                  BackgroundColor="LightGray"
                  HorizontalOptions="End"
                  Style="{StaticResource Key=ProgressStyle}"
