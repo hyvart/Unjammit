@@ -9,9 +9,7 @@
     <SearchBar Placeholder="{xaml:TranslateText SongSearch_Placeholder}" TextChanged="SearchBar_TextChanged" />
     <ListView
       x:Name="LibraryView"
-      ItemTapped="LibraryView_ItemTapped"
-      BindingContext="{Static local:App.Library}"
-      ItemsSource="{Binding Songs}">
+      ItemTapped="LibraryView_ItemTapped">
       <ListView.Header>
         <Grid>
           <Label Grid.Column="0" FontAttributes="Bold" Text="{xaml:TranslateText SongInfo_Artist}" />
