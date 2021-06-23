@@ -13,6 +13,17 @@ namespace Jammit.Forms.Views
       InitializeComponent();
     }
 
+    #region Page
+
+    protected override void OnAppearing()
+    {
+      LibraryView.ItemsSource = App.Library.Songs;
+
+      base.OnAppearing();
+    }
+
+    #endregion Page
+
     private async void LibraryView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
       await Navigation.PushModalAsync(await SongPage.CreateAsync(e.Item as SongInfo));

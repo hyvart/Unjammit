@@ -48,7 +48,6 @@
       <local:VerticalSlider x:Name="VolumeSlider"
               Minimum="0"
               Maximum="100"
-              Value="{Binding Volume, Mode=OneWayToSource}"
               ValueChanged="VolumeSlider_ValueChanged"
               MinimumTrackColor="DarkCyan"
               MaximumTrackColor="LightCyan"
