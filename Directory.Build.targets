@@ -27,12 +27,14 @@
 
     <Message Text="%0A" />
     <Message Text="macOS" />
+    <Message Text="=> DeviceSpecificOutputPath   [$(DeviceSpecificOutputPath)]" />
     <Message Text="=> XamarinMacFrameworkRoot    [$(XamarinMacFrameworkRoot)]" />
     <Message Text="=> XamarinMacFrameworkVersion [$(XamarinMacFrameworkVersion)]" />
 
     <Message Text="%0A" />
     <Message Text="=> ProjectHome                [$(ProjectHome)]" />
     <Message Text="=> UserRootDir                [$(UserRootDir)]" />
+    <Message Text="=> MSBuildProjectDirectory    [$(MSBuildProjectDirectory)]" />
     <Message Text="=> MSBuildExtensionsPath      [$(MSBuildExtensionsPath)]" />
     <Message Text="=> MSBuildExtensionsPath32    [$(MSBuildExtensionsPath32)]" />
     <Message Text="=> MSBuildExtensionsPath64    [$(MSBuildExtensionsPath64)]" />

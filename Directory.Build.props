@@ -1,14 +1,16 @@
 ﻿<Project>
 
   <PropertyGroup>
-    <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+    <Platform Condition="'$(Platform)'==''">AnyCPU</Platform>
+    <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
 
     <!-- <BaseIntermediateOutputPath>$(SolutionDir)Build\</BaseIntermediateOutputPath> -->
     <!-- <BaseIntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</BaseIntermediateOutputPath> -->
-    <IntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
+    <IntermediateOutputPath>$(MSBuildThisFileDirectory)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
 
-    <BaseOutputPath>$(SolutionDir)Target\</BaseOutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)Target\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
 
     <!-- Set global C# language version. -->
