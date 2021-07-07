@@ -9,6 +9,7 @@
     <!-- <BaseIntermediateOutputPath>$(SolutionDir)Build\</BaseIntermediateOutputPath> -->
     <!-- <BaseIntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</BaseIntermediateOutputPath> -->
     <IntermediateOutputPath>$(MSBuildThisFileDirectory)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(MSBuildThisFileDirectory)Build\ProjectExtensions\$(MSBuildProjectName)\</MSBuildProjectExtensionsPath>
 
     <BaseOutputPath>$(MSBuildThisFileDirectory)Target\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
