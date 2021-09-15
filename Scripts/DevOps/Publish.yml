@@ -71,6 +71,7 @@ stages:
         dependsOn: SetUp
 
         variables:
+          - group: Build - Apple
           - group: Build - macOS
           - group: Distribute - Alpha - Apple
           - group: Distribute - Alpha - macOS
@@ -119,6 +120,7 @@ stages:
         dependsOn: SetUp
 
         variables:
+          - group: Build - Apple
           - group: Build - iOS
           - group: Distribute - Alpha - Apple
           - group: Distribute - Alpha - iOS
