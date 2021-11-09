@@ -240,7 +240,7 @@ stages:
           #   displayName: Distribute in App Center
           #   inputs:
           #     serverEndpoint: App Center - Hyvart
-          #     appSlug: hyvart/Unjammit-macOS
+          #     appSlug: hyvart/unjammit-macos
           #     appFile: $(System.ArtifactsDirectory)/macOS-Alpha/Unjammit.dmg
           #     releaseNotesOption: input
           #     releaseNotesInput: Alpha Build
@@ -291,7 +291,7 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-iOS
+              appSlug: hyvart/unjammit-ios
               appFile: $(System.ArtifactsDirectory)/iOS-Alpha/Unjammit.iOS.ipa
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
@@ -319,7 +319,7 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-Android
+              appSlug: hyvart/unjammit-android
               appFile: $(System.ArtifactsDirectory)/Android-Alpha/$(PackageName).apk
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
@@ -347,7 +347,7 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-UWP
+              appSlug: hyvart/unjammit-uwp
               appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/*/*.appxbundle
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
