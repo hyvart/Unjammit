@@ -14,7 +14,7 @@ namespace Jammit
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "1.0.0.0")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.99.62")]
 	public partial class Resource
 	{
 		
@@ -154,6 +154,7 @@ namespace Jammit
 			global::Xamarin.Essentials.Resource.Id.text2 = global::Jammit.Resource.Id.text2;
 			global::Xamarin.Essentials.Resource.Id.time = global::Jammit.Resource.Id.time;
 			global::Xamarin.Essentials.Resource.Id.title = global::Jammit.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Id.view_tree_lifecycle_owner = global::Jammit.Resource.Id.view_tree_lifecycle_owner;
 			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::Jammit.Resource.Integer.status_bar_notification_info_maxnum;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::Jammit.Resource.Layout.browser_actions_context_menu_page;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::Jammit.Resource.Layout.browser_actions_context_menu_row;
