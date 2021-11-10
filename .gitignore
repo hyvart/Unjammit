@@ -254,3 +254,6 @@ ModelManifest.xml
 
 # Vim
 *.swp
+
+# Other
+*.binlog
