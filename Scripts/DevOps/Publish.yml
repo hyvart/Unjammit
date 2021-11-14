@@ -222,6 +222,9 @@ stages:
     dependsOn:
       - Publish
 
+    pool:
+      vmImage: ubuntu-20.04
+
     jobs:
       - job:
         displayName: Deploy macOS
