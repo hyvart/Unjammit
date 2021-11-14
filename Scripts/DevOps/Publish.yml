@@ -28,7 +28,8 @@ stages:
 
     jobs:
       - job: SetUp
-        pool: ubuntu-20.04
+        pool:
+          vmImage: ubuntu-20.04
         steps:
           - pwsh: |
               $changedFiles = $(git diff --name-only HEAD HEAD~)
