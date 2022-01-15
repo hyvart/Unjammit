@@ -82,7 +82,7 @@
       <Version>5.0.0.2196</Version>
     </PackageReference>
     <PackageReference Include="LibVLCSharp.Forms.GTK">
-      <Version>3.6.1</Version>
+      <Version>3.6.5</Version>
     </PackageReference>
     <PackageReference Include="NAudio.Core">
       <Version>2.0.0</Version>
