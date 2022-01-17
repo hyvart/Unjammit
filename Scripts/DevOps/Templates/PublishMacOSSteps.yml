@@ -49,7 +49,7 @@ steps:
   #TODO: ProvisiningProfile
   - task: InstallAppleProvisioningProfile@1
     inputs:
-      provProfileSecureFile: $(ProvisioningProfile)
+      provProfileSecureFile: $(ProvisioningProfile.secureFilePath)
 
   - template: BuildMacOSSteps.yml
     parameters:
