@@ -42,8 +42,8 @@ steps:
   - task: InstallAppleCertificate@2
     displayName: Install Certificate
     inputs:
-      certSecureFile: com.unjammit.ios.dist.p12
-      # certSecureFile: $(SigningCertificate)
+      # certSecureFile: com.unjammit.ios.dist.p12
+      certSecureFile: $(SigningCertificate)
       certPwd: $(SigningKeyPassword)
 
   - task: InstallAppleProvisioningProfile@1

@@ -42,11 +42,9 @@ steps:
   - task: InstallAppleCertificate@2
     displayName: Install Certificate
     inputs:
-      # certSecureFile: com.unjammit.generic.p12
       certSecureFile: $(SigningCertificate)
       certPwd: $(SigningKeyPassword)
 
-  #TODO: ProvisiningProfile
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provProfileSecureFile: com.unjammit.macos.alpha.mobileprovision
@@ -59,8 +57,3 @@ steps:
         /p:UseHardenedRuntime=false
         /p:CodeSigningKey="$(APPLE_CERTIFICATE_SIGNING_IDENTITY)"
         /p:CodeSignProvision="$(APPLE_PROV_PROFILE_UUID)"
-
-  # - bash: |
-  #     codesign -v --force --timestamp=none --sign "${APPLE_CERTIFICATE_SIGNING_IDENTITY}" \
-  #       Target/AnyCPU/Release/Unjammit.macOS/Unjammit.app
-  #   displayName: Sign Application
