@@ -42,7 +42,7 @@ steps:
   - task: InstallAppleCertificate@2
     displayName: Install Certificate
     inputs:
-      certSecureFile: $(SigningCertificate)
+      certSecureFile: com.unjammit.publisher.p12
       certPwd: $(SigningKeyPassword)
 
   - task: InstallAppleProvisioningProfile@1
