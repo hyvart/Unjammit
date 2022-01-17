@@ -47,6 +47,9 @@ steps:
       certPwd: $(SigningKeyPassword)
 
   #TODO: ProvisiningProfile
+  - task: InstallAppleProvisioningProfile@1
+    inputs:
+      provProfileSecureFile: $(ProvisioningProfile)
 
   - template: BuildMacOSSteps.yml
     parameters:
@@ -60,3 +63,4 @@ steps:
   - bash: |
       codesign -v --force --timestamp=none --sign "${APPLE_CERTIFICATE_SIGNING_IDENTITY}" \
         Target/AnyCPU/Release/Unjammit.macOS/Unjammit.app
+    displayName: Sign Application

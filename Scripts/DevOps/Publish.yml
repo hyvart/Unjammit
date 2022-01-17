@@ -109,48 +109,11 @@ stages:
           - bash: |
               echo "${BUILDVERSION}" > ${BUILD_ARTIFACTSTAGINGDIRECTORY}/buildVersion.txt
               echo "${BUILD_SOURCEVERSION}" | cut -c1-7 > ${BUILD_ARTIFACTSTAGINGDIRECTORY}/shortSourceVersion.txt
+            displayName: Store Build and Source Versions
 
           - task: PublishBuildArtifacts@1
             displayName: 'Publish artifact: macOS-Alpha'
             inputs:
               PathtoPublish: $(Build.ArtifactStagingDirectory)
               ArtifactName: macOS-Alpha
-              publishLocation: Container
-
-      - job:
-        displayName: iOS
-        dependsOn: SetUp
-
-        variables:
-          - group: Build - Apple
-          - group: Build - iOS
-          - group: Distribute - Alpha - Apple
-          - group: Distribute - Alpha - iOS
-          - name: BuildPlatform
-            value: iPhone
-          - name: BuildConfiguration
-            value: Ad-Hoc
-          - name: BuildVersion
-            value: $[ dependencies.SetUp.outputs['SetBuildVersion.BuildVersion'] ]
-
-        pool:
-          vmImage: $(Job.VmImage)
-
-        steps:
-          - template: Templates/PublishiOSSteps.yml
-            parameters:
-              phase: Alpha
-
-          - task: CopyFiles@2
-            displayName: Stage IPA
-            inputs:
-              SourceFolder: $(Build.SourcesDirectory)/Target/$(BuildPlatform)/$(BuildConfiguration)/Unjammit.iOS/
-              Contents: Unjammit.iOS.ipa
-              TargetFolder: $(Build.ArtifactStagingDirectory)
-
-          - task: PublishBuildArtifacts@1
-            displayName: 'Publish artifact: iOS-Alpha'
-            inputs:
-              PathtoPublish: $(Build.ArtifactStagingDirectory)
-              ArtifactName: iOS-Alpha
               publishLocation: Container
