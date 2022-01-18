@@ -49,6 +49,6 @@ steps:
       apksign: true # Optional
       apksignerKeystoreFile: $(SigningStore)
       apksignerKeystorePassword: $(SigningStorePassword)
-      apksignerKeystoreAlias: $(SigningCertificate)
+      apksignerKeystoreAlias: com.unjammit.publisher.p12
       apksignerKeyPassword: $(SigningKeyPassword)
       zipalign: true
