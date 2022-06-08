@@ -94,7 +94,7 @@
     <!-- Explicit reference to enable Hot Restart. -->
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
     <PackageReference Include="NAudio.Core">
-      <Version>2.0.0</Version>
+      <Version>2.1.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
