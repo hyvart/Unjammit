@@ -13,6 +13,8 @@ namespace Jammit.Audio
 
     public PlaybackState PlaybackState { get; set; } = PlaybackState.Stopped;
 
+    public WaveFormat OutputWaveFormat => new WaveFormat(44100, 16, 2);
+
     public event EventHandler<StoppedEventArgs> PlaybackStopped;
 
     public void Dispose() { }
