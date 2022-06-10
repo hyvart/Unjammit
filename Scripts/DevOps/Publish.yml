@@ -28,6 +28,8 @@ stages:
 
     jobs:
       - job: SetUp
+        pool:
+          vmImage: ubuntu-20.04
         steps:
           - pwsh: |
               $changedFiles = $(git diff --name-only HEAD HEAD~)
@@ -71,6 +73,7 @@ stages:
         dependsOn: SetUp
 
         variables:
+          - group: Build - Apple
           - group: Build - macOS
           - group: Distribute - Alpha - Apple
           - group: Distribute - Alpha - macOS
@@ -119,6 +122,7 @@ stages:
         dependsOn: SetUp
 
         variables:
+          - group: Build - Apple
           - group: Build - iOS
           - group: Distribute - Alpha - Apple
           - group: Distribute - Alpha - iOS
@@ -218,6 +222,9 @@ stages:
     dependsOn:
       - Publish
 
+    pool:
+      vmImage: ubuntu-20.04
+
     jobs:
       - job:
         displayName: Deploy macOS
@@ -238,7 +245,7 @@ stages:
           #   displayName: Distribute in App Center
           #   inputs:
           #     serverEndpoint: App Center - Hyvart
-          #     appSlug: hyvart/Unjammit-macOS
+          #     appSlug: hyvart/unjammit-macos
           #     appFile: $(System.ArtifactsDirectory)/macOS-Alpha/Unjammit.dmg
           #     releaseNotesOption: input
           #     releaseNotesInput: Alpha Build
@@ -289,7 +296,7 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-iOS
+              appSlug: hyvart/unjammit-ios
               appFile: $(System.ArtifactsDirectory)/iOS-Alpha/Unjammit.iOS.ipa
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
@@ -317,7 +324,7 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-Android
+              appSlug: hyvart/unjammit-android
               appFile: $(System.ArtifactsDirectory)/Android-Alpha/$(PackageName).apk
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
@@ -345,7 +352,7 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-UWP
+              appSlug: hyvart/unjammit-uwp
               appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/*/*.appxbundle
               releaseNotesOption: input
               releaseNotesInput: Alpha Build

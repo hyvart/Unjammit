@@ -15,6 +15,7 @@ jobs:
     displayName: ${{ parameters.displayName }}
 
     variables:
+    - group: Build - Apple
     - group: ${{ parameters.platformVariableGroup }}
 
     pool:

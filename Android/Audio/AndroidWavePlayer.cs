@@ -68,6 +68,8 @@ namespace Jammit.Audio
     /// </summary>
     public AudioTrackPerformanceMode PerformanceMode { get; set; }
 
+    public WaveFormat OutputWaveFormat => m_WaveProvider.WaveFormat;
+
     #endregion
 
     #region Events

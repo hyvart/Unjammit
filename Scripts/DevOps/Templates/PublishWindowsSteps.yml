@@ -30,7 +30,7 @@ steps:
     displayName: Apply Assets
     name: signingCert
     inputs:
-      secureFile: $(SigningCertificate)
+      secureFile: com.unjammit.publisher.p12
 
   - template: MSBuildSteps.yml
     parameters:

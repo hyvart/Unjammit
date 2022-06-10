@@ -63,6 +63,8 @@ namespace Jammit.Audio
     /// </summary>
     public int NumberOfBuffers { get; set; }
 
+    public WaveFormat OutputWaveFormat => m_WaveProvider.WaveFormat;
+
     #endregion
 
     #region Events
