@@ -74,7 +74,7 @@ jobs:
             /p:Configuration=$(BuildConfiguration)
 
       - bash: |
-          ls ${BUILD_SOURCESDIRECTORY}/AnyCPU/*/
+          ls ${BUILD_SOURCESDIRECTORY}/*/*/
 
 
       - task: XamariniOS@2
