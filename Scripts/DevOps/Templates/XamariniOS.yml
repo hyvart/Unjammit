@@ -68,10 +68,14 @@ jobs:
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          platform: $(BuildPlatform)
           msbuildArguments:
             /t:Restore
-            /p:Platform=$(BuildPlatform)
             /p:Configuration=$(BuildConfiguration)
+
+      - bash: |
+          ls Build/AnyCPU/*/
+
 
       - task: XamariniOS@2
         displayName: Build ${{ parameters.project }}

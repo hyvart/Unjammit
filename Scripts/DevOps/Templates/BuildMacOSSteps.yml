@@ -35,7 +35,14 @@ steps:
     inputs:
       solution: ${{ parameters.project }}
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-      msbuildArguments: /t:Restore
+      platform: AnyCPU
+      msbuildArguments:
+        /t:Restore
+        ${{ parameters.msbuildArguments }}
+
+  #TODO: Delete
+  - bash: |
+      ls Build/AnyCPU/*/
 
   # TODO: Replace with MSBuildSteps
   - task: MSBuild@1
