@@ -42,7 +42,7 @@ steps:
 
   #TODO: Delete
   - bash: |
-      ls ${BUILD_SOURCESDIRECTORY}/AnyCPU/*/
+      ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/
 
   # TODO: Replace with MSBuildSteps
   - task: MSBuild@1

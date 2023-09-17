@@ -75,7 +75,7 @@ jobs:
             /p:Configuration=$(BuildConfiguration)
 
       - bash: |
-          ls Build/AnyCPU/*/
+          ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/
 
       - task: XamarinAndroid@1
         displayName: Build ${{ parameters.project }}
