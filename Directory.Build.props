@@ -6,10 +6,9 @@
     <Platform Condition="'$(Platform)'==''">AnyCPU</Platform>
     <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
 
-    <!-- <BaseIntermediateOutputPath>$(SolutionDir)Build\</BaseIntermediateOutputPath> -->
-    <!-- <BaseIntermediateOutputPath>$(SolutionDir)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</BaseIntermediateOutputPath> -->
-    <IntermediateOutputPath>$(MSBuildThisFileDirectory)Build\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
-    <MSBuildProjectExtensionsPath>$(MSBuildThisFileDirectory)Build\ProjectExtensions\$(MSBuildProjectName)\</MSBuildProjectExtensionsPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)Build\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</IntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(IntermediateOutputPath)ProjectExtensions\</MSBuildProjectExtensionsPath>
 
     <BaseOutputPath>$(MSBuildThisFileDirectory)Target\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
