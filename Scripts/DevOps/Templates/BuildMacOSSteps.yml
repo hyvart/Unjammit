@@ -40,10 +40,6 @@ steps:
         /t:Restore
         ${{ parameters.msbuildArguments }}
 
-  #TODO: Delete
-  - bash: |
-      ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/
-
   # TODO: Replace with MSBuildSteps
   - task: MSBuild@1
     displayName: Build ${{ parameters.project }}

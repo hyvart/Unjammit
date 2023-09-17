@@ -63,7 +63,7 @@ jobs:
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          platform: $(BuildPlatform)
+          platform: iPhoneSimulator
           msbuildArguments:
             /t:Restore
             /p:Configuration=$(BuildConfiguration)
