@@ -71,9 +71,6 @@ jobs:
             /t:Restore
             /p:Configuration=$(BuildConfiguration)
 
-      - bash: |
-          ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/
-
       - task: XamarinAndroid@1
         displayName: Build ${{ parameters.project }}
         inputs:

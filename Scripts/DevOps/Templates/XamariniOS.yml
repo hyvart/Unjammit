@@ -68,13 +68,6 @@ jobs:
             /t:Restore
             /p:Configuration=$(BuildConfiguration)
 
-      - bash: |
-          ls ${BUILD_SOURCESDIRECTORY}/Build/*/
-          ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/
-          ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/Unjammit.iOS/
-          ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/Unjammit.iOS/*/
-        enabled: false
-
       - task: XamariniOS@2
         displayName: Build ${{ parameters.project }}
         inputs:
@@ -84,6 +77,5 @@ jobs:
           packageApp: ${{ parameters.packageApp }}
           buildForSimulator: ${{ parameters.buildForSimulator }}
           args: ${{ parameters.xcodeArguments }}
-          runNugetRestore: true
           signingIdentity: ${{ parameters.signingIdentity }}
           signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
