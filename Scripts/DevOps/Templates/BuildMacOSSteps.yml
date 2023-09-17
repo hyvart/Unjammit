@@ -53,5 +53,6 @@ steps:
       configuration: $(BuildConfiguration)
       platform: AnyCPU
       msbuildArguments:
+        /r
         ${{ parameters.msbuildArguments }}
       maximumCpuCount: $(MSBuild.MaximumCpuCount)
