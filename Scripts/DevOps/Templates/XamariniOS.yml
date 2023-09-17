@@ -7,7 +7,6 @@ parameters:
   displayName:
   project:
   platformVariableGroup: ''
-  buildPlatforms: []
   buildConfigurations: [ Debug, Release ]
 
   # XamariniOS
@@ -16,8 +15,6 @@ parameters:
   xcodeArguments: ''
   signingIdentity: ''
   signingProvisioningProfileID: ''
-
-  debug: false
 
 jobs:
   - job: #${{ parameters.name }}
@@ -32,11 +29,9 @@ jobs:
 
     strategy:
       matrix:
-        ${{ each platform in parameters.buildPlatforms }}:
-          ${{ each configuration in parameters.buildConfigurations }}:
-            "${{ platform }}|${{ configuration }}":
-              BuildPlatform: ${{platform}}
-              BuildConfiguration: ${{configuration}}
+        ${{ each configuration in parameters.buildConfigurations }}:
+          "${{ configuration }}":
+            BuildConfiguration: ${{configuration}}
 
     steps:
       - bash: |
@@ -63,15 +58,15 @@ jobs:
           packageType: sdk
           version: $(DotNetCoreSdk.Version)
 
-      - task: MSBuild@1
-        displayName: Restore Packages
-        inputs:
-          solution: ${{ parameters.project }}
-          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          platform: $(BuildPlatform)
-          msbuildArguments:
-            /t:Restore
-            /p:Configuration=$(BuildConfiguration)
+      # - task: MSBuild@1
+      #   displayName: Restore Packages
+      #   inputs:
+      #     solution: ${{ parameters.project }}
+      #     msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      #     platform: $(BuildPlatform)
+      #     msbuildArguments:
+      #       /t:Restore
+      #       /p:Configuration=$(BuildConfiguration)
 
       - bash: |
           ls ${BUILD_SOURCESDIRECTORY}/Build/*/
@@ -88,5 +83,6 @@ jobs:
           packageApp: ${{ parameters.packageApp }}
           buildForSimulator: ${{ parameters.buildForSimulator }}
           args: ${{ parameters.xcodeArguments }}
+          runNugetRestore: true
           signingIdentity: ${{ parameters.signingIdentity }}
           signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
