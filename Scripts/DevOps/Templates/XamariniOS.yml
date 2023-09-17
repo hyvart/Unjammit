@@ -73,6 +73,7 @@ jobs:
           ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/
           ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/Unjammit.iOS/
           ls ${BUILD_SOURCESDIRECTORY}/Build/*/*/Unjammit.iOS/*/
+        enabled: false
 
       - task: XamariniOS@2
         displayName: Build ${{ parameters.project }}
