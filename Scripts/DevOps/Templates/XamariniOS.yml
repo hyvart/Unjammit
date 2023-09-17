@@ -58,15 +58,15 @@ jobs:
           packageType: sdk
           version: $(DotNetCoreSdk.Version)
 
-      # - task: MSBuild@1
-      #   displayName: Restore Packages
-      #   inputs:
-      #     solution: ${{ parameters.project }}
-      #     msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-      #     platform: $(BuildPlatform)
-      #     msbuildArguments:
-      #       /t:Restore
-      #       /p:Configuration=$(BuildConfiguration)
+      - task: MSBuild@1
+        displayName: Restore Packages
+        inputs:
+          solution: ${{ parameters.project }}
+          msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+          platform: $(BuildPlatform)
+          msbuildArguments:
+            /t:Restore
+            /p:Configuration=$(BuildConfiguration)
 
       - bash: |
           ls ${BUILD_SOURCESDIRECTORY}/Build/*/
@@ -78,9 +78,9 @@ jobs:
       - task: XamariniOS@2
         displayName: Build ${{ parameters.project }}
         inputs:
+          clean: false
           solutionFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
-          clean: true
           packageApp: ${{ parameters.packageApp }}
           buildForSimulator: ${{ parameters.buildForSimulator }}
           args: ${{ parameters.xcodeArguments }}

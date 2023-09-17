@@ -44,7 +44,6 @@ jobs:
   #     displayName: Android
   #     project: Android/Unjammit.Android.csproj
   #     platformVariableGroup: Build - Android
-  #     buildPlatforms: [ AnyCPU ]
   #     # msbuildArguments:
   #     #   /p:Configuration=Release
   #     #   /p:AndroidKeyStore=true
