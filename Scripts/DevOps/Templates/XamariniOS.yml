@@ -7,6 +7,7 @@ parameters:
   displayName:
   project:
   platformVariableGroup: ''
+  buildPlatforms: []
   buildConfigurations: [ Debug, Release ]
 
   # XamariniOS
@@ -31,9 +32,11 @@ jobs:
 
     strategy:
       matrix:
-        ${{ each configuration in parameters.buildConfigurations }}:
-            "${{ configuration }}":
-              BuildConfiguration: ${{ configuration }}
+        ${{ each platform in parameters.buildPlatforms }}:
+          ${{ each configuration in parameters.buildConfigurations }}:
+            "${{ platform }}|${{ configuration }}":
+              BuildPlatform: ${{platform}}
+              BuildConfiguration: ${{configuration}}
 
     steps:
       - bash: |
@@ -65,7 +68,10 @@ jobs:
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildArguments: /t:Restore
+          msbuildArguments:
+            /t:Restore
+            /p:Platform=$(BuildPlatform)
+            /p:Configuration=$(BuildConfiguration)
 
       - task: XamariniOS@2
         displayName: Build ${{ parameters.project }}

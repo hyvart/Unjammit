@@ -31,6 +31,7 @@ jobs:
       project: iOS/Unjammit.iOS.csproj
       platformVariableGroup: Build - iOS
       debug: true
+      buildPlatforms: [ iPhoneSimulator ]
 
   - template: Templates/BuildMacOS.yml
     parameters:
@@ -45,6 +46,7 @@ jobs:
       displayName: Android
       project: Android/Unjammit.Android.csproj
       platformVariableGroup: Build - Android
+      buildPlatforms: [ AnyCPU ]
       # msbuildArguments:
       #   /p:Configuration=Release
       #   /p:AndroidKeyStore=true
