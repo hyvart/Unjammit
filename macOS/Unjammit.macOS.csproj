@@ -124,7 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NAudio.Core">
-      <Version>2.1.0</Version>
+      <Version>2.2.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\Apple\Unjammit.Apple.projitems" Label="Shared" Condition="Exists('..\Apple\Unjammit.Apple.projitems')" />
