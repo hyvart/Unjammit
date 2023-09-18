@@ -30,8 +30,8 @@ jobs:
     strategy:
       matrix:
         ${{ each configuration in parameters.buildConfigurations }}:
-            "${{ configuration }}":
-              BuildConfiguration: ${{ configuration }}
+          "${{ configuration }}":
+            BuildConfiguration: ${{ configuration }}
 
     steps:
       - checkout: self
@@ -66,12 +66,15 @@ jobs:
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildArguments: /t:Restore
+          platform: AnyCPU
+          msbuildArguments:
+            /t:Restore
+            /p:Configuration=$(BuildConfiguration)
 
       - task: XamarinAndroid@1
         displayName: Build ${{ parameters.project }}
         inputs:
+          clean: false
           projectFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
           createAppPackage: ${{ parameters.createAppPackage }}
-          clean: false

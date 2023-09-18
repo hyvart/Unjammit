@@ -16,8 +16,6 @@ parameters:
   signingIdentity: ''
   signingProvisioningProfileID: ''
 
-  debug: false
-
 jobs:
   - job: #${{ parameters.name }}
     displayName: ${{ parameters.displayName }}
@@ -32,8 +30,8 @@ jobs:
     strategy:
       matrix:
         ${{ each configuration in parameters.buildConfigurations }}:
-            "${{ configuration }}":
-              BuildConfiguration: ${{ configuration }}
+          "${{ configuration }}":
+            BuildConfiguration: ${{configuration}}
 
     steps:
       - bash: |
@@ -65,14 +63,17 @@ jobs:
         inputs:
           solution: ${{ parameters.project }}
           msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-          msbuildArguments: /t:Restore
+          platform: iPhoneSimulator
+          msbuildArguments:
+            /t:Restore
+            /p:Configuration=$(BuildConfiguration)
 
       - task: XamariniOS@2
         displayName: Build ${{ parameters.project }}
         inputs:
+          clean: false
           solutionFile: ${{ parameters.project }}
           configuration: $(BuildConfiguration)
-          clean: true
           packageApp: ${{ parameters.packageApp }}
           buildForSimulator: ${{ parameters.buildForSimulator }}
           args: ${{ parameters.xcodeArguments }}

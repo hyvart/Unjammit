@@ -49,6 +49,6 @@ steps:
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
       configuration: $(BuildConfiguration)
       platform: $(BuildPlatform)
-      msbuildArguments: ${{ parameters.msbuildArguments }}
+      msbuildArguments: /r ${{ parameters.msbuildArguments }}
       clean: true
       maximumCpuCount: $(MSBuild.MaximumCpuCount)

@@ -30,7 +30,6 @@ jobs:
       displayName: iOS
       project: iOS/Unjammit.iOS.csproj
       platformVariableGroup: Build - iOS
-      debug: true
 
   - template: Templates/BuildMacOS.yml
     parameters:
@@ -61,9 +60,10 @@ jobs:
       platformVariableGroup: Build - Windows
       buildPlatforms: [ AnyCPU ]
 
-  - template: Templates/MSBuild.yml
-    parameters:
-      displayName: Linux
-      project: Gtk/Unjammit.Gtk.csproj
-      platformVariableGroup: Build - Linux
-      buildPlatforms: [ AnyCPU ]
+  #TODO: Re-enable
+  # - template: Templates/MSBuild.yml
+  #   parameters:
+  #     displayName: Linux
+  #     project: Gtk/Unjammit.Gtk.csproj
+  #     platformVariableGroup: Build - Linux
+  #     buildPlatforms: [ AnyCPU ]
