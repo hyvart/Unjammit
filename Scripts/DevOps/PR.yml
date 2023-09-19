@@ -13,31 +13,31 @@ variables:
 
 jobs:
 
-  - template: Templates/MSBuild.yml
-    parameters:
-      displayName: Windows Universal
-      project: UWP/Unjammit.UWP.csproj
-      platformVariableGroup: Build - Windows
-      buildPlatforms: [ x64, x86, ARM, ARM64 ]
-      msbuildArguments:
-        /p:AppxBundlePlatforms="$(BuildPlatform)"
-        /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
-        /p:AppxBundle=Always
-        /p:UapAppxPackageBuildMode=StoreUpload
+  # - template: Templates/MSBuild.yml
+  #   parameters:
+  #     displayName: Windows Universal
+  #     project: UWP/Unjammit.UWP.csproj
+  #     platformVariableGroup: Build - Windows
+  #     buildPlatforms: [ x64, x86, ARM, ARM64 ]
+  #     msbuildArguments:
+  #       /p:AppxBundlePlatforms="$(BuildPlatform)"
+  #       /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppPackages\\"
+  #       /p:AppxBundle=Always
+  #       /p:UapAppxPackageBuildMode=StoreUpload
 
-  - template: Templates/XamariniOS.yml
-    parameters:
-      displayName: iOS
-      project: iOS/Unjammit.iOS.csproj
-      platformVariableGroup: Build - iOS
+  # - template: Templates/XamariniOS.yml
+  #   parameters:
+  #     displayName: iOS
+  #     project: iOS/Unjammit.iOS.csproj
+  #     platformVariableGroup: Build - iOS
 
-  - template: Templates/BuildMacOS.yml
-    parameters:
-      displayName: macOS
-      project: macOS/Unjammit.macOS.csproj
-      platformVariableGroup: Build - macOS
-      msbuildArguments:
-        /p:EnableCodeSigning=false
+  # - template: Templates/BuildMacOS.yml
+  #   parameters:
+  #     displayName: macOS
+  #     project: macOS/Unjammit.macOS.csproj
+  #     platformVariableGroup: Build - macOS
+  #     msbuildArguments:
+  #       /p:EnableCodeSigning=false
 
   - template: Templates/XamarinAndroid.yml
     parameters:
@@ -51,14 +51,13 @@ jobs:
       #   /p:AndroidSigningKeyAlias="$(AndroidSigningKeyAlias)"
       #   /p:AndroidSigningKeyPass="$(AndroidSigningKeyPass)"
       #   /p:AndroidSigningStorePass="$(AndroidSigningStorePass)"
-      debug: true
 
-  - template: Templates/MSBuild.yml
-    parameters:
-      displayName: Windows Forms
-      project: WinForms/Jam.NET.csproj
-      platformVariableGroup: Build - Windows
-      buildPlatforms: [ AnyCPU ]
+  # - template: Templates/MSBuild.yml
+  #   parameters:
+  #     displayName: Windows Forms
+  #     project: WinForms/Jam.NET.csproj
+  #     platformVariableGroup: Build - Windows
+  #     buildPlatforms: [ AnyCPU ]
 
   #TODO: Re-enable
   # - template: Templates/MSBuild.yml
