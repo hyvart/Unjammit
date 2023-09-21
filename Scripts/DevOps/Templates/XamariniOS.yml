@@ -4,17 +4,24 @@
 
 parameters:
   # name:
-  displayName:
-  project:
-  platformVariableGroup: ''
-  buildConfigurations: [ Debug, Release ]
+  - name: displayName
+  - name: project
+  - name: platformVariableGroup
+  - name: buildConfigurations
+    type: object
+    default: [ Debug, Release ]
 
   # XamariniOS
-  packageApp: false
-  buildForSimulator: true
-  xcodeArguments: ''
-  signingIdentity: ''
-  signingProvisioningProfileID: ''
+  - name: packageApp
+    default: false
+  - name: buildForSimulator
+    default: true
+  - name: xcodeArguments
+    default: ''
+  - name: signingIdentity
+    default: ''
+  - name: signingProvisioningProfileID
+    default: ''
 
 jobs:
   - job: #${{ parameters.name }}

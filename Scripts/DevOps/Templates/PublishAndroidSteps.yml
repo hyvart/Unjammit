@@ -4,7 +4,8 @@
 #   - XamarinAndroid.Version
 
 parameters:
-  phase: # Aplha, Beta, Production (Omega)
+  - name: phase
+    default: Alpha  # Aplha, Beta, Production (Omega)
 
 steps:
   - powershell: |

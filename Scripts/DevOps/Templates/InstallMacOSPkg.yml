@@ -1,7 +1,8 @@
 parameters:
-  pkgUrl:
-  fileName:
-  target: '/'
+  - name: pkgUrl
+  - name: fileName
+  - name: target
+    default: '/'
 
 steps:
   - bash: |

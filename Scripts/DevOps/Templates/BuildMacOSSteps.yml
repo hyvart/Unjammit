@@ -5,9 +5,11 @@
 #   - XamarinMac.MonoVersion
 
 parameters:
-  project:
-  msbuildArguments: ''
-  debug: false
+  - name: project
+  - name: msbuildArguments
+    default: ''
+  - name: debug
+    default: false
 
 steps:
   # - template: SetMacOSFrameworkVersion.yml

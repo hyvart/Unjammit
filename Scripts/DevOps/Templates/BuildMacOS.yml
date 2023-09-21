@@ -3,12 +3,16 @@
 #   - XamarinMac.MonoVersion
 
 parameters:
-  displayName:
-  project:
-  platformVariableGroup:
-  buildConfigurations: [ Debug, Release ]
-  msbuildArguments: ''
-  debug: false
+  - name: displayName
+  - name: project
+  - name: platformVariableGroup
+  - name: buildConfigurations
+    type: object
+    default: [ Debug, Release ]
+  - name: msbuildArguments
+    default: ''
+  - name: debug
+    default: false
 
 jobs:
   - job:

@@ -1,13 +1,21 @@
 parameters:
   # name:
-  displayName:
-  project:
-  platformVariableGroups: []
-  platformVariableGroup: '' # Until we can pass the group array above
-  buildPlatforms: []
-  buildConfigurations: [ Debug, Release ]
-  msbuildArguments: ''
-  debug: false
+  - name: displayName
+  - name: project
+  - name: platformVariableGroups
+    type: object
+    default: []
+  - name: platformVariableGroup # Until we can pass the group array above
+  - name: buildPlatforms
+    type: object
+    default: []
+  - name: buildConfigurations
+    type: object
+    default: [ Debug, Release ]
+  - name: msbuildArguments
+    default: ''
+  - name: debug
+    default: false
 
 jobs:
   - job: #${{ parameters.name }}

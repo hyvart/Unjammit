@@ -3,9 +3,11 @@
 #   - MSBuild.MaximumCpuCount
 
 parameters:
-  project:
-  msbuildArguments: ''
-  debug: false
+  - name: project
+  - name: msbuildArguments
+    default: ''
+  - name: debug
+    default: false
 
 steps:
   - task: PowerShell@2

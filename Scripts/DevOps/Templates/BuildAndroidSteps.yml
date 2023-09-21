@@ -3,11 +3,8 @@
 #   - XamarinAndroid.MonoVersion
 
 parameters:
-  # name:
-  project:
-  createAppPackage:
-
-  # XamarinAndroid
+  - name: project
+  - name: createAppPackage
 
 steps:
   # - template: SetMacOSFrameworkVersion.yml
