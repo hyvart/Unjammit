@@ -2,7 +2,8 @@
 #   - 
 
 parameters:
-  phase: # Alpha, Beta, Production (Omega)
+  - name: phase
+    default: Alpha  # Alpha, Beta, Production (Omega)
 
 steps:
   - task: PowerShell@2

@@ -1,6 +1,6 @@
 parameters:
-  framework:
-  version:
+  - name: framework
+  - name: version
 
 steps:
   - task: Bash@3

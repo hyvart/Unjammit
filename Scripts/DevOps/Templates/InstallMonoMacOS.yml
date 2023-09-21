@@ -1,5 +1,5 @@
 parameters:
-  version:
+  - name: version
 
 steps:
   - template: InstallMacOSPkg.yml

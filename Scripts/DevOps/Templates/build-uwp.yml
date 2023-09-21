@@ -3,9 +3,10 @@
 #   BuildConfiguration
 
 parameters:
-  project:
-  projects:
-  debug: false
+  - name: project
+  - name: projects
+  - name: debug
+    default: false
 
 steps:
   - task: PowerShell@2

@@ -4,18 +4,21 @@
 #   - XamarinAndroid.Version
 
 parameters:
-  # name:
-  displayName:
-  project:
-  platformVariableGroup: ''
-  buildConfigurations: [ Debug, Release ]
+  - name: displayName
+  - name: project
+  - name: platformVariableGroup
+  - name: buildConfigurations
+    default: [ Debug, Release ]
 
   # XamarinAndroid
-  createAppPackage: false
-  buildForSimulator: true
-  msbuildArguments: ''
+  - name: createAppPackage
+    default: false
+  - name: buildForSimulator
+    default: true
+  - name: msbuildArguments
 
-  debug: false
+  - name: debug
+    default: false
 
 jobs:
   - job:

@@ -3,17 +3,19 @@
 #   - XamariniOS.MonoVersion
 
 parameters:
-  # name:
-  project:
+  - name: project
 
   # XamariniOS
-  packageApp: false
-  buildForSimulator: true
-  xcodeArguments: ''
+  - name: packageApp
+    default: false
+  - name: buildForSimulator
+    default: true
+  - name: xcodeArguments
 #  signingIdentity: ''
 #  signingProvisioningProfileID: ''
 
-  debug: false
+  - name: debug
+    default: false
 
 steps:
   # - template: SetMacOSFrameworkVersion.yml
