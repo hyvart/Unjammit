@@ -5,6 +5,7 @@
 parameters:
   - name: project
   - name: msbuildArguments
+    default: ''
   - name: debug
     default: false
 

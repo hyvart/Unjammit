@@ -13,6 +13,7 @@ parameters:
     type: object
     default: [ Debug, Release ]
   - name: msbuildArguments
+    default: ''
   - name: debug
     default: false
 
