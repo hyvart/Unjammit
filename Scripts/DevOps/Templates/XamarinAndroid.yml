@@ -8,6 +8,7 @@ parameters:
   - name: project
   - name: platformVariableGroup
   - name: buildConfigurations
+    type: object
     default: [ Debug, Release ]
 
   # XamarinAndroid
