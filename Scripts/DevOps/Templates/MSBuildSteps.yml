@@ -22,7 +22,14 @@ steps:
         Write-Host "[${env:BuildConfiguration}]"
     condition: ${{ parameters.debug }}
 
+  - task: UseDotNet@2
+    inputs:
+      version: $(DotNetCoreSdk.Version)
+
+  #TODO: drop
   - task: DotNetCoreInstaller@1
+    enabled: false
+    displayName: Install .NET
     inputs:
       packageType: sdk
       version: $(DotNetCoreSdk.Version)

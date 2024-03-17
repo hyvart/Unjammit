@@ -40,11 +40,12 @@ steps:
           -Path ${env:BUILD_SOURCESDIRECTORY}\Assets\${env:RELEASE_PHASE}\macOS\* `
           -Destination ${env:BUILD_SOURCESDIRECTORY}\macOS\
 
-  - task: InstallAppleCertificate@2
-    displayName: Install Certificate
-    inputs:
-      certSecureFile: com.unjammit.publisher.p12
-      certPwd: $(SigningKeyPassword)
+  # Currently disbabled
+  # - task: InstallAppleCertificate@2
+  #   displayName: Install Certificate
+  #   inputs:
+  #     certSecureFile: com.unjammit.publisher.p12
+  #     certPwd: $(SigningKeyPassword)
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
