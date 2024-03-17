@@ -13,6 +13,8 @@ trigger:
     include:
       - master
       - release/alpha/*
+      #TODO: Remove
+      - fixci-20240317
 
 variables:
   - group: Build - Global
