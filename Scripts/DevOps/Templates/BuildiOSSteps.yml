@@ -37,11 +37,6 @@ steps:
       sudo xcode-select --switch /Applications/Xcode_${XCODE_VERSION}.app/Contents/Developer
     displayName: Select Xcode version $(Xcode.Version)
 
-  - task: DotNetCoreInstaller@1
-    inputs:
-      packageType: sdk
-      version: $(DotNetCoreSdk.Version)
-
   - task: UseDotNet@2
     inputs:
       packageType: sdk

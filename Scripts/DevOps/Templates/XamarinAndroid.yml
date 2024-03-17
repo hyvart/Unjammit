@@ -55,11 +55,6 @@ jobs:
           /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh ${XAMARINANDROID_MONOVERSION}"
         displayName: Set Xamarin version.
 
-      - task: DotNetCoreInstaller@1
-        inputs:
-          packageType: sdk
-          version: $(DotNetCoreSdk.Version)
-
       - task: UseDotNet@2
         inputs:
           packageType: sdk
