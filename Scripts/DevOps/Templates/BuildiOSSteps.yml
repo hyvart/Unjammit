@@ -11,6 +11,7 @@ parameters:
   - name: buildForSimulator
     default: true
   - name: xcodeArguments
+    default: ''
 #  signingIdentity: ''
 #  signingProvisioningProfileID: ''
 
