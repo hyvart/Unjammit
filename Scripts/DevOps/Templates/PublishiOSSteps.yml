@@ -56,6 +56,5 @@ steps:
     parameters:
       project: $(Build.SourcesDirectory)/iOS/Unjammit.iOS.csproj
       buildPlatform: Ad-Hoc
-      buildConfiguration: Release
       packageApp: true
       buildForSimulator: false
