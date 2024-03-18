@@ -13,7 +13,6 @@ trigger:
     include:
       - master
       - release/alpha/*
-      - fixci-20240317
 
 variables:
   - group: Build - Global
