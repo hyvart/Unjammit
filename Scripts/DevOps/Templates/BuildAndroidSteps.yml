@@ -30,6 +30,8 @@ steps:
     inputs:
       solution: ${{ parameters.project }}
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      platform: $(BuildPlatform)
+      configuration: $(BuildConfiguration)
       msbuildArguments: /t:Restore
 
   - task: XamarinAndroid@1
