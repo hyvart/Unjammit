@@ -337,7 +337,7 @@ stages:
 
       - job:
         #TODO: Re-enable
-        condition: false
+        condition: eq(1,2)
         displayName: Deploy Windows
 
         variables:
