@@ -194,6 +194,8 @@ stages:
               publishLocation: Container
 
       - job:
+        #TODO: Re-enable
+        condition: eq(1,2)
         displayName: Windows
         dependsOn: SetUp
 
