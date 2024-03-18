@@ -5,8 +5,9 @@ trigger:
     include:
       - ci/test/pr*
 
-pr:
-  - master
+#TODO: Re-enable
+# pr:
+#   - master
 
 variables:
   - group: Build - Global
