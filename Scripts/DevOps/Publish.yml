@@ -336,6 +336,8 @@ stages:
               isSilent: false
 
       - job:
+        #TODO: Re-enable
+        condition: false
         displayName: Deploy Windows
 
         variables:
