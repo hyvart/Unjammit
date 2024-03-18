@@ -219,7 +219,6 @@ stages:
               publishLocation: Container
 
   - stage: Deploy
-    condition: eq(1,2) #TODO: Remove
     dependsOn:
       - Publish
 
