@@ -56,7 +56,7 @@ steps:
     inputs:
       solutionFile: ${{ parameters.project }}
       configuration: $(BuildConfiguration)
-      clean: true
+      clean: false #ProjectExtensions resides in the same intermediate output directory
       packageApp: ${{ parameters.packageApp }}
       buildForSimulator: ${{ parameters.buildForSimulator }}
       args: ${{ parameters.xcodeArguments }}
