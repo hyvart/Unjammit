@@ -13,8 +13,6 @@ trigger:
     include:
       - master
       - release/alpha/*
-      #TODO: Remove
-      - fixci-20240317
 
 variables:
   - group: Build - Global
@@ -194,8 +192,6 @@ stages:
               publishLocation: Container
 
       - job:
-        #TODO: Re-enable
-        condition: eq(1,2)
         displayName: Windows
         dependsOn: SetUp
 
@@ -338,8 +334,6 @@ stages:
               isSilent: false
 
       - job:
-        #TODO: Re-enable
-        condition: eq(1,2)
         displayName: Deploy Windows
 
         variables:
