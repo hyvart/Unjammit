@@ -60,5 +60,5 @@ steps:
       packageApp: ${{ parameters.packageApp }}
       buildForSimulator: ${{ parameters.buildForSimulator }}
       args: ${{ parameters.xcodeArguments }}
-  #    signingIdentity: ${{ parameters.signingIdentity }}
-  #    signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
+      signingIdentity: ${{ parameters.signingIdentity }}
+      signingProvisioningProfileID: ${{ parameters.signingProvisioningProfileID }}
