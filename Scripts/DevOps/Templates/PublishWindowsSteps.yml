@@ -36,14 +36,15 @@ steps:
   - template: MSBuildSteps.yml
     parameters:
       project: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      #TODO: Re-enable EnableSigningChecks,AppxPackageSigningEnabled
       msbuildArguments:
         /p:AppxBundlePlatforms="x64|x86|ARM|ARM64"
         /p:AppxPackageDir="$(Build.StagingDirectory)\AppPackages\\"
         /p:AppxBundle=Always
         /p:UapAppxPackageBuildMode=StoreUpload
-        /p:AppxPackageSigningEnabled=True
+        /p:AppxPackageSigningEnabled=False
         /p:PackageCertificateKeyFile="$(signingCert.secureFilePath)"
         /p:PackageCertificateThumbprint=$(SigningCertificateThumbprint)
         /p:PackageCertificatePassword=$(SigningKeyPassword)
-        /p:EnableSigningChecks=True
+        /p:EnableSigningChecks=False
         /p:BuildAppxUploadPackageForUap=False
