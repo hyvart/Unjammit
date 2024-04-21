@@ -123,9 +123,19 @@ namespace Jammit.Audio
 
     #endregion  IJcfPlayer members
 
+    int countdown = 5;
     public void NotifyPositionChanged()
     {
       PositionChanged?.Invoke(this, new EventArgs());
+
+      if (countdown > 0)
+      {
+        countdown--;
+      }
+      else
+      {
+        SetVolume(_media.ClickTrack, 0);
+      }
     }
 
     public Action TimerAction { get; set; }
