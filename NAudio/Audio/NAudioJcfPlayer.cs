@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 
 using Jammit.Model;
@@ -65,6 +66,12 @@ namespace Jammit.Audio
     {
       _waveOut.Play();
 
+      var total = _media.Beats.Count;
+      var ghost = _media.Beats.Count(b => b.IsGhostBeat);
+      var down = _media.Beats.Count(b => b.IsDownBeat);
+      var neither = _media.Beats.Count(b => !b.IsGhostBeat && !b.IsDownBeat);
+
+
       TimerAction();
     }
 
@@ -123,19 +130,9 @@ namespace Jammit.Audio
 
     #endregion  IJcfPlayer members
 
-    int countdown = 5;
     public void NotifyPositionChanged()
     {
       PositionChanged?.Invoke(this, new EventArgs());
-
-      if (countdown > 0)
-      {
-        countdown--;
-      }
-      else
-      {
-        SetVolume(_media.ClickTrack, 0);
-      }
     }
 
     public Action TimerAction { get; set; }
