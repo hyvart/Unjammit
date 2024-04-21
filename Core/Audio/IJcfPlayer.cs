@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Jammit.Audio
 {
@@ -23,5 +21,7 @@ namespace Jammit.Audio
     PlaybackStatus State { get; }
 
     event EventHandler PositionChanged;
+
+    event EventHandler BeatChanged;
   }
 }
