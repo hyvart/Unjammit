@@ -29,7 +29,7 @@ namespace Jammit.Audio
     /// <summary>
     /// Index into array.
     /// </summary>
-    private int _currentBeat;
+    private int _currentBeat;//TODO:Remove?
     public override long Position
     {
       get { return _samplePos*4; }
@@ -84,5 +84,7 @@ namespace Jammit.Audio
       }
       return bytesRead;
     }
+
+    public Model.Beat CurrentBeat => _beats[_currentBeat];
   }
 }
