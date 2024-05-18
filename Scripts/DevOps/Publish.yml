@@ -194,7 +194,6 @@ stages:
       - job:
         displayName: Windows
         dependsOn: SetUp
-        condition: false
 
         variables:
           - group: Build - Windows
@@ -220,7 +219,6 @@ stages:
               publishLocation: Container
 
   - stage: Deploy
-    condition: false
     dependsOn:
       - Publish
 
