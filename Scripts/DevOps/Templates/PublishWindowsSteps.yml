@@ -33,6 +33,42 @@ steps:
     inputs:
       secureFile: com.unjammit.publisher.p12
 
+  - task: MSBuild@1
+    displayName: Restore Packages (x64)
+    inputs:
+      solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      platform: x64
+      configuration: $(BuildConfiguration)
+      msbuildArguments: /t:Restore
+
+  - task: MSBuild@1
+    displayName: Restore Packages (x86)
+    inputs:
+      solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      platform: x86
+      configuration: $(BuildConfiguration)
+      msbuildArguments: /t:Restore
+
+  - task: MSBuild@1
+    displayName: Restore Packages (ARM)
+    inputs:
+      solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      platform: ARM
+      configuration: $(BuildConfiguration)
+      msbuildArguments: /t:Restore
+
+  - task: MSBuild@1
+    displayName: Restore Packages (ARM64)
+    inputs:
+      solution: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
+      msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      platform: ARM64
+      configuration: $(BuildConfiguration)
+      msbuildArguments: /t:Restore
+
   - template: MSBuildSteps.yml
     parameters:
       project: $(Build.SourcesDirectory)/UWP/Unjammit.UWP.csproj
