@@ -71,7 +71,6 @@ stages:
       - job:
         displayName: macOS
         dependsOn: SetUp
-        condition: false
 
         variables:
           - group: Build - Apple
@@ -121,7 +120,6 @@ stages:
       - job:
         displayName: iOS
         dependsOn: SetUp
-        condition: false
 
         variables:
           - group: Build - Apple
@@ -160,7 +158,6 @@ stages:
       - job:
         displayName: Android
         dependsOn: SetUp
-        condition: false
 
         variables:
           - group: Build - Android
@@ -222,7 +219,7 @@ stages:
               publishLocation: Container
 
   - stage: Deploy
-    condition: false #TODO: Remove
+    condition: false
     dependsOn:
       - Publish
 
