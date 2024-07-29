@@ -58,6 +58,11 @@ jobs:
           /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh ${XAMARINANDROID_MONOVERSION}"
           #TODO: Revert!
           echo '============= SDK Platfomrs! ============= '
+          ls /Users/*
+          ls /Users/runner/*
+          ls /Users/runner/Library/*
+          ls /Users/runner/Library/Android/*
+          ls /Users/runner/Library/Android/sdk/*
           ls /Users/runner/Library/Android/sdk/platforms/*
           echo '=============                ============= '
         displayName: Set Xamarin version.
