@@ -27,6 +27,9 @@ jobs:
 
     variables:
       - group: ${{ parameters.platformVariableGroup }}
+      #TODO: Revert!
+      - name:  system.debug
+        value: true
 
     pool:
       vmImage: $(Job.VmImage)
