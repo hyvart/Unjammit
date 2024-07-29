@@ -339,6 +339,9 @@ stages:
         variables:
           - group: Distribute - Alpha - Windows
 
+        pool:
+          vmImage: $(Job.VmImage)
+
         steps:
           - checkout: none
 
