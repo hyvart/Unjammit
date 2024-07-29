@@ -27,9 +27,6 @@ jobs:
 
     variables:
       - group: ${{ parameters.platformVariableGroup }}
-      #TODO: Revert!
-      - name:  system.debug
-        value: true
 
     pool:
       vmImage: $(Job.VmImage)
@@ -57,16 +54,6 @@ jobs:
       - bash: |
           /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh ${XAMARINANDROID_MONOVERSION}"
         displayName: Set Xamarin version.
-
-      - pwsh: |
-          gci /Users/*
-          gci /Users/runner/*
-          gci /Users/runner/Library/*
-          gci /Users/runner/Library/Android/*
-          gci /Users/runner/Library/Android/sdk/*
-          gci /Users/runner/Library/Android/sdk/platforms/*
-
-          Get-Item Env:\
 
       - task: UseDotNet@2
         inputs:
