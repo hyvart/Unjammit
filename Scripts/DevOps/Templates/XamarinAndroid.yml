@@ -66,6 +66,8 @@ jobs:
           gci /Users/runner/Library/Android/sdk/*
           gci /Users/runner/Library/Android/sdk/platforms/*
 
+          Get-Item Env:\
+
       - task: UseDotNet@2
         inputs:
           packageType: sdk
