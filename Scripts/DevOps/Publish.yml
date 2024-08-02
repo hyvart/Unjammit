@@ -22,8 +22,6 @@ variables:
     value: Release
   - group: Distribute - Global
   - group: Distribute - Alpha
-  - name: system.debug
-    value: true
 
 stages:
   - stage: Publish
