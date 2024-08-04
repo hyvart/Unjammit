@@ -345,8 +345,8 @@ stages:
             displayName: Distribute in App Center
             inputs:
               serverEndpoint: App Center - Hyvart
-              appSlug: hyvart/Unjammit-UWP
-              appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/*/*.appxbundle
+              appSlug: hyvart/unjammit-uwp
+              appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/*/*.msixbundle
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
               isMandatory: true
