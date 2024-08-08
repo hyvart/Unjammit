@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:Jammit.Forms.Views"
              xmlns:converters="clr-namespace:Jammit.Forms.Converters"
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
-             xmlns:xfbook="clr-namespace:Xamarin.FormsBook.Platform"
              x:Class="Jammit.Forms.Views.SongPage"
              Appearing="ContentPage_Appearing"
              Disappearing="ContentPage_Disappearing"
