@@ -410,6 +410,7 @@ namespace Jammit.Forms.Views
       //ScorePicker.SelectedIndex = (int)Settings.Get(Settings.SelectedScoreKey(Song), 0);
       ControlsLayout.IsVisible = Settings.Get(Settings.MixerCollapsedKey(Song), true);
       PositionSlider.Value = Settings.Get(Settings.PositionKey(Song), TimeSpan.Zero).TotalSeconds;
+      CountdownSlider.Value = Settings.Get(Settings.CountdownKey(Song), 0);
     }
 
     private void ContentPage_Disappearing(object sender, EventArgs e)
@@ -423,6 +424,8 @@ namespace Jammit.Forms.Views
       else
         Settings.Set(Settings.PositionKey(Song), TimeSpan.FromSeconds(PositionSlider.Value));
       //TODO: TrackMuted
+
+      Settings.Set(Settings.CountdownKey(Song), Player.Countdown);
     }
 
     //TODO: Translate
