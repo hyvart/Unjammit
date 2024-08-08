@@ -100,6 +100,10 @@ namespace Jammit.Audio
 
     public event EventHandler CountdownFinished;
 
+    public uint TotalBeats { get; private set; }
+
+    public uint Countdown { get; set; } = 0;
+
     public uint GetVolume(PlayableTrackInfo track)
     {
       return (uint)_players[track].Volume;

@@ -164,6 +164,10 @@ namespace Jammit.Audio
 
     public PlaybackStatus State { get; private set; }
 
+    public uint TotalBeats { get; private set; }
+
+    public uint Countdown { get; set; } = 0;
+
     #endregion  IJcfPlayer members
   }
 }
