@@ -185,7 +185,7 @@
                   x:Name="CountdownSlider"
                   Minimum="0"
                   Maximum="{Binding Player.BeatCount}"
-                  Value="{Binding Player.BeatCount}"
+                  Steps="{Binding Player.BeatCount}"
                   FlexLayout.Grow="1"
                   Margin="6,0,6,0"
             />
