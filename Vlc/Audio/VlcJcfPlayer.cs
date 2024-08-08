@@ -98,6 +98,8 @@ namespace Jammit.Audio
 
     public event EventHandler PositionChanged;
 
+    public event EventHandler CountdownFinished;
+
     public uint GetVolume(PlayableTrackInfo track)
     {
       return (uint)_players[track].Volume;

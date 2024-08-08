@@ -62,6 +62,8 @@ namespace Jammit.Audio
 
     public event EventHandler PositionChanged;
 
+    public event EventHandler CountdownFinished;
+
     public void Play()
     {
       _waveOut.Play();
