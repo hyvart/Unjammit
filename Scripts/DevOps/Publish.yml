@@ -353,7 +353,7 @@ stages:
             inputs:
               serverEndpoint: App Center - Hyvart
               appSlug: hyvart/unjammit-uwp
-              appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/*/*.appxbundle
+              appFile: $(System.ArtifactsDirectory)/Windows-Alpha/AppPackages/*/*.msixbundle
               releaseNotesOption: input
               releaseNotesInput: Alpha Build
               isMandatory: true

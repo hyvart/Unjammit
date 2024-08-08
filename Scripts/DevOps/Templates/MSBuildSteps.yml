@@ -36,6 +36,8 @@ steps:
     inputs:
       solution: ${{ parameters.project }}
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
+      platform: $(BuildPlatform)
+      configuration: $(BuildConfiguration)
       msbuildArguments: /t:Restore
 
   - task: MSBuild@1
@@ -43,8 +45,8 @@ steps:
     inputs:
       solution: ${{ parameters.project }}
       msbuildArchitecture: $(MSBuild.MSBuildArchitecture)
-      configuration: $(BuildConfiguration)
       platform: $(BuildPlatform)
-      msbuildArguments: /r ${{ parameters.msbuildArguments }}
+      configuration: $(BuildConfiguration)
+      msbuildArguments: ${{ parameters.msbuildArguments }}
       clean: true
       maximumCpuCount: $(MSBuild.MaximumCpuCount)
