@@ -64,6 +64,11 @@ namespace Jammit.Forms
       return $"Song/{song.Sku}/Position";
     }
 
+    public static string CountdownKey(Model.SongInfo song)
+    {
+      return $"Song/{song.Sku}/Countdown";
+    }
+
     #endregion Settings Functions
 
     public static void Clear()

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Jammit.Audio
 {
@@ -16,12 +14,18 @@ namespace Jammit.Audio
 
     void SetVolume(Model.PlayableTrackInfo track, uint volume);
 
-    TimeSpan Position { get; set; }
+    uint TotalBeats { get; }
 
     TimeSpan Length { get; }
 
+    TimeSpan Position { get; set; }
+
     PlaybackStatus State { get; }
 
+    uint Countdown { get; set; }
+
     event EventHandler PositionChanged;
+
+    event EventHandler CountdownFinished;
   }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using Android.Media;
 using Jammit.Model;
@@ -25,6 +25,8 @@ namespace Jammit.Audio
     #region IJcfPlayer
 
     public event EventHandler PositionChanged;
+
+    public event EventHandler CountdownFinished;
 
     public void Play()
     {
@@ -76,6 +78,10 @@ namespace Jammit.Audio
     }
 
     public PlaybackStatus State { get; private set; }
+
+    public uint Countdown { get; set; } = 0;
+
+    public uint TotalBeats { get; private set; }
 
     #endregion IJcfPlayer
   }// class AndroidMediaJcfPlayer
