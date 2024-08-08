@@ -27,6 +27,8 @@ namespace Jammit.Audio
       _mixer = new WaveMixerStream32();
       _channels = new Dictionary<TrackInfo, WaveChannel32>(media.InstrumentTracks.Count + 1 + 1);
 
+      CountdownFinished += NotifyCountdownFinished;
+
       var songPath = Path.Combine(tracksPath, $"{media.Song.Sku}.jcf");
       foreach (var track in media.InstrumentTracks)
       {
@@ -36,7 +38,7 @@ namespace Jammit.Audio
 
       var backingStream = File.OpenRead(Path.Combine(songPath, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx"));
       _channels[media.BackingTrack] = new WaveChannel32(new ImaWaveStream(backingStream));
-      _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats, stick));
+      _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats, stick, CountdownFinished));
 
       foreach (var channel in _channels.Values)
       {
@@ -141,6 +143,11 @@ namespace Jammit.Audio
     public void NotifyPositionChanged()
     {
       PositionChanged?.Invoke(this, new EventArgs());
+    }
+
+    private void NotifyCountdownFinished(object sender, EventArgs e)
+    {
+      SetVolume(_media.ClickTrack, 0);
     }
 
     public Action TimerAction { get; set; }
