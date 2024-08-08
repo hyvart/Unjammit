@@ -201,7 +201,7 @@
                BackgroundColor="Black"
                VerticalOptions="FillAndExpand"
                TextColor="White"
-               MaxLines="{OnIdiom Phone=6, Default=8}"
+               MaxLines="{OnIdiom Phone=6, Default=6}"
                VerticalTextAlignment="Start"
                Style="{StaticResource Key=ProgressStyle}"
                Text="&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;"
