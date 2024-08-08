@@ -190,9 +190,10 @@
                   FlexLayout.Grow="1"
                   Margin="6,0,6,0"
                   />
-          <Label Text="     "
+          <Label Text="{Binding Player.TotalBeats, StringFormat='{}{0,5:F0}'}"
+                 BackgroundColor="LightGray"
+                 HorizontalOptions="Start"
                  Style="{StaticResource ProgressStyle}"
-                 IsVisible="True"
                  />
         </FlexLayout>
 
