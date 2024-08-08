@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms.Views"
@@ -174,11 +174,33 @@
                  />
         </FlexLayout>
 
+        <FlexLayout>
+          <Label Text="{Binding Source={x:Reference CountdownSlider}, Path=Value, StringFormat='{}{0,5:F0}'}"
+                 BackgroundColor="LightGray"
+                 HorizontalOptions="Start"
+                 Style="{StaticResource Key=ProgressStyle}"
+                 />
+          <Slider x:Name="CountdownSlider"
+                  MinimumTrackColor="DarkCyan"
+                  MaximumTrackColor="LightCyan"
+                  Minimum="0"
+                  Maximum="{Binding Player.TotalBeats}"
+                  Value="{Binding Player.Countdown}"
+                  FlexLayout.Grow="1"
+                  Margin="6,0,6,0"
+                  />
+          <Label Text="{Binding Player.TotalBeats, StringFormat='{}{0,5:F0}'}"
+                 BackgroundColor="LightGray"
+                 HorizontalOptions="Start"
+                 Style="{StaticResource ProgressStyle}"
+                 />
+        </FlexLayout>
+
         <Label x:Name="TimelineImage"
                BackgroundColor="Black"
                VerticalOptions="FillAndExpand"
                TextColor="White"
-               MaxLines="{OnIdiom Phone=6, Default=8}"
+               MaxLines="{OnIdiom Phone=6, Default=6}"
                VerticalTextAlignment="Start"
                Style="{StaticResource Key=ProgressStyle}"
                Text="&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;&#x0a;"

@@ -104,6 +104,8 @@ namespace Jammit.Audio
 
     public event EventHandler PositionChanged;
 
+    public event EventHandler CountdownFinished;
+
     public void Play()
     {
       if (PlaybackStatus.Playing == State)
@@ -163,6 +165,10 @@ namespace Jammit.Audio
     public TimeSpan Length { get; private set; }
 
     public PlaybackStatus State { get; private set; }
+
+    public uint TotalBeats { get; private set; }
+
+    public uint Countdown { get; set; } = 0;
 
     #endregion  IJcfPlayer members
   }
