@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Jammit.Forms.Views"
              xmlns:converters="clr-namespace:Jammit.Forms.Converters"
              xmlns:xaml="clr-namespace:Jammit.Forms.Xaml"
+             xmlns:xfbook="clr-namespace:Xamarin.FormsBook.Platform"
              x:Class="Jammit.Forms.Views.SongPage"
              Appearing="ContentPage_Appearing"
              Disappearing="ContentPage_Disappearing"
@@ -172,6 +173,30 @@
                  HorizontalOptions="End"
                  Style="{StaticResource Key=ProgressStyle}"
                  />
+        </FlexLayout>
+
+        <FlexLayout>
+          <Label Text="{Binding Source={x:Reference CountdownSlider}, Path=Value}"
+                 BackgroundColor="LightGray"
+                 HorizontalOptions="Start"
+                 Style="{StaticResource Key=ProgressStyle}"
+                 />
+          <xfbook:StepSlider
+                  x:Name="CountdownSlider"
+                  Minimum="0"
+                  Maximum="{Binding Player.BeatCount}"
+                  Value="{Binding Player.BeatCount}"
+                  FlexLayout.Grow="1"
+                  Margin="6,0,6,0"
+            />
+          <!--<Slider x:Name="CountdownSlider0"
+                  MinimumTrackColor="DarkCyan"
+                  MaximumTrackColor="LightCyan"
+                  Minimum="0"
+                  Maximum="{Binding Player.BeatCount}"
+                  FlexLayout.Grow="1"
+                  Margin="6,0,6,0"
+                  />-->
         </FlexLayout>
 
         <Label x:Name="TimelineImage"
