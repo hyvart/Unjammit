@@ -49,7 +49,7 @@ namespace Jammit.Audio
       //_waveOut.NumberOfBuffers = 2;
       _waveOut.Init(_mixer);
 
-      BeatCount = (uint)_media.Beats.Count;
+      TotalBeats = (uint)_media.Beats.Count;
     }
 
     ~NAudioJcfPlayer()
@@ -98,7 +98,7 @@ namespace Jammit.Audio
       _channels[track].Volume = volume / 100.0f;
     }
 
-    public uint BeatCount { get; private set; }
+    public uint TotalBeats { get; private set; }
 
     public TimeSpan Length => _media.Length;
 
@@ -133,6 +133,8 @@ namespace Jammit.Audio
         }
       }
     }
+
+    public uint Countdown { get; set; } = 0;
 
     #endregion  IJcfPlayer members
 

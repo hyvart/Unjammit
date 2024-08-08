@@ -176,27 +176,24 @@
         </FlexLayout>
 
         <FlexLayout>
-          <Label Text="{Binding Source={x:Reference CountdownSlider}, Path=Value}"
+          <Label Text="{Binding Source={x:Reference CountdownSlider}, Path=Value, StringFormat='{}{0,5:F0}'}"
                  BackgroundColor="LightGray"
                  HorizontalOptions="Start"
                  Style="{StaticResource Key=ProgressStyle}"
                  />
-          <xfbook:StepSlider
-                  x:Name="CountdownSlider"
-                  Minimum="0"
-                  Maximum="{Binding Player.BeatCount}"
-                  Steps="{Binding Player.BeatCount}"
-                  FlexLayout.Grow="1"
-                  Margin="6,0,6,0"
-            />
-          <!--<Slider x:Name="CountdownSlider0"
+          <Slider x:Name="CountdownSlider"
                   MinimumTrackColor="DarkCyan"
                   MaximumTrackColor="LightCyan"
                   Minimum="0"
-                  Maximum="{Binding Player.BeatCount}"
+                  Maximum="{Binding Player.TotalBeats}"
+                  Value="{Binding Player.Countdown}"
                   FlexLayout.Grow="1"
                   Margin="6,0,6,0"
-                  />-->
+                  />
+          <Label Text="     "
+                 Style="{StaticResource ProgressStyle}"
+                 IsVisible="True"
+                 />
         </FlexLayout>
 
         <Label x:Name="TimelineImage"

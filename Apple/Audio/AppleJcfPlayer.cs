@@ -98,7 +98,7 @@ namespace Jammit.Audio
       players[track].Volume = volume / 100.0f;
     }
 
-    public uint BeatCount { get; private set; }
+    public uint TotalBeats { get; private set; }
 
     public TimeSpan Position
     {
@@ -121,6 +121,8 @@ namespace Jammit.Audio
     public TimeSpan Length => media.Length;
 
     public PlaybackStatus State { get; private set; }
+
+    public uint Countdown { get; set; } = 0;
 
     #endregion  IJcfPlayer members
   }
