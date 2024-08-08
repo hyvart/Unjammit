@@ -14,9 +14,11 @@ namespace Jammit.Audio
 
     void SetVolume(Model.PlayableTrackInfo track, uint volume);
 
-    TimeSpan Position { get; set; }
+    uint BeatCount { get; }
 
     TimeSpan Length { get; }
+
+    TimeSpan Position { get; set; }
 
     PlaybackStatus State { get; }
 

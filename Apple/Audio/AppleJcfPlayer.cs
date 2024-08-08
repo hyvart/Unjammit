@@ -98,6 +98,8 @@ namespace Jammit.Audio
       players[track].Volume = volume / 100.0f;
     }
 
+    public uint BeatCount { get; private set; }
+
     public TimeSpan Position
     {
       get

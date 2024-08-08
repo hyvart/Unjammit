@@ -48,6 +48,8 @@ namespace Jammit.Audio
       //_waveOut.DesiredLatency = 60;//TODO: Why?
       //_waveOut.NumberOfBuffers = 2;
       _waveOut.Init(_mixer);
+
+      BeatCount = (uint)_media.Beats.Count;
     }
 
     ~NAudioJcfPlayer()
@@ -95,6 +97,8 @@ namespace Jammit.Audio
     {
       _channels[track].Volume = volume / 100.0f;
     }
+
+    public uint BeatCount { get; private set; }
 
     public TimeSpan Length => _media.Length;
 
