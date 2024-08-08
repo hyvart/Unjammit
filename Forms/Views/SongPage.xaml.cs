@@ -306,6 +306,9 @@ namespace Jammit.Forms.Views
       }
       else
       {
+        if (Audio.PlaybackStatus.Stopped == Player.State)
+          Player.SetVolume(Media.ClickTrack, Settings.Get(Settings.TrackVolumeKey(Media.ClickTrack), 0));
+
         Player.Play();
 
         Device.StartTimer(TimeSpan.FromMilliseconds(30), () =>
