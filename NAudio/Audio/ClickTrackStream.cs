@@ -39,7 +39,7 @@ namespace Jammit.Audio
     /// <summary>
     /// Index into array.
     /// </summary>
-    private int _currentBeat;//TODO:Remove?
+    private int _currentBeat;
     public override long Position
     {
       get { return _samplePos*4; }
@@ -63,7 +63,7 @@ namespace Jammit.Audio
       int bytesRead = 0;
       while (count > 0 && _beats.Count > _currentBeat)
       {
-        if (_currentBeat > _player.Countdown && _player.Countdown != 0)
+        if (_player != null && _currentBeat > _player.Countdown && _player.Countdown != 0)
         {
           _countdownFinished?.Invoke(this, new EventArgs());
           return 0;
@@ -100,7 +100,5 @@ namespace Jammit.Audio
       }
       return bytesRead;
     }
-
-    public Model.Beat CurrentBeat => _beats[_currentBeat];
   }
 }

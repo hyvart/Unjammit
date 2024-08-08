@@ -104,7 +104,6 @@
     <Compile Include="Forms\Renderers\MacOSVerticalSliderRenderer.cs" />
     <Compile Include="Forms\Renderers\MacOSDisabledScrollViewRenderer.cs" />
     <Compile Include="Forms\MacOSLocaleSwitcher.cs" />
-    <Compile Include="Forms\Renderers\MacOSStepSliderRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Unjammit.Core.csproj">

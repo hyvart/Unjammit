@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
 
 using Jammit.Model;
@@ -71,12 +70,6 @@ namespace Jammit.Audio
     public void Play()
     {
       _waveOut.Play();
-
-      var total = _media.Beats.Count;
-      var ghost = _media.Beats.Count(b => b.IsGhostBeat);
-      var down = _media.Beats.Count(b => b.IsDownBeat);
-      var neither = _media.Beats.Count(b => !b.IsGhostBeat && !b.IsDownBeat);
-
 
       TimerAction();
     }

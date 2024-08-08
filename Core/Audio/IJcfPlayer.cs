@@ -26,7 +26,6 @@ namespace Jammit.Audio
 
     event EventHandler PositionChanged;
 
-    //event EventHandler BeatChanged;
     event EventHandler CountdownFinished;
   }
 }

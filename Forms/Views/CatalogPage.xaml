@@ -83,7 +83,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    <Button HeightRequest="20" x:Name="DownloadButton" Text="{xaml:TranslateText CatalogPage_DownloadButton}" Clicked="DownloadButton_Clicked" />
+    <Button x:Name="DownloadButton" Text="{xaml:TranslateText CatalogPage_DownloadButton}" Clicked="DownloadButton_Clicked" />
     <ProgressBar x:Name="DownloadProgressBar" Progress="{Binding Source={x:Static local:App.Client}, Path=SongDownloadProgress, Mode=TwoWay}" />
     <Button x:Name="ReloadButton" Text="{xaml:TranslateText CatalogPage_LoadButton}" Clicked="ReloadButton_Clicked" />
   </StackLayout>
