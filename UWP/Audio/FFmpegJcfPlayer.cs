@@ -104,6 +104,8 @@ namespace Jammit.Audio
 
     public event EventHandler PositionChanged;
 
+    public event EventHandler CountdownFinished;
+
     public void Play()
     {
       if (PlaybackStatus.Playing == State)
