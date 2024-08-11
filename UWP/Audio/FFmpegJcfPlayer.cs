@@ -34,6 +34,8 @@ namespace Jammit.Audio
 
       instance.Length = media.Length;
 
+      instance.TotalBeats = (uint)media.Beats.Count;
+
       return instance;
     }
 
