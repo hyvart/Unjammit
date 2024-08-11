@@ -51,7 +51,16 @@ namespace Jammit.Audio
         for (var i = 0; i < _beats.Count; i++)
         {
           _currentBeat = i;
-          if (_beats[i].Time >= time) break;
+
+          var beatChangedArgs = new BeatChangedEventArgs
+          {
+            CurrentBeatIndex = (uint)_currentBeat,
+            CurrentBeat = _beats[_currentBeat]
+          };
+          OnBeatChanged?.Invoke(this, beatChangedArgs);
+
+          if (_beats[i].Time >= time)
+            break;
         }
       }
     }
@@ -63,12 +72,6 @@ namespace Jammit.Audio
       int bytesRead = 0;
       while (count > 0 && _beats.Count > _currentBeat)
       {
-        if (_player != null && _currentBeat > _player.Countdown && _player.Countdown != 0)
-        {
-          _countdownFinished?.Invoke(this, new EventArgs());
-          return 0;
-        }
-
         var sampleOffset = _samplePos - (int)((_beats[_currentBeat].Time - 0.005) * 44100);
         // empty space before click
         while (sampleOffset < 0 && count > 0)
@@ -96,9 +99,25 @@ namespace Jammit.Audio
         if (sampleOffset >= _click.Length)
         {
           _currentBeat++;
+
+          var beatChangedArgs = new BeatChangedEventArgs
+          {
+            CurrentBeatIndex = (uint)_currentBeat,
+            CurrentBeat = _beats[_currentBeat]
+          };
+          OnBeatChanged?.Invoke(this, beatChangedArgs);
         }
       }
       return bytesRead;
+    }
+
+    public event EventHandler<BeatChangedEventArgs> OnBeatChanged;
+
+    //TODO: Move?
+    public class BeatChangedEventArgs : EventArgs
+    {
+      public uint CurrentBeatIndex;
+      public Model.Beat CurrentBeat;
     }
   }
 }
