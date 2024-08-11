@@ -31,7 +31,5 @@ namespace Jammit.Audio
     uint Countdown { get; set; }
 
     event EventHandler PositionChanged;
-
-    event EventHandler CountdownFinished;
   }
 }

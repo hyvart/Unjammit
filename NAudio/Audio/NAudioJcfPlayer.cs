@@ -29,8 +29,6 @@ namespace Jammit.Audio
       _channels = new Dictionary<TrackInfo, WaveChannel32>(media.InstrumentTracks.Count + 1 + 1);
       _trackStates = new Dictionary<TrackInfo, TrackState>(media.InstrumentTracks.Count + 1 + 1);
 
-      CountdownFinished += NotifyCountdownFinished;
-
       var songPath = Path.Combine(tracksPath, $"{media.Song.Sku}.jcf");
       foreach (var track in media.InstrumentTracks)
       {
@@ -43,7 +41,7 @@ namespace Jammit.Audio
       _channels[media.BackingTrack] = new WaveChannel32(new ImaWaveStream(backingStream));
       _trackStates[media.BackingTrack] = new TrackState();
 
-      _clickTrackStream = new ClickTrackStream(media.Beats, stick, CountdownFinished);
+      _clickTrackStream = new ClickTrackStream(media.Beats, stick);
       _clickTrackStream.OnBeatChanged += NotifyBeatChanged;
       _channels[media.ClickTrack] = new WaveChannel32(_clickTrackStream);
       _trackStates[media.ClickTrack] = new TrackState();
@@ -64,8 +62,6 @@ namespace Jammit.Audio
 
     ~NAudioJcfPlayer()
     {
-      CountdownFinished -= NotifyCountdownFinished;
-
       _clickTrackStream.OnBeatChanged -= NotifyBeatChanged;
 
       if (PlaybackState.Playing == _waveOut.PlaybackState)
@@ -77,8 +73,6 @@ namespace Jammit.Audio
     #region IJcfPlayer members
 
     public event EventHandler PositionChanged;
-
-    public event EventHandler CountdownFinished;
 
     public void Play()
     {
@@ -176,12 +170,6 @@ namespace Jammit.Audio
     public void NotifyPositionChanged()
     {
       PositionChanged?.Invoke(this, new EventArgs());
-    }
-
-    private void NotifyCountdownFinished(object sender, EventArgs e)
-    {
-      //SetVolume(_media.ClickTrack, 0);
-      Mute(_media.ClickTrack);
     }
 
     private void NotifyBeatChanged(object sender, ClickTrackStream.BeatChangedEventArgs args)

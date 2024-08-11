@@ -26,8 +26,6 @@ namespace Jammit.Audio
 
     public event EventHandler PositionChanged;
 
-    public event EventHandler CountdownFinished;
-
     public void Play()
     {
       _player.Start();
@@ -54,6 +52,21 @@ namespace Jammit.Audio
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
       _player.SetVolume((float)volume, (float)volume);
+    }
+
+    TrackState.AudioStatus IJcfPlayer.GetAudioStatus(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Mute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Unmute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
     }
 
     public TimeSpan Position

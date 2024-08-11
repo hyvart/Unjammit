@@ -10,10 +10,6 @@ namespace Jammit.Audio
 
     private readonly short[] _click;
 
-    private EventHandler _countdownFinished;
-
-    private IJcfPlayer _player;
-
     //var stick = Properties.Resources.stick;
     public ClickTrackStream(IReadOnlyList<Model.Beat> beats, byte[] stick)
     {
@@ -22,12 +18,6 @@ namespace Jammit.Audio
       Length = (long)(_beats[_beats.Count - 1].Time*44100*4);
       _click = new short[stick.Length/2];
       Buffer.BlockCopy(stick, 0, _click, 0, stick.Length);
-    }
-    public ClickTrackStream(IReadOnlyList<Model.Beat> beats, byte[] stick, EventHandler countdownFinished)
-      : this(beats, stick)
-    {
-      _countdownFinished = countdownFinished;
-      _player = _countdownFinished.Target as IJcfPlayer;
     }
 
     public override long Length { get; }
