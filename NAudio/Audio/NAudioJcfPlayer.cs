@@ -42,7 +42,7 @@ namespace Jammit.Audio
       _trackStates[media.BackingTrack] = new TrackState();
 
       _clickTrackStream = new ClickTrackStream(media.Beats, stick);
-      _clickTrackStream.OnBeatChanged += NotifyBeatChanged;
+      _clickTrackStream.BeatChanged += NotifyBeatChanged;
       _channels[media.ClickTrack] = new WaveChannel32(_clickTrackStream);
       _trackStates[media.ClickTrack] = new TrackState();
 
@@ -62,7 +62,7 @@ namespace Jammit.Audio
 
     ~NAudioJcfPlayer()
     {
-      _clickTrackStream.OnBeatChanged -= NotifyBeatChanged;
+      _clickTrackStream.BeatChanged -= NotifyBeatChanged;
 
       if (PlaybackState.Playing == _waveOut.PlaybackState)
         _waveOut.Stop();

@@ -47,7 +47,7 @@ namespace Jammit.Audio
             CurrentBeatIndex = (uint)_currentBeat,
             CurrentBeat = _beats[_currentBeat]
           };
-          OnBeatChanged?.Invoke(this, beatChangedArgs);
+          BeatChanged?.Invoke(this, beatChangedArgs);
 
           if (_beats[i].Time >= time)
             break;
@@ -95,13 +95,13 @@ namespace Jammit.Audio
             CurrentBeatIndex = (uint)_currentBeat,
             CurrentBeat = _beats[_currentBeat]
           };
-          OnBeatChanged?.Invoke(this, beatChangedArgs);
+          BeatChanged?.Invoke(this, beatChangedArgs);
         }
       }
       return bytesRead;
     }
 
-    public event EventHandler<BeatChangedEventArgs> OnBeatChanged;
+    public event EventHandler<BeatChangedEventArgs> BeatChanged;
 
     //TODO: Move?
     public class BeatChangedEventArgs : EventArgs
