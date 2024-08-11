@@ -147,6 +147,21 @@ namespace Jammit.Audio
       _players[track].Player.Volume = volume / 100.0;
     }
 
+    TrackState.AudioStatus IJcfPlayer.GetAudioStatus(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Mute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Unmute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
     public TimeSpan Position
     {
       get
