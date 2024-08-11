@@ -19,6 +19,7 @@ namespace Jammit.Audio
       var instance = new FFmpegJcfPlayer();
 
       // Capacity => instruments + backing (TODO: + click)
+      instance._trackStates = new Dictionary<PlayableTrackInfo, TrackState>(media.InstrumentTracks.Count + 1);
       instance._players = new Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)>(media.InstrumentTracks.Count + 1);
       instance._mediaTimelineController = new MediaTimelineController();
       instance._mediaTimelineController.PositionChanged += instance.MediaTimelineController_PositionChanged;
@@ -43,6 +44,7 @@ namespace Jammit.Audio
 
     #region private members
 
+    private IDictionary<PlayableTrackInfo, TrackState> _trackStates;
     private Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)> _players;
     private MediaTimelineController _mediaTimelineController;
 
@@ -62,6 +64,7 @@ namespace Jammit.Audio
 
       // FFmpegInteropMSS instances hold the stream reference. Their scope must be kept.
       _players[track] = (player, ffmpegSource);
+      _trackStates[track] = new TrackState();
     }
 
     #endregion
@@ -137,7 +140,7 @@ namespace Jammit.Audio
 
     public uint GetVolume(PlayableTrackInfo track)
     {
-      return (uint)_players[track].Player.Volume;
+      return _trackStates[track].Volume;
     }
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
@@ -146,22 +149,33 @@ namespace Jammit.Audio
       if (track.Class == "JMClickTrack")
         return;
 
-      _players[track].Player.Volume = volume / 100.0;
+      _trackStates[track].Volume = volume;
+
+      var trackAudioStatus = _trackStates[track].Status;
+      if (trackAudioStatus != TrackState.AudioStatus.Muted &&
+          trackAudioStatus != TrackState.AudioStatus.AutoMuted &&
+          trackAudioStatus != TrackState.AudioStatus.Excluded)
+        _players[track].Player.Volume = volume / 100.0;
     }
 
     TrackState.AudioStatus IJcfPlayer.GetAudioStatus(PlayableTrackInfo track)
     {
-      throw new NotImplementedException();
+      if (_players[track].Player.Volume > 0)
+        return TrackState.AudioStatus.On;
+      else
+        return TrackState.AudioStatus.Muted;
     }
 
     void IJcfPlayer.Mute(PlayableTrackInfo track)
     {
-      throw new NotImplementedException();
+      _trackStates[track].Status = TrackState.AudioStatus.Muted;
+      _players[track].Player.Volume = 0;
     }
 
     void IJcfPlayer.Unmute(PlayableTrackInfo track)
     {
-      throw new NotImplementedException();
+      _players[track].Player.Volume = _trackStates[track].Volume / 100;
+      _trackStates[track].Status = TrackState.AudioStatus.On;
     }
 
     public TimeSpan Position
