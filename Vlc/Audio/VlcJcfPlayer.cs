@@ -98,8 +98,6 @@ namespace Jammit.Audio
 
     public event EventHandler PositionChanged;
 
-    public event EventHandler CountdownFinished;
-
     public uint TotalBeats { get; private set; }
 
     public uint Countdown { get; set; } = 0;
@@ -135,6 +133,21 @@ namespace Jammit.Audio
           player.Stop();
 
       Position = TimeSpan.Zero;
+    }
+
+    TrackState.AudioStatus IJcfPlayer.GetAudioStatus(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Mute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Unmute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
     }
 
     #endregion IJcfPlayer

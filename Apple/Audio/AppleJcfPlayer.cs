@@ -44,8 +44,6 @@ namespace Jammit.Audio
 
     public event EventHandler PositionChanged;
 
-    public event EventHandler CountdownFinished;
-
     public void Play()
     {
       if (PlaybackStatus.Playing == State)
@@ -96,6 +94,21 @@ namespace Jammit.Audio
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
       players[track].Volume = volume / 100.0f;
+    }
+
+    TrackState.AudioStatus IJcfPlayer.GetAudioStatus(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Mute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
+    }
+
+    void IJcfPlayer.Unmute(PlayableTrackInfo track)
+    {
+      throw new NotImplementedException();
     }
 
     public uint TotalBeats { get; private set; }

@@ -12,9 +12,11 @@ namespace Jammit.Audio
     #region private members
 
     JcfMedia _media;
+    readonly IDictionary<TrackInfo, TrackState> _trackStates;
     readonly IDictionary<TrackInfo, WaveChannel32> _channels;
     readonly WaveMixerStream32 _mixer;
     readonly IWavePlayer _waveOut;
+    readonly ClickTrackStream _clickTrackStream;
 
     #endregion  private members
 
@@ -25,19 +27,24 @@ namespace Jammit.Audio
       _waveOut = waveOut;
       _mixer = new WaveMixerStream32();
       _channels = new Dictionary<TrackInfo, WaveChannel32>(media.InstrumentTracks.Count + 1 + 1);
-
-      CountdownFinished += NotifyCountdownFinished;
+      _trackStates = new Dictionary<TrackInfo, TrackState>(media.InstrumentTracks.Count + 1 + 1);
 
       var songPath = Path.Combine(tracksPath, $"{media.Song.Sku}.jcf");
       foreach (var track in media.InstrumentTracks)
       {
         var stream = File.OpenRead(Path.Combine(songPath, $"{track.Identifier.ToString().ToUpper()}_jcfx"));
         _channels[track] = new WaveChannel32(new ImaWaveStream(stream));
+        _trackStates[track] = new TrackState();
       }
 
       var backingStream = File.OpenRead(Path.Combine(songPath, $"{media.BackingTrack.Identifier.ToString().ToUpper()}_jcfx"));
       _channels[media.BackingTrack] = new WaveChannel32(new ImaWaveStream(backingStream));
-      _channels[media.ClickTrack] = new WaveChannel32(new ClickTrackStream(media.Beats, stick, CountdownFinished));
+      _trackStates[media.BackingTrack] = new TrackState();
+
+      _clickTrackStream = new ClickTrackStream(media.Beats, stick);
+      _clickTrackStream.BeatChanged += NotifyBeatChanged;
+      _channels[media.ClickTrack] = new WaveChannel32(_clickTrackStream);
+      _trackStates[media.ClickTrack] = new TrackState();
 
       foreach (var channel in _channels.Values)
       {
@@ -55,6 +62,8 @@ namespace Jammit.Audio
 
     ~NAudioJcfPlayer()
     {
+      _clickTrackStream.BeatChanged -= NotifyBeatChanged;
+
       if (PlaybackState.Playing == _waveOut.PlaybackState)
         _waveOut.Stop();
 
@@ -64,8 +73,6 @@ namespace Jammit.Audio
     #region IJcfPlayer members
 
     public event EventHandler PositionChanged;
-
-    public event EventHandler CountdownFinished;
 
     public void Play()
     {
@@ -86,11 +93,34 @@ namespace Jammit.Audio
       Position = TimeSpan.Zero;
     }
 
-    public uint GetVolume(PlayableTrackInfo track) => (uint)_channels[track].Volume;
+    public TrackState.AudioStatus GetAudioStatus(Model.PlayableTrackInfo track)
+    {
+      return _trackStates[track].Status;
+    }
+
+    public uint GetVolume(PlayableTrackInfo track) => _trackStates[track].Volume;
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      _channels[track].Volume = volume / 100.0f;
+      _trackStates[track].Volume = volume;
+
+      var trackAudioStatus = _trackStates[track].Status;
+      if (trackAudioStatus != TrackState.AudioStatus.Muted &&
+          trackAudioStatus != TrackState.AudioStatus.AutoMuted &&
+          trackAudioStatus != TrackState.AudioStatus.Excluded)
+        _channels[track].Volume = volume / 100f;
+    }
+
+    public void Mute(PlayableTrackInfo track)
+    {
+      _trackStates[track].Status = TrackState.AudioStatus.Muted;
+      _channels[track].Volume = 0;
+    }
+
+    public void Unmute(PlayableTrackInfo track)
+    {
+      _channels[track].Volume = _trackStates[track].Volume / 100f;
+      _trackStates[track].Status = TrackState.AudioStatus.On;
     }
 
     public uint TotalBeats { get; private set; }
@@ -138,9 +168,23 @@ namespace Jammit.Audio
       PositionChanged?.Invoke(this, new EventArgs());
     }
 
-    private void NotifyCountdownFinished(object sender, EventArgs e)
+    private void NotifyBeatChanged(object sender, ClickTrackStream.BeatChangedEventArgs args)
     {
-      SetVolume(_media.ClickTrack, 0);
+      var audioStatus = _trackStates[_media.ClickTrack].Status;
+      var currentBeatIndex = args.CurrentBeatIndex;
+
+      if ((TrackState.AudioStatus.On == audioStatus || TrackState.AudioStatus.Solo == audioStatus) &&
+          0 != Countdown && Countdown <= currentBeatIndex)
+      {
+        _channels[_media.ClickTrack].Volume = 0;
+        _trackStates[_media.ClickTrack].Status = TrackState.AudioStatus.AutoMuted;
+      }
+      else if (TrackState.AudioStatus.AutoMuted == audioStatus &&
+          (0 == Countdown || Countdown > currentBeatIndex))
+      {
+        _channels[_media.ClickTrack].Volume = _trackStates[_media.ClickTrack].Volume / 100f;
+        _trackStates[_media.ClickTrack].Status = TrackState.AudioStatus.On;//TODO: What aboout Solo?
+      }
     }
 
     public Action TimerAction { get; set; }

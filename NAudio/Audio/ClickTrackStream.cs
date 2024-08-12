@@ -10,10 +10,6 @@ namespace Jammit.Audio
 
     private readonly short[] _click;
 
-    private EventHandler _countdownFinished;
-
-    private IJcfPlayer _player;
-
     //var stick = Properties.Resources.stick;
     public ClickTrackStream(IReadOnlyList<Model.Beat> beats, byte[] stick)
     {
@@ -22,12 +18,6 @@ namespace Jammit.Audio
       Length = (long)(_beats[_beats.Count - 1].Time*44100*4);
       _click = new short[stick.Length/2];
       Buffer.BlockCopy(stick, 0, _click, 0, stick.Length);
-    }
-    public ClickTrackStream(IReadOnlyList<Model.Beat> beats, byte[] stick, EventHandler countdownFinished)
-      : this(beats, stick)
-    {
-      _countdownFinished = countdownFinished;
-      _player = _countdownFinished.Target as IJcfPlayer;
     }
 
     public override long Length { get; }
@@ -51,7 +41,16 @@ namespace Jammit.Audio
         for (var i = 0; i < _beats.Count; i++)
         {
           _currentBeat = i;
-          if (_beats[i].Time >= time) break;
+
+          var beatChangedArgs = new BeatChangedEventArgs
+          {
+            CurrentBeatIndex = (uint)_currentBeat,
+            CurrentBeat = _beats[_currentBeat]
+          };
+          BeatChanged?.Invoke(this, beatChangedArgs);
+
+          if (_beats[i].Time >= time)
+            break;
         }
       }
     }
@@ -63,12 +62,6 @@ namespace Jammit.Audio
       int bytesRead = 0;
       while (count > 0 && _beats.Count > _currentBeat)
       {
-        if (_player != null && _currentBeat > _player.Countdown && _player.Countdown != 0)
-        {
-          _countdownFinished?.Invoke(this, new EventArgs());
-          return 0;
-        }
-
         var sampleOffset = _samplePos - (int)((_beats[_currentBeat].Time - 0.005) * 44100);
         // empty space before click
         while (sampleOffset < 0 && count > 0)
@@ -96,9 +89,25 @@ namespace Jammit.Audio
         if (sampleOffset >= _click.Length)
         {
           _currentBeat++;
+
+          var beatChangedArgs = new BeatChangedEventArgs
+          {
+            CurrentBeatIndex = (uint)_currentBeat,
+            CurrentBeat = _beats[_currentBeat]
+          };
+          BeatChanged?.Invoke(this, beatChangedArgs);
         }
       }
       return bytesRead;
+    }
+
+    public event EventHandler<BeatChangedEventArgs> BeatChanged;
+
+    //TODO: Move?
+    public class BeatChangedEventArgs : EventArgs
+    {
+      public uint CurrentBeatIndex;
+      public Model.Beat CurrentBeat;
     }
   }
 }

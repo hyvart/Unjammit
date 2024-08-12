@@ -29,7 +29,7 @@ namespace Jammit.Forms.Views
 
     void Mute()
     {
-      Player.SetVolume(Track, 0);
+      Player.Mute(Track);
       _state = State.Muted;
 
       SetSoundState("Muted", false);
@@ -37,7 +37,7 @@ namespace Jammit.Forms.Views
 
     void Unmute()
     {
-      Player.SetVolume(Track, (uint)Volume);
+      Player.Unmute(Track);
       _state = State.Normal;
 
       SetSoundState("Active", true);
