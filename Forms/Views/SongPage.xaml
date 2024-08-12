@@ -188,6 +188,7 @@
                   Value="{Binding Player.Countdown}"
                   FlexLayout.Grow="1"
                   Margin="6,0,6,0"
+                  IsEnabled="{OnPlatform Default=true, UWP=false}"
                   />
           <Label Text="{Binding Player.TotalBeats, StringFormat='{}{0,5:F0}'}"
                  BackgroundColor="LightGray"
