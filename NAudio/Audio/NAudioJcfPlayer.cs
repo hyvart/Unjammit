@@ -102,10 +102,6 @@ namespace Jammit.Audio
 
     public void SetVolume(PlayableTrackInfo track, uint volume)
     {
-      //_channels[track].Volume = volume / 100.0f;
-      ////TODO: Add ClickTrackStream "volume"?
-      ///
-
       _trackStates[track].Volume = volume;
 
       var trackAudioStatus = _trackStates[track].Status;
