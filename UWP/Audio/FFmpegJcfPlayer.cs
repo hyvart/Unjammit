@@ -20,7 +20,7 @@ namespace Jammit.Audio
 
       // Capacity => instruments + backing (TODO: + click)
       instance._trackStates = new Dictionary<PlayableTrackInfo, TrackState>(media.InstrumentTracks.Count + 1);
-      instance._players = new Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)>(media.InstrumentTracks.Count + 1);
+      instance._players = new Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInteropX.FFmpegMediaSource)>(media.InstrumentTracks.Count + 1);
       instance._mediaTimelineController = new MediaTimelineController();
       instance._mediaTimelineController.PositionChanged += instance.MediaTimelineController_PositionChanged;
       instance._mediaTimelineController.StateChanged += instance.MediaTimelineController_StateChanged;
@@ -45,7 +45,7 @@ namespace Jammit.Audio
     #region private members
 
     private IDictionary<PlayableTrackInfo, TrackState> _trackStates;
-    private Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInterop.FFmpegInteropMSS)> _players;
+    private Dictionary<PlayableTrackInfo, (MediaPlayer Player, FFmpegInteropX.FFmpegMediaSource)> _players;
     private MediaTimelineController _mediaTimelineController;
 
     private async Task InitPlayer(PlayableTrackInfo track, string mediaPath)
@@ -53,7 +53,7 @@ namespace Jammit.Audio
       var uri = $"{mediaPath}/{track.Identifier.ToString().ToUpper()}_jcfx";
       var file = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(uri));
       var stream = await file.OpenReadAsync();
-      var ffmpegSource = await FFmpegInterop.FFmpegInteropMSS.CreateFromStreamAsync(stream);
+      var ffmpegSource = await FFmpegInteropX.FFmpegMediaSource.CreateFromStreamAsync(stream);
       //TODO: Re-enable. Possible bug in FFmpegInterop.
       //var ffmpegSource = await FFmpegInterop.FFmpegInteropMSS.CreateFromUriAsync(uri);
 
