@@ -22,13 +22,6 @@ nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegI
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x64\Release\FFmpegInteropX.winmd"  target="lib\uap10.0" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x64\Release\FFmpegInteropX.xml"    target="lib\uap10.0" />
 
-    <file src="$vcpkgDir$\installed\x64-uwp\include\libavcodec\**\*.h"                      target="include\libavcodec" />
-    <file src="$vcpkgDir$\installed\x64-uwp\include\libavfilter\**\*.h"                     target="include\libavfilter" />
-    <file src="$vcpkgDir$\installed\x64-uwp\include\libavformat\**\*.h"                     target="include\libavformat" />
-    <file src="$vcpkgDir$\installed\x64-uwp\include\libavutil\**\*.h"                       target="include\libavutil" />
-    <file src="$vcpkgDir$\installed\x64-uwp\include\libswresample\**\*.h"                   target="include\libswresample" />
-    <!-- TODO:libswscale? -->
-
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avcodec-*"                                  target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avfilter-*"                                 target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avformat-*"                                 target="runtimes\win10-x64\native" />
