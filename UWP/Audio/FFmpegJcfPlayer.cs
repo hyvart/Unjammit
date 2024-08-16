@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 
 using Jammit.Model;
 using Windows.Media;
-using Windows.Media.Core;
 using Windows.Media.Playback;
 using Xamarin.Forms;
 
