@@ -27,12 +27,14 @@ nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegI
     <file src="$vcpkgDir$\installed\x64-uwp\include\libavformat\**\*.h"                     target="include\libavformat" />
     <file src="$vcpkgDir$\installed\x64-uwp\include\libavutil\**\*.h"                       target="include\libavutil" />
     <file src="$vcpkgDir$\installed\x64-uwp\include\libswresample\**\*.h"                   target="include\libswresample" />
+    <!-- TODO:libswscale? -->
 
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avcodec-*"                                  target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avfilter-*"                                 target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avformat-*"                                 target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avutil-*"                                   target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\swresample-*"                               target="runtimes\win10-x64\native" />
+    <file src="$vcpkgDir$\installed\x64-uwp\bin\swscale*"                                   target="runtimes\win10-x64\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x64\Release\FFmpegInteropX.dll"    target="runtimes\win10-x64\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x64\Release\FFmpegInteropX.pdb"    target="runtimes\win10-x64\native" />
 
@@ -41,6 +43,7 @@ nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegI
     <file src="$vcpkgDir$\installed\x86-uwp\bin\avformat-*"                                 target="runtimes\win10-x86\native" />
     <file src="$vcpkgDir$\installed\x86-uwp\bin\avutil-*"                                   target="runtimes\win10-x86\native" />
     <file src="$vcpkgDir$\installed\x86-uwp\bin\swresample-*"                               target="runtimes\win10-x86\native" />
+    <file src="$vcpkgDir$\installed\x86-uwp\bin\swscale*"                                   target="runtimes\win10-x86\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x86\Release\FFmpegInteropX.dll"    target="runtimes\win10-x86\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x86\Release\FFmpegInteropX.pdb"    target="runtimes\win10-x86\native" />
 
@@ -49,6 +52,7 @@ nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegI
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\avformat-*"                               target="runtimes\win10-arm64\native" />
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\avutil-*"                                 target="runtimes\win10-arm64\native" />
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\swresample-*"                             target="runtimes\win10-arm64\native" />
+    <file src="$vcpkgDir$\installed\arm64-uwp\bin\swscale*"                                 target="runtimes\win10-arm64\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\ARM64\Release\FFmpegInteropX.dll"  target="runtimes\win10-arm64\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\ARM64\Release\FFmpegInteropX.pdb"  target="runtimes\win10-arm64\native" />
 
@@ -57,6 +61,7 @@ nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegI
     <file src="$vcpkgDir$\installed\arm-uwp\bin\avformat-*"                                 target="runtimes\win10-arm\native" />
     <file src="$vcpkgDir$\installed\arm-uwp\bin\avutil-*"                                   target="runtimes\win10-arm\native" />
     <file src="$vcpkgDir$\installed\arm-uwp\bin\swresample-*"                               target="runtimes\win10-arm\native" />
+    <file src="$vcpkgDir$\installed\arm-uwp\bin\swscale*"                                   target="runtimes\win10-arm\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\ARM\Release\FFmpegInteropX.dll"    target="runtimes\win10-arm\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\ARM\Release\FFmpegInteropX.pdb"    target="runtimes\win10-arm\native" />
   </files>
