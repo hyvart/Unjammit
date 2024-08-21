@@ -2,7 +2,11 @@
 
 <!--
 Sample usage:
-nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegInteropX;vcpkgDir=C:\vcpkg;repositoryUrl=https://github.com/ffmpeginteropx/FFmpegInteropX;repositoryCommit=41e6078c77223d869aabfb713a3106cc282ce7e5'
+nuget.exe pack `
+  Scripts\NuGet\Hyvart.FFmpegInteropX.nuspec `
+  -OutputDirectory Output `
+  -Properties "ffmpegInteropXDir=${ffixDir};vcpkgDir=${ffixDir}\Libs\vcpkg;repositoryCommit=${commit}" `
+  -Version ${version}
 -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
@@ -16,7 +20,7 @@ nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegI
     <dependencies>
       <group targetFramework="uap10.0" />
     </dependencies>
-    <repository type="git" url="$repositoryUrl$" commit="$repositoryCommit$" />
+    <repository type="git" url="https://github.com/hyvart/FFmpegInteropX" branch="unjammit/master" commit="$repositoryCommit$" />
   </metadata>
   <files>
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x64\Release\FFmpegInteropX.winmd"  target="lib\uap10.0" />
