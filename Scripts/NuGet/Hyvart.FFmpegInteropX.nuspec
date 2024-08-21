@@ -2,9 +2,7 @@
 
 <!--
 Sample usage:
-nuget.exe pack `
-  -OutputDirectory Output `
-  -Properties "ffmpegInteropXDir=C:\ffmpegInteropX;vcpkgDir=C:\vcpkg;repositoryUrl=https://github.com/ffmpeginteropx/FFmpegInteropX;repositoryBranch=unjammit/master;repositoryCommit=${commit}"
+nuget.exe pack -OutputDirectory Output -Properties 'ffmpegInteropXDir=C:\ffmpegInteropX;vcpkgDir=C:\vcpkg;repositoryUrl=https://github.com/ffmpeginteropx/FFmpegInteropX;repositoryCommit=41e6078c77223d869aabfb713a3106cc282ce7e5'
 -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
@@ -18,7 +16,7 @@ nuget.exe pack `
     <dependencies>
       <group targetFramework="uap10.0" />
     </dependencies>
-    <repository type="git" url="$repositoryUrl$" branch="$repositoryBranch$" commit="$repositoryCommit$" />
+    <repository type="git" url="$repositoryUrl$" commit="$repositoryCommit$" />
   </metadata>
   <files>
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x64\Release\FFmpegInteropX.winmd"  target="lib\uap10.0" />
@@ -27,6 +25,7 @@ nuget.exe pack `
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avcodec-*"                                  target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avfilter-*"                                 target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\avformat-*"                                 target="runtimes\win10-x64\native" />
+    <file src="$vcpkgDir$\installed\x64-uwp\bin\avutil-*"                                   target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\swresample-*"                               target="runtimes\win10-x64\native" />
     <file src="$vcpkgDir$\installed\x64-uwp\bin\swscale*"                                   target="runtimes\win10-x64\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x64\Release\FFmpegInteropX.dll"    target="runtimes\win10-x64\native" />
@@ -35,6 +34,7 @@ nuget.exe pack `
     <file src="$vcpkgDir$\installed\x86-uwp\bin\avcodec-*"                                  target="runtimes\win10-x86\native" />
     <file src="$vcpkgDir$\installed\x86-uwp\bin\avfilter-*"                                 target="runtimes\win10-x86\native" />
     <file src="$vcpkgDir$\installed\x86-uwp\bin\avformat-*"                                 target="runtimes\win10-x86\native" />
+    <file src="$vcpkgDir$\installed\x86-uwp\bin\avutil-*"                                   target="runtimes\win10-x86\native" />
     <file src="$vcpkgDir$\installed\x86-uwp\bin\swresample-*"                               target="runtimes\win10-x86\native" />
     <file src="$vcpkgDir$\installed\x86-uwp\bin\swscale*"                                   target="runtimes\win10-x86\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\x86\Release\FFmpegInteropX.dll"    target="runtimes\win10-x86\native" />
@@ -43,6 +43,7 @@ nuget.exe pack `
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\avcodec-*"                                target="runtimes\win10-arm64\native" />
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\avfilter-*"                               target="runtimes\win10-arm64\native" />
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\avformat-*"                               target="runtimes\win10-arm64\native" />
+    <file src="$vcpkgDir$\installed\arm64-uwp\bin\avutil-*"                                 target="runtimes\win10-arm64\native" />
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\swresample-*"                             target="runtimes\win10-arm64\native" />
     <file src="$vcpkgDir$\installed\arm64-uwp\bin\swscale*"                                 target="runtimes\win10-arm64\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\ARM64\Release\FFmpegInteropX.dll"  target="runtimes\win10-arm64\native" />
@@ -51,6 +52,7 @@ nuget.exe pack `
     <file src="$vcpkgDir$\installed\arm-uwp\bin\avcodec-*"                                  target="runtimes\win10-arm\native" />
     <file src="$vcpkgDir$\installed\arm-uwp\bin\avfilter-*"                                 target="runtimes\win10-arm\native" />
     <file src="$vcpkgDir$\installed\arm-uwp\bin\avformat-*"                                 target="runtimes\win10-arm\native" />
+    <file src="$vcpkgDir$\installed\arm-uwp\bin\avutil-*"                                   target="runtimes\win10-arm\native" />
     <file src="$vcpkgDir$\installed\arm-uwp\bin\swresample-*"                               target="runtimes\win10-arm\native" />
     <file src="$vcpkgDir$\installed\arm-uwp\bin\swscale*"                                   target="runtimes\win10-arm\native" />
     <file src="$ffmpegInteropXDir$\Output\FFmpegInteropX\ARM\Release\FFmpegInteropX.dll"    target="runtimes\win10-arm\native" />
