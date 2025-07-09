@@ -4,6 +4,7 @@ trigger:
   branches:
     include:
       - ci/test/pr*
+      - refs/pull/*/merge
 
 pr:
   branches:
