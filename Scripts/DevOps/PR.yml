@@ -6,7 +6,9 @@ trigger:
       - ci/test/pr*
 
 pr:
-  - master
+  branches:
+    include:
+      - master
 
 variables:
   - group: Build - Global
