@@ -29,7 +29,7 @@ stages:
     jobs:
       - job: SetUp
         pool:
-          vmImage: ubuntu-20.04
+          vmImage: ubuntu-24.04
         steps:
           - pwsh: |
               $changedFiles = $(git diff --name-only HEAD HEAD~)
@@ -223,7 +223,7 @@ stages:
       - Publish
 
     pool:
-      vmImage: ubuntu-20.04
+      vmImage: ubuntu-24.04
 
     jobs:
       - job:
