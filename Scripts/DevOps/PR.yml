@@ -4,9 +4,12 @@ trigger:
   branches:
     include:
       - ci/test/pr*
+      - refs/pull/*/merge
 
 pr:
-  - master
+  branches:
+    include:
+      - master
 
 variables:
   - group: Build - Global
